@@ -11,11 +11,32 @@
 \title{Probability and Measure Solutions}
 \author{WispyAbyss}
 
+% Math operators
+
 % Definitions
 \newcommand{\inner}[2]{\left\langle #1 , #2 \right\rangle}
-\newcommand{\norm}[1]{\left|#1\right|}
-\newcommand{\indicator}[1]{\mathbbm{1}\left\{ #1 \right\}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\1}[1]{\mathbbm{1}\left\{ #1 \right\}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\F}{\mathcal{F}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\lcal}{\mathcal{L}}
+\newcommand{\ucal}{\mathcal{U}}
+\newcommand{\tcal}{\mathcal{T}}
+\newcommand{\Prob}{\mathbb{P}}
+\newcommand{\VCdim}{\text{VCdim}}
+\newcommand{\st}{\text{s.t.}}
+\newcommand{\roundUp}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\roundDown}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\sign}{\text{sign}}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+\renewcommand{\div}{\text{div}}
+\newcommand{\curl}{\text{curl}}
+\newcommand{\trace}{\text{trace}}
+\newcommand{\grad}{\text{grad}}
+
 
 \setcounter{secnumdepth}{0}
 
@@ -25,7 +46,34 @@
 \tableofcontents
 	
 \section{Forward}
-This document will only contain solutions to the problems within the book Probability and Measure by Patrick Billingsley  [\href{https://www.amazon.com/PROBABILITY-MEASURE-WILEY-MATHEMATICAL-STATISTICS/dp/8126517719/ref=sr_1_2?crid=3IVF52UANVNQC&keywords=Probability+and+Measure+by+Patrick+Billingsley&qid=1694149664&s=books&sprefix=probability+and+measure+by+patrick+billingsley%2Cstripbooks%2C143&sr=1-2}{amazon}]. For any chapter notes or discussions, see \href{https://wispyabyss.com/}{wispyabyss.com}.
+This document will contain notes and solutions corresponding to Probability and Measure, Third Edition, by Patrick Billingsley  [\href{https://www.amazon.com/PROBABILITY-MEASURE-WILEY-MATHEMATICAL-STATISTICS/dp/8126517719/ref=sr_1_2?crid=3IVF52UANVNQC&keywords=Probability+and+Measure+by+Patrick+Billingsley&qid=1694149664&s=books&sprefix=probability+and+measure+by+patrick+billingsley%2Cstripbooks%2C143&sr=1-2}{amazon}].
+
+\section{Chapter 1.1 - Borel's Normal Number Theorem}
+\subsection{Notes}
+For a complete understanding of probability, you need to understand an infinite number of events as well as a finite number of events. We try and present why that must be so here.
+
+\subsubsection{The Unit Interval} 
+We take the length of an interval $I = (a,b] = b - a$. Note, for $A$ a disjoint set of intervals in $(0,1]$, we have that $P(A)$ is well defined. If $B$ is a similar disjoint set, and is disjoint from $A$, $P(A + B) = P(A) + P(B)$ is well defined as well. Note - we haven't defined anything for intersections yet. These definitions can also directly stem from the Riemann integral of step functions.
+\\\\
+The unit interval can give the probability that a single particle is emitted in a unit interval of time. Or a single phone call comes in. However, it can also model an infinite coin toss. This is done as follows - for $\omega \in (0,1]$, define:
+$$
+	\omega = \sum_{n=1}^\infty \frac{d_n(\omega)}{2^n}
+$$
+Where $d_n(\omega)$ is $0$ or $1$, and comes from the binary expansion of $\omega$. We take $\omega$ as the non terminating representation. Note, we were particular when we defined intervals as half inclusive. Examine the set of $\omega$ for which $d_i(\omega) = u_i$ for $i = 1, \cdots, n$, $u_i \in \{0,1\}$. We have that:
+$$
+	\sum_{i=1}^n \frac{u_i}{2^i} < \omega \leq \sum_{i=1}^n \frac{u_i}{2^i} + \sum_{i=n+1}^\infty \frac{1}{2^i}
+$$
+We cannot have the lower extreme value, as this would imply $\omega$ takes on its terminating binomial representation, which is what we said we would not do. This is our first taste, I guess, of measure $0$ sets, we we still have:
+$$
+	\Prob\left[\omega: d_i(\omega) = u_i, i = 1, \cdots, n \right] = \frac{1}{2^n}
+$$
+Note, probabilities of various familiar events can be written down immediately. Ultimately, note, however, each probability is the sum of disjoint dyadic intervals of various ranks $k$. Ie, all the events are still well defined by our probability definition above. We have:
+$$
+	\Prob\left[\omega : \sum_{i=1}^n d_i(\omega) = k\right] = {n \choose k} \frac{1}{2^n}
+$$
+
+
+\subsection{Solutions}
 	
 \end{document}
 

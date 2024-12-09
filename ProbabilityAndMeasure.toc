@@ -1,1 +1,5 @@
 \contentsline {section}{Forward}{1}{section*.2}%
+\contentsline {section}{Chapter 1.1 - Borel's Normal Number Theorem}{1}{section*.3}%
+\contentsline {subsection}{Notes}{1}{section*.4}%
+\contentsline {subsubsection}{The Unit Interval}{1}{section*.5}%
+\contentsline {subsection}{Solutions}{2}{section*.6}%
