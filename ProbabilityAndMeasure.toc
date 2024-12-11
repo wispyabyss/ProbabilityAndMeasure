@@ -5,4 +5,6 @@
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{2}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{3}{section*.7}%
 \contentsline {paragraph}{Lemma - Chebyshev's Inequality}{4}{section*.8}%
-\contentsline {subsection}{Solutions}{4}{section*.9}%
+\contentsline {subsubsection}{The Strong Law of Large Numbers}{4}{section*.9}%
+\contentsline {paragraph}{Theorem 1.2}{5}{section*.10}%
+\contentsline {subsection}{Solutions}{6}{section*.11}%

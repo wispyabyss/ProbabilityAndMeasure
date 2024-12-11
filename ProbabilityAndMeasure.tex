@@ -119,6 +119,48 @@ $$
 $$ 
 Thus, we have Chebyshev's inequality, and with it, we can easily prove the Weak Law of Large Numbers. However - it is important to note - these are \textit{properties over the real numbers}, as much as they are probabilistic properties.
 
+\subsubsection{The Strong Law of Large Numbers}
+Just to first formalize some terms - the frequency of $1$ in $\omega$ is $\sum_{i=1}^n d_i(\omega)$, the relative frequency is that number normalized, ie $\frac{1}{n} \sum_{i=1}^n d_i(\omega)$, and the asymptotic relative frequency is the limit. We can derive, with some technical tools outside of discrete probability theory, results on the set:
+$$
+	N = \left[\omega : \lim_{n \to \infty} \frac{1}{n} \sum_{i=1}^n d_i(\omega) = 1/2\right]
+$$
+We call this the set of normal numbers $N$. The tools themselves are the concepts of negligibility. A set $A$ is negligible if for every $\epsilon > 0$, there is a countable number of intervals (not necessarily disjoint) such that:
+$$
+	A \subset \bigcup_k I_k \quad\quad\quad \sum_k I_k = \sum_k b_k - a_k < \epsilon
+$$
+For one - I like to note here interpretations. Essentially - if $A$ is negligible, it is a practical impossibility that $\omega$ randomly drawn will lie within $A$. And if $A^c$ is negligible, it is a practical certainty that $\omega$ randomly drawn will lie within $A$. These are just how they should be understood - and these understandings are reasonable, as the total "length" that $A$ takes up can be understood to be incredibly incredibly small.
+\\\\
+Some properties of negligibility - note, these are the standard properties, stemming from infinite sums $(1/2^k)$ summing to values less than $\epsilon$. Individual points are negligible, and so to thus are countable sets. So to are countable unions of countable sets.
+\\\\
+With these properties - we understand that the property of our model not including $\omega$ with a terminating sequence (all $0$ ending) is not a short coming. These $\omega$ form a countable set - and so, they can be considered negligible.
+
+\paragraph{Theorem 1.2} The set of normal numbers $N$ has negligible complement.
+\\\\
+\textbf{Proof} As an aside - we note that this proof is stronger than just the negligibility properties we noted above. This is because $N^c$ is not countable. The set of $d_i(\omega) = 1$ unless $i$ is a multiple of $3$ clearly belongs to $N$ - as for each $n$, $n^{-1}\sum_{i=1}^n d_i(\omega) \geq 2/3$. However, note this set is uncountable (diagonalization argument).
+\\\\
+Note, the proof relies on equivalently defining $N$ as:
+$$
+	N = \left[\omega : \lim_{n \to \infty} \frac{1}{n} s_n(\omega) = 0\right]
+$$
+Then, we can again make use of Chebyshev's Inequality (step function version) to find that:
+$$
+	\Prob\left[\omega : |s_n(\omega)| \geq n\epsilon\right] \leq 
+	\frac{1}{n^4\epsilon^4}\int_0^1 s_n^4(\omega) d\omega =
+	\frac{n + 3n(n-1)}{n^4\epsilon^4} \leq
+	\frac{3}{n^2\epsilon^4}
+$$
+Where the last step is just via an in depth (but simple) investigation of the integrals of multiplications of rademacher variables. With this property, we can find that if $A_n = [\omega: |n^{-1}s_n(\omega)| \geq \epsilon_n]$, then we have a sequence of $\epsilon_n$ such that $P(A_n) \leq 3\epsilon_n^{-4}n^{-2}$, and we can find such a sequence such that:
+$$
+	\sum_n \Prob\left[A_n\right] < \infty
+$$
+The final step to proving the theorem is noting that:
+$$
+	\bigcap_{n = m}^\infty A_n^c \subset N \implies N^c \subset \bigcup_{n=m}^\infty A_n
+$$
+Which will ultimately prove the theorem. Note - a lot of details are left out, but I do not consider them important. You should be able to fill in. These are just the major strokes, outlining the proof. It essentially hinges on our integral value, and the relationship between $A_n$ and the set of normal number $N$. qed.
+\\\\
+So, we have $N^c$ is negligible. But, can we have that $N$ itself is negligible? Well, we could say no - using our "practically impossible" notions, and noting that for $\omega \in [0,1]$ randomly drawn, it must be in $[0,1]$, and $N^c \cup N = [0,1]$. But, that is not rigorous. And so, the following theorem will give us our initial basis of \textit{measure}, and also help us note that $N$ is not negligible.
+
 \subsection{Solutions}
 	
 \end{document}
