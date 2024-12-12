@@ -161,6 +161,71 @@ Which will ultimately prove the theorem. Note - a lot of details are left out, b
 \\\\
 So, we have $N^c$ is negligible. But, can we have that $N$ itself is negligible? Well, we could say no - using our "practically impossible" notions, and noting that for $\omega \in [0,1]$ randomly drawn, it must be in $[0,1]$, and $N^c \cup N = [0,1]$. But, that is not rigorous. And so, the following theorem will give us our initial basis of \textit{measure}, and also help us note that $N$ is not negligible.
 
+\paragraph{Theorem 1.3 - Lebesgue Measure Starting Point}
+\begin{enumerate}
+	\item If $\bigcup_k I_k \subset I$, and the $I_k$ are disjoint, then $\sum_k |I_k| \leq |I|$
+	\item If $I \subset \bigcup I_k$ (the $I_k$ need not be disjoint), then $|I| \leq \sum_k |I_k|$
+	\item If $\bigcup I_k = I$, and the $I_k$ are disjoint, then $|I| = \sum_k |I_k|$
+\end{enumerate}
+Note, this Theorem is true for countably infinite intervals as well. \textbf{Proof:} Note that the third part follows directly from $(1)$ and $(2)$. We start with the finite cases. For $(1)$, we can prove by induction on the number of intervals $n$. It is clearly true for $n = 1$, and it is a fairly simple induction hypothesis to prove in general. We similarly have the same for $(2)$.
+\\\\
+The difficult part comes when going to infinite intervals. For $(1)$, it is a simple limit, ie:
+$$
+	\sum_k |I_k| = \lim_{n \to \infty} \sum_{k=1}^n |I_k|
+$$
+Note, each sum is less than $|I|$, as the finite case to $1$ applies for each finite sum. And so, the inequality can be expanded to the limit. However - we can't do that for $(2)$. Ultimately, the difference between the two cases is the inclusion of unions. We note:
+$$
+	\bigcup_k I_k \subset I \implies \bigcup_{k=1}^n I_k \subset I
+$$
+Ie, the inclusion is true for every subset. However, we \textit{do not} necessarily have:
+$$
+	I \subset \bigcup_k I_k \implies I \subset \bigcup_{k=1}^n I_k
+$$
+Note that in the following way: $I = (a,b]$. We have that $I_i = (a + 1/i, b]$. We do indeed have that:
+$$
+	I \subset \bigcup_k I_k
+$$
+As if you take $x \in I$, $a < x \leq b$, and so we must have for $i$ large enough, $a + 1/i < x \leq b$, and so $x \in I_i$. However, note that the inclusion is not actually true for a specific finite subunion. So, we need to take a different strategy to prove the infinite case. This comes from dealing with \textit{open covers of compact spaces}, and relying on the Heine-Borel theorem, which says that intervals $[a,b]$ are indeed compact. In this case, we are able to bridge between infinite unions and finite unions - as we can take a finite sub cover of an open cover on compact spaces. We prove the theorem essentially for $[a + \epsilon,b]$, that:
+$$
+	|I| - \epsilon = b - (a + \epsilon) \leq \sum_k |I_k| + \epsilon
+$$
+However, as the $\epsilon$ is arbitrary, we can conclude the fact for the infinite case as well. qed.
+\\\\
+Note - this implies that $N$ is not negligible. As it it was, $[0,1]$ would be negligible, but that is incorrect by the above, as any open covering must have total sum at least $1$, ie, the total sum is not smaller than arbitrary $\epsilon$.
+
+\subsubsection{The Measure Theory of Diophantine Approximation}
+This section is just additional, so my notes here are sparse. However, I do read through it, and record the theorems, plus some notes I have on them.
+
+\paragraph{Theorem 1.4} If $x$ is irrational, there are infinitely many irreducible fractions $p/q$ such that:
+$$
+	\left|x - \frac{p}{q}\right| < \frac{1}{q^2}
+$$
+Honestly, this proof is so good. I like it a lot - it is pretty clever. However, I don't just want to copy it down here - it is in the book. I'm not sure if there is any broad message I can glean from it - just that, it is a property of the real numbers. It just hinges on the following fact (which itself is pretty difficult to prove), that for every $Q$ positive integer, there is an integer $q < Q$ and corresponding $p$ such that:
+$$
+	\left|x - \frac{p}{q} \right| < \frac{1}{q Q} \leq \frac{1}{q^2}
+$$
+Note, this is true for $x$ rational or irrational. However, we have an infinite number of such irreducible fractions for the irrational case, and the contradiction derived in the book is nice as well. Anyway - read the book for this. qed.
+\\\\
+Anyway, the above essentially means that, apart from a negligible set of $x$, each real number has an infinite set of irreducible rationals such that the bounds in Theorem 1.4 are true. We now consider a generalization - when can we tighten the inequality in Theorem 1.4 - Consider:
+$$
+	\left|x - \frac{p}{q}\right| < \frac{1}{q^2\varphi(q)}
+$$
+Let $A_\varphi$ consist of the real $x$ for which the above has infinitely many irreducible solutions. Under what conditions on $\varphi$ will $A_\varphi$ have negligible complement? Note that if $\varphi(q) < 1$, then the condition is weaker than Theorem 1.4, and so $A_\varphi$ has negligible complement immediately. It becomes interesting if $\varphi(q) > 1$. We will later prove the theorem:
+
+\paragraph{Theorem 1.5} Suppose that $\varphi$ is positive and nondecreasing. If:
+$$
+	\sum_q \frac{1}{q\varphi(q)} = \infty
+$$
+Then $A_\varphi$ has negligible complement. We will prove this later, but we can now prove:
+
+\paragraph{Theorem 1.6} Suppose that $\varphi$ is positive. If
+$$
+	\sum_q \frac{1}{q\varphi(q)} < \infty
+$$
+Then $A_\varphi$ is negligible.
+\\\\
+We will go over the proof soon for this theorem. However - just note what the theorems are saying. Note that in the second - $\varphi(q)$ must be growing quite quickly. We need the denominator to be quite large, so that the infinite sum is ultimately finite. However, in theorem 1.5, we don't want the $\varphi(q)$ to be too large, lest the sum actually does become finite. Ultimately - both theorems are conditions on how $\varphi(q)$ grows. Which, ultimately does make sense. If $\varphi(q)$ grows to large - it becomes unreasonable to expect our condition to hold infinitely many times. If I ever encounter such situations, where I might want to examine the growth of a function $\varphi$ - I think examining whether the infinite sum of $1/\varphi$ equals infinity or not is often a good property that is related to the growth of a function.
+
 \subsection{Solutions}
 	
 \end{document}
