@@ -225,8 +225,45 @@ $$
 Then $A_\varphi$ is negligible.
 \\\\
 We will go over the proof soon for this theorem. However - just note what the theorems are saying. Note that in the second - $\varphi(q)$ must be growing quite quickly. We need the denominator to be quite large, so that the infinite sum is ultimately finite. However, in theorem 1.5, we don't want the $\varphi(q)$ to be too large, lest the sum actually does become finite. Ultimately - both theorems are conditions on how $\varphi(q)$ grows. Which, ultimately does make sense. If $\varphi(q)$ grows to large - it becomes unreasonable to expect our condition to hold infinitely many times. If I ever encounter such situations, where I might want to examine the growth of a function $\varphi$ - I think examining whether the infinite sum of $1/\varphi$ equals infinity or not is often a good property that is related to the growth of a function.
+\\\\
+\textbf{Proof of Theorem 1.6} I'll give the full proof here, as it is interesting to me, and rather short. We want to show that $A_\varphi$ is negligible. Well, given that the sum is finite, there is a $q_0$ large enough such that the tail sum $\sum_{q \geq q_0} \frac{1}{q\varphi(q)} < \epsilon/4$. If $x \in A_\varphi$, then our definition holds for some $q \geq q_0$, and as $0 < x < 1$, we have that the corresponding $p$ lies in $0 \leq p \leq q$. Thus, we have that:
+$$
+	A_\varphi \subset \bigcup_{q \geq q_0} \bigcup_{p = 0}^q 
+	\bigg(\frac{p}{q} - \frac{1}{q^2\varphi(q)}, \frac{p}{q} + \frac{1}{q^2\varphi(q)}\bigg]
+$$
+Which stems from every $x \in A_\varphi$ being in the right expression, given that $x$ is within one of the intervals on the right by the property we just described. Now, we have a covering interval - we just need to find the length of it. Note, by assumption, we have all of our $q$ must satisfy $q \geq 1$ (or, we can add that in). And so, we have the sum of the intervals is:
+$$
+	\sum_{q \geq q_0} \sum_{p = 0}^q \frac{2}{q^2\varphi(q)} =
+	\sum_{q \geq q_0} \frac{2(q + 1)}{q^2\varphi(q)} \leq
+	\sum_{q \geq q_0} \frac{2(q + q)}{q^2\varphi(q)} \leq
+	\sum_{q \geq q_0} \frac{4}{q\varphi(q)} < \epsilon
+$$
+And thus, $A_\varphi$ is negligible. qed.
 
-\subsection{Solutions}
+\subsection{Problems}
+\subsubsection{1.1} 
+\begin{enumerate}
+	\item As for why the existence of an infinite sequence of independent events each with probability $1/2$ in a discrete probability space would make the section superfluous - I think this is because, in the section, we \textit{rely} on the uncountability of the real numbers. This allows us to make notions like negligible, which helps us make Borel's Number Theorem (the Strong Law of Large numbers). We could then just handle infinite cases with a countable, discrete space - which would make the section unnecessarily in depth ("superfluous").
+	\\\\
+	As for why a discrete space cannot have an infinite sequence of independent events. Note, we can partition the space into sets $A_1 \cap A_2$, $A_1 \cap A_2^c$, $A_1^c \cap A_2$, and $A_1^c \cap A_2^c$. Note that each has probability $2^{-2}$, by independence. And so, each countable point $\omega$ belongs to one of these sets, and $P(\omega) \leq 2^{-2}$. We can continue on for arbitrary $2^k$ partitions, each of probability at most $2^{-k}$. Thus, we find that $P(\omega) = 0$ for each point. This is a contradiction, as:
+	$$
+		\sum P(\omega) = 1 \neq 0 = \sum_\omega 0 = \sum P(\omega)
+	$$
+	
+	\item This portion draws the same contradiction as above, namely, $P(\omega) = 0$ for all $\omega$. Each $\omega$ belongs to a sequence of $A_1, A_2, A_3^c$, something like that. Let $t_i = p_i/1-p_i$ that corresponds to $\omega \in A_i$ or $\omega \in A_i^c$. We find:
+	$$
+		P(\omega) \leq \prod_{i=1}^n t_i \leq \exp\left(-\sum_{i=1}^n (1-t_i)\right)
+	$$
+	Where the second step notes a property for $t_i \in [0,1]$. Note, it is clear that the above is bounded by:
+	$$
+		\leq \exp\left(-\sum_{i=1}^n \alpha_i\right)
+	$$
+	If $\sum_n \alpha_n$ diverges, the above goes to $0$, and we can conclude:
+	$$
+		P(\omega) = 0
+	$$
+	Which again, draws out our contradiction. qed.
+\end{enumerate}
 	
 \end{document}
 
