@@ -241,7 +241,7 @@ $$
 And thus, $A_\varphi$ is negligible. qed.
 
 \subsection{Problems}
-\subsubsection{1.1} 
+\subsubsection{1.1 Infinite Independent Events on a Discrete Space (are impossible)} 
 \begin{enumerate}
 	\item As for why the existence of an infinite sequence of independent events each with probability $1/2$ in a discrete probability space would make the section superfluous - I think this is because, in the section, we \textit{rely} on the uncountability of the real numbers. This allows us to make notions like negligible, which helps us make Borel's Number Theorem (the Strong Law of Large numbers). We could then just handle infinite cases with a countable, discrete space - which would make the section unnecessarily in depth ("superfluous").
 	\\\\
@@ -264,6 +264,38 @@ And thus, $A_\varphi$ is negligible. qed.
 	$$
 	Which again, draws out our contradiction. qed.
 \end{enumerate}
+
+\subsubsection{1.2 Normal Numbers and Complements are Dense in $(0,1]$} Show that $N$ and $N^c$ are dense in $(0,1]$. Recall, the definition of \textit{dense} is that $N$ is dense in $(0,1]$ if for each $x \in (0,1]$, and each interval $J$ containing $x$, there is a $y \in N$ such that $y \in J$.
+\\\\
+Take $\omega \in (0,1]$. We note $\omega$ has some form:
+$$
+	(d_1(\omega),d_2(\omega), \cdots)
+$$
+Note, the problem is equivalent to saying that if $\omega \in N$, can we find $x \in N^c$ arbitrarily close to $\omega$, and vice versa, for $\omega \in N^c$ and $x \in N$. We first assume $\omega \in N$. We can easily find an $x \in N^c$, such that $x$ is arbitrarily close to $\omega$. Just take the first $k$ elements matching, so that we are within $\frac{1}{2^k}$ of $\omega$, and continue with ones. Clearly, such an $x$ can be arbitrarily close to $\omega$, and within $N^c$. So, $N^c$ is clearly dense.
+\\\\
+For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the first $k$ elements of the binary expansion. For the remainder, oscillate between $1$ and $0$. Clearly, $x \in N$, and arbitrarily close to $\omega$. qed.
+
+\subsubsection{1.3} \textbf{Definition:} Define a set $A$ to be \textit{trifling} if for each $\epsilon$ there exists a \textit{finite} sequence of intervals $I_k$ satisfying that they cover $A$ and interval sum less than $\epsilon$. Recall, from Calculus on Manifolds - this is essentially content $0$. 
+\begin{enumerate}
+	\item A trifling set is also negligible. This must is clear - take the remaining infinite intervals as ones that sum up to less than a small enough $\epsilon'$.
+	
+	\item Show that the \textit{closure} of a trifling set is also trifling. Recall, the closure is all points that are not exterior to $A$ - exterior meaning that they have open neighborhoods not intersecting $A$. Well, take a finite covering less than $\epsilon/2$ of $A$. We define:
+	$$
+		A \subset \bigcup_{k=1}^n I_k \quad\quad\quad \sum_{k=1}^n I_k < \frac{\epsilon}{2} \quad\quad\quad
+		I_k' = \bigg(a_k - \frac{\epsilon}{2^{k+2}}, b_k + \frac{\epsilon}{2^{k+2}}\bigg]
+	$$
+	$$
+		\implies \sum_{k=1}^n I_k' < \epsilon
+	$$
+	Note that $I_k'$ covers $\overline{A}$. Take $x \in \overline{A}$. By definition, we have $\left(x - \frac{\epsilon}{2^{n+2}}, x + \frac{\epsilon}{2^{n+2}}\right)$ intersects $A$, and so coincides with some $I_k$, and so must be contained within $I_k'$. Thus, it is clear that $I_k'$ covers $\overline{A}$, and so $\overline{A}$ is trifling as well.
+	
+	\item The rationals in $(0,1]$ are bounded and negligible (being countable), but not trifling. Assume we have a covering of the rationals that is finite and sums to less than $\epsilon$. Note, we can take the covering to be restricted to $(0,1]$, as all the rationals are in $(0,1]$. For $\epsilon < 1$ - Theorem 1.3.2 implies that these intervals do not cover all of $(0,1]$. Note, if they don't cover a rational, we are done. We now note that these sets must not cover some interval of non negligible length - if they covered every such interval, there sum would be $1$. This interval contains a rational, which contradicts the set being covering.
+	
+	\item Show that the closure of a negligible set may not be negligible. Again, the closure of the rationals in $(0,1]$ is $(0,1]$, which is not negligible.
+	
+	\item Show that finite unions of trifling sets are trifling, but that this can fail for countable unions. Fail for countable unions - take the union of each rational, which is a countable union of trifling singleton sets - by the above, this is negligible, and not trifling. Note, for finite unions of trifling sets - say $k$ such sets - take the covering of size $\frac{\epsilon}{2^k}$, and note that the union of these intervals is a finite covering of total length less than $\epsilon$.
+\end{enumerate}
+
 	
 \end{document}
 

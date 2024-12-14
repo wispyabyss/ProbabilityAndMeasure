@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  13 DEC 2024 12:00
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  14 DEC 2024 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,17 +454,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 246--249
 
  []
 
-[9] [10] (./ProbabilityAndMeasure.aux)
+[9]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 268.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 268.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--271
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 273--277
+
+ []
+
+[10]
+Overfull \hbox (34.20651pt too wide) in paragraph at lines 289--291
+\T1/lmr/m/n/12 Note that $\OML/cmm/m/it/12 I[]$ \T1/lmr/m/n/12 cov-ers $[]$. Ta
+ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
+ we have $[]$
+ []
+
+[11] [12] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 5A79B43BB02629338F348585972D8008;1489.
+(rerunfilecheck)             Checksum: BEB26CF7C92AA375DFC9BC12050C7F2E;2268.
  ) 
 Here is how much of TeX's memory you used:
  9801 strings out of 476191
  152339 string characters out of 5812072
- 450522 words of memory out of 5000000
+ 451319 words of memory out of 5000000
  30416 multiletter control sequences out of 15000+600000
  502155 words of font info for 67 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,6n,64p,872b,461s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (10 pages).
+Output written on ProbabilityAndMeasure.pdf (12 pages).
