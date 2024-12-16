@@ -275,7 +275,7 @@ Note, the problem is equivalent to saying that if $\omega \in N$, can we find $x
 \\\\
 For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the first $k$ elements of the binary expansion. For the remainder, oscillate between $1$ and $0$. Clearly, $x \in N$, and arbitrarily close to $\omega$. qed.
 
-\subsubsection{1.3} \textbf{Definition:} Define a set $A$ to be \textit{trifling} if for each $\epsilon$ there exists a \textit{finite} sequence of intervals $I_k$ satisfying that they cover $A$ and interval sum less than $\epsilon$. Recall, from Calculus on Manifolds - this is essentially content $0$. 
+\subsubsection{1.3 Trifling Set Properties} \textbf{Definition:} Define a set $A$ to be \textit{trifling} if for each $\epsilon$ there exists a \textit{finite} sequence of intervals $I_k$ satisfying that they cover $A$ and interval sum less than $\epsilon$. Recall, from Calculus on Manifolds - this is essentially content $0$. 
 \begin{enumerate}
 	\item A trifling set is also negligible. This must is clear - take the remaining infinite intervals as ones that sum up to less than a small enough $\epsilon'$.
 	
@@ -294,6 +294,21 @@ For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the
 	\item Show that the closure of a negligible set may not be negligible. Again, the closure of the rationals in $(0,1]$ is $(0,1]$, which is not negligible.
 	
 	\item Show that finite unions of trifling sets are trifling, but that this can fail for countable unions. Fail for countable unions - take the union of each rational, which is a countable union of trifling singleton sets - by the above, this is negligible, and not trifling. Note, for finite unions of trifling sets - say $k$ such sets - take the covering of size $\frac{\epsilon}{2^k}$, and note that the union of these intervals is a finite covering of total length less than $\epsilon$.
+\end{enumerate}
+
+\subsubsection{1.4}
+\begin{enumerate}
+	\item First thing to note. We can look at $A_r(i)$ as iteratively removing intervals from $(0,1]$, where step $k$ corresponds to removing the numbers whose expansions do not contain $i$ for the first $k - 1$ digits, but contain $i$ at digit $k$. At step $k$, we remove $(r-1)^{k-1}$ intervals (corresponding to the $r-1$ possible digits in the first $k-1$ spaces) of length $\frac{1}{r^k}$ (corresponding to the length of the interval starting with $i \in [r-1]$ in the $kth$ entry going to $i + 1$ in the $kth$ entry). We find, that the total length of the disjoint intervals removes is:
+	$$
+		\sum_{k=1}^\infty \frac{(r-1)^{k-1}}{r^k} = \frac{1}{r} \sum_{k=1}^\infty \frac{(r-1)^{k-1}}{r^{k-1}} =
+		\frac{1}{r} \sum_{k=0}^\infty \frac{(r-1)^k}{r^k} = \frac{1}{r} * \frac{1}{1/r} = 1
+	$$
+	Where the second to last step is the sum of a geometric series. So, at the very least, we have that it could be possible that $A_r(i)$ is trifling.
+	\\\\
+	Here is how it is trifling. We \textit{know} that a finite amount of points is trifling. As the above sum equals $1$ - if we go far enough, the amount removed will be arbitrarily close to $1$. Say, within $\epsilon/2$ of $1$. And so, the remaining \textit{intervals} that are uncovered must have at most a total length of $\epsilon/2$. We can cover those intervals with the intervals themselves. Frankly, I think that is enough. Note, of course, at each step we remove an interval that looks like $(a,b]$. And so, the remaining intervals should be of the form $(c,d]$ as well. Everything should be nice, as the intervals in our iteration are disjoint. I literally think that is it. qed.
+	
+	\item We want to find a trifling set $A$ such that every point in the unit interval can be represented in the form $x + y$ with $x$ and $y$ in $A$. 
+	
 \end{enumerate}
 
 	
