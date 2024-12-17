@@ -309,6 +309,24 @@ For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the
 	
 	\item We want to find a trifling set $A$ such that every point in the unit interval can be represented in the form $x + y$ with $x$ and $y$ in $A$.
 	
+	\item Let $A_r(i_1, \cdots, i_k)$ consist of the numbers in the unit interval in whose base $r$ expansion the digits $i_1, \cdots, i_k$ nowhere appear consecutively in that order. Show that it is \textit{trifling}.
+	\\\\
+	The first observation I have made: if we have that $i_1, \cdots, i_k$ are all equal, whereas $j_1, \cdots, j_k$ are an arbitrary sequence of digits, we have that:
+	$$
+		|A_r(j_1, \cdots, j_k)| \leq |A_r(i_1, \cdots, i_k)|
+	$$
+	The reason is the following: for the first $n$ digits of the base $r$ expansion, there are more numbers without $i_1, \cdots, i_k$ appearing consecutively then there are numbers without $j_1, \cdots, j_k$ appearing consecutively. Consider the following example: Base 3, with $n = 3$. We have the following possible sequences:
+	$$
+	000 \quad\quad 001 \quad\quad 002 \quad\quad 010 \quad\quad 011 \quad\quad 012 \quad\quad 020 \quad 021 \quad 022
+	$$
+	$$
+	100 \quad\quad 101 \quad\quad 102 \quad\quad 110 \quad\quad 111 \quad\quad 112 \quad\quad 120 \quad 121 \quad 122
+	$$
+	$$
+	200 \quad\quad 201 \quad\quad 202 \quad\quad 210 \quad\quad 211 \quad\quad 212 \quad\quad 220 \quad 221 \quad 222
+	$$
+	Consider the count of sequences above without $11$. There are 22 such sequences. Now, count the sequences without $12$. There are $21$ such sequences. Note, above, we have that the sequence $111$ has $11$ at the start, and $11$ at the end, but only takes up one entry. However, we have that $12X$ and $Y12$ can never be the same, and so there are two such sequences taken up. We can expand this concept in general - when $i_1, \cdots, i_k$ are all equal, we get the most \textit{collisions} between sequences with digits $i_1, \cdots, i_k$ starting at the possible $n - k + 1$ starting points. And so, if we find that $A_r(i_1, \cdots, i_k)$ is trifling for $i_1 = \cdots = i_k$, we can conclude that $A_r(j_1, \cdots, j_k)$ is trifling in general.
+	
 \end{enumerate}
 
 	
