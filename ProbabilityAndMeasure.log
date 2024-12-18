@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  17 DEC 2024 08:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  18 DEC 2024 10:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -480,6 +480,15 @@ ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
  []
 
 [11]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 299.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 299.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 305--309
 
  []
@@ -489,17 +498,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 312--315
 
  []
 
-[12] [13] (./ProbabilityAndMeasure.aux)
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 327--331
+
+ []
+
+
+Overfull \hbox (22.48218pt too wide) detected at line 333
+\OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
+ []
+
+
+Overfull \hbox (53.37004pt too wide) detected at line 336
+\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 345--349
+
+ []
+
+[14] [15] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 5F2E225D8F3A2B877D964BE0E6B47BB5;2469.
+(rerunfilecheck)             Checksum: 9BF9000E80BD83B2629362AF99D9E57A;2604.
  ) 
 Here is how much of TeX's memory you used:
- 9801 strings out of 476191
- 152339 string characters out of 5812072
- 451529 words of memory out of 5000000
- 30416 multiletter control sequences out of 15000+600000
- 502155 words of font info for 67 fonts, out of 8000000 for 9000
+ 9810 strings out of 476191
+ 152423 string characters out of 5812072
+ 451664 words of memory out of 5000000
+ 30421 multiletter control sequences out of 15000+600000
+ 508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,6n,64p,872b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,7n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (13 pages).
+Output written on ProbabilityAndMeasure.pdf (15 pages).

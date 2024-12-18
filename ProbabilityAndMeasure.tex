@@ -296,7 +296,7 @@ For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the
 	\item Show that finite unions of trifling sets are trifling, but that this can fail for countable unions. Fail for countable unions - take the union of each rational, which is a countable union of trifling singleton sets - by the above, this is negligible, and not trifling. Note, for finite unions of trifling sets - say $k$ such sets - take the covering of size $\frac{\epsilon}{2^k}$, and note that the union of these intervals is a finite covering of total length less than $\epsilon$.
 \end{enumerate}
 
-\subsubsection{1.4}
+\subsubsection{1.4 Trifling Sets In Base $r$}
 \begin{enumerate}
 	\item First thing to note. We can look at $A_r(i)$ as iteratively removing intervals from $(0,1]$, where step $k$ corresponds to removing the numbers whose expansions do not contain $i$ for the first $k - 1$ digits, but contain $i$ at digit $k$. At step $k$, we remove $(r-1)^{k-1}$ intervals (corresponding to the $r-1$ possible digits in the first $k-1$ spaces) of length $\frac{1}{r^k}$ (corresponding to the length of the interval starting with $i \in [r-1]$ in the $kth$ entry going to $i + 1$ in the $kth$ entry). We find, that the total length of the disjoint intervals removes is:
 	$$
@@ -326,6 +326,47 @@ For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the
 	200 \quad\quad 201 \quad\quad 202 \quad\quad 210 \quad\quad 211 \quad\quad 212 \quad\quad 220 \quad 221 \quad 222
 	$$
 	Consider the count of sequences above without $11$. There are 22 such sequences. Now, count the sequences without $12$. There are $21$ such sequences. Note, above, we have that the sequence $111$ has $11$ at the start, and $11$ at the end, but only takes up one entry. However, we have that $12X$ and $Y12$ can never be the same, and so there are two such sequences taken up. We can expand this concept in general - when $i_1, \cdots, i_k$ are all equal, we get the most \textit{collisions} between sequences with digits $i_1, \cdots, i_k$ starting at the possible $n - k + 1$ starting points. And so, if we find that $A_r(i_1, \cdots, i_k)$ is trifling for $i_1 = \cdots = i_k$, we can conclude that $A_r(j_1, \cdots, j_k)$ is trifling in general.
+	\\\\
+	To be honest, I am going to skip this one, because I am getting nowhere. However, here is the work I've done so far, for what it is worth. I have made the following definitions:
+	$$
+		S_{k,n} = \left\{\text{The length $n$ sequences that contain the digit $d$ repeated $k$ times}\right\}
+	$$
+	$$
+		A_{t,n} = \left\{\text{The length $n$ sequences where $d$ repeated $k$ times first appears at pos $t$}\right\}
+	$$
+	And so, with these definitions, we have:
+	$$
+		S_{k,n} = \bigcup_{t=1}^{n-k+1} A_{t,n} \implies
+		|S_{k,n}| = \sum_{t=1}^{n-k+1} |A_{t,n}|
+	$$
+	Where the first step is just definitional, as if $d$ is repeated $k$ times, that subsequence first starts at position $1, 2$, or up to position $n - k + 1$. The second step comes from noting that the sets $A_{t,n}$ are disjoint - if the sequence first starts at position $t$, it \textit{does not} start at position $t' \neq t$. And so, if we can find that $\lim_{n \to \infty} \frac{|S_{k,n}|}{r^n} = 1$, then for $n$ large enough, it will equal $1 - \epsilon$, and we can take a \textit{finite} number of intervals to cover the remaining intervals of total length $\epsilon$ that are not represented in the \textit{finite} union of intervals $\bigcup_{t=1}^{n-k+1} A_{t,n}$. The difficult part is actually finding what the above is in terms of numbers. However, I now note that:
+	$$
+		|A_{t,n}| = r^{n - (t + k - 1)} \cdot 1^k \cdot (r - 1) \cdot (r^{t - 2} - |S_{k,t-2}|)
+	$$
+	This comes from examining what each of the possible digits in our expansion of $x \in A_{t,n}$ can be. The remaining $n - (t + k - 1)$ after the digits $d$ repeated $k$ times starting at position $t$ can be anything we want. This gives us our first element in the product. $1^k$ refers to the $k$ digits starting at $t$ must all be $d$. $(r-1)$ refers to position $t - 1$ - that \textit{must} be any number other than $d$. If it is $d$, then we get $x \in A_{t-1,n}$, which is incorrect. Finally, the remaining first $t-2$ entries can be any sequence at all, except for a sequence of $d$ repeated $k$ times. The count of those sequences is removed from the total $r^{t-2}$ sequences possible. And so, we find that essentially, both sides are equal. If we make any sequence described on the right side, we have that it is within $A_{t,n}$. And, any sequence in $A_{t,n}$ can be described on the right side. And so now, the work remains to just simplify the calculation of $|S_{k,n}|$. Note, we could actually calculate this value by a recursive algorithm. That might help us.
+	\\\\
+	Big Note: The calculation of $|A_{t,n}|$ assumes somethings, like the existence of position $t - 1$ (which is not there if $t = 1$) or $t > 2$ for $r^{t - 2}$. Just make sure to keep these exceptions in mind. Anyway. We make a hand wavy assumption - that $r^n - |S_{k,n}| > r^{k-1}$. Note, $r$ is some base $n$ digit, and so $r^{k-1}$ is just some constant. And while we want to eventually prove that the ratio is equal to $1$ in limit - ultimately, there will always be some constant distance between $r^n$ and $|S_{k,n}|$. And this constant will continue to grow to infinity. Anyway, for $n$ large enough, I think it is clear. And so, being hand wavy, and including all terms, although they might not be present, we have:
+	$$
+		\lim_{n \to \infty} \frac{|S_{k,n}|}{r^n} \approx 
+		\lim_{n \to \infty} \frac{\sum_{t=1}^{n - k + 1} r^{n - (t + k - 1)} \cdot (r - 1) \cdot (r^{t - 2} - |S_{k,t-2}|)}{r^n}
+	$$
+	$$
+		=
+		\lim_{n \to \infty} \frac{r^{n - k + 1}(r-1)\sum_{t=1}^{n - k + 1} r^{-t} \cdot (r^{t - 2} - |S_{k,t-2}|)}{r^n}
+	$$
+	$$
+		= r^{-k + 1} (r-1) \lim_{n \to \infty} \sum_{t=1}^{n - k + 1} r^{-t} \cdot (r^{t - 2} - |S_{k,t-2}|)
+	$$
+	Now, making use of our hand waviness, we have that:
+	$$
+		\geq r^{-k + 1} (r-1) \lim_{n \to \infty} \sum_{t=1}^{n - k + 1} r^{-t} r^{k-1} =
+		(r-1) \lim_{n \to \infty} \sum_{t=1}^{n - k + 1} r^{-t}
+	$$
+	Now, we can make use of our geometric series, and have that the above equals:
+	$$
+		= (r-1) * \frac{1}{r-1} = 1
+	$$
+	And so yes, the limit does indeed equal $1$. Unraveling everything we said above, this allows us to conclude that $A_r(i_1, \cdots, i_k)$ is indeed trifling. Now, there is a saying, that a monkey typing at random for infinity will ultimately write Shakespeare. Well, we can let every word be a digit in some base 10 million language. Ultimately, the probability that a monkey \textit{does not} type our specific Shakespeare sequence is indeed $0$, as the amount of "worlds" where the monkey types at random, but does not hit our $A_r(i_1, \cdots, i_k)$ digit sequence is 0.
 	
 \end{enumerate}
 
