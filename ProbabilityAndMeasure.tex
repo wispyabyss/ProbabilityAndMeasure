@@ -370,6 +370,40 @@ For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the
 	
 \end{enumerate}
 
+\subsubsection{1.5 Cantor Set Is Trifling, Uncountable, and Perfect}
+\begin{enumerate}
+	\item The Cantor set $C$ can be defined as the closure of $A_3(1)$. Show that $C$ is uncountable but trifling. First, note uncountable. This can be done by the diagonalization argument. Take any list of numbers in $A_3(1)$, which are also in $C$. We can make a new number in $A_3(1)$, but not in the list, by taking the $ith$ entry, and switching the $0$ for $2$ or $2$ for $0$. Thus, $A_3(1)$ is clearly uncountable, and so to must be $C$.
+	\\\\
+	Now, we note that $A_3(1)$ is trifling. Take any finite covering of $A_3(1)$ by intervals with total length less than $\epsilon$, than covers $A_3(1)$. Note that we can extend each interval by some length of $\epsilon/2^{i + 3}$ on each edge, and this should cover all of $C$ as well. This is because any element within the closure of $A_3(1)$, can also be viewed as within the closure of all the intervals, and so we can extend the interval lengths a bit. Note, this would apply for every trifling set (in $\R$, not sure about $\R^n$ with covering half open rectangles, but I think the idea could be extended).
+	
+	\item From $[0,1]$, remove the open middle third $(1/3,2/3)$. From the remainder, a union of two closed intervals, removed the open middle thirds $(1/9,2/9)$ and $(7/9,8/9)$. Show that $C$ is what remains when this process continues ad infimum.
+	\\\\
+	Note, this is the standard definition of $C$. We have to show this equals our closure definition above. I make the note - the $nth$ step is the closure of points in $[0,1]$ such that the base 3 representation does not contain $1$ in the first $n$ digits. This, I think, is clear. And so, taking the process to infinity, we can conclude that $C$ is the closure of the set where none of the digits are $1$.
+	
+	\item Show that $C$ is perfect. A set is \textit{perfect} if it is closed and for each $x$ in $A$ and positive $\epsilon$, there is a $y$ in $A$ such that $0 < |x - y| < \epsilon$.
+	\\\\
+	Note, $C$ is closed, as it is the closure of a set. Now, take $x \in C$ and $\epsilon > 0$. We can find the corresponding $y$ just by matching say the first $n$ digits of $x$, and then flipping the $n + 1$ digit from $0$ to $2$ or vice versa, and then taking any random $0$ or $2$ for the remaining digit. Note, $0 < |x - y| < \epsilon$ if $n$ is large enough. Note - I guess this doesn't apply for the points in the closure. For a point $x \in C$ in the closure, we can find a $y$ in $A_3(1)$ within $\epsilon/2$ of $x$, by the limit definition of the closure. Now, take $z$ within $\epsilon/2$ of $y$ by changing a digit. We now know that $z \neq x$, and the property applies. qed.
+\end{enumerate}
+
+\subsubsection{1.6} We first show the derivative property. We have that:
+$$
+	M(t) = \int_0^1 e^{ts_n(\omega)} d\omega
+$$
+We have that $f(\omega,t) = e^{ts_n(\omega)}$. Note, we can make use of \textit{Leibnitz's rule} to take the derivative of $M(t)$ under the integral. See problem 3-32 in Calculus on Manifolds by Spivak. However, this presupposes that $f$ is continuous. I get around this by the following: note that $s_n(\omega)$ has only finite points of discontinuity, when we switch from one dyadic interval of rank $n$ to the next. We can split $\int_0^1$ so that we ignore those points of discontinuity, and only integrate where $s_n(\omega)$ is continuous (and constant). Note, the points of discontinuity have content $0$, and so the integral on $[0,1]$ is equal to the integral on the set not including those points of discontinuity. Thus, we have:
+$$
+	M'(t) = \int_0^1 D_2(e^{ts_n(\omega)}(0) d\omega =
+	\int_0^1 s_n(\omega) e^{t s_n(\omega)} d\omega \implies
+	M'(0) = \int_0^1 s_n(\omega) d\omega
+$$
+Now, we can repeat this operation a finite amount of times, successive differentiation under the integral, to clearly find that:
+$$
+	M^{(k)}(0) = \int_0^1 s_n(\omega)^k d\omega
+$$
+Now, noting again that $s_n(\omega)$ is constant on the $2^n$ dyadic intervals, we have that $M(t)$ is actually easy to evaluate. For each of those $2^n$ intervals, $s_n$ is some sum of the form $\pm 1 \pm 1 \cdots \pm 1$, and so we have that:
+$$
+	M(t) = \frac{1}{2^n} \sum_{i=1}^{2^n} \exp\left(t \left(\pm 1 \pm 1 \cdots \pm 1\right)\right)
+$$
+We note that this can be broken down with a binomial coefficient.
 	
 \end{document}
 
