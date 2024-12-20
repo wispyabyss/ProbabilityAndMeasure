@@ -385,7 +385,7 @@ For the other direction, take $\omega \in N^c$, and now, again, match $x$ on the
 	Note, $C$ is closed, as it is the closure of a set. Now, take $x \in C$ and $\epsilon > 0$. We can find the corresponding $y$ just by matching say the first $n$ digits of $x$, and then flipping the $n + 1$ digit from $0$ to $2$ or vice versa, and then taking any random $0$ or $2$ for the remaining digit. Note, $0 < |x - y| < \epsilon$ if $n$ is large enough. Note - I guess this doesn't apply for the points in the closure. For a point $x \in C$ in the closure, we can find a $y$ in $A_3(1)$ within $\epsilon/2$ of $x$, by the limit definition of the closure. Now, take $z$ within $\epsilon/2$ of $y$ by changing a digit. We now know that $z \neq x$, and the property applies. qed.
 \end{enumerate}
 
-\subsubsection{1.6} We first show the derivative property. We have that:
+\subsubsection{1.6 Alternate $S_n$ Integral Value Proof} We first show the derivative property. We have that:
 $$
 	M(t) = \int_0^1 e^{ts_n(\omega)} d\omega
 $$
@@ -403,8 +403,80 @@ Now, noting again that $s_n(\omega)$ is constant on the $2^n$ dyadic intervals, 
 $$
 	M(t) = \frac{1}{2^n} \sum_{i=1}^{2^n} \exp\left(t \left(\pm 1 \pm 1 \cdots \pm 1\right)\right)
 $$
-We note that this can be broken down with a binomial coefficient.
-	
+We note that this can be broken down with a binomial coefficient. If we have that $k$ of the $\pm 1$ are $-1$, then the value of the sum is $n - 2k$. And so, based off of how many possible sequences of the $\pm 1$ that contain $k$ $-1$, we have that the above can be expressed as:
+$$
+	= \frac{1}{2^n} \sum_{k=0}^n {n \choose k} \exp(t(n - 2k)) 
+	= \frac{1}{2^n} \sum_{k=0}^n {n \choose k} \exp(t(n - k - k))
+$$
+$$
+	= \frac{1}{2^n} \sum_{k=0}^n {n \choose k} \exp(t(n-k) - t(k))
+	= \frac{1}{2^n} \sum_{k=0}^n {n \choose k} \exp(t)^{n-k}\exp(-t)^{k}
+$$
+By the Binomial Theorem, the above equals:
+$$
+	= \frac{1}{2^n}\left(\exp(t) + \exp(-t)\right)^n = \left(\frac{e^t + e^{-t}}{2}\right)^n =
+	\left(\cosh t\right)^n
+$$
+Where the last step is just an identity. Now, for a new proof of 1.16:
+$$
+	\int_0^1 s_n(\omega) d\omega = M'(0) = n \cosh^{n-1}(0)\sinh(0) = n * 1 * 0 = 0
+$$
+Now, for a new proof of 1.18:
+$$
+	\int_0^1 s_n^2(\omega) d\omega = M''(0) = n \left[(n-1)\cosh^{n-2}(0)\sinh^2(0) + \cosh^n(0)\right] = n * 1 = n
+$$
+Finally, for a new proof of 1.28, we just have to take the fourth derivative, and plug in 0. I will not be going over the steps, but using derivative calculator, we get the fourth derivative at $0$ is:
+$$
+	\int_0^1 s_n^4(\omega) d\omega = M''''(0) = n \left(3n - 2\right) = 3n^2 - 2n
+$$
+Which is the final property. qed.
+
+\paragraph{1.7} We first find a similar property to the above. We examine:
+$$
+	\int_0^1 \exp\left[i\sum_{k=1}^n a_kr_k(\omega)\right] d\omega
+$$
+We note that the summation is constant on the $2^n$ dyadic intervals of rank $n$. In which case, the integral becomes a summation, that looks like:
+$$
+	= \frac{1}{2^n} \sum \exp\left[i\left(\pm a_1 \pm a_2 \pm \cdots \pm a_n\right)\right]
+$$
+Now, we extract the first $+a_1$ term and $-a_1$ term from the exponential:
+$$
+	= \frac{1}{2^n} \exp(ia_1) \sum \exp\left[i\left(\pm a_2 \pm \cdots \pm a_n\right)\right] +
+	\frac{1}{2^n} \exp(-ia_1) \sum \exp\left[i\left(\pm a_2 \pm \cdots \pm a_n\right)\right]
+$$
+We note that by symmetry, both the summations are equal, and so the above actually equals:
+$$
+	= \frac{1}{2^n} \left(\exp(ia_1) + \exp(-ia_1)\right) \sum \exp\left[i\left(\pm a_2 \pm \cdots \pm a_n\right)\right]
+$$
+We can continue this process $n$ times, and then split the $2^{-n}$, to find:
+$$
+	\int_0^1 \exp\left[i\sum_{k=1}^n a_kr_k(\omega)\right] d\omega =
+	\prod_{k=1}^n \frac{e^{ia_k}+e^{-ia_k}}{2}
+$$
+Using the $\cos$ identity, we find:
+$$
+	\int_0^1 \exp\left[i\sum_{k=1}^n a_kr_k(\omega)\right] d\omega =
+	\prod_{k=1}^n \cos(a_k)
+$$
+We let $a_k = t2^{-k}$. We note that $\sum_{k=1}^\infty r_k(\omega)2^{-k} = 2\omega - 1$ - this is because in each entry, we have $r_k(\omega) = 2d_k(\omega) - 1$, and $\omega = \sum_{k=1}^\infty d_k(\omega) 2^{-k}$. We can apply the $2\omega - 1$ operations (as it is continuous and passes the summation limit), to derive the above. We thus have:
+$$
+	\lim_{n \to \infty} \int_0^1 \exp\left[i\sum_{k=1}^n a_kr_k(\omega)\right] d\omega =
+	\int_0^1 \exp\left[i \lim_{n \to \infty}\sum_{k=1}^n a_kr_k(\omega)\right] d\omega =
+	\int_0^1 \exp\left[ti (2\omega - 1)\right] d\omega
+$$
+Note, we don't have theorems to pass the limit through the integral yet. However, I believe this will be by the monotone convergence theorem - the partial sums should be non decreasing, given the exponential being nonnegative. Anyway, we don't have to prove that here. We now note this is an integral from $0$ to $1$ - whose value is:
+$$
+	- \frac{ie^{it(2x - 1)}}{2t} = \frac{-i^2}{t}\left(\frac{e^{it} - e^{-it}}{2i}\right) = \frac{\sin(t)}{t}
+$$
+Taking the limit on the other side, we can conclude:
+$$
+	\frac{\sin(t)}{t} = \prod_{k=1}^\infty \cos \frac{t}{2^k}
+$$
+We can now derive Vieta's Formula:
+$$
+	\frac{2}{\pi} = \frac{\sqrt{2}}{2} \frac{\sqrt{2 + \sqrt{2}}}{2} \frac{\sqrt{2 + \sqrt{2 + \sqrt{2}}}}{2} + \cdots 
+$$
+
 \end{document}
 
 
