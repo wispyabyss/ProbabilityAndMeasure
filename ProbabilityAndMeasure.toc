@@ -19,4 +19,6 @@
 \contentsline {subsubsection}{1.4 Trifling Sets In Base $r$}{12}{section*.20}%
 \contentsline {subsubsection}{1.5 Cantor Set Is Trifling, Uncountable, and Perfect}{15}{section*.21}%
 \contentsline {subsubsection}{1.6 Alternate $S_n$ Integral Value Proof}{16}{section*.22}%
-\contentsline {paragraph}{1.7}{18}{section*.23}%
+\contentsline {subsubsection}{1.7 Vieta's Formula}{18}{section*.23}%
+\contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{20}{section*.24}%
+\contentsline {subsubsection}{1.9}{21}{section*.25}%

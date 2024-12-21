@@ -431,7 +431,7 @@ $$
 $$
 Which is the final property. qed.
 
-\paragraph{1.7} We first find a similar property to the above. We examine:
+\subsubsection{1.7 Vieta's Formula} We first find a similar property to the above. We examine:
 $$
 	\int_0^1 \exp\left[i\sum_{k=1}^n a_kr_k(\omega)\right] d\omega
 $$
@@ -474,8 +474,50 @@ $$
 $$
 We can now derive Vieta's Formula:
 $$
-	\frac{2}{\pi} = \frac{\sqrt{2}}{2} \frac{\sqrt{2 + \sqrt{2}}}{2} \frac{\sqrt{2 + \sqrt{2 + \sqrt{2}}}}{2} + \cdots 
+	\frac{2}{\pi} = \frac{\sqrt{2}}{2} \frac{\sqrt{2 + \sqrt{2}}}{2} \frac{\sqrt{2 + \sqrt{2 + \sqrt{2}}}}{2} \cdots 
 $$
+We recall the half angle formula for $\cos$:
+$$
+	\cos \frac{\theta}{2} = \sqrt{\frac{1 + \cos(\theta)}{2}}
+$$
+We can use this to make an induction argument that:
+$$
+	\cos\left(\frac{\pi}{2} \frac{1}{2^k}\right) = \frac{\sqrt{2 + \sqrt{2 + \cdots + \sqrt{2}}}}{2}
+$$
+For the base case of $k = 1$, we have:
+$$
+	\cos\left(\frac{\pi}{2} \frac{1}{2}\right) = \sqrt{\frac{1 + \cos(\pi/2)}{2}} = \sqrt{\frac{1}{2}} = \frac{\sqrt{2}}{2}
+$$
+Now, for arbitrary $k$, we have:
+$$
+	\cos\left(\frac{\pi}{2} \frac{1}{2^k}\right) =
+	\cos\left(\frac{1}{2}\frac{\pi}{2} \frac{1}{2^{-1}}\right) =
+	\sqrt{\frac{1 + \cos\left(\frac{\pi}{2} \frac{1}{2^{k-1}}\right)}{2}} =
+	\sqrt{\frac{1 + \frac{\sqrt{2 + \sqrt{2 + \cdots + \sqrt{2}}}}{2}}{2}}
+$$
+$$
+	= \sqrt{\frac{2 + \sqrt{2 + \sqrt{2 + \cdots + \sqrt{2}}}}{4}}
+	= \frac{\sqrt{2 + \sqrt{2 + \cdots + \sqrt{2}}}}{2}
+$$
+And so, by our identity, we find:
+$$
+	\frac{2}{\pi} = \frac{\sin(\pi/2)}{\pi/2} = \prod_{k=1}^\infty \cos\left(\frac{\pi}{2} \frac{1}{2^k}\right) =
+	\frac{\sqrt{2}}{2} \frac{\sqrt{2 + \sqrt{2}}}{2} \frac{\sqrt{2 + \sqrt{2 + \sqrt{2}}}}{2} \cdots 
+$$
+And we have found Vieta's formula. qed.
+
+\subsubsection{1.8 Differences between the Weak and Strong Law Is Uniform Convergence} A number $\omega$ is normal in base 2 if and only if for each positive $\epsilon$ there exists an $n_0(\epsilon,\omega)$ such that $|n^{-1}\sum_{i=1}^n d_i(\omega) - 1/2| < \epsilon$ for all $n$ exceeding $n_0(\epsilon,\omega)$. That is just the definition. Theorem 1.2 concerns the entire dyadic expansion (ie, the complement of the set of normal numbers whose infinite sum equals 1/2 has probability $0$), whereas Theorem 1.1 concerns only the beginning sequence (ie, the limit of probability, of the dyadic expansion numbers whose first $n$ partial sum is not close to $1/2$, is 0). Identify the difference by showing that for $\epsilon < 1/2$ the $n_0(\epsilon,\omega)$ above cannot be the same for all $\omega$ in $N$ - in other words, $n^{-1}\sum_{i=1}^n d_i(\omega)$ converges to $1/2$ for all $\omega$ in $N$, but not uniformly. But see problem 13.9.
+\\\\
+Well - noting that for $\epsilon < 1/2$, the $n_0(\epsilon,\omega)$ cannot be the same for all $\omega$ in $N$, means finding $\omega$ in $N$ for which the $n$ is different. We can take just $\omega$ where the first $k$ are all $0$, and then the remaining digits alternate between $0$ and $1$. Note, that the first $n$ for which that sum is actually close to $1/2$ (when normalized by $n^{-1}$), must increase to $\infty$. And so yes, we have convergence to $1/2$ for $\omega$ in $N$, but not uniform convergence. And so, while Theorem 1.1 can rely on this non uniform convergence (ie, the sets are getting smaller, because ultimately, we reach that $n$ value for all $\omega$), we cannot rely on that for Theorem 1.2.
+\\\\
+Looking at Problem 13.9 - it looks like, however, we might be able to get uniform convergence on subsets of $N$. Perhaps this is how we can actually prove Theorem 1.2. Anyway, I like to just note that the underlying difference in the two Theorems comes from an underlying difference in just real number theory - uniform vs non uniform convergence.
+
+\subsubsection{1.9} 
+\begin{enumerate}
+	\item Show that a trifling set is nowhere dense. A set $E$ is nowhere dense in $B$ if each open interval $I$ contains some interval $J$ that does not meet $E$. Use the previous problems (1.3 b) and theorems (1.3ii) to prove this.
+	\\\\
+	I am going to assume we have a trifling set $E$ in the real line. We take an open interval of the real line $I$. We want to find some interval $J$ which our trifling set $E$ does not meet.
+\end{enumerate}
 
 \end{document}
 
