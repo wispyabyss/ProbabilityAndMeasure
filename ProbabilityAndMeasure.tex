@@ -512,11 +512,29 @@ Well - noting that for $\epsilon < 1/2$, the $n_0(\epsilon,\omega)$ cannot be th
 \\\\
 Looking at Problem 13.9 - it looks like, however, we might be able to get uniform convergence on subsets of $N$. Perhaps this is how we can actually prove Theorem 1.2. Anyway, I like to just note that the underlying difference in the two Theorems comes from an underlying difference in just real number theory - uniform vs non uniform convergence.
 
-\subsubsection{1.9} 
+\subsubsection{1.9 Nowhere Dense Set Existence and Properties} 
 \begin{enumerate}
 	\item Show that a trifling set is nowhere dense. A set $E$ is nowhere dense in $B$ if each open interval $I$ contains some interval $J$ that does not meet $E$. Use the previous problems (1.3 b) and theorems (1.3ii) to prove this.
 	\\\\
-	I am going to assume we have a trifling set $E$ in the real line. We take an open interval of the real line $I$. We want to find some interval $J$ which our trifling set $E$ does not meet.
+	I am going to assume we have a trifling set $E$ in the real line. We take an open interval of the real line $I$. We want to find some interval $J$ which our trifling set $E$ does not meet. Assume $I = (a,b]$, and so take $\epsilon = (b - a)/2$. By trifling, there is a finite interval cover of $E$ with total length less than $\epsilon$. Assume there is no interval $J$ in $I$ that $E$ does not meet. Ie, all subintervals $J$ meet $E$. This means that all subintervals $J$ are contained within the finite cover. This is because every point inside of $J$ has an open neighborhood around it that meets $E$, and so that open neighborhood meets the interval - and if the neighborhood is small enough, the original point is contained within the interval as well (I guess, this can be, via the closure is trifling as well).
+	\\\\
+	And so, every subinterval of $I$ is contained any finite open cover of $E$ - this is a contradiction, as this implies every subinterval of $I$ is vanishing in length. Some subintervals of $I$ are of length $(b-a)/2$, which is not vanishing. qed.
+	
+	\item Let $B = \bigcup_n (r_n - 2^{-n-2}, r_n + 2^{-n-2}]$, where $r_1, r_2, \cdots$ is an enumeration of the rationals in $(0,1]$. Show that $(0,1] - B$ is nowhere dense but not trifling or even negligible.
+	\\\\
+	We first show nowhere dense. Take a subinterval $I$ of $(0,1]$. Note that $I$ must contain some rational $r_n$, as the rationals are dense. We let $J$ be one of the intervals from the intersection of $(r_n - 2^{-n-2}, r_n + 2^{-n-2}] \cap I$. Note that $J \subset I$, and $J \subset B$. And so, $J \cap (0,1] - B = \emptyset$. And so $B$ must be nowhere dense.
+	\\\\
+	We now note that $(0,1]-B$, however, is not negligible (and thus not trifling). We have that:
+	$$
+		|B| \leq \sum_{n=1}^\infty |(r_n - 2^{-n-2}, r_n + 2^{-n-2}]| = \sum_{n=1}^\infty \frac{1}{2^{n+1}} = 1/2
+	$$
+	And so, we must have that:
+	$$
+		|(0,1]-B| \geq 1 - 1/2 = 1/2
+	$$
+	If we had any cover, whose total length is less than $\epsilon < 1/2$, we would get a contradiction. qed.
+	
+	\item Take a compact negligible set. Take an infinite open interval cover whose total length is less than $\epsilon$. By compactness, a finite subset of those sets covers the compact negligible set as well. And so, the set is trifling.
 \end{enumerate}
 
 \end{document}
