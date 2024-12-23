@@ -22,3 +22,5 @@
 \contentsline {subsubsection}{1.7 Vieta's Formula}{18}{section*.23}%
 \contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{20}{section*.24}%
 \contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{21}{section*.25}%
+\contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{22}{section*.26}%
+\contentsline {subsubsection}{1.11}{23}{section*.27}%

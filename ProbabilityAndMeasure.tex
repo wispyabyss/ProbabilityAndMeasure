@@ -537,6 +537,51 @@ Looking at Problem 13.9 - it looks like, however, we might be able to get unifor
 	\item Take a compact negligible set. Take an infinite open interval cover whose total length is less than $\epsilon$. By compactness, a finite subset of those sets covers the compact negligible set as well. And so, the set is trifling.
 \end{enumerate}
 
+\subsubsection{1.10 Normal Numbers are of the First Category} \textbf{Definition: Set of the First Category} A set of the first category is a set that is a countable union of nowhere dense sets. This is a topological notion of smallness - similar to first countable, I guess. This is similar to the metric notion of smallness, negligibility. Neither condition implies the other.
+
+\begin{enumerate}
+	\item Show that the non negligible set $N$ of normal numbers is of the first category by proving that:
+	$$
+		A_m = \bigcap_{n = m}^\infty \left[\omega: |n^{-1}s_n(\omega)| < 1/2\right]
+	$$
+	Is nowhere dense, and $N \subset \bigcup_m A_m$. Note, we can prove $A_m$ is nowhere dense in the following way - if the complement is dense, and each point in that dense set has an interval around it contained in the complement, then $A_m$ is nowhere dense. This is similar to the above problem. Note, this implies nowhere dense, as every interval $I$ has a point in the complement (by the complement being dense), and this point has an interval around it that is not contained in $A_m$.
+	\\\\
+	We have that:
+	$$
+		A_m^c = \bigcup_{n=m}^\infty \left[\omega: |n^{-1}s_n(\omega)| \geq 1/2\right]
+	$$
+	We note - each point $\omega \in A_m^c$ has an interval around it in $A_m^c$. This is just the dyadic interval - $\omega \in A_m^c \implies \omega \in \left[\omega: |n^{-1}s_n(\omega)| \geq 1/2\right]$. Every point in the same rank $n$ dyadic interval as $\omega$ must also belong to $A_m^c$. Now, we just have to find such an $\omega \in I$. Note, we can just find some dyadic interval of rank $n$ that is contained in $I$. Then, we can examine:
+	$$
+		\left[\omega: |{4n+1}^{-1}s_{4n + 1}(\omega)| \geq 1/2\right]
+	$$
+	We can take $\omega$ such that the first $n$ bits place $\omega$ in the dyadic interval of rank $n$ - then, the remaining bits can be $1$, and so $\omega \in I$, and $\omega \in \left[\omega: |(4n+1)^{-1}s_{4n + 1}(\omega)| \geq 1/2\right] \implies \omega \in A_m^c$. Note, this is because $(4n+1)^{-1}s_{4n + 1}(\omega) \geq \frac{3n + 1 - n}{4n + 1} = \frac{2n + 1}{4n} \geq 1/2$ Thus, $A_m^c$ is nowhere dense.
+	\\\\
+	The final part is to prove $N \subset \bigcup_m A_m$. Well, $\omega \in N$ essentially implies for $m$ large enough, $\omega \in A_m$. By the limit definition, we have that at some point, $\frac{1}{n}s_n(\omega)$ remains within $\epsilon$ of $0$. Just set $\epsilon = 1/2$, and we have it.
+	
+	\item According to a famous theorem of Baire, a nonempty interval is \textit{not} of the first category. Use this fact to prove that the negligible set $N^c = (0,1] - N$ is not of the first category.
+	\\\\
+	Proof by contradiction. Assume $N^c$ is of the first category. Then, $N$ and $N^c$ are both of the first category. Note, the countable union of sets of the first category are of the first category (stemming from the countable union of countable sets is still countable), and so this would imply $[0,1] = N \cup N^c$ is of the first category as well. This is a contradiction of the Theorem by Baire. Thus, $N^c$ is not of the first category. qed.
+\end{enumerate}
+
+\subsubsection{1.11} Prove:
+\begin{enumerate}
+	\item If $x$ is rational, (1.33) has only finitely many irreducible solutions. Recall, (1.33) is the formula:
+	$$
+		\left|x - \frac{p}{q}\right| < \frac{1}{q^2}
+	$$
+	Well, we have $x$ is some irreducible $\frac{p'}{q'}$. Thus, we have:
+	$$
+		\left|\frac{p'}{q'} - \frac{p}{q}\right| = \frac{|p'q-q'p|}{q'q}
+	$$
+	We note that $|p'q-q'p| \geq 1$. This is integer multiplication and subtraction, which results in an integer. The only case when this is less than $1$ is when it equals $0$ - or $p'q = pq'$. By different rationals, we can only have one of $q = q'$ or $p = p'$. If we are in that case, divide and not equal. If $q \neq q'$ and $p \neq p'$, then the above is equal only if $p' = q'$ and $q = p$ - in which case we are not irreducible. Anyway, this implies that:
+	$$
+		\left|\frac{p'}{q'} - \frac{p}{q}\right| \geq \frac{1}{q'q}
+	$$
+	And so, the number of rationals $\frac{p}{q}$ that satisfy $\frac{1}{q^2} \geq \frac{1}{q'q}$ is finite.
+	
+	\item Suppose that $\varphi(q) \geq 1$ and (1.35) holds for infinitely many pairs $p,q$ but only for finitely many relatively prime ones. Then $x$ is rational.
+\end{enumerate}
+
 \end{document}
 
 
