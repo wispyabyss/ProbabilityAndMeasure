@@ -48,7 +48,7 @@
 \section{Forward}
 This document will contain notes and solutions corresponding to Probability and Measure, Third Edition, by Patrick Billingsley  [\href{https://www.amazon.com/PROBABILITY-MEASURE-WILEY-MATHEMATICAL-STATISTICS/dp/8126517719/ref=sr_1_2?crid=3IVF52UANVNQC&keywords=Probability+and+Measure+by+Patrick+Billingsley&qid=1694149664&s=books&sprefix=probability+and+measure+by+patrick+billingsley%2Cstripbooks%2C143&sr=1-2}{amazon}].
 
-\section{Chapter 1.1 - Borel's Normal Number Theorem}
+\section{Section 1 - Borel's Normal Number Theorem}
 \subsection{Notes}
 For a complete understanding of probability, you need to understand an infinite number of events as well as a finite number of events. We try and present why that must be so here.
 
@@ -563,7 +563,7 @@ Looking at Problem 13.9 - it looks like, however, we might be able to get unifor
 	Proof by contradiction. Assume $N^c$ is of the first category. Then, $N$ and $N^c$ are both of the first category. Note, the countable union of sets of the first category are of the first category (stemming from the countable union of countable sets is still countable), and so this would imply $[0,1] = N \cup N^c$ is of the first category as well. This is a contradiction of the Theorem by Baire. Thus, $N^c$ is not of the first category. qed.
 \end{enumerate}
 
-\subsubsection{1.11} Prove:
+\subsubsection{1.11 Diophantine Approximation Properties} Prove:
 \begin{enumerate}
 	\item If $x$ is rational, (1.33) has only finitely many irreducible solutions. Recall, (1.33) is the formula:
 	$$
@@ -580,7 +580,47 @@ Looking at Problem 13.9 - it looks like, however, we might be able to get unifor
 	And so, the number of rationals $\frac{p}{q}$ that satisfy $\frac{1}{q^2} \geq \frac{1}{q'q}$ is finite.
 	
 	\item Suppose that $\varphi(q) \geq 1$ and (1.35) holds for infinitely many pairs $p,q$ but only for finitely many relatively prime ones. Then $x$ is rational.
+	\\\\
+	Just as a reminded, we have that (1.35) is:
+	$$
+		\left|x - \frac{p}{q}\right| < \frac{1}{q^2\varphi(q)}
+	$$
+	We have that by Theorem 1.4, if $x$ is irrational, there are infinitely many irreducible fractions $p/q$ such that:
+	$$
+		\left|x - \frac{p}{q}\right| < \frac{1}{q^2}
+	$$
+	Well, frankly, I don't understand what the "relatively prime" wording here is. Like, if $x$ is rational - we just set $p/q$ as $x$, and we have infinitely many \textit{reducible} rational fractions that satisfy $1.35$. I am just going to take the statement as "finitely many irreducible fractions satisfy 1.35." If $\varphi(q) = 1$, it is clear that this implies $x$ is rational - this is by Theorem 1.4, which says there are infinitely many irreducible solutions for irrational $x$.
+	\\\\
+	Now, we consider $\varphi(q) > 1$. And, well, what I think we want to note is the following. By part $1$ - a rational will always have finitely many solutions, for the $p/q$ that satisfy $\frac{1}{q^2\varphi(q)} > \frac{1}{q'q}$. So, the only distinction to make is that if $x$ is \textit{irrational} - well, then:
+	$$
+		\left|x - \frac{p}{q}\right| < \frac{1}{q^2\varphi(q)}
+	$$
+	Either has infinitely many, or $0$ solutions. Suppose irrational $x$ has finitely many solutions to the equation:
+	$$
+		\left|x - \frac{p}{q}\right| < \frac{1}{q^2\varphi(q)}
+	$$
+	I think we can make a contradiction like in Theorem 1.4. Suppose we had finitely many irreducible solutions - $p_1/q_1, \cdots, p_m/q_m$. Then, $|x - p_k/q_k|$ is positive, and we can take $Q$ where $Q^{-1}$ is smaller than each of the differences. Anyway, I don't actually want to do this.
+	
+	\item If $\varphi$ goes to infinity too rapidly, then $A_\sigma$ is negligible (Theorem 1.6). But however rapidly $\varphi$ goes to infinity, show that $A_\varphi$ is nonempty, even uncountable.  Note, this one has a solution in the book. I don't want to really go over it - I read the section as it was interesting, but these problems aren't something I'm interested in.
+	
 \end{enumerate}
+
+
+\section{Section 2 - Probability Measures}
+\subsection{Notes}
+\paragraph{Spaces} We first go over $\Omega$ - a space of points, where each $\omega \in \Omega$ is a possible result or outcome. What is interesting to me here is - the fact that $\Omega$ will be interesting from the point of view of \textit{geometry and analysis}, as well as the point of view of probability. In fact, we will probably be able to understand probability properties at times, because of the geometry/analysis properties of the underlying space. Read the section for some examples.
+\\\\
+A subset of $\Omega$ is an \textit{event}, and an element $\omega \in \Omega$ is a sample point.
+
+\paragraph{Assigning Probabilities} This section discusses assigning probabilities to events (subsets) in our space $\Omega$, in a way such that we will be able to get useful properties out of it. It goes over the unit interval $(0,1]$, and how we have assigned probabilities to disjoint (countable) unions of intervals. We could extend this to say negligible (metric notion) sets are probability $0$. However - how can we be sure we have assigned probabilities to all useful sets? The successful procedure, generally, is to assign probabilities to such a large amount of sets, that any set we could possibly think of would be covered (or, not think of, but usefully use).
+\\\\
+Another interesting point - can we not just assign a probability to every subset? Well, we will find later, no, we cannot, as this will remove an important property that we need from the spaces - countable additivity. We will go over this later. Given this - we will need to restrict ourselves to a subclass of the class of all subsets of a space.
+
+\paragraph{Classes of Sets} This section essentially outlines what our class of subsets should and shouldn't have, for it to satisfy some of the properties we noted above, and to be able to express some of the stuff we were doing previously.
+\\\\
+We can express the set of normal numbers as a countable union and intersection of disjoint intervals. This is done by expressing the limit definition ($\epsilon/\delta$) in terms of a countable intersection and union. It is pretty simple. However, this tells us - if we want a systematic treatment of section 1 - we need a class of sets that contains the intervals, and is closed under the formation of countable unions and intersections.
+\\\\
+A second interesting thing to note is - the singleton $\{x\}$ is a countable intersection $\bigcap_n (x-n^{-1},x]$. And so, if a class contains singletons, and is closed under \textit{arbitrary unions} - our class is essentially all the subsets of $\Omega$. As the theory does not apply to such an extensive class - our attention needs to be restricted to countable set theory operations.
 
 \end{document}
 

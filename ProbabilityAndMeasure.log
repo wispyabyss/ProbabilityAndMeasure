@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  23 DEC 2024 09:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  24 DEC 2024 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -371,12 +371,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
 
+[2]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 72.
 
-[2]
+
 Underfull \hbox (badness 10000) in paragraph at lines 84--90
 
  []
@@ -448,12 +449,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 224--230
 
  []
 
-
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 246--249
 
  []
 
-[9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 268.
@@ -610,17 +610,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 561--564
 
  []
 
-[23] [24] (./ProbabilityAndMeasure.aux)
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 582--585
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 591--595
+
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 611--614
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--618
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 619--624
+
+ []
+
+[25] [26] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: D735D9BAF8B57288CE8E50A800B54E8B;4479.
+(rerunfilecheck)             Checksum: CF10291CA4ACA5E5D6496FCCEE576B94;4963.
  ) 
 Here is how much of TeX's memory you used:
- 9810 strings out of 476191
- 152423 string characters out of 5812072
- 456603 words of memory out of 5000000
- 30421 multiletter control sequences out of 15000+600000
+ 9811 strings out of 476191
+ 152436 string characters out of 5812072
+ 457119 words of memory out of 5000000
+ 30422 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,7n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (24 pages).
+Output written on ProbabilityAndMeasure.pdf (26 pages).
