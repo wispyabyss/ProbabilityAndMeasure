@@ -620,7 +620,124 @@ Another interesting point - can we not just assign a probability to every subset
 \\\\
 We can express the set of normal numbers as a countable union and intersection of disjoint intervals. This is done by expressing the limit definition ($\epsilon/\delta$) in terms of a countable intersection and union. It is pretty simple. However, this tells us - if we want a systematic treatment of section 1 - we need a class of sets that contains the intervals, and is closed under the formation of countable unions and intersections.
 \\\\
-A second interesting thing to note is - the singleton $\{x\}$ is a countable intersection $\bigcap_n (x-n^{-1},x]$. And so, if a class contains singletons, and is closed under \textit{arbitrary unions} - our class is essentially all the subsets of $\Omega$. As the theory does not apply to such an extensive class - our attention needs to be restricted to countable set theory operations.
+A second interesting thing to note is - the singleton $\{x\}$ is a countable intersection $\bigcap_n (x-n^{-1},x]$. And so, if a class contains singletons, and is closed under \textit{arbitrary unions} - our class is essentially all the subsets of $\Omega$. As the theory does not apply to such an extensive class - in the uncountable $\Omega$ case - our attention needs to be restricted to countable set theory operations.
+
+\paragraph{Definition - Fields and $\sigma$ Fields} are sets of subsets of $\Omega$ with the following properties:
+\begin{enumerate}
+	\item $\Sigma \in F$
+	\item $A \in F \implies A^c \in F$
+	\item $A,B \in F$ implies $A \cup B \in F$ for a field, or countable unions for a $\sigma$ field
+\end{enumerate}
+Note, via DeMorgan's law, you have that the above definitions are equivalent for finite/countable intersections.
+
+\paragraph{Examples}
+\begin{enumerate}
+	\item The finite disjoint unions of subintervals on $\Omega = (0,1]$ is a field, denoted $B_0$. It is not, however, a $\sigma$ field, as it doesn't contain singletons (not a subinterval of the form $(]$), which is a countable intersection of intervals of the form $(]$.
+	
+	\item Finite and cofinite (ie, $A^c$ is finite) sets of $\Omega$ are a field. If $\Omega$ is finite, then they are a $\sigma$ field as well (as $F$ would be all subsets). If $\Omega$ is not finite - $F$ is not a $\sigma$ field.
+	
+	\item Countable and cocountable sets of $\Omega$ are a $\sigma$ field. If $\Omega$ is uncountable, there are sets that $F$ misses, however (via the axiom of choice).
+\end{enumerate}
+
+\paragraph{Definition - Generated Sigma Field} For a class of sets $A$, the smallest $\sigma$ field containing $A$ is called $\sigma(A)$. It is the (non empty) intersection of $\sigma$ fields containing $A$. Note, any arbitrary intersection (even uncountable) of $\sigma$ fields is a $\sigma$ field - just a definitional property. Some other properties of generated $\sigma$ fields are:
+\begin{enumerate}
+	\item $A \subset \sigma(A)$
+	\item $\sigma(A)$ is a $\sigma$ field
+	\item If $A \subset G$ and $G$ is a $\sigma$ field, $\sigma(A) \subset G$
+	\item If $F$ is a $\sigma$ field, $\sigma(F) = F$
+	\item If $A \subset A'$ then $\sigma(A) \subset \sigma(A')$
+	\item If $A \subset A' \subset \sigma(A)$, then $\sigma(A) = \sigma(A')$.
+\end{enumerate}
+
+\paragraph{Example - Borel Sets} Let $I$ be the subintervals of $\Omega = (0,1]$, and let $B = \sigma(I)$. Note that $I \subset B_0 \subset B$, and so $\sigma(B_0) = B$. Note that elements of $B$ are called the Borel sets. Note, it contains open sets on the unit interval (intersection of contained rational intervals).
+
+\paragraph{Probability Measures} A set function is a real-valued function defined on some class of subsets of $\Omega$. A set function $P$ on a field $F$ is a \textit{probability measure} if it satisfies the conditions:
+\begin{enumerate}
+	\item $0 \leq P(A) \leq 1$ for $A \in F$
+	\item $P(\emptyset) = 0, P(\Omega) = 1$
+	\item Countable additivity.
+\end{enumerate}
+Note, countable additivity implies finite additivity. Note, the conditions can be seen as slightly redundant (ie, they can be relaxed, and still imply the same things).
+
+\paragraph{Probability Space} If $F$ is a $\sigma$ field on $\Omega$, and $P$ is a probability measure on $F$, the triple $(\Omega,F,P)$ is called a \textit{probability measure space}, or simply \textit{probability space}. A support for $P$ is any $F$ set $A$ for which $P(A) = 1$.
+
+\paragraph{Discrete Probability Space} If $\Omega$ is countable, and $p(\omega)$ is a nonnegative function on $\Omega$, which sums to $1$ for all $\omega$. Then, $P(A) = \sum_{\omega \in A} p(\omega)$ is a probability measure, and so $(\Omega,F,P)$ is a probability space. This forms the basis for discrete probability theory.
+\\\\
+An interesting note: why do we call it discrete probability theory, but not \textit{countable probability theory}? Well, I think the reason for this is the following. As noted earlier, and within my measure theory notes - we cannot have a \textit{discrete} probability space on an uncountable space. This is because, any measure which assigns a value to each subset of an uncountable space, cannot have countable additivity. And so - a \textit{discrete probability space} implies that the space $\Omega$ must be \textit{countable}.
+\\\\
+For $P$ probability measure on a field $F$, we can easily prove the following properties:
+\begin{enumerate}
+	\item $P(A) \leq P(B)$ if $A \subset B$
+	\item $P(A^c) = 1 - P(A)$
+	\item $P(A) + P(B) = P(A \cup B) + P(A \cap B)$
+	\item $P(A \cup B) = P(A) + P(B) - P(A \cap B)$
+	\item Inclusion-exclusion formula, which is just induction on the above formula.
+	\item Finite subadditivity
+	\item Continuity from below: If $A_n$ and $A$ lie in $F$ and $A_n \uparrow A$, then $P(A_n) \uparrow P(A)$. Note, the $\uparrow$ notation implies inclusion and total union is $A$, whereas implies monotone increasing up to $P(A)$ in the limit.
+	\item Continuity from above: If $A_n$ and $A$ line in $F$ and $A_n \downarrow A$, then $P(A_n) \downarrow P(A)$.
+	\item Countable subadditivity, which stems from the two easily proved above properties.
+	\item Finite additivity and $A_n \downarrow \emptyset$ implies $P(A_n) \downarrow 0$ implies countable additivity.
+\end{enumerate}
+
+\paragraph{Lebesgue Measure on the Unit Interval}
+In this section - we essentially say that our measure $|I| = |(a,b]| = b - a = \lambda(I)$ is a \textit{finitely additive} probability measure on $B_0$, the set of finite unions of disjoint intervals $I$. However, we are also able to extend this - and say that $\lambda$ is a \textit{countably additive probability measure} on our \textit{field} of $B_0$. This involves using Theorem 1.3 multiple times, where we concluded that if $A = \bigcup_{k} I_k$ for disjoint $I_k$, then:
+$$
+	\lambda(A) = \sum_k \lambda(I_k)
+$$
+However, the tricky bit comes in extending this to $A = \bigcup_k A_k$ for $A_k \in B_0$. However, at the end of the day, each of the $A$ and $A_k$ can be expressed as a \textit{finite union of disjoint intervals}, and so we can just break down the summations to where we can use Theorem 1.3 iii on a countable union of disjoint intervals. None of these theorems are particularly ground breaking.
+\\\\
+However, I like the note at the end - consider what we might have to do to \textit{extend} $\lambda$ to the Borel sets $B = \sigma(B_0)$, and hopefully prove that $\lambda$ is still countably additive on such a set. Note, to prove finite additivity on a field - we just had to rely on basic elementary properties of the real number system. However, to prove countable additivity on our field - we had to rely on something deeper about the real numbers - namely, \textit{compactness of $[a,b]$}. To extend to $B$, however, and still prove countable additivity - we will need some \textit{new property}, ultimately.
+
+\paragraph{Sequence Space}
+Note, everything here has to do with $S$, a \textit{finite} set of points, regarded as \textit{outcomes} of a simple observation, or experiment. Note - we can extend this to \textit{multiple repeated experiments} in the following way. However, for me - I often had trouble with understanding how a \textit{sequence of events} could be independent. Well - if we have $S$ is a finite possible outcomes of events, we could just allow our $\sigma$ algebra to be the \textit{sequence space} - and then, different coordinates \textit{should be independent}. Note, I haven't really proved that statement, but it seems to me to be intuitive enough.
+\\\\
+Let $\Omega = S^\infty$ be the space of all infinite sequences:
+$$
+	\omega = (z_1(\omega), z_2(\omega), \cdots)
+$$ 
+of elements of $S$: $z_k(\omega) \in S$ for all $\omega \in S^\infty$ and $k \geq 1$. The sequence above can be viewed as the result of repeating infinitely often the simple experiment represented by $S$. For $S = \{0,1\}$, the space $S^\infty$ is closely related to the unit interval. Note, I think this is the case for $S = \{0,1, \cdots, n-1\}$ as well - just take $S$ to be some base $n$ representation of the numbers, and we can again identify $S^\infty$ with the unit interval. See problems 1.4 and 1.5, for example.
+\\\\
+\paragraph{Definition - Coordinate Functions} Note that each $z_k(\cdot)$ is a \textit{coordinate function}, or \textit{natural projection}, or just \textit{projection function}. Such a function takes an element in $S^\infty$, and returns one in $S$. Let $S^n = S \times \cdots \times S$ be the Cartesian product of $n$ copies of $S$ - it consists of the $n$ long sequences $(u_1, \cdots, u_n)$ of elements of $S$. For such a sequence, the set:
+$$
+	\left\{\omega : (z_1(\omega), \cdots, z_n(\omega)) = (u_1, \cdots, u_n)\right\}
+$$
+Represents the event that the first $n$ repetitions of the experiment give the outcomes $u_1, \cdots, u_n$ in sequence.
+
+\paragraph{Definition: Cylinder of Rank $n$} is a set of the form:
+$$
+	A = \left\{\omega : (z_1(\omega), \cdots, z_n(\omega)) \in H\right\}
+$$
+Note - colloquially, I like to say - cylinders of rank $n$ are just \textit{restrictions} on the first $n$ experiments. Note that $H \subset S^n$, and that if $H$ is nonempty, $A$ is also nonempty. The previous example, where $|H| = 1$, is called a \textit{thin cylinder}.
+\\\\
+Define $C_0$ as the class of cylinders of all ranks. We have that $C_0$ is a \textit{field}. $S^\infty$ and $\emptyset$ are within $C_0$, for $H = S^n,\emptyset$. If $H$ is replaced by $S^n - H$, we have $C_0$ is closed under complements. We also have closed under finite unions - note just that the union of two cylinders of rank $n \leq m$ is just a restriction on the first $m$ experiments, and is also a cylinder.
+
+\paragraph{Definition: Probability Measure on the Field of Cylinders} Let $p_u$, $u \in S$ be probabilities on $S$ - nonnegative and summing to $1$. Define a set function $P$ on $C_0$ in this way:
+$$
+	P(A) = \sum_{(u_1, \cdots, u_n) \in H} p_{u_1} \cdots p_{u_n}
+$$
+We have that $P$ is a \textit{probability measure}, with \textit{finite additivity}. $P(S^\infty) = P(A) = 1$, where $A$ is the cylinder with $H = S^n$. Clearly, $0 \leq P(A) \leq 1$, and $P(\emptyset) = 0$. We just need finite additivity - which can also be proved easily, but I won't give it here, just read the book. This is called a \textit{product measure}, given that the definition just is a product of the individual probabilities on $S$.
+
+\paragraph{Theorem 2.3} Every finitely additive probability measure on the field $C_0$ of cylinders in $S^\infty$ is in fact countably additive. Note - this theorem is easy to prove, which we will, after stating the following lemma.
+
+\paragraph{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty} Using this lemma, we quickly prove Theorem 2.3. Recall, we had that if $A_n \downarrow \emptyset$ implies that $P(A_n) \downarrow 0$, for a finitely additive probability measure, then the probability measure is countably additive as well. Take $A_n \downarrow \emptyset$. Note, each $A_n$ is a cylinder in $C_0$. Assume the lemma is true. Now, assume that $A_n$ does \textit{not} converge to $0$. Then, $P(A_n) \geq \epsilon > 0$ for some $\epsilon$. But, this implies that $A_n$ is nonempty. By the lemma, this makes the assumption $A_n \downarrow \emptyset$ a contradiction, and so we must have $P(A_n) \downarrow 0$. qed.
+
+\paragraph{Proof of Lemma} Note, the proof of the lemma in the book is interesting. It is essentially a diagonalization argument, and taking subsequences of sequences that contain an element repeating an infinite number of times. It becomes easy to note that the $\omega$ containing these elements appearing infinite number of times is within the intersection of each $A_n$, and so $A$ is nonempty. However, I want to try and prove the more general argument.
+\\\\
+By Tychonoff's theorem, we have that the Cartesian product of countable compact topological spaces is compact as well, with the product topology. Note, we can take the discrete topology on $S$, and as $S$ is finite, we have that it must be compact as well. For any open cover of $S$, we can take a finite subcover, by identifying each finite number of elements with one of the sets in the open cover that contains it. And so, we have that $S^\infty$ must be compact as well, by Tychonoff's theorem.
+\\\\
+Note, for a proof of Tychonoff's theorem, see my Topology notes. We now note that each $A_n \in C_0$ is a set within the product topology as well. Each $A_n$ can be viewed as the intersection of open cylinders as defined in my topology book (the only difference being that there, open cylinders are restrictions on one coordinate, rather than restrictions on the first $n$ coordinates). And so, the proof of the lemma comes down to the proof of the following fact: For $A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots$ closed nonempty sets on a compact topological space, we must have that:
+$$
+	A = \bigcap_{n=1}^\infty A_n
+$$
+is nonempty. Proof by contradiction. Assume that $A = \emptyset$. Then, we must have that $A_1^c, A_2^c, \cdots$ is an open cover of $S^\infty$. By compactness, there is a finite subcover, which we will just identify (wlog) the sets $A_1^c, A_2^c, \cdots, A_n^c$. Thus, we have:
+$$
+	S^\infty = A_1^c \cup \cdots \cup A_n^c
+$$
+However, as $A_1 \supseteq A_2 \supseteq \cdots \supseteq A_n$, we must have that $A_n^c \supseteq \cdots \supseteq A_2^c \supseteq A_1^c$, which tells us:
+$$
+	S^\infty = A_n^c \implies A_n = \emptyset
+$$
+This contradicts $A_n$ being nonempty, and so, we must have $A$ is nonempty. qed.
 
 \end{document}
 
