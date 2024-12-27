@@ -739,7 +739,70 @@ $$
 $$
 This contradicts $A_n$ being nonempty, and so, we must have $A$ is nonempty. qed.
 
+\paragraph{Extended Sequence Measure} In Chapter 3, we will learn how to extend a countably additive probability measure on a field $F$ to a countably additive probability measure on the sigma field $\sigma(F)$. The term \textit{probability measure} more accurately refers to the extended $P$. We have that $C_0$ is the field above, and we let $C = \sigma(C_0)$. Thus, $(S^\infty, C, P)$ will be a probability space that we will look at later, an important one.
+
+\subsection{Problems}
+\subsubsection{2.1} Define $x \vee y = \max(x,y)$, and for a collection $\{x_\alpha\}$ define:
+$$
+	\bigvee_\alpha x_\alpha = \sup_\alpha x_\alpha
+$$
+Similarly, define $x \wedge y = \min(x,y)$, and for a collection $\{x_\alpha\}$ define:
+$$
+	\bigwedge_\alpha x_\alpha = \inf_\alpha x_\alpha
+$$
+Prove that $I_{A \cup B} = I_A \vee I_B$, $I_{A \cap B} = I_A \wedge I_B$, $I_{A^c} = 1 - I_A$, and $I_{A \Delta B} = |I_A - I_B|$, in the sense that there is equality at each point of $\Omega$. Show that $A \subset B$ if and only if $I_A \leq I_B$ pointwise. Check the equation:
+$$
+	x \wedge (y \wedge z) = (x \wedge y) \vee (x \wedge z)
+$$
+And deduce the distributive law $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$. By similar arguments prove that:
+$$
+	A \cup (B \cap C) = (A \cup B) \cap (A \cup C)
+	\quad\quad\quad
+	A \Delta C \subset (A \Delta B) \cup (B \Delta C)
+$$
+$$
+	\left(\bigcup_n A_n\right)^c = \bigcap_n A_n^c
+	\quad\quad\quad
+	\left(\bigcap_n A_n\right)^c = \bigcup_n A_n^c
+$$
+I think, the first thing to note is - what is the $I_A$ notation? It is just the indicator notation.
+\begin{enumerate}
+\item $I_{A \cup B} = I_A \vee I_B$ is clear, as if a point is in either $A$ or $B$, the maximum between $0$ and $1$ is $1$.
+
+\item $I_{A \cap B} = I_A \wedge I_B$ also clear
+
+\item $I_{A^c} = 1 - I_A$ Also clear
+
+\item $I_{A \Delta B} = |I_A - I_B|$ If $\omega$ is in $A \delta B$, it is in one, and not the other. Thus, $|I_A - I_B| = |1| = |-1| = 1$. 
+
+\item $A \subset B$ if and only if $I_A \leq I_B$ pointwise. If $x \in A$ and $x \in B$, then $1 \leq 1$. If $x \in A$, but $x \not \in B$, we have $1 \not\leq 0$. 
+
+\item The remaining points are clear. Identify the $\wedge$ or $\vee$ with the corresponding set operation.
+
+\end{enumerate}
+
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
