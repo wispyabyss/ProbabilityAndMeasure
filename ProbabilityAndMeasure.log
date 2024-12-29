@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  27 DEC 2024 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  29 DEC 2024 11:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -335,13 +335,13 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(./ProbabilityAndMeasure.toc)
+(./ProbabilityAndMeasure.toc [1
+
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `ProbabilityAndMeasure.toc'.
 
- [1
 
-{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 56--59
 
  []
@@ -398,17 +398,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 159--163
 
  []
 
-
+[6]
 Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 191--195
 
  []
 
-[7]
+
 Underfull \hbox (badness 10000) in paragraph at lines 206--210
 
  []
@@ -428,6 +428,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 246--249
 
  []
 
+[10]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 268.
@@ -441,19 +442,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 268--271
 
  []
 
-[10]
+
 Underfull \hbox (badness 10000) in paragraph at lines 273--277
 
  []
 
-
+[11]
 Overfull \hbox (33.52278pt too wide) in paragraph at lines 289--291
 \T1/cmr/m/n/12 Note that $\OML/cmm/m/it/12 I[]$ \T1/cmr/m/n/12 cov-ers $[]$. Ta
 ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/cmr/m/n/12 . By def-i-ni-tion,
  we have $[]$
  []
 
-[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 299.
@@ -462,17 +462,17 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 299.
 
-
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 305--309
 
  []
 
-[12]
+
 Underfull \hbox (badness 10000) in paragraph at lines 312--315
 
  []
 
-
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 327--331
 
  []
@@ -482,7 +482,7 @@ Overfull \hbox (21.78127pt too wide) detected at line 333
 \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
  []
 
-[13]
+
 Overfull \hbox (52.66357pt too wide) detected at line 336
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
  []
@@ -492,12 +492,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--349
 
  []
 
-[14]
+[14] [15]
 Underfull \hbox (badness 10000) in paragraph at lines 375--378
 
  []
 
-[15]
+
 Underfull \hbox (badness 10000) in paragraph at lines 379--382
 
  []
@@ -507,6 +507,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 383--386
 
  []
 
+[16]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 388.
@@ -519,7 +520,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 388.
 
-[16]
+[17]
 Overfull \hbox (4.17073pt too wide) detected at line 427
 [][] \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )\O
 ML/cmm/m/it/12 d! \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 M[]\OT1/cmr/m/n/12 (0) = \
@@ -527,7 +528,7 @@ OML/cmm/m/it/12 n [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^C
 \OT1/cmr/m/n/12 1 = \OML/cmm/m/it/12 n
  []
 
-[17]
+
 Overfull \hbox (33.5807pt too wide) detected at line 446
 \OT1/cmr/m/n/12 = [] [](\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] [] + [] []
 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] []
@@ -559,22 +560,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 517--522
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 523--528
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 523--528
-
- []
-
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 546--550
+Underfull \hbox (badness 10000) in paragraph at lines 523--528
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--528
 
  []
 
 [22]
+Underfull \hbox (badness 10000) in paragraph at lines 546--550
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 556--560
 
  []
@@ -599,7 +600,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 611--614
 
  []
 
-
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 615--618
 
  []
@@ -614,7 +615,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 619--624
 
  []
 
-[25] [26]
+[26] [27]
 Underfull \hbox (badness 10000) in paragraph at lines 664--670
 
  []
@@ -624,7 +625,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 664--670
 
  []
 
-[27] [28]
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 686--690
 
  []
@@ -634,17 +635,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 692--695
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 697--700
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 697--700
-
- []
-
 [29]
+Underfull \hbox (badness 10000) in paragraph at lines 697--700
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 697--700
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 709--713
 
  []
@@ -659,22 +660,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 724--729
 
  []
 
-[31] [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 784.
- [33]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 784.
+[31] [32] [33]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 799.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 799.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 799.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 813.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 813.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 813.
+
+[34]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 823.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `superscript' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 838.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\sigma' on input line 844.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 844.
+
+[35]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 852.
+ [36]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 852.
  (./ProbabilityAndMeasure.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 784.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 784.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 852.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 852.
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 077FF1056EFB644500A2085AA2E4FCAF;1794.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 784.
+(rerunfilecheck)             Checksum: 991C4190E6E80BD661CE176282DBED62;2579.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 852.
  ) 
 Here is how much of TeX's memory you used:
- 6560 strings out of 492649
- 93121 string characters out of 6129622
- 187069 words of memory out of 5000000
- 10233 multiletter control sequences out of 15000+600000
+ 6588 strings out of 492649
+ 93397 string characters out of 6129622
+ 189069 words of memory out of 5000000
+ 10241 multiletter control sequences out of 15000+600000
  19143 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  28i,7n,31p,1118b,458s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -698,10 +781,10 @@ e/2018/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/20
 18/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2018
 /texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on ProbabilityAndMeasure.pdf (33 pages, 347660 bytes).
+Output written on ProbabilityAndMeasure.pdf (36 pages, 357068 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
- 139 named destinations out of 1000 (max. 500000)
- 185 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 524 PDF objects out of 1000 (max. 8388607)
+ 462 compressed objects within 5 object streams
+ 159 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
