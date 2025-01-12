@@ -664,6 +664,8 @@ Note, countable additivity implies finite additivity. Note, the conditions can b
 \paragraph{Discrete Probability Space} If $\Omega$ is countable, and $p(\omega)$ is a nonnegative function on $\Omega$, which sums to $1$ for all $\omega$. Then, $P(A) = \sum_{\omega \in A} p(\omega)$ is a probability measure, and so $(\Omega,F,P)$ is a probability space. This forms the basis for discrete probability theory.
 \\\\
 An interesting note: why do we call it discrete probability theory, but not \textit{countable probability theory}? Well, I think the reason for this is the following. As noted earlier, and within my measure theory notes - we cannot have a \textit{discrete} probability space on an uncountable space. This is because, any measure which assigns a value to each subset of an uncountable space, cannot have countable additivity. And so - a \textit{discrete probability space} implies that the space $\Omega$ must be \textit{countable}.
+
+\paragraph{Massed Discrete Probability Space} This just refers to the notion that $\Omega$ need not be countable - however, there are finitely/countably many $\omega_k$ with corresponding masses $m_k$, such that $P(A) = \sum_{\omega_k \in A} m_k$ for $A$ in $F$. Here, $P$ is discrete, but the space need not be. We can write $P(A) = \sum_k m_k I_A(\omega_k)$.
 \\\\
 For $P$ probability measure on a field $F$, we can easily prove the following properties:
 \begin{enumerate}
@@ -719,13 +721,13 @@ We have that $P$ is a \textit{probability measure}, with \textit{finite additivi
 
 \paragraph{Theorem 2.3} Every finitely additive probability measure on the field $C_0$ of cylinders in $S^\infty$ is in fact countably additive. Note - this theorem is easy to prove, which we will, after stating the following lemma.
 
-\paragraph{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty} Using this lemma, we quickly prove Theorem 2.3. Recall, we had that if $A_n \downarrow \emptyset$ implies that $P(A_n) \downarrow 0$, for a finitely additive probability measure, then the probability measure is countably additive as well. Take $A_n \downarrow \emptyset$. Note, each $A_n$ is a cylinder in $C_0$. Assume the lemma is true. Now, assume that $A_n$ does \textit{not} converge to $0$. Then, $P(A_n) \geq \epsilon > 0$ for some $\epsilon$. But, this implies that $A_n$ is nonempty. By the lemma, this makes the assumption $A_n \downarrow \emptyset$ a contradiction, and so we must have $P(A_n) \downarrow 0$. qed.
+\paragraph{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty} Using this lemma, we quickly prove Theorem 2.3. Recall, we had that if $A_n \downarrow \emptyset$ implies that $P(A_n) \downarrow 0$, for a finitely additive probability measure, then the probability measure is countably additive as well. Take $A_n \downarrow \emptyset$. Note, each $A_n$ is a cylinder in $C_0$. Assume the lemma is true. Now, assume that $A_n$ does \textit{not} converge to $0$. Then, $P(A_n) \geq P(\emptyset) \geq \epsilon > 0$ for some $\epsilon$. But, this implies that $A_n$ is nonempty. By the lemma, this makes the assumption $A_n \downarrow \emptyset$ a contradiction, and so we must have $P(A_n) \downarrow 0$. Thus, we indeed have that if $A_n \downarrow \emptyset$, we must have $P(A_n) \downarrow 0$, and by our previous fact, the finitely additive probability measure on our \textit{field} $C_0$ is indeed countably additive. qed.
 
 \paragraph{Proof of Lemma} Note, the proof of the lemma in the book is interesting. It is essentially a diagonalization argument, and taking subsequences of sequences that contain an element repeating an infinite number of times. It becomes easy to note that the $\omega$ containing these elements appearing infinite number of times is within the intersection of each $A_n$, and so $A$ is nonempty. However, I want to try and prove the more general argument.
 \\\\
 By Tychonoff's theorem, we have that the Cartesian product of countable compact topological spaces is compact as well, with the product topology. Note, we can take the discrete topology on $S$, and as $S$ is finite, we have that it must be compact as well. For any open cover of $S$, we can take a finite subcover, by identifying each finite number of elements with one of the sets in the open cover that contains it. And so, we have that $S^\infty$ must be compact as well, by Tychonoff's theorem.
 \\\\
-Note, for a proof of Tychonoff's theorem, see my Topology notes. We now note that each $A_n \in C_0$ is a set within the product topology as well. Each $A_n$ can be viewed as the intersection of open cylinders as defined in my topology book (the only difference being that there, open cylinders are restrictions on one coordinate, rather than restrictions on the first $n$ coordinates). And so, the proof of the lemma comes down to the proof of the following fact: For $A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots$ closed nonempty sets on a compact topological space, we must have that:
+Note, for a proof of Tychonoff's theorem, see my Topology notes. We now note that each $A_n \in C_0$ is a set within the product topology as well. Each $A_n$ can be viewed as the intersection of open cylinders as defined in my topology book (the only difference being that there, open cylinders are restrictions on one coordinate, rather than restrictions on the first $n$ coordinates). And so, the $A_n$ in question in the theorem are also elements of the topological space, and so any cover of $S^\infty$ by sets like $A_n$ must have a finite subcover. And so, the proof of the lemma comes down to the proof of the following fact: For $A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots$ closed nonempty sets on a compact topological space, we must have that:
 $$
 	A = \bigcap_{n=1}^\infty A_n
 $$
@@ -847,7 +849,17 @@ $$
 	\text{ a countable subclass $A_B$ of $A$ such that $B \in \sigma(A_B)$}
 	\right\}
 $$
-Note that $G = \sigma(A)$. This can be done by showing 1. $A \subset\ G$ (this is clear). 2. $G$ is a $\sigma$ algebra (this should also be clear). 3. $\sigma(A) \subseteq G$ by 1 and 2. 4. $G \subseteq \sigma(A)$ by definition. Thus, every $B \in \sigma(A)$ has a countable subclass $A_B$ of $A$ such that $B \in \sigma(A)$.
+Note that $G = \sigma(A)$. This can be done by showing 
+\begin{enumerate}
+	\item We have that $A \subset G$. We have that for $B \in A$, $B \in \sigma(B)$, where $A_B = B$ is a countable subclass of $A$.
+	
+	\item $G$ is a $\sigma$ algebra. First, note that $\emptyset,\Omega \in G$, as $\emptyset,\Omega \in \sigma(B)$ for $B \in A$. We have closed under countable unions, as for $B_1, B_2, \cdots \in G$, we have that the union is within $\sigma(A_{B_1} \cup A_{B_2} \cup \cdots)$, where $A_{B_1} \cup A_{B_2} \cup \cdots$ is a countable subclass of $A$. Finally, we have for $B \in G$, we must have that $B^c \in \sigma(A_B) \implies B \in G$.
+	
+	\item We have $\sigma(A) \subseteq G$ by the above two points.
+	
+	\item We have that $G \subseteq \sigma(A)$, by definition, as $G$ only consists of elements within $\sigma(A)$
+\end{enumerate}
+Thus, every $B \in \sigma(A) \implies B \in G$. Thus, every $B \in \sigma(A)$ has a countable subclass $A_B$ of $A$ such that $B \in \sigma(A_B)$. qed.
 
 \end{document}
 
