@@ -958,10 +958,61 @@ The steps are actually simple. 1. Find countably many disjoint sets. 2. Create u
 	\item Now let $F$ be the $\sigma$ field consisting of the countable and the cocountable sets in an uncountable $\Omega$, and define $P$ analogously. Show that $P$ is countably additive.
 	\\\\
 	Union of countable countable sets is still countable. No such union of disjoint cocountable sets. Union of countable countable sets with one cocountable set is cocountable. qed.
-	
-	
-	
 \end{enumerate} 
+
+\subsubsection{2.14 First Category $\sigma$ Field} In $(0,1]$ let $F$ be the class of sets that either $(i)$ are of the first category (countable union of sets that are nowhere dense, which are sets $E$ for which each interval $I$ contains an interval $J$ that does not meet $E$) or $(ii)$ have complement of the first category. Show that $F$ is a $\sigma$ field.
+\\\\
+The empty set is of the first category, and the complement of $(0,1]$ (the empty set) is of the first category. Clearly complements of sets in $F$ are still in $F$, as this is definitional. Finally, we consider countable unions of sets in $F$. If each set is first countable, the countable union of a countable amount of nowhere dense sets is still a countable union of nowhere dense sets, and so the countable union of first countable sets is first countable.
+\\\\
+Now, we assume at least one of the sets in our countable union has a complement in the first category. Note, the complement of the countable union must be contained within the complement of our first set, and so the complement of the countable union is in the first category as well. Thus, the countable union in this case is also within $F$. In all cases, $F$ contains countable unions of elements of $F$. Thus, we can conclude $F$ is a $\sigma$ field.
+\\\\
+For $A$ in $F$, take $P(A)$ to be $0$ in case $(i)$ and $1$ in case $(ii)$. Show that $P$ is countably additive.
+\\\\
+Countably additive only needs to apply for disjoint sets. For disjoint sets in case $(i)$ - the countable union of such disjoint sets is still in case $(i)$, and so $P(\bigcup A_i) = 0 = \sum 0 = \sum P(A_i)$.
+\\\\
+Now, we note that we cannot have 2 disjoint sets in case $(ii)$. Assume $A$ and $B$ are disjoint, and the complements of $A$ and $B$ are both first countable. We note that for any two disjoint sets - we must have $\Omega = A^c \cup B^c$. Take $x \in \Omega$. Assume $x \not\in A^c$. Thus, $x \in A \implies x \not\in B \implies x \in B^c$. So, $x \in A^c$ or $x \in A$, in which case, $x \in B^c$. However, note that $A^c \cup B^c$ is still first countable, which implies that $(0,1]$ is first countable. However, in an earlier problem, we noted that by Baire, a nonempty interval is \textit{not} of the first category. And so, this is a contradiction, and we cannot have disjoint $A$ and $B$ whose complements are first countable.
+\\\\
+So, the only remaining case for countably additive is one set of case $(ii)$ and a countable amount of sets of case $(i)$ which are all disjoint. As noted above - the union of such sets is case $(ii)$, and we have:
+$$
+	P\left(\bigcup A_i\right) = 1 = 1 + 0 = P(A_1) + \sum_{i=2}^\infty P\left(A_i\right) = \sum P(A_i)
+$$
+And thus $P$ is countably additive. qed.
+
+\subsubsection{2.15 Differences between $B_0$ and $C_0$} On the field $B_0$ in $(0,1]$ defined $P(A)$ to be $1$ or $0$ according as there does or does not exist some positive $\epsilon_A$ (depending on $A$) such that $A$ contains the interval $\bigg(\frac{1}{2}, \frac{1}{2} + \epsilon_A\bigg]$. Show that $P$ is finitely but not countably additive. No such example is possible for the field $C_0$ in $S^\infty$ (as by Theorem 2.3, every finitely additive probability measure on the field $C_0$ must be countably additive. This shows the opposite for $B_0$).
+\\\\
+We let sets of case $(i)$ be those for which $P(A) = 0$, and those of case $(ii)$ be those for which $P(A) = 1$. Note, for finitely additive - we are essentially just doing the same shit we did above. Two sets of case $(i)$ - there finite union must also be of case $(i)$. As for why this is the case:
+\\\\
+Assume that $A$ And $B$ are of case $(i)$, but $A \cup B$ is of case $(ii)$, ie, there is some positive $\epsilon_{A \cup B}$ such that:
+$$
+	\bigg(\frac{1}{2}, \frac{1}{2} + \epsilon_{A \cup B}\bigg] \subseteq A \cup B
+$$
+We will show that this creates a contradiction. For both $A$ and $B$, as they are of case $(i)$, for every $\epsilon > 0$, there is a point $x_{\epsilon A}$ and $x_{\epsilon B}$ such that:
+$$
+	x_{\epsilon A}, x_{\epsilon B} \in \bigg(\frac{1}{2}, \frac{1}{2} + \epsilon\bigg] 
+	\quad\quad\quad x_{\epsilon A} \not\in A
+	\quad\quad\quad x_{\epsilon B} \not\in B
+$$
+For the entire interval to be contained, we must have for every $\epsilon < \epsilon_{A \cup B}$, we also have:
+$$
+	x_{\epsilon A} \in B
+	\quad\quad\quad
+	x_{\epsilon B} \in A
+$$
+This creates a contradiction. As $A$ and $B$ are within $B_0$, they must be finite unions of disjoint intervals. Note, a point itself is not actually within $B_0$, and so these points $x_{\epsilon A}$ must be contained within some interval of $B$. However, this entire interval is not within $\bigg(\frac{1}{2}, \frac{1}{2} + \epsilon\bigg]$, and so it has some starting point $1/2 < \epsilon'_B$, and $A$ similarly has a starting point $1/2 < \epsilon'_A$. We can take a new $\epsilon = \min(\epsilon'_A,\epsilon'_B)$, and find new points that must not be contained in $A$ and $B$, but create corresponding intervals in the other set, and so on. This can be done a countably infinite number of times. This process thus implies that $A$ and $B$ must both be disjoint unions of countable sets - which contradicts $A,B \in B_0$. Thus, we must have that $A \cup B$ must be of case $(i)$. Thus, we find:
+$$
+	P(A \cup B) = 0 = P(A) + P(B)
+$$
+We can use induction to prove for any finite disjoint union of case $(i)$ sets, the measure is finitely countable. Now, we consider case $(ii)$. Like above, it is clear that there is no disjoint union of case $(ii)$ sets. That is because, we just take the minimum of $\epsilon_A,\epsilon_B$, and clearly, both intervals are in both sets. So, the final case we consider is a case $(ii)$ set with multiple case $(i)$ sets. Again, this finite disjoint union is of case $(ii)$, and so:
+$$
+	P(A \cup B_1 \cup \cdots \cup B_n) = 1 = 1 + 0 + \cdots + 0 = P(A) + P(B_1) + \cdots + P(B_n)
+$$
+The final point to make is that $P$ is not countably additive. We can define:
+$$
+	A_n = \bigg(\frac{1}{2} + \frac{1}{n+2},1\bigg]
+$$
+Each $A_n$ is clearly of case $(i)$. However, the countable union of $A_n$ is $(1/2,1]$, and so is of case $(ii)$. Thus, we do not have countable additivity, as this would give us a contradiction that $1 = 0$. Thus, $P$ is not countably additive.
+\\\\
+I think the most important part is why this is interesting. We noted that if $S = \{0,1\}$, then $C_0$ is essentially a field on $(0,1]$, as we can identify each of the infinite sequences with a point in $(0,1]$. And, initially, the sets in the field $C_0$ look like they contain intervals and their unions. However, there must be something substantially different about the field and/or measure on $C_0$, when compared with $B_0$.
 
 \end{document}
 

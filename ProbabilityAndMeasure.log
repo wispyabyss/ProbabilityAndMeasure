@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  13 JAN 2025 09:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  14 JAN 2025 09:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -856,17 +856,99 @@ Underfull \hbox (badness 10000) in paragraph at lines 958--961
 
  []
 
-[41] (./ProbabilityAndMeasure.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 963.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 963.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 963.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--976
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 963--976
+
+ []
+
+[41]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 981.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 981.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 981.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 981.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 981.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 981.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--986
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--986
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 1012--1016
+
+ []
+
+[43] [44] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: BEA3D7FF137B57B3AE6C31D7BB21D7E2;8796.
+(rerunfilecheck)             Checksum: 630AA52F5D6426A48307A821646BA29A;9237.
  ) 
 Here is how much of TeX's memory you used:
  9812 strings out of 476191
  152449 string characters out of 5812072
- 464088 words of memory out of 5000000
+ 464547 words of memory out of 5000000
  30423 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,7n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (41 pages).
+Output written on ProbabilityAndMeasure.pdf (44 pages).
