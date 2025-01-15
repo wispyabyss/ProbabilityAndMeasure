@@ -26,6 +26,7 @@
 \newcommand{\lcal}{\mathcal{L}}
 \newcommand{\ucal}{\mathcal{U}}
 \newcommand{\tcal}{\mathcal{T}}
+\newcommand{\dcal}{\mathcal{D}}
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\VCdim}{\text{VCdim}}
 \newcommand{\st}{\text{s.t.}}
@@ -48,6 +49,8 @@
 	
 \section{Forward}
 This document will contain notes and solutions corresponding to Probability and Measure, Third Edition, by Patrick Billingsley  [\href{https://www.amazon.com/PROBABILITY-MEASURE-WILEY-MATHEMATICAL-STATISTICS/dp/8126517719/ref=sr_1_2?crid=3IVF52UANVNQC&keywords=Probability+and+Measure+by+Patrick+Billingsley&qid=1694149664&s=books&sprefix=probability+and+measure+by+patrick+billingsley%2Cstripbooks%2C143&sr=1-2}{amazon}].
+\\\\
+A note on how I will do the questions. I want to answer every question, but there really are a lot of them. So, I think I will tackle them this way. To get through a chapter, I'll go through every question that is in the back of the book (as they are the most important, and might be needed at a later time). Then, I'll go maybe over 3-4 more. Then, I'll answer one question I skipped from the previous chapters.
 
 \section{Section 1 - Borel's Normal Number Theorem}
 \subsection{Notes}
@@ -1013,6 +1016,91 @@ $$
 Each $A_n$ is clearly of case $(i)$. However, the countable union of $A_n$ is $(1/2,1]$, and so is of case $(ii)$. Thus, we do not have countable additivity, as this would give us a contradiction that $1 = 0$. Thus, $P$ is not countably additive.
 \\\\
 I think the most important part is why this is interesting. We noted that if $S = \{0,1\}$, then $C_0$ is essentially a field on $(0,1]$, as we can identify each of the infinite sequences with a point in $(0,1]$. And, initially, the sets in the field $C_0$ look like they contain intervals and their unions. However, there must be something substantially different about the field and/or measure on $C_0$, when compared with $B_0$.
+
+\subsubsection{2.18 Stochastic Arithmetic} Define a set function $P_n$ on the class of all subsets of $\Omega = \{1, 2, \cdots\}$ by:
+$$
+	P_n(A) = \frac{1}{n} \#\left[m : 1 \leq m \leq n, m \in A\right]
+$$
+among the first $n$ integers, the proportion that lie in $A$ is just $P_n(A)$. Then $P_n$ is a discrete probability measure (a probability measure defined on a discrete space). The set $A$ has \textit{density}:
+$$
+	D(A) = \lim_n P_n(A)
+$$
+provided this limit exists. Note, density makes sense, as we are essentially getting a ratio of how many numbers are in $A$, compared with $\Omega$ (as $P_n(\Omega) = 1$ for all cases). Let $\dcal$ be the class of sets having density.
+\\\\
+\textbf{(a)} Show that $D$ is finitely but not countably additive on $\dcal$. Take $A,B \in \dcal$ disjoint. We have that:
+$$
+	D(A \cup B) = \lim_n P_n(A \cup B) = \lim_n P_n(A) + P_n(B) = \lim_n P_n(A) + \lim_n P_n(B) = D(A) + D(B)
+$$
+Note implicit above is that $\dcal$ contains finite disjoint unions. We show not countably additive by a counter example. Define $A_i = \{i\}$. We have that:
+$$
+	D(A_i) = \lim_n P_n(A_i) = \lim_n \frac{1}{n} = 0
+$$
+However, $\bigcup A_i = \Omega$. Thus:
+$$
+	D\left(\bigcup A_i\right) = D(\Omega) = 1 \neq 0 = \sum D(A_i)
+$$
+Note in the above example, we do have that the countable disjoint union is within $\dcal$.
+\\\\
+\textbf{(b)} Show that $\dcal$ contains the empty set and $\Omega$ and is closed under the formation of complements, proper differences, and finite disjoint unions, but is not closed under the formation of countable disjoint unions or of finite unions that are not disjoint.
+\\\\
+In part (a) we concluded closed under finite disjoint unions. We now consider complements. Take $A \in \dcal$. By definition, we have that the limit exists and
+$$
+	\lim_n P_n(A) = \lim_n x_n = x
+$$
+We note that $P_n(A^c) = 1 - x_n$. This is because, $A$ contains some $i$ elements between $1$ and $n$. We have that $A^c$ must contain $n - i$ elements between $1$ and $n$. Thus, $P_n(A^c) = \frac{n - i}{n} = 1 - \frac{i}{n} = 1 - P_n(A) = 1 - x_n$. Thus, we find:
+$$
+	\lim_n P_n(A^c) = \lim_n 1 - x_n = 1 - \lim_n x_n = 1 - x
+$$
+Thus, $A^c \in \dcal$. We now consider proper differences. Take $A,B \in \dcal$. We note:
+$$
+	A \setminus B = A \cap B^c = (A^c \cup B)^c
+$$
+Recall that the \textit{proper} difference implies that $B \subset A$. Thus, $A^c \in \dcal$, $A^c \cap B \in \dcal$ being a disjoint union, and finally $(A^c \cup B)^c \in \dcal$.
+\\\\
+Now, we consider the not closed examples. We will try and find counter examples. I first outline a set that is not within $\dcal$. We need the $x_n$ values to oscillate, so that the limit does not exist. I define such an $A$ like so. If we have:
+$$
+	P_n(A) = \frac{1}{4} = \frac{n/4}{n}
+$$
+We can make $P_{4n}(A) = \frac{3}{4}$, by setting $11n/4$ of the final $3n$ entries as $1$:
+$$
+	P_{4n}(A) = \frac{n/4 + 11n/4}{4n} = \frac{3}{4}
+$$
+Similarly, if we have:
+$$
+	P_n(A) = \frac{3}{4} = \frac{3n/4}{n}
+$$
+We can make $P_{4n}(A) = \frac{1}{4}$, by setting $n/4$ of the final $3n$ entries as $1$:
+$$
+	P_{4n}(A) = \frac{3n/4 + n/4}{4n} = \frac{1}{4}
+$$
+In such a way, we build up $A$. We start with $A = \{4\}$. Thus, we have:
+$$
+	P_4(A) = \frac{1}{4}
+$$
+Then, we add $A = \{4,5,6,7,8,9,10,11,12,13,14,15,16\}$, such that:
+$$
+	P_{16}(A) = \frac{3}{4}
+$$
+We continue with the process defined above, adding the numbers that correspond to the final entries in the added $3n$ spots. Thus, we have:
+$$
+	\lim P_n(A)
+$$
+Does not exist, as it oscillates between $1/4$ and $3/4$. We have that $\dcal$ is not closed under the formation of countable disjoint unions. We have that:
+$$
+	A = \{4\} \cup \{5,6,7,8,9,10,11,12,13,14,15,16\} \cup \cdots
+$$
+Note that each set in out countable union has a finite amount of elements - and so for each subset $B$, $P_n(B) = 0$. However, $\bigcup B = A \not\in \dcal$.
+\\\\
+We now consider finite unions that are not disjoint. In this case, we consider our same $A$. However, we note that in each iteration, we add at least $3n/4$ of the final $3n$ entries. We consider the $A'$, which 
+
+
+\subsubsection{2.19}
+
+\subsubsection{2.21}
+
+\subsubsection{2.22}
+
+\subsubsection{2.23}
 
 \end{document}
 
