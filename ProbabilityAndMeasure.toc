@@ -63,7 +63,7 @@
 \contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{42}{section*.64}%
 \contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{43}{section*.65}%
 \contentsline {subsubsection}{2.18 Stochastic Arithmetic}{44}{section*.66}%
-\contentsline {subsubsection}{2.19}{47}{section*.67}%
-\contentsline {subsubsection}{2.21}{47}{section*.68}%
-\contentsline {subsubsection}{2.22}{47}{section*.69}%
-\contentsline {subsubsection}{2.23}{47}{section*.70}%
+\contentsline {subsubsection}{2.19}{49}{section*.67}%
+\contentsline {subsubsection}{2.21}{49}{section*.68}%
+\contentsline {subsubsection}{2.22}{49}{section*.69}%
+\contentsline {subsubsection}{2.23}{49}{section*.70}%
