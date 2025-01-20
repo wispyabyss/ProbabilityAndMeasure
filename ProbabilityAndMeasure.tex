@@ -1033,7 +1033,7 @@ provided this limit exists. Note, density makes sense, as we are essentially get
 $$
 	D(A \cup B) = \lim_n P_n(A \cup B) = \lim_n P_n(A) + P_n(B) = \lim_n P_n(A) + \lim_n P_n(B) = D(A) + D(B)
 $$
-Note implicit above is that $\dcal$ contains finite disjoint unions. We show not countably additive by a counter example. Define $A_i = \{i\}$. We have that:
+Note implicit above is that $\dcal$ contains finite disjoint unions. Note, we have additivity of $P_n$ on \textit{disjoint} sets, but it is not true for non-disjoint sets. We show not countably additive by a counter example. Define $A_i = \{i\}$. We have that:
 $$
 	D(A_i) = \lim_n P_n(A_i) = \lim_n \frac{1}{n} = 0
 $$
@@ -1120,7 +1120,7 @@ Thus, if we have the limit of the ratio $\frac{v_{2k-1}}{v_{2k}}$ does not equal
 $$
 	D(B) = \frac{1}{2}
 $$
-Take any pair of points $(x, x+1)$. One of the two must be in $B$ - even at the endpoints between sets of $C_t$ and $C_{t+1}$ (if $C_t$ contains the final $v_{t+1}$, then $C_{t+1}$ cannot contain $v_{t+1} + 1$. However, if $C_t$ does not contain $v_{t+1}$, then $C_{t+1}$ must contain $v_{t+1} + 1$). We also have that $A \in \dcal$, as clearly $D(A) = 1/2$ as well. By the above points, we have that $A^c, B^c \in \dcal$. However, if we assume that $\dcal$ is closed under non disjoint unions, we have:
+Because, by in large, $B$ contains one of every two points in the pair $(x_i,x_i+1)$. We also have that $A \in \dcal$, as clearly $D(A) = 1/2$ as well. By the above points, we have that $A^c, B^c \in \dcal$. However, if we assume that $\dcal$ is closed under non disjoint unions, we have:
 $$
 	A^c \cup B^c = (A \cap B)^c \in \dcal \implies A \cap B \in \dcal
 $$
@@ -1147,7 +1147,7 @@ $$
 	a = p_1^{e_1} \cdots p_n^{e_n} \quad\quad\quad
 	b = p_1^{f_1} \cdots p_n^{f_n}
 $$
-Where $p_1, \cdots, p_n$ is a list from $1$ to the prime larger than $a$ and $b$. We note that:
+Where $p_1, \cdots, p_n$ is a list from $1$ to a prime larger than $a$ and $b$ (infinite primes, one exists). We note that:
 $$
 	lcm(a,b) = p_1^{\max(e_1,f_1)} \cdots p_n^{\max(e_n,f_n)}
 $$
@@ -1161,7 +1161,36 @@ Now, this implies that $D$ on $f(\mcal)$ is determined by $D$ on $\mcal$. For ea
 \\\\
 \textbf{(d)} Assume that $\sum p^{-1}$ diverges - this is the sum over all primes. Prove that $D$, although finitely additive, is not countably additive on the field $f(\mcal)$.
 \\\\
-Note, finite additivity is given, by finite additivity on all of $\dcal$, and $f(\mcal) \subset \dcal$. We now make use of the solutions. We define $B_l = M_a - \bigcup_{p \leq l} M_{ap}$ for some $a$.
+Note, finite additivity is given, by finite additivity on all of $\dcal$, and $f(\mcal) \subset \dcal$. We now make use of the solutions. We define $B_l = M_a - \bigcup_{1 < p \leq l} M_{ap}$ for some $a \in \Omega$. We note that $B_l \in f(M)$ - by the definition of a field, it is closed under finite unions, complements, and finite intersections, and these operations are used to form $B_l$ out of sets originally in $f(M)$. We now note:
+$$
+	D(B_l) = D(M_a) - D\left(\bigcup_{1 < p \leq l} M_{ap}\right)
+$$
+Note that $\dcal$ is closed under proper differences, and for $p > 1$, we have $M_{ap} \subset M_a$. We also note why the above equation is true - for $B \subset A$, both in $D$, we have that:
+$$
+	D(A - B) = D(A \cap B^c) = D((A^c \cup B)^c) = 1 - D(A^c \cup B) = 1 - D(A^c) - D(B) = D(A) - D(B)
+$$
+Where, each equality above we have proved in the preceding questions, as we have that $A^c$ and $B$ are disjoint. Thus, we have:
+$$
+	D(B_l) = \frac{1}{a} - D\left(\bigcup_{1 < p \leq l} M_{ap}\right)
+$$
+Now, we note that $D$ is a finite probability measure on $f(M)$. Thus, we can apply the inclusion-exclusion formula, to find:
+$$
+	D(B_l) = \frac{1}{a} - \sum_{1 < p \leq l} \frac{1}{ap} + \sum_{1 < p < q \leq l} \frac{1}{apq} - \cdots
+$$
+$$
+	\implies
+	D(B_l) \leq \frac{1}{a} - \sum_{1 < p \leq l} \frac{1}{ap}
+$$
+Note - the implication is given in the notes. However, I do note that:
+$$
+	\frac{1}{apq} ? \sum_{q < k \leq l} \frac{1}{apqk} = \frac{1}{apq}\sum_{q < k \leq l} \frac{1}{k}
+$$
+It is hard to compare with the next term in the inclusion-exclusion principle. We are given in the question that $\sum \frac{1}{k}$ diverges - and so it must be greater than one, correct? I guess, you can split it up, for every $apq$ term, like:
+$$
+	-\frac{1}{apq} \sum_{m=1}^{l - q} \sum_{q < k_1 < k_2 < \cdots < k_m \leq l}
+	\left[\frac{1}{k_1} - \frac{1}{k_1k_2} + \cdots + \frac{1}{k_1k_2\cdots k_m}\right]
+$$
+I have spent to much time on this question. I will skip it.
 
 \subsubsection{2.19}
 
