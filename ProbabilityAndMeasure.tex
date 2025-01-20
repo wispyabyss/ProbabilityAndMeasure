@@ -27,6 +27,9 @@
 \newcommand{\ucal}{\mathcal{U}}
 \newcommand{\tcal}{\mathcal{T}}
 \newcommand{\dcal}{\mathcal{D}}
+\newcommand{\fcal}{\mathcal{F}}
+\newcommand{\bcal}{\mathcal{B}}
+\newcommand{\hcal}{\mathcal{H}}
 \newcommand{\mcal}{\mathcal{M}}
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\VCdim}{\text{VCdim}}
@@ -1192,7 +1195,78 @@ $$
 $$
 I have spent to much time on this question. I will skip it.
 
-\subsubsection{2.19}
+\subsubsection{2.19} A probability measure space $(\Omega, \fcal, P)$ is \textit{nonatomic} if $P(A) > 0$ implies that there exists a $B$ such that $B \subset A$ and $0 < P(B) < P(A)$ ($A$ and $B$ in $\fcal$, of course).
+\\\\
+Note: An initial observation I had is that $\fcal$ cannot contain finite sets - as then we always have the existence of a finite subset with nonzero probability, and we can continue recursively until a single point (which is where I guess the name \textit{nonatomic} comes from), which doesn't satisfy the \textit{nonatomic condition}.
+
+\begin{enumerate}
+	\item Assuming the existence of Lebesgue measure $\lambda$ on $\bcal$ (ie, we have a probability space $((0,1],\bcal,\lambda)$), prove that it is nonatomic.
+	\\\\
+	We first considered proving that the sets satisfying the nonatomic condition in $\bcal$ contained the intervals and where a field, and thus equal to $\bcal$. However, a simpler way is by examining the following function for $A$ with $\lambda(A) > 0$:
+	$$
+		f(x) = \lambda(A \cap (0,x])
+	$$
+	We first note that $f(0) = 0$ and $f(1) = P(A)$. We now note that $f$, being a measure, is continuous from below. Ie, take a sequence $x_n$, with $x_0 = 0$, and $x_n \to 1$, non decreasing. We note that:
+	$$
+		B_n = A \cap (0,x_n] \implies B_n \subseteq B_{n+1} \implies \bigcup_n B_n = A 
+	$$
+	We also note that as $A \in \bcal$ and $(0,x_n] \in \bcal$, each $B_n \in \bcal$, and so is the countable union clearly. By continuity from below we have:
+	$$
+		\lim_n f(x_n) = \lim_n \lambda(B_n) = \lambda(A) = P(A)
+	$$
+	Or, even better. We let $a$ be the infimum of points in $A$, and $b$ the supremum - note, not equal and well defined, as $A$ has more than 2 points (a finite set is Lebesgue measure $0$). We let $x_n$ start at $a$, and approach $b$. We still have $\lambda(B_0) = 0$. Now, we assume that for every arbitrary sequence of such $x_n$, there is no intermediate value - ie, we either have $\lambda(B_n) = 0$, or $\lambda(B_n) = P(A)$. This must be a contradiction. If it is true for every sequence - there must be a single point $c \in [a,b)$ where the switch happens - ie, if $x_n \geq c$, then $P(B_n) = P(A)$, and $0$ otherwise. If there were two such $c$, we could form a sequence with $x_n$ between the $c$, and get a contradiction from the limit being nondecreasing. However, the existence of such a $c$ would be a contradiction for the following reasons - it would imply $P(\{c\}) = P(A) > 0$. This is because the above would imply for all $x_n \in (c,b)$, we have:
+	$$
+		P(A \cap (c,x_n]) = P(A)
+	$$
+	And we could define $C_n = A \cap (c-\frac{1}{n},x_n]$ for $x_n$ decreasing to $c$, $\{c\} = \bigcap C_n$, and then probability from above would give $P(\{c\}) = P(A)$.
+	\\\\
+	Thus, there must be some $x_n$ satisfying:
+	$$
+		0 < P(B_n) < P(A)
+	$$
+	And thus $\bcal$ is \textit{nonatomic}.
+	
+	\item Show that in the nonatomic case that $P(A) > 0$ and $\epsilon > 0$ imply that there exists a $B$ such that $B \subset A$ and $0 < P(B) < \epsilon$.
+	\\\\
+	I think, this follows if there is some $P(A) = \epsilon$. Or, we have that as a probability measure space is a $\sigma$ algebra, we assume some nonempty $P(A)$, and then we have the existence of $0 < P(B) < P(A)$. By the probability of a complement, we have either $P(B) \leq P(A)/2$, or $P(A - B) \leq P(A)/2$ (both $B$ and $A - B$ being in the sigma field). We can continue iteratively to $\epsilon$.
+	
+	\item Show in the nonatomic case that $0 \leq x \leq P(A)$ implies that there exists a $B$ such that $B \subset A$ and $P(B) = x$.
+	\\\\
+	By the proof in part $A$ - as we take the $x$ from $0$ to $1$ - $f(x)$ must be \textit{continuous}. It is clear that $f(x)$ is increasing. Assume that it is not continuous. Then, we have some $x$ where a \textit{jump discontinuity} is made. In such a case - we can just make use of the above argument, to assign a nonzero probability to a singleton $x$, namely $P(\{x\}) > 0$. In which case, we have a contradiction in the nonatomic case, as noted at the start. No finite set can have nonzero probability.
+	\\\\
+	Note, just more details. The above argument relies on $\Omega$ going from $0$ to some number $t$. It works for the Borel sets, however the hint gives us something more general. Assume the existence of some $x$. Inductively define class $\hcal_n$ in the following way:
+	$$
+		\hcal_0 = \{\emptyset\} \quad\quad\quad
+		\hcal_n = \left\{H: H \subset A - \bigcup_{k < n} H_k, P\left(\bigcup_{k < n} H_k\right) + P(H) \leq x\right\}
+	$$
+	We define $H_k$ above in the following way. We let $h_k = \sup\left\{P(H) : H \in \hcal_k\right\}$, and we have that $H_k$ is some set in $\hcal_k$ with $P(H_k) > h_k - \frac{1}{k}$.
+	\\\\
+	We first note that $P\left(\bigcup_{k < n} H_k\right) \leq x$. By definition, we have that:
+	$$
+		P(H_{n-1}) + P\left(\bigcup_{k < n - 1} H_k\right) \leq x \implies
+		P\left(\bigcup_{k < n} H_k\right) \leq x
+	$$
+	As it is also a disjoint union, by definition, we have the implication above. We also have that each $\hcal_n$ is nonempty. If we are in the case where $P\left(\bigcup_{k < n} H_k\right) = x$, we are in the clear, as we have found a subset of $A$ satisfying what we need. However, if $P\left(\bigcup_{k < n} H_k\right) < x$, we have that $\epsilon = x - P\left(\bigcup_{k < n} H_k\right) < P(A)$, and we make use of part (b) to find at least one set that satisfies being within $\hcal_n$. Finally, we have that finding $P(H_n) > h_n - \frac{1}{n}$ does exist - as, by the supremum, it is either obtained, or we reach it in the limit. 
+	\\\\
+	And so, the iteration is well defined. We have that $H_1, H_2, \cdots$ is a \textit{strictly increasing} number of disjoint sets. We have that there countable union (if we must continue that long) is within $\fcal$. We that the unions:
+	$$
+		\bigcup_{k=1}^n H_k
+	$$
+	Are strictly increasing. We have by disjoint union:
+	$$
+		P\left(\bigcup_{k=1}^n H_k\right) = \sum_{k=1}^n P(H_k) > \sum_{k=1}^n h_k - \frac{1}{k}
+	$$
+	Note, I don't like the hanging $1/k$ term, as it goes to infinity. However, we can note that:
+	$$
+		h_k \in \left(x - \sum_{t = 1}^{k-1} h_t - \frac{1}{t}, x\right]
+	$$
+	We just need a condition to prove $h_k$ grows quick enough. I think this might come from noting that if we exclude members of previous classes of $\hcal_n$, then we can ensure that the remaining $H$ to define $\hcal_n$ are big enough, so that $h_t$ grows quick enough.
+	
+	\item Show in the nonatomic case that if $p_1, p_2, \cdots$ are nonnegative and add to $1$, then $A$ can be decomposed into sets $B_1, B_2$ such that $P(B_n) = p_nP(A)$.
+	\\\\
+	Well, first we define the subset $B_1 = p_1P(A)$, then we look at $A - B_1$, which still must contain a set of size $p_2P(A)$, and so on. Easy enough.
+
+\end{enumerate}
 
 \subsubsection{2.21}
 
