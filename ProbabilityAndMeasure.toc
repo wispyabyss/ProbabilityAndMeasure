@@ -69,3 +69,11 @@
 \contentsline {section}{Section 3 - Existence and Extension}{55}{section*.70}%
 \contentsline {subsection}{Notes}{55}{section*.71}%
 \contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{55}{section*.72}%
+\contentsline {paragraph}{Outer Measure}{55}{section*.73}%
+\contentsline {paragraph}{Inner Measure}{55}{section*.74}%
+\contentsline {paragraph}{$P^*$ Measurable}{55}{section*.75}%
+\contentsline {paragraph}{Properties of $P^*$ and $\mathcal {M}$}{56}{section*.76}%
+\contentsline {paragraph}{Lemma 1 - The class $\mathcal {M}$ is a field}{57}{section*.77}%
+\contentsline {paragraph}{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mathcal {M}$}{57}{section*.78}%
+\contentsline {paragraph}{Lemma 3 - The class $\mathcal {M}$ is a $\sigma $ field, and $P^*$ restricted to $\mathcal {M}$ is countably additive}{58}{section*.79}%
+\contentsline {paragraph}{Lemma 4 - If $P^*$ is defined by the outer measure, then $\mathcal {F}_0 \subset \mathcal {M}$}{58}{section*.80}%

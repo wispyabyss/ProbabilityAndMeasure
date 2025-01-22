@@ -1310,6 +1310,110 @@ The main theorem of the chapter is the following:
 
 \paragraph{Theorem 3.1 - Probability Measure Extension Theorem} A probability measure on a field has a unique extension to the generated $\sigma$ field.
 
+\paragraph{Outer Measure} I like the discussion on the intuition for defining the \textit{outer measure} and \textit{inner measure}. Say we have $P$ a probability measure on field $\fcal_0$. We want to define $P$ on $\sigma(\fcal_0)$ - but it doesn't need to be restricted to $\sigma(\fcal_0)$. The outer measure is defined for each subset $A$ of $\Omega$ as:
+$$
+	P^*(A) = \inf \sum_n P(A_n) \quad\quad \text{ such that } \quad\quad A \subset \bigcup_n A_n
+$$
+Note - as $\fcal_0$ is a field on $\Omega$, it contains $\Omega$, so we could take our finite cover as $\Omega$ itself, at least. So, the infimum is always non-empty. As for intuition - we have $P$ on $\fcal_0$ - to extend $P$ to sets outside of $\fcal_0$ - using what we already have - we just have to approximate $A$ by sets in $\fcal_0$. The covering is an approximation, and the infimum takes the best such approximation.
+
+\paragraph{Inner Measure} Note how ``from the inside" applies to the inner measure:
+$$
+	P_*(A) = 1 - P^*(A^c)
+$$
+The covering of $A^c$ will perhaps cover more than $A^c$, and so the complement of that will be slightly less than $A$. I like considering whether we can take $P_*(A) = \sup \sum_n P(A_n)$ of $A_n$ unions inside of $A$. However, just practically - this would imply normal numbers $N$ have inner measure of $0$ (as there are no nonempty intervals in $\bcal_0$ inside of $N$).
+
+\paragraph{$P^*$ Measurable} So, $P^*(A)$ holds for every set. Which sets do we want our measure to actually apply to? We would want it to apply to sets where our probability measure properties hold - so perhaps sets where:
+$$
+	P^*(A) + P^*(A^c) = 1
+$$
+Note, this should always be the case by countable additivity and $P(\Omega) = 1$. And so, we take th is as our condition. Note, this is \textit{equivalent} to:
+$$
+	P^*(A) = P_*(A)
+$$
+We also note that it will be helpful to apply the more stringent condition:
+$$
+	P^*(A \cap E) + P^*(A^c \cap E) = P^*(E)
+$$
+For every set $E$ - the previous condition held with $E = \Omega$, as it would turn our $P^*(\Omega) = 1$. In a later problem, we will see that all three conditions are equivalent anyway - see problem 3.2. And so, we just for now, define and say a set $A$ is called \textit{$P^*$-Measurable} if the last condition, with $E$, holds. Note, it is the most stringent, and so if we have that $P^*$-Measurable sets contain $\sigma(\fcal_0)$, it should be enough anyway. We use the variable $\mcal$ to define the class of $P^*$ measurable sets.
+
+\paragraph{Properties of $P^*$ and $\mcal$} We will need these properties to prove that $\mcal$ contains $\sigma(\fcal_0)$ and that the restriction of $P^*$ to $\sigma(\fcal_0)$ is our required (unique) extension of $P$.
+\begin{enumerate}
+	\item $P^*(\emptyset) = 0$
+	\item $P^*$ is nonnegative: $P^*(A) \geq 0$ for every $A \subset \Omega$
+	\item $P^*$ is monotone: $A \subset B$ implies $P^*(A) \leq P^*(B)$
+	\item $P^*$ is countably subadditive: $P^*(\cup_n A_n) \leq \sum_n P^*(A_n)$
+\end{enumerate}
+1 is obvious, as the union of empty sets contains $\emptyset$. $2$ is obvious, as we already said the infimum is nonempty, and each element is nonnegative (being a sum of $P$ nonnegative). $3$ is also obvious, as any cover of $B$ covers $A$, and so all sums in $B$'s infimum are in $A$'s. The final part is countable subadditivity. This is the normal $\epsilon/2^n$ proof:
+\\\\
+For each $A_n$, take a cover of $\fcal_0$ sets $B_{nk}$, where $\sum_k P(B_{nk}) < P^*(A_n) + \epsilon/2^{-n}$. Note, it is possible to find by infimum definition. Note that all $B_{nk}$ cover the total union - so, by the definition of infimum:
+$$
+	P^*(\cup_n A_n) \leq \sum_{n,k} P(B_{nk}) < \sum_n P^*(A_n) + \epsilon/2^{-n} = \epsilon + \sum_n P^*(A_n)
+$$
+This is true for all $\epsilon > 0$, and so 4 follows.
+
+\paragraph{Lemma 1 - The class $\mcal$ is a field} First, we note by finite subadditivity above:
+$$
+	P^*(E) \leq P^*(A \cap E) + P^*(A^c \cap E)
+$$
+And so, to prove that $A$ is in $\mcal$, we just need to prove that:
+$$
+	P^*(A \cap E) + P^*(A^c \cap E) \leq P^*(E)
+$$
+It is clear that $\Omega \in \mcal$, and $\mcal$ is closed under complements. The final step is to prove $\mcal$ is closed under finite unions. Note, it is simple to prove that:
+$$
+	P^*(E) \geq P^*((A \cup B) \cap E) + P^*((A \cup B)^c \cap E)
+$$
+Using the $E$ condition being true on $A$ and $B$ (and taking $(B \cap E)$ as the set $E$, and so on) and subadditivity. qed.
+
+\paragraph{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mcal$} If $A_1, A_2, \cdots$ is a finite or infinite sequence of disjoint $\mcal$-sets, then for each $E \subset \Omega$:
+$$
+	P^*\left(E \cap \left(\bigcup_k A_k\right)\right) =
+	\sum_k P^*(E \cap A_k)
+$$
+Proof: For finite disjoint sets, we use induction. Clearly true for $n = 1$. For $n = 2$, it is also easy to prove. If $A_1 \cup A_2 = \Omega$, then $A_2 = A_1^c$, and it is just our condition. Otherwise:
+$$
+	P^*(E \cap (A_1 \cup A_2)) = 
+	P^*(A_1 \cap E \cap (A_1 \cup A_2)) +
+	P^*(A_1^c \cap E \cap (A_1 \cup A_2))
+$$
+Where the last step again makes use of our condition for $E = E \cap (A_1 \cup A_2)$. The above equals:
+$$
+	=
+	P^*(E \cap A_1) +
+	P^*(E \cap A_2)
+$$
+Where we have that $A_1^c \cap E \cap (A_1 \cup A_2) = E \cap A_2$ via disjointness. Ie, $A_2 \subseteq A_1^c$, so $x \in A_2 \implies x \in A_1^c$. With the $n = 2$ case, we can imply our inductive hypothesis and find the formula is true for any finite disjoint set of unions. For the infinite case - note:
+$$
+	P^*\left(E \cap \left(\bigcup_k A_k\right)\right) \geq 
+	\sum_{k=1}^n P^*(E \cap A_k)
+$$
+This is by monotonicity of $P^*$. We can take $n \to \infty$ on the RHS, and so we can indeed conclude:
+$$
+	P^*\left(E \cap \left(\bigcup_k A_k\right)\right) \geq \sum_k P^*(E \cap A_k)
+$$
+And the other inequality $\leq$ follows from countable subadditivity. qed.
+
+\paragraph{Lemma 3 - The class $\mcal$ is a $\sigma$ field, and $P^*$ restricted to $\mcal$ is countably additive} Suppose that $A_1, A_2, \cdots$ are disjoint $\mcal$ sets with union $A$. Since $F_n = \bigcup_{k=1}^n A_k$ lies in $\mcal$, we have:
+$$
+	P^*(E) = P^*(E \cap F_n) + P^*(E \cap F_n^c)
+$$
+By applying lemma 2 and monotonicity, we thus find:
+$$
+	P^*(E) \geq \sum_{k=1}^n P^*(E \cap A_k) + P^*(E \cap A^c)
+$$
+We can take $n$ to infinity, and using Lemma 2 again, we find:
+$$
+	P^*(E) \geq P^*(E \cap A) + P^*(E \cap A^c)
+$$
+Thus, the countable disjoint union is also within $\mcal$. Note, any countable union can be expressed as a countable disjoint union - thus $\mcal$ is a $\sigma$ field. Countable additivity of $P^*$ on $\mcal$ follows again from Lemma 3.2, taking $E = \Omega$. qed.
+\\\\
+Note - Lemmas 1, 2, and 3 only used properties (1) through (4) we defined above, along with an $\Omega$, $P^*$ being defined on all subsets of $\Omega$, and the condition that defined $\mcal$. Now, we can bring it back to comparing with $P$ on $\fcal_0$ and extending to $P^*$ on $\sigma(\fcal_0)$.
+
+\paragraph{Lemma 4 - If $P^*$ is defined by the outer measure, then $\fcal_0 \subset \mcal$} Note, this just requires $\mcal$ containing every set in $\fcal$. Take $A \in \fcal_0$. Given $E$ and $\epsilon$, choose $\fcal_0$ sets $A_n$ such that:
+$$
+	E \subset \bigcup_n A_n \quad\quad \text{ and } \sum_n P(A_n) \leq P^*(E) + \epsilon
+$$
+
 \end{document}
 
 
