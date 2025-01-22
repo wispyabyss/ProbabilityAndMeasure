@@ -1,6 +1,6 @@
 \contentsline {section}{Forward}{2}{section*.2}%
-\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{2}{section*.3}%
-\contentsline {subsection}{Notes}{2}{section*.4}%
+\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{3}{section*.3}%
+\contentsline {subsection}{Notes}{3}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{3}{section*.5}%
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{4}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{4}{section*.7}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{Notes}{26}{section*.29}%
 \contentsline {paragraph}{Spaces}{26}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{26}{section*.31}%
-\contentsline {paragraph}{Classes of Sets}{26}{section*.32}%
+\contentsline {paragraph}{Classes of Sets}{27}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{27}{section*.33}%
 \contentsline {paragraph}{Examples}{27}{section*.34}%
 \contentsline {paragraph}{Definition - Generated Sigma Field}{28}{section*.35}%
@@ -63,7 +63,9 @@
 \contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{42}{section*.64}%
 \contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{43}{section*.65}%
 \contentsline {subsubsection}{2.18 Stochastic Arithmetic}{44}{section*.66}%
-\contentsline {subsubsection}{2.19}{50}{section*.67}%
-\contentsline {subsubsection}{2.21}{53}{section*.68}%
-\contentsline {subsubsection}{2.22}{53}{section*.69}%
-\contentsline {subsubsection}{2.23}{53}{section*.70}%
+\contentsline {subsubsection}{2.19 Nonatomic Probability Spaces}{50}{section*.67}%
+\contentsline {subsubsection}{2.21 Generating Sigma Algebras ``From the Inside"}{53}{section*.68}%
+\contentsline {subsubsection}{2.22}{54}{section*.69}%
+\contentsline {section}{Section 3 - Existence and Extension}{55}{section*.70}%
+\contentsline {subsection}{Notes}{55}{section*.71}%
+\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{55}{section*.72}%

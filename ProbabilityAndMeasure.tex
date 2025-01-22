@@ -23,6 +23,8 @@
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
+\newcommand{\acal}{\mathcal{A}}
+\newcommand{\ical}{\mathcal{I}}
 \newcommand{\lcal}{\mathcal{L}}
 \newcommand{\ucal}{\mathcal{U}}
 \newcommand{\tcal}{\mathcal{T}}
@@ -1195,7 +1197,7 @@ $$
 $$
 I have spent to much time on this question. I will skip it.
 
-\subsubsection{2.19} A probability measure space $(\Omega, \fcal, P)$ is \textit{nonatomic} if $P(A) > 0$ implies that there exists a $B$ such that $B \subset A$ and $0 < P(B) < P(A)$ ($A$ and $B$ in $\fcal$, of course).
+\subsubsection{2.19 Nonatomic Probability Spaces} A probability measure space $(\Omega, \fcal, P)$ is \textit{nonatomic} if $P(A) > 0$ implies that there exists a $B$ such that $B \subset A$ and $0 < P(B) < P(A)$ ($A$ and $B$ in $\fcal$, of course).
 \\\\
 Note: An initial observation I had is that $\fcal$ cannot contain finite sets - as then we always have the existence of a finite subset with nonzero probability, and we can continue recursively until a single point (which is where I guess the name \textit{nonatomic} comes from), which doesn't satisfy the \textit{nonatomic condition}.
 
@@ -1268,11 +1270,45 @@ Note: An initial observation I had is that $\fcal$ cannot contain finite sets - 
 
 \end{enumerate}
 
-\subsubsection{2.21}
+\subsubsection{2.21 Generating Sigma Algebras ``From the Inside"}
+\begin{enumerate}
+	\item Suppose that $\acal = \{A_1, A_2, \cdots\}$ is a countable partition of $\Omega$. Recall that $\acal_0 = \acal$ and $\acal_n = \acal_{n-1}^*$, where $H^*$ consists of the sets in $H$, the complements of sets in $H$, and the finite and countable unions of sets in $H$.
+	\\\\
+	So, $\acal_1 = \acal_0^*$ is the sets in $\acal_0$, the complements of sets in $\acal_0$, and the finite and countable unions of sets in $\acal_0$. Show that $\acal_1$ coincides with $\sigma(\acal)$. This is a case where $\sigma(\acal)$ can be constructed ``from the inside."
+	\\\\
+	Well - coincides is essentially $\acal_1 = \sigma(\acal)$. This is true if $\acal_1$ is a $\sigma$ field, as $\acal_1$ contains $\acal$. For $B \in \acal_1$, we note $B^c \in \acal_1$ if $B$ is in the element of $\acal_0$ case. If $B$ is a complement or countable union of elements in $\acal_0$ - note that $B^c$ is just another countable union of elements in $\acal_0$, in which case $B^c \in \acal_1$.
+	\\\\
+	Now, we quickly note $\Omega$ is in $\acal_1$, and the complement of $\Omega$ (being an empty union). Finally, we note $\acal_1$ is closed under countable unions - every element of $\acal_1$ can be expressed as a finite or countable union of elements of $\acal_0$ (as seen with the complement case), and a countable amount of countable/finite unions is still a countable union of elements in $\acal_0$. Thus, we have that $\acal_1$ is a $\sigma$ algebra, and $\acal_1 \supseteq \sigma(\acal)$. We also have that $\acal_1 \subseteq \sigma(\acal)$, again noting that every element of $\acal_1$ is a countable union of elements of $\acal$. Thus, we can conclude:
+	$$
+		\acal_1 = \sigma(\acal)
+	$$
+	
+	\item Show that the set or normal numbers lies in $\ical_6$. Recall, $\ical$ is the class of subintervals of $\Omega$. We recall that the set of normal numbers is of the form:
+	$$
+		N = \bigcap_{k=1}^\infty \bigcup_{m=1}^\infty \bigcap_{n = m}^\infty 
+		\left[\omega : |n^{-1}s_n(\omega)| < k^{-1}\right]
+	$$
+	Where we also recall that each $\left[\omega : |n^{-1}s_n(\omega)| < k^{-1}\right]$ is a finite disjoint union of intervals. Note, $\ical_{n-1}^*$ is also closed under countable intersections. So, we have that $\ical_1$ would contain sets of the form $\left[\omega : |n^{-1}s_n(\omega)| < k^{-1}\right]$, $\ical_2$ would have intersections of those, $\ical_3$ would have unions of those, and $\ical_4$ would have intersections of those. Thus, the normals are indeed within $\ical_6$, give or take. 
+	
+	\item Show that $\hcal^* = \hcal$ if and only if $\hcal$ is a $\sigma$ field. Show that $\ical_{n-1}$ is strictly smaller than $\ical_n$ for all $n$.
+	\\\\
+	Well - clearly if $\hcal$ is a $\sigma$ field, then $\hcal^* = \hcal$, given that countable unions and complements are already contained. Now, assume that $\hcal^* = \hcal$. Then, for any element in $A \in \hcal$, we know its complement is already in $\hcal$, and any list of elements in $\hcal$, the union is in $\hcal$. Thus, we do have the if and only if.
+	\\\\
+	Assume that $\ical_{n-1} = \ical_n$ for all $n$. Then, $\ical_{n-1} = \bcal$, as it is a $\sigma$ algebra containing the intervals (note how both $\supseteq$ and $\subseteq$ are obtained). Note, this is a contradiction, as we had shown in the chapter that $\bigcup_n \ical_n \neq \bcal$. Thus, as $\ical_n \supseteq \ical_{n-1}$, and $\ical_n \neq \ical_{n-1}$, we can conclude that $\ical_{n-1} \subset \ical_n$. 
+\end{enumerate}
 
-\subsubsection{2.22}
+\subsubsection{2.22} Extend (2.27) to the infinite ordinals $\alpha$ by defining $\acal_\alpha = \left(\bigcup_{\beta < \alpha} \acal_\beta\right)^*$. Show that, if $\Omega$ is the first uncountable ordinal, then:
+$$
+	\bigcup_{\alpha < \Omega} \acal_\alpha = \sigma(\acal)
+$$
+Show that, if the cardinality of $\acal$ does not exceed that of the continuum ($\R$), then the same is true of $\sigma(\acal)$. Thus $\bcal$ has the power of the continuum. I will skip this for now, as I don't really know ordinals too well.
 
-\subsubsection{2.23}
+
+\section{Section 3 - Existence and Extension}
+\subsection{Notes}
+The main theorem of the chapter is the following:
+
+\paragraph{Theorem 3.1 - Probability Measure Extension Theorem} A probability measure on a field has a unique extension to the generated $\sigma$ field.
 
 \end{document}
 
