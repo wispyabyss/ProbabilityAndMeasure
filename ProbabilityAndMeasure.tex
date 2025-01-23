@@ -33,6 +33,7 @@
 \newcommand{\bcal}{\mathcal{B}}
 \newcommand{\hcal}{\mathcal{H}}
 \newcommand{\mcal}{\mathcal{M}}
+\newcommand{\pcal}{\mathcal{P}}
 \newcommand{\Prob}{\mathbb{P}}
 \newcommand{\VCdim}{\text{VCdim}}
 \newcommand{\st}{\text{s.t.}}
@@ -1310,6 +1311,7 @@ The main theorem of the chapter is the following:
 
 \paragraph{Theorem 3.1 - Probability Measure Extension Theorem} A probability measure on a field has a unique extension to the generated $\sigma$ field.
 
+\subsubsection{Construction of the Extension}
 \paragraph{Outer Measure} I like the discussion on the intuition for defining the \textit{outer measure} and \textit{inner measure}. Say we have $P$ a probability measure on field $\fcal_0$. We want to define $P$ on $\sigma(\fcal_0)$ - but it doesn't need to be restricted to $\sigma(\fcal_0)$. The outer measure is defined for each subset $A$ of $\Omega$ as:
 $$
 	P^*(A) = \inf \sum_n P(A_n) \quad\quad \text{ such that } \quad\quad A \subset \bigcup_n A_n
@@ -1413,6 +1415,79 @@ Note - Lemmas 1, 2, and 3 only used properties (1) through (4) we defined above,
 $$
 	E \subset \bigcup_n A_n \quad\quad \text{ and } \sum_n P(A_n) \leq P^*(E) + \epsilon
 $$
+Recall - the goal is to show $F_0 \subset \mcal$, and so we need to show for our $E \subset \Omega$ defined above:
+$$
+	P^*(A \cap E) + P^*(A^c \cap E) \leq P^*(E)
+$$
+Define $B_n = A_n \cap A$ and $C_n = A_n \cap A^c$. $B_n$ and $C_n$ are in $\fcal_0$ by field properties. Also, $E \cap A \subset \cup_n B_n$, and $E \cap A^c \subset \cup_n C_n$. By first $P^*$ outer measure definition, and then by finite additivity of $P$ on $\fcal_0$, we have:
+$$
+	P^*(A \cap E) + P^*(A^c \cap E) \leq
+	\sum_n P(B_n) + \sum_n P(C_n) =
+	\sum_n P(A_n) \leq P^*(E) + \epsilon
+$$
+As this is true for all $\epsilon > 0$, we have that our necessary and sufficient condition is true, and thus $A \in \fcal_0 \implies A \in \mcal$. qed.
+
+\paragraph{Lemma 5 - If $P^*$ is defined by the outer measure, then $P^*(A) = P(A)$ for $A \in \fcal_0$} Clearly, we have that $P^*(A) \leq P(A)$, as we can just take a countable union of $A$ and emptysets. Now, take any union where $A \subset \cup_n A_n$. By countable subadditivity and monotonicity of $P$ on $\fcal_0$, we have:
+$$
+	P(A) = P(A \cap \cup_n A_n) = P(\cup_n A \cap A_n) \leq \sum_n P(A \cap A_n) \leq \sum_n P(A_n)
+$$
+Thus, the infimum clearly takes the value of $P(A)$. qed.
+
+\paragraph{Proof of Extension in Theorem 3.1} Suppose $P^*$ is defined as our outer measure from a (countably additive) probability measure $P$ on the field $\fcal_0$. Let $\fcal = \sigma(\fcal_0)$. By Lemma 3 and 4:
+$$
+	\fcal_0 \subseteq \fcal \subseteq \mcal \subseteq 2^{\omega}
+$$
+By Lemma 5, we have $P^*(\Omega) = P(\Omega) = 1$. By Lemma 3, $P^*$ when restricted to $\mcal$ is a probability measure there, and thus $P^*$ restricted to $\fcal$ is also clearly a probability measure on that class as well. By Lemma 5, $P^*$ agrees with $P$ on $\fcal$, and thus it is our required extension.
+
+\subsubsection{Uniqueness of the Extension and the $\pi-\lambda$ Theorem}
+We first give the following definitions:
+
+\paragraph{$\pi$ System} A class $\pcal$ of subsets of $\Omega$ is a $\pi$ system if it is closed under the formation of finite intersections: $A,B \in \pcal \implies A \cap B \in \pcal$
+
+\paragraph{$\lambda$ System} A class $\lcal$ of subsets of $\Omega$ is a $\lambda$ system if it contains $\Omega$, and is closed under complements and finite and countable disjoint intersections:
+\begin{enumerate}
+	\item $\Omega \in \lcal$
+	\item $A \in \lcal \implies A^c \in \lcal$
+	\item $A_1, A_2, \cdots \in \lcal$ disjoint $\implies \cup_n A_n \in \lcal$
+\end{enumerate}
+
+Note: As to why these are useful. We ultimately want to prove uniqueness of an extension. We have that an extension is equal on a field - which is also a $\pi$ system. And ultimately, the \textit{essential} property of the probability measure is its countable additivity, which is defined for a countable disjoint union. These countable disjoint unions are contained within $\lambda$.
+\\\\
+And so, how we can prove uniqueness can go something like this: if we have a probability measure on a $\pi$ system, and we can extend it to a $\lambda$ system (that is somehow related to a $\sigma$ field), and the measure agrees on the $\lambda$ system as well - then, the probability measure is unique!
+\\\\
+That is a ``high flying" statement I would say. Also, it is much more general than what we need it for - like, why should we start with a $\pi$ system, and not just a field? Well, the generality will be useful later. And so, we shall go and prove portions of that statement:
+
+\paragraph{Lemma 6 $\pi$ and $\lambda$ implies $\sigma$} A class that is both a $\pi$ system and a $\lambda$ system is a $\sigma$ field. \textbf{Proof}: Easy enough, as any countable union can be expressed as a countable disjoint union, using finite intersections. qed. This gives us the connection to a $\sigma$ field.
+
+\paragraph{Theorem 3-2: $\pi-\lambda$ Theorem} If $\pcal$ is a $\pi$ system and $\lcal$ is a $\lambda$ system, then $\pcal \subset \lcal$ implies $\sigma(\pcal) \subset \lcal$.
+\\\\
+\textbf{Proof:} Let $\lcal_0$ be the $\lambda$ system generated by $\pcal$, the intersection of all containing $\lambda$ systems. It is easy to prove intersections of $\lambda$ systems are $\lambda$ systems (essentially the same as the proof for $\sigma(\cdot)$ and nonempty by $2^\Omega$). Thus, we have $\pcal \subset \lcal_0 \subset \lcal$ by definition. If $\lcal$ can be shown to be a $\pi$ system, then it will follow by Lemma 6 that $\lcal_0$ is a $\sigma$ field. Thus, we \textit{must} have:
+$$
+	\pcal \subseteq \sigma(\pcal) \subseteq \lcal_0 \subseteq \lcal
+$$
+Thus, the theorem follows if $\lcal_0$ is a $\pi$ system as well.
+\\\\
+For each $A \subset \Omega$, let $\lcal_A$ be the class of sets $B$ such that $A \cap B \in \lcal_0$. If $A \in \pcal$, or $A \in \lcal_0$, then $\lcal_A$ is a $\lambda$ system. Note, $A \in \pcal \implies A \in \lcal_0$, and so we just prove it for the second case. First, $\lcal_A$ contains $\Omega$, as $A \cap \Omega = A \in \lcal_0$. We now recall that the conditions:
+\begin{enumerate}
+	\item $\lcal_A$ contains $\Omega$
+	\item $\lcal_A$ contains proper differences
+	\item $\lcal_A$ contains disjoint countable unions
+\end{enumerate}
+Is equivalent to a $\lambda$ system - as the complement of an element of the set can be expressed as a proper difference. We have the first point. For the second, take $B_1, B_2 \in \lcal_A$ with $B_1 \subset B_2$. We have:
+$$
+	(A \cap B_2) - (A \cap B_1) = A \cap (B_2 - B_1) \in \lcal_0
+$$
+By the proper difference property of $\lcal_0$, and thus $B_2 - B_1 \in \lcal_1$, fulfilling point 2. The final point is the third. Let $B_n$ be disjoint $\lcal_A$ sets. $\lcal_0$ contains $A \cap B_n$, which are disjoint, and so $\lcal_0$ contains $\bigcup_n A \cap B_n = A \cap (\bigcup_n B_n)$, and thus $\lcal_A$ contains disjoint unions.
+\\\\
+Thus, we have that $\lcal_A$ is a $\lambda$ system. If $A \in \pcal$ and $B \in \pcal$, then $A \cap B \in \pcal \subset \lcal_0$, which is equivalent to $B \in \lcal_A$. Thus, $A \in \pcal \implies P \subset \lcal_A$, and by minimality, we have:
+$$
+	\lcal_0 \subseteq \lcal_A
+$$
+This is where it gets tricky. By the above - $A \in \pcal$ and $B \in \lcal_0$ implies $B \in \lcal_0 \in \lcal_A$. As this is symmetric - it implies $A \in \lcal_B$. Thus, $B \in \lcal_0$ implies $\pcal \subset \lcal_B$ (as for every $A \in \pcal$, $A \in \lcal_B$). Thus, again by minimality, we have if $B \in \lcal_0$:
+$$
+	\lcal_0 \subseteq \lcal_B
+$$
+We essentially used ``symmetry" of the $\lcal_C$ definition to go from $A \in \pcal$ implies $\lcal_0 \subseteq \lcal_A$, directly to $B \in \lcal_0$ implies $\lcal_0 \subseteq \lcal_B$. Finally - $B \in \lcal_0$, and $C \in \lcal_0$, together imply $C \in \lcal_B$, or $B \cap C \in \lcal_0$ by definition. Therefore, $\lcal_0$ is a $\pi$ system, and the theorem follows. qed.
 
 \end{document}
 
