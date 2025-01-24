@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  23 JAN 2025 10:45
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  24 JAN 2025 10:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1160,17 +1160,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 1479--1483
 
  []
 
-[60] [61] (./ProbabilityAndMeasure.aux)
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 1489--1493
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1494--1497
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1499--1505
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1499--1505
+
+ []
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 1510--1513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1517
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1515--1517
+
+ []
+
+[62] [63] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 92583DAFF474AA95B2D233CBC25E9DF1;10890.
+(rerunfilecheck)             Checksum: B90287A62C6207A29F2C6271DCCA5BCB;11147.
  ) 
 Here is how much of TeX's memory you used:
  9823 strings out of 476191
  152512 string characters out of 5812072
- 463347 words of memory out of 5000000
+ 463613 words of memory out of 5000000
  30434 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,7n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (61 pages).
+Output written on ProbabilityAndMeasure.pdf (63 pages).
