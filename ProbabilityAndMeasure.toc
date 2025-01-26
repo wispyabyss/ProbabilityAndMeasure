@@ -91,3 +91,10 @@
 \contentsline {paragraph}{Theorem 3.4 - Halmos's Monotone Class Theorem}{62}{section*.92}%
 \contentsline {subsubsection}{Lebesgue Measure on the Unit Interval}{62}{section*.93}%
 \contentsline {paragraph}{Example 1 - Subintervals around rationals}{63}{section*.94}%
+\contentsline {paragraph}{Example 2 - $k$ Repeated Sequences}{63}{section*.95}%
+\contentsline {paragraph}{Completeness}{63}{section*.96}%
+\contentsline {paragraph}{Nonmeasurable Sets}{64}{section*.97}%
+\contentsline {paragraph}{Definition: Set Shifts/Translations}{64}{section*.98}%
+\contentsline {paragraph}{Vitali Sets}{65}{section*.99}%
+\contentsline {subsection}{Problems}{65}{section*.100}%
+\contentsline {subsubsection}{3.1}{65}{section*.101}%

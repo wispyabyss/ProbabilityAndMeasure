@@ -1513,9 +1513,87 @@ Proving that $m(\fcal_0)$ is closed under complements is easy. However - proving
 
 \subsubsection{Lebesgue Measure on the Unit Interval}
 Recall the unit interval $(0,1]$ with the field $\bcal_0$ of finite disjoint unions of subintervals. In Theorem 2.2, we have a probability measure $\lambda$ on $\bcal_0$, where $\lambda$ assigns intervals a measure equal to their length. Thus, by Theorem 3.1, $\lambda$ extends to $\bcal$, the extended $\lambda$ being the Lebesgue measure. The probability space $((0,1],\bcal,\lambda)$ will thus be the basis of a lot of the probability theory we will go over in the remaining sections of the first chapter. An interesting note: as the intervals in $(0,1]$ form a $\pi$ system generating $\bcal$, $\lambda$ is the \textit{only} probability measure on $\bcal$ that assigns to each interval its length as its measure.
-\\\\
+
 \paragraph{Example 1 - Subintervals around rationals} We can assign to each rational $r_1, r_2, \cdots \in (0,1)$ an interval $I_n$ of length $\epsilon/2^n$. Consider $A = \cup_n I_n$. By subadditivity, $\lambda(A) < \epsilon$. Note, $A$ is dense, and note each interval $I$ must intersect an $I_n$, so $\lambda(A \cap I) > 0$. Note that $B = (0,1) - A$ satisfies $\lambda(B) > 1-\epsilon$ - however, no matter how close to $1$ the measure of $B$ is, $B$ will always be nowhere dense (all intervals contain a rational and thus intersect $B^c$).
 
+\paragraph{Example 2 - $k$ Repeated Sequences} This example gives a set with real-world probabilistic interpretations that has similar properties to the set in the previous example. Let $d_n(\omega)$ be the $nth$ digit in the dyadic expansion of $\omega$ - like in the first section. Define:
+$$
+	A_n = \left\{\omega \in (0,1] : d_i(\omega) = d_{n+i}(\omega) = d_{2n + i}(\omega), i = 1, \cdots, n\right\}
+$$
+Then, we define:
+$$
+	A = \bigcup_{n=1}^\infty A_n
+$$
+Probabilistically, $A$ corresponds to the event that in an infinite sequence of tosses of a coin, some finite initial segmant is immediately duplicated twice over. From $\lambda(A_n) = 2^n \cdot 2^{-3n}$ (consider $3n$ spaces, we have any choice for the first $n$ spaces, and then fixed choices for the final $2n$ spaces) (also, note that the dyadic cylinders can be expressed as disjoint interval unions, and so they do have a $\lambda$ value), we have $0 < \lambda(A) \leq 1/3$. $A$ is dense in the unit interval - we can find an element in $A$ by taking a midpoint of some interval, and then repeating the sequence again, which remains in the interval. It's measure can be made less than $1/3$, by requiring the initial segment is duplicated $k$ times with $k$ being large.
+\\\\
+And so, we have a real world example of a dense set, but with very very small probability.
+
+\paragraph{Completeness} A probability measure space $(\Omega,\fcal,P)$ is \textit{complete} if $A \subset B, B \in \fcal$, and $P(B) = 0$ together imply $A \in \fcal$ (and hence, $P(A) = 0$ by monotonicity).
+\\\\
+Suppose that $(\Omega,\fcal,P)$ is an arbitrary probability space. Define $P^*$ for $\fcal_0 = \fcal = \sigma(\fcal_0)$ - note, even though $\fcal$ is a $\sigma$ field, $P^*$ is still defined for \textit{all subsets of $\Omega$} via the outer measure. Consider the $\sigma$ field $\mcal$ of $P^*$ measurable sets (ones for which $P^*(A) + P^*(A^c) = 1$). The arguments outlines above tell us that $(\Omega,\mcal,P^*)$ is a probability measure space. If $P^*(B) = 0$ and $A \subset B$, then:
+$$
+	P^*(A \cap E) + P^*(A^c \cap E) \leq P^*(B) + P^*(E) = P^*(E) \implies A \in \mcal
+$$
+Thus, $(\Omega,\mcal,P^*)$ is a \textit{complete probability measure space}. We note: In any probability space, it is therefore possible to enlarge the $\sigma$ field and extend the measure in such a way as to get a complete space.
+\\\\
+Suppose that $((0,1],\bcal,\lambda)$ is completed in this way. The sets in the completed $\sigma$ field $\mcal$ are called \textit{Lebesgue Sets}, and $\lambda$ extended to $\mcal$ is still called the Lebesgue measure.
+
+\paragraph{Nonmeasurable Sets} Above, we have focused on what sets are in $\bcal$, and finding more measurable sets. Now, we find a set that it \textit{outside of $\bcal$}. We need the following definitions:
+
+\paragraph{Definition: Set Shifts/Translations} For $x,y \in (0,1]$, take $x \oplus y$ to be $x + y$ or $x + y - 1$ according as $x + y$ lies in $(0,1]$ or not - this is the circle group, essentially. Define $A \oplus x = \left\{a \oplus x: a \in A\right\}$. Let $\lcal$ be the class of Borel sets $A$ such that $A \oplus x$ is a Borel set and $\lambda(A \oplus x) = \lambda(A)$. Then $\lcal$ is a $\lambda$ system containing the intervals, and so $\bcal \subset \lcal$ by the $\pi-\lambda$ theorem. Note, it is clear that:
+\begin{enumerate}
+	\item The intervals are contained in $\lcal$.
+	\item The intervals are a $\pi$ system.
+	\item Complements are in $\lcal$, as we can take $\lambda(A^c \oplus x) = 1 - \lambda(A \oplus x) = 1 - \lambda(A) = \lambda(A^c)$.
+	\item Disjoint unions are in $\lcal$:
+	$$
+		\lambda\left(\bigcup_n A_n \oplus x\right) =
+		\lambda\left(\bigcup_n (A_n \oplus x)\right) =
+		\sum_n \lambda(A_n \oplus x) = 
+		\sum_n \lambda(A_n) =
+		\lambda\left(\bigcup_n A_n\right)
+	$$
+\end{enumerate}
+And so, we do indeed have that $\bcal \subset \lcal$ by the $\pi-\lambda$ theorem, and $A \in \bcal$ implies that $A \oplus x \in \bcal$, and $\lambda(A \oplus x) = \lambda(A)$. In this sense - $\lambda$ is translation invariant on $\bcal$.
+
+\paragraph{Vitali Sets} Define $x$ and $y$ to be equivalent $(x \sim y)$ if $x \oplus r = y$ for some rational $r$ in $(0,1]$. Let $H$ be a subset of $(0,1]$ consisting of exactly one representative point from each equivalence class - such a set exists via the \textit{axiom of choice}. Note - I believe that $H$ is uncountable, as I think there are uncountably such equivalence classes - but, I'm not sure, and I'm not gonna try and prove it here.
+\\\\
+Now, consider the countably many sets $H \oplus r$ for rational $r$. These sets are disjoint - as no two distinct points of $H$ are equivalent, and so if $H \oplus r_1$ and $H \oplus r_2$ share the point $h_1 \oplus r_1$ and $h_2 \oplus r_2$, then $h_1 \sim h_2$, then $h_1,h_2 \in H$ satisfy $h_1 \sim h_2$, which contradicts the definition of $H$.
+\\\\
+Note that each point of $(0,1]$ lies in one of these sets, because $H$ has a representative from each equivalence class, and each point can be expressed as $h \oplus r$ for some $h \in H$ and $r \in \Q$. Thus:
+$$
+	(0,1] = \bigcup_r (H \oplus r)
+$$
+Now, we prove that $H$ is outside of $\bcal$ via a contradiction. Assume that $H \in \bcal$ - then, translation invariance implies each $H \oplus r$ is in $\bcal$. By countable additivity, we have:
+$$
+	1 = \lambda((0,1]) = \lambda\left(\bigcup_r (H \oplus r)\right) = \sum_r \lambda(H \oplus r) =
+	\sum_r \lambda(H)
+$$
+If $\lambda(H) = 0$, we have a contradiction. If $\lambda(H) > 0$, we have a contradiction. Thus, we have a contradiction in all cases, and $H$ is outside of $\bcal$. $H$ is called a \textit{Vitali Set}.
+
+\subsection{Problems}
+\subsubsection{3.1}
+\begin{enumerate}
+	\item In the proof of Theorem 3.1 the assumed finite additivity of $P$ is used twice and the assumed countable additivity of $P$ is used once. Where? Finite additivity is used once in Lemma 4 to prove the condition for $A \in \fcal_0 \implies A \in \mcal$. In Lemma 5, we use countable additivity (via countable subadditivity) to prove $P^*(A) = P(A)$, and finite subadditivity via monotonicity.
+	
+	\item Show by example that a finitely additive probability measure on a field may not be countably subadditive. Show in fact that if a finitely additive probability measure is countably subadditive, then it is necessarily countably additive as well.
+	\\\\
+	We do the second part first. By countable subadditivity, we have:
+	$$
+		P\left(\bigcup_n A_n\right) \leq \sum_n P(A_n)
+	$$
+	Assume $A_n$ are disjoint. Recall - monotonicity \textit{only} requires finite additivity. And so, we have:
+	$$
+		\sum_{n=1}^k P(A_n) \leq P(A) \implies
+		\lim_{k \to \infty} P(A_n) \leq P(A) \implies
+		P\left(\bigcup_n A_n\right) \geq \sum_n P(A_n)
+	$$
+	$$
+		\implies
+		P\left(\bigcup_n A_n\right) = \sum_n P(A_n)
+	$$
+	For an example, consider problem 2-15 (which we did above). This is a $P$ that is finitely but not countably additive.
+\end{enumerate}
 
 \end{document}
 
