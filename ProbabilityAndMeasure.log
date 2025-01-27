@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  26 JAN 2025 12:39
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  27 JAN 2025 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1234,17 +1234,51 @@ it/12 P [] \OMS/cmsy/m/n/12 ^^U [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/
 m/it/12 A[]\OT1/cmr/m/n/12 )
  []
 
-[66] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 1597--1600
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1611--1615
+
+ []
+
+
+Overfull \hbox (25.21707pt too wide) detected at line 1618
+\OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = [] [
+] \OMS/cmsy/m/n/12 ^^U [] []
+ []
+
+[66]
+Overfull \hbox (15.11319pt too wide) detected at line 1623
+\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) = \OML/c
+mm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) = \OML/cmm/m
+/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/
+12 B\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A
+[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )  =[]\OMS/cmsy/m/n/12 
+)  \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) = \OM
+L/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) + \OML/cm
+m/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 \ \OML/cmm/
+m/it/12 B\OT1/cmr/m/n/12 )
+ []
+
+
+Overfull \hbox (3.97298pt too wide) detected at line 1643
+\OT1/cmr/m/n/12 = [] [] = [] []
+ []
+
+[67] [68] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 862C46EFE2A5ABF6497C7E11ADF5226B;11319.
+(rerunfilecheck)             Checksum: 698A3C9D71900664730B0C2A410B1519;11565.
  ) 
 Here is how much of TeX's memory you used:
  9824 strings out of 476191
  152526 string characters out of 5812072
- 463806 words of memory out of 5000000
+ 464060 words of memory out of 5000000
  30435 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,7n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (66 pages).
+Output written on ProbabilityAndMeasure.pdf (68 pages).

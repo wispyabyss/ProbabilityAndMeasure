@@ -97,4 +97,5 @@
 \contentsline {paragraph}{Definition: Set Shifts/Translations}{64}{section*.98}%
 \contentsline {paragraph}{Vitali Sets}{65}{section*.99}%
 \contentsline {subsection}{Problems}{65}{section*.100}%
-\contentsline {subsubsection}{3.1}{65}{section*.101}%
+\contentsline {subsubsection}{3.1 Finite vs. Countable Additivity}{65}{section*.101}%
+\contentsline {subsubsection}{3.2}{66}{section*.102}%

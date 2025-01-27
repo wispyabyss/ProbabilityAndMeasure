@@ -1572,7 +1572,7 @@ $$
 If $\lambda(H) = 0$, we have a contradiction. If $\lambda(H) > 0$, we have a contradiction. Thus, we have a contradiction in all cases, and $H$ is outside of $\bcal$. $H$ is called a \textit{Vitali Set}.
 
 \subsection{Problems}
-\subsubsection{3.1}
+\subsubsection{3.1 Finite vs. Countable Additivity}
 \begin{enumerate}
 	\item In the proof of Theorem 3.1 the assumed finite additivity of $P$ is used twice and the assumed countable additivity of $P$ is used once. Where? Finite additivity is used once in Lemma 4 to prove the condition for $A \in \fcal_0 \implies A \in \mcal$. In Lemma 5, we use countable additivity (via countable subadditivity) to prove $P^*(A) = P(A)$, and finite subadditivity via monotonicity.
 	
@@ -1593,6 +1593,85 @@ If $\lambda(H) = 0$, we have a contradiction. If $\lambda(H) > 0$, we have a con
 		P\left(\bigcup_n A_n\right) = \sum_n P(A_n)
 	$$
 	For an example, consider problem 2-15 (which we did above). This is a $P$ that is finitely but not countably additive.
+	
+	\item Suppose Theorem 2.1 (Continuity From Above, Below, and Countable Subadditivity) were weakened by strengthening its hypothesis to the assumption that $\fcal$ is not a $\sigma$-field. Why would this weakened result not suffice for the proof of Theorem 3.1?
+	\\\\
+	In Lemma 2 - we make use of countable subadditivity to prove the Lemma 2 property - we cannot prove Theorem 3.1 without first concluding that $\mcal$ is a $\sigma$ field, which relies on Lemma 2. Also, in Lemma 5, we rely on countable subadditivity to prove $P^*(A) = P(A)$. 
+\end{enumerate}
+
+\subsubsection{3.2} Let $P$ be a probability measure on a field $\fcal_0$ and for every subset $A$ of $\Omega$ define $P^*(A)$ by the outer measure. Denote also by $P$ the extension of $P$ to $\fcal = \sigma(\fcal_0)$.
+\begin{enumerate}
+	\item Show that:
+	$$
+		P^*(A) = \inf\left[P(B) : A \subset B, B \in \fcal\right]
+	$$
+	And:
+	$$
+		P_*(A) = \sup\left[P(C) : C \subset A, C \in \fcal\right]
+	$$
+	And show that the infimum and supremum are always achieved.
+	\\\\
+	For the first case - note that:
+	$$
+		P^*(A) = \inf\left[\sum_n P(A_n) : A \subseteq \cup A_n, A_n \in \fcal_0\right] \geq 
+		\inf\left[P(B) : A \subset B, B \in \fcal\right]
+	$$
+	As for why this is - take any covering of $A \subseteq \cup A_n, A_n \in \fcal_0$, and note that $\cup A_n \in \fcal$, and $\sum P(A_n) \geq P(\cup A_n)$. Now, take $B \in \fcal$, and note that $B \in \mcal$ by the extension theorem, and so:
+	$$
+		P(B) = P^*(B) = P^*(A \cap B) + P^*(A^c \cap B) \implies
+		P(B) = P^*(A) + P^*(A^c \cap B)
+	$$
+	$$
+		\implies P(B) \geq P^*(A)
+	$$
+	Thus, we have:
+	$$
+		P^*(A) \leq \inf\left[P(B) : A \subset B, B \in \fcal\right]
+	$$
+	Giving us our first equality. Now, we want to show:
+	$$
+		P_*(A) = 1 - P^*(A^c) = \sup\left[P(C) : C \subset A, C \in \fcal\right]
+	$$
+	By the above part, and definitions, we have:
+	$$
+		P_*(A) = \inf\left[1 - P(C) : A^c \subset C, C \in \fcal\right]
+	$$
+	Note that $A^c \subset C$ if and only if $C^c \subset A$. If we consider $C^c \subset A$ - we note that $1 - P(C)$ is minimized if and only if $1 - P(C^c) = P(C)$ is maximized. Thus, the above equals:
+	$$
+		= \sup\left[1 - P(C^c) : C^c \subset A, C \in \fcal\right] =
+		\sup\left[1 - P(C^c) : C^c \subset A, C^c \in \fcal\right]
+	$$
+	Note, the second step is because $C \in \fcal$ if and only if $C^c \in \fcal$. Now, note that the above expression can be simplified to:
+	$$
+		= \sup\left[P(C) : C \subset A, C \in \fcal\right]
+	$$
+	The final step is to show that these are achievable - ie, there are sets $B$ and $C$ such that:
+	$$
+		P^*(A) = P(B) \quad\quad\quad P_*(A) = P(C)
+	$$
+	Assume not achievable in the first case. Then, we have $P(B_n)$ such that:
+	$$
+		P^*(A) = \lim_n P(B_n)
+	$$
+	As $\fcal$ is a $\sigma$ field, we have that $\cap B_n \in \fcal$. Let $C_n$ be the incremental intersections - note $C_n \downarrow \cap B_n$, and:
+	$$
+		P^*(A) \leq \lim_n P(C_n) \leq \lim_n P(B_n) \implies
+		P(\cap B_n) = P^*(A)
+	$$
+	And so, we have a contradiction. Continuity from below will give us a similar result for the supremum, and so in both cases, we have the infimum and supremum are always achieved.
+	
+	\item Show that $A$ is $P^*$ measurable if and only if $P_*(A) = P^*(A)$. This is equivalent to:
+	$$
+		1 - P^*(A^c) = P^*(A) \implies
+		P^*(A) + P^*(A^c) = 1
+	$$
+	Note that if $A$ is $P^*$ measurable, the above is clearly true via definition, taking $E = \Omega$. Now, assume $P_*(A) = P^*(A)$. We can take sets in $\fcal$ such that $A_1 \subset A \subset A_2$, with:
+	$$
+		P(A_1) = P_*(A) = P^*(A) = P(A_2)
+	$$
+	Note, this is because the infimum and supremum are achievable in the previous part.
+	
+	
 \end{enumerate}
 
 \end{document}
