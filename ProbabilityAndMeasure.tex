@@ -993,7 +993,7 @@ And thus $P$ is countably additive. qed.
 \\\\
 We let sets of case $(i)$ be those for which $P(A) = 0$, and those of case $(ii)$ be those for which $P(A) = 1$. Note, for finitely additive - we are essentially just doing the same shit we did above. Two sets of case $(i)$ - there finite union must also be of case $(i)$. As for why this is the case:
 \\\\
-Assume that $A$ And $B$ are of case $(i)$, but $A \cup B$ is of case $(ii)$, ie, there is some positive $\epsilon_{A \cup B}$ such that:
+Assume that $A$ and $B$ are of case $(i)$, but $A \cup B$ is of case $(ii)$, ie, there is some positive $\epsilon_{A \cup B}$ such that:
 $$
 	\bigg(\frac{1}{2}, \frac{1}{2} + \epsilon_{A \cup B}\bigg] \subseteq A \cup B
 $$
@@ -1599,7 +1599,7 @@ If $\lambda(H) = 0$, we have a contradiction. If $\lambda(H) > 0$, we have a con
 	In Lemma 2 - we make use of countable subadditivity to prove the Lemma 2 property - we cannot prove Theorem 3.1 without first concluding that $\mcal$ is a $\sigma$ field, which relies on Lemma 2. Also, in Lemma 5, we rely on countable subadditivity to prove $P^*(A) = P(A)$. 
 \end{enumerate}
 
-\subsubsection{3.2} Let $P$ be a probability measure on a field $\fcal_0$ and for every subset $A$ of $\Omega$ define $P^*(A)$ by the outer measure. Denote also by $P$ the extension of $P$ to $\fcal = \sigma(\fcal_0)$.
+\subsubsection{3.2 Redefining the Inner and Outer Measure} Let $P$ be a probability measure on a field $\fcal_0$ and for every subset $A$ of $\Omega$ define $P^*(A)$ by the outer measure. Denote also by $P$ the extension of $P$ to $\fcal = \sigma(\fcal_0)$.
 \begin{enumerate}
 	\item Show that:
 	$$
@@ -1669,10 +1669,74 @@ If $\lambda(H) = 0$, we have a contradiction. If $\lambda(H) > 0$, we have a con
 	$$
 		P(A_1) = P_*(A) = P^*(A) = P(A_2)
 	$$
-	Note, this is because the infimum and supremum are achievable in the previous part.
+	Note, this is because the infimum and supremum are achievable in the previous part. Now, I will show that $A \in \mcal$, which implies $A$ is $P^*$ measurable. We have that:
+	$$
+		A = A_1 \cup (A \setminus A_1)
+	$$
+	Now, we note that, by the properties of a probability measure:
+	$$
+		P(A_2 \setminus A_1) = P(A_2) - P(A_1) = 0
+	$$
+	As $\mcal$ is complete, and $A \setminus A_1 \subseteq A_2 \setminus A_1$, we have that $A \setminus A_1 \in \mcal$. Thus, as $\mcal$ is a field, and closed under unions, we have that $A \in \mcal$ as well. 
 	
+	\item The outer and inner measures associated with a probability measure $P$ on a $\sigma$ field $\fcal$ are usually \textit{defined} by the above infimum and supremum. Show that the infimum and supremum are the same as our original outer and inner measure definitions with $\fcal$ in the role of $\fcal_0$.
+	\\\\
+	This much is clear - because $\fcal = \sigma(\fcal)$, and we showed that the definitions are the same in the first part.
+\end{enumerate}
+
+\subsubsection{3.3 Countable Additivity and the Outer Measure} This problem relies on 2.13, 2.15, and 3.2 - all of which we have done. For the following examples, described $P^*$ as the original outer measure and $\mcal = \mcal(P^*)$ by our condition with subsets $E$. Sort out the cases in which $P^*$ fails to agree with $P$ on $\fcal_0$, and explain why:
+\begin{enumerate}
+	\item Let $\fcal_0$ consist of sets $\emptyset, \{1\}, \{2, 3\}$ and $\Omega = \{1, 2, 3\}$ and define probability measures $P_1$ and $P_2$ on $\fcal_0$ by $P_1(1) = 0$ and $P_2(2,3) = 0$. Note that $\mcal(P_1^*)$ and $\mcal(P_2^*)$ differ.
+	\\\\
+	Well, the $\sigma$ algebras must differ on the sets they include - which would be interesting. I guess, going from the back - this would be because of completeness - maybe they differ on including $\{2\}$. In $\mcal(P_1^*)$, we find:
+	$$
+		1 = P_1^*(2,3)
+		\quad\quad\quad
+		P_1^*(2 \cap 2,3) + P_1^*(2^c \cap 2,3) =
+		P_1^*(2) + P_1^*(3) =  2
+	$$	
+	$$
+		0 = P_2^*(2,3) 
+		\quad\quad\quad
+		P_2^*(2 \cap 2,3) + P_2^*(2^c \cap 2,3) =
+		P_2^*(2) + P_2^*(3) =  0
+	$$
+	So, $\mcal(P_2^*)$ contains $\{2\}$. The completeness comment comes from only $\mcal(P_2^*)$ containing a set with measure $0$, and nonempty subsets, which led to the example, I guess. 
+	
+	\item Suppose that $\Omega$ is countably infinite, let $\fcal_0$ be the field of finite and cofinite sets, and take $P(A)$ to be $0$ or $1$ as $A$ is finite or cofinite.
+	\\\\
+	By 2-13, as $\Omega$ is countably infinite, we have that $P$ is \textit{not} countably additive. And so, our theorem 3.1 does not apply - we need $P$ to be countably infinite to prove that $P^*(A) = P(A)$ for $A \in \fcal_0$.
+	\\\\
+	And so, we should have such a set. Take a cofinite set in $\Omega$ - which is just a countable set $A$. We have that:
+	$$
+		P(A) = 1
+	$$
+	However, $A$ can be covered by a union of finite sets - in which case, the infimum would be $0$, and $P^*(A) = 0$, which means that $P^*(A) \neq P(A)$. Countable additivity would have implies that the sum of disjoint singletons should be equal to $P(A)$.
+	
+	\item The same, but suppose that $\Omega$ is uncountable. Well, in 2-13, we have that $P$ is a countably additive probability measure on our field, and so it can be properly extended.
+	
+	\item Suppose that $\Omega$ is uncountable, let $\fcal_0$ consist of the countable and the cocountable sets, and take $P(A)$ to be $0$ or $1$ as $A$ is countable or cocountable. We have that $\fcal_0$ is a $\sigma$ field, and $P$ is a countably additive probability measure - so, the theorems should apply.
+	
+	\item The probability in Problem 2.15. Well, in that problem, we have that the probability measure is not countably additive. Take the set $A = (1/2,1]$. We have that $P(A) = 1$. However, we also find:
+	$$
+		A = \bigcup A_n \quad\quad\quad A_n = (1/2 + 1/(n+2), 1]
+	$$
+	And so, our infimum would give us $P^*(A) = 0$, and we get a disagreement again.
+	
+	\item Let $P(A) = I_A(\omega_0)$ for $A \in \fcal_0$, and assume $\{\omega_0\} \in \sigma(\fcal_0)$. Well, it is countably additive - there are no disjoint sets containing $\omega_0$. We have additivity in all other cases (disjoint sets not containing $\omega_0$, and disjoint sets with one containing $\omega_0$).
+	\\\\
+	So, $P^*$ and $\mcal$ are well defined. If we want to describe $\mcal$ - we need sets where:
+	$$
+		\inf\left[P(B) : A \subset B, B \in \fcal\right] =
+		\sup\left[P(C) : C \subset A, C \in \fcal\right]
+	$$
+	I think $\mcal$ consists of all sets containing $\omega_0$ and their complements. First, note $P(\omega_0) = 1$. Any cover of $\omega_0$ by sets in $\fcal_0$ would have a sum greater than or equal to $1$. Now, take $A$ containing $\omega_0$. The supremum contains $1$, and cannot be larger than $1$. Similarly, the infimum cannot be smaller than $1$ - as any set in $\fcal$ that contains $A$ is a set in $\fcal$ that contains $\omega_0$, and so must be $P = 1$ by monotonicity.
+	\\\\
+	So, if $A$ contains $\omega_0$, it is in $\mcal$, with $P^*(A) = 1$. Similarly, if it doesn't, it has $P^*(A) = 0$, as the complement is in it. Note, $\mcal$ thus contains all subsets, and their probabilities are either $1$ or $0$ based on this condition. qed.
 	
 \end{enumerate}
+
+\subsubsection{3.6}
 
 \end{document}
 
