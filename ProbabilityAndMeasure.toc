@@ -5,12 +5,12 @@
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{4}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{4}{section*.7}%
 \contentsline {paragraph}{Lemma - Chebyshev's Inequality}{5}{section*.8}%
-\contentsline {subsubsection}{The Strong Law of Large Numbers}{5}{section*.9}%
+\contentsline {subsubsection}{The Strong Law of Large Numbers}{6}{section*.9}%
 \contentsline {paragraph}{Theorem 1.2}{6}{section*.10}%
 \contentsline {paragraph}{Theorem 1.3 - Lebesgue Measure Starting Point}{7}{section*.11}%
 \contentsline {subsubsection}{The Measure Theory of Diophantine Approximation}{9}{section*.12}%
 \contentsline {paragraph}{Theorem 1.4}{9}{section*.13}%
-\contentsline {paragraph}{Theorem 1.5}{9}{section*.14}%
+\contentsline {paragraph}{Theorem 1.5}{10}{section*.14}%
 \contentsline {paragraph}{Theorem 1.6}{10}{section*.15}%
 \contentsline {subsection}{Problems}{11}{section*.16}%
 \contentsline {subsubsection}{1.1 Infinite Independent Events on a Discrete Space (are impossible)}{11}{section*.17}%
@@ -100,4 +100,5 @@
 \contentsline {subsubsection}{3.1 Finite vs. Countable Additivity}{65}{section*.101}%
 \contentsline {subsubsection}{3.2 Redefining the Inner and Outer Measure}{66}{section*.102}%
 \contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{69}{section*.103}%
-\contentsline {subsubsection}{3.6}{70}{section*.104}%
+\contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{70}{section*.104}%
+\contentsline {subsubsection}{3.7}{73}{section*.105}%

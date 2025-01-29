@@ -1736,7 +1736,142 @@ If $\lambda(H) = 0$, we have a contradiction. If $\lambda(H) > 0$, we have a con
 	
 \end{enumerate}
 
-\subsubsection{3.6}
+\subsubsection{3.6 Extension for a Finitely Additive Probability Measure on a Field} Let $P$ be a \textit{finitely additive} probability measure on a field $\fcal_0$. For $A \subset \Omega$, in analogy with (3.1), define:
+$$
+	P^\circ(A) = \inf \sum_n P(A_n)
+$$
+Over \textit{finite} sequences of $\fcal_0$ sets $A_n$. Let $\mcal^\circ$ be the class of sets $A$ such that:
+$$
+	P^\circ(E) = P^\circ(A \cap E) + P^\circ(A^c \cap E)
+$$
+For all $E \subset \Omega$.
+
+\begin{enumerate}
+	\item Show that $P^\circ(\emptyset) = 0$ and that $P^\circ$ is nonnegative, monotone, and \textit{finitely} subadditive.
+	\\\\
+	$P^\circ(\emptyset) \leq P(\emptyset) = 0$. Note, as all the sums are greater than $0$, $P^\circ(\emptyset) = 0$. Clearly, this implies non-negative as well. Monotonicity, as if $A \subset B$, any cover of $B$ covers $A$, and so that sum is included in $A$'s infimum. Take any finite union $\cup_n A_n$. Examine:
+	$$
+		P^\circ(\cup A_n)
+	$$
+	Note, finite subadditivity can just be found via the $\epsilon/2^k$ trick. We have a finite cover of each $A_n$, with total sum within $\epsilon/2^n$ of $P^\circ(A_n)$ - note, a finite amount of finite covers still covers $\cup A_n$, thus, we have:
+	$$
+		P^\circ(\cup A_n) \leq \sum_n P^\circ(A_n) + \epsilon/2^n = \epsilon + \sum P^\circ(A_n)
+	$$
+	Using these four properties, prove:
+	\\\\
+	\textbf{Lemma 1} $\mcal^\circ$ is a field.
+	\\\\
+	First, we have:
+	$$
+		P^\circ(E) = P^\circ(E) + P^\circ(\emptyset) = P^\circ(\Omega \cap E) + P^\circ(\emptyset \cap E)
+	$$
+	And so $\mcal^\circ$ contains $\Omega$ and $\emptyset$. Now, we go over complements - as the $E$ definition is symmetric between complements, we have that $A \in \mcal^\circ \implies A^c \in \mcal^\circ$. Now, we prove that $\mcal^\circ$ is closed under finite unions (or equivalently, finite intersections). Take $A,B \in \mcal^\circ$, and $E \subset \Omega$. We have:
+	$$
+		P^\circ(E) = P^\circ(B \cap E) + P^\circ(B^c \cap E)
+	$$
+	$$
+		=
+		P^\circ(A \cap B \cap E) + P^\circ(A^c \cap B \cap E) + P^\circ(A \cap B^c \cap E) + P^\circ(A^c \cap B^c \cap E)
+	$$
+	Just by applying $A,B \in \mcal^\circ$ three times. By \textit{finite subadditivity}, we find:
+	$$
+		\geq 
+		P^\circ(A \cap B \cap E) + P^\circ((A^c \cap B \cap E) \cup (A \cap B^c \cap E) \cup (A^c \cap B^c \cap E))
+	$$
+	$$
+		= 
+		P^\circ(A \cap B \cap E) + P^\circ((A \cap B)^c \cap E)
+	$$
+	As we already have the other direction via finite subadditivity, we thus have $A \cap B \in \mcal^\circ$, and $\mcal^\circ$ is a field.
+	\\\\
+	\textbf{Lemma 2} If $A_1, A_2, \cdots$ is a \textit{finite} sequence of disjoint $\mcal^\circ$ sets, then for each $E \subset \Omega$:
+	$$
+		P^\circ\left(E \cap \left(\bigcup_k A_k\right)\right) =
+		\sum_k P^\circ (E \cap A_k)
+	$$
+	If $n = 1$, there is nothing to prove. Now, assume $n = 2$ - if $A_1 \cup A_2 = \Omega$, then $A_2 = A_1^c$, and it is just our condition. Otherwise:
+	$$
+		P^\circ(E \cap (A_1 \cup A_2)) = 
+		P^\circ(A_1 \cap E \cap (A_1 \cup A_2)) +
+		P^\circ(A_1^c \cap E \cap (A_1 \cup A_2))
+	$$
+	Where the second step again makes use of our condition for $E \cap (A_1 \cup A_2)$ and $A_1 \in \mcal^\circ$. The above equals:
+	$$
+		=
+		P^\circ(E \cap A_1) +
+		P^\circ(E \cap A_2)
+	$$
+	Where we have that $A_1^c \cap E \cap (A_1 \cup A_2) = E \cap A_2$ via disjointness. Ie, $A_2 \subseteq A_1^c$, so $x \in A_2 \implies x \in A_1^c$. It is easy to prove via induction for an arbitrary length finite sequence of disjoint $\mcal^\circ$ sets.
+	\\\\
+	\textbf{Lemma 3} $P^\circ$ restricted to the field $\mcal^\circ$ is \textit{finitely additive}. Take a finite disjoint sequence $A_1, A_2, \cdots$ of $\mcal^\circ$ sets. By Lemma 1, $\cup A_n \in \mcal$. We want to show:
+	$$
+		P^\circ(\cup A_n) = \sum P^\circ(A_n)
+	$$
+	Just apply Lemma 2 with $E = \Omega$. Thus, we have:
+	$$
+		P^\circ(\cup A_n) = P^\circ(\Omega \cap \cup A_n) = \sum P^\circ(\Omega \cap A_n) = \sum P^\circ(A_n)
+	$$
+	
+	\item Show that if $P^\circ$ is defined by the finite coverings definition - then, \textbf{Lemma 4}: $\fcal_0 \subset \mcal^\circ$.
+	\\\\
+	Take $A \in \fcal_0$. We want to show, for $E \subset \Omega$:
+	$$
+		P^\circ(E) \geq P^\circ(A \cap E) + P^\circ(A^c \cap E)
+	$$
+	Well, we have for some finite union $E \subset \sup_n A_n$, $\sum P(A_n) \leq P^\circ(E) + \epsilon$. We have:
+	$$
+		P^\circ(A \cap E) + P^\circ(A^c \cap E) \leq
+		\sum_n P(A \cap A_n) + \sum_n P(A^c \cap A_n)
+	$$
+	Which is by monotonicity of $P^\circ$ and finite subadditivity. Now, with finite additivity of disjoint sets:
+	$$
+		= \sum_n P(A_n) \leq P^\circ(E) + \epsilon
+	$$
+	Thus, $A \in \mcal^\circ$.
+	\\\\
+	\textbf{Lemma 5} Show that $P^\circ(A) = P(A)$ for $A \in \fcal_0$. Clearly, $P^\circ(A) \leq P(A)$. Also, if $A \subset \cup A_n$ for finite $A_n$, then $P(A) \leq \sum_n P(A \cap A_n) \leq \sum_n P(A_n)$, so $P(A)$ is less than all elements in the infimum, and $P^\circ(A) = P(A)$. 
+	
+	\item Define $P_\circ(A) = 1 - P^\circ(A^c)$. Prove that if $E \subset A \in \fcal_0$, then:
+	$$
+		P_\circ(E) = P(A) - P^\circ(A - E)
+	$$
+	We have, by finite additivity:
+	$$
+		P_\circ(E) = 1 - P^\circ(E^c) = 1 - P^\circ(E^c \cap A) - P^\circ(E^c \cap A^c) =
+		1 - P^\circ(A - E) - P^\circ(A^c)
+	$$
+	As $A^c \subset E^c$. Note, $P^\circ(A^c) = P(A^c)$, and $1 - P(A^c) = P(A)$, and so:
+	$$
+		P_\circ(E) = P(A) - P^\circ(A^c)
+	$$
+\end{enumerate}
+
+\subsubsection{3.7} Relies on 2.7 and 3.6, both of which we have solutions for. Suppose that $H$ lies outside the field $\fcal_0$, and let $\fcal_1$ be the field generated by $\fcal_0 \cup \{H\}$. By 2.7, this field consists of sets of the form:
+$$
+	(H \cap A) \cup (H^c \cap B) \quad\quad\quad A,B \in \fcal_0
+$$
+In this problem, we show that a finitely additive probability measure $P$ on $\fcal_0$ has a finitely additive extension to $\fcal_1$. Define $Q$ on $\fcal_1$ by:
+$$
+	Q((H \cap A) \cup (H^c \cap B)) = P^\circ(H \cap A) + P_\circ(H^c \cap B)
+$$
+
+\begin{enumerate}
+	\item Show that the definition is consistent. Ie, that if:
+	$$
+		(H \cap A_1) \cup (H^c \cap B_1) = (H \cap A_2) \cup (H^c \cap B_2)
+	$$
+	Then:
+	$$
+		Q\left[(H \cap A_1) \cup (H^c \cap B_1)\right] = Q\left[(H \cap A_2) \cup (H^c \cap B_2)\right]
+	$$
+	Well, if they are equal - then we must have $H \cap A_1 = H \cap A_2$, as it is a disjoint union. Similarly, $H^c \cap B_1 = H^c \cap B_2$. Thus, the definition is consistent, as clearly:
+	$$
+		P^\circ(H \cap A_1) = P^\circ(H \cap A_2) \quad\quad
+		P_\circ(H^c \cap B_1) = P_\circ(H^c \cap B_2)
+	$$
+	
+	\item Show that $Q$ agrees with $P$ on $\fcal_0$.
+\end{enumerate}
 
 \end{document}
 
