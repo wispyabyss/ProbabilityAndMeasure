@@ -101,4 +101,5 @@
 \contentsline {subsubsection}{3.2 Redefining the Inner and Outer Measure}{66}{section*.102}%
 \contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{69}{section*.103}%
 \contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{70}{section*.104}%
-\contentsline {subsubsection}{3.7}{73}{section*.105}%
+\contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{73}{section*.105}%
+\contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{75}{section*.106}%
