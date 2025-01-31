@@ -1949,6 +1949,69 @@ So, our partially ordered set $(M,\leq)$ where $M$ contains fields containing $\
 \\\\
 So, the existence of a maximal element implies our theorem: a finitely additive probability measure $P$ on a field $\fcal$ has a finitely additive extension to the field of all subsets of the space. qed.
 
+\subsubsection{3.14 Lebesgue Measure 0 Sets that are not Borel Sets} This problem relies on problems 1.5 and 2.22. Prove the existence of a Lebesgue set of Lebesgue measure $0$ that is not a Borel set.
+\\\\
+First, recall that the Lebesgue sets are the $\lambda^*$ measurable sets, where $\lambda$ starts as the countably additive probability measure on the field $\bcal_0$, finite disjoint unions of subintervals.
+\\\\
+In problem 1.5, we discussed the Cantor set $C$. And in 2.22, we showed that $\bcal$ has the cardinality of the continuum. I first note that $C$ is a Lebesgue set with measure $0$. In $1.5$, we proved that $C$ was trifling - which means for any $\epsilon > 0$, there is a finite sequence of intervals such that:
+$$
+	\sum |I_k| < \epsilon \text{ and } C \subset \cup I_k
+$$
+Thus, it should be clear that $\lambda^*(C) = 0$, straight from the infimum definition. Now, we note:
+$$
+	\lambda^*(C^c \cap E) \leq \lambda^*(E) \implies
+	\lambda^*(C \cap E) + \lambda^*(C^c \cap E) \leq \lambda^*(E) \implies
+	C \in \lcal
+$$
+The final part is showing that $C$ is not a Borel set. I realized on the solutions for this one, as again, I'm not too familiar with all the cardinality stuff. We have, as $\lcal$ is complete:
+$$
+	2^C \subseteq \lcal
+$$
+Now, we note Cantor's theorem - which I just have found out about, which states that the cardinality of a set $A$ is strictly less than the cardinality of its power set \href{https://en.wikipedia.org/wiki/Cantor%27s_theorem}{Cantor's Theorem}. We note that the cardinality of $(0,1]$ equals the cardinality of the power set of natural numbers:
+$$
+	|(0,1]| = |2^\N|
+$$
+As for why this is - we have a bijection. Let each $x \in \N$ be tied to a decimal spot in the binary expansion of a point in $(0,1]$. Note - we associate a subset of $2^\N$ with a point in $(0,1]$, by if $x \in \N$, whether the corresponding decimal spot is $0$ or $1$. Thus, $\{1,2,4\}$ corresponds to $0.110100...$ and so on. Thus, bijection should be clear. By 1.22, we have:
+$$
+	|\bcal| = |(0,1]| = |2^\N| < |2^C|
+$$
+And so, $\bcal$ cannot contain every element of $2^C$. However, every element of $2^C$ has Lebesgue measure $0$, and is a Lebesgue measurable set, and so there must exist a Lebesgue measurable set with measure $0$, that is not within $\bcal$. qed.
+
+\subsubsection{3.18 All non-zero outer measure sets contain a non measurable subset} Let $H$ be the nonmeasurable set constructed at the end of the section (the Vitali Set).
+\begin{enumerate}
+	\item Show that, if $A$ is a Borel set and $A \subset H$, then $\lambda(A) = 0$ - that is, $\lambda_*(H) = 0$.
+	\\\\
+	As for why the ``that is" follows. In Problem 3.2, we noted that the inner measure of a subset $H$ was equal to the supremum of the inner measure (or outer measure, or defined as just probability, as they are equal) of sets in $\sigma(\bcal_0) = \bcal$ that are contained within $H$. So, by problem 3.2, if each $A \in \bcal, A \subset H$ satisfies $\lambda(A) = 0$, then that supremum must also be $0$.
+	\\\\
+	Take $A \subset H$. Assume $\lambda(A) > 0$. Note, we still have that each $A \oplus r \in \bcal$. We thus have by countable additivity:
+	$$
+		1 = \lambda((0,1]) \geq \lambda\left(\bigcup A \oplus r\right) = \sum_r \lambda(A \oplus r) = \infty
+	$$
+	Which is a contradiction. So, we must have that $\lambda(A) = 0$.
+	
+	\item Show that, if $\lambda^*(E) > 0$, then $E$ contains a nonmeasurable set. We note that one of the $E \cap (H \circ r)$ must be nonmeasurable. If each is measurable - ie, $E \cap (H \circ r) \in \bcal$, by the previous part, we have:
+	$$
+		\lambda^*(E \cap (H \circ r)) = 0
+	$$
+	By countable additivity, this would imply:
+	$$
+		\lambda^*(E) = \sum_r \lambda^*(E \cap (H \circ r)) = 0
+	$$
+	Which is a contradiction. So, we must have that one of the $E \cap (H \circ r)$ is nonmeasurable. qed.
+\end{enumerate}
+
+\subsubsection{3.19} The aim of this problem is the construction of a Borel set $A$ in $(0,1)$ such that:
+$$
+	0 < \lambda(A \cap G) < \lambda(G)
+$$
+For every nonempty open set $G$ in $(0,1)$. Now, note both inequalities are needed, as they are both \textit{strict}. So, we can't do something like let $A = (0,1)$.
+
+\begin{enumerate}
+	\item It is shown in Example 3.1 how to construct a Borel set of positive Lebesgue measure that is nowhere dense. Show that every interval contains such a set.
+	\\\\
+	
+\end{enumerate}
+
 \end{document}
 
 

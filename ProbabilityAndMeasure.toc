@@ -1,4 +1,4 @@
-\contentsline {section}{Forward}{2}{section*.2}%
+\contentsline {section}{Forward}{3}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{3}{section*.3}%
 \contentsline {subsection}{Notes}{3}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{3}{section*.5}%
@@ -103,3 +103,6 @@
 \contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{70}{section*.104}%
 \contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{73}{section*.105}%
 \contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{75}{section*.106}%
+\contentsline {subsubsection}{3.14 Lebesgue Measure 0 Sets that are not Borel Sets}{76}{section*.107}%
+\contentsline {subsubsection}{3.18 All non-zero outer measure sets contain a non measurable subset}{77}{section*.108}%
+\contentsline {subsubsection}{3.19}{78}{section*.109}%
