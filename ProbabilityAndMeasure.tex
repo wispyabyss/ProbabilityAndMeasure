@@ -1977,7 +1977,7 @@ $$
 $$
 And so, $\bcal$ cannot contain every element of $2^C$. However, every element of $2^C$ has Lebesgue measure $0$, and is a Lebesgue measurable set, and so there must exist a Lebesgue measurable set with measure $0$, that is not within $\bcal$. qed.
 
-\subsubsection{3.18 All non-zero outer measure sets contain a non measurable subset} Let $H$ be the nonmeasurable set constructed at the end of the section (the Vitali Set).
+\subsubsection{3.18 All non-zero outer measure sets contain a non (borel) measurable subset} Let $H$ be the nonmeasurable set constructed at the end of the section (the Vitali Set).
 \begin{enumerate}
 	\item Show that, if $A$ is a Borel set and $A \subset H$, then $\lambda(A) = 0$ - that is, $\lambda_*(H) = 0$.
 	\\\\
@@ -2000,7 +2000,7 @@ And so, $\bcal$ cannot contain every element of $2^C$. However, every element of
 	Which is a contradiction. So, we must have that one of the $E \cap (H \circ r)$ is nonmeasurable. qed.
 \end{enumerate}
 
-\subsubsection{3.19} The aim of this problem is the construction of a Borel set $A$ in $(0,1)$ such that:
+\subsubsection{3.19 Existence of an Intermediate Borel Set $0 < \lambda(A \cap G) < \lambda(G)$ for nonempty open $G$} The aim of this problem is the construction of a Borel set $A$ in $(0,1)$ such that:
 $$
 	0 < \lambda(A \cap G) < \lambda(G)
 $$
@@ -2009,7 +2009,56 @@ For every nonempty open set $G$ in $(0,1)$. Now, note both inequalities are need
 \begin{enumerate}
 	\item It is shown in Example 3.1 how to construct a Borel set of positive Lebesgue measure that is nowhere dense. Show that every interval contains such a set.
 	\\\\
+	Take an interval $I \subset (0,1]$. Note, it must contain a countable amount of rationals. Not more than countable, as the rationals themselves are countable - and countable, because for $a < b$, we can find a rational $a < q_1 < b$, and then we can find rationals $a < q_2 < q_1$ and $q_1 < q_3 < b$, and so on, an infinite number of times.
+	\\\\
+	Let $q_1, q_2, \cdots$ be the sequence of countable rationals given above. Take some $\epsilon > 0$, but smaller than $|I|/2$. Around each $q_i$, center an interval $I_i$ of length $\epsilon/2^i$. Define:
+	$$
+		A = \bigcup_i I_i
+	$$
+	By subadditivity, we have $0 < \lambda(A) < \epsilon$. Now, we define our interval $B = I - A$. Note, as $A \subseteq I$, we have that:
+	$$
+		\lambda(B) = |I| - \lambda(A)
+	$$
+	Note, as $\lambda(A) < \epsilon < |I|$, we have that $\lambda(B) > 0$. Note, $\lambda(B)$ can be made arbitrarily close to $|I|$, actually. Now, we note that $B$ is nowhere dense. Take any open interval $J$ - if $J \subseteq I$, note that $J$ must contain some rational, with an interval around it, that is contained in $A$, and thus is not in $B$. Thus, every interval $J \subseteq (0,1]$ has an interval that does not meet $B$. Thus, $I$ contains a Borel set of positive Lebesgue measure that is nowhere dense.
 	
+	\item Let $\{I_n\}$ be an enumeration of the open intervals in $(0,1)$ with rational endpoints. Construct disjoint, nowhere dense Borel sets $A_1, B_1, A_2, B_2, \cdots$ of positive Lebesgue Measure such that $A_n \cup B_n \subset I_n$.
+	\\\\
+	First, we note for any interval $J$, we can construct \textit{two} disjoint, nowhere dense sets such that $A \cup B \subseteq J$. First let $A$ be defined as above. Next, note that there is an interval $J' \subseteq J$ that $A$ does not meet. Let $B$ be the construction above within that interval.
+	\\\\
+	Next, note that the finite union of nowhere dense sets is nowhere dense. Take $A,B$ nowhere dense. Take an interval $J$ - note that it contains a subinterval $J'$ that $A$ does not meet. Now, note that $J'$ contains a subinterval $J''$ that $B$ does not meet. Thus, $J$ contains a subinterval $J''$ that $A \cup B$ does not meet.
+	\\\\
+	Now, we define $A_1, B_1, A_2, B_2, \cdots$ as follows, inductively. For $I_1$ - follow the steps above. Now, say we have $A_1,B_1, \cdots, A_n,B_n$ disjoint nowhere dense sets satisfying $A_i \cup B_i \subset I_i$. Let $C_n = \cup_i A_i \cup B_i$. Note that $C_n$ is nowhere dense - so $I_{n+1}$ contains a subinterval $J_{n+1}$ that does not meet $C_n$. Define $A_{n+1},B_{n+1}$ as above. Thus, we have found $A_{n+1},B_{n+1}$ nowhere dense sets disjoint from the previous $2n$ sets, that also have positive Lebesgue measure, and they satisfy:
+	$$
+		A_{n+1} \cup B_{n+1} \subset I_{n+1}
+	$$
+	
+	\item Let $A = \cup_k A_k$. A nonempty open $G$ in $(0,1)$ contains some $I_n$. Show that:
+	$$
+		0 < \lambda(A_n) \leq \lambda(A \cap G) < \lambda(A \cap G) + \lambda(B_n) \leq \lambda(G)
+	$$
+	First, we note that yes, a nonempty open $G$ in $(0,1)$ contains one of the $I_n$ - a point in $G$ contains an open interval, which contains an $I_n$. We have:
+	$$
+		0 < \lambda(A_n)
+	$$
+	As $A_n$ has positive Lebesgue measure. As $A_n \subseteq A$, and $A_n \subseteq I_n \subset G$, we have $A_n \subseteq A \cap G$, and so by subadditivity, we have:
+	$$
+		\lambda(A_n) \leq \lambda(A \cap G)
+	$$
+	As $\lambda(B_n) > 0$, and $B_n$ disjoint from $A$ gives countable subadditivity, and $B_n \subseteq I_n \subset G$, we have:
+	$$
+		< \lambda(A \cap G) + \lambda(B_n) = \lambda((A \cap G) \cup B_n) \leq \lambda(G)
+	$$
+	Note, the final point follows, because if $x \in B_n$, then $x \in G$ and if $x \in A \cap G$, then $x \in G$. Thus, all together, we have:
+	$$
+		0 < \lambda(A \cap G) < \lambda(G)
+	$$
+	And so, for every nonempty open set $G$ in $(0,1)$, we have a borel set $A$ such that $0 < \lambda(A \cap G) < \lambda(G)$. qed.
+	
+\end{enumerate}
+
+\subsubsection{3.20} There is no Borel set $A$ in $(0,1)$ such that $a\lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$ for every interval $I$ in $(0,1)$, where $0 < a \leq b < 1$. We will prove this via the following stronger results:
+\begin{enumerate}
+	\item 
 \end{enumerate}
 
 \end{document}

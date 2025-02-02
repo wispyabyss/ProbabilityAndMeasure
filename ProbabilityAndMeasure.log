@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  31 JAN 2025 08:27
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  2 FEB 2025 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1408,26 +1408,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 1982--1987
  []
 
 [77]
-Underfull \hbox (badness 10000) in paragraph at lines 2010--2012
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 2003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\cap' on input line 2003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\lambda' on input line 2003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2003.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2003.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2010--2015
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2010--2012
+Underfull \hbox (badness 10000) in paragraph at lines 2010--2015
 
  []
 
-[78] (./ProbabilityAndMeasure.aux)
+[78]
+Overfull \hbox (13.90274pt too wide) in paragraph at lines 2024--2031
+\T1/lmr/m/n/12 end-points. Con-struct dis-joint, nowhere dense Borel sets $\OML
+/cmm/m/it/12 A[]; B[]; A[]; B[]; [] $
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2024--2031
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2024--2031
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2024--2031
+
+ []
+
+[79] [80] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 4949D64BD22A1C822B0937569672A425;13987.
+(rerunfilecheck)             Checksum: 2B9281C0A43484C96786A680EC26EE00;14550.
  ) 
 Here is how much of TeX's memory you used:
  9824 strings out of 476191
  152526 string characters out of 5812072
- 466538 words of memory out of 5000000
+ 467110 words of memory out of 5000000
  30435 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,7n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (78 pages).
+Output written on ProbabilityAndMeasure.pdf (80 pages).
