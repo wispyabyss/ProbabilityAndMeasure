@@ -2058,7 +2058,51 @@ For every nonempty open set $G$ in $(0,1)$. Now, note both inequalities are need
 
 \subsubsection{3.20} There is no Borel set $A$ in $(0,1)$ such that $a\lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$ for every interval $I$ in $(0,1)$, where $0 < a \leq b < 1$. We will prove this via the following stronger results:
 \begin{enumerate}
-	\item 
+	\item If $\lambda(A \cap I) \leq b\lambda(I)$ for all $I$ and if $b < 1$, then $\lambda(A) = 0$.
+	\\\\
+	Following the hint, the first step is too choose an open $G$ such that $A \subset G \subset (0,1)$ \textit{and}:
+	$$
+		\lambda(G) < b^{-1}\lambda(A)
+	$$
+	Note, as $b < 1$, $b^{-1} > 1$. By the definition of the borel outer measure:
+	$$
+		\lambda(A) = \lambda^*(A) = \inf_n \sum_n P(A_n) \quad\text{ where }\quad
+		A \subseteq \bigcup_n A_n \quad\text{ and }\quad A_n \in \bcal_0
+	$$
+	As $A_n \in \bcal_0$, $A_n$ is in the field of disjoint unions of intervals, which is open sets. As $\lambda(A) < b^{-1}\lambda(A)$, we can find a countable union of open sets covering $A$ (which is still open), which also satisfies:
+	$$
+		\lambda(\bigcup A_n) \leq \sum_n P(A_n) < b^{-1}\lambda(A)
+	$$
+	We let $G = \bigcup_n A_n$ be our open set satisfying the necessary properties. Now, we recall that every open set in $\R$ can be described as a disjoint countable union of intervals $I$ (for a quick proof - each connected portion of $G$ must be an interval, and each of these disjoint intervals contains a rational number, so they must be countable).
+	\\\\
+	Thus, we have $G = \bigcup_n I_n$ for countable disjoint intervals in $(0,1)$. We have by countable additivity, our assumption on $A$, and as $A \cap I_n$ are disjoint sets whose union equals $A$:
+	$$
+		\lambda(G) < b^{-1}\lambda(A) \implies
+		\sum_n \lambda(I_n) < b^{-1}\lambda(A) \implies
+		b^{-1} \sum_n \lambda(A \cap I_n) < b^{-1}\lambda(A)
+	$$
+	$$
+		\implies b^{-1} \lambda(A) < b^{-1} \lambda(A)
+	$$
+	The above is a contradiction if $\lambda(A) > 0$. Thus, we must have $\lambda(A) = 0$.
+	
+	\item If $a \lambda(I) \leq \lambda(A \cap I)$ for all $I$, and if $a > 0$, then $\lambda(A) = 1$.
+	\\\\
+	This follows just by taking complements of the above result. We note that $\lambda(A) = 1$ if and only if $\lambda(A^c) = 0$. We note that if the above condition applies to $\lambda(A^c)$, then $\lambda(A^c) = 0$. We examine:
+	$$
+		\lambda(A^c \cap I) = \lambda(I) - \lambda(A \cap I)
+	$$
+	The above follows from set theory, and $A^c \cap I \subseteq I$. By the assumption, this implies:
+	$$
+		\implies \lambda(A^c \cap I) \leq \lambda(I) - a \lambda(I) = (1-a) \lambda(I)
+	$$
+	And so, give $a > 0$, we have $b = 1 - a < 1$. The above tells us for all $I$ and $b < 1$, we have:
+	$$
+		\lambda(A^c \cap I) \leq b\lambda(I)
+	$$
+	Thus, by part $a$, we have $\lambda(A^c) = 0 \implies \lambda(A) = 1$.
+	
+	\item Now, as for why the statement is impossible. If we had an $A$ in $(0,1)$ such that $a \lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$ for every open interval $I$ with $0 < a \leq b < 1$, then the above would tell us $\lambda(A) = 0$ and $\lambda(A) = 1$. This is a contradiction. qed.
 \end{enumerate}
 
 \end{document}
