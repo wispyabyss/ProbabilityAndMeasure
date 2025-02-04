@@ -46,6 +46,7 @@
 \newcommand{\curl}{\text{curl}}
 \newcommand{\trace}{\text{trace}}
 \newcommand{\grad}{\text{grad}}
+\newcommand{\io}{\text{i.o.}}
 
 
 \setcounter{secnumdepth}{0}
@@ -756,7 +757,7 @@ This contradicts $A_n$ being nonempty, and so, we must have $A$ is nonempty. qed
 \paragraph{Extended Sequence Measure} In Chapter 3, we will learn how to extend a countably additive probability measure on a field $F$ to a countably additive probability measure on the sigma field $\sigma(F)$. The term \textit{probability measure} more accurately refers to the extended $P$. We have that $C_0$ is the field above, and we let $C = \sigma(C_0)$. Thus, $(S^\infty, C, P)$ will be a probability space that we will look at later, an important one.
 
 \subsection{Problems}
-\subsubsection{2.1} Define $x \vee y = \max(x,y)$, and for a collection $\{x_\alpha\}$ define:
+\subsubsection{2.1 Prove Set Theory Results Using Indicators} Define $x \vee y = \max(x,y)$, and for a collection $\{x_\alpha\}$ define:
 $$
 	\bigvee_\alpha x_\alpha = \sup_\alpha x_\alpha
 $$
@@ -2000,7 +2001,7 @@ And so, $\bcal$ cannot contain every element of $2^C$. However, every element of
 	Which is a contradiction. So, we must have that one of the $E \cap (H \circ r)$ is nonmeasurable. qed.
 \end{enumerate}
 
-\subsubsection{3.19 Existence of an Intermediate Borel Set $0 < \lambda(A \cap G) < \lambda(G)$ for nonempty open $G$} The aim of this problem is the construction of a Borel set $A$ in $(0,1)$ such that:
+\subsubsection{3.19 Existence of an Intermediate Borel Set $0 < \lambda(A \cap G) < \lambda(G)$ for all nonempty open $G$} The aim of this problem is the construction of a Borel set $A$ in $(0,1)$ such that:
 $$
 	0 < \lambda(A \cap G) < \lambda(G)
 $$
@@ -2056,7 +2057,7 @@ For every nonempty open set $G$ in $(0,1)$. Now, note both inequalities are need
 	
 \end{enumerate}
 
-\subsubsection{3.20} There is no Borel set $A$ in $(0,1)$ such that $a\lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$ for every interval $I$ in $(0,1)$, where $0 < a \leq b < 1$. We will prove this via the following stronger results:
+\subsubsection{3.20 No Intermediate Borel Set on All Intervals $a\lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$} There is no Borel set $A$ in $(0,1)$ such that $a\lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$ for every interval $I$ in $(0,1)$, where $0 < a \leq b < 1$. We will prove this via the following stronger results:
 \begin{enumerate}
 	\item If $\lambda(A \cap I) \leq b\lambda(I)$ for all $I$ and if $b < 1$, then $\lambda(A) = 0$.
 	\\\\
@@ -2104,6 +2105,96 @@ For every nonempty open set $G$ in $(0,1)$. Now, note both inequalities are need
 	
 	\item Now, as for why the statement is impossible. If we had an $A$ in $(0,1)$ such that $a \lambda(I) \leq \lambda(A \cap I) \leq b\lambda(I)$ for every open interval $I$ with $0 < a \leq b < 1$, then the above would tell us $\lambda(A) = 0$ and $\lambda(A) = 1$. This is a contradiction. qed.
 \end{enumerate}
+
+
+\section{Section 4 - Denumerable Probabilities}
+\subsection{Notes} Just like the starting note - there is a two way street between measure theory and extramathematical probabilistic ideas (ie, probability ideas stemming from outside math). Probability ideas can be made clear and systematic with measure theory, and ideas like independence (which really stem from outside of measure theory) can help illuminate problems of purely mathematical interest. This reciprocal exchange is why measure-theoretic probability is so interesting.
+\\\\
+In this section - we are concerned with infinite sequences of events in a probability space - Borel's first paper on the subject was called ``Denumerable Probabilities", hence the chapter name. Our examples will be centered in the \textit{unit interval} - ie, the probability space $((0,1],\bcal,\lambda)$. However, the Theorems will apply to \textit{all} probability spaces.
+
+\subsubsection{General Formulas}
+\paragraph{Conditional Probability} If $P(A) > 0$, the \textit{conditional probability} of $B$ given $A$ is defined in the usual way as:
+$$
+	P(B | A) = \frac{P(A \cap B)}{P(A)}
+$$
+We have chain rule formulas:
+$$
+	P(A \cap B) = P(A)P(B | A)
+$$
+$$
+	P(A \cap B \cap C) = P(A)P(B | A)P(C | A \cap B)
+$$
+And so on, all of which are clear from the definition. We also have if $A_1, A_2, \cdots$ partition $\Omega$, then:
+$$
+	P(B) = \sum_n P(A_n \cap B) = \sum_n P(A_n)P(B | A_n)
+$$
+Note: for a fixed $A$, the function $P(B|A)$ defines a probability measure as $B$ varies over $\fcal$. Note that $P(\Omega | A) = 1$, and the rest of the probability measure properties are easy to prove.
+\\\\
+If $P(A_n) = 0$, then by subadditivity $P(\cup_n A_n) = 0$. If $P(A_n) = 1$, then $\cap A_n$ has complement $\cup A_n^c$ of probability $0$. This gives two facts that are used over and over again:
+\\\\
+If $A_1, A_2, \cdots$ are sets of probability 0, so is $\cup_n A_n$. If $A_1, A_2, \cdots$ are sets of probability 1, so is $\cap_n A_n$. 
+
+\subsubsection{Limit Sets}
+\paragraph{Lim Inf and Lim Sup} For a sequence $A_1, A_2, \cdots$ of sets, define a set:
+$$
+	\limsup_n A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \quad\quad\quad
+	\liminf_n A_n = \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k
+$$
+Note - $\omega \in \limsup_n A_n$ implies that $\omega$ is in the $A_n$ infinitely often. $\omega \in \liminf A_n$ implies that $\omega$ is in all but finitely many $A_n$. Essentially - these sets \textit{express} how an $\omega$ can appear within the sets $A_n$ as we go to infinity. They capture two levels of infinity - infinitely often but not all, and eventually in all. It should be clear that the second implies the first - and so it is strictly smaller. Thus, we give the second the name of $\liminf$ (infimum being the smaller), and $\limsup$ for the former. Essentially - what are the biggest and smallest sets containing an $\omega$ that appears in the limits of the $A_n$. If the sets are equal, we write:
+$$
+	\lim_n A_n = \liminf_n A_n = \limsup_n A_n
+$$
+As one direction always holds, to prove that $A_n \to A$ involves checking:
+$$
+	\limsup_n A_n \subset A \subset \liminf_n A_n
+$$
+
+\paragraph{Example 1} Let $l_n(\omega)$ be the length of the run of $0$'s starting at $d_n(\omega)$. If $l_n(\omega) = k$, then $d_n(\omega) = \cdots = d_{n+k-1}(\omega) = 0$, and $d_{n+k}(\omega) = 1$. If $l_n(\omega) = 0$, $d_n(\omega) = 1$. We can compute probabilities for this - it is clear that:
+$$
+	\Prob[\omega: l_n(\omega) = k] = \frac{1}{2}^{k + 1}
+$$
+As we have $k + 1$ spots to choose a specific binary choice. Also, as it is a disjoint union of intervals - the set lies in $\bcal$. Therefore, we find:
+$$
+	\Prob[\omega : l_n(\omega) \geq r] = \sum_{k \geq r} \frac{1}{2}^{k + 1} = 2^{-r}
+$$
+Note, the sum comes from disjoint sets. If $A_n$ is the event above, then $\limsup_n A_n$ is the set of $\omega$ such that $l_n(\omega) \geq r$ for \textit{infinitely many $n$}. Thus, we can regard $n$ as a time index, and we have $l_n(\omega) \geq r$ infinitely often.
+\\\\
+When $n$ has the role of time, $\limsup_n A_n$ is frequently written as:
+$$
+	\limsup_n A_n = [A_n \io]
+$$
+
+\paragraph{Theorem 4.1 - Ordering of Limit Probabilities} For each sequence $\{A_n\}$:
+$$
+	\Prob\left(\liminf_n A_n\right) \leq \liminf_n \Prob(A_n) \leq
+	\limsup_n \Prob(A_n) \leq \Prob\left(\limsup_n A_n\right)
+$$
+And if $A_n \to A$, then $P(A_n) \to P(A)$.
+\\\\
+\textbf{Proof:} Recall the definitions of $\liminf_n$ and $\limsup_n$ on sequences - they are the limits of the infimum and supremum of the sets $\{x_n: n \geq k\}$. Note, if we have the ordering is true, $A_n \to A$ implies $\liminf_n A_n = \limsup_n A_n$, which tells us:
+$$
+	\Prob\left(\liminf_n A_n\right) = \liminf_n \Prob(A_n) =
+	\limsup_n \Prob(A_n) = \Prob\left(\limsup_n A_n\right)
+$$
+Recall, that if $\liminf_n \Prob(A_n) = \limsup_n \Prob(A_n)$, then they both equal $\lim P(A_n)$, which tells us:
+$$
+	\lim P(A_n) = \Prob\left(\liminf_n A_n\right) \implies P(A_n) \to P(A)
+$$
+So, all that is left to prove is the ordering. Define $B_n = \bigcap_{k=n}^\infty A_k$ and $C_n = \bigcup_{k=n}^\infty A_k$. Note $B_n \uparrow \liminf_n A_n$ and $C_n \downarrow \limsup_n A_n$, so by Continuity from below and above, we have:
+$$
+	P(A_n) \geq P(B_n) \to \Prob\left(\liminf_n A_n\right)
+$$
+$$
+	P(A_n) \leq P(C_n) \to \Prob\left(\limsup_n A_n\right)
+$$
+Given that $\inf_{k \geq n} P(A_k) \geq P(B_n)$ (by monotonicity), and $\sup_{k \geq n} P(A_k) \leq P(C_n)$ (also by monotonicity), and $\liminf \leq \limsup$, we clearly have:
+$$
+	\Prob\left(\liminf_n A_n\right) \leq \liminf_n \Prob(A_n) \leq
+	\limsup_n \Prob(A_n) \leq \Prob\left(\limsup_n A_n\right)
+$$
+Thus, we have an ordering of the limit probabilities. qed.
+
+\paragraph{Example 4.2} Define $l_n(\omega)$ as above, and let $A_n = [\omega : l_n(\omega) \geq r]$ for fixed $r$. By Example 4.1 and Theorem 4-1, we have $\Prob\left[\omega: l_n(\omega) \geq r \io\right] \geq 2^{-r}$.
 
 \end{document}
 
