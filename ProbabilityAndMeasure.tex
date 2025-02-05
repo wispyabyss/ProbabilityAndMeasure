@@ -2196,6 +2196,60 @@ Thus, we have an ordering of the limit probabilities. qed.
 
 \paragraph{Example 4.2} Define $l_n(\omega)$ as above, and let $A_n = [\omega : l_n(\omega) \geq r]$ for fixed $r$. By Example 4.1 and Theorem 4-1, we have $\Prob\left[\omega: l_n(\omega) \geq r \io\right] \geq 2^{-r}$.
 
+\subsubsection{Independent Events} Events $A$ and $B$ are \textit{independent} if $P(A \cap B) = P(A)P(B)$. Note - this is a \textit{notation we have put on a general idea}. In life, we see events that we call \textit{independent} from each other, meaning that one happening doesn't have any effect on the other happening. In life - we have four cases - event $A$ happens and $B$ doesn't, vice versa, $A$ and $B$ both happen, or neither happens. We have probabilities for $A$ and $B$ - $P(A)$ and $P(B)$. The world is split into cases for event $A$ - there are $n$ (equally probable) possible outcomes, in which $A$ represents $m$ of those outcomes. Similarly for event $B$ - the world is split into $q$ (equally probable) possible outcomes, in which $B$ represents $p$ of those outcomes. In which case:
+$$
+	P(A) = m/n \quad\quad\quad P(B) = p/q
+$$
+We can split the world into $nq$ cases, by taking the Cartesian product of the $n$ cases that split the world when looking at it in terms of $A$, and the $q$ cases that split the world when looking at it in terms of $B$. If $A$ and $B$ have nothing to do with each other - ie, they are independent - then logically, the splits of the world were on \textit{different axes}, and the $m$ events that indicate $A$ happened are Cartesian multiplied with the $p$ events that indicate $B$ happened, and so the probability that both $A$ and $B$ happened is:
+$$
+	\frac{m \times p}{n \times q} = P(A)P(B)
+$$
+We take this intuition, and derive our probability theory property of \textit{Independence}.
+\\\\
+Independence is equivalent to requiring $P(B | A) = P(B)$, or $P(A|B) = P(A)$. Note, $B|A$ and $A|B$ have a similar intuition as above. More generally, a finite collection $A_1, \cdots, A_n$ of events is independent if:
+$$
+	P(A_{k_1} \cap \cdots \cap A_{k_j}) = P(A_{k_1}) \cdots P(A_{k_j})
+$$
+For $2 \leq j \leq n$ and $1 \leq k_1 < \cdots < k_j \leq n$. An \textit{infinite} (perhaps uncountable) collection of events is defined to be independent if each of its finite sub-collections is.
+\\\\
+Note the number of constraints required for independence on a set of $n$ events is:
+$$
+	\sum_{j=2}^n {n \choose j} = 2^n - 1 - n
+$$
+
+\paragraph{Example 4.5} We have that the events $H_n = [\omega: d_n(\omega) = 0]$, $n = 1, 2, \cdots$ are clearly independent, any finite intersection of which having both sides of the probability equation equaling $2^{-j} = 2^{-1} \times \cdots \times 2^{-1}$. It should be intuitive, then, that any events that can be described in terms of disjoint sets of $H_n, n \in \{i_1, i_2, \cdots\}$ should also be independent (note, not that the proof is intuitive, just the assumption). For example, $A$ and $B$ depending on even and odd times, respectively, should be independent. The set-theoretic form of the statement is that for:
+$$
+	A \in \sigma(H_2, H_4, \cdots) \quad\quad\quad
+	B \in \sigma(H_1, H_2, \cdots)	
+$$
+It ought to be possible to deduce the independence of $A$ and $B$.
+
+\paragraph{Independence of Classes} Defined \textit{classes} $\acal_1, \acal_2, \cdots, \acal_n$ in the basic $\sigma$ field $\fcal$ to be independent if for each choice of $A_i$ from $\acal_i$, the events $A_1, \cdots, A_n$ are independent. This is equivalent to the following holding:
+$$
+	P(B_1 \cap B_2 \cap \cdots \cap B_n) = P(B_1)P(B_2) \cdots P(B_n)
+$$
+For $B_i \in \acal_i$ or $B_i = \Omega$ (in which case, $B_i$ is removed from the intersection, and $P(B_i) = 1$ is removed from the multiplication).
+
+\paragraph{Theorem 4.2 - Independence of Generated $\sigma$ field} If $\acal_1, \cdots, \acal_n$ are independent and each $\acal_i$ is a $\pi$ system, then $\sigma(\acal_1), \cdots, \sigma(\acal_n)$ are independent as well.
+
+\textbf{Proof:} Let $\bcal_i$ be the class $\acal_i$ augmented by $\Omega$ - note, it is still a $\pi$ system, and we must have $\sigma(\acal_i) = \sigma(\bcal_i)$. By the independence hypothesis - we have that for $B_i \in \bcal_i$:
+$$
+	P(B_1 \cap B_2 \cap \cdots \cap B_n) = P(B_1)P(B_2) \cdots P(B_n)
+$$
+Ie, the $\bcal_i$ are independent as well. For fixed $B_2, \cdots, B_n$ in $\bcal_2, \cdots, \bcal_n$, let $\lcal$ be the class of $\fcal$ sets $B_1$ for which the above holds. Note - $\lcal$ is a $\lambda$ system, (contains $\Omega$, clearly contains complements, and disjoint unions by countable additivity of $P$) that contains $\bcal_1$, and by the $\pi$-$\lambda$ theorem, it also contains $\sigma(\acal_1)$. Thus, we have:
+$$
+	\sigma(\acal_1), \bcal_2, \cdots, \bcal_n
+$$
+Are independent classes. Now, for fixed $B_1, B_3, \cdots, B_n$ in $\sigma(\acal_1), \bcal_3, \cdots, \bcal_n$, let $\lcal$ be the class of $\fcal$ sets for which the independence condition holds. Again, it is a $\lambda$ system containing $\bcal_2$, and so we have independence of:
+$$
+	\sigma(\acal_1), \sigma(\acal_2), \cdots, \bcal_n
+$$
+Continue to find independence of $\sigma(\acal_1), \cdots, \sigma(\acal_n)$. qed.
+
+\paragraph{Independence of Infinite Classes} $[\acal_\theta : \theta \in \Theta]$ are independent if each collection $[A_\theta : \theta \in \Theta]$ for $A_\theta \in \acal_\theta$ is. This is equivalent to the independence of each finite sub-collection $\acal_{\theta_1}, \cdots, \acal_{\theta_n}$. Theorem 4-2 has an immediate consequence:
+
+\paragraph{Corollary 1 - Independence of Generated $\sigma$ fields (infinite version)} If $A_\theta, \theta \in \Theta$ are independent and each $\acal_\theta$ is a $\pi$ system, then $\sigma(\acal_\theta), \theta \in \Theta$, are independent.
+
 \end{document}
 
 
