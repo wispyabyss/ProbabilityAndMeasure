@@ -31,6 +31,7 @@
 \newcommand{\dcal}{\mathcal{D}}
 \newcommand{\fcal}{\mathcal{F}}
 \newcommand{\bcal}{\mathcal{B}}
+\newcommand{\gcal}{\mathcal{G}}
 \newcommand{\hcal}{\mathcal{H}}
 \newcommand{\mcal}{\mathcal{M}}
 \newcommand{\pcal}{\mathcal{P}}
@@ -2297,8 +2298,70 @@ And so yes, $B$ is independent of $\sigma(\acal)$.
 Probability theory differentiates itself from measure theory, in that we are often playing around with lots of $\sigma$ algebras. Note, in probability, $\sigma$ fields in $\fcal$ - ie, sub $\sigma$ fields, play an important role.
 \\\\
 A subclass $\acal$ of $\fcal$ corresponds heuristically to \textit{partial information}. Note - these are not math terms, but just in the real world, partial information. Imagine for a point $\omega \in \Omega$ that we draw, according to probabilities $P$, where $\omega \in A$ with probability $P(A)$. Imagine an observer, who doesn't know what $\omega$ we drew, but does know whether $\omega \in A$ for $A \in \acal$ - ie, the value of $I_A(\omega)$ for $A \in \acal$. We can \textit{identify} this partial information with the class $\acal$ itself. This will help draw connections between the measure theory concepts we are going over, and the real world probabilities we are trying to examine.
-\\\\
 
+\paragraph{Interpreting Theorem 4.2} We have that Theorem 4.2 can be understood in this informal ``information" notion. $B$ is independent from the class $\acal$ is $P(B|A) = P(B)$ for all sets $A \in \acal$ for which $P(A) > 0$. Note, this implies that the classes $\{B\}$ and $\acal$ are independent. Thus, if $B$ is independent of $\acal$ - even if the observer knows $\acal$, then he still has no information about $B$, as $B$ still occurs with probability $P(B)$. Even if we know whether $A$ happened or not, for every $A \in \acal$ - as we don't know the underlying $\omega$, we still can't make conclusions about $B$.
+\\\\
+The point of Theorem 4.2 is - if $\acal$ is a $\pi$ system (so knowing $\acal$ means knowing the finite intersection of every $A \in \acal$) - then even if the observer is given information about $\sigma(\acal)$ (generally a strictly larger set) - the observer still knows nothing about $B$!
+
+\paragraph{Partial Information as Partitions} Say that $\omega$ and $\omega'$ are $\acal$ equivalent if, for every $A \in \acal$, $\omega$ and $\omega'$ either both lie in $A$, or both lie in $A^c$ - ie:
+$$
+	I_A(\omega) = I_A(\omega') \quad\quad\quad A \in \acal
+$$
+This is an equivalence relation for every $\omega \in \Omega$ - and thus, the relation partitions $\Omega$ into equivalence classes. Call this the $\acal$ partition.
+\\\\
+\textbf{Example 4.8} If $\omega$ and $\omega'$ are $\sigma(\acal)$ equivalent, then they are clearly $\acal$ equivalent. For fixed $\omega$ and $\omega'$, the class of $A$ such that $I_A(\omega) = I_A(\omega')$ is a $\sigma$ field (clearly closed under complements and countable unions, and contains the empty set and $\Omega$). If $\omega$ and $\omega'$ are $\acal$ equivalent, then this $\sigma$ field contains $\acal$ and hence $\sigma(\acal)$, so we know that $\omega$ and $\omega'$ are also $\sigma(\acal)$ equivalent.
+\\\\
+Thus, $\acal$ equivalence and $\sigma(\acal)$ equivalence are the same thing, and the $\acal$ partition coincides with the $\sigma(\acal)$ partition. And so - an observer with the information in $\sigma(\acal)$ knows, not the point $\omega$ is drawn, but the equivalence class containing it. I think - if $B$ was independent of $\acal$ $\pi$ system - then maybe we could conclude that $B$ contains no elements from any of the equivalence classes? In which case, we could say that knowing $\sigma(\acal)$ does nothing for knowing $B$? Perhaps. Note - this ``information" understanding can break down.
+
+\paragraph{Example 4.10 - Breakdown of Information Interpretation} In the unit interval $(\Omega,\fcal,P)$, let $\gcal$ be the $\sigma$ field consisting of the countable and cocountable sets. Since $P(G)$ is $0$ or $1$ for each $G$ in $\gcal$ - each set $H$ in $\fcal$ is independent of $\gcal$. But in this case, the $\gcal$ partition consists of the singletons, so the information in $\gcal$ tells the observer exactly which $\omega$ in $\Omega$ has been drawn. So, we have two conclusions:
+\begin{enumerate}
+	\item The $\sigma$ field $\gcal$ contains no information about $H$ - in the sense that $H$ and $\gcal$ are independent.
+	\item The $\sigma$ field $\gcal$ contains \textit{all} the information about $H$ - in the sense that it tells the observer exactly which $\omega$ was drawn.
+\end{enumerate}
+Note - this example emphasizes that the information interpretation is just a \textit{heuristic}. But what has broken down here? The book says that it is the unnatural structure of $\gcal$ - rather than a deficiency in the notion of independence. However, I like that it emphasizes that the heuristic \textit{is not} perfect - as it is always confusing to me when I try and look at it as well.
+
+\subsubsection{The Borel-Cantelli Lemmas}
+\paragraph{Theorem 4.3 First Borel-Cantelli Lemma} If $\sum_n P(A_n)$ converges, then $P(\limsup_n A_n) = 0$.
+\textbf{Proof:} Recall:
+$$
+	\limsup_n A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k \subseteq \bigcup_{k=m}^\infty A_k
+$$
+Thus, we have:
+$$
+	P\left(\limsup_n A_n\right) \leq P\left(\bigcup_{k=m}^\infty A_n \right) \leq \sum_{k=m}^\infty P(A_k)
+$$
+Note that as $m \to \infty$, the right hand side goes to $0$, which implies:
+$$
+	P\left(\limsup_n A_n\right) = 0
+$$
+Thus, we have the theorem. qed.
+\\\\
+There are some interesting examples in the text involving $l_n(\omega)$, the run of zero length starting at $d_n(\omega)$, but I won't go over them here. In a way, the theorem makes sense intuitively - as if we have the final sequence of events has probability essentially zero - even their total union will have probability zero, much less the $\omega$ that appear infinitely often.
+
+\paragraph{Theorem 4.4 Second Borel-Cantelli Lemma} If $\{A_n\}$ is an independent sequence of events and $\sum_nP(A_n)$ diverges, then $P(\limsup_n A_n) = 1$.
+\\\\
+Note, this is equivalent to proving:
+$$
+	P\left(\left(\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k\right)^c\right) = 0 \iff
+	P\left(\bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_k^c\right) = 0
+$$
+Note, the RHS above is implied if we have for each $n$:
+$$
+	P\left(\bigcap_{k=n}^\infty A_k^c\right) = 0
+$$
+Note, for a finite number of the intersection $j$, we have by independence:
+$$
+	P\left(\bigcap_{k=n}^{n+j} A_k^c\right) =
+	\prod_{k=n}^{n+j} 1 - P\left(A_k\right) \leq
+	\exp\left[-\sum_{k=n}^{n+j} P(A_k)\right]
+$$
+As the sum diverges, the exponential expression goes to $0$, and hence:
+$$
+	P\left(\bigcap_{k=n}^\infty A_k^c\right) \leq \lim_{j \to \infty} \exp\left[-\sum_{k=n}^{n+j} P(A_k)\right] = 0
+$$
+Thus, we can conclude that $P(\limsup_n A_n) = 1$. qed.
+\\\\
+Again, this makes intuitive sense. We have each of the events is independent - so, with our information notion, the result of one event won't impact the result of the other. Given that the sum diverges - an infinite number of the events has nonzero probability, that is fairly large, and so independently, an infinite subset of them should happen.
 
 \end{document}
 
