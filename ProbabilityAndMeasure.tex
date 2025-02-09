@@ -2362,6 +2362,88 @@ $$
 Thus, we can conclude that $P(\limsup_n A_n) = 1$. qed.
 \\\\
 Again, this makes intuitive sense. We have each of the events is independent - so, with our information notion, the result of one event won't impact the result of the other. Given that the sum diverges - an infinite number of the events has nonzero probability, that is fairly large, and so independently, an infinite subset of them should happen.
+\\\\
+Again, there are some good examples for the second Borel-Cantelli Lemma. One of them has to do with Diophantine approximation again, ie, approximating numbers by a rational. However, I think you have to dive deep into Diophantine numbers to be able to compare again with previous examples (discussing for an $\omega$, how many rational numbers are actually close to it that satisfy certain properties).
+
+\subsubsection{The Zero-One Law}
+
+\paragraph{Definition: Tail $\sigma$ Field} For a sequence $A_1, A_2, \cdots$ of events in a probability space $(\Omega, \fcal, P)$ consider the $\sigma$ fields for $\sigma(A_n, A_{n+1}, \cdots)$ and their intersection:
+$$
+	\ical = \bigcap_{n=1}^\infty \sigma(A_n, A_{n+1}, \cdots)
+$$
+Recall, the intersection of a $\sigma$ fields is always a $\sigma$ field. $\ical$ is called the tail sigma field associated with the sequence $\{A_n\}$. Its elements are called \textit{tail events}.
+
+\paragraph{Example 4.18 Lipsup and Liminf are Tail Events} Take a sequence $\{A_n\}$. Recall, we have:
+$$
+	\limsup_n A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_n
+$$
+$$
+	\liminf_n A_n = \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_n
+$$
+Note, however, that:
+$$
+	\limsup_n A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_n = \bigcap_{n=m}^\infty \bigcup_{k=n}^\infty A_n
+$$
+Take $x \in LHS$. Note, it is in each of the unions. And so, it clearly is in each of the unions on the RHS. Now, take $x \in RHS$. Note, it is in each of the unions. This implies it is in each of the unions on the LHS - as the unions on the LHS contain the unions on the RHS. Thus, they are equal. Similarly, we have:
+$$
+	\liminf_n A_n = \bigcup_{n=1}^\infty \bigcap_{k=n}^\infty A_n = \bigcup_{n=m}^\infty \bigcap_{k=n}^\infty A_n
+$$
+Now, note that:
+$$
+	\bigcap_{n=m}^\infty \bigcup_{k=n}^\infty A_n \in \sigma(A_m, A_{m+1}, \cdots) \implies
+	\limsup_n A_n \in \sigma(A_m, A_{m+1}, \cdots)
+$$
+As the above is true for each $m$, we have that $\limsup_n A_n$ is a tail event. Similarly, we have $\liminf_n A_n$ is a tail event. qed.
+
+\paragraph{Example 4.19 Run Lengths Being a specific length are tail events} Let $l_n(\omega)$ be the run length, as before (ie, $l_n(\omega)$ is the number of zeros that appear after $d_n(\omega)$. If $d_n(\omega) = 1$, $l_n(\omega) = 0$). Let $H_n = [\omega : d_n(\omega) = 0]$. For each $n_0$, we have:
+$$
+	[\omega : l_n(\omega) \geq r_n \io] =
+	\bigcap_{n \geq n_0} \bigcup_{k \geq n} [w: l_n(\omega) \geq r_k] =
+	\bigcap_{n \geq n_0} \bigcup_{k \geq n} H_k \cap H_{k+1} \cap \cdots \cap H_{k + r_k - 1}
+$$
+Thus, $[\omega : l_n(\omega) \geq r_n \io]$ is a tail event for the sequence $\{H_n\}$.
+
+\paragraph{Theorem 4.5 - Kolmogorov's Zero-One Law} If $A_1, A_2, \cdots$ is an independent sequence of events, then for each event $A$ in the tail $\sigma$ field, $P(A)$ is $0$ or $1$.
+\\\\
+\textbf{Proof:} By corollary 2 to Theorem 4.2 (the independent array implies independent row sigma algebras), we have $\sigma(A_1), \cdots, \sigma(A_{n-1}), \sigma(A_n, A_{n+1}, \cdots)$ are independent. If $A \in \ical$ (the tail $\sigma$ algebra), then $A \in \sigma(A_n, A_{n+1}, \cdots)$. Therefore, $A_1, \cdots, A_{n-1}, A$ are independent (all pick one subsets are independent, and subset is independent). As independence of a collection of events is defined by independence of each finite subcollection, the sequence:
+$$
+	A, A_1, A_2, \cdots
+$$
+Is independent (note, any subset can be reordered, for which we have independence). By a second application of Corollary 2, we have $\sigma(A)$ and $\sigma(A_1, A_2, \cdots)$ are all independent. But, $A \in \ical \subset \sigma(A_1, A_2, \cdots)$. Thus, as $A \in \sigma(A)$ and $A \in \sigma(A_1, A_2, \cdots)$, we have that $A$ is independent of itself. Thus:
+$$
+	P(A \cap A) = P(A)P(A) \implies
+	P(A) = P(A)^2 \implies
+	P(A) = \text{0 or 1}
+$$
+Thus, the Zero-One law follows. qed.
+\\\\
+I'm just trying to make sure the above is valid. I think it must be. Any probability $0$ or $1$ set is independent of itself - so, they are always allowed to be within two independent classes, as they would still satisfy the requirements.
+
+\paragraph{Example 4.20 - Borel Cantelli and Zero One Law} By Example 4.18. we have $P(\limsup_n A_n)$ is $0$ or $1$ if the $A_n$ are independent. The Borel-Cantelli Lemmas in this case go further, and give a specific criterion in terms of the convergence or divergence of $\sum P(A_n)$. Namely, if $A_n$ are independent, we have that $\sum_n P(A_n)$ diverges or converges, based on whether $P(\limsup_n A_n) = 1$ or $0$ respectively.
+
+\paragraph{Example 4.21 - Run Length At time $n$ longer than $r_n$ infinitely often} By Komogorov's Theorem, and example 4.19, we have that:
+$$
+	[\omega : l_n(\omega) \geq r_n \io]
+$$
+Is either a 0 or 1. We call the sequence $\{r_n\}$ an \textit{outer boundary} or an \textit{inner boundary} according to whether the probability is $0$ or $1$, respectively.
+\\\\
+In Example 4.11, we used the first Borel-Cantelli lemma to show that $\{r_n\}$ is an \textit{outer boundary} if $\sum 2^{-r_n} < \infty$.
+\\\\
+In Example 4.15, we used the second Borel-Cantelli lemma to show that $\{r_n\}$ is an \textit{inner boundary} if $\sum 2^{-r_n}r_n^{-1} = \infty$.
+\\\\
+By these criteria, $r_n = \theta \log_2 n$ gives an outer boundary if $\theta > 1$ and an inner boundary if $\theta \leq 1$. This can be noted that $2^{-\theta \log_2 n} = 1/n^\theta$, which converges for $\theta > 1$. Further, $1/n^\theta (\theta\log_2 n)^{-1}$ clearly diverges for $\theta \leq 1$. 
+\\\\
+Now, we consider the sequence $r_n = \log_2 n + \theta \log_2\log_2 n$. Here, we have:
+$$
+	\sum 2^{-r_n} = \sum \frac{1}{n(\log_2 n)^\theta}
+$$
+This converges for $\theta > 1$, which gives an outer boundary. Similarly:
+$$
+	\sum 2^{-r_n}r_n^{-1} \sim \sum \frac{1}{n(\log_2 n)^{1 + \theta}}
+$$
+Which diverges if $\theta \leq 0$, which gives an inner boundary. But, we have the range of $0 < \theta \leq 1$ unresolved, although every sequence is an inner or an outer boundary. We will revisit this in Chapter 6.
+
+
 
 \end{document}
 

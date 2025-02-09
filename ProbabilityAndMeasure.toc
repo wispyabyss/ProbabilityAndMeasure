@@ -131,3 +131,10 @@
 \contentsline {subsubsection}{The Borel-Cantelli Lemmas}{91}{section*.132}%
 \contentsline {paragraph}{Theorem 4.3 First Borel-Cantelli Lemma}{91}{section*.133}%
 \contentsline {paragraph}{Theorem 4.4 Second Borel-Cantelli Lemma}{91}{section*.134}%
+\contentsline {subsubsection}{The Zero-One Law}{92}{section*.135}%
+\contentsline {paragraph}{Definition: Tail $\sigma $ Field}{92}{section*.136}%
+\contentsline {paragraph}{Example 4.18 Lipsup and Liminf are Tail Events}{92}{section*.137}%
+\contentsline {paragraph}{Example 4.19 Run Lengths Being a specific length are tail events}{93}{section*.138}%
+\contentsline {paragraph}{Theorem 4.5 - Kolmogorov's Zero-One Law}{93}{section*.139}%
+\contentsline {paragraph}{Example 4.20 - Borel Cantelli and Zero One Law}{94}{section*.140}%
+\contentsline {paragraph}{Example 4.21 - Run Length At time $n$ longer than $r_n$ infinitely often}{94}{section*.141}%
