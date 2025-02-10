@@ -3,7 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{graphicx}
+\usepackage{graphicx} %Used for photos
+\usepackage{float} %Used for inline figures
 \usepackage{bbm} % Used for indicator function
 \usepackage{enumitem} % Used for enumerate w/ \alpha or roman
 \usepackage{hyperref} % Used for links, such as table of contents links
@@ -2443,7 +2444,94 @@ $$
 $$
 Which diverges if $\theta \leq 0$, which gives an inner boundary. But, we have the range of $0 < \theta \leq 1$ unresolved, although every sequence is an inner or an outer boundary. We will revisit this in Chapter 6.
 
+\subsection{Problems}
+\subsubsection{4.1 Equating Set $\liminf$ and $\limsup$ definitions with the sequence definitions} The limsup and liminf of a numerical sequence $\{x_n\}$ can be defined as the supremum and infimum of the set of limit points - the set of limits of convergent subsequences. This is the same as defining:
+$$
+	\limsup_n x_n = \bigwedge_{n=1}^\infty \bigvee_{k=n}^\infty x_k
+	\quad\quad\quad
+	\liminf_n x_n = \bigvee_{n=1}^\infty \bigwedge_{k=n}^\infty x_k
+$$
+Where $\bigvee$ is the maximum between points, and $\bigwedge$ is the minimum. First note that our symbolic definition above is the normal definition for $\limsup$ and $\liminf$. $\limsup$ is the limit of the supremum s of tail sequences. Over an infinite set, I take $\bigvee$ to be the supremum, and $\bigwedge$ as the infimum. And so, our above definition is the infimum of the supremums of tail sequences. Note, the infimum is equal to the limit - as the sequence of supremums is decreasing. We can note the same for our $\liminf$ symbolic definition - it matches the standard one.
+\\\\
+As for why the $\limsup$ definition is the same thing as the supremum of limits of converging sets. Note - the limit of a converging set must be smaller than the supremum of every tail sequence. This is because, every converging subsequence is contained within every tail subsequence. Thus, we have:
+$$
+	\limsup_n x_n \geq \text{ supremum of convergent subsequence limits}
+$$
+We now note, the infimum of the supremum of every tail sequence is smaller than or equal to the limit of some converging subsequence. Say the supremum isn't achieved - thus, by definition, it is approached, and the supremum of the tail sequence equals the limit of some converging subsequence. Now, if the limit is achieved for every tail sequence - then, the achieved elements form a convergent subsequence on their own, that is decreasing. In both cases, we have:
+$$
+	\limsup_n x_n \leq \text{ supremum of convergent subsequence limits}
+$$
+A similar argument can be made for the infimum.
+\\\\
+Now, we get to the actual question. We prove:
+$$
+	I_{\limsup_n A_n} = \limsup_n I_{A_n} \quad\quad\quad
+	I_{\liminf_n A_n} = \liminf_n I_{A_n}
+$$
+We prove it for the $\liminf$, and $\limsup$ will be similar. Say $I_{\liminf_n A_n}(\omega) = 1$. Then, we have that $\omega$ appears in every set with index $k \geq n$ for some finite $n$. Note, $\bigwedge_{k=n}^\infty I_{A_k}(\omega) = 1$, as it is the minimum over the set of $1$. Thus, the maximum is $1$ as well, and we have:
+$$
+	I_{\liminf_n A_n}(\omega) = 1 = \liminf_n I_{A_n}(\omega)
+$$
+Now, assume that $I_{\liminf_n A_n}(\omega) = 0$. Then, that means $\omega$ is not present in some $A_k$ for $k > n$, for every $n$. This implies that $\bigwedge_{k=n}^\infty I_{A_k}(\omega) = 0$, and we have:
+$$
+	I_{\liminf_n A_n}(\omega) = 0 = \liminf_n I_{A_n}(\omega)
+$$
+Thus, both sides are equal. Similar arguments can be made for the $\limsup$.
+\\\\
+Finally, prove that $\lim_n A_n$ exists in the sense of $\liminf_n A_n = \limsup_n A_n$ if and only if $\lim_n I_{A_n}(\omega)$ exists for each $\omega$.
+\\\\
+Assume the limit exists for each $\omega$. That means, for each $\omega$, $I_{A_n}(\omega)$ is eventually all zeros, or all ones. That is because, if the sequence jumps from $0$ to $1$ infinitely for at least one $\omega$, the limit does not exist for that one $\omega$. We have a partition of $\omega$, $\omega_0$ and $\omega_1$, for whether the sequence settles on all zeros, or all ones.
+\\\\
+We now note that $\omega_1 \in \lim_n A_n$. This is because $\omega_1$ is eventually in every set of some tail sequence. This means that each $\bigcup_{k=n} A_k$ contains $\omega_1$, in which case $\omega_1 \in \limsup_n A_n$. Similarly, as $\omega_1$ is eventually in every set in some tail sequence, $\omega_1 \in \bigcap_{k=n} A_k$ for some $k$, which means $\omega_1 \in \liminf_n A_n$.
+\\\\
+In the other direction, we note that $\omega_0 \not\in \lim_n A_n$. Eventually, $\omega_0$ is not in any of the sets of some tail sequence. Thus, eventually each $\bigcup_{k=n} A_k$ does not $\omega_0$, and $\omega_0 \not\in \limsup_n A_n$. Similarly, $\omega_0$ is not in any $\bigcap_{k=n} A_k$, which means $\omega_0 \not\in \liminf_n A_n$.
+\\\\
+Thus, we have that $\limsup_n A_n = \liminf_n A_n$, and the limit is well defined if $\lim_n I_{A_n}(\omega)$ exists. The other direction can be proved with similar arguments. qed.
 
+\subsubsection{4.3 Rotated Square $\limsup$ and $\liminf$} Let $A_n$ be the square $[(x,y) : |x| \leq 1, |y| \leq 1]$ rotated through the angle $2\pi n\theta$. Give geometric descriptions of $\limsup_n A_n$ and $\liminf_n A_n$ in case:
+\begin{enumerate}
+	\item $\theta = 1/8$. Note, in this case, we have:
+	$$
+		\text{angle}_n = 2\pi n / 8 = \frac{n\pi}{4}
+	$$
+	In this case, we have that $A_{2k}$ are equal and $A_{2k + 1}$ are all equal for $k = 0, 1, 2, \cdots$, ie:
+	$$
+		A_1 = A_3 = \cdots
+		\quad\quad
+		A_2 = A_4 = \cdots
+	$$
+	\begin{figure}[H]
+		\centering
+		\includegraphics[angle=270, width=0.5\textwidth]{problem-4.3.a.jpg}
+		\caption{Diagram for Question 4.3.a}
+		\label{fig:example1}
+	\end{figure} 
+	\noindent Note that the $\limsup$ is the union of the two squares in the above picture, as any point that appears within one of the two squares will appear infinitely often. $\liminf$ is the intersection of the two squares - as only the points in the intersection will appear in every tail set.
+	
+	\item $\theta$ is rational. In this case:
+	$$
+		\text{angle}_n = 2\pi n * p/q = \frac{2p n\pi}{q}
+	$$
+	Note - we will have a picture like above, with cycle of $q$. Note that:
+	$$
+		A_{k} = A_{q + k} = A_{2q + k}
+	$$
+	For $k \in [q]$, as:
+	$$
+		\frac{2p (tq + k)\pi}{q} =
+		2\pi pt + 2\pi \frac{pk}{q}
+	$$
+	Note that as $t$ and $p$ are integers, $2\pi pt$ is an integer multiple of $2\pi$, which just circles back to the angle of zero. And then, the added fraction of $ 2\pi \frac{pk}{q}$ is always the same. So, the union of the sets $A_k$ is the $\limsup$, like above, and the intersection is the $\liminf$, like above.
+	
+	\item $\theta$ is irrational. Note, in this case, we have that:
+	$$
+		\text{remainder } 2\pi n \theta / 2\pi
+	$$
+	Is dense in $[0,2\pi]$. Let's just assume that is the case for now. And so, take $x \not\in D$, where $D$ is the unit disk, but $x \in A_n$ for some $A_n$. Note, I think it might appear infinitely often in some $A_n$.
+	\\\\
+	Just making a leap here: but I think $\limsup A_n$ is the disk of radius $\sqrt{2}$, whereas $\liminf A_n$ is the disk of radius $1$. If you want to appear in every tail sequence - you have to be inside the unit disc.
+		
+\end{enumerate}
 
 \end{document}
 
