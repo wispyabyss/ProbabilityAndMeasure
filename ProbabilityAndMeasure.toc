@@ -141,3 +141,6 @@
 \contentsline {subsection}{Problems}{95}{section*.142}%
 \contentsline {subsubsection}{4.1 Equating Set $\qopname \relax m{lim\,inf}$ and $\qopname \relax m{lim\,sup}$ definitions with the sequence definitions}{95}{section*.143}%
 \contentsline {subsubsection}{4.3 Rotated Square $\qopname \relax m{lim\,sup}$ and $\qopname \relax m{lim\,inf}$}{97}{section*.144}%
+\contentsline {subsubsection}{4.7 Independence Complement Criteria}{98}{section*.145}%
+\contentsline {subsubsection}{4.8 Class $\mathcal {A}$ Partitions of $\Omega $}{99}{section*.146}%
+\contentsline {subsubsection}{4.10 Independence does not imply Independent Information}{100}{section*.147}%

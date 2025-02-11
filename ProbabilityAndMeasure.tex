@@ -2533,6 +2533,62 @@ Thus, we have that $\limsup_n A_n = \liminf_n A_n$, and the limit is well define
 		
 \end{enumerate}
 
+\subsubsection{4.7 Independence Complement Criteria} For events $A_1, \cdots, A_n$ consider the $2^n$ equations $P(B_1 \cap \cdots \cap B_n) = P(B_1) \cdots P(B_n)$ with $B_i = A_i$ or $B_i = A_i^c$ for each $i$. Show that $A_1, \cdots, A_n$ are independent if all these equations hold.
+\\\\
+We note a similar criteria that we have already approved - consider the $2^n$ equations $P(C_1 \cap \cdots \cap C_n) = P(C_1) \cdots P(C_n)$ with $C_i = A_i$ or $C_i = \Omega$ for each $i$. If each of these holds, then the $A_i$ are independent. We prove that if the $B$ equations hold, the $C$ equations holds. Thus, the $B$ equations also imply independence.
+\\\\
+First, assume one of the $C_i$ is $\Omega$. Thus, we have by countable additivity:
+$$
+	P(C_1 \cap \cdots \cap C_n) = 
+	P(A_1 \cap \cdots \cap A_i \cap \cdots \cap A_n) + 
+	P(A_1 \cap \cdots \cap A_i^c \cap \cdots \cap A_n)
+$$
+By the $B$ equations, the above equals:
+$$
+	= (P(A_i) + P(A_i)^c)(P(A_1) \cdots \widehat{P(A_i)} \cdots P(A_n)) =
+	P(C_1) \cdots P(C_n)
+$$
+Now, we can take this result, and prove the equations hold for two $\Omega$ in the same way, and so on. Thus, we have that the $C_i$ equations hold if the $B_i$ equations hold, and the $B_i$ equations imply independence. Note, independence clearly implies the $B_i$ equations hold, so its an if and only if. qed.
+
+\subsubsection{4.8 Class $\acal$ Partitions of $\Omega$} Recall that $\omega$ and $\omega'$ are called $\acal$ equivalent if, for every $A \in \acal$, $\omega$ and $\omega'$ lie either both in $A$ or both in $A^c$. That is:
+$$
+	I_A(\omega) = I_A(\omega') \quad\quad\quad A \in \acal
+$$
+This is clearly an equivalence relation, and this relation partitions $\Omega$. Note, there are $2^{|\acal|}$ possible equivalence classes - as for each $A \in \acal$, being in $A$ or $A^c$ defines two difference classes (note, this might not be entirely accurate if $\acal$ contains the complement or not. But, the idea is there). Also note - we proved that if $\omega$ and $\omega'$ are $\acal$ equivalent, then they are also $\sigma(\acal)$ equivalent.
+\\\\
+In this problem, we want to describe the $\acal$ partition for each of the following classes:
+\begin{enumerate}
+	\item The class of finite and cofinite sets. For this class - each $\omega$ would belong to a finite set of itself. And so, if $\omega' \neq \omega$, we would have $I_{\{\omega\}}(\omega) \neq I_{\{\omega\}}(\omega')$. The partition would be all singletons.
+	
+	\item The class of countable and cocountable sets. For this class - I again believe the partition would be the singletons. Say $\omega, \omega'$ both belong to a countable set $A$. Then, we have that $A - \{\omega'\}$ is also a countable set. In which case, $\omega$ and $\omega'$ are not in the same equivalence class.
+	
+	\item A partition (or arbitrary cardinality) of $\Omega$. So, each $A \in \acal$ is disjoint from the rest. We have that the $\omega \in A$ form an equivalence class - as $\omega,\omega' \in A$ also implies $\omega,\omega' \not\in B \in \acal$ for $B \neq A$.
+	
+	\item The level sets of $\sin(x)$, where $\Omega = \R$. Again, I believe this would form a partition of $\Omega$, as $\sin(x) = c$ has multiple $x$ that satisfy that value. If we want to describe the partitions - we have for $c \in [-1,1]$, the level set $L$ is:
+	$$
+		L = \{x \in \R : x = \arcsin(c) + 2n\pi \text{ or } x = \pi - \arcsin(c) + 2n\pi, n \in \Z\}
+	$$
+	Think of this in terms of the unit circle - $\arcsin(c)$ gives the $x$ value (angle value) on the positive $x$ axis. The $x$ value on the negative $x$ axis is symmetrical, or mirrored, which is given by $\pi - x$. This gives the set above.
+	
+	\item The $\sigma$ field in problem 3.5. In problem 3.5, we have $\Omega = \left\{(x,y) : 0 < x,y \leq 1\right\}$ is the unit square, and $\fcal$ is the class of sets of the form:
+	$$
+		\left\{(x,y) : x \in A, 0 < y \leq 1\right\}
+	$$
+	And let $P$ have value $\lambda(A)$ on this set. In the problem, we show that $(\Omega,\fcal,P)$ is a probability space. First, we note that $\fcal$ is a $\sigma$ algebra - as countable unions and intersections on the $x$ axis still remain within $\bcal$, and we still have all the ``height" from zero to one. We also clearly have $\Omega$ and complements. Probability measure still holds, as we still have countable additivity (if the $A$ are disjoint in $\bcal$, so are the corresponding sets above). It is also clear that for $A = \{(x,y) : 0 < x \leq 1, y = 1/2\}$, we have the outer measure $P^*(A) = 1$ while the inner measure $P^*(A) = 0$. That is essentially answering question 3.5.
+	\\\\
+	Now, we note that the $\acal$ partition of $\Omega$ is just straight lines $\{(x,y) : x \in (0,1], 0 < y \leq 1\}$. Every $\omega$ along such a line belongs to the same $A$ or $A^c$ for $A \in \fcal$ - this is because, each $A \in \fcal$ either contains the entire line, or it doesn't. Also, note that if $\omega$ and $\omega'$ are not on the same line - the singleton $\{x\}$ and $\{x'\}$ sets are within $\bcal$, so $\omega \in \{(x,y): 0 < y \leq 1\}$, but $\omega' \not\in \{(x,y): 0 < y \leq 1\}$. qed.
+\end{enumerate}
+
+\subsubsection{4.10 Independence does not imply Independent Information} Where by information, we mean which \textit{partition} of $\omega$ was selected. Note, some classes can be independent, but the information one class gives (ie, the partition that $\omega$ belongs to) might tell us which set in the other class the $\omega$ belongs to. This question essentially just emphasizes that the information notion is not altogether perfect.
+\\\\
+There is in the unit interval a set $H$ that is nonmeasurable in the extreme sense that its inner and outer Lebesgue measures are $0$ and $1$: $\lambda_*(H) = 0$ and $\lambda^*(H) = 1$. See problem 12.4 for its construction.
+\\\\
+Let $\Omega = (0,1]$, let $\gcal$ consist of the Borel sets in $\Omega$, and let $H$ be the set just described. Show that the class $\fcal$ of sets of the form $(H \cap G_1) \cup (H^c \cap G_2)$ for $G_1,G_2 \in \gcal$ is a $\sigma$ field, and that:
+$$
+	P\left[(H \cap G_1) \cup (H^c \cap G_2)\right] = \frac{1}{2}\lambda(G_1) + \frac{1}{2}\lambda(G_2)
+$$
+consistently defines a probability measure on $\fcal$ (I think this is a previous problem).
+
 \end{document}
 
 

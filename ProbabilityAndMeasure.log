@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  10 FEB 2025 09:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  11 FEB 2025 09:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1864,17 +1864,85 @@ Underfull \hbox (badness 10000) in paragraph at lines 2529--2533
 
  []
 
-[98] (./ProbabilityAndMeasure.aux)
+
+Overfull \hbox (27.43735pt too wide) in paragraph at lines 2536--2541
+\T1/lmr/m/n/12 For events $\OML/cmm/m/it/12 A[]; []  ; A[]$ \T1/lmr/m/n/12 con-
+sider the $\OT1/cmr/m/n/12 2[]$ \T1/lmr/m/n/12 equa-tions $\OML/cmm/m/it/12 P\O
+T1/cmr/m/n/12 (\OML/cmm/m/it/12 B[] \OMS/cmsy/m/n/12 \ [] \ \OML/cmm/m/it/12 B[
+]\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B[]\OT
+1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B[]\OT1/c
+mr/m/n/12 )$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2536--2541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2536--2541
+
+ []
+
+[98]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\Omega' on input line 2553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2553.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2556--2561
+
+ []
+
+[99]
+Overfull \hbox (32.38905pt too wide) in paragraph at lines 2573--2574
+[]\T1/lmr/m/n/12 The $\OML/cmm/m/it/12 ^^[$ \T1/lmr/m/n/12 field in prob-lem 3.
+5. In prob-lem 3.5, we have $\OT1/cmr/m/n/12 
+ = []$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2576--2580
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2582--2587
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2582--2587
+
+ []
+
+[100] [101] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 9B164864B452A2614CA695248AF17E93;17142.
+(rerunfilecheck)             Checksum: 82448DC9A884A812691F202A4311039F;17951.
  ) 
 Here is how much of TeX's memory you used:
  9912 strings out of 476191
  153936 string characters out of 5812072
- 474236 words of memory out of 5000000
+ 475071 words of memory out of 5000000
  30516 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (98 pages).
+Output written on ProbabilityAndMeasure.pdf (101 pages).
