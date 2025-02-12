@@ -1,8 +1,8 @@
 \contentsline {section}{Forward}{3}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{3}{section*.3}%
 \contentsline {subsection}{Notes}{3}{section*.4}%
-\contentsline {subsubsection}{The Unit Interval}{3}{section*.5}%
-\contentsline {subsubsection}{The Weak Law of Large Numbers}{4}{section*.6}%
+\contentsline {subsubsection}{The Unit Interval}{4}{section*.5}%
+\contentsline {subsubsection}{The Weak Law of Large Numbers}{5}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{5}{section*.7}%
 \contentsline {paragraph}{Lemma - Chebyshev's Inequality}{6}{section*.8}%
 \contentsline {subsubsection}{The Strong Law of Large Numbers}{6}{section*.9}%
@@ -21,126 +21,127 @@
 \contentsline {subsubsection}{1.6 Alternate $S_n$ Integral Value Proof}{18}{section*.22}%
 \contentsline {subsubsection}{1.7 Vieta's Formula}{20}{section*.23}%
 \contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{22}{section*.24}%
-\contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{22}{section*.25}%
-\contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{23}{section*.26}%
+\contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{23}{section*.25}%
+\contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{24}{section*.26}%
 \contentsline {subsubsection}{1.11 Diophantine Approximation Properties}{25}{section*.27}%
-\contentsline {section}{Section 2 - Probability Measures}{26}{section*.28}%
-\contentsline {subsection}{Notes}{26}{section*.29}%
-\contentsline {paragraph}{Spaces}{26}{section*.30}%
+\contentsline {section}{Section 2 - Probability Measures}{27}{section*.28}%
+\contentsline {subsection}{Notes}{27}{section*.29}%
+\contentsline {paragraph}{Spaces}{27}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{27}{section*.31}%
 \contentsline {paragraph}{Classes of Sets}{27}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{28}{section*.33}%
 \contentsline {paragraph}{Examples}{28}{section*.34}%
-\contentsline {paragraph}{Definition - Generated Sigma Field}{28}{section*.35}%
+\contentsline {paragraph}{Definition - Generated Sigma Field}{29}{section*.35}%
 \contentsline {paragraph}{Example - Borel Sets}{29}{section*.36}%
 \contentsline {paragraph}{Probability Measures}{29}{section*.37}%
 \contentsline {paragraph}{Probability Space}{29}{section*.38}%
-\contentsline {paragraph}{Discrete Probability Space}{29}{section*.39}%
-\contentsline {paragraph}{Massed Discrete Probability Space}{29}{section*.40}%
-\contentsline {paragraph}{Lebesgue Measure on the Unit Interval}{30}{section*.41}%
+\contentsline {paragraph}{Discrete Probability Space}{30}{section*.39}%
+\contentsline {paragraph}{Massed Discrete Probability Space}{30}{section*.40}%
+\contentsline {paragraph}{Lebesgue Measure on the Unit Interval}{31}{section*.41}%
 \contentsline {paragraph}{Sequence Space}{31}{section*.42}%
-\contentsline {paragraph}{Definition - Coordinate Functions}{31}{section*.43}%
+\contentsline {paragraph}{Definition - Coordinate Functions}{32}{section*.43}%
 \contentsline {paragraph}{Definition: Cylinder of Rank $n$}{32}{section*.44}%
 \contentsline {paragraph}{Definition: Probability Measure on the Field of Cylinders}{32}{section*.45}%
-\contentsline {paragraph}{Theorem 2.3}{32}{section*.46}%
-\contentsline {paragraph}{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty}{32}{section*.47}%
+\contentsline {paragraph}{Theorem 2.3}{33}{section*.46}%
+\contentsline {paragraph}{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty}{33}{section*.47}%
 \contentsline {paragraph}{Proof of Lemma}{33}{section*.48}%
 \contentsline {paragraph}{Extended Sequence Measure}{34}{section*.49}%
 \contentsline {subsection}{Problems}{34}{section*.50}%
 \contentsline {subsubsection}{2.1 Prove Set Theory Results Using Indicators}{34}{section*.51}%
 \contentsline {subsubsection}{2.2 Union and Intersection Equality Property}{35}{section*.52}%
-\contentsline {subsubsection}{2.3 Equivalent and Non Equivalent Field Definitions}{35}{section*.53}%
-\contentsline {subsubsection}{2.4 Unions of increasing Fields are Fields, but not true for $\sigma $ fields}{35}{section*.54}%
+\contentsline {subsubsection}{2.3 Equivalent and Non Equivalent Field Definitions}{36}{section*.53}%
+\contentsline {subsubsection}{2.4 Unions of increasing Fields are Fields, but not true for $\sigma $ fields}{36}{section*.54}%
 \contentsline {subsubsection}{2.5 Generated Field and Explicit Definition}{36}{section*.55}%
 \contentsline {subsubsection}{2.6 Comparing Fields and $\sigma $ fields}{36}{section*.56}%
-\contentsline {subsubsection}{2.7 Extending a field/$\sigma $ field by $\{H\}$}{36}{section*.57}%
+\contentsline {subsubsection}{2.7 Extending a field/$\sigma $ field by $\{H\}$}{37}{section*.57}%
 \contentsline {subsubsection}{2.8 $\sigma $ algebra for class where $A^c$ is countable union of class elements}{37}{section*.58}%
 \contentsline {subsubsection}{2.9 Equivalent $\sigma $ algebra definition}{37}{section*.59}%
-\contentsline {subsubsection}{2.10 Classes Generating The Discrete Field are Large}{37}{section*.60}%
-\contentsline {subsubsection}{2.11 Countably Generated Fields}{38}{section*.61}%
+\contentsline {subsubsection}{2.10 Classes Generating The Discrete Field are Large}{38}{section*.60}%
+\contentsline {subsubsection}{2.11 Countably Generated Fields}{39}{section*.61}%
 \contentsline {subsubsection}{2.12 Cardinality of Fields and $\sigma $ Fields}{40}{section*.62}%
-\contentsline {subsubsection}{2.13 Probability Measure on Finite and CoFinite Sets}{41}{section*.63}%
-\contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{42}{section*.64}%
-\contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{43}{section*.65}%
+\contentsline {subsubsection}{2.13 Probability Measure on Finite and CoFinite Sets}{42}{section*.63}%
+\contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{43}{section*.64}%
+\contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{44}{section*.65}%
 \contentsline {subsubsection}{2.18 Stochastic Arithmetic}{45}{section*.66}%
-\contentsline {subsubsection}{2.19 Nonatomic Probability Spaces}{50}{section*.67}%
-\contentsline {subsubsection}{2.21 Generating Sigma Algebras ``From the Inside"}{53}{section*.68}%
+\contentsline {subsubsection}{2.19 Nonatomic Probability Spaces}{51}{section*.67}%
+\contentsline {subsubsection}{2.21 Generating Sigma Algebras ``From the Inside"}{54}{section*.68}%
 \contentsline {subsubsection}{2.22}{55}{section*.69}%
-\contentsline {section}{Section 3 - Existence and Extension}{55}{section*.70}%
-\contentsline {subsection}{Notes}{55}{section*.71}%
-\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{55}{section*.72}%
-\contentsline {subsubsection}{Construction of the Extension}{55}{section*.73}%
-\contentsline {paragraph}{Outer Measure}{55}{section*.74}%
+\contentsline {section}{Section 3 - Existence and Extension}{56}{section*.70}%
+\contentsline {subsection}{Notes}{56}{section*.71}%
+\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{56}{section*.72}%
+\contentsline {subsubsection}{Construction of the Extension}{56}{section*.73}%
+\contentsline {paragraph}{Outer Measure}{56}{section*.74}%
 \contentsline {paragraph}{Inner Measure}{56}{section*.75}%
-\contentsline {paragraph}{$P^*$ Measurable}{56}{section*.76}%
-\contentsline {paragraph}{Properties of $P^*$ and $\mathcal {M}$}{56}{section*.77}%
-\contentsline {paragraph}{Lemma 1 - The class $\mathcal {M}$ is a field}{57}{section*.78}%
-\contentsline {paragraph}{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mathcal {M}$}{57}{section*.79}%
-\contentsline {paragraph}{Lemma 3 - The class $\mathcal {M}$ is a $\sigma $ field, and $P^*$ restricted to $\mathcal {M}$ is countably additive}{58}{section*.80}%
+\contentsline {paragraph}{$P^*$ Measurable}{57}{section*.76}%
+\contentsline {paragraph}{Properties of $P^*$ and $\mathcal {M}$}{57}{section*.77}%
+\contentsline {paragraph}{Lemma 1 - The class $\mathcal {M}$ is a field}{58}{section*.78}%
+\contentsline {paragraph}{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mathcal {M}$}{58}{section*.79}%
+\contentsline {paragraph}{Lemma 3 - The class $\mathcal {M}$ is a $\sigma $ field, and $P^*$ restricted to $\mathcal {M}$ is countably additive}{59}{section*.80}%
 \contentsline {paragraph}{Lemma 4 - If $P^*$ is defined by the outer measure, then $\mathcal {F}_0 \subset \mathcal {M}$}{59}{section*.81}%
-\contentsline {paragraph}{Lemma 5 - If $P^*$ is defined by the outer measure, then $P^*(A) = P(A)$ for $A \in \mathcal {F}_0$}{59}{section*.82}%
-\contentsline {paragraph}{Proof of Extension in Theorem 3.1}{59}{section*.83}%
-\contentsline {subsubsection}{Uniqueness of the Extension and the $\pi -\lambda $ Theorem}{59}{section*.84}%
+\contentsline {paragraph}{Lemma 5 - If $P^*$ is defined by the outer measure, then $P^*(A) = P(A)$ for $A \in \mathcal {F}_0$}{60}{section*.82}%
+\contentsline {paragraph}{Proof of Extension in Theorem 3.1}{60}{section*.83}%
+\contentsline {subsubsection}{Uniqueness of the Extension and the $\pi -\lambda $ Theorem}{60}{section*.84}%
 \contentsline {paragraph}{$\pi $ System}{60}{section*.85}%
 \contentsline {paragraph}{$\lambda $ System}{60}{section*.86}%
-\contentsline {paragraph}{Lemma 6 $\pi $ and $\lambda $ implies $\sigma $}{60}{section*.87}%
-\contentsline {paragraph}{Theorem 3-2: $\pi -\lambda $ Theorem}{60}{section*.88}%
+\contentsline {paragraph}{Lemma 6 $\pi $ and $\lambda $ implies $\sigma $}{61}{section*.87}%
+\contentsline {paragraph}{Theorem 3-2: $\pi -\lambda $ Theorem}{61}{section*.88}%
 \contentsline {paragraph}{Theorem 3-3 Uniqueness of Extensions}{62}{section*.89}%
-\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{62}{section*.90}%
-\contentsline {paragraph}{Monotone Classes}{62}{section*.91}%
-\contentsline {paragraph}{Theorem 3.4 - Halmos's Monotone Class Theorem}{62}{section*.92}%
+\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{63}{section*.90}%
+\contentsline {paragraph}{Monotone Classes}{63}{section*.91}%
+\contentsline {paragraph}{Theorem 3.4 - Halmos's Monotone Class Theorem}{63}{section*.92}%
 \contentsline {subsubsection}{Lebesgue Measure on the Unit Interval}{63}{section*.93}%
-\contentsline {paragraph}{Example 1 - Subintervals around rationals}{63}{section*.94}%
-\contentsline {paragraph}{Example 2 - $k$ Repeated Sequences}{63}{section*.95}%
+\contentsline {paragraph}{Example 1 - Subintervals around rationals}{64}{section*.94}%
+\contentsline {paragraph}{Example 2 - $k$ Repeated Sequences}{64}{section*.95}%
 \contentsline {paragraph}{Completeness}{64}{section*.96}%
-\contentsline {paragraph}{Nonmeasurable Sets}{64}{section*.97}%
-\contentsline {paragraph}{Definition: Set Shifts/Translations}{64}{section*.98}%
-\contentsline {paragraph}{Vitali Sets}{65}{section*.99}%
+\contentsline {paragraph}{Nonmeasurable Sets}{65}{section*.97}%
+\contentsline {paragraph}{Definition: Set Shifts/Translations}{65}{section*.98}%
+\contentsline {paragraph}{Vitali Sets}{66}{section*.99}%
 \contentsline {subsection}{Problems}{66}{section*.100}%
 \contentsline {subsubsection}{3.1 Finite vs. Countable Additivity}{66}{section*.101}%
 \contentsline {subsubsection}{3.2 Redefining the Inner and Outer Measure}{67}{section*.102}%
-\contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{69}{section*.103}%
+\contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{70}{section*.103}%
 \contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{71}{section*.104}%
-\contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{73}{section*.105}%
-\contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{75}{section*.106}%
+\contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{74}{section*.105}%
+\contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{76}{section*.106}%
 \contentsline {subsubsection}{3.14 Lebesgue Measure 0 Sets that are not Borel Sets}{77}{section*.107}%
 \contentsline {subsubsection}{3.18 All non-zero outer measure sets contain a non (borel) measurable subset}{78}{section*.108}%
-\contentsline {subsubsection}{3.19 Existence of an Intermediate Borel Set $0 < \lambda (A \cap G) < \lambda (G)$ for all nonempty open $G$}{78}{section*.109}%
-\contentsline {subsubsection}{3.20 No Intermediate Borel Set on All Intervals $a\lambda (I) \leq \lambda (A \cap I) \leq b\lambda (I)$}{80}{section*.110}%
-\contentsline {section}{Section 4 - Denumerable Probabilities}{82}{section*.111}%
-\contentsline {subsection}{Notes}{82}{section*.112}%
-\contentsline {subsubsection}{General Formulas}{82}{section*.113}%
-\contentsline {paragraph}{Conditional Probability}{82}{section*.114}%
-\contentsline {subsubsection}{Limit Sets}{83}{section*.115}%
-\contentsline {paragraph}{Lim Inf and Lim Sup}{83}{section*.116}%
-\contentsline {paragraph}{Example 1}{84}{section*.117}%
-\contentsline {paragraph}{Theorem 4.1 - Ordering of Limit Probabilities}{84}{section*.118}%
-\contentsline {paragraph}{Example 4.2}{85}{section*.119}%
-\contentsline {subsubsection}{Independent Events}{85}{section*.120}%
-\contentsline {paragraph}{Example 4.5}{86}{section*.121}%
-\contentsline {paragraph}{Independence of Classes}{86}{section*.122}%
-\contentsline {paragraph}{Theorem 4.2 - Independence of Generated $\sigma $ field}{87}{section*.123}%
-\contentsline {paragraph}{Independence of Infinite Classes}{87}{section*.124}%
-\contentsline {paragraph}{Corollary 1 - Independence of Generated $\sigma $ fields (infinite version)}{87}{section*.125}%
-\contentsline {paragraph}{Corollary 2}{88}{section*.126}%
-\contentsline {paragraph}{Example 4.7}{88}{section*.127}%
-\contentsline {subsubsection}{Subfields}{89}{section*.128}%
-\contentsline {paragraph}{Interpreting Theorem 4.2}{89}{section*.129}%
-\contentsline {paragraph}{Partial Information as Partitions}{90}{section*.130}%
-\contentsline {paragraph}{Example 4.10 - Breakdown of Information Interpretation}{90}{section*.131}%
-\contentsline {subsubsection}{The Borel-Cantelli Lemmas}{91}{section*.132}%
-\contentsline {paragraph}{Theorem 4.3 First Borel-Cantelli Lemma}{91}{section*.133}%
-\contentsline {paragraph}{Theorem 4.4 Second Borel-Cantelli Lemma}{91}{section*.134}%
-\contentsline {subsubsection}{The Zero-One Law}{92}{section*.135}%
-\contentsline {paragraph}{Definition: Tail $\sigma $ Field}{92}{section*.136}%
-\contentsline {paragraph}{Example 4.18 Lipsup and Liminf are Tail Events}{92}{section*.137}%
-\contentsline {paragraph}{Example 4.19 Run Lengths Being a specific length are tail events}{93}{section*.138}%
-\contentsline {paragraph}{Theorem 4.5 - Kolmogorov's Zero-One Law}{93}{section*.139}%
-\contentsline {paragraph}{Example 4.20 - Borel Cantelli and Zero One Law}{94}{section*.140}%
-\contentsline {paragraph}{Example 4.21 - Run Length At time $n$ longer than $r_n$ infinitely often}{94}{section*.141}%
-\contentsline {subsection}{Problems}{95}{section*.142}%
-\contentsline {subsubsection}{4.1 Equating Set $\qopname \relax m{lim\,inf}$ and $\qopname \relax m{lim\,sup}$ definitions with the sequence definitions}{95}{section*.143}%
-\contentsline {subsubsection}{4.3 Rotated Square $\qopname \relax m{lim\,sup}$ and $\qopname \relax m{lim\,inf}$}{97}{section*.144}%
-\contentsline {subsubsection}{4.7 Independence Complement Criteria}{98}{section*.145}%
-\contentsline {subsubsection}{4.8 Class $\mathcal {A}$ Partitions of $\Omega $}{99}{section*.146}%
-\contentsline {subsubsection}{4.10 Independence does not imply Independent Information}{100}{section*.147}%
+\contentsline {subsubsection}{3.19 Existence of an Intermediate Borel Set $0 < \lambda (A \cap G) < \lambda (G)$ for all nonempty open $G$}{79}{section*.109}%
+\contentsline {subsubsection}{3.20 No Intermediate Borel Set on All Intervals $a\lambda (I) \leq \lambda (A \cap I) \leq b\lambda (I)$}{81}{section*.110}%
+\contentsline {section}{Section 4 - Denumerable Probabilities}{83}{section*.111}%
+\contentsline {subsection}{Notes}{83}{section*.112}%
+\contentsline {subsubsection}{General Formulas}{83}{section*.113}%
+\contentsline {paragraph}{Conditional Probability}{83}{section*.114}%
+\contentsline {subsubsection}{Limit Sets}{84}{section*.115}%
+\contentsline {paragraph}{Lim Inf and Lim Sup}{84}{section*.116}%
+\contentsline {paragraph}{Example 1}{85}{section*.117}%
+\contentsline {paragraph}{Theorem 4.1 - Ordering of Limit Probabilities}{85}{section*.118}%
+\contentsline {paragraph}{Example 4.2}{86}{section*.119}%
+\contentsline {subsubsection}{Independent Events}{86}{section*.120}%
+\contentsline {paragraph}{Example 4.5}{87}{section*.121}%
+\contentsline {paragraph}{Independence of Classes}{87}{section*.122}%
+\contentsline {paragraph}{Theorem 4.2 - Independence of Generated $\sigma $ field}{88}{section*.123}%
+\contentsline {paragraph}{Independence of Infinite Classes}{88}{section*.124}%
+\contentsline {paragraph}{Corollary 1 - Independence of Generated $\sigma $ fields (infinite version)}{88}{section*.125}%
+\contentsline {paragraph}{Corollary 2}{89}{section*.126}%
+\contentsline {paragraph}{Example 4.7}{89}{section*.127}%
+\contentsline {subsubsection}{Subfields}{90}{section*.128}%
+\contentsline {paragraph}{Interpreting Theorem 4.2}{90}{section*.129}%
+\contentsline {paragraph}{Partial Information as Partitions}{91}{section*.130}%
+\contentsline {paragraph}{Example 4.10 - Breakdown of Information Interpretation}{91}{section*.131}%
+\contentsline {subsubsection}{The Borel-Cantelli Lemmas}{92}{section*.132}%
+\contentsline {paragraph}{Theorem 4.3 First Borel-Cantelli Lemma}{92}{section*.133}%
+\contentsline {paragraph}{Theorem 4.4 Second Borel-Cantelli Lemma}{92}{section*.134}%
+\contentsline {subsubsection}{The Zero-One Law}{93}{section*.135}%
+\contentsline {paragraph}{Definition: Tail $\sigma $ Field}{93}{section*.136}%
+\contentsline {paragraph}{Example 4.18 Lipsup and Liminf are Tail Events}{93}{section*.137}%
+\contentsline {paragraph}{Example 4.19 Run Lengths Being a specific length are tail events}{94}{section*.138}%
+\contentsline {paragraph}{Theorem 4.5 - Kolmogorov's Zero-One Law}{94}{section*.139}%
+\contentsline {paragraph}{Example 4.20 - Borel Cantelli and Zero One Law}{95}{section*.140}%
+\contentsline {paragraph}{Example 4.21 - Run Length At time $n$ longer than $r_n$ infinitely often}{95}{section*.141}%
+\contentsline {subsection}{Problems}{96}{section*.142}%
+\contentsline {subsubsection}{4.1 Equating Set $\qopname \relax m{lim\,inf}$ and $\qopname \relax m{lim\,sup}$ definitions with the sequence definitions}{96}{section*.143}%
+\contentsline {subsubsection}{4.3 Rotated Square $\qopname \relax m{lim\,sup}$ and $\qopname \relax m{lim\,inf}$}{98}{section*.144}%
+\contentsline {subsubsection}{4.7 Independence Complement Criteria}{99}{section*.145}%
+\contentsline {subsubsection}{4.8 Class $\mathcal {A}$ Partitions of $\Omega $}{100}{section*.146}%
+\contentsline {subsubsection}{4.10 Independence does not imply Independent Information}{101}{section*.147}%
+\contentsline {subsubsection}{4.11}{104}{section*.148}%
