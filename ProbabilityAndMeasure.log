@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  12 FEB 2025 09:53
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  13 FEB 2025 08:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1966,7 +1966,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 2668--2674
 
  []
 
-[103] [104] (./ProbabilityAndMeasure.aux)
+[103]
+Underfull \hbox (badness 10000) in paragraph at lines 2684--2688
+
+ []
+
+[104]
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2721
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2716--2721
+
+ []
+
+[105]
+Overfull \hbox (1.86275pt too wide) in paragraph at lines 2723--2725
+\T1/lmr/m/n/12 As noted above, we can prove this prob-a-bil-ity equals one if e
+ach $[][] \OML/cmm/m/it/12 A[]$
+ []
+
+
+Overfull \hbox (49.99593pt too wide) detected at line 2733
+\OT1/cmr/m/n/12 = [][]
+ []
+
+[106] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 90A80EDEFAAEF5EABB2E2C2DCD873717;18030.
  ) 
@@ -1979,4 +2005,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (104 pages).
+Output written on ProbabilityAndMeasure.pdf (106 pages).

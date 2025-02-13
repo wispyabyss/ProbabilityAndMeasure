@@ -2683,6 +2683,63 @@ This relates to example 4.10, in which, even though $\gcal$ and $H$ are independ
 		P\left(\bigcup_{n=1}^\infty A_n\right) = 1 - \prod_{n=1}^\infty (1 - P(A_n))
 	$$
 	From these facts, derive the second Borel-Cantelli lemma by the well-known relation between infinite series and products (I would guess, it is the exponential fact).
+	\\\\
+	We note that for a finite sequence, independence implies:
+	$$
+		P\left(\bigcap_{n=1}^k A_n\right) = \prod_{n=1}^k P(A_n)
+	$$
+	We note that by continuity from above, we have:
+	$$
+		P\left(\bigcap_{n=1}^\infty A_n\right) = \prod_{n=1}^\infty P(A_n)
+	$$
+	We have by De'Morgan's laws, and independence implying independence of complements:
+	$$
+		P\left(\bigcup_{n=1}^\infty A_n\right) = 1 - P\left(\bigcap_{n=1}^\infty A_n^c\right) =
+		1 - \prod_{n=1}^\infty (1 - P(A_n))
+	$$
+	Recall, the Borel Cantelli Lemma states that if $\{A_n\}$ is an independent sequence of events, and $\sum_n P(A_n)$ diverges, then $P(\limsup_n A_n) = 1$. Note, this follows if the complement of the $\limsup$ equals $0$, which follows if $\bigcap_{k=n}^\infty A_k^c = 0$ for all $n$. Note, we have $A_k^c$ are independent by above, and so:
+	$$
+		P\left(\bigcap_{k=n}^\infty A_k^c\right) = \prod_{k=n}^\infty (1 - P(A_k)) \leq
+		\exp\left[-\sum_{k=n}^\infty P(A_k)\right] = 0
+	$$
+	As we know the sum diverges, and for $x \in [0,1]$, $(1-x) \leq \exp(-x)$. Note - the above is essentially just the proof for the second lemma, but made easier, as we don't have to apply a limit argument in the middle of the above steps, by the facts above. If we wanted to just \textit{derive} the lemma, then we might use the \href{https://en.wikipedia.org/wiki/Weierstrass_product_inequality?utm_source=chatgpt.com}{Weierstrass product inequality}. We have:
+	$$
+		1 - \sum_{n=1}^\infty P(A_n) \leq \prod_{n=1}^\infty (1 - P(A_n)) \leq \exp\left[-\sum_{n=1}^\infty P(A_n)\right]
+	$$
+	From this, we have:
+	$$
+		P\left(\bigcup_{n=1}^\infty A_n\right) = 1 - \prod_{n=1}^\infty (1 - P(A_n)) \geq
+		1 - \exp\left[-\sum_{n=1}^\infty P(A_n)\right] = 1
+	$$
+	So, the probability of each union of $A_n$, and each tail sequence union of $A_n$, is $1$. Note, from this, we can derive $P(\limsup_n A_n) = 1$, as it is an intersection of unions of probability one. Note, that by itself isn't enough, but we can use continuity from above to prove it equals $1$ as well (as the unions each contain each other). qed.
+	
+	\item Show that $P(\limsup_n A_n) = 1$ if for each $k$ the series $\sum_{n > k} P(A_n | A_k^c \cap \cdots \cap A_{n-1}^c)$ diverges. From this deduce the second Borel-Cantelli lemma once again.
+	\\\\
+	Just from an informal ``information" level - the independent parts of each $A_n$, the probability of each $A_n$ when you are given the rest of the previous $A_k$ - diverges (note, I treat knowing $A_k^c$ equivalent to knowing $A_k$).
+	\\\\
+	Recall, we have:
+	$$
+		\limsup_n A_n = \bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k
+	$$
+	As noted above, we can prove this probability equals one if each $\bigcup_{k=n}^\infty A_k$ equals one. Note - I think we can use the ratio test. If the limit of the ratios exists - then it must be greater than or equal to 1, as a ratio less than 1 would imply convergence. For the ratio test, we would have ratios of:
+	$$
+		\frac{P(A_k^c \cap \cdots \cap A_n^c \cap A_{n+1})}{P(A_k^c \cap \cdots \cap A_n^c)}
+		\frac{P(A_k^c \cap \cdots \cap A_{n-1}^c)}{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n)}
+	$$
+	$$
+		=
+		\frac{P(A_k^c \cap \cdots \cap A_n^c \cap A_{n+1})}{P(A_k^c \cap \cdots \cap A_n^c)}
+		\frac{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n^c) + P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n)}{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n)}
+	$$
+	$$
+		=
+		\frac{P(A_k^c \cap \cdots \cap A_n^c \cap A_{n+1})}{P(A_k^c \cap \cdots \cap A_n^c)}
+		\left(
+		\frac{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n^c)}{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n)} + 1
+		\right)
+	$$
+	I'm not sure if these ratios will actually help us. 
+	
 \end{enumerate}
 
 \end{document}
