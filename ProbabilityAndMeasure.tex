@@ -2738,7 +2738,57 @@ This relates to example 4.10, in which, even though $\gcal$ and $H$ are independ
 		\frac{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n^c)}{P(A_k^c \cap \cdots \cap A_{n-1}^c \cap A_n)} + 1
 		\right)
 	$$
-	I'm not sure if these ratios will actually help us. 
+	I'm not sure if these ratios will actually help us.
+	\\\\
+	We will first derive the second Borel-Cantelli lemma, just to get something on the board. Assume that the $A_n$ are independent, and their sum diverges. Then, we have:
+	$$
+		\sum_{n > k} P(A_n | A_k^c \cap \cdots \cap A_{n-1}^c) = 
+		\sum_{n > k} \frac{P(A_n \cap A_k^c \cap \cdots \cap A_{n-1}^c)}{P(A_k^c \cap \cdots \cap A_{n-1}^c)}
+	$$
+	$$
+		=
+		\sum_{n > k} \frac{P(A_n) P(A_k^c) \cdots P(A_{n-1}^c)}{P(A_k^c) \cdots P(A_{n-1}^c)} =
+		\sum_{n > k} P(A_n) = \infty
+	$$
+	Where the $= \infty$ comes from every tail sequence diverging as well. Thus, we have that $P(\limsup_n A_n) = 1$, and this tail series fact is actually stronger. Now, we note, that $P(\limsup_n A_n) = 1$ if we have for every $k$:
+	$$
+		P\left[\bigcap_{n \geq k} A_n^c\right] = 0
+	$$
+	We use this fact in the original proof. Assume by contradiction that we have at least one $k$ such that the above is greater than $0$. Then, we note by assumption:
+	$$
+		\sum_{n > k} P(A_n | A_k^c \cap \cdots \cap A_{n-1}^c) = \infty
+	$$
+	$$
+		\implies
+		\sum_{n > k} P(A_n \cap A_k^c \cap \cdots \cap A_{n-1}^c) \frac{1}{P(A_k^c \cap \cdots \cap A_{n-1}^c)} = \infty
+	$$
+	Now, by contradiction, we have assumed:
+	$$
+		P\left[\bigcap_{n \geq k} A_n^c\right] = \epsilon > 0 \implies
+		P(A_k^c \cap \cdots \cap A_{n-1}^c) \downarrow \epsilon
+	$$
+	Note, this implies the fraction approaches some constant $1/\epsilon$, and we can pull it out to conclude the first series diverges. More rigorously, for some $N$ large enough, for $n \geq N$, we have that:
+	$$
+		\epsilon \leq P(A_k^c \cap \cdots \cap A_{n-1}^c) \leq 2\epsilon
+	$$
+	Thus, on the tail, we find:
+	$$
+		\infty = \sum_{n > N} P(A_n \cap A_k^c \cap \cdots \cap A_{n-1}^c) \frac{1}{P(A_k^c \cap \cdots \cap A_{n-1}^c)} \geq
+		2\epsilon \sum_{n > N} P(A_n \cap A_k^c \cap \cdots \cap A_{n-1}^c)
+	$$
+	$$
+		\implies \sum_{n > k} P(A_n \cap A_k^c \cap \cdots \cap A_{n-1}^c) = \infty
+	$$
+	This is a contradiction, as we have each of the sets in the above sum are disjoint, and so their sum cannot be more than one. Thus, we must conclude for all $k$:
+	$$
+		P\left[\bigcap_{n \geq k} A_n^c\right] = 0 \implies
+		P(\limsup_n A_n) = 1
+	$$
+	Note: I used help online to solve this. My problem was - I was too focused on directly proving it. I had gotten to the intersections equal 0/unions equal one statement - but direct proof was the problem. I think if I had pivoted quicker, I could have solved this one.
+	
+	\item Show by example that $P(\limsup_n A_n) = 1$ does not follow from the divergence of $\sum_n P(A_n | A_1^c \cap \cdots \cap A_{n-1}^c)$ alone.
+	\\\\
+	Thinking in terms of ``information" - I think this might follow if $A_1$ is a really \textit{small} event. Then, knowing $A_1^c$ might mean that you know \textit{a lot}, in which case the probabilities in the sum are large.
 	
 \end{enumerate}
 
