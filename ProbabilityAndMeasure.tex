@@ -2789,6 +2789,8 @@ This relates to example 4.10, in which, even though $\gcal$ and $H$ are independ
 	\item Show by example that $P(\limsup_n A_n) = 1$ does not follow from the divergence of $\sum_n P(A_n | A_1^c \cap \cdots \cap A_{n-1}^c)$ alone.
 	\\\\
 	Thinking in terms of ``information" - I think this might follow if $A_1$ is a really \textit{small} event. Then, knowing $A_1^c$ might mean that you know \textit{a lot}, in which case the probabilities in the sum are large.
+	\\\\
+	Can't really figure this one out. First, we need $A_n$ to not be disjoint from the $A_k^c$ for $k < n$, as otherwise our conditional probabilities will be $0$. Then, we need $A_1^c$ to be restrictive enough so that the fraction becomes something like $x/x$, which is close to $1$. 
 	
 \end{enumerate}
 
