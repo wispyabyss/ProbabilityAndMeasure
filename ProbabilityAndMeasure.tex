@@ -2792,6 +2792,57 @@ This relates to example 4.10, in which, even though $\gcal$ and $H$ are independ
 	\\\\
 	Can't really figure this one out. First, we need $A_n$ to not be disjoint from the $A_k^c$ for $k < n$, as otherwise our conditional probabilities will be $0$. Then, we need $A_1^c$ to be restrictive enough so that the fraction becomes something like $x/x$, which is close to $1$. 
 	
+	\item Show that $P(\limsup_n A_n) = 1$ if and only if $\sum_n P(A \cup A_n)$ diverges for each $A$ of positive probability.
+	\\\\
+	Assume that $P(\limsup_n A_n) = 1$ and take $A$ such that $P(A) > 0$. Note, we have that:
+	$$
+		B_k = \bigcup_{i = k}^\infty A_i \implies 1 = P(\limsup_n A_n) =
+		P\left(\bigcap_{n=1}^\infty B_n\right) \leq
+		P(B_k)
+	$$
+	$$
+		\implies P(B_k) = 1
+	$$
+	Assume by contradiction that $\sum_n P(A \cup A_n)$ converges. Then, for some $k$ large enough, we have for $\epsilon < P(A)$:
+	$$
+		P(A \cap B_k) = P\left(A \cap \bigcup_{i = k}^\infty A_i\right) =
+		P\left(\bigcup_{i = k}^\infty A \cap A_i\right) \leq
+		\sum_{i = k}^\infty P(A \cap A_i) < \epsilon 
+	$$
+	However, we note:
+	$$
+		P(A) = P((A \cap B_k) \cup (A \cap B_k^c)) = P(A \cap B_k) + P(A \cap B_k^c) = P(A \cap B_k)
+	$$
+	As $P(A \cap B_k^c) \leq P(B_k^c) = 0$. Thus, we have a contradiction, as we have found:
+	$$
+		P(A) = P(A \cap B_k) < \epsilon < P(A)
+	$$
+	And so, by contradiction, we have that $\sum_n P(A \cup A_n)$ diverges. Now, we go the other direction, and assume that the sum diverges for all $A$ with positive probability. We have $P(\limsup_n A_n) = 1$ if and only if $P(B_k) = 1$. By contradiction, assume that $P(B_k) < 1$, in which case $P(B_k) > 1$. Then, we have:
+	$$
+		\sum_{i=k}^\infty P(B_k^c \cap A_i) \text{ diverges} \implies
+		\sum_{i=k}^\infty P(A_i - B_k) \text{ diverges}
+	$$
+	$$
+		\implies
+		\sum_{i=k}^\infty P(A_i - (A_k \cup \cdots \cup A_{i-1})) \text{ diverges}
+	$$
+	Note, the last step is because $A_k \cup \cdots \cup A_{i-1} \subseteq B_k$. Now, note that the above is a summation of disjoint sets, and so, we have:
+	$$
+		\implies
+		P\left(\bigcup_{i=k}^\infty A_i - (A_k \cup \cdots \cup A_{i-1})\right) = \infty
+		\implies
+		P(B_k) = \infty
+	$$
+	This is a contradiction, as an event must have less than or equal to $1$ probability. And so, by contradiction, we have that $P(B_k) = 1$ and thus $P(\limsup_n A_n) = 1$. qed.
+	
+	\item If sets $A_n$ are independent and $P(A_n) < 1$ for all $n$, then $P(A_n \io) = 1$ if and only if $P(\bigcup_n A_n) = 1$.
+	\\\\
+	We first go in the easy direction. Note, $P(A_n \io) = 1$ if and only if $P(B_k) = 1$ for all $k$. Note, for $k = 1$, we have:
+	$$
+		1 = P(B_1) = P\left(\bigcup_n A_n\right)
+	$$
+	And so now, we go in the other direction. We have that $P(\bigcup_n A_n) = 1$.
+	
 \end{enumerate}
 
 \end{document}
