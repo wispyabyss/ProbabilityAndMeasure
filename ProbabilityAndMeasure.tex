@@ -2672,7 +2672,7 @@ This construction proves the following: There exists a probability space $(\Omeg
 \\\\
 This relates to example 4.10, in which, even though $\gcal$ and $H$ are independent, the ``information" contained in $G$ would tell us whether or not the drawn $\omega$ is in $H$ or not. However, note that with this example - the $\gcal$ is more \textit{natural} - it is countably generated, and contains singletons. In fact - it is the borel sets! However, the example involves the pathological set $H$, which throws everything for a loop.
 
-\subsubsection{4.11}
+\subsubsection{4.11 Different Criteria for $P(\limsup_n A_n) = 1$}
 \begin{enumerate}
 	\item If $A_1, A_2, \cdots$ are independent events, then prove:
 	$$
@@ -2841,9 +2841,79 @@ This relates to example 4.10, in which, even though $\gcal$ and $H$ are independ
 	$$
 		1 = P(B_1) = P\left(\bigcup_n A_n\right)
 	$$
-	And so now, we go in the other direction. We have that $P(\bigcup_n A_n) = 1$.
-	
+	And so now, we go in the other direction. Recall, one sufficient condition for $P(A_n \io) = 1$ is that:
+	$$
+		P\left(\bigcap_{i=k} A_i^c\right) = 0
+	$$
+	For all $i$. Note, we have by assumption:
+	$$
+		P\left(\bigcap_{i=1} A_i^c\right) = 0
+	$$
+	As the $A_i^c$ are independent events as well, by part $a$, we have:
+	$$
+		P\left(\bigcap_{i=k} A_i^c\right) = \prod_{i=k}^\infty P(A_i^c)
+	$$
+	For $j = 1, \cdots, k-1$, we note that $P(A_j) < 1$, and so we have that $P(A_j^c) > 0$. And so, we have that:
+	$$
+		0 = P\left(\bigcap_{i=1} A_i^c\right) =
+		\lim_{n \to \infty} \prod_{i=1}^n P(A_i^c) =
+		P(A_1^c) \cdots P(A_{k-1}^c) \lim_{n \to \infty} \prod_{i=k}^n P(A_i^c)
+	$$
+	$$
+		\implies
+		0 = P(A_1^c) \cdots P(A_{k-1}^c) P\left(\bigcap_{i=k} A_i^c\right)
+	$$
+	As $P(A_1^c) \cdots P(A_{k-1}^c) > 0$, we must have for all $k$:
+	$$
+		0 = P\left(\bigcap_{i=k} A_i^c\right) \implies P(A_n \io) = 1
+	$$
+	Thus, we can indeed conclude that if sets $A_n$ are independent and $P(A_n) < 1$ for all $n$, then $P(A_n \io) = 1$ if and only if $P(\cup_n A_n) = 1$. qed.
 \end{enumerate}
+
+\subsubsection{4.14} Suppose that there are in $(\Omega, \fcal, P)$ independent events $A_1, A_2, \cdots$ such that, if:
+$$
+	\alpha_n = \min\left\{P(A_n), 1 - P(A_n)\right\}
+$$
+Then $\sum \alpha_n = \infty$. Show that $P$ is \textit{nonatomic}. 
+\\\\
+Recall - nonatomic means that if $P(A) > 0$, there exists a $B$ such that $B \subset A$ and $0 < P(B) < P(A)$, and $A,B \in \fcal$. Note, in problem 2-19, we prove that $\bcal$ is nonatomic with the lebesgue measure (deriving a contradiction from a single point needing to have $0$ lebesgue measure). We also showed that in the nonatomic case, that for $0 \leq x \leq P(A)$, there exists a $B$ such that $B \subset A$ and $P(B) = x$. Finally, we proved that if $p_1, p_2, \cdots$ are nonnegative and add to $1$, then $A$ can be decomposed into sets $B_1, B_2, \cdots$ such that $P(B_n) = p_nP(A)$.
+\\\\
+Take an $A \in \fcal$. We just have to show that there is a $B$ such that $B \subset A$, and $0 < P(B) < P(A)$ and $B \in \fcal$. Take $B_i$ as either $A_i$ or $A_i^c$, whichever satisfies $P(B_i) = \alpha_i$. Note, by Borel-Cantelli, we have $P(B_i \io) = 1$, and by 4.11e, we have:
+$$
+	P(\cup_i B_i) = 1
+$$
+Examine each $A \cap B_i$. We note for some $B_i$, we have that $0 < P(A \cap B_i) < P(A)$, and thus $(\Omega,\fcal,P)$ is nonatomic. First, note they all can't be zero, as that would imply:
+$$
+	0 = P(A \cap B_i) \implies
+	0 = P(\cup A \cap B_i) = P(A \cap \cup B_i) = P(A)
+$$
+Which is a contradiction. Note, the only thing to do now is prove that if $P(A \cap B_i) > 0$, we don't have $P(A \cap B_i) = P(A)$. However, this could be the case - what if the $B_i$ are disjoint, and $A = B_j$. This path will not work.
+\\\\
+\textbf{Attempt 2} Using the solution at the back of the book. First, note that:
+$$
+	\lim_{n \to \infty} \max P(B_1 \cap \cdots \cap B_n) = 0
+$$
+Here, we take $B_i$ as either $A_i$ or $A_i^c$ - note, we have:
+$$
+	P(B_1 \cap \cdots \cap B_n) = \prod_{i=1}^n P(B_i) \leq \exp\left(-\sum_{i=1}^n P(B_i)\right)
+$$
+Note, no matter the sum, it always diverges, and so yes, the limit is indeed $0$, even if you take the maximizing $B_i$. Now, define:
+$$
+	A_x = \left[\omega: \sum_n I_{A_n}(\omega) 2^{-n} \leq x\right]
+$$
+First note, $A_x$ contains all $\omega$ not in the $A_n$. Then, it would pick up the $\omega$ that appear sporadically, or in tail sequences far away enough such that the sum of the corresponding $2^{-n}$ does not exceed $x$. We want to show that:
+$$
+	P(A \cap A_x)
+$$
+Is continuous in $x$. Note that the above is maximized for $x = 1$, in which case $P(A \cap A_x) = P(A)$, as $A_1 = \Omega$, and minimized for $x = 0$, in which case $P(A \cap A_x) = P\left(A \cap \left(\cup A_i\right)^c\right) = 0$, as we have $P(\cup A_i) = 1$, and so its complement has probability zero. We want to show it is continuous in $x$. So, take some $c \in (0,1)$. We want to show that as $x_n \to c$, we have:
+$$
+	\lim_n P(A \cap A_{x_n}) = P(A \cap A_c)
+$$
+I believe this can be done by looking at the symmetric difference:
+$$
+	(A \cap A_{x_n}) \triangle (A \cap A_c)
+$$
+And noting that for $x_n$ close enough to $c$, the $\omega$ in one of the sets but not the other must be contained within small enough dyadic intervals. Or, we can make use of the fact that the maximum goes to $0$.
 
 \end{document}
 
