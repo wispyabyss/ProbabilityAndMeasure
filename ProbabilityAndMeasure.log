@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  18 FEB 2025 09:56
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  19 FEB 2025 10:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2084,7 +2084,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 2889--2893
 
  []
 
-[110] [111] (./ProbabilityAndMeasure.aux)
+[110] [111]
+Overfull \hbox (2.67331pt too wide) in paragraph at lines 2933--2935
+\T1/lmr/m/n/12 Note, $\OML/cmm/m/it/12 c$ \T1/lmr/m/n/12 has at most two dyadic
+ ex-pan-sions (ter-mi-nat-ing and non-terminating): 
+ []
+
+
+Overfull \hbox (12.28923pt too wide) detected at line 2959
+[] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS
+/cmsy/m/n/12 \ \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/
+cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/
+it/12 C[]\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j \OT1/cmr/m/n/12 = [] \OML/cmm/m/it
+/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 C[
+]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) \OMS/cm
+sy/m/n/12 ^^T [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[] \OMS/c
+msy/m/n/12 ^^@ \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T \OT1/
+cmr/m/n/12 0
+ []
+
+[112]
+Underfull \hbox (badness 10000) in paragraph at lines 2982--2986
+
+ []
+
+[113] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 8C0BD2E035E7CF865BAAECD6E49CBEB7;18341.
  ) 
@@ -2097,4 +2122,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (111 pages).
+Output written on ProbabilityAndMeasure.pdf (113 pages).
