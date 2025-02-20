@@ -2870,7 +2870,7 @@ This relates to example 4.10, in which, even though $\gcal$ and $H$ are independ
 	Thus, we can indeed conclude that if sets $A_n$ are independent and $P(A_n) < 1$ for all $n$, then $P(A_n \io) = 1$ if and only if $P(\cup_n A_n) = 1$. qed.
 \end{enumerate}
 
-\subsubsection{4.14} Suppose that there are in $(\Omega, \fcal, P)$ independent events $A_1, A_2, \cdots$ such that, if:
+\subsubsection{4.14 Infinite Independent Events Criteria for a Nonatomic Space} Suppose that there are in $(\Omega, \fcal, P)$ independent events $A_1, A_2, \cdots$ such that, if:
 $$
 	\alpha_n = \min\left\{P(A_n), 1 - P(A_n)\right\}
 $$
@@ -2978,11 +2978,87 @@ $$
 $$
 We have that $C^k_x$ is clearly measurable. There are certain sequences of $x \in B_1 \cap \cdots \cap B_k$, where $B_i = A_i$ or $A_i^c$, that satisfy the above equation. One such example is $x \in A_1^c \cap \cdots \cap A_k^c$. So, $C^k_x \in \fcal$, as $C^k_x$ is a finite union of finite intersections of measurable $B_i$. Now, we have that:
 $$
-	C_x = \bigcup_{k=1}^\infty C^k_x
+	C_x = \bigcap_{k=1}^\infty C^k_x
 $$
-Clearly, $\omega \in C^k_x \implies \omega \in C_x$, as we can just take $\omega \in A_i^c$ for $i > k$. Now, take $\omega \in C_x$. Note, if the $\omega$ sum is less than $x$, we can find a terminating expansion (with infinite tail of $\omega \in A_i^c$ such that $\omega \in C^k_x$ for some $k$ large enough. If the $\omega$ sum equals $x$ - and $x$ has only a non terminating expansion - we might run into some trouble. But, I think at this point, we should rely on the measurable mappings argument, which we will get to later.
+Clearly, $\omega \in C^k_x \implies \omega \in C_x$, as we can just take $\omega \in A_i^c$ for $i > k$. Now, take $\omega \in C_x$. We note that $\omega$ must be in $B_1, \cdots, B_k$ such that the sum satisfies:
+$$
+	\sum_{n=1}^k I_{A_n}(\omega) 2^{-n} \leq x
+$$
+Given that the infinite sum also satisfies being less than $x$. And so, $\omega \in C_x \implies \omega \in C^k_x$ for all $k$. Thus, we have that $C_x$ is a countable intersection of $\fcal$ sets, and so $C_x$ is within $\fcal$.
 \\\\
-The above argument is actually correct, as $\omega$ can belong to one of the $C^k_x$ with finite sequences, as the partial sum will be less than $x$. So yeah, the above equality does hold, and we have $C_x \in \fcal$, which proves that $(\Omega, \fcal, P)$ is \textit{nonatomic}. qed.
+Thus, we have proved that if there are in $(\Omega, \fcal, P)$ independent events $A_1, A_2, \cdots$ such that for:
+$$
+	\alpha_n = \min\left\{P(A_n), 1 - P(A_n)\right\}
+$$
+Then $\sum \alpha_n = \infty$, we have that $P$ is \textit{nonatomic}. qed.
+
+\subsubsection{4.15} Let $F$ be the set of square-free integers - those integers not divisible by any perfect square. Let $F_l$ be the set of $m$ such that $p^2|m$ ($p^2$ divides $m$) for no $p \leq l$, and show that $D(F_l) = \prod_{p \leq l}(1-p^{-2})$. Show that $P_n(F_l - F) \leq \sum_{p > l} p^{-2}$, and conclude that the square-free integers have density:
+$$
+	\prod_p (1-p^{-2}) = 6/\pi^2
+$$
+We need to recall a lot of the above notation. Its all from problem 2.18. We have that:
+$$
+	P_n(A) = \frac{1}{n}\#\left\{m : 1 \leq m \leq n, m \in A\right\}
+$$
+We also have that $P_n$ is a \textit{discrete} probability measure on $\Omega = \{1, 2, \cdots\}$. We define the \textit{density} as:
+$$
+	D(A) = \lim_n P_n(A)
+$$
+We first want to show:
+$$
+	D(F_l) = \prod_{p \leq l}(1-p^{-2})
+$$
+Note - I will first go with the assumption that $p$ is \textit{prime}. Note, assuming prime makes things easier, as we have that $lcm(p_1,p_2) = p_1p_2$, and we similarly have $lcm(p_1^2,p_2^2) = p_1^2p_2^2$. Further, in problem 2.18 (which this problem seems to be a continuation of), $p$ referred to prime numbers as well.
+\\\\
+We recall the notation that $M_a = \{ak: k = 1, 2, \cdots\}$. These are periodic sets, and in problem 2.18, we proved the following (note, it should also be intuitively clear):
+$$
+	P_n(M_a) = \frac{1}{n}\floor{\frac{n}{a}} \to \frac{1}{a} = D(M_a)
+	\quad\quad\quad
+	M_a \cap M_b = M_{lcm(a,b)}
+$$
+We clearly have:
+$$
+	F_l = \left[\bigcup_{p \leq l} M_{p^2}\right]^c \implies
+	F_l = \bigcap_{p \leq l} M_{p^2}^c
+$$
+We now note that for prime $p_1, \cdots, p_k$, we have that:
+$$
+	P_n\left[M_{p_1^2} \cap \cdots \cap M_{p_k^2}\right] =
+	P_n\left[M_{lcm(p_1^2, \cdots, p_k^2)}\right] =
+	P_n\left[M_{p_1^2 \cdots p_k^2}\right] =
+	\frac{1}{n}\floor{\frac{n}{p_1^2 \cdots p_k^2}} \to 
+	\frac{1}{p_1^2 \cdots p_k^2}
+$$
+So, we now find:
+$$
+	D(F_l) = 
+	\lim_{n \to \infty} P_n(F_l) =
+	1 - \lim_{n \to \infty} P_n\left(\bigcup_{p \leq l} M_{p^2}\right)
+$$
+We now make use of the inclusion-exclusion principle to find the above equals:
+$$
+	1 - 
+	\lim_{n \to \infty} \sum_{1 < p_1 \leq l} P_n\left(M_{lcm(p_1^2)}\right) +
+	\lim_{n \to \infty} \sum_{1 < p_1 < p_2 \leq l} P_n\left(M_{lcm(p_1^2,p_2^2)}\right) + \cdots
+$$
+$$
+	+ (-1)^k \lim_{n \to \infty} \sum_{1 < p_1 < p_2 < \cdots < p_k \leq l} 
+	P_n\left(M_{lcm(p_1^2,p_2^2, \cdots, p_k^2)}\right)
+$$
+$$
+	=
+	1 -
+	\sum_{1 < p_1 \leq l} \frac{1}{p_1^2} +
+	\sum_{1 < p_1 < p_2 \leq l} \frac{1}{p_1^2p_2^2} + \cdots +
+	(-1)^k \sum_{1 < p_1 < p_2 < \cdots < p_k \leq l} \frac{1}{p_1^2 \cdots p_k^2}
+$$
+$$
+	= (1-p_1^2)(1-p_2^2) \cdots (1-p_k)^2
+$$
+Where the final equality is a known formula (also called the inclusion-exclusion principle). The second inequality is making use of our limit fact proved above. Thus, we indeed have:
+$$
+	D(F_l) = \prod_{p \leq l}(1 - p^{-2})
+$$
 
 \end{document}
 
