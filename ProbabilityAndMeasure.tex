@@ -2992,7 +2992,7 @@ $$
 $$
 Then $\sum \alpha_n = \infty$, we have that $P$ is \textit{nonatomic}. qed.
 
-\subsubsection{4.15} Let $F$ be the set of square-free integers - those integers not divisible by any perfect square. Let $F_l$ be the set of $m$ such that $p^2|m$ ($p^2$ divides $m$) for no $p \leq l$, and show that $D(F_l) = \prod_{p \leq l}(1-p^{-2})$. Show that $P_n(F_l - F) \leq \sum_{p > l} p^{-2}$, and conclude that the square-free integers have density:
+\subsubsection{4.15 Density of the Square-Free Integers} Let $F$ be the set of square-free integers - those integers not divisible by any perfect square. Let $F_l$ be the set of $m$ such that $p^2|m$ ($p^2$ divides $m$) for no $p \leq l$, and show that $D(F_l) = \prod_{p \leq l}(1-p^{-2})$. Show that $P_n(F_l - F) \leq \sum_{p > l} p^{-2}$, and conclude that the square-free integers have density:
 $$
 	\prod_p (1-p^{-2}) = 6/\pi^2
 $$
@@ -3053,12 +3053,60 @@ $$
 	(-1)^k \sum_{1 < p_1 < p_2 < \cdots < p_k \leq l} \frac{1}{p_1^2 \cdots p_k^2}
 $$
 $$
-	= (1-p_1^2)(1-p_2^2) \cdots (1-p_k)^2
+	= (1-p_1^2)(1-p_2^2) \cdots (1-p_k^2)
 $$
-Where the final equality is a known formula (also called the inclusion-exclusion principle). The second inequality is making use of our limit fact proved above. Thus, we indeed have:
+Where the final equality is a well known formula for the multiplication of $(1-p_i)$ terms. (also called the inclusion-exclusion principle). The second inequality is making use of our limit fact proved above. Thus, we indeed have:
 $$
 	D(F_l) = \prod_{p \leq l}(1 - p^{-2})
 $$
+Now, the task is to show that $P_n(F_l - F) \leq \sum_{p > l} p^{-2}$. We note that:
+$$
+	F_l - F \subseteq \bigcup_{p > l} M_{p^2}
+$$
+Take $x \in F_l - F$. We have that $x$ is \textit{not} divisible by $p^2$ for $p \leq l$, but $x$ is divisible by some $y^2$, as $x \not\in F$. Note, $y^2$ has a prime factorization:
+$$
+	y = \prod_{t=1}^k p_t \implies
+	y^2 = \prod_{t=1}^k p_t^2
+$$
+Note, these $p_t^2$ must divide $x$. However, we cannot have $p_t \leq l$ by $x \in F_l$, and so we must have $p_t > l \implies x \in M_{p^2}$. Thus, we find by the above results and subadditivity:
+$$
+	P_n(F_l - F) = P_n\left(\bigcup_{p > l} M_{p^2}\right) \leq
+	\sum_{p > l} M_{p^2} = \sum_{p > l} \frac{1}{n}\floor{\frac{n}{p^2}} \leq
+	\sum_{p > l} p^{-2}
+$$
+Thus, we can indeed conclude that:
+$$
+	P_n(F_l - F) \leq \sum_{p > l} p^{-2}
+$$
+Finally, we want to conclude that:
+$$
+	D(F) = \prod_p (1 - p^{-2})
+$$
+Note, we have:
+$$
+	0 \leq P_n(F_l) - P_n(F) = P_n(F_l - F)
+$$
+Note, the final term has an inequality that does not depend on $n$, and so we have:
+$$
+	0 \leq P_n(F_l) - P_n(F) \leq \sum_{p > l} p^{-2}
+$$
+As limits maintain boundedness, we find, taking a limit to $n$ on the middle term:
+$$
+	0 \leq D(F_l) - D(F) \leq \sum_{p > l} p^{-2}
+$$
+Finally, we note the well known result that $\sum_n \frac{1}{n^2}$ converges, and so for $l \to \infty$, we have the right hand sum goes to $0$. Thus, we have:
+$$
+	0 \leq \lim_{l \to \infty} D(F_l) - D(F) \leq 0 \implies
+	D(F) = \lim_{l \to \infty} D(F_l)
+$$
+$$
+	\implies
+	D(F) = \prod_p (1 - p^{-2})
+$$
+The final point is an equality that $\prod_p (1 - p^{-2}) = 6/\pi^2$. I will note prove this here. qed.
+
+\section{Section 5 - Simple Random Variables}
+\subsection{Notes}
 
 \end{document}
 

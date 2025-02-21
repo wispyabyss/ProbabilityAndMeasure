@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  20 FEB 2025 08:45
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  21 FEB 2025 09:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,12 +379,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--65
 
  []
 
-
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 71--74
 
  []
 
-[3]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
@@ -2120,23 +2119,17 @@ Overfull \hbox (46.18405pt too wide) detected at line 3031
 12 = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12 ! []
  []
 
-[114]
-Overfull \hbox (3.55655pt too wide) in paragraph at lines 3057--3059
-\T1/lmr/m/n/12 Where the fi-nal equal-ity is a known for-mula (also called the 
-inclusion-exclusion
- []
-
-[115] (./ProbabilityAndMeasure.aux)
+[114] [115] [116] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 0220629BDABF13B7651B7662E31B26D2;18739.
+(rerunfilecheck)             Checksum: FA4B12FDC83A4D1EF0B03F69F4CEE844;19255.
  ) 
 Here is how much of TeX's memory you used:
- 9912 strings out of 476191
- 153936 string characters out of 5812072
- 472883 words of memory out of 5000000
- 30516 multiletter control sequences out of 15000+600000
+ 9913 strings out of 476191
+ 153950 string characters out of 5812072
+ 473430 words of memory out of 5000000
+ 30517 multiletter control sequences out of 15000+600000
  508780 words of font info for 72 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (115 pages).
+Output written on ProbabilityAndMeasure.pdf (116 pages).

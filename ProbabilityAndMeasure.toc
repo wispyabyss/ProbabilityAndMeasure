@@ -146,4 +146,6 @@
 \contentsline {subsubsection}{4.10 Independence does not imply Independent Information}{101}{section*.147}%
 \contentsline {subsubsection}{4.11 Different Criteria for $P(\qopname \relax m{lim\,sup}_n A_n) = 1$}{104}{section*.148}%
 \contentsline {subsubsection}{4.14 Infinite Independent Events Criteria for a Nonatomic Space}{110}{section*.149}%
-\contentsline {subsubsection}{4.15}{114}{section*.150}%
+\contentsline {subsubsection}{4.15 Density of the Square-Free Integers}{114}{section*.150}%
+\contentsline {section}{Section 5 - Simple Random Variables}{116}{section*.151}%
+\contentsline {subsection}{Notes}{116}{section*.152}%
