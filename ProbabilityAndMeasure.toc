@@ -157,3 +157,8 @@
 \contentsline {paragraph}{Proof of Theorem 5.1}{118}{section*.158}%
 \contentsline {paragraph}{Example 5.2}{120}{section*.159}%
 \contentsline {subsubsection}{Convergence of Simple Random Variables}{120}{section*.160}%
+\contentsline {paragraph}{Definition: Convergence in Probability}{121}{section*.161}%
+\contentsline {paragraph}{Theorem 5.2 - Convergence with Probability 1, and Convergence in Probability}{121}{section*.162}%
+\contentsline {paragraph}{Example 5.4}{121}{section*.163}%
+\contentsline {subsubsection}{Independence}{122}{section*.164}%
+\contentsline {paragraph}{Definition - Independent Simple Random Variables}{122}{section*.165}%

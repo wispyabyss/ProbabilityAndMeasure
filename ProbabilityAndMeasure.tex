@@ -3206,6 +3206,73 @@ $$
 In information terms, this means that the first $n$ positions of a random walk contain the same information as the first $n$ distances moved. Or, knowing the first $n$ fortunes of the gambler is the same as knowing his gains and losses on each of the first $n$ plays.
 
 \subsubsection{Convergence of Simple Random Variables}
+A common problem for probability is: for given random variables $X$ and $X_1, X_2, \cdots$ on a probability space $(\Omega,\fcal,P)$, look for the probability of the event that:
+$$
+	\lim_n X_n(\omega) = X(\omega)
+$$
+The normal number theorem is essentially concerned with $X_n(\omega) = n^{-1}\sum_{i=1}^n d_i(\omega)$ and $X(\omega) = 1/2$, as an example. It is easy and convenient to characterize the complementary event: $X_n(\omega)$ \textit{fails} to converge to $X(\omega)$ if and only if there is some $\epsilon$ such that for no $m$, does $|X_n(\omega) - X(\omega)|$ remain below $\epsilon$ for all $n$ exceeding $m$. That is to say, if and only if, for some $\epsilon$, $|X_n(\omega) - X(\omega)| \geq \epsilon$ holds for infinitely many values of $n$. Therefore:
+$$
+	\left[\lim_n X_n = X\right]^c = \bigcup_\epsilon \left[|X_n - X| \geq \epsilon \;\io\right]
+$$
+The union can be restricted to rational (positive) $\epsilon$ because the set in the union \textit{increases} as $\epsilon$ \textit{decreases} (ie, for any positive $\epsilon$, we can find $1/n$ rational that is smaller, and all $\omega$ will be included).
+\\\\
+Note, this implies that the event $\left[\lim_n X_n = X\right]$ always lies within the basic $\sigma$ field $\fcal$. First note, $\left[|X_n - X| \geq \epsilon\right] \in \fcal$. We have that $Y = |X_n - X|$ is a simple random variable on $\fcal$, and restricting the set greater than $\epsilon$ is in the field (note, this section for some reason seems to be agnostic to whether the rv is \textit{simple} or not - in this case, we still have functions of rvs are rvs (measurable), and so to is the inequality). As $\io$ is a countable intersection of countable unions, the $\io$ terms in the countable union are within $\fcal$, and as complements stay in $\fcal$, we indeed have that $\left[\lim_n X_n = X\right] \in \fcal$. This event has probability 1 if and only if:
+$$
+	P\left[|X_n - X| \geq \epsilon \;\io\right] = 0
+$$
+For each $\epsilon$. Note, by Theorem 4.1, we have the above implies:
+$$
+	0 \leq \liminf_n P\left[|X_n - X| \geq \epsilon\right] \leq
+	\limsup_n P\left[|X_n - X| \geq \epsilon\right] \leq
+	P\left[|X_n - X| \geq \epsilon \;\io\right] = 0
+$$
+$$
+	\implies
+	\lim_n P\left[|X_n - X| \geq \epsilon\right] = 0
+$$
+
+\paragraph{Definition: Convergence in Probability} The above argument leads to a definition: If $\lim_n P\left[|X_n - X| \geq \epsilon\right] = 0$ holds for each positive $\epsilon$, then $X_n$ is said to \textit{converge to $X$ in probability}, written $X_n \to_p X$. These arguments prove the following theorem:
+
+\paragraph{Theorem 5.2 - Convergence with Probability 1, and Convergence in Probability}
+\begin{enumerate}
+	\item There is convergence $\lim_n X_n = X$ with probability 1 if and only if $P\left[|X_n - X| \geq \epsilon \;\io\right] = 0$ holds for each $\epsilon$.
+	
+	\item Convergence with probability 1 implies convergence in probability.
+\end{enumerate}
+Go back to the normal number theorem - it dealt with \textit{convergence with probability 1}, as we ultimately said something along the lines of, the complement had probability $0$. However, Theorem 1.1 had to do with convergence in probability of the same sequence. By Theorem 5.2 - we should have that Theorem 1.1 (the weak law of large numbers) is a consequence of the normal number theorem. Note, however, the converse is not generally true.
+
+\paragraph{Example 5.4} Take $X = 0$ and $X_n = I_{A_n}$. Note that $X_n \to_p X$ is equivalent to $P(A_n) \to 0$. This is because:
+$$
+	0 = \lim_n P\left[|I_{A_n} - 0X| \geq \epsilon\right] = \lim_n P\left[I_{A_n} = 1\right] = \lim_n P\left[A_n\right]
+$$
+We also have:
+$$
+	\left[\lim_n X_n = X\right]^c = \bigcup_\epsilon \left[|I_{A_n} - 0| \geq \epsilon \;\io\right] = 
+	\bigcup_\epsilon \left[I_{A_n} \;\io\right] =
+	\left[A_n \;\io\right]
+$$
+And so, any sequence $\{A_n\}$ that satisfies $P(A_n) \to 0$ but $P[A_n \io] > 0$ will therefor give a counterexample to the converse of Theorem 5.2ii - ie, a sequence of random variables that converge in probability to a random variable, but don't converge with probability 1. 
+\\\\
+We give two such examples. Let $A_n = [\omega : l_n(\omega) \geq \log_2 n]$. Here, it is clear that $P(A_n) \leq 1/n \to 0$. However, by the second Borel Cantelli lemma, we proved that $P(A_n \io) = 1$ in example 4.15 in the previous chapter. A better example is the following. Define the sequence in the following way. The first two sets are:
+$$
+	A_1 = (0,1/2] \quad\quad A_2 = (1/2,1]
+$$
+Define the next four by:
+$$
+	A_3 = (0,1/4] \quad\quad A_4 = (1/4,1/2] \quad\quad A_5 = (1/2,3/4] \quad\quad A_6 = (3/4,1]
+$$
+Define the next eight as the dyadic intervals of rank 3, and so on. Clearly, $P(A_n) \to 0$. However, since each point $\omega$ is covered by one set in each successive block of length $2^k$, the set $[A_n \io]$ is all of $(0,1]$, and so $P[A_n \io] = 1$. 
+
+\subsubsection{Independence}
+\paragraph{Definition - Independent Simple Random Variables} A sequence $X_1, X_2, \cdots$ (finite or infinite) of simple random variables is by definition \textit{independent} if the classes $\sigma(X_1), \sigma(X_2), \cdots$ are independent in the sense of the preceding section. By Theorem 5.1(i), $\sigma(X_i)$ consists of the sets $[X_i \in H$ for $H \subset \R$. The condition of independence for $X_1, \cdots, X_n$ is therefore that:
+$$
+	P[X_1 \in H_1, \cdots, X_n \in H_n] = P[X_1 \in H_1] \cdots P[X_n \in H_n]
+$$
+For linear sets $H_1, \cdots, H_n$. Note, the definition also requires the above equation to hold if any $X_i$ is not included - but this is included above, if we set $H_i = \R$. For a countably infinite sequence - the above finite definition must hold for each $n$. A special case of the above is:
+$$
+	P[X_1 = x_1, \cdots, X_n = x_n] = P[X_1 = x_1] \cdots P[X_n = x_n]
+$$
+Note, however, that summing over disjoint coordinates implies that the above definition gives us the set definition. Thus, simple random variables $X_i$ are independent if and only if the above holds for all $x_1, \cdots, x_n$.
 
 \end{document}
 
