@@ -162,3 +162,5 @@
 \contentsline {paragraph}{Example 5.4}{121}{section*.163}%
 \contentsline {subsubsection}{Independence}{122}{section*.164}%
 \contentsline {paragraph}{Definition - Independent Simple Random Variables}{122}{section*.165}%
+\contentsline {paragraph}{Independent Functions of Independent SRVs (2d Array Argument)}{122}{section*.166}%
+\contentsline {paragraph}{Example 5.6 Permutation Cycles}{124}{section*.167}%

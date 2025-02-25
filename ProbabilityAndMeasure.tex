@@ -3272,7 +3272,79 @@ For linear sets $H_1, \cdots, H_n$. Note, the definition also requires the above
 $$
 	P[X_1 = x_1, \cdots, X_n = x_n] = P[X_1 = x_1] \cdots P[X_n = x_n]
 $$
-Note, however, that summing over disjoint coordinates implies that the above definition gives us the set definition. Thus, simple random variables $X_i$ are independent if and only if the above holds for all $x_1, \cdots, x_n$.
+Note, however, that summing over disjoint coordinates implies that the above definition gives us the set definition. Thus, simple random variables $X_i$ are independent if and only if the above holds for all coordinates $x_1, \cdots, x_n$.
+
+\paragraph{Independent Functions of Independent SRVs (2d Array Argument)} Suppose that:
+$$
+	\begin{pmatrix}
+	X_{11} & X_{12} & \cdots\\
+	X_{21} & X_{22} & \cdots\\
+	\vdots & \vdots & \ddots
+	\end{pmatrix}
+$$
+Is an independent array of simple random variables. Finitely or infinitely many rows, and each row finite or infinite. Say $\acal_i$ consists of the finite intersections:
+$$
+	\bigcap_j [X_{ij} \in H_j]
+$$
+With $H_j \subset \R^1$. We can apply Theorem 4.2 to show that the $\sigma$ fields $\sigma(X_{i1}, X_{i2}, \cdots)$ are independent. Note that $\acal_i$ is a $\pi$ system. The intersection of two elements of $\acal_i$ will just result in another finite intersection - and note that $[X_{ij} \in H_j]$ and $[X_{ij} \in H_j']$ can be combined into $[X_{ij} \in H_j \cap H_j']$. Then, note that:
+$$
+	\sigma(\acal_i) = \sigma(X_{i1}, X_{i2}, \cdots)
+$$
+As every set in $\acal_i$ is within $\sigma(X_{i1}, X_{i2}, \cdots)$, as finite intersections of sets $[X_{ij} \in H_j] \in \sigma(X_{i1}, X_{i2}, \cdots)$ are within the smallest $\sigma$ field for which each $X_{ij}$ is measurable. This gives us:
+$$
+	\sigma(\acal_i) \subseteq \sigma(X_{i1}, X_{i2}, \cdots)
+$$
+As $\sigma(\acal_i)$ is the smallest $\sigma$ algebra that contains the finite intersections of $[X_{ij} \in H_j]$. We have:
+$$
+	\sigma(X_{i1}, X_{i2}, \cdots) \subseteq \sigma(\acal_i)
+$$
+As $\sigma(X_{i1}, X_{i2}, \cdots)$ is the smallest $\sigma$ algebra such that each $X_{ij}$ is measurable with respect to. Note that each $X_{ij}$ is measurable with respect to $\sigma(\acal_i)$, as it contains each $[X_{ij} = x_j]$. Thus, we do have equality.
+\\\\
+We now note that each $\acal_i$ is independent. Take $A_i \in \acal_i$, and note that for any finite subset of the $A_i$:
+$$
+	P(A_{i_1} \cap \cdots \cap A_{i_n}) = P(A_{i_1}) \cdots P(A_{i_n})
+$$
+As we can express:
+$$
+	P(A_{i_1} \cap \cdots \cap A_{i_n}) =
+	P\left(\bigcap_{k=1}^n \bigcap_{j=1}^{j_n} [X_{i_k,j} \in H_{i_k,j}]\right) =
+	\prod_{k=1}^n \prod_{j=1}^{j_n} P\left([X_{i_k,j} \in H_{i_k,j}]\right)
+$$
+$$
+	= \prod_{k=1}^n P(A_{i_k})
+$$
+And so, the $\acal_i$ are independent, and by Corollary 1 of Theorem 4.2, we have that $\sigma(\acal_i)$ are independent. Thus, the $\sigma$ fields $\sigma(X_{i1}, X_{i2}, \cdots)$ are independent. As a consequence, $Y_1, Y_2, \cdots$ are independent if each $Y_i$ is measurable $\sigma(X_{i1}, X_{i2}, \cdots)$ - this is because, the $Y_i$ will satisfy:
+$$
+	\sigma(Y_i) \subseteq \sigma(X_{i1}, X_{i2}, \cdots)
+$$
+And the above criteria easily proves the independence of the $\sigma(Y_i)$. Note, this implies that if $Y_i$ is a function of $X_{i1}, X_{i2}, \cdots$, then the $Y_i$ are independent, as Theorem 5.1 then implies that the $Y_i$ are measurable $\sigma(X_{i1}, X_{i2}, \cdots)$. NOTE: we have only proved this for finite rows of $X_{i1}, \cdots, X_{in}$ however.
+
+\paragraph{Example 5.6 Permutation Cycles} We can write every permutation as a \textit{product of cycles}:
+$$
+	\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6 & 7\\
+	5 & 1 & 7 & 4 & 6 & 2 & 3
+	\end{pmatrix}
+	=
+	(1562)(37)(4)
+$$
+Note - the cycle form implies that $1$ goes to $5$, $5$ to $6$, $6$ to $2$, and $2$ to $1$. For a finite permutation, this is intuitive to prove. Continue to create a cycle, until you have reached the first point in the cycle again. If you have not exhausted all the points in the permutation - find the smallest integer not yet encountered, and make a second cycle, and so on until all integers have been exhausted (note, we can't end a cycle at a point in the middle of a cycle, as a permutation is a bijection, and once a position can't be visited twice. As there is a finite number of positions, the process must end).
+\\\\
+Note, the above process also gives us a standard cyclic representation.
+\\\\
+Let $\Omega$ consist of the $n!$ permutations of $1,2,\cdots,n$, all equally probable (note, $n!$, as a permutation can be identified with a bijection, of which there are $n!$). Let $\fcal$ consist of all subsets of $\Omega$, and $P(A)$ to be the fraction of points in $A$. Let $X_k(\omega)$ be a $1$ or $0$ according to whether the $kth$ position in our cyclic representation of the permutation $\omega$ completes the cycle or not. Note - $k \in [n]$, as each cycle representation will have $n$ positions.
+\\\\
+Let $S(\omega) = \sum_{k=1}^n X_k(\omega)$ be the number of cycles in $\omega$. In the above example, we have $n = 7$, $X_1 = X_2 = X_3 = X_5 = 0$, and $X_4 = X_6 = X_7 = 1$, with $S = 3$. We will now show that the $X_1, \cdots, X_n$ are independent, and:
+$$
+	P[X_k = 1] = \frac{1}{n - k + 1}
+$$
+First note - $P[X_1 = 1] = 1/n$, as $X_1(\omega) = 1$ if and only if the random permutation $\omega$ sends $1$ to itself, and there are $n$ equally likely possibilities of where $1$ is sent.
+\\\\
+Given that $X_1 = 1$, we look at $X_2$ - note that as $1 \to 1$, we have that $2 \to \{2, \cdots, n\}$, which implies that the \textit{conditional probability} that $X_2(\omega) = 1$ is $1/(n-1)$. If, on the other hand, $X_1(\omega) = 0$, then $X_2(\omega) = 1$ if $2 \to 1$, but there are still $(n-1)$ outcomes for $1$ to compete with, so again, the \textit{conditional probability} that $X_2(\omega) = 1$ is $1/(n-1)$. This implies $P[X_2 = 1] = 1/(n-1)$. Note: this argument generalizes.
+\\\\
+I give the generalization here, as I think it is a good argument.
+
+
 
 \end{document}
 
