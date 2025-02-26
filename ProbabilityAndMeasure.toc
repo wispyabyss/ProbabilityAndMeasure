@@ -164,3 +164,7 @@
 \contentsline {paragraph}{Definition - Independent Simple Random Variables}{122}{section*.165}%
 \contentsline {paragraph}{Independent Functions of Independent SRVs (2d Array Argument)}{122}{section*.166}%
 \contentsline {paragraph}{Example 5.6 Permutation Cycles}{124}{section*.167}%
+\contentsline {subsubsection}{Existence of Independent Sequences}{126}{section*.168}%
+\contentsline {paragraph}{Definition - Distribution}{126}{section*.169}%
+\contentsline {paragraph}{Theorem 5.3 - Existence of SRV for arbitrary finite support distributions}{126}{section*.170}%
+\contentsline {paragraph}{Proof of Theorem 5.3}{126}{section*.171}%

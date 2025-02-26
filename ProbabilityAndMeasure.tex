@@ -3342,9 +3342,43 @@ First note - $P[X_1 = 1] = 1/n$, as $X_1(\omega) = 1$ if and only if the random 
 \\\\
 Given that $X_1 = 1$, we look at $X_2$ - note that as $1 \to 1$, we have that $2 \to \{2, \cdots, n\}$, which implies that the \textit{conditional probability} that $X_2(\omega) = 1$ is $1/(n-1)$. If, on the other hand, $X_1(\omega) = 0$, then $X_2(\omega) = 1$ if $2 \to 1$, but there are still $(n-1)$ outcomes for $1$ to compete with, so again, the \textit{conditional probability} that $X_2(\omega) = 1$ is $1/(n-1)$. This implies $P[X_2 = 1] = 1/(n-1)$. Note: this argument generalizes.
 \\\\
-I give the generalization here, as I think it is a good argument.
+I give the generalization here, as I think it is a good argument. We let $Y_1(\omega), \cdots, Y_n(\omega)$ be the integers in successive positions of the cyclic representation of permutation $\omega$. Fix $k$, and let $A_v$ be the set where:
+$$
+	(X_1, \cdots, X_{k-1}, Y_1, \cdots, Y_k) = v = (x_1, \cdots, x_{k-1}, y_1, \cdots, y_k)
+$$
+Note that the $A_v$ \textit{partition} $\Omega$ - each $\omega \in \Omega$ belongs to one of the $A_v$ above. Note, the first $k-1$ entries are one or $0$, and the remaining $k$ are integers. \textit{If} we have:
+$$
+	P[X_k = 1 | A_v] = \frac{1}{n-k+1}
+$$
+Then we must have $P[X_k = 1] = \frac{1}{n-k+1}$ - as the $A_v$ form a partition. Further, example 4.7 tells us that this implies $X_k$ is independent of $\sigma(\acal)$ (where $\acal$ is the class of $A_v$, and $\sigma(\acal)$ is just the union of elements in $\acal$, and the conditional probability is the same for unions of elements, which implies $X_k$ is independent of the entire $\sigma$ algebra). Hence, $X_k$ would be independent of the smaller $\sigma$ field $\sigma(X_1, \cdots, X_{k-1})$ - note, any set $[X_j \in H_j]$ can be formed as unions of sets of the form $A_v$, where the $j$ entry is $0$ or $1$, and we union over the finite possibilities for the remaining entries. This implies independence of $X_1, \cdots, X_n$ by induction.
+\\\\
+And so, we just need to prove that $P[X_k = 1 | A_v] = \frac{1}{n-k+1}$. Let $j$ be the rightmost $1$ among $x_1, \cdots, x_{k-1}$ ($j = 0$ if there are none). Then $\omega$ lies in $A_v$ if and only if it permutes $y_1, \cdots, y_j$ among themselves (as specified by the values $x_1, \cdots, x_{j-1}, x_j = 1, y_1, \cdots, y_j$), and sends each of $y_{j+1}, \cdots, y_{k-1}$ to the $y$ just to the right (as the remaining $y$ must not complete a cycle - they must be a partial cycle). And so, $A_v$ fixes the first $k-1$ positions, and there are $(n - (k - 1))! = (n - k + 1)!$ possible remaining positions, which corresponds with $A_v$ containing $(n - k + 1)!$ sample points. Note, $X_k(\omega) = 1$ if any only if $\omega$ also sends $y_k$ to $y_{j + 1}$ - and so, $\omega \in A_v \cap [X_k = 1]$ contains $(n - k)$ non fixed positions, meaning the number of sample points in $A_v \cap [X_k = 1]$ is $(n-k)!$. Given that each point is equally likely, we have:
+$$
+	P[X_k = 1 | A_v] = \frac{P\left(A_v \cap [X_k = 1]\right)}{P(A_v)} =
+	\frac{(n-k)!/n!}{(n-k+1)!/n!} = \frac{1}{n - k + 1}
+$$
+And we have thus concluded our probability fact, and that $X_1, \cdots, X_n$ are independent. qed.
 
+\subsubsection{Existence of Independent Sequences}
+\paragraph{Definition - Distribution} The \textit{distribution} of a simple random variable $X$ is the \textit{probability measure} $\mu$ defined for all subsets of $A$ of the line by:
+$$
+	\mu(A) = P[X \in A]
+$$
+This is a probability measure. We have $\mu(\R) = 1$, $\mu(\emptyset) = 0$, $0 \leq \mu(A) \leq 1$, and for disjoint sequences we do have countable additivity (by countable additivity of $\fcal$). Note - I think this is different from the case in which we can't have a probability on every subset, \textit{and} have countable additivity, as in this case, countable additivity is equivalent to finite additivity (given only a finite number of disjoint sets can have non zero probabilities).
+\\\\
+Note that the distribution for a SRV is \textit{discrete} in the sense that there are finite or countably many points $\omega \in \R$ that have a probability mass. Namely, these are the points in the finite range of $X$, $x_1, \cdots, x_l$, for which:
+$$
+	\mu\{x_i\} = P[X = x_i] = p_i
+$$
+Further, if $A = \{x_1, \cdots, x_l\}$, we have that $\mu(A) = 1$, and so $\mu$ is discrete, and has \textit{finite support} (recall, a support is a subset of $\Omega$ with probability one - in this case, we have a support that is finite).
 
+\paragraph{Theorem 5.3 - Existence of SRV for arbitrary finite support distributions} Let $\{\mu_n\}$ be a sequence of probability measures on the class of all subsets of the line, each having \textit{\textbf{finite support}}. There exists on some probability space $(\Omega,\fcal,P)$ an independent sequence $\{X_n\}$ of simple random variables such that $X_n$ has distribution $\mu_n$.
+
+\paragraph{Proof of Theorem 5.3} Note, I won't give the full proof here, as it is long. However, the main idea is very simple and clever, and so that is all that I will describe here. As $\mu_n$ has finite support, we can take $x_{n,1}, \cdots, x_{n,l_n}$ as the finite distinct points on which $\mu_n$ concentrates its mass. Note, by finite support, we have a finite $A$ with probability 1, and $A^c$ has probability $0$, and so $\mu_n$ must give mass concentrations to only the finite points in $A$.
+\\\\
+The idea of the proof is to take $(\Omega,\fcal,P)$ as $((0,1],\bcal,\lambda)$, ie the borel sets on $(0,1]$ and the lebesgue measure. Then, we just split $(0,1]$ into intervals of lengths that correspond to $\mu_n(x_{n,1}), \cdots, \mu_n(x_{n,l_n})$. These intervals will split the intervals that we created for $\mu_{n-1}$, and $X_n$ will assign output values of $x_{n,i}$ for $\omega$ in these intervals. Independence comes from, in an intuitive sense, that if we split \textit{each} of the previous random variables intervals - knowing which interval the previous random variable landed in won't give any information about the current one.
+\\\\
+As a simple example, we go over the case where $\mu_n$ will assign $p_n$ to $0$, and $q_n = 1 - p_n$ to $1$ - ie, each distribution concentrates its mass on two points, $0$ and $1$.
 
 \end{document}
 
