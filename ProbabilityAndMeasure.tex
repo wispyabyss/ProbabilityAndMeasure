@@ -3372,13 +3372,65 @@ $$
 $$
 Further, if $A = \{x_1, \cdots, x_l\}$, we have that $\mu(A) = 1$, and so $\mu$ is discrete, and has \textit{finite support} (recall, a support is a subset of $\Omega$ with probability one - in this case, we have a support that is finite).
 
-\paragraph{Theorem 5.3 - Existence of SRV for arbitrary finite support distributions} Let $\{\mu_n\}$ be a sequence of probability measures on the class of all subsets of the line, each having \textit{\textbf{finite support}}. There exists on some probability space $(\Omega,\fcal,P)$ an independent sequence $\{X_n\}$ of simple random variables such that $X_n$ has distribution $\mu_n$.
+\paragraph{Theorem 5.3 - Existence of SRV distributions for arbitrary finite support measures} Let $\{\mu_n\}$ be a sequence of probability measures on the class of all subsets of the line, each having \textit{\textbf{finite support}}. There exists on some probability space $(\Omega,\fcal,P)$ an independent sequence $\{X_n\}$ of simple random variables such that $X_n$ has distribution $\mu_n$.
 
 \paragraph{Proof of Theorem 5.3} Note, I won't give the full proof here, as it is long. However, the main idea is very simple and clever, and so that is all that I will describe here. As $\mu_n$ has finite support, we can take $x_{n,1}, \cdots, x_{n,l_n}$ as the finite distinct points on which $\mu_n$ concentrates its mass. Note, by finite support, we have a finite $A$ with probability 1, and $A^c$ has probability $0$, and so $\mu_n$ must give mass concentrations to only the finite points in $A$.
 \\\\
 The idea of the proof is to take $(\Omega,\fcal,P)$ as $((0,1],\bcal,\lambda)$, ie the borel sets on $(0,1]$ and the lebesgue measure. Then, we just split $(0,1]$ into intervals of lengths that correspond to $\mu_n(x_{n,1}), \cdots, \mu_n(x_{n,l_n})$. These intervals will split the intervals that we created for $\mu_{n-1}$, and $X_n$ will assign output values of $x_{n,i}$ for $\omega$ in these intervals. Independence comes from, in an intuitive sense, that if we split \textit{each} of the previous random variables intervals - knowing which interval the previous random variable landed in won't give any information about the current one.
 \\\\
-As a simple example, we go over the case where $\mu_n$ will assign $p_n$ to $0$, and $q_n = 1 - p_n$ to $1$ - ie, each distribution concentrates its mass on two points, $0$ and $1$.
+As a simple example, we go over the case where $\mu_n$ will assign $p_n$ to $0$, and $q_n = 1 - p_n$ to $1$ - ie, each distribution concentrates its mass on two points, $0$ and $1$. Split $(0,1]$ into two intervals $I_0$ and $I_1$ of lengths $p_1$ and $q_1$. Define $X_1(\omega) = 0$ for $\omega \in I_0$ and $X_1(\omega) = 1$ for $\omega \in I_1$. If $P$ is the Lebesgue measure, it is clear:
+$$
+	P[X_1 = 0] = p_1 = \mu_1(0) \quad\quad\quad P[X_1 = 1] = q_1 = \mu_1(1)
+$$
+And so $X_1$ has distribution $\mu_1$ (ie, the distribution probability measure matches the $\mu_1$ probability measure on all subsets of $\R$). Now, split $I_0$ into two intervals $I_{00}$ and $I_{01}$ of lengths $p_1p_2$ and $p_1q_2$, and $I_1$ into two intervals $I_{10}$ and $I_{11}$ of lengths $q_1p_2$ and $q_1q_2$. Define $X_2(\omega) = 0$ for $\omega \in I_{00} \cup I_{10}$, and $X_2(\omega) = 1$ for $\omega \in I_{01} \cup I_{11}$. It is clear that:
+$$
+	P[X_1 = 0, X_2 = 0] = p_1p_2
+$$
+And similarly for all other three possibilities. It is also clear that $P[X_2 = 0] = p_1p_2 + q_1p_2 = p_2$, and so $X_2$ has distribution $\mu_2$, and it is independent of $X_1$. We continue iteratively - $X_3$ splits the four intervals $I_{00},I_{01},I_{10},I_{11}$ and so on. Each $X_i$ is independent of the previous $X_j$, and by induction all of the $X_i$ are independent.
+\\\\
+The argument for general finite support $\mu_i$ is pretty much exactly the same. Except, with each next iteration, we split each of the previous intervals into $l_n$ intervals, not just $2$ intervals. qed.
+
+\paragraph{Usefulness of the Existence of SRV Distributions for Arbitrary Finite Support Measures} Many of the theorems in probability concern themselves with specific distributions, or distributions that have specific properties. However, we want to know that the theorems are not just true \textit{in a vacuous sense} through their conditions never being fulfilled. Existence of actual random variables with the specified distributions helps us understand that actually yes, these theorems can apply to real things. Note, this theorem has fairly restrictive conditions - requiring a finite support measure and simple random variables. In later chapters, more complicated existence theorems will be given.
+
+\subsubsection{Expected Value}
+\paragraph{Definition: Expected Value} A simple random variable in one of it's indicator sum representations is assigned an \textit{expected value} or \textit{mean value} of:
+$$
+	E[X] = E\left[\sum_i x_i I_{A_i}\right] = \sum_i x_i P(A_i)
+$$
+Another alternative form is:
+$$
+	E[X] = \sum_x xP[X = x]
+$$
+Note: If $X$ is a simple random variable on the unit interval, and if the $A_i$ happen to be subintervals, then the expected value definition coincides with the Riemann integral definition. More general notions of integral and expected value will be given later on.
+\\\\
+From the indicator definition, it follows that for SRV $X$, $f(X) = \sum_i f(x_i) I_{A_i}$, and hence:
+$$
+	E[f(X)] = \sum_x f(x) P[X = x]
+$$
+This helps us calculate values like the \textit{kth moment} of $X$, defined as $E[X^k]$.
+
+\paragraph{Properties of the Expected Value} Note, it is really easy to prove these properties for the expected value of simple random variables:
+\begin{enumerate}
+	\item Linear: $E[\alpha X + \beta Y] = \alpha E[X] + \beta E[Y]$
+	\item Preserves Order: If $X \leq Y$ then $E[X] \leq E[Y]$
+	\item $|E[X]| \leq E[|X|]$ By the two above. 
+	\item $|E[X - Y]| \leq E[|X - Y|]$ as $X - Y$ is a SRV as well. 
+\end{enumerate}
+These properties will be used repeatedly, as well as the following theorem on expected values and limits.
+
+\paragraph{Definition - Uniformly Bounded} If there is a finite $K$ such that $|X_n(\omega)| \leq K$ for all $\omega$ and $n$, the $X_n$ are \textit{uniformly bounded}.
+
+\paragraph{Theorem 5.4 - Uniformly Bounded Sequence implies Uniformly Bounded Limit} If $\{X_n\}$ is uniformly bounded, and if $X = \lim_n X_n$ with probability 1, then $E[X] = \lim_n E[X_n]$.
+\\\\
+Again, I don't go over the complete proof here. I just will outline some notes for reference to come back to:
+\begin{enumerate}
+	\item Recall, convergence with probability $1$ implies convergence in probability: $X_n \to_p X$, which means the probability of the set of $\omega$ that have $X_n$ and $X$ differ by more than $\epsilon$ goes to $0$.
+	
+	\item Note, $X$ is assumed to be a simple random variable, which equals the limit with probability $1$. However, also note, it must be a simple random variable with finite range. Assume it didn't have finite range - then there would be sets with positive probability outside of the finite range of each $X_n$, and then we would have convergence in probability.
+	
+	\item Expecting that $X$ has finite range (or that, at least, it cannot be infinite, as the bounds of $X_n$ apply to $X$), then we can find $K$ that bounds both $|X|$ and $|X_n|$, so that $|X - X_n| \leq 2K$. Then, the theorem from there is just applying the expected value properties to $|X - X_n|$ and a cleverly found random variable that bounds $|X - X_n|$ (let $A = [|X - X_n| \geq \epsilon]$, consider $2KI_{A}(\omega) + \epsilon I_{A^c}(\omega)$). 
+\end{enumerate}
+Thus, we can easily conclude the theorem with the expected value properties above and convergence in probability. Theorems like 5.4 are constantly used. The general version is Lebesgue's dominated convergence theorem.
 
 \end{document}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  26 FEB 2025 08:52
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  27 FEB 2025 09:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2222,17 +2222,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 3377--3382
 
  []
 
-[126] [127] (./ProbabilityAndMeasure.aux)
+[126]
+Underfull \hbox (badness 10000) in paragraph at lines 3388--3392
+
+ []
+
+[127]
+Underfull \hbox (badness 10000) in paragraph at lines 3403--3407
+
+ []
+
+
+Overfull \hbox (7.7306pt too wide) in paragraph at lines 3421--3422
+ []\T1/lmr/bx/n/12 Definition - Uni-formly Bounded[] \T1/lmr/m/n/12 If there is
+ a fi-nite $\OML/cmm/m/it/12 K$ \T1/lmr/m/n/12 such that $\OMS/cmsy/m/n/12 j\OM
+L/cmm/m/it/12 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )\OMS/cmsy/
+m/n/12 j ^^T
+ []
+
+[128]
+Underfull \hbox (badness 10000) in paragraph at lines 3423--3427
+
+ []
+
+[129] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 72015B8EFF2104F4CAD08440A6A56589;20116.
+(rerunfilecheck)             Checksum: 69D4778E20B6DC5189D511D64C8F8477;20248.
  ) 
 Here is how much of TeX's memory you used:
  9916 strings out of 476191
  153989 string characters out of 5812072
- 474326 words of memory out of 5000000
+ 474466 words of memory out of 5000000
  30519 multiletter control sequences out of 15000+600000
  513051 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (127 pages).
+Output written on ProbabilityAndMeasure.pdf (129 pages).
