@@ -3430,7 +3430,123 @@ Again, I don't go over the complete proof here. I just will outline some notes f
 	
 	\item Expecting that $X$ has finite range (or that, at least, it cannot be infinite, as the bounds of $X_n$ apply to $X$), then we can find $K$ that bounds both $|X|$ and $|X_n|$, so that $|X - X_n| \leq 2K$. Then, the theorem from there is just applying the expected value properties to $|X - X_n|$ and a cleverly found random variable that bounds $|X - X_n|$ (let $A = [|X - X_n| \geq \epsilon]$, consider $2KI_{A}(\omega) + \epsilon I_{A^c}(\omega)$). 
 \end{enumerate}
-Thus, we can easily conclude the theorem with the expected value properties above and convergence in probability. Theorems like 5.4 are constantly used. The general version is Lebesgue's dominated convergence theorem.
+Thus, we can easily conclude the theorem with the expected value properties above and convergence in probability. qed. Theorems like 5.4 are constantly used. The general version is Lebesgue's dominated convergence theorem.
+
+\paragraph{Example 5.7 - Counter Example to Theorem 5.4 Without Uniform Boundedness} Take $X(\omega) = 0$ on the unit interval, and $X_n(\omega) = n^2$ if $0 < \omega \leq n^{-1}$ and $0$ if $n^{-1} < \omega \leq 1$. We have $X_n(\omega) \to X(\omega)$ for every $\omega$ - and so we have convergence in probability. However, $E[X_n] = n$, which does not converge to $E[X] = 0$. We are missing a additional hypothesis - uniform boundedness gives us one, but there are others in the future as well.
+
+\paragraph{Corollary to 5.4} If $X = \sum_n X_n$ on an $\fcal$ set of probability $1$ (convergence in probability), and if the partial sums of $\sum_n X_n$ are uniformly bounded, then $E[X] = \sum_n E[X_n]$.
+\\\\
+Note that the partial sums $S_n$ are uniformly bounded, and $X = \lim_n S_n$ with probability $1$, and so $E[X] = \lim_n E[S_n] = \lim_n \sum_n E[X_n]$ by linearity. qed.
+
+\paragraph{Expected Value for Independent Random Variables} We have for $X$ and $Y$ independent SRV:
+$$
+	XY = \sum_{ij} x_iy_j I_{A_i \cap B_j}
+$$
+If the $x_i$ are distinct from each other, and the $y_j$ are distinct from each other (which can always be made to be the case), we have $A_i = [X = x_i]$ and $B_j = [Y = y_j]$, and by independence, we have $P[A_i \cap B_j] = P[A_i]P[B_j]$. So, we can decompose to find:
+$$
+	E[XY] = E[X]E[Y]
+$$
+For \textit{independent simple random variables}. If $X,Y,Z$ are independent, so are $XY$ and $Z$ by our 2d array argument, and so we can conclude:
+$$
+	E[XYZ] = E[X]E[Y]E[Z]
+$$
+We can continue iteratively.
+
+\paragraph{Variance} If $E[X] = m$, the \textit{variance} of $X$ is:
+$$
+	Var[X] = E\left[(X-m)^2\right] = E[X^2] - m^2
+$$
+As $aX + b$ has mean $am + b$, it is easy to simplify to find:
+$$
+	Var[aX + b] = a^2Var[X]
+$$
+With a similar simplification, we can find the variance of the sum of \textit{independent} $X_1, \cdots, X_n$ is:
+$$
+	Var\left[\sum_{i=1}^n X_i\right] = \sum_{i=1}^n Var[X_i]
+$$
+
+\paragraph{Alternate Expected Value Definition} Suppose $X$ is nonnegative, and order its range $0 \leq x_1 < x_2 < \cdots < x_k$. Then, we have:
+$$
+	E[X] = \sum_{i=1}^k x_i P[X = x_i] =
+	x_k P[X \geq x_k] +
+	\sum_{i=1}^{k-1} x_i P[(X \geq x_i) \setminus (X \geq x_{i+1})]
+$$
+Where, the last equality comes from the fact that as $X_i$ only takes on the values of $x_i$, we know that if it is between $x_i$ and $x_{i+1}$, it must equal $x_i$. this simplifies to:
+$$
+	= \sum_{i=1}^{k - 1} x_i\left(P[X \geq x_i] - P[X \geq x_{i+1}]\right) + x_k P[X \geq x_k]
+$$
+$$
+	= x_1 P[X \geq x_1] + \sum_{i=2}^k (x_i - x_{i-1}) P[X \geq x_i]
+$$
+As $P[X \geq x] = P[X \geq x_i]$ for $x_{i-1} < x \leq x_i$, we have that the above can be rewritten as a Riemann integral of a step function:
+$$
+	E[X] = \int_0^\infty P[X \geq x] dx
+$$
+Note: the $x_i$ values come in along the domain from $0$ to $\infty$ - for $0 \leq x \leq x_1$, the probabilities are $1$, and so the riemann integral introduces a rectangle of area $1 \times x_1$, and so on. See the diagram in the book for a better understanding.
+
+\paragraph{Inequalities}
+\paragraph{Markov's Inequality} Note that for nonnegative SRV $X$, we have for positive $a$:
+$$
+	E[X] = \sum_x xP[X = x] \geq \sum_{x: x \geq a} x[PX = x] \geq a \sum_{x: x \geq a} P[X = x]
+$$
+$$
+	\implies
+	P[X \geq a] \leq \frac{1}{a}E[X]
+$$
+Now, replace $X$ with $|X|^k$, and we have:
+$$
+	P[|X| \geq \alpha] = P[|X|^k \geq \alpha^k] \leq \frac{1}{\alpha^k} E\left[|X|^k\right]
+$$
+
+\paragraph{Chebyshev's Inequality} Taking the above Markov inequality for $k = 2$, and subtracting $m = E[X]$ from $X$, gives us:
+$$
+	P\left[|X - m| \geq \alpha\right] \leq \frac{1}{\alpha^2} E\left[|X - m|^2\right] = \frac{1}{\alpha^2}Var[X]
+$$
+
+\paragraph{Jensen's Inequality} A function $\varphi$ is \textit{convex} if $\varphi(px + (1-p)y) \leq p\varphi(x) + (1-p)\varphi(y)$. A sufficient condition for this is $\varphi$ has a nonnegative second derivative (for all values in it's domain). By induction, we easily have:
+$$
+	\varphi\left(\sum_{i=1}^l p_i x_i\right) \leq \sum_{i=1}^l p_i\varphi(x_i)
+$$
+For $p_i$ nonnegative and sum to $1$, and $x_i$ in the domain of $\varphi$. If SRV $X$ assumes the value $x_i$ with probability $p_i$, we have Jensen's inequality:
+$$
+	\varphi\left(E[X]\right) =
+	\varphi\left(\sum_{i=1}^l p_i x_i\right) \leq \sum_{i=1}^l p_i\varphi(x_i) =
+	E\left[\varphi(X)\right]
+$$
+Which is valid if $\varphi$ is convex on an interval containing the range of $X$.
+
+\paragraph{Holder's Inequality} Suppose that:
+$$
+	\frac{1}{p} + \frac{1}{q} = 1 \quad\quad\quad p > 1 \text{ and } q > 1
+$$
+Then, we have:
+$$
+	E[|XY|] \leq \left(E[|X|^p]\right)^{1/p}\left(E[|Y|^q]\right)^{1/q}
+$$
+The proof of this is the following. Assume that the right side of the above is positive. If $a$ and $b$ are positive, there exist $s$ and $t$ such that:
+$$
+	a = e^{p^{-1}s} \quad\quad b = e^{q^{-1}t}
+$$
+As $e^x$ is conved:
+$$
+	e^{p^{-1}s + q^{-1}t} \leq p^{-1}e^s + q^{-1}e^t \implies
+	ab \leq \frac{a^p}{p} + \frac{b^q}{q}
+$$
+This is an interesting inequality, and it holds for nonnegative, as well as positive $a$ and $b$. Let $u$ and $v$ be $\left(E[|X|^p]\right)^{1/p}$ and $\left(E[|Y|^q]\right)^{1/q}$. For each $\omega$:
+$$
+	\left|\frac{X(\omega)Y(\omega)}{uv}\right| \leq \frac{1}{p}\left|\frac{X(\omega)}{u}\right|^p + \frac{1}{q}\left|\frac{Y(\omega)}{v}\right|^q
+$$
+By our above inequality. And so, taking expected values, and pulling out scalars, we have:
+$$
+	\frac{1}{uv}E[|XY|] \leq \frac{1}{pu^p}E[|X|^p] + \frac{1}{qv^q}E[|Y|^q] =
+	\frac{1}{p} + \frac{1}{q} = 1
+$$
+$$
+	\implies E[|XY|] \leq uv = \left(E[|X|^p]\right)^{1/p}\left(E[|Y|^q]\right)^{1/q}
+$$
+And so, we have Holder's inequality. qed.
+
+\paragraph{Schwarz's Inequality}
 
 \end{document}
 

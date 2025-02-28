@@ -174,3 +174,14 @@
 \contentsline {paragraph}{Properties of the Expected Value}{128}{section*.175}%
 \contentsline {paragraph}{Definition - Uniformly Bounded}{129}{section*.176}%
 \contentsline {paragraph}{Theorem 5.4 - Uniformly Bounded Sequence implies Uniformly Bounded Limit}{129}{section*.177}%
+\contentsline {paragraph}{Example 5.7 - Counter Example to Theorem 5.4 Without Uniform Boundedness}{129}{section*.178}%
+\contentsline {paragraph}{Corollary to 5.4}{129}{section*.179}%
+\contentsline {paragraph}{Expected Value for Independent Random Variables}{130}{section*.180}%
+\contentsline {paragraph}{Variance}{130}{section*.181}%
+\contentsline {paragraph}{Alternate Expected Value Definition}{130}{section*.182}%
+\contentsline {paragraph}{Inequalities}{131}{section*.183}%
+\contentsline {paragraph}{Markov's Inequality}{131}{section*.184}%
+\contentsline {paragraph}{Chebyshev's Inequality}{131}{section*.185}%
+\contentsline {paragraph}{Jensen's Inequality}{132}{section*.186}%
+\contentsline {paragraph}{Holder's Inequality}{132}{section*.187}%
+\contentsline {paragraph}{Schwarz's Inequality}{132}{section*.188}%
