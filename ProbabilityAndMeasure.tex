@@ -3602,7 +3602,7 @@ $$
 $$
 We define $X_{n+1} = x_j$ if $\omega \in A_{i_1, \cdots, i_n, j}$ for any choice of the first $n$ indices. Note, this construction has the same properties we need to prove that $X_1, X_2, X_3, \cdots$ are independent, and $P(X_n = x_j) = p_{n,j}$ is satisfied as well. And so, we are able to indeed prove Theorem 5.3 by just relying on a nonatomic probability measure space, rather than just the unit interval. qed.
 
-\paragraph{5.3} Show that $\mu = E[X]$ minimizes $E[(X-\mu)^2]$. For this one, I assume that $X$ is a SRV. We note that as $X$ is a SRV, we have:
+\subsubsection{5.3 - Expected Value minimizes Variance} Show that $\mu = E[X]$ minimizes $E[(X-\mu)^2]$. For this one, I assume that $X$ is a SRV. We note that as $X$ is a SRV, we have:
 $$
 	f(\mu) = E[(X-\mu)^2] = \sum_{i=1}^n (x_i - \mu)^2P[X = x_i]
 $$
@@ -3614,6 +3614,72 @@ Setting equal to $0$, we have a critical point if:
 $$
 	\sum_{i=1}^n x_i P[X = x_i] = \mu \sum_{i=1}^n P[X = x_i]
 $$
+Note, the sum goes over all values in the range of $X$, and so it equals $1$. Thus, we have a critical point at:
+$$
+	\mu = \sum_{i=1}^n x_iP[X = x_i] = E[X]
+$$
+We have a second derivative of:
+$$
+	f''(\mu) = \sum_{i=1}^n P[X = x_i] = 1 > 0
+$$
+And so, by the second derivative test, $\mu = E[X]$ indeed minimizes $E[(X-m)^2]$. qed.
+
+\subsubsection{5.4 Chebyshev's Inequality can reach equality} Suppose that $X$ assumes the values $m - \alpha, m, m + \alpha$ with probabilities $p, 1 - 2p, p$, and show that there is equality in Chebyshev's inequality. Thus, Chebyshev's inequality cannot be improved upon without special assumptions on $X$.
+\\\\
+Well, Chebyshev's inequality needs $m$ to be the expected value - however, note that that is indeed the case (by symmetry and directly). We have that:
+$$
+	P[|X - m| \geq \alpha] = 2p
+$$
+As when $X = m - \alpha$ or $x = m + \alpha$, we have $|X - m| = \alpha \geq \alpha$. We now note that:
+$$
+	\frac{1}{\alpha^2}Var[X] =
+	\frac{1}{\alpha^2}\left(p \alpha^2 + (1 - 2p) * 0^2 + p \alpha^2\right) = 2p
+$$
+And so, we have:
+$$
+	P[|X - m| \geq \alpha] = 2p = \frac{1}{\alpha^2}Var[X]
+$$
+And so there are cases where there is equality in Chebyshev's inequality. qed.
+
+\subsubsection{5.5} Suppose that $X$ has mean $m$ and variance $\sigma^2$
+\begin{enumerate}
+	\item Prove Canetlli's inequality:
+	$$
+		P[X - m \geq \alpha] \leq \frac{\sigma^2}{\sigma^2 + \alpha^2} \quad\quad\quad \alpha \geq 0
+	$$
+	First, we assume $m = 0$. We have for $x > 0$:
+	$$
+		P[X - m \geq \alpha] = P[X \geq \alpha] = P[X + x \geq \alpha + x] \leq P[(X + x)^2 \geq (\alpha + x)^2]
+	$$
+	Where the last inequality comes from the fact that we are including potential negative values of $X + x$ whose magnitude might be larger than $\alpha + x$. Continuing, we have by Markov's inequality:
+	$$
+		\leq \frac{1}{(\alpha + x)^2} E[(X + x)^2] =
+		\frac{1}{(\alpha + x)^2} \left(E[X^2] + 2xE[X] + x^2\right) =
+		\frac{\sigma^2 + x^2}{(\alpha + x)^2}
+	$$
+	We now want to find what $x$ minimizes the above. I won't include the first/second derivative test here - but they conclude that $x = \sigma^2/\alpha$ minimizes the fraction, and gives us our strictest inequality. Simplifying, we have:
+	$$
+		\frac{\sigma^2 + \sigma^4/\alpha^2}{(\alpha + \sigma^2/\alpha)^2} =
+		\frac{\frac{\sigma^2(\alpha^2 + \sigma^2)}{\alpha^2}}{\frac{(\alpha^2 + \sigma^2)^2}{\alpha^2}} =
+		\frac{\sigma^2(\alpha^2 + \sigma^2)}{(\alpha^2 + \sigma^2)^2} =
+		\frac{\sigma^2}{\sigma^2 + \alpha^2}
+	$$
+	Thus, if $m = 0$, we can conclude that:
+	$$
+		P[X \geq \alpha] \leq \frac{\sigma^2}{\sigma^2 + \alpha^2}
+	$$
+	Now, the only difference comes when we examine $X - m$. However, note that we can treat $X - m$ as our $X$ above with mean $0$. And so, we directly have that:
+	$$
+		P[X - m \geq \alpha] \leq \frac{\sigma^2}{\sigma^2 + \alpha^2} \quad\quad\quad \alpha \geq 0
+	$$
+	
+	\item Show that:
+	$$
+		P[|X-m| \geq \alpha] \leq \frac{2\sigma^2}{\sigma^2 + \alpha^2}
+	$$
+	When is this better than Chebyshev's inequality?
+	
+\end{enumerate}
 
 \end{document}
 

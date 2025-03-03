@@ -189,4 +189,6 @@
 \contentsline {subsection}{Problems}{133}{section*.190}%
 \contentsline {subsubsection}{5.1 Measurable on a Tail Field implies $X = c$ with probability 1}{133}{section*.191}%
 \contentsline {subsubsection}{5.2 - Existence of independent SRV $X_i$ with density $\mu _i$ for finite support $\mu _i$ on a nonatomic space}{134}{section*.192}%
-\contentsline {paragraph}{5.3}{135}{section*.193}%
+\contentsline {subsubsection}{5.3 - Expected Value minimizes Variance}{135}{section*.193}%
+\contentsline {subsubsection}{5.4 Chebyshev's Inequality can reach equality}{136}{section*.194}%
+\contentsline {subsubsection}{5.5}{136}{section*.195}%
