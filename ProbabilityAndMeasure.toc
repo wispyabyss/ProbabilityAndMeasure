@@ -191,4 +191,5 @@
 \contentsline {subsubsection}{5.2 - Existence of independent SRV $X_i$ with density $\mu _i$ for finite support $\mu _i$ on a nonatomic space}{134}{section*.192}%
 \contentsline {subsubsection}{5.3 - Expected Value minimizes Variance}{135}{section*.193}%
 \contentsline {subsubsection}{5.4 Chebyshev's Inequality can reach equality}{136}{section*.194}%
-\contentsline {subsubsection}{5.5}{136}{section*.195}%
+\contentsline {subsubsection}{5.5 Cantelli's Inequality}{136}{section*.195}%
+\contentsline {subsubsection}{5.8}{138}{section*.196}%

@@ -3641,9 +3641,9 @@ $$
 $$
 And so there are cases where there is equality in Chebyshev's inequality. qed.
 
-\subsubsection{5.5} Suppose that $X$ has mean $m$ and variance $\sigma^2$
+\subsubsection{5.5 Cantelli's Inequality} Suppose that $X$ has mean $m$ and variance $\sigma^2$
 \begin{enumerate}
-	\item Prove Canetlli's inequality:
+	\item Prove Cantelli's inequality:
 	$$
 		P[X - m \geq \alpha] \leq \frac{\sigma^2}{\sigma^2 + \alpha^2} \quad\quad\quad \alpha \geq 0
 	$$
@@ -3677,7 +3677,58 @@ And so there are cases where there is equality in Chebyshev's inequality. qed.
 	$$
 		P[|X-m| \geq \alpha] \leq \frac{2\sigma^2}{\sigma^2 + \alpha^2}
 	$$
-	When is this better than Chebyshev's inequality?
+	When is this better than Chebyshev's inequality? First, we note:
+	$$
+		P[|X-m| \geq \alpha] = P[X - m \geq \alpha] + P[-(X - m) \geq \alpha] \leq \frac{2\sigma^2}{\sigma^2 + \alpha^2}
+	$$
+	Where the first equality comes from union of disjoint sets, and the final inequality comes from applying Cantelli's to each set. We note by Chebychev's:
+	$$
+		P[|X-m| \geq \alpha] \leq \frac{\sigma^2}{\alpha^2}
+	$$
+	We would want to use Cantelli's when the bound is tighter, ie, when:
+	$$
+		\frac{2\sigma^2}{\sigma^2 + \alpha^2} \leq \frac{\sigma^2}{\alpha^2}
+	$$
+	Simplifying, this happens when:
+	$$
+		\iff 2 \leq (\sigma^2 + \alpha^2)\frac{1}{\alpha^2} \iff 1 \leq \frac{\sigma^2}{\alpha^2} \iff \alpha \leq \sigma
+	$$
+	Where in the last $\iff$, we note that $\alpha$ is always positive, and we can take $\sigma$ as positive, and so the absolute value statement follows. So, when we want to examine whether $X$ will exceed one standard deviation, we use Chebychev's, otherwise, use Cantelli's.
+	
+	\item By considering a random variable assuming two values, show that Cantelli's inequality is sharp.
+	\\\\
+	Let $P[X = 1] = p$ and $P[X = 0] = 1-p$. We have $E[X] = p$ and $Var[X] = p - p^2$. Note that, intuitively:
+	$$
+		P[X \geq 1] = p
+	$$
+	We have that Cantelli's lemma is sharp, as we have:
+	$$
+		P[X - p \geq 1 - p] \leq
+		\frac{p - p^2}{p - p^2 + (1-p)^2} = \frac{p - p^2}{1 - p} = p
+	$$
+	And in this case, we have actually achieved equality, as:
+	$$
+		P[X - p \geq 1- p] = P[X \geq 1] = p
+	$$
+	And so, in this sense, there are cases where Cantelli's lemma is actually \textit{sharp}.
+	
+\end{enumerate}
+
+\subsubsection{5.8}
+\begin{enumerate}
+	\item Let $f$ be a convex real function on a convex set $C$ in the plane. Suppose that $(X(\omega),Y(\omega)) \in C$ for all $\omega$ and prove a two-dimensional Jensen's inequality:
+	$$
+		f(E[X],E[Y]) \leq E[f(X,Y)]
+	$$
+	I give a proof of this without any assumptions. We can note this \textit{without} an independence assumption, as we note that
+	$$
+		P[X = x] = P[X = x, \Omega] = P[X = x, \bigcup Y = y] = P[\bigcup X = x, Y = y]
+	$$
+	$$
+		= \sum_y P[X = x, Y = y]
+	$$
+	Where the last step is over the sum of disjoint sets.
+	
 	
 \end{enumerate}
 
