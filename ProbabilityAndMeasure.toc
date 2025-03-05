@@ -1,4 +1,4 @@
-\contentsline {section}{Forward}{3}{section*.2}%
+\contentsline {section}{Forward}{4}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{4}{section*.3}%
 \contentsline {subsection}{Notes}{4}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{4}{section*.5}%
@@ -192,4 +192,5 @@
 \contentsline {subsubsection}{5.3 - Expected Value minimizes Variance}{135}{section*.193}%
 \contentsline {subsubsection}{5.4 Chebyshev's Inequality can reach equality}{136}{section*.194}%
 \contentsline {subsubsection}{5.5 Cantelli's Inequality}{136}{section*.195}%
-\contentsline {subsubsection}{5.8}{138}{section*.196}%
+\contentsline {subsubsection}{5.8 Multiple Variable Jensen Inequality}{138}{section*.196}%
+\contentsline {subsubsection}{5.9}{140}{section*.197}%

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  4 MAR 2025 07:13
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  5 MAR 2025 07:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2359,17 +2359,39 @@ OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [[] \OML/cmm/m/it/12 X \OT1/cmr/m/n/12 = \OML/
 cmm/m/it/12 x; Y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ]
  []
 
-[138] (./ProbabilityAndMeasure.aux)
+[138]
+Underfull \hbox (badness 10000) in paragraph at lines 3755--3759
+
+ []
+
+
+Overfull \hbox (51.85834pt too wide) detected at line 3786
+\OML/cmm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] [
+] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 (\OM
+L/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 ) + (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it
+/12 t\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 
+a \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1
+/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 ) + (1 \OMS/cmsy/m/n/12 ^
+^@ \OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ))\
+OML/cmm/m/it/12 b
+ []
+
+[139]
+Underfull \hbox (badness 10000) in paragraph at lines 3805--3808
+
+ []
+
+[140] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 35F081EF071267037D4802146FEF9AFE;22288.
+(rerunfilecheck)             Checksum: D3BA3DDC1C8E70374B20947BCE33C893;22554.
  ) 
 Here is how much of TeX's memory you used:
  9917 strings out of 476191
  154003 string characters out of 5812072
- 476573 words of memory out of 5000000
+ 476847 words of memory out of 5000000
  30520 multiletter control sequences out of 15000+600000
  513051 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (138 pages).
+Output written on ProbabilityAndMeasure.pdf (140 pages).

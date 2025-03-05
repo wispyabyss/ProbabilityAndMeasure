@@ -3714,7 +3714,7 @@ And so there are cases where there is equality in Chebyshev's inequality. qed.
 	
 \end{enumerate}
 
-\subsubsection{5.8}
+\subsubsection{5.8 Multiple Variable Jensen Inequality}
 \begin{enumerate}
 	\item Let $f$ be a convex real function on a convex set $C$ in the plane. Suppose that $(X(\omega),Y(\omega)) \in C$ for all $\omega$ and prove a two-dimensional Jensen's inequality:
 	$$
@@ -3727,10 +3727,84 @@ And so there are cases where there is equality in Chebyshev's inequality. qed.
 	$$
 		= \sum_y P[X = x, Y = y]
 	$$
-	Where the last step is over the sum of disjoint sets.
-	
+	Where the last step is over the sum of disjoint sets. And so, we find:
+	$$
+		f(E[X],E[Y]) = f\left(\sum_x x P[X = x], \sum_y y P[Y = y]\right)
+	$$
+	$$
+		= f\left(\sum_x x \sum_y P[X = x, Y = y], \sum_y y \sum_x P[X = x, Y = y]\right)
+	$$
+	$$
+		= f\left(\sum_x \sum_y x P[X = x, Y = y], \sum_x \sum_y y P[X = x, Y = y]\right)
+	$$
+	$$
+		= f\left(\sum_x \sum_y P[X = x, Y = y] (x,y)\right)
+	$$
+	By convexity of $f$, we have the above is bounded by:
+	$$
+		\leq \sum_x \sum_y P[X = x, Y = y] f(x,y) = E[f(X,Y)]
+	$$
+	And so, in total, we have:
+	$$
+		f(E[X],E[Y]) \leq E[f(X,Y)]
+	$$
+	\item Show that $f$ is convex if it has continuous second derivatives that satisfy:
+	$$
+		f_{11} \geq 0 \quad\quad\quad f_{22} \geq 0 \quad\quad
+		f_{11}f_{22} \geq f_{12}^2
+	$$
+	We can make use of the fact that a twice differentiable function \textit{in one dimension} is convex iff its second derivative is greater than or equal to 0. Proofs for the iff. If $f$ is convex, then it's second derivative is larger than $0$: \href{https://math.stackexchange.com/a/1226418}{stack exchange} - this relies on two uses of the mean value theorem, and is easy. Now assume the second derivative is larger than $0$, but not convex - then, you could apply the same mean value proof on the line segment that is below the function \href{https://math.stackexchange.com/a/513913}{stack exchange}.
+	\\\\
+	So, we indeed have a twice differentiable function is convex iff its second derivative is nonnegative. Now, we examine:
+	$$
+		\varphi(t) = f(t(x',y') + (1-t)(x,y))
+	$$
+	We note that if $\varphi$ is convex in $t$ then $f$ is. We have that $\varphi$ being convex in $t$ implies that:
+	$$
+		\varphi(pt + (1-p)t') \leq p\varphi(t) + (1-p)\varphi(t')
+	$$
+	As then, we can take $t = 1$ and $t' = 0$ to see:
+	$$
+		\varphi(p) \leq p\varphi(1) + (1-p)\varphi(0)
+	$$
+	$$
+		\implies
+		f(p(x',y') + (1-p)(x,y)) \leq pf(x',y') + (1-p)f(x,y)
+	$$
+	So, we just need convexity of $\varphi(t)$ for $t \in [0,1]$. Note, we make use of the second derivative test. We have that:
+	$$
+		\varphi'(t) = 
+		\begin{pmatrix}
+		f_1 & f_2
+		\end{pmatrix}
+		\begin{pmatrix}
+		x' - x\\
+		y' - y
+		\end{pmatrix}
+		=
+		f_1(t(x',y') + (1-t)(x,y)) a + f_2(t(x',y') + (1-t)(x,y)) b
+	$$
+	Where $a = x' - x$ and $b = y' - y$. The above it by the chain rule. Applying again, we have that:
+	$$
+		\varphi'' = f_{11}a^2 + f_{12}ab + f_{21}ab + f_{22}b^2 = f_{11}a^2 + 2f_{12}ab + f_{22}b^2
+	$$
+	Noting that continuous second partials implies $f_{12} = f_{21}$. If $f_{11} > 0$, we have:
+	$$
+		\varphi'' = \frac{1}{f_{11}}\left(f_{11}a + f_{12}b\right)^2 + 
+		\frac{1}{f_{11}}\left(f_{11}f_{22} - f_{12}^2\right)b^2 \geq 0
+	$$
+	If $f_{11}f_{22} \geq f_{12}^2$. Note, so if we have:
+	$$
+		(f_{11} > 0 \text{ and } f_{22} \geq 0) \text{ or } (f_{11} \geq 0 \text{ and } f_{22} > 0) \text{ and }
+		f_{11}f_{22} \geq f_{12}^2
+	$$
+	Then we have that $f$ is convex. If both equal $0$, then $f_{12} = 0$ as well, and we have that the first derivative is constant. In which case, we have that $f$ is still convex, as $f$ is a plane. qed.
 	
 \end{enumerate}
+
+\subsubsection{5.9} Holder's inequality is equivalent to $E[X^{1/p}Y^{1/q}] \leq E^{1/p}[X]E^{1/q}[Y]$ for $p^{-1} + q^{-1} = 1$, where $X$ and $Y$ are nonnegative random variables. Derive this from the previous problem.
+\\\\
+I think, this requires noting something like $f(x,y) = x^{1/p}y^{1/q}$ is convex. Or, perhaps concave, in which case we could use symmetry to note the other direction.
 
 \end{document}
 
