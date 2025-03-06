@@ -3802,9 +3802,98 @@ And so there are cases where there is equality in Chebyshev's inequality. qed.
 	
 \end{enumerate}
 
-\subsubsection{5.9} Holder's inequality is equivalent to $E[X^{1/p}Y^{1/q}] \leq E^{1/p}[X]E^{1/q}[Y]$ for $p^{-1} + q^{-1} = 1$, where $X$ and $Y$ are nonnegative random variables. Derive this from the previous problem.
+\subsubsection{5.9 Prove Holders for nonnegative $X$, $Y$ via Jensen's} Holder's inequality is equivalent to $E[X^{1/p}Y^{1/q}] \leq E^{1/p}[X]E^{1/q}[Y]$ for $p^{-1} + q^{-1} = 1$, where $X$ and $Y$ are nonnegative random variables. Derive this from the previous problem.
 \\\\
-I think, this requires noting something like $f(x,y) = x^{1/p}y^{1/q}$ is convex. Or, perhaps concave, in which case we could use symmetry to note the other direction.
+I think, this requires noting something like $f(x,y) = x^{1/p}y^{1/q}$ is convex. Or, perhaps concave, in which case we could use symmetry to note the other direction. As $f$ has continuous second derivatives, we can use the second derivative check applied above. We note:
+$$
+	f_{11} = \frac{\left(\frac{1}{p} - 1\right)x^{1/p-2}y^{1/q}}{p} \quad\quad\quad
+	f_{22} = \frac{\left(\frac{1}{q} - 1\right)x^{1/p}y^{1/q-2}}{p} \quad\quad\quad
+	f_{12} = \frac{x^{1/p-1}y^{1/p-1}}{pq}
+$$
+Note, $f_{11} \leq 0$ and $f_{22} \leq 0$. If $f_{11}f_{22} \leq f_{12}^2$, we will have our \textit{concave} criteria, which is equivalent to $-f$ being convex (note, we can just carry the negative sign and also just prove $-f$ is convex). We have:
+$$
+	f_{11}f_{22} = \frac{\left(\frac{1}{p} - 1\right)\left(\frac{1}{q} - 1\right)x^{2/p-2}y^{2/q-2}}{pq} =
+	\frac{x^{2/p-2}y^{2/q-2}}{(pq)^2}
+$$
+$$
+	f_{12}^2 = \frac{x^{2/p-2}y^{2/p-2}}{(pq)^2}
+$$
+So, we indeed have our concave criteria, and by the two dimensional Jensen's inequality (for concave functions), we have:
+$$
+	E[X^{1/p}Y^{1/q}] = E[f(X,Y)] \leq f(E[X],E[Y]) = E^{1/p}[X]E^{1/q}[Y]
+$$
+Thus, we have proven Holder's inequality for nonnegative functions using Jensen's inequality. qed.
+
+\subsubsection{5.10 Prove Minkowski's Inequality for nonnegative $X$, $Y$ via Jensen's} \textit{Minkowski's inequality} is:
+$$
+	E^{1/p}[|X + Y|^p] \leq E^{1/p}[|X|^p] + E^{1/p}[|Y|^p]
+$$
+Valid for $p \geq 1$. It is enough to prove for nonnegative $X$, $Y$ that:
+$$
+	E[(X^{1/p} + Y^{1/p})^p] \leq (E^{1/p}[X] + E^{1/p}[Y])^p
+$$
+Note why it is enough: we can bring the $p$ to the otherside, and replace $X$ and $Y$ with $X^p$ and $Y^p$, which are still nonnegative. Then, if it is true for nonnegative $X$ and $Y$, then it will be true for $|X|$ and $|Y|$. Note, this problem is the same as before - we have:
+$$
+	f(x,y) = (x^{1/p} + y^{1/p})^p
+$$
+If we just show that $f$ is concave (equivalently, $-f$ is convex), the equality comes through. Note the second derivative test:
+$$
+	f_{11} = -\frac{\left(p - 1\right) y^{\frac{1}{p}} x^{\frac{1}{p} - 2} \left(x^{\frac{1}{p}} + y^{\frac{1}{p}}\right)^{p - 2}}{p}
+$$
+$$
+	f_{22} = -\frac{\left(p - 1\right) x^{\frac{1}{p}} y^{\frac{1}{p} - 2} \left(y^{\frac{1}{p}} + x^{\frac{1}{p}}\right)^{p - 2}}{p}
+$$
+As $p \geq 1$, we have $f_{11} \leq 0$ and $f_{22} \leq 0$. We have that:
+$$
+	f_{11}f_{22} = \frac{\left(p - 1\right)^{2} x^{\frac{2}{p} - 2} y^{\frac{2}{p} - 2} \left(y^{\frac{1}{p}} + x^{\frac{1}{p}}\right)^{2p - 4}}{p^{2}}
+$$
+We also note:
+$$
+	f_{12} = \frac{\left(p - 1\right) x^{\frac{1}{p} - 1} y^{\frac{1}{p} - 1} \left(y^{\frac{1}{p}} + x^{\frac{1}{p}}\right)^{p - 2}}{p}
+$$
+From which it is clear that $f_{12}^2 = f_{11}f_{22}$. Thus, two dimensional Jensen's inequality for concave functions applies, and we can conclude Minkowski's inequality. qed.
+
+\subsubsection{5.11 Average Number of Successful Bernoulli Trials approaches $p$} For events $A_1, A_2, \cdots$ not necessarily independent, let $N_n = \sum_{k=1}^n I_{A_k}$ be the number to occur among the first $n$. Let:
+$$
+	\alpha_n = \frac{1}{n} \sum_{k=1}^n P(A_k) \quad\quad\quad
+	\beta_n = \frac{2}{n(n-1)} \sum_{1 \leq j < k \leq n} P(A_j \cap A_k)
+$$
+So the first is just the average of the probabilities, and the second is the average of all unique intersection probabilities. Show that:
+$$
+	E[n^{-1}N_n] = \alpha_n \quad\quad\quad
+	Var[n^{-1}N_n] = \beta_n - \alpha_n^2 + \frac{\alpha_n - \beta_n}{n}
+$$
+These can be proved making extensive use of the linearity properties of the expected value (and noting that $N_n$ is a SRV). We note:
+$$
+	E[n^{-1}N_n] = \frac{1}{n}E\left[\sum_{k=1}^n I_{A_k}\right] = \frac{1}{n} \sum_{k=1}^n E[I_{A_k}] = \frac{1}{n} \sum_{k=1}^n P(A_k) = \alpha_n
+$$
+$$
+	Var[n^{-1}N_n] = E[(n^{-1}N_n)^2] - m^2 =
+	\frac{1}{n^2}E\left[\left(\sum_{k=1}^n I_{A_k}\right)^2\right] - \alpha_n^2
+$$
+$$
+	= 
+	\frac{1}{n^2}\sum_{k=1}^nE\left[I_{A_k}^2\right] + 
+	\frac{2}{n^2} \sum_{1 \leq j < k \leq n} E\left[I_{A_j}I_{A_k}\right] - 
+	\alpha_n^2
+$$
+$$
+	=
+	\frac{1}{n^2}\sum_{k=1}^n P(A_k) + 
+	\frac{2}{n^2} \sum_{1 \leq j < k \leq n} P(A_j \cap A_k) - 
+	\alpha_n^2
+$$
+$$
+	= \frac{\alpha_n}{n} + (n-1)\frac{\beta_n}{n} - \alpha_n^2
+$$
+$$
+	= \beta_n - \alpha_n^2 + \frac{\alpha_n - \beta_n}{n}
+$$
+So, we have found the variance and expected value of $n^{-1}N_n$. We note that $Var[n^{-1}N_n] \to 0$ if and only if $\beta_n - \alpha_n^2 \to 0$. This is because $\frac{\alpha_n - \beta_n}{n} \to 0$ always, as the numerator has an absolute value bounded by 2. We note that if the $A_n$ are independent, and $P(A_n) = p$, then:
+$$
+	\beta_n - \alpha_n^2 = \frac{2}{n(n-1)} * \frac{n(n-1)}{2} p^2 - \left(\frac{1}{n} * np\right)^2 = p^2 - p^2 = 0
+$$
+So, then for Bernoulli trials, we can conclude that the average number of trials that are successful approaches $p$ as the variance goes to $0$. qed.
 
 \end{document}
 
