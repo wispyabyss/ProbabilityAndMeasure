@@ -3895,6 +3895,55 @@ $$
 $$
 So, then for Bernoulli trials, we can conclude that the average number of trials that are successful approaches $p$ as the variance goes to $0$. qed.
 
+\subsubsection{5.15 Convergence in Probability does not imply Convergence with Probability One} By Theorem 5.3, for any prescribed sequence of probabilities $p_n$, there exists (on some space) an independent sequence of events $A_n$ satisfying $P(A_n) = p_n$. This can be found via identifying independent random variables with $P(X_n = 1) = p_n$, if we're making direct use of Theorem 5.3.
+\\\\
+Show that if $p_n \to 0$, but $\sum p_n = \infty$, we have a counterexample (like Example 5.4) to the converse of Theorem 5.2(ii).
+\\\\
+Recall, Theorem 5.2ii says that convergence with probability $1$:
+$$
+	P\left[\lim_n X_n(\omega) = X(\omega)\right] = 1
+$$
+Implies convergence in probability:
+$$
+	\forall \epsilon > 0 \quad\quad\quad \lim_n P\left[|X_n - X| \geq \epsilon\right] = 0
+$$
+The converse is that convergence in probability implies convergence with probability $1$. We want to give a counter example to this statement. We let $X_n$ be as defined above, and $X = 0$. We have:
+$$
+	\left[\lim_n X_n = X\right]^c = \left\{\omega: X_n(\omega) \neq 0 \io\right\} = [A_n \io]
+$$
+As the $A_n$ are independent, the second borel cantelli lemma tells us that $P[A_n \io] = 1$, and so:
+$$
+	P\left[\lim_n X_n(\omega) = X(\omega)\right] = 0
+$$
+However, note we have convergence in probability, as:
+$$
+	\lim_n P[|X_n - X| \geq \epsilon] = \lim_n P(A_n) = 0
+$$
+So, we have convergence in probability, but we don't have convergence with probability 1. And so, we have a counter example to the converse, for every sequence of $p_n$ satisfying $p_n \to 0$ but $\sum p_n = \infty$. qed.
+
+\subsubsection{5.16} Suppose that $0 \leq p_n \leq 1$ and put $\alpha_n = \min\{p_n,1-p_n\}$. Show that, if $\sum \alpha_n$ converges, then on some discrete probability space there exist independent events $A_n$ satisfying $P(A_n) = p_n$. Compare Problem 1.1b.
+\\\\
+For one, the statement in problem 1.1b notes that if $\sum \alpha_n$ diverges, then it is not possible to have independent events with $P(A_n) = p_n$ on a discrete space, as that would imply each $\omega \in \Omega$ has $P(\omega) = 0$, given that $\omega$ belongs to some dyadic set of the form $A_1^{c?} \cap A_2^{c?} \cap \cdots$, which has probability $0$.
+\\\\
+My first thought is the following. Take the discrete space $\Omega = \{1, 2, \cdots\}$. Try and do a \textit{splitting} like we do in Theorem 5.3. We first split $\Omega$ into two sets by taking every other point:
+$$
+	A_1 = \{1, 3, 5, \cdots\} \quad\quad\quad A_1^c = \{2, 4, 6, \cdots\}
+$$
+Then, we split $A_1$ and $A_1^c$ by a similar splitting:
+$$
+	A_1' = \{1, 5, 9, \cdots\} \quad\quad A_1'' = \{3, 7, 11, \cdots\} \quad\quad
+	A_1^{c'} = \{2, 6, 10, \cdots\} \quad\quad A_1^{c''} = \{4, 8, 12, \cdots\}
+$$
+And we set:
+$$
+	A_2 = A_1' \cup A_1^{c'}
+$$
+And we do the splits iteratively, like for Theorem 5.3, but on a discrete set. We then let $P(A_1) = p_1$, and $P(A_2) = p_2$, and so on, and then we deduce $P(\omega)$ as the multiplication of the probabilities of the set $\omega$ is in. Note, the intuition here is that \textit{unlike} in problem 1.1b, not all $\omega$ should have probability $0$. For instance, if we have $p_n \geq 1-p_n$ for each $n$, we have that $\sum 1-p_n$ converges. Now, consider:
+$$
+	P(\{1\}) = \prod_n p_n
+$$
+Note, each $p_n$ should be substantially large enough, such that the above product \textit{does not} go to zero. However, this is not a proof that it is a well defined space. I think, we can maybe rely on the previous problem, or the Borel-Cantelli lemmas. We note that we \textit{do} have that each $A_n$ is independent. So, we have our independent sets on a discrete space. I think, we can maybe use the $\io$ argument used above, to note that $P(\{i\}) \neq 0$, for those $i$ that appear infinitely often in some good set of $\omega$. And, that these $i$ maybe even have probability $1$. Which would be enough to prove that the set is well defined.
+
 \end{document}
 
 
