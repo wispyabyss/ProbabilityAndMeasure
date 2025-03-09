@@ -197,4 +197,5 @@
 \contentsline {subsubsection}{5.10 Prove Minkowski's Inequality for nonnegative $X$, $Y$ via Jensen's}{141}{section*.198}%
 \contentsline {subsubsection}{5.11 Average Number of Successful Bernoulli Trials approaches $p$}{142}{section*.199}%
 \contentsline {subsubsection}{5.15 Convergence in Probability does not imply Convergence with Probability One}{143}{section*.200}%
-\contentsline {subsubsection}{5.16}{143}{section*.201}%
+\contentsline {subsubsection}{5.16 Independent Sets on a Discrete Space}{143}{section*.201}%
+\contentsline {subsubsection}{5.19}{145}{section*.202}%

@@ -3921,7 +3921,7 @@ $$
 $$
 So, we have convergence in probability, but we don't have convergence with probability 1. And so, we have a counter example to the converse, for every sequence of $p_n$ satisfying $p_n \to 0$ but $\sum p_n = \infty$. qed.
 
-\subsubsection{5.16} Suppose that $0 \leq p_n \leq 1$ and put $\alpha_n = \min\{p_n,1-p_n\}$. Show that, if $\sum \alpha_n$ converges, then on some discrete probability space there exist independent events $A_n$ satisfying $P(A_n) = p_n$. Compare Problem 1.1b.
+\subsubsection{5.16 Independent Sets on a Discrete Space} Suppose that $0 \leq p_n \leq 1$ and put $\alpha_n = \min\{p_n,1-p_n\}$. Show that, if $\sum \alpha_n$ converges, then on some discrete probability space there exist independent events $A_n$ satisfying $P(A_n) = p_n$. Compare Problem 1.1b.
 \\\\
 For one, the statement in problem 1.1b notes that if $\sum \alpha_n$ diverges, then it is not possible to have independent events with $P(A_n) = p_n$ on a discrete space, as that would imply each $\omega \in \Omega$ has $P(\omega) = 0$, given that $\omega$ belongs to some dyadic set of the form $A_1^{c?} \cap A_2^{c?} \cap \cdots$, which has probability $0$.
 \\\\
@@ -3942,7 +3942,76 @@ And we do the splits iteratively, like for Theorem 5.3, but on a discrete set. W
 $$
 	P(\{1\}) = \prod_n p_n
 $$
-Note, each $p_n$ should be substantially large enough, such that the above product \textit{does not} go to zero. However, this is not a proof that it is a well defined space. I think, we can maybe rely on the previous problem, or the Borel-Cantelli lemmas. We note that we \textit{do} have that each $A_n$ is independent. So, we have our independent sets on a discrete space. I think, we can maybe use the $\io$ argument used above, to note that $P(\{i\}) \neq 0$, for those $i$ that appear infinitely often in some good set of $\omega$. And, that these $i$ maybe even have probability $1$. Which would be enough to prove that the set is well defined.
+Note, each $p_n$ should be substantially large enough, such that the above product \textit{does not} go to zero. However, this is not a proof that it is a well defined space. I think, we can maybe rely on the previous problem, or the Borel-Cantelli lemmas. We note that we \textit{do} have that each $A_n$ is independent. So, we have our independent sets on a discrete space. It is just intuition. I think, we can maybe use the $\io$ argument used above, to note that $P(\{i\}) \neq 0$, for those $i$ that appear infinitely often in some good set of $\omega$. And, that these $i$ maybe even have probability $1$. Which would be enough to prove that the set is well defined.
+\\\\
+Let $A_i$ be the independent sets defined above, with $P(A_i) = p_i$. Let $C_i$ be either $A_i$ or $A_i^c$, where $P(C_i) = 1 - \alpha_i$. We note that $C_i$, like $A_i$, are independent. We also note that:
+$$
+	\sum_{i=1}^\infty C_i = \sum_{i=1}^\infty 1 - P(A_i) = -S + \lim_{n \to \infty} \sum_{i=1}^n 1 = \infty
+$$
+Thus, by the Second Borel Cantelli Lemma, we have:
+$$
+	P[C_i \,\,\, \io] = 1
+$$
+We thus also note that for $i \in C_i$, we must have some $P(\{i\}) > 0$, as we note:
+$$
+	1 = P[C_i \,\,\, \io] = \sum_{i \in C_i \,\,\, \io} P(\{i\})
+$$
+By countable additivity. This should conclude the proof, as we were able to create independent $A_n$ on our discrete space, satisfying $P(A_n) = p_n$. But, I still want to highlight the difference between problem 1.1b. First, note that we can't apply the argument in 1.1b to this problem. As $\alpha_n$ does not diverge, we couldn't make use of the same argument, that \textit{every} $\omega$ (or $i$) had probability $0$. Now, also note that the argument in 5.16 couldn't be applied to 1.1b either. That is because, we cannot conclude that the sets $A_n$ are independent, given the contradiction that stems from them being independent. As we had no contradiction stemming from independence in this problem, we could continue with applying the Borel-Cantelli lemma.
+\\\\
+However, I think one of the main points is the following. Having a convergent sequence \textit{separates} the $i \in \Omega$ into two sets - those that have probability $0$, and those that do not. We couldn't find any separation in 1.1b. However, in this problem, as $\sum \alpha_n$ converged, it would be clear that the converging $\alpha_n$ $\omega$ had probability $0$, whereas the ones where it didn't converge might not have probability $0$, in total. Leading to the conclusion. qed.
+
+\subsubsection{5.19} For integers $m$ and primes $p$, let $\alpha_p(m)$ be the exact power of $p$ in the prime factorization of $m$:
+$$
+	m = \prod_p p^{\alpha_p(m)}
+$$
+Let $\delta_p(m)$ be $1$ or $0$ as $p$ divides $m$ or not. Recall $P_n$ - the discrete probability measure on $\Omega = \{1, 2, \cdots\}$ where:
+$$
+	P_n(A) = \frac{1}{n}\#\left[m : 1 \leq m \leq n, m \in A\right]
+$$
+Under each $P_n$, the $\alpha_p$ and $\delta_p$ are random variables (ie, they take $\omega$ into a real number). For distinct primes $p_1, \cdots, p_u$, there are a couple of things we want to show. First:
+$$
+	P_n[\alpha_{p_i} \geq k_i, i \leq u] = \frac{1}{n}\floor{\frac{n}{p_1^{k_1} \cdots p_u^{k_u}}} \to 
+	\frac{1}{p_1^{k_1} \cdots p_u^{k_u}}
+$$
+Note, the fundamental theorem of arithmetic says that every integer can be expressed as this prime factorization with exponents form. We recall problem 2.18, where we found for the periodic sets $M_a = [ka: k = 1, 2, \cdots]$, we had:
+$$
+	P_n(M_a) = \frac{1}{n}\floor{\frac{n}{a}} \to \frac{1}{a} = D(M_a)
+	\quad\quad\quad
+	M_a \cap M_b = M_{lcm(a,b)}
+$$
+We note that:
+$$
+	\left\{\alpha_{p_i} \geq k_i, i \leq u\right\} = M_{p_1^{k_1}} \cap \cdots \cap M_{p_u^{k_u}}
+$$
+As every $i$ on the LHS is divisible by each $p_i^{k_i}$, by definition, and every $i$ on the RHS satisfies that $\alpha_{p_i} \geq k_i$, again by definition. We finally note, like in problem 4.15, that:
+$$
+	lcm(p_1^{k_1}, \cdots, p_u^{k_u}) = p_1^{k_1} \cdots p_u^{k_u}
+$$
+Assume that it wasn't - then, $x = p_1^{k_1} \cdots p_u^{k_u}$ would have a smaller prime factorization, which would be a contradiction. And so, we have:
+$$
+	P_n[\alpha_{p_i} \geq k_i, i \leq u] = P_n\left[M_{p_1^{k_1}} \cap \cdots \cap M_{p_u^{k_u}}\right] =
+	P_n\left[M_{p_1^{k_1} \cdots p_u^{k_u}}\right] =
+	\frac{1}{n}\floor{\frac{n}{p_1^{k_1} \cdots p_u^{k_u}}} \to 
+	\frac{1}{p_1^{k_1} \cdots p_u^{k_u}}
+$$
+Next, we want to show:
+$$
+	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] \to \prod_{i=1}^u \left(\frac{1}{p_i^{k_i}} - \frac{1}{p_i^{k_i+1}}\right)
+$$
+We note:
+$$
+	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] =
+	P_n\left[\left\{\alpha_{p_i} \geq k_i, i \leq u\right\} - \left\{\alpha_{p_i} \geq k_i + 1, i \leq u\right\}\right]
+$$
+We note the set on the left completely contains the set on the right, and so as $P_n$ is a probability measure, we have:
+$$
+	= P_n[\alpha_{p_i} \geq k_i, i \leq u] - P_n[\alpha_{p_i} \geq k_i + 1, i \leq u] =
+	\frac{1}{n}\floor{\frac{n}{p_1^{k_1} \cdots p_u^{k_u}}} - \frac{1}{n}\floor{\frac{n}{p_1^{k_1+1} \cdots p_u^{k_u+1}}}
+$$
+$$
+	\to \frac{1}{p_1^{k_1} \cdots p_u^{k_u}} - \frac{1}{p_1^{k_1+1} \cdots p_u^{k_u+1}}
+$$
+We now make use of the inclusion-exclusion principle. Note: this is incorrect. Express the above sets as a union, and then simplify with the inclusion-exclusion principle.
 
 \end{document}
 
