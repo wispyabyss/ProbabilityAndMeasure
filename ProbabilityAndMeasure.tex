@@ -3968,7 +3968,9 @@ Let $\delta_p(m)$ be $1$ or $0$ as $p$ divides $m$ or not. Recall $P_n$ - the di
 $$
 	P_n(A) = \frac{1}{n}\#\left[m : 1 \leq m \leq n, m \in A\right]
 $$
-Under each $P_n$, the $\alpha_p$ and $\delta_p$ are random variables (ie, they take $\omega$ into a real number). For distinct primes $p_1, \cdots, p_u$, there are a couple of things we want to show. First:
+Under each $P_n$, the $\alpha_p$ and $\delta_p$ are random variables. First, note that $\alpha_p$ and $\delta_p$ are functions from $\Omega$ into $\R$. Then, note that for $A \subset \R$, $[\alpha_p \in A]$ is some subset of $\Omega$. Recall that $P_n$ is well defined for \textit{all} subsets of $\Omega$ (as only the first $n$ elements really matter). 
+\\\\
+For distinct primes $p_1, \cdots, p_u$, there are a couple of things we want to show. First:
 $$
 	P_n[\alpha_{p_i} \geq k_i, i \leq u] = \frac{1}{n}\floor{\frac{n}{p_1^{k_1} \cdots p_u^{k_u}}} \to 
 	\frac{1}{p_1^{k_1} \cdots p_u^{k_u}}
@@ -4000,18 +4002,28 @@ $$
 $$
 We note:
 $$
-	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] =
-	P_n\left[\left\{\alpha_{p_i} \geq k_i, i \leq u\right\} - \left\{\alpha_{p_i} \geq k_i + 1, i \leq u\right\}\right]
+	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] = 
+	P_n\left[\bigcap_{i=1}^u \alpha_{p_i} \geq k_i - \alpha_{p_i} \geq k_i + 1\right] =
+	1 - P_n\left[\bigcup_{i=1}^u [\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right]
 $$
-We note the set on the left completely contains the set on the right, and so as $P_n$ is a probability measure, we have:
+Note, the inner union on the right is a union of two disjoint sets. Making use of the inclusion-exclusion principle, the above is:
 $$
-	= P_n[\alpha_{p_i} \geq k_i, i \leq u] - P_n[\alpha_{p_i} \geq k_i + 1, i \leq u] =
-	\frac{1}{n}\floor{\frac{n}{p_1^{k_1} \cdots p_u^{k_u}}} - \frac{1}{n}\floor{\frac{n}{p_1^{k_1+1} \cdots p_u^{k_u+1}}}
+	= 1 -
+	\sum_{i=1}^u P_n\left[[\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right]
 $$
 $$
-	\to \frac{1}{p_1^{k_1} \cdots p_u^{k_u}} - \frac{1}{p_1^{k_1+1} \cdots p_u^{k_u+1}}
+	+ 
+	\sum_{1 \leq i < j \leq u} P_n\left[
+	\left([\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right) \cap 
+	\left([\alpha_{p_j} \geq k_j]^c \cup [\alpha_{p_j} \geq k_j + 1]\right)
+	\right]
+	+ \cdots
 $$
-We now make use of the inclusion-exclusion principle. Note: this is incorrect. Express the above sets as a union, and then simplify with the inclusion-exclusion principle.
+We replace the above probabilities with their limits, derived from the above. We define:
+$$
+	A_i = \left([\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right)
+$$
+And we note independence of $A_i$ and $A_j$?
 
 \end{document}
 
