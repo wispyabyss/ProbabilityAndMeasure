@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  16 MAR 2025 11:55
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  17 MAR 2025 09:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2438,28 +2438,28 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 3856.
 
-[141]
-Underfull \hbox (badness 10000) in paragraph at lines 3898--3903
+[141] [142]
+Underfull \hbox (badness 10000) in paragraph at lines 3920--3925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3898--3903
-
- []
-
-[142]
-Underfull \hbox (badness 10000) in paragraph at lines 3924--3929
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3924--3929
+Underfull \hbox (badness 10000) in paragraph at lines 3920--3925
 
  []
 
 [143]
-Overfull \hbox (68.05083pt too wide) detected at line 3936
+Underfull \hbox (badness 10000) in paragraph at lines 3946--3951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3946--3951
+
+ []
+
+
+Overfull \hbox (68.05083pt too wide) detected at line 3958
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/
 cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 9\OML/cmm/m/i
 t/12 ; [] \OMS/cmsy/m/n/12 g  \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/
@@ -2472,51 +2472,45 @@ m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12
 12\OML/cmm/m/it/12 ; [] \OMS/cmsy/m/n/12 g
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 3944--3948
-
- []
-
 [144]
-Underfull \hbox (badness 10000) in paragraph at lines 3958--3962
+Underfull \hbox (badness 10000) in paragraph at lines 3966--3970
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3970--3974
+Underfull \hbox (badness 10000) in paragraph at lines 3980--3984
 
  []
 
 [145]
-Overfull \hbox (86.05551pt too wide) detected at line 3998
+Underfull \hbox (badness 10000) in paragraph at lines 3992--3996
+
+ []
+
+[146]
+Overfull \hbox (86.05551pt too wide) detected at line 4020
 \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^K[] \OMS/cmsy/m/n/12 ^^
 U \OML/cmm/m/it/12 k[]; i \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 u\OT1/cmr/m/n/1
 2 ] = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] \OT1/cm
 r/m/n/12 = [] [] \OMS/cmsy/m/n/12 ! []
  []
 
+[147]
+Underfull \hbox (badness 10000) in paragraph at lines 4067--4071
 
-Overfull \hbox (88.90024pt too wide) detected at line 4008
-\OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/
-12 = 1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 P[] []
  []
 
-
-Overfull \hbox (11.8328pt too wide) detected at line 4021
-\OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 + [] 
- []
-
-[146] [147] (./ProbabilityAndMeasure.aux)
+[148] [149] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: A73D22C55A78168F2EF1168ADB3ED932;24482.
+(rerunfilecheck)             Checksum: 49B2EBC163F3A40D2F7702E042E2C49A;25177.
  ) 
 Here is how much of TeX's memory you used:
  9917 strings out of 476191
  154003 string characters out of 5812072
- 480816 words of memory out of 5000000
+ 480527 words of memory out of 5000000
  30520 multiletter control sequences out of 15000+600000
  513051 words of font info for 73 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 60i,9n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,12n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (147 pages).
+Output written on ProbabilityAndMeasure.pdf (149 pages).

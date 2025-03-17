@@ -3895,6 +3895,28 @@ $$
 $$
 So, then for Bernoulli trials, we can conclude that the average number of trials that are successful approaches $p$ as the variance goes to $0$. qed.
 
+\subsubsection{5.12 Expected Value as Infinite Probability Sum} Show that, if $X$ has nonnegative integers as values, then:
+$$
+	E[X] = \sum_{n=1}^\infty P[X \geq n]
+$$
+We recall from the reading that if $X$ is nonnegative, then for the values ordered in its range $0 \leq x_1 < x_2 < \cdots < x_k$, we have:
+$$
+	E[X] = \sum_{i=1}^k x_i P[X = x_i] =
+	\sum_{i=1}^{k-1} x_i\left(P[X \geq x_i] - P[X \geq x_{i+1}]\right) + x_k P[X \geq x_k]
+$$
+$$
+	= x_1P[X \geq x_1] + \sum_{i=2}^k (x_i - x_{i-1}) P[X \geq x_i]
+$$
+The first step, we rewrite $P[X = x_i]$ as $P[X \geq x_i] - P[X \geq x_{i+1}]$, and then we reorder the sum. However, now we note, we can say that $X$ takes on \textit{every} nonnegative integer as a value - with the realization that, $P[X = i] = 0$ for all but finitely many $X$. Then, the above becomes:
+$$
+	= 0 P[X \geq 1] + \sum_{i=1}^\infty (i - (i - 1)) P[X \geq i] =
+	\sum_{n=1}^\infty P[X \geq n]
+$$
+So, in conclusion, we do find:
+$$
+	E[X] = \sum_{n=1}^\infty P[X \geq n]
+$$
+
 \subsubsection{5.15 Convergence in Probability does not imply Convergence with Probability One} By Theorem 5.3, for any prescribed sequence of probabilities $p_n$, there exists (on some space) an independent sequence of events $A_n$ satisfying $P(A_n) = p_n$. This can be found via identifying independent random variables with $P(X_n = 1) = p_n$, if we're making direct use of Theorem 5.3.
 \\\\
 Show that if $p_n \to 0$, but $\sum p_n = \infty$, we have a counterexample (like Example 5.4) to the converse of Theorem 5.2(ii).
@@ -3960,7 +3982,7 @@ By countable additivity. This should conclude the proof, as we were able to crea
 \\\\
 However, I think one of the main points is the following. Having a convergent sequence \textit{separates} the $i \in \Omega$ into two sets - those that have probability $0$, and those that do not. We couldn't find any separation in 1.1b. However, in this problem, as $\sum \alpha_n$ converged, it would be clear that the converging $\alpha_n$ $\omega$ had probability $0$, whereas the ones where it didn't converge might not have probability $0$, in total. Leading to the conclusion. qed.
 
-\subsubsection{5.19} For integers $m$ and primes $p$, let $\alpha_p(m)$ be the exact power of $p$ in the prime factorization of $m$:
+\subsubsection{5.19 Average Prime Power of Pos Integer Prime Factorizations} For integers $m$ and primes $p$, let $\alpha_p(m)$ be the exact power of $p$ in the prime factorization of $m$:
 $$
 	m = \prod_p p^{\alpha_p(m)}
 $$
@@ -4000,30 +4022,88 @@ Next, we want to show:
 $$
 	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] \to \prod_{i=1}^u \left(\frac{1}{p_i^{k_i}} - \frac{1}{p_i^{k_i+1}}\right)
 $$
-We note:
+First, to make the notation slightly easier, we define:
 $$
-	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] = 
-	P_n\left[\bigcap_{i=1}^u \alpha_{p_i} \geq k_i - \alpha_{p_i} \geq k_i + 1\right] =
-	1 - P_n\left[\bigcup_{i=1}^u [\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right]
+	B = \bigcap_{i=1}^u \alpha_{p_i} \geq k_i \quad\quad
+	\text{and for $C \subseteq [u]$} \quad
+	B_C = \bigcap_{i=1}^u \begin{cases}
+	\alpha_{p_i} \geq k_i + 1 & \text{ if $i \in C$}\\
+	\alpha_{p_i} \geq k_i & \text{ otherwise}
+	\end{cases}
 $$
-Note, the inner union on the right is a union of two disjoint sets. Making use of the inclusion-exclusion principle, the above is:
+From above, it is clear that:
 $$
-	= 1 -
-	\sum_{i=1}^u P_n\left[[\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right]
+	\lim_n P_n[B] = \frac{1}{p_1^{k_1} \cdots p_u^{k_u}}
+	\quad\quad
+	\lim_n P_n[B_C] = \left(\prod_{i \not\in C} \frac{1}{p_i^{k_i}}\right) 
+	\left(\prod_{i \in C} \frac{1}{p_i^{k_i+1}}\right) 
+$$
+We have:
+$$
+	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] = P_n\left[B - \bigcup_{i=1}^u B_i\right] =
+	P_n[B] - P_n\left[\bigcup_{i=1}^u B_i\right]
 $$
 $$
-	+ 
-	\sum_{1 \leq i < j \leq u} P_n\left[
-	\left([\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right) \cap 
-	\left([\alpha_{p_j} \geq k_j]^c \cup [\alpha_{p_j} \geq k_j + 1]\right)
-	\right]
-	+ \cdots
+	= P_n[B] - \left[\sum_{i=1}^U P[B_i] - \sum_{1 \leq i < j \leq u} P[B_i \cap B_j] + \cdots\right]
 $$
-We replace the above probabilities with their limits, derived from the above. We define:
+Where the above is by the inclusion-exclusion principle. Clearly, $B_i \cap B_j = B_{ij}$, and so taking limits, we have the above equals:
 $$
-	A_i = \left([\alpha_{p_i} \geq k_i]^c \cup [\alpha_{p_i} \geq k_i + 1]\right)
+	= \frac{1}{p_1^{k_1} \cdots p_u^{k_u}} - \sum_{1 \leq i \leq n} \frac{1}{\cdots p_i^{k_i+1}} +
+	\sum_{1 \leq i < j \leq u} \frac{1}{\cdots p_i^{k_i+1}p_j^{k_j+1}}
 $$
-And we note independence of $A_i$ and $A_j$?
+Note, the above is just the expanded form of the multiplication:
+$$
+	\prod_{i=1}^u \left(\frac{1}{p_i^{k_i}} - \frac{1}{p_i^{k_i+1}}\right)
+$$
+And thus, we can indeed conclude that:
+$$
+	P_n\left[\alpha_{p_i} = k_i, i \leq u\right] \to \prod_{i=1}^u \left(\frac{1}{p_i^{k_i}} - \frac{1}{p_i^{k_i+1}}\right)
+$$
+Similarly, we note:
+$$
+	P_n\left[\delta_{p_i} = 1, i \leq u\right] =
+	P_n[\alpha_{p_i} \geq 1, i \leq u] = \frac{1}{n}\floor{\frac{n}{p_1 \cdots p_u}} \to 
+	\frac{1}{p_1 \cdots p_u}
+$$
+By 5.44 and 5.45 (the above conclusions) we can make the statement that $\alpha_p$ and $\delta_p$ are ``approximately independent for large $n$ under $P_n$." To be independent, we would have to have that $\sigma(\alpha_p)$ are independent, which would follow if $[\alpha_p = k_i]$ are independent, which does follow from the above conclusions for large $n$ under $P_n$.
+\\\\
+For a function $f$ of positive integers, let:
+$$
+	E_n[f] = \frac{1}{n} \sum_{m=1}^n f(m)
+$$
+be its expected value under the probability measure $P_n$. Note, this follows from the definition of the expected value of simple random variables, where $f$ is defined on $\Omega = \{1, 2, \cdots\}$, but only the first $n$ integers have nonzero probability mass under $P_n$. Show that:
+$$
+	E_n[\alpha_p] = \sum_{k=1}^\infty \frac{1}{n} \floor{\frac{n}{p^k}} \to \frac{1}{p-1}
+$$
+From 5.12, we recall that for nonnegative SRV $X$:
+$$
+	E[X] = \sum_{n=1}^\infty P[X \geq n]
+$$
+We thus note:
+$$
+	E_n[\alpha_p] = \sum_{k=1}^\infty P_n[\alpha_p \geq k] = \sum_{k=1}^\infty \frac{1}{n}\floor{\frac{n}{p^k}}
+$$
+$$
+	\to \sum_{k=1}^\infty \frac{1}{p^k} = \frac{1}{p} * \frac{p-1}{p} = \frac{1}{p-1}
+$$
+By the limit of a geometric series. This says \textit{roughly} that $(p-1)^{-1}$ is the average power of $p$ in the factorization of large integers.
+
+\subsubsection{5.20} First, we note Stirling's Approximation:
+$$
+	\log n! = n \log n - n + O(\log n)
+$$
+Ie, we have that:
+$$
+	\left|\log n! - (n \log n - n)\right| \leq M \left|\log(n)\right|
+$$
+For some positive real $M$. This is actually proved in problem 27.18. See the \href{https://en.wikipedia.org/wiki/Stirling%27s_approximation}{wiki}.
+
+\begin{enumerate}
+	\item From Stirling's formula, we note:
+	$$
+		E_n[\log] = \frac{1}{n}\sum_{m=1}^n \log(m)
+	$$
+\end{enumerate}
 
 \end{document}
 
