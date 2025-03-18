@@ -4096,14 +4096,101 @@ Ie, we have that:
 $$
 	\left|\log n! - (n \log n - n)\right| \leq M \left|\log(n)\right|
 $$
-For some positive real $M$. This is actually proved in problem 27.18. See the \href{https://en.wikipedia.org/wiki/Stirling%27s_approximation}{wiki}.
+For some positive real $M$. This is actually proved in problem 27.18. See the \href{https://en.wikipedia.org/wiki/Stirling%27s_approximation}{wiki}. We also have
 
 \begin{enumerate}
-	\item From Stirling's formula, we note:
+	\item We note:
 	$$
-		E_n[\log] = \frac{1}{n}\sum_{m=1}^n \log(m)
+		E_n[\log] = \frac{1}{n}\sum_{m=1}^n \log(m) = \frac{1}{n} \log(n!)
 	$$
+	Where the final step makes use of the multiplicative law of the logarithm. By Stirling's Approximation, the above equals:
+	$$
+		= \log n - 1 + \frac{1}{n} O(\log(n)) = \log(n) + O(1)
+	$$
+	As for the final step - note that $\frac{M\log(n)}{n} \to 0$, and so for some $n_0$ large enough, we must have the difference $\frac{\log n!}{n} - \log(n)$ is bounded by some scalar to infinity. Thus, we can deduce:
+	$$
+		E_n[\log] = \log n + O(1)
+	$$
+	We also note:
+	$$
+		E_n[\alpha_p] \leq 1/(p-1) \leq 2/p
+	$$
+	Which we can note just by graphing it - note, the inequality only holds for $x \geq 2$, but $2$ is our first prime, so everything is fine. Finally, we also note:
+	$$
+		m = \prod_p p^{\alpha_p(m)} \implies \log(m) = \sum_p \alpha_p(m) \log(p)
+	$$
+	With all of these facts, we can note the following. We have that:
+	$$
+		\frac{\log(n!)}{2n} \to \infty
+	$$
+	As $n \to \infty$. This is clear by the approximation, as the big O term will go to zero, and $\log(n)$ does to infinity. We have by the above:
+	$$
+		\frac{\log(n!)}{2n} = \frac{1}{2} * \frac{1}{n} * \sum_{m=1}^n \log(m) = \frac{1}{2} E_n[\log]
+	$$
+	We now note that we are treating $\log$ as an integer valued function, and so it is equivalent to:
+	$$
+		= \frac{1}{2} E_n\left[\sum_p \alpha_p \log(p)\right] =
+		\frac{1}{2} \sum_p E_n[\alpha_p] \log(p) \leq
+		\sum_p p^{-1} \log(p)
+	$$
+	We note that this sum is larger than $\log(n!)/2n$, which goes to infinity, and so the sum diverges:
+	$$
+		\sum_p p^{-1} \log(p) = \infty
+	$$
+	This implies there are infinitely many primes. If there were finitely many - then the sum would clearly be finite. qed.
+	
+	\item Let $\log^* m = \sum_p \delta_p(m) \log(p)$. Show that:
+	$$
+		E_n[\log^*] = \sum_p \frac{1}{n}\floor{\frac{n}{p}} \log(p) = \log n + O(1)
+	$$
+	In truth, I'm going to stop doing this question here, as I'm just copying from the solutions at this point. It can be walked through, however, so if you absolutely need to understand how the results of the problem are obtained (the results being ratios between the $rth$ prime and $r \log r$, where the ratio is bounded away from $0$ and $\infty$, stuff like that), you can just walk through it again yourself.
 \end{enumerate}
+
+\section{Section 6 - The Law of Large Numbers}
+
+\subsection{The Strong Law}
+
+\paragraph{Definition - Identically Distributed} Let $X_1, X_2, \cdots$ be a sequence of simple random variables on some probability space $(\Omega, \fcal, P)$. They are \textit{identically distributed} if their distributions are all the same. Ie:
+$$
+	\mu_i(A) = P[X_i \in A] = P[X_j \in A] = \mu_j(A)
+$$
+
+\paragraph{Theorem 6.1 - The Strong Law of Large Numbers (SRV)} If the $X_n$ are independent and identically distributed and $E[X_n] = m$, then:
+$$
+	P\left[\lim_n n^{-1}S_n = m\right] = 1
+$$
+\textbf{Proof} First note, we can assume wlog that $E[X_n] = m$. Then, recalling 5.2, we have that convergence with probability $1$ is equivalent to showing for all $\epsilon > 0$ that:
+$$
+	P\left[|n^{-1}S_n| \geq \epsilon \, \io\right] = 0
+$$
+We will ultimately use the first borel cantelli lemma - we want to show that:
+$$
+	\sum_n P\left[|S_n| \geq n\epsilon\right] < \infty
+$$
+Note, this can be done with Markov's inequality, where:
+$$
+	P\left[|S_n| \geq n\epsilon\right] =
+	P\left[|S_n|^4 \geq n^4\epsilon^4\right] \leq \frac{1}{n^4\epsilon^4} E[S_n^4]
+$$
+As $S_n$ is a summation, we have that:
+$$
+	E[S_n^4] = \sum E[X_\alpha X_\beta X_\gamma X_\delta]
+$$
+Note that $E[X_i] = 0$, and so the only nonzero terms above are the $n$ terms of the form $E[X_i^4] = \xi^4$, and the $3n(n-1)$ terms of the form $E[X_i^2X_j^2] = E[X_i^2]E[X_j^2] = \sigma^4$ (noting that $X_i^2$ and $X_j^2$ are in $\sigma(X_i)$ and $\sigma(X_j)$, and so they are independent). Thus, we have:
+$$
+	\sum E[X_\alpha X_\beta X_\gamma X_\delta] \leq n\xi^4 + 3n(n-1)\sigma^4 \leq Kn^2
+$$
+Where $K$ does not depend on $n$. Thus, we can bound:
+$$
+	P\left[|S_n| \geq n\epsilon\right] \leq \frac{k}{n^2\epsilon^4}
+$$
+As $\sum 1/n^2$ converges, we have by the first Borel-Cantelli Lemma:
+$$
+	P\left[|n^{-1}S_n| \geq \epsilon \, \io\right] = 0
+$$
+Thus, we have the theorem. qed.
+\\\\
+This is actually pretty simple, once all the prerequisite work has been finished up. Not bad!
 
 \end{document}
 
