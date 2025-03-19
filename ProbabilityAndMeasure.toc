@@ -205,3 +205,10 @@
 \contentsline {subsection}{The Strong Law}{150}{section*.206}%
 \contentsline {paragraph}{Definition - Identically Distributed}{150}{section*.207}%
 \contentsline {paragraph}{Theorem 6.1 - The Strong Law of Large Numbers (SRV)}{150}{section*.208}%
+\contentsline {subsection}{The Weak Law}{151}{section*.209}%
+\contentsline {paragraph}{Theorem: The Weak Law of Large Numbers}{151}{section*.210}%
+\contentsline {paragraph}{Example 6.3 - Length of Cycles in a Permutation using the Weak Law}{152}{section*.211}%
+\contentsline {subsection}{Bernstein's Theorem}{152}{section*.212}%
+\contentsline {paragraph}{Theorem 6.2}{153}{section*.213}%
+\contentsline {paragraph}{Proof: $f$ continuous on a compact interval implies $f$ is \textit {uniformly continuous}}{153}{section*.214}%
+\contentsline {paragraph}{Proof of Theorem 6.2}{153}{section*.215}%

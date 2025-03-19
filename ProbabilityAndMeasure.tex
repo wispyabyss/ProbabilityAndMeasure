@@ -4182,7 +4182,7 @@ $$
 $$
 Where $K$ does not depend on $n$. Thus, we can bound:
 $$
-	P\left[|S_n| \geq n\epsilon\right] \leq \frac{k}{n^2\epsilon^4}
+	P\left[|S_n| \geq n\epsilon\right] \leq \frac{K}{n^2\epsilon^4}
 $$
 As $\sum 1/n^2$ converges, we have by the first Borel-Cantelli Lemma:
 $$
@@ -4191,6 +4191,53 @@ $$
 Thus, we have the theorem. qed.
 \\\\
 This is actually pretty simple, once all the prerequisite work has been finished up. Not bad!
+
+\subsection{The Weak Law}
+\paragraph{Theorem: The Weak Law of Large Numbers} Take the same hypotheses as in the strong law - ie, $X_n$ are independent and identically distributed and $E[X_n] = m$. Then,
+$$
+	n^{-1}S_n \to_p m
+$$
+This is because convergence with probability $1$ implies convergence in probability. Recall, this means for all $\epsilon > 0$, we have:
+$$
+	\lim_{n \to \infty} P[|n^{-1}S_n - m| \geq \epsilon] = 0
+$$
+Note, this could also have just been proved by Chebyshev's Inequality:
+$$
+	P[|n^{-1}S_n - m| \geq \epsilon] \leq \frac{Var[S_n]}{n^2\epsilon^2} = \frac{nVar[X_1]}{n^2\epsilon^2} \to 0
+$$
+As $Var[X_1]$ is some constant. 
+
+\paragraph{Example 6.3 - Length of Cycles in a Permutation using the Weak Law} This is an interesting continuation of example 5.6, where we had, for $\Omega_n$ the $n!$ permutations, $P(A)$ the fraction of points in $A$, and $X_{nk}(\omega)$ $1$ or $0$ corresponding with whether the $kth$ position of the permutation completes a cycle or not. We proved that $X_{n1}, \cdots, X_{nn}$ are independent, and:
+$$
+	P[X_{nk} = 1] = \frac{1}{n-k+1} = E[X_{nk}] = m_{nk}
+	\quad\quad\quad
+	Var[X_{nk}] = \sigma^2_{nk} = m_{nk}(1-m_{nk})
+$$
+We can make use of a similar Chebyshev argument as above. Let $L_n = \sum_{k=1}^n k^{-1}$, and note that $S_n = \sum_{k=1}^n X_{nk}$ has mean $\sum_{k=1}^n m_{nk} = L_n$, and variance $\sum_{k=1}^n m_{nk}(1-m_{nk}) < L_n$ (as each $0 < m_{nk} < 1$, and independent RV sum variance). So, by Chebyshev's inequality, we have:
+$$
+	P\left[\left|\frac{S_n - L_n}{L_n}\right|\right] < \frac{L_n}{\epsilon^2L_n^2} = \frac{1}{\epsilon^2L_n} \to 0
+$$
+As when $n$ increases, $L_n$ goes to infinity, and the fraction goes to $0$. And so, we have that a proportion of the permutations, larger than $1 - \epsilon^{-2}L_n^{-1}$, have their cycle number in the range $(1 \pm \epsilon)L_n$. With low $n$, that might not say much, but as $L_n = \log n + O(1)$, for large $n$, this says most permutations on $n$ letters have about $\log n$ cycles. Not bad! This is pretty interesting.
+
+\subsection{Bernstein's Theorem} Let $f$ be a function on $[0,1]$. The \textit{Bernstein polynomial} of degree $n$ associated with $f$ is:
+$$
+	B_n(x) = \sum_{k=0}^n f\left(\frac{k}{n}\right) \times {n \choose k} x^k(1-x)^{n-k}
+$$
+Note, the Bernstein polynomials of degree $n$ (not associated with an $f$) are just:
+$$
+	b_{nk}(x) = {n \choose k} x^k(1-x)^{n-k} \quad\quad k = 0, \cdots, n
+$$
+
+\paragraph{Theorem 6.2} If $f$ is continuous, $B_n(x)$ converges to $f(x)$ uniformly on $[0,1]$.
+\\\\
+Just taking a step back, and looking at what this theorem says. We have this function $B_n(x)$. We are taking a sum over the values of $f$ at each part of a fraction, $k/n$. Then, we are multiplying by the binomial theorem term, essentially, $(1+x)^n$. 
+\\\\
+Can we make any intuitive sense out of this? Intuitively, we should have that the $f(k/n)$ terms have more weight, when $k/n$ is closer to $x$. If $x$ is close to $0$, when $k$ is lower, I think the $x^k(1-x)^{n-k}$ term is bigger. And then we have the big coefficient ${n \choose k}$. When $x$ is close to $1$, we have that $x^k(1-x)^{n-k}$ is maximized when $k$ is bigger. And when $x$ is close to $0.5$, $x^k(1-x)^{n-k}$ is the same for all $k$, but ${n \choose k}x^k(1-x)^{n-k}$ is maximized. I guess, this must rely on the fact that exponentials have a higher growth rate than factorials, so when $x$ is $0$ or $1$, the endpoint exponentials take over, but when $x$ is close to $0.5$, and the exponentials are the same, the factorial takes over.
+
+\paragraph{Proof: $f$ continuous on a compact interval implies $f$ is \textit{uniformly continuous}}
+
+\paragraph{Proof of Theorem 6.2} Let $M = \sup_x |f(x)|$, and let $\delta(\epsilon) = \sup\left[|f(x)-f(y)| : |x - y| \leq \epsilon\right]$ be the ``modulus of continuity" of $f$ (similar to the oscillation definition). Note: \textit{continuity on a compact interval implies uniform continuity}, and that the modulus of continuity foes to $0$ as $\epsilon$ does. 
+
 
 \end{document}
 
