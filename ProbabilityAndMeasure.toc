@@ -212,3 +212,4 @@
 \contentsline {paragraph}{Theorem 6.2}{153}{section*.213}%
 \contentsline {paragraph}{Proof: $f$ continuous on a compact interval implies $f$ is \textit {uniformly continuous}}{153}{section*.214}%
 \contentsline {paragraph}{Proof of Theorem 6.2}{153}{section*.215}%
+\contentsline {subsection}{Refinement of the Second Borel-Cantelli Lemma}{154}{section*.216}%

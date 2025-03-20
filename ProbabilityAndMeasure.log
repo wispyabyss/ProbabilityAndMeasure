@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  19 MAR 2025 08:50
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  20 MAR 2025 08:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2530,17 +2530,35 @@ Overfull \hbox (83.37701pt too wide) in paragraph at lines 4239--4240
 [] []$
  []
 
-[153] (./ProbabilityAndMeasure.aux)
+
+Overfull \hbox (3.60957pt too wide) detected at line 4251
+\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 S \OT1/cmr/m/n/12 = \OML/cm
+m/m/it/12 k\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = []\OML/c
+mm/m/it/12 x[]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x\OT1/cm
+r/m/n/12 )[]
+ []
+
+[153]
+Underfull \hbox (badness 10000) in paragraph at lines 4256--4260
+
+ []
+
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 426
+2.
+(/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [154]
+(./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 27564C8CF48332A686BEB82F50AA8522;25844.
+(rerunfilecheck)             Checksum: 41731083D3D588B2E0CF7B8DB0639A85;26144.
  ) 
 Here is how much of TeX's memory you used:
- 9918 strings out of 476191
- 154017 string characters out of 5812072
- 483239 words of memory out of 5000000
- 30521 multiletter control sequences out of 15000+600000
- 513051 words of font info for 73 fonts, out of 8000000 for 9000
+ 9939 strings out of 476191
+ 154630 string characters out of 5812072
+ 483546 words of memory out of 5000000
+ 30536 multiletter control sequences out of 15000+600000
+ 513446 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,12n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (153 pages).
+Output written on ProbabilityAndMeasure.pdf (154 pages).
