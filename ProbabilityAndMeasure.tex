@@ -4276,6 +4276,100 @@ $$
 And so, we have our bound. Thus, $B_n(x)$ does indeed converge uniformly to $f(x)$. qed.
 
 \subsection{Refinement of the Second Borel-Cantelli Lemma}
+To refine the second Borel-Cantelli lemma, we first note a set equivalent to infinitely often. Let $A_1, A_2, \cdots$ be a sequence of events, and consider the number:
+$$
+	N_n = I_{A_1} + \cdots + I_{A_n}
+$$
+$N_n$ is the number of $A_i$ that occur. Note that:
+$$
+	\left[A_n \, \io\right] = \left[\omega : \sup_n N_n(\omega) = \infty\right]
+$$
+Note, the supremum is just the limit. Note that if $\omega$ is in $A_n$ infinitely often, it is in an infinite amount, and so the sum is infinity. Note that if the sum is infinity, $\omega$ appears in an infinite number of $A_n$, and this infinitely often. So, we can study $P[A_n \io]$ be looking at $N_n$.
+\\\\
+Note: what is the point of this? Well, the $I_{A_i}$ are essentially Bernoulli random variables, as we have only two events - $\omega$ is in $A_i$ or not. So, we can easily find expressions for the expected value and variance of $N_n$. Then, once we have values for those - we can start to use Chebyshev's inequality, and take limits. Note, we couldn't really make use of our inequalities for just the $A_i$, as they don't really relate to each other. $N_n$ is an object that pulls all the $A_i$ together, and there is a relation between $N_n$ and $N_{n+1}$ that we can exploit in limits.
+
+\paragraph{Reproving The Second Borel-Cantelli Lemma with $N_n$} Suppose that the $A_n$ are independent. Put $p_k = P(A_k)$ and $m_n = p_1 + \cdots + p_n$. We clearly have $E[I_{A_k}] = p_k$ and $Var[I_{A_k}] = p_k (1 - p_k) \leq p_k$. Independence easily gives us that $E[N_n] = m_n$ and $Var[N_n] \leq m_n$. For $m_n > x$, we have:
+$$
+	P[N_n \leq x] = P\left[N_n - m_x \leq x - m_n\right] \leq
+	P\left[|N_n - m_n| \geq m_n - x\right] \leq
+	\frac{Var[N_n]}{(m_n - x)^2} \leq
+	\frac{m_n}{(m_n - x)^2}
+$$
+Note, if $\sum p_n = \infty$, for $n$ large enough, $m_n > x$ always, and so the above inequality will apply. Then, taking a limit on $n$, we have that the RHS goes to $0$, as the squared term will take over. Thus, we have for $\sum p_n = \infty$, if $A_n$ are independent:
+$$
+	\lim_n P[N_n \leq x] = 0
+$$
+Note that:
+$$
+	P\left[\sup_k N_k \leq x\right] \leq P[N_n \leq x] \implies
+	P\left[\sup_k N_k \leq x\right] = 0
+$$
+As the supremum being smaller implies $N_n$ is smaller. Taking a union over the $x$, we clearly have:
+$$
+	P\left[\sup_k N_k < \infty\right] = 0 \implies
+	P\left[\sup_k N_k = \infty\right] = 1 \implies P[A_n \, \io] = 1
+$$
+Thus, we have once again proved the second Borel-Cantelli lemma. qed.
+\\\\
+Note, independence was used to estimate $Var[N_n]$. However, we can refine the argument to not require independence, and instead just give us a bound on the variance that implies the fraction still goes to $0$ in the limit.
+
+\paragraph{Theorem 6.3: Second Borel Cantelli Lemma Refinement} If $\sum P(A_n)$ diverges and:
+$$
+	\liminf_n \frac{\sum_{j=1}^n \sum_{k=1}^n P(A_j \cap A_k)}{\left(\sum_{k =1}^n P(A_k)\right)^2} \leq 1
+$$
+Then $P[A_n \io] = 1$. Note, the ratio is at least one, so the inequality holding actually implies equality.
+
+\paragraph{Proof of Theorem 6.3} Let $\theta_n$ be the ratio above, ie:
+$$
+	\theta_n = \frac{\sum_{j=1}^n \sum_{k=1}^n P(A_j \cap A_k)}{\left(\sum_{k =1}^n P(A_k)\right)^2}
+$$
+Note that:
+$$
+	Var[N_n] = E[N_n^2] - m_n^2 = \sum_{j=1}^n\sum_{k=1}^n E[I_{A_j}I_{A_k}] - m_n^2 = 
+	\sum_{j=1}^n\sum_{k=1}^n P[A_j \cap A_k] - m_n^2
+$$
+$$
+	= \left(\frac{\sum_{j=1}^n \sum_{k=1}^n P(A_j \cap A_k)}{m_n^2} - 1\right) m_n^2 = (\theta_n - 1)m_n^2
+$$
+Note, as the variance is always nonnegative, we must have that $\theta_n -1 \geq 0 \implies \theta_n \geq 1$. Following the arguments in the Reproof of the Second Borel Cantelli Lemma, we have that:
+$$
+	P\left[N_n \leq x\right] \leq \frac{(\theta_n - 1)m_n^2}{(m_n - x)^2}
+$$
+For $x < m_n$. Now, we take the assumed condition, and we find that:
+$$
+	\liminf_n P[N_n \leq x] \leq \liminf_n \frac{(\theta_n - 1)m_n^2}{(m_n - x)^2}
+$$
+We now note a property of the liminf - that we can break it into a product of liminf and limit - see \href{https://en.wikipedia.org/wiki/Limit_inferior_and_limit_superior#Properties}{wiki}. And so, the above equals:
+$$
+	= \liminf_n (\theta_n - 1) \times \lim_n \frac{m_n^2}{(m_n - x)^2} = \liminf_n \theta_n - 1
+$$
+By our assumption, we have that it equals $0$, and so:
+$$
+	\liminf_n P[N_n \leq x] \leq 0 \implies
+	\liminf_n P[N_n \leq x] = 0
+$$
+Note: this is \textit{only the case if $m_n \to \infty$}, as then the limit will be one for the $m_n$ term, and going far enough down the sequence will ensure $m_n > x$ and the equality will apply. Note that, we still have:
+$$
+	P\left[\sup_k N_k \leq x\right] \leq P[N_n \leq x]
+$$
+And as the $\liminf$ is the limit of the infimum, we know it upper bounds the infimum, and taking infimums over $n$ on both sides still gives us:
+$$
+	P\left[\sup_k N_k < \infty\right] = 0 \implies P[A_n \, \io] = 1
+$$
+qed.
+\\\\
+Note: as for why we take the $\liminf$ in our ratio - it is just a weaker condition that limit. Clearly, the argument would work with limit, but the limit being less than or equal to one implies the $\liminf$ is as well. We want to have the weakest conditions possible on the limit to give a better theorem. Again, the theorem just hinged on Chebyshev's inequality, and noting that redefining the Second Borel Cantelli based on the variance of $N_n$ was able to give us weaker conditions that still implied $P[A_n \io] = 1$, which is always good. Not bad!
+
+\paragraph{Example 6.5} I won't go over the details of this example - they are too technical for learning anything. However, the running example through these chapters have been a study of run length $l_n(\omega)$, where $A_n = [l_n \geq r_n]$ is the set of $\omega$ where $d_n(\omega) = \cdots = d_{n + r_n - 1}(\omega) = 0$. Using the improved Second Borel-Cantelli lemma, we have that $\{r_n\}$ is an \textit{outer or inner boundary} according as to whether or not $\sum 2^{-r_n}$ converges or diverges. Note, by \textit{outer boundary}, we mean:
+$$
+	P[l_n \geq r_n \io] = 0
+$$
+And by inner boundary, we mean:
+$$
+	P[l_n \geq r_n \io] = 1
+$$
+Previously, with the basic second Borel-Cantelli lemma, we were only able to conclude that the $r_n$ where an inner boundary if $\sum 2^{-r_n}r_n^{-1} = \infty$. The improved version closed the gap. Note: the probability would always be $0$ or $1$, based off of Kolmogorov's Zero One law - the set $[l_n \geq r_n \io]$ could be show to be a member of the tail sigma algebra of independent events, namely $H_n = [d_n(\omega) = 0]$.
+
 
 \end{document}
 

@@ -213,3 +213,7 @@
 \contentsline {paragraph}{Proof: $f$ continuous on a compact interval implies $f$ is \textit {uniformly continuous}}{153}{section*.214}%
 \contentsline {paragraph}{Proof of Theorem 6.2}{153}{section*.215}%
 \contentsline {subsection}{Refinement of the Second Borel-Cantelli Lemma}{154}{section*.216}%
+\contentsline {paragraph}{Reproving The Second Borel-Cantelli Lemma with $N_n$}{155}{section*.217}%
+\contentsline {paragraph}{Theorem 6.3: Second Borel Cantelli Lemma Refinement}{156}{section*.218}%
+\contentsline {paragraph}{Proof of Theorem 6.3}{156}{section*.219}%
+\contentsline {paragraph}{Example 6.5}{157}{section*.220}%
