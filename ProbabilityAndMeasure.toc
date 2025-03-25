@@ -217,3 +217,5 @@
 \contentsline {paragraph}{Theorem 6.3: Second Borel Cantelli Lemma Refinement}{156}{section*.218}%
 \contentsline {paragraph}{Proof of Theorem 6.3}{156}{section*.219}%
 \contentsline {paragraph}{Example 6.5}{157}{section*.220}%
+\contentsline {subsection}{Problems}{158}{section*.221}%
+\contentsline {subsubsection}{6.1 Convergence With Probability ``Finite" Terms Condition}{158}{section*.222}%

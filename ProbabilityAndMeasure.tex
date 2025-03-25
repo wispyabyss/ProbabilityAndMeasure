@@ -4370,6 +4370,36 @@ $$
 $$
 Previously, with the basic second Borel-Cantelli lemma, we were only able to conclude that the $r_n$ where an inner boundary if $\sum 2^{-r_n}r_n^{-1} = \infty$. The improved version closed the gap. Note: the probability would always be $0$ or $1$, based off of Kolmogorov's Zero One law - the set $[l_n \geq r_n \io]$ could be show to be a member of the tail sigma algebra of independent events, namely $H_n = [d_n(\omega) = 0]$.
 
+\subsection{Problems}
+\subsubsection{6.1 Convergence With Probability ``Finite" Terms Condition} Show that $Z_n \to Z$ with probability 1 if and only if for every positive $\epsilon$ there exists an $n$ such that:
+$$
+	P[|Z_k - Z| < \epsilon, n \leq k \leq m] > 1 - \epsilon
+$$
+For all $m$ exceeding $n$. This describes convergence with probability $1$ in ``finite terms."
+\\\\
+Note, this is kind of like taking our limsup condition, and turning it into a liminf condition. We note that $P[\lim_k Z_k = z]$ if and only if for all $\epsilon > 0$, we have:
+$$
+	P\left[|Z_k - Z| > \epsilon ,\, \io\right] = 0
+$$
+We take the complement of the inside, to find that we have convergence with probability 1 iff:
+$$
+	P\left[\bigcup_{n=1}^\infty \bigcap_{k=n}^\infty |Z_k - Z| < \epsilon\right] = 1
+$$
+We note that for $A_n = \bigcap_{k=n}^\infty |Z_k - Z| < \epsilon$, $A_n \uparrow A$, where $A$ is the expression inside the above probability. Thus, by convergence from below, we have:
+$$
+	\lim_{n \to \infty} P\left[\bigcap_{k=n}^\infty |Z_k - Z| < \epsilon\right] = 1
+$$
+Thus, by the definition of the limit, we have convergence with probability 1 iff for $n$ large enough:
+$$
+	P\left[\bigcap_{k=n}^\infty |Z_k - Z| < \epsilon\right] > 1 - \epsilon
+$$
+Now, we note that we are almost there, because for all $m$ exceeding $n$, we have by monotonicity:
+$$
+	P[|Z_k - Z| < \epsilon, n \leq k \leq m] \geq 
+	P\left[\bigcap_{k=n}^\infty |Z_k - Z| < \epsilon\right]
+	> 1 - \epsilon
+$$
+And so we have found the equivalent condition for convergence with probability 1. qed.
 
 \end{document}
 
