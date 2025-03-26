@@ -4401,6 +4401,27 @@ $$
 $$
 And so we have found the equivalent condition for convergence with probability 1. qed.
 
+\subsubsection{6.6 Cantelli's Theorem} If $X_1, X_2, \cdots$ are independent, $E[X_n] = 0$, and $E[X_n^4]$ is bounded (ie, for all $n$, $E[X_n^4] < B$), then $n^{-1}S_n \to 0$ with probability $1$. The $X_n$ need not be identically distributed. 
+\\\\
+We first note that $E[X_n^4] < B$ implies $E[X_n^2] < C$ for some $C$. This follows directly from Jensen's inequality for simple random variables. Note that $f(x) = x^{1/2}$ is concave, and so the inverse of Jensen's tells us $E[f(x)] \leq f(E[X])$. Thus, we have:
+$$
+	E[X_n^2] = E[f(X_n^4)] \leq f(E[X_n^4]) < f(B) = B^{1/2}
+$$
+Now, we can prove Cantelli's Theorem in a very similar way to the strong law. Note that $n^{-1}S_n \to 0$ with probability $1$ if and only if for every $\epsilon$:
+$$
+	P[|n^{-1}S_n| > \epsilon \,\, \io] = P[S_n^4 > n^4\epsilon^4 \,\, \io] = 0
+$$
+The above will follow via the first Borel-Cantelli lemma. Note via Markov's, independence, and $E[X_i] = 0$:
+$$
+	P[S_n^4 > n^4\epsilon^4] \leq \frac{E[S_n^4]}{n^4\epsilon^4} =
+	\frac{\sum_{i=1}^n E[X_i^4] + \sum_{j \neq i} 6 E[X_i^2]E[X_j^2]}{n^4\epsilon^4}
+$$
+Where the second equality is by the \href{https://en.wikipedia.org/wiki/Multinomial_theorem}{Multinomial Theorem}, and if $k_i = 1$ we have that the expected value term equals $0$. This is bounded by:
+$$
+	\leq \frac{nB + 3n(n-1)B}{n^4\epsilon^4} \leq \frac{3n^2B}{n^4\epsilon^4} = \frac{3B}{\epsilon^4} * \frac{1}{n^2}
+$$
+Note, we thus have the sum converges, and so we can conclude that $n^{-1}S_n \to 0$ with probability 1. qed. Also note, the multinomial theorem with coefficient of $6 = \frac{4!}{2!2!}$ bridges us to the $3n(n-1) = 6 * {n \choose 2}$ term.
+
 \end{document}
 
 
