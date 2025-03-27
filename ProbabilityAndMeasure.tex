@@ -4401,6 +4401,40 @@ $$
 $$
 And so we have found the equivalent condition for convergence with probability 1. qed.
 
+\subsubsection{6.2 Number of Cycles In a Length $n$ permutation bound} Show in Example 6.3 that $P\left[|S_n - L_n| \geq L_n^{1/2 + \epsilon}\right] \to 0$.
+\\\\
+I assume this means as $n \to \infty$. Note that $L_n$ is the mean of $S_n$, and so just by Chebyshev's inequality we have:
+$$
+	P\left[|S_n - L_n| \geq L_n^{1/2 + \epsilon}\right] \leq \frac{Var[S_n]}{L_n^{1 + 2\epsilon}} \leq \frac{L_n}{L_n^{1+2\epsilon}} \leq \frac{1}{L_n^{2\epsilon}}
+$$
+Recall that $L_n = \sum_{k=1}^n k^{-1}$, which we know goes to infinity as $n \to \infty$. And so, the exponential similarly goes to infinity, which tells us:
+$$
+	\frac{1}{L_n^{2\epsilon}} \to 0
+$$
+Which gives us the proof. qed.
+
+\subsubsection{6.3} As in Example 5.6 and 6.3, let $\omega$ be a random permutation of $1, 2, \cdots, n$. Each $k$, $1 \leq k \leq n$, occupies some position in the bottom row of the permutation $\omega$:
+$$
+	\begin{pmatrix}
+	1 & 2 & \cdots & n\\
+	p_1 & p_2 & \cdots & p_n
+	\end{pmatrix}
+$$
+Let $X_{nk}(\omega)$ be the number of smaller elements (between $1$ and $k-1$) lying to the \textit{right} of $k$ in the bottom row. The sum:
+$$
+	S_n = X_{n1} + \cdots + X_{nn}
+$$
+Is the total number of \textit{inversions} - the number of pairs appearing in the bottom row in reverse order of size. For the example:
+$$
+	\begin{pmatrix}
+	1 & 2 & 3 & 4 & 5 & 6 & 7\\
+	5 & 1 & 7 & 4 & 6 & 2 & 3
+	\end{pmatrix}
+$$
+Note, for $X_{nk}$, we look at \textit{where $k$ is located on the final row}, and then look to the right. Ie, $1$ is in the second place, so we look to the right from there. $3$ is in the final position, and we look to the right from there. The values of $X_{71}, \cdots, X_{77}$ are thus $0, 0, 0, 2, 4, 2, 4$. Recall, the \textit{parity} of a permutation is the parity of the number of transposition that $\omega$ can be decomposed into, and the \href{https://en.wikipedia.org/wiki/Parity_of_a_permutation#Equivalence_of_the_two_definitions}{wiki} outlines proofs that tell us this is equal to the parity of the number of \textit{inversions} in $\omega$. Both are useful in defining the alternating tensor, but that is just a related note.
+\\\\
+For the example, we have that $S_n = 12$. Show that $X_{n1}, \cdots, X_{nn}$ are independent and $P[X_{nk} = i] = k^{-1}$ for $0 \leq i < k$. Calculate $E[S_n]$ and $Var[S_n]$. Show that $S_n$ is likely to be near $n^2/4$.
+
 \subsubsection{6.6 Cantelli's Theorem} If $X_1, X_2, \cdots$ are independent, $E[X_n] = 0$, and $E[X_n^4]$ is bounded (ie, for all $n$, $E[X_n^4] < B$), then $n^{-1}S_n \to 0$ with probability $1$. The $X_n$ need not be identically distributed. 
 \\\\
 We first note that $E[X_n^4] < B$ implies $E[X_n^2] < C$ for some $C$. This follows directly from Jensen's inequality for simple random variables. Note that $f(x) = x^{1/2}$ is concave, and so the inverse of Jensen's tells us $E[f(x)] \leq f(E[X])$. Thus, we have:
