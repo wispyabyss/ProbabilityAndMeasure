@@ -4434,6 +4434,32 @@ $$
 Note, for $X_{nk}$, we look at \textit{where $k$ is located on the final row}, and then look to the right. Ie, $1$ is in the second place, so we look to the right from there. $3$ is in the final position, and we look to the right from there. The values of $X_{71}, \cdots, X_{77}$ are thus $0, 0, 0, 2, 4, 2, 4$. Recall, the \textit{parity} of a permutation is the parity of the number of transposition that $\omega$ can be decomposed into, and the \href{https://en.wikipedia.org/wiki/Parity_of_a_permutation#Equivalence_of_the_two_definitions}{wiki} outlines proofs that tell us this is equal to the parity of the number of \textit{inversions} in $\omega$. Both are useful in defining the alternating tensor, but that is just a related note.
 \\\\
 For the example, we have that $S_n = 12$. Show that $X_{n1}, \cdots, X_{nn}$ are independent and $P[X_{nk} = i] = k^{-1}$ for $0 \leq i < k$. Calculate $E[S_n]$ and $Var[S_n]$. Show that $S_n$ is likely to be near $n^2/4$.
+\\\\
+We first note that:
+$$
+	P[X_{nk} = i] = k^{-1}
+$$
+For $0 \leq i < k$. Note, the distribution over $\Omega$ is just the uniform distribution - ie, each $\omega$ is equally likely. And so, when we examine $X_{nk}$, we want to know how many of the integers $1, \cdots, k - 1$ are to the \textit{right} of $k$ in the permutation two row representation. Note, in each $\omega$, we have that the integers $1, \cdots, k$ are listed out in sequence from left to right:
+$$
+	i_1, i_2, \cdots, i_k
+$$
+Note each sequence is equally likely. Each event $X_{nk} = i$ corresponds to $k$ being in a different position in the sequence. However, note that each sequence is equally likely, given that each $\omega$ is equally likely. And so, we have that for $i = 0, \cdots, k - 1$, we have that $P[X_{nk} = 0] = \cdots = P[X_{nk} = k - 1]$, and as these sum to one, we can conclude:
+$$
+	P[X_{nk} = i] = k^{-1}
+$$
+Now, we want to show independence. I think this can be done with a permutation argument. We examine:
+$$
+	P\left[X_{nk} = i, X_{np} = q\right]
+$$
+Wlog, assume $p > k$. So, we can just consider a sequence of indices:
+$$
+	t_1, t_2, \cdots, t_p
+$$
+For $X_{nk} = i$, we need $k$ to be in position $1, 2, \cdots, p - i$, and $i$ of the positions to the right have to be one of the indices below $k$. However, we also \textit{require} for $p$ to be in position $p - q$ (and any chosen value to the right is fine, given that $p$ is larger than the remaining integers). We make the first calculation easy, and assume $q = i$. In which case, $k$ cannot be in position $p - i$, and must be in one of the previous entries, making the combinatorial sum:
+$$
+	\frac{1}{p!}\sum_{t=1}^{p - i - 1} {p - t - 1 \choose i}
+$$
+Or something like that. However, the calculation becomes difficult to simplify. We look at the solutions.
 
 \subsubsection{6.6 Cantelli's Theorem} If $X_1, X_2, \cdots$ are independent, $E[X_n] = 0$, and $E[X_n^4]$ is bounded (ie, for all $n$, $E[X_n^4] < B$), then $n^{-1}S_n \to 0$ with probability $1$. The $X_n$ need not be identically distributed. 
 \\\\
