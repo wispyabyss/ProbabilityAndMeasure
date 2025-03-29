@@ -4413,7 +4413,7 @@ $$
 $$
 Which gives us the proof. qed.
 
-\subsubsection{6.3} As in Example 5.6 and 6.3, let $\omega$ be a random permutation of $1, 2, \cdots, n$. Each $k$, $1 \leq k \leq n$, occupies some position in the bottom row of the permutation $\omega$:
+\subsubsection{6.3 Approximate Number of Inversions in a Random Permutation} As in Example 5.6 and 6.3, let $\omega$ be a random permutation of $1, 2, \cdots, n$. Each $k$, $1 \leq k \leq n$, occupies some position in the bottom row of the permutation $\omega$:
 $$
 	\begin{pmatrix}
 	1 & 2 & \cdots & n\\
@@ -4459,7 +4459,50 @@ For $X_{nk} = i$, we need $k$ to be in position $1, 2, \cdots, p - i$, and $i$ o
 $$
 	\frac{1}{p!}\sum_{t=1}^{p - i - 1} {p - t - 1 \choose i}
 $$
-Or something like that. However, the calculation becomes difficult to simplify. We look at the solutions.
+Or something like that. However, the calculation becomes difficult to simplify. We look to the solutions. We first note that the map:
+$$
+	\omega \to (X_{n1}(\omega), \cdots, X_{nn}(\omega))
+$$
+Is one to one. I think this can be proved by induction. First, note that $X_{n1}(\omega)$ can have only one possible value - $0$. Then, note that for $(X_{n1}(\omega), X_{n2}(\omega))$, $X_{n2}(\omega)$ has $2$ possible values - $0$ or $1$. By induction, we note that $X_{nk}(\omega)$ would have $k$ possible values when being added to $(X_{n1}(\omega), \cdots, X_{n,k-1}(\omega))$ - as $k$ can be switched from any position in the sequence, essentially (if $X_{n,k-1}(\omega) = k - 2$, then $X_{nk} = k - 1$ by putting $k$ to the left of the position of $k - 1$).
+\\\\
+Thus, by induction, there are $n!$ possible \textit{different vectors} for $(X_{n1}(\omega), \cdots, X_{nn}(\omega))$. Thus, as there are only $n!$ possible permutations, $\omega \to (X_{n1}(\omega), \cdots, X_{nn}(\omega))$ must be one to one.
+\\\\
+Now, note that $X_{ni}$ can take on values $x_i$ such that $0 \leq x_i < i$. Consider $1 \leq i \leq k$. Note that the number of permutations $\omega$ satisfying:
+$$
+	X_{ni}(\omega) = x_i
+$$
+Must be $(k + 1)(k + 2) \cdots n$. As, we have $(k + 1)(k + 2) \cdots n$ possible values for each $X_{n,k+1}, \cdots, X_{n,n}$, and each of those maps to a unique $\omega$. Those unique $\omega$ are the ones satisfying $X_{ni}(\omega) = x_i$. Thus, as $\Omega$ has uniform probability, we find:
+$$
+	P[X_{ni} = x_i, 1 \leq i \leq k] = \frac{(k + 1)(k + 2) \cdots n}{n!} = \frac{1}{k!} =
+	P[X_{n1} = x_1] \cdots P[X_{nk} = x_k]
+$$
+Where the final equality comes from what we noted above. Thus, we have that the $X_{ni}$ are \textit{independent} as well.
+\\\\
+Now, we want to calculate $E[S_n]$ and $Var[S_n]$. These are easy if we find $E[X_{nk}]$ and $Var[X_{nk}]$. We have:
+$$
+	E[X_{nk}] = \frac{1}{k}\sum_{i=0}^{k-1} i = \frac{1}{k}\frac{(k-1)k}{2} = \frac{k-1}{2}
+$$
+$$
+	Var[X_{nk}] = E[X_{nk}^2] - \frac{(k-1)^2}{4} = \frac{1}{k}\sum_{i=0}^{k-1} i^2 - \frac{(k-1)^2}{4}
+$$
+$$
+	= \frac{(k-1)(2k-1)}{6} - \frac{(k-1)^2}{4} = \frac{k^2 - 1}{12}
+$$
+So now, we have:
+$$
+	E[S_n] = \sum_{k=1}^n \frac{k-1}{2} = \frac{1}{2} * \frac{n(n-1)}{2} = \frac{n(n-1)}{2} \sim \frac{n^2}{4}
+$$
+$$
+	Var[S_n] = \frac{1}{12} \sum_{k=1}^n (k^2 - 1) \sim \frac{n^3}{56}
+$$
+Finally, we want to show that $S_n$ is likely to be near $n^2/4$. We apply Chebyshev's inequality to find:
+$$
+	P[|S_n - E[S_n]| \geq a] \leq \frac{Var[S_n]}{a^2}
+$$
+Replacing with our approximations, we have:
+$$
+	P\left[\left|S_n - \frac{n^2}{4}\right| \geq n^{1.5}\right] \leq \frac{n^3}{n^336} = \frac{1}{36}
+$$
 
 \subsubsection{6.6 Cantelli's Theorem} If $X_1, X_2, \cdots$ are independent, $E[X_n] = 0$, and $E[X_n^4]$ is bounded (ie, for all $n$, $E[X_n^4] < B$), then $n^{-1}S_n \to 0$ with probability $1$. The $X_n$ need not be identically distributed. 
 \\\\

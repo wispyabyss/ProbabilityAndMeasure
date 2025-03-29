@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  28 MAR 2025 08:45
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  29 MAR 2025 12:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2607,21 +2607,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 4433--4439
  []
 
 [160] [161]
-Underfull \hbox (badness 10000) in paragraph at lines 4464--4467
+Underfull \hbox (badness 10000) in paragraph at lines 4465--4471
 
  []
 
-[162] (./ProbabilityAndMeasure.aux)
+
+Overfull \hbox (29.57433pt too wide) in paragraph at lines 4465--4471
+\T1/lmr/m/n/12 Thus, by in-duc-tion, there are $\OML/cmm/m/it/12 n\OT1/cmr/m/n/
+12 !$ \T1/lmr/m/n/12 pos-si-ble \T1/lmr/m/it/12 dif-fer-ent vec-tors \T1/lmr/m/
+n/12 for $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 !\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; []  ; X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/
+12 !\OT1/cmr/m/n/12 ))$\T1/lmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4465--4471
+
+ []
+
+
+Overfull \hbox (26.60753pt too wide) detected at line 4478
+\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[] \OT1/cmr/m/n/12 = \OML/
+cmm/m/it/12 x[]; \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 i \OMS
+/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ] = [] = [] = \OML/cmm/m/it/
+12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[
+]\OT1/cmr/m/n/12 ] [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[] \
+OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4478--4482
+
+ []
+
+[162]
+Underfull \hbox (badness 10000) in paragraph at lines 4507--4510
+
+ []
+
+[163] [164] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 3AF804329BF9F88BC3B057CD5071A40D;27210.
+(rerunfilecheck)             Checksum: 34DF48A7328DF38C7E4CB179B7540FB4;27519.
  ) 
 Here is how much of TeX's memory you used:
  9940 strings out of 476191
  154644 string characters out of 5812072
- 481650 words of memory out of 5000000
+ 481959 words of memory out of 5000000
  30537 multiletter control sequences out of 15000+600000
  513446 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,12n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (162 pages).
+Output written on ProbabilityAndMeasure.pdf (164 pages).
