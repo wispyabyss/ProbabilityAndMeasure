@@ -221,4 +221,6 @@
 \contentsline {subsubsection}{6.1 Convergence With Probability ``Finite" Terms Condition}{159}{section*.222}%
 \contentsline {subsubsection}{6.2 Number of Cycles In a Length $n$ permutation bound}{160}{section*.223}%
 \contentsline {subsubsection}{6.3 Approximate Number of Inversions in a Random Permutation}{160}{section*.224}%
-\contentsline {subsubsection}{6.6 Cantelli's Theorem}{163}{section*.225}%
+\contentsline {subsubsection}{6.5 Poisson's Theorem}{163}{section*.225}%
+\contentsline {subsubsection}{6.6 Cantelli's Theorem}{164}{section*.226}%
+\contentsline {subsubsection}{6.7}{165}{section*.227}%
