@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  31 MAR 2025 08:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  1 APR 2025 08:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2650,17 +2650,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 4532--4535
 
  []
 
-[164] [165] (./ProbabilityAndMeasure.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4553.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4553.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4555--4558
+
+ []
+
+[164]
+Underfull \hbox (badness 10000) in paragraph at lines 4577--4580
+
+ []
+
+[165] [166] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: E79FA79D4894463F980E9FBC3AF4460B;27765.
+(rerunfilecheck)             Checksum: 82F13A186B76AAB788B96DDD4D19AC74;28217.
  ) 
 Here is how much of TeX's memory you used:
  9940 strings out of 476191
  154644 string characters out of 5812072
- 482219 words of memory out of 5000000
+ 482678 words of memory out of 5000000
  30537 multiletter control sequences out of 15000+600000
  513446 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,12n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (165 pages).
+Output written on ProbabilityAndMeasure.pdf (166 pages).

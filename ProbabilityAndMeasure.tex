@@ -4550,12 +4550,52 @@ $$
 $$
 Note, we thus have the sum converges, and so we can conclude that $n^{-1}S_n \to 0$ with probability 1. qed. Also note, the multinomial theorem with coefficient of $6 = \frac{4!}{2!2!}$ bridges us to the $3n(n-1) = 6 * {n \choose 2}$ term.
 
-\subsubsection{6.7}
+\subsubsection{6.7 Convergence of $n^{-2}S_{n^2}$ implies convergence of $n^{-1}S_n$}
 \begin{enumerate}
 	\item Let $x_1, x_2, \cdots$ be a sequence of real numbers, and put $s_n = x_1 + \cdots + x_n$. Suppose that $n^{-2}s_{n^2} \to 0$ and that the $x_n$ are bounded, and show that $n^{-1}s_n \to 0$.
+	\\\\
+	We prove by contradiction. We assume $n^{-1}s_n \not\to 0$, which means that we have some $\epsilon > 0$ such that $|n^{-1}s_n| > \epsilon$ infinitely often. Let $p_i$ be this sequence. Note, each $p_i$ is in between some $m_i^2$ and $(m_i+1)^2$. We find:
+	$$
+		|p_i^{-1}s_{p_i}| \leq \frac{|s_{m_i^2}| + B(p_i - m_i^2)}{p_i}
+	$$
+	Where $B$ is our bound on the $x_i$. This comes from the triangle inequality:
+	$$
+		s_{p_i} = s_{m_i^2} + \sum_{t = m_i^2 + 1}^{p_i} x_i \implies
+		|s_{p_i}| \leq |s_{m_i^2}| + \sum_{t = m_i^2 + 1}^{p_i} |x_i|
+	$$
+	Now, as $p_i \geq m_i^2$, and $p_i \leq (m_i + 1)^2$, we have:
+	$$
+		|p_i^{-1}s_{p_i}| \leq \frac{|s_{m_i^2}| + B((m_i + 1)^2 - m_i^2)}{m_i^2} =
+		m_i^{-2}s_{m_i^2} + \frac{B(2m_i + 1)}{m_i^2}
+	$$
+	Note, both sides go to $0$, we clearly have:
+	$$
+		\lim_{i \to \infty} |p_i^{-1}s_{p_i}| = 0
+	$$
+	Which contradicts $|p_i^{-1}s_{p_i}| > \epsilon$ infinitely often.
 	
 	\item Suppose that $n^{-2}S_{n^2} \to 0$ with probability $1$ and the $X_n$ are uniformly bounded ($\sup_{n,\omega} |X_n(\omega)| < \infty$). Show that $n^{-1}S_n \to 0$ with probability $1$. Here the $X_n$ need not be identically distributed or even independent.
+	\\\\
+	We have:
+	$$
+		P\left[\lim_{n \to \infty} n^{-2}S_{n^2} = 0\right] = 1
+	$$
+	Note, given that $\sup_{n,\omega} |X_n(\omega)| < \infty$ for all $\omega$, we have that the above tells us:
+	$$
+		\lim_{n \to \infty} n^{-2}S_{n^2}(\omega) = 0 \implies
+		\lim_{n \to \infty} n^{-1}S_n(\omega) = 0
+	$$
+	And so, we must have:
+	$$
+		\left\{\lim_{n \to \infty} n^{-2}S_{n^2} = 0\right\} = \left\{\lim_{n \to \infty} n^{-1}S_n = 0\right\}
+	$$
+	Which thus implies:
+	$$
+		P\left[\lim_{n \to \infty} n^{-1}S_n = 0\right] = 1
+	$$	
 \end{enumerate}
+
+\subsubsection{6.14 Shannon's Theorem}
 
 \end{document}
 
