@@ -4595,7 +4595,40 @@ Note, we thus have the sum converges, and so we can conclude that $n^{-1}S_n \to
 	$$	
 \end{enumerate}
 
-\subsubsection{6.14 Shannon's Theorem}
+\subsubsection{6.14 Shannon's Theorem} Suppose that $X_1, X_2, \cdots$ are independent, identically distributed random variables taking on the values $1, \cdots, r$ with positive probabilities $p_1, \cdots, p_r$. If $p_n(i_1, \cdots, i_n) = p_{i_1} \cdots p_{i_n}$ and $p_n(\omega) = p_n(X_1(\omega), \cdots, X_n(\omega))$, then $p_n(\omega)$ is the probability that a new sequence of $n$ trials would produce the particular sequence $X_1(\omega), \cdots, X_n(\omega)$ of outcomes that happens actually to have been observed. Show that:
+$$
+	-\frac{1}{n}\log p_n(\omega) \to h = -\sum_{i=1}^r p_i\log(p_i)
+$$
+with probability 1. Note that $p_n(\omega)$ essentially just equals $P[(X_1, \cdots, X_n) = (i_1, \cdots, i_n)]$, as independence implies the values multiply, and identically distributed implies that for each $X_j$, $P[X_j = i_j] = p_{i_j}$. We define:
+$$
+	Y_j = -\log(f(X_j)) \quad\quad\quad
+	f(i) = p_i
+$$
+Note, $Y_j$ are clearly independent, as $\sigma(Y_j) \subseteq \sigma(X_j)$, and also identically distributed, as the $X_j$ are. We also note that:
+$$
+	E[Y_j] = \sum_{i=1}^r -\log(p_i) * P[Y_j = -\log(p_i)] = \sum_{i=1}^r -\log(p_i) * P[f(X_j) = p_i]
+$$
+$$
+	= -\sum_{i=1}^r \log(p_i) * P[X_j = p_i] = h
+$$
+We note the strong law of large numbers states that:
+$$
+	-\frac{1}{n} \sum_{j=1}^r Y_j \to h	
+$$
+With probability 1. Now, we replace $Y_j$ with its definition:
+$$
+	-\frac{1}{n} \sum_{j=1}^r Y_j =
+	-\frac{1}{n} \sum_{j=1}^r \log(f(X_j)) =
+	-\frac{1}{n} \log\left[f(X_1) \cdots f(X_n)\right] =
+	-\frac{1}{n} \log\left[p_n(X_1, \cdots, X_n)\right]
+$$
+So, we clearly have, the set of $\omega$ that satisfy:
+$$
+	-\frac{1}{n}\log p_n(\omega) \to h = -\sum_{i=1}^r p_i\log(p_i)
+$$
+Have probability $1$. qed. Some notes: this is kind of hard to parse. \textit{NOTE:} we are taking the \textit{log of the probability}. We are not just taking the log of the value of the random variable $X_i$. We note, the log of the probability, for all sequences, approaches its entropy, essentially. Or, for almost all \textit{long sequences} produced by the source, the log-probability per sequence converges to the entropy.
+\\\\
+In information theory, $1, \cdots, r$ are interpreted as the \textit{letters} of an \textit{alphabet}, $X_1, X_2, \cdots$ are the successive letters produced by an information \textit{source}, and $h$ is the \textit{entropy} of the source. Prove the \textit{asymptotic equipartition property}: For large $n$, there is probability exceeding $1-\epsilon$ that the probability $p_n(\omega)$ of the observed $n$ long sequence, or \textit{message}, is in the range $e^{-n(h\pm \epsilon)}$.
 
 \end{document}
 
