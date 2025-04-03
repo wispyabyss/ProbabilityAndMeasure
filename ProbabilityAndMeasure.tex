@@ -4147,8 +4147,8 @@ For some positive real $M$. This is actually proved in problem 27.18. See the \h
 \end{enumerate}
 
 \section{Section 6 - The Law of Large Numbers}
-
-\subsection{The Strong Law}
+\subsection{Notes}
+\subsubsection{The Strong Law}
 
 \paragraph{Definition - Identically Distributed} Let $X_1, X_2, \cdots$ be a sequence of simple random variables on some probability space $(\Omega, \fcal, P)$. They are \textit{identically distributed} if their distributions are all the same. Ie:
 $$
@@ -4192,7 +4192,7 @@ Thus, we have the theorem. qed.
 \\\\
 This is actually pretty simple, once all the prerequisite work has been finished up. Not bad!
 
-\subsection{The Weak Law}
+\subsubsection{The Weak Law}
 \paragraph{Theorem: The Weak Law of Large Numbers} Take the same hypotheses as in the strong law - ie, $X_n$ are independent and identically distributed and $E[X_n] = m$. Then,
 $$
 	n^{-1}S_n \to_p m
@@ -4219,7 +4219,7 @@ $$
 $$
 As when $n$ increases, $L_n$ goes to infinity, and the fraction goes to $0$. And so, we have that a proportion of the permutations, larger than $1 - \epsilon^{-2}L_n^{-1}$, have their cycle number in the range $(1 \pm \epsilon)L_n$. With low $n$, that might not say much, but as $L_n = \log n + O(1)$, for large $n$, this says most permutations on $n$ letters have about $\log n$ cycles. Not bad! This is pretty interesting.
 
-\subsection{Bernstein's Theorem} Let $f$ be a function on $[0,1]$. The \textit{Bernstein polynomial} of degree $n$ associated with $f$ is:
+\subsubsection{Bernstein's Theorem} Let $f$ be a function on $[0,1]$. The \textit{Bernstein polynomial} of degree $n$ associated with $f$ is:
 $$
 	B_n(x) = \sum_{k=0}^n f\left(\frac{k}{n}\right) \times {n \choose k} x^k(1-x)^{n-k}
 $$
@@ -4275,7 +4275,7 @@ $$
 $$
 And so, we have our bound. Thus, $B_n(x)$ does indeed converge uniformly to $f(x)$. qed.
 
-\subsection{Refinement of the Second Borel-Cantelli Lemma}
+\subsubsection{Refinement of the Second Borel-Cantelli Lemma}
 To refine the second Borel-Cantelli lemma, we first note a set equivalent to infinitely often. Let $A_1, A_2, \cdots$ be a sequence of events, and consider the number:
 $$
 	N_n = I_{A_1} + \cdots + I_{A_n}
@@ -4629,6 +4629,51 @@ $$
 Have probability $1$. qed. Some notes: this is kind of hard to parse. \textit{NOTE:} we are taking the \textit{log of the probability}. We are not just taking the log of the value of the random variable $X_i$. We note, the log of the probability, for all sequences, approaches its entropy, essentially. Or, for almost all \textit{long sequences} produced by the source, the log-probability per sequence converges to the entropy.
 \\\\
 In information theory, $1, \cdots, r$ are interpreted as the \textit{letters} of an \textit{alphabet}, $X_1, X_2, \cdots$ are the successive letters produced by an information \textit{source}, and $h$ is the \textit{entropy} of the source. Prove the \textit{asymptotic equipartition property}: For large $n$, there is probability exceeding $1-\epsilon$ that the probability $p_n(\omega)$ of the observed $n$ long sequence, or \textit{message}, is in the range $e^{-n(h\pm \epsilon)}$.
+\\\\
+Note, the proof of this statement is essentially just going from the strong law of large numbers, to the weak law of large numbers. Our convergence with probability 1 above is equivalent to:
+$$
+	P\left[\lim_{n \to \infty} p_n(\omega) = e^{-nh}\right] = 1
+$$
+By strong convergence implying weak convergence, and taking a complement, the above implies for all $\epsilon' > 0$:
+$$
+	\implies
+	\lim_{n \to \infty} P\left[|p_n(\omega) - e^{-nh}| \leq \epsilon'\right] = 1
+$$
+By the definition of the limit, there is an $N$ large enough, where it is guaranteed that if $n \geq N$, we have:
+$$
+	P\left[|p_n(\omega) - e^{-nh}| \leq \epsilon'\right] \geq 1 - \epsilon
+$$
+For all $\epsilon > 0$. Now, we note that:
+$$
+	|p_n(\omega) - e^{-nh}| \leq \epsilon' \iff 
+	e^{-nh} - \epsilon' \leq p_n(\omega) \leq e^{-nh} + \epsilon'
+$$
+Now, we just have to choose our $\epsilon'$, based off of the $\epsilon$ (note, we could fix $\epsilon$ first, then choose our $\epsilon'$, then use the definition of the limit to find an $N$ - all of it is consistent). Note that as the above is true for all $\epsilon'$, we have the above is equivalent to (for a perhaps larger $N$):
+$$
+	e^{-n(h + \epsilon)} - \epsilon' \leq p_n(\omega) \leq e^{-n(h - \epsilon)}
+$$
+We just have to choose an $\epsilon$ small enough that it satisfies:
+$$
+	e^{-n(h + \epsilon)} \leq e^{-nh} - \epsilon' \quad\quad\quad
+	e^{-nh} + \epsilon' \leq e^{-n(h - \epsilon)}
+$$
+So, for all $\epsilon > 0$, there exists an $N$ such that if $n \geq N$, we have:
+$$
+	P\left[p_n(\omega) \in e^{-n(h \pm \epsilon)}\right] \geq 1 - \epsilon
+$$
+This is interesting, I think. It means that there is a very high probability that for the message we ultimately observe, it had a probability of essentially $e^{-nh}$.
+\\\\
+I think, we can go on a bit of a side note, as to why it is important. We can prove all of the above with $\log_2$, rather than the natural logarithm. The above says that with \textit{high probability}, the sequence $(X_1, X_2, \cdots, X_n)$ is one of our ``typical sequences" with probability $2^{-nH(X)}$ (where we let $H(X)$ denote the entropy for random variable $X$, again using $\log_2$ instead of the natural log). Note, if the sequences we see have probability $2^{-nH(X)}$, and those are all of the sequences we see, essentially - then we have only $2^{nH(X)}$ possible sequences, as we must have:
+$$
+	\text{\# Of Sequences $\times$ probability of each sequence} = 1
+$$
+So, if you want to describe $2^{nH(X)}$ different sequences - you only need to use $nH(X)$ bits of information, as each sequence can correspond to one of the $2^{nH(X)}$ possible bit sequences. \textit{This is a lower bound on lossless data compression}.
+\\\\
+This gives us an interpretation as to what entropy is - \textit{the average number of bits required to encode a \textit{single letter} from the alphabet, when using an optimal code}. Why? As $n$ becomes larger, we need $nH(X)$ bits to encode the message of $n$ letters, which means each letter gets on average, $H(X)$ bits. NOT BAD!
+
+\section{Section 7 - Gambling Systems}
+\subsection{Notes}
+\subsubsection{Gambler's Ruin}
 
 \end{document}
 
