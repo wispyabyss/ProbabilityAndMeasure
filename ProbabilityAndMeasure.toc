@@ -229,3 +229,4 @@
 \contentsline {section}{Section 7 - Gambling Systems}{168}{section*.230}%
 \contentsline {subsection}{Notes}{168}{section*.231}%
 \contentsline {subsubsection}{Gambler's Ruin}{168}{section*.232}%
+\contentsline {paragraph}{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}{170}{section*.233}%

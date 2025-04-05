@@ -4674,6 +4674,91 @@ This gives us an interpretation as to what entropy is - \textit{the average numb
 \section{Section 7 - Gambling Systems}
 \subsection{Notes}
 \subsubsection{Gambler's Ruin}
+The setup is as follows. A gambler starts with capital $a$, and his strategy is to keep on betting until his fortune increases to $c$, or his funds are exhausted. Every time he bets, his fortune increases by $1$ with probability $p$, and decreases by $1$ with probability $q = 1 - p$. What are the probabilities of success and ruin, reaching $c$ or exhaustion respectively?
+\\\\
+Let $X_i$ be the gambler's gain on the $ith$ play. Let:
+$$
+	S_n = X_1 + \cdots + X_n
+$$
+We note, by Theorem 5.3, $X_i$ iid with probability $p/q$ exist, which can be seen as drawing a random number between $0$ and $1$. The event:
+$$
+	A_{a,n} = [a + S_n = c] \cap \bigcap_{k=1}^n [0 < a + S_k < c]
+$$
+Represents success for the gambler at time $n$, and:
+$$
+	B_{a,n} = [a + S_n = 0] \cap \bigcap_{k=1}^n [0 < a + S_k < c]
+$$
+Represents ruin at time $n$. I like taking this back to the Borel set - ruin and success can be seen as the probability that a random draw on $(0,1]$ will be in one of $A_{a,n}$ or $B_{a,n}$ defined above. Probability is always, at the end of the day - trying to find the measure of the sets in question. I think it is clear $X_i$ are measurable $\bcal$, for $X_i = \pm 1$. Then, it is clear each $S_n$ is as well, being the sum of such functions. And so, each of $A_{a,n}$ and $B_{a,n}$ are measurable $\bcal$.
+\\\\
+If $s_c(a)$ denotes the probability of ultimate success, then:
+$$
+	s_c(a) = P\left[\bigcup_{n = 1}^\infty A_{a,n}\right] = \sum_{n=1}^\infty P(A_{a,n})
+$$
+For $0 < a < c$. Now, we note some boundary conditions to make our study consistent. We have for $n \geq 1$, and $0 < a < c$, adopt:
+$$
+	A_{a,0} = \emptyset \text{ for $0 \leq a < c$, as no chance for success at time $0$}
+$$
+$$
+	A_{c,0} = \Omega
+$$
+$$
+	A_{0,n} = A_{c,n} = \emptyset \text{ for $n \geq 1$, as play never starts if $a$ is $0$ or $c$}
+$$
+This gives us $s_c(0) = 0$, and $s_c(c) = 1$, ie, if our starting fortunes are $0$ or $c$, or chances of success are $0$ and $1$, respectively. Given that $X_2, X_3, \cdots$ is a replica of $X_1, X_2, \cdots$, intuition would tell us that the chance of success for a gambler with initial fortune $a$ would be the chance of success starting with $a + 1$ times the probability we win the first play, plus the chance of success starting at $a - 1$, times the probability we lose the first play, giving us an equation:
+$$
+	s_c(a) = ps_c(a + 1) + qs_c(a - 1)
+$$
+With our boundary conditions, this would hopefully give us equations to solve for $s_c(a)$. However, we first want to prove the above rigorously. 
+
+\paragraph{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}
+Define $A_{a,n}'$ just as $A_{a,n}$ but with $S_n' = X_2 + \cdots + X_{n+1}$ in place of $S_n$ in our previous definition. Note that:
+$$
+	P[X_i = x_i, i \leq n] = P[X_{i+1} = x_i, i \leq n]
+$$
+For each sequence $x_1, \cdots, x_n$ of plus or minus $1$. Therefore, we have for $H \subset \R^n$:
+$$
+	P[(X_1, \cdots, X_n) \in H] = P[(X_2, \cdots, X_{n+1}) \in H]
+$$
+For $H \subset \R^n$ (we can take the left side, break it up by disjoint unions, and use the identity derived above, which came from independence). Take $H$ to be the set of $x = (x_1, \cdots, x_n)$ in $\R^n$ satisfying $x_i + \pm 1, a + x_1 + \cdots + x_n = c$, and $0 < a + x_1 + \cdots + x_k < c$ for $k < n$. It follows that:
+$$
+	P(A_{a,n}) = P[(X_1, \cdots, X_n) \in H] = P[(X_2, \cdots, X_{n+1}) \in H] = P(A_{a,n}')
+$$
+Note, in the middle equality - we jump to another set of $\omega$. However, we note that the $\omega$ on the RHS has equal probability, and so both events have equal probability.
+\\\\
+So, we have the above property. Now, we note that:
+$$
+	A_{a,n} = \left([X_1 = + 1] \cap A_{a+1, n-1}'\right) \cup \left([X_1 = - 1] \cap A_{a-1,n-1}'\right)
+$$
+This comes from noting that $A_{a+1, n-1}'$ means that you are starting at fortune $a + 1$, and we have that $X_2, \cdots, X_{n - 1 + 1} = X_n$ reaches a total sum of $c$ without reaching ruin/success before hand. So yeah, with that intuition, we see that the sets of $\omega$ on both side are the same, for $n \geq 1$ and $0 < a < c$. By independence (noting the independent random variable row theorem corollary) and disjoint events, we have:
+$$
+	P(A_{a,n}) = P\left[[X_1 = + 1] \cap A_{a+1, n-1}'\right] + P\left[[X_1 = - 1] \cap A_{a-1,n-1}'\right]
+$$
+$$
+	= pP\left[A_{a+1, n-1}'\right] + qP\left[A_{a-1,n-1}'\right]
+$$
+$$
+	= pP\left[A_{a+1, n-1}\right] + qP\left[A_{a-1,n-1}\right]
+$$
+So, we have:
+$$
+	s_c(a) = \sum_{n=1}^\infty P(A_{a,n}) =
+	\sum_{n=1}^\infty pP\left[A_{a+1, n-1}\right] + qP\left[A_{a-1,n-1}\right]
+$$
+We can bring out the scalar multiplies, given that monotone increasing sums converge (either to a point or infinity):
+$$
+	= p\left[\sum_{n=1}^\infty P\left[A_{a+1, n-1}\right]\right] +
+	q\left[\sum_{n=1}^\infty P\left[A_{a-1, n-1}\right]\right]
+$$
+$$
+	= ps_c(a + 1) + qs_c(a - 1)
+$$
+Note, the above is true for $0 < a < c$ (if $a = 1$ or $a = c - 1$, it is still true, as we get the first value of $0/1$, added with the following $0$ values for infinity). So, we have rigorously proved the difference equations we need to solve. In summary, it took:
+\begin{enumerate}
+	\item Noting that the probability of one sequence of $X_i$ being some specific value is the same as the shifted sequence
+	\item We took that fact, and proved that the probabilities of success/ruin of the shifted sums are equal
+	\item We expressed $A_{a,n}$ as $X_1$ taking a value, times probabilities of success/ruin of shifted sums
+	\item Brought back the expressions to the original sequence
+\end{enumerate}
 
 \end{document}
 
