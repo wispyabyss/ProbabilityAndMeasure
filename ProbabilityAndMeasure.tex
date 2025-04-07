@@ -4673,6 +4673,12 @@ This gives us an interpretation as to what entropy is - \textit{the average numb
 
 \section{Section 7 - Gambling Systems}
 \subsection{Notes}
+To be honest - I'm not too interested in this topic at all. However, I do think it has valuable information, if we want to study probability of like a discrete system. However, because I am not interested - I will skip the optional topics, bold and timid play.
+\\\\
+However, I might not actually. I have read a bit of the bold play section - the overall idea, is what betting amounts will improve your odds. I think it ultimately comes down to this: in the case of \textit{subfair play} (which is $p < q$, odds of losing are greater) - the best strategy of bold play is, bet your entire fortune every turn. And intuitively - this makes sense to me. The best odds you are going to get, in a repeating subfair game - is the initial probability $p$ of success. If you bet less, and rely on multiple trials - you will just be relying on large numbers to ensure failure.
+\\\\
+Ultimately, I think this is probably a life lesson. If you're in a subfair situation - go for broke. I'll put this on a flash card to be honest, it is a good lesson to remember.
+
 \subsubsection{Gambler's Ruin}
 The setup is as follows. A gambler starts with capital $a$, and his strategy is to keep on betting until his fortune increases to $c$, or his funds are exhausted. Every time he bets, his fortune increases by $1$ with probability $p$, and decreases by $1$ with probability $q = 1 - p$. What are the probabilities of success and ruin, reaching $c$ or exhaustion respectively?
 \\\\
@@ -4759,6 +4765,58 @@ Note, the above is true for $0 < a < c$ (if $a = 1$ or $a = c - 1$, it is still 
 	\item We expressed $A_{a,n}$ as $X_1$ taking a value, times probabilities of success/ruin of shifted sums
 	\item Brought back the expressions to the original sequence
 \end{enumerate}
+So, we now turn to solving the difference equation. We have:
+$$
+	s_c(0) = 0 \quad\quad\quad s_c(c) = 1 \quad\quad\quad
+	s_c(a) = ps_c(a + 1) + qs_c(a - 1) \text{ for $0 < a < c$}
+$$
+We should be able to solve for every in-between $s_c(a)$ value. Let $\rho = q / p$ - these are the \textit{odds against the gambler}. Recall (Appendix) we have for $a < b$ integers, and difference equation:
+$$
+	x_n = p x_{n + 1} + q x_{n - 1} \quad\quad\quad a < n < b
+$$
+Where $p + q = 1$, we have a general solution of the form:
+$$
+	x_n = \begin{cases}
+	A + B(q / p)^n & \text{ for $a \leq n \leq b$ if $p \neq q$}\\
+	A + Bn & \text{ for $a \leq n \leq b$ if $p = q$}
+	\end{cases}
+$$
+We can just check this manually. Note:
+$$
+	p \left[A + B(q / p)^{n + 1}\right] + q \left[A + B(q / p)^{n - 1}\right] =
+	A + B \frac{q^{n+1}}{p^n} + B \frac{q^n}{p^{n-1}}
+$$
+$$
+	= A + B \frac{q^{n+1} + q^np}{p^n} = A + B \frac{q^n}{p^n} = x_n
+$$
+If we have two values of $x_n$, then $A$ and $B$ can be solved for (just two \textit{linear} equations with two unknowns). We note that for integer capitals $a$, we have for constants $A$ and $B$:
+$$
+	s_c(a) = \begin{cases}
+	A + B\rho^a & \text{ if $p \neq q$}\\
+	A + Ba & \text{ if $p = q$}
+	\end{cases}
+$$
+Solving for $A$ and $B$ gives us:
+$$
+	s_c(a) = \begin{cases}
+	\frac{\rho^a - 1}{\rho^c - 1} & \text{ if $\rho \neq 1$}\\
+	\frac{a}{c} & \text{ if $\rho = 1$}
+	\end{cases}
+$$
+And so, we above, we have found \textit{the probability that the gambler can attain his goal of $c$ from an initial capital of $a$ before ruin}.
+
+\paragraph{Probability of Ruin} Note, we can replace the equations above with expressions for the probability of ruin (mainly switching $A_{a,n}$ and $B_{a,n}$, and redoing the analysis) to find:
+$$
+	r_c(a) = \begin{cases}
+	\frac{\rho^{-(c-a)} - 1}{\rho^{-c} - 1} & \text{ if $\rho \neq 1$}\\
+	\frac{c - a}{c} & \text{ if $\rho = 1$}
+	\end{cases}
+$$
+And so we have that $s_c(a) + r_c(a) = 1$. This implies - the \textit{probability is $0$ that play continues forever}.
+
+\subsubsection{Selection Systems}
+The overall idea behind selection systems is - the gambler will only make a bet at time $n$, based on if he sees some sort of pattern in the $X_1, \cdots, X_{n-1}$ beforehand. Note, the gambler supposedly knows the $X_i$ are independent with probabilities $p$ and $q$ - but he decides to follow one of these selection systems anyway. We start by giving some notation.
+
 
 \end{document}
 
