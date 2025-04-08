@@ -232,3 +232,6 @@
 \contentsline {paragraph}{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}{170}{section*.233}%
 \contentsline {paragraph}{Probability of Ruin}{172}{section*.234}%
 \contentsline {subsubsection}{Selection Systems}{172}{section*.235}%
+\contentsline {paragraph}{Selection Systems Framework}{173}{section*.236}%
+\contentsline {paragraph}{Theorem 7.1 - Selection Systems Do Nothing}{174}{section*.237}%
+\contentsline {paragraph}{Proof of Theorem 7.1}{174}{section*.238}%

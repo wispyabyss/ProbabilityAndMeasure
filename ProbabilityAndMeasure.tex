@@ -4817,6 +4817,63 @@ And so we have that $s_c(a) + r_c(a) = 1$. This implies - the \textit{probabilit
 \subsubsection{Selection Systems}
 The overall idea behind selection systems is - the gambler will only make a bet at time $n$, based on if he sees some sort of pattern in the $X_1, \cdots, X_{n-1}$ beforehand. Note, the gambler supposedly knows the $X_i$ are independent with probabilities $p$ and $q$ - but he decides to follow one of these selection systems anyway. We start by giving some notation.
 
+\paragraph{Selection Systems Framework}
+\begin{enumerate}
+	\item $X_i$ are the iid random variables distributed according to $P[X_i = +1] = p$ and $P[X_i = -1] = 1 - p = q$. $X_i$ describes the result of the $ith$ trial. $X_i$ are within some $(\Omega, \fcal, P)$.
+	
+	\item $B_i$ describes the gambler's strategy. $B_i = 1$ if the gambler will place a bet on the $ith$ trial, and $B_i = 0$ if the gambler chooses not to. Note, the strategy can only depend on the values of the $X_i$ seen before hand, and so $B_i$ must be some function $b_n: \R^{n-1} \to \R$ with:
+	$$
+		B_i = b_i(X_1, \cdots, X_{i-1})
+	$$
+	
+	\item We define the generated $\sigma$ fields:
+	$$
+		\begin{cases}
+		\fcal_n = \sigma(X_1, \cdots, X_n) & n = 1, 2, \cdots\\
+		\fcal_0 = \{\emptyset, \Omega\}
+		\end{cases}
+	$$
+	By our requirement on $B_i$, we have that $B_i$ is measurable $\fcal_{i-1}$. Recall - any simple random variable that is a function of other simple random variables is measurable their generated $\sigma$ field.
+	
+	\item For $i = 1, 2, \cdots$, define $N_i$ to be the time at which the gambler places his $ith$ bet. This $ith$ bet is placed at time $k$ or earlier, if and only if the number $\sum_{j=1}^i B_j \leq k$. In fact, $N_i$ is the \textit{smallest $k$ for which} $\sum_{j=1}^k B_j = i$. We thus have:
+	$$
+		[N_n(\omega) \leq k] = \left[\sum_{i=1}^k B_i(\omega) \geq n\right]
+	$$
+	Thus, we must have that $[N_n \leq k]$ lies within $\sigma(B_1, \cdots, B_k)$, as it can be expressed as a union of the various $H \subset \R^k$ that contain coordinates with at least $n$ ones. This is field is contained within  $\sigma(X_1, \cdots, X_{k-1}) \subset \fcal_{k-1}$. Therefore, we have:
+	$$
+		[N_n = k] = [N_n \leq k] - [N_n \leq k - 1] \in \fcal_{k-1}
+	$$
+	As clearly both sets in the subtraction are part of the set. Note that $N_n$, as a function on $\Omega$ - is generally not a simple random variable, as it has infinite range. Note, however, the only essential property we will use is the above one. Also, note why it is intuitive. We want to know whether the gambler will make his $nth$ play at time $k$. Well, we will know if it is the $nth$ play, based off of whether we had $n - 1$ plays in the $k - 1$ trials (which must be measurable the first $k - 1$ $X_i$), and whether $B_k = +1$, which is also measurable $\fcal_{k-1}$.
+	
+	\item To ensure that play continues forever, and that the $N_n$ have finite values with probability $1$, make the assumption that:
+	$$
+		P[B_n = 1 \io] = 1
+	$$
+	A sequence of $\{B_n\}$ simple random variables assuming values of $0$ and $1$, being measurable $\fcal_{n-1}$, and equaling 1 infinitely often with probability $1$, is called a \textit{selection system}.
+	
+	\item Finally, define $Y_n$ as the gambler's gain on the $nth$ trial in which he does bet. Ie:
+	$$
+		Y_n = X_{N_n}
+	$$
+	Note, only on the set $\omega$ such that $[B_n = 1 \io]$ is $Y_n$ well defined. So that $Y_n$ is defined on \textit{all $\omega$}, we actually have to take cases:
+	$$
+		Y_n(\omega) = \begin{cases}
+		X_{N_n(\omega)}(\omega) & \text{ if $\omega \in [B_n = 1\io]$}\\
+		-1 & \text{ if $\omega \in [B_n = 1 \io]^c$}
+		\end{cases}
+	$$
+	Note that $Y_n$ is a complicated function on $\Omega$. However, we do have that:
+	$$
+		\left[\omega : Y_n(\omega) = 1\right] = 
+		\bigcup_{k=1}^\infty \left[\left[\omega: N_n(\omega) = k\right] \cap \left[\omega: X_k(\omega) = 1\right]\right]
+	$$
+	And so $\left[\omega : Y_n(\omega) = 1\right] \in \fcal$. Similarly, we can derive an expression for $Y_n(\omega) = -1 \in \fcal$, and so we \textit{do have that $Y_n$ is a SIMPLE RANDOM VARIABLE}.
+\end{enumerate}
+So, as a wrap up. We have that $B_n, X_n, Y_n$ are all simple random variables. We introduced a notation for $N_n$, which wasn't really a simple random variable - but we didn't need it to be. We just needed it as notation, and we had more than enough by noting that $[N_n(\omega) = k] \in \fcal_{k-1}$. 
+
+\paragraph{Theorem 7.1 - Selection Systems Do Nothing} For every selection system, $\{Y_n\}$ is independent and $P[Y_n = +1] = p$, $P[Y_n = -1] = q$. Ie, $Y_n$ has the same structure as $X_n$, and so using a selection system is identical to just betting on each of the $n$ trials.
+
+\paragraph{Proof of Theorem 7.1} 
 
 \end{document}
 
