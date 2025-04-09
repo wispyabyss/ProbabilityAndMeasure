@@ -4869,11 +4869,80 @@ The overall idea behind selection systems is - the gambler will only make a bet 
 	$$
 	And so $\left[\omega : Y_n(\omega) = 1\right] \in \fcal$. Similarly, we can derive an expression for $Y_n(\omega) = -1 \in \fcal$, and so we \textit{do have that $Y_n$ is a SIMPLE RANDOM VARIABLE}.
 \end{enumerate}
-So, as a wrap up. We have that $B_n, X_n, Y_n$ are all simple random variables. We introduced a notation for $N_n$, which wasn't really a simple random variable - but we didn't need it to be. We just needed it as notation, and we had more than enough by noting that $[N_n(\omega) = k] \in \fcal_{k-1}$. 
+So, as a wrap up. We have that $B_n, X_n, Y_n$ are all simple random variables. We introduced a notation for $N_n$, which wasn't really a simple random variable - but we didn't need it to be. We just needed it as notation to make expressing the intersection of sets in $\fcal_{k-1}$, that ultimately make up the $[N_n(\omega) = k] \in \fcal_{k-1}$ term that appears in the $Y_n$ definition. 
 
 \paragraph{Theorem 7.1 - Selection Systems Do Nothing} For every selection system, $\{Y_n\}$ is independent and $P[Y_n = +1] = p$, $P[Y_n = -1] = q$. Ie, $Y_n$ has the same structure as $X_n$, and so using a selection system is identical to just betting on each of the $n$ trials.
 
-\paragraph{Proof of Theorem 7.1} 
+\paragraph{Proof of Theorem 7.1} We relabel $p$ and $q$ as $p(+1)$ and $p(-1)$, so we can easily write $P[\omega: X_k(\omega) = x] = p(x)$. If $A \in \fcal_{k-1} = \sigma(X_1, \cdots, X_{k-1})$, by independence of the $X_i$ (and our array theorem), we note that:
+$$
+	P\left[A \cap [\omega : X_k(\omega) = x]\right] = P(A)p(x)
+$$
+And so:
+$$
+	P\left[\omega: Y_n(\omega) = x\right] =
+	P\left[\omega: X_{N_n(\omega)}(\omega) = x\right] =
+	\sum_{k=1}^\infty P\left[\omega: N_n(\omega) = k, X_k(\omega) = x\right]
+$$
+Where, just to point it out - the summation comes from disjoint sets of $\omega$. As $N_n \in \fcal_{k-1}$, the above equals:
+$$
+	= \sum_{k=1}^\infty P\left[\omega : N_n(\omega) = k\right]p(x) = 
+	p(x)\sum_{k=1}^\infty P\left[\omega : N_n(\omega) = k\right] =
+	p(x) P\left[\omega: N_n(\omega) < \infty\right]
+$$
+Now, $B_n = 1$ infinitely often is the same set of $\omega$ that implies $N_n(\omega) < \infty$ for all $n$, and so the first set equaling one is equivalent to $P\left[\omega: N_n(\omega) < \infty\right] = 1$ for all $n$. Thus, the above simplifies to:
+$$
+	P\left[\omega: Y_n(\omega) = x\right] = p(x)
+$$
+Which gives us our distribution of the $Y_n$ property. Now, we want to focus on independence. We note that the same argument as above can be extended to a sequence of $x_1, \cdots, x_n$ of $\pm 1$ to find:
+$$
+	P\left[\omega : Y_i(\omega) = x_i, i \leq n\right] =
+	P\left[\omega : X_{N_i(\omega)}(\omega) = x_i, i \leq n\right]
+$$
+$$
+	= \sum_{k_1 < \cdots < k_n} P\left[\omega : N_i(\omega) = k_i, X_{k_i}(\omega) = x_i, i \leq n\right]
+$$
+Where the sum extends over $n$ tuples of positive integers satisfying $k_1 < \cdots < k_n$. Note, this is still a countable number of tuples, and countable additivity of disjoint sets gives us the break down. We note that:
+$$
+	\left[\omega : N_i(\omega) = k_i, i \leq n\right] \cap 
+	\left[\omega: X_{k_i}(\omega) = x_i, i < n\right] \in \fcal_{k_n - 1}
+$$
+They must be -> note that $N_n \in k_n \in \fcal_{k_n - 1}$, which clearly implies the same for smaller $k_i$. Similarly, for $i < n$, $X_{k_i} \in \fcal_{k_i} \subseteq \fcal_{k_n - 1}$. And so, we can simplify each term in the sum to:
+$$
+	= \sum_{k_1 < \cdots < k_n} 
+	P\left[\left[\omega : N_i(\omega) = k_i, i \leq n\right] \cap 
+	\left[\omega: X_{k_i}(\omega) = x_i, i < n\right]\right] p(x_n)
+$$
+Via independence, and $P[X_{k_n}(\omega) = x_n] = p(x_n)$. We can then break up the sum as (noting all positive sum, reordering is allowed)
+$$
+	= \sum_{k_1 < \cdots < k_{n-1}} p(x_n)\sum_{k_n = k_{n-1} + 1}^\infty 
+	P\left[\left[\omega : N_i(\omega) = k_i, i \leq n\right] \cap 
+	\left[\omega: X_{k_i}(\omega) = x_i, i < n\right]\right]
+$$
+Now, we note that the only set on the LHS that is changing is $N_n(\omega) = k_n$. Now, this makes the sum a countable sum of disjoint probabilities. We can bring this into a single set, with the event $N_n(\omega) < \infty$, which is just some set $A$ with probability $1$. We note that for all $B \in \fcal$, we have:
+$$
+	P[A \cap B] + P[A^c \cap B] = P[B] \implies
+	P[A \cap B] = P[B]
+$$
+As $P[A^c \cap B] \leq P[A^c] = 0$. And so, we can just remove the $N_n(\omega) < \infty$ set, giving us:
+$$
+	= \sum_{k_1 < \cdots < k_{n-1}} p(x_n) 
+	P\left[\left[\omega : N_i(\omega) = k_i, i < n\right] \cap 
+	\left[\omega: X_{k_i}(\omega) = x_i, i < n\right]\right]
+$$
+$$
+	\implies  P\left[\omega : Y_i(\omega) = x_i, i \leq n\right] = P[\omega : Y_i(\omega) = x_i, i < n] p(x_n)
+$$
+We can use induction to easily conclude that:
+$$
+	P\left[\omega : Y_i(\omega) = x_i, i \leq n\right] = \prod_{i \leq n} p(x_i) = 
+	\prod_{i \leq n} P\left[\omega : Y_i(\omega) = x_i\right]
+$$
+And so the $Y_i$ are independent (note, an arbitrary finite subset of the $Y_i$ is independent can clearly be concluded from the above property). qed.
+\\\\
+Not bad! This is kind of our first real world result. Any selection system, based purely on previous values of iid random variables, is equivalent to just betting on a similar stream of iid random variables.
+
+\subsubsection{Gambling Policies}
+These refer to schemes that go beyond selection systems, and tell the gambler not only whether to bet or not - but how much as well.
 
 \end{document}
 

@@ -234,4 +234,5 @@
 \contentsline {subsubsection}{Selection Systems}{172}{section*.235}%
 \contentsline {paragraph}{Selection Systems Framework}{173}{section*.236}%
 \contentsline {paragraph}{Theorem 7.1 - Selection Systems Do Nothing}{174}{section*.237}%
-\contentsline {paragraph}{Proof of Theorem 7.1}{174}{section*.238}%
+\contentsline {paragraph}{Proof of Theorem 7.1}{175}{section*.238}%
+\contentsline {subsubsection}{Gambling Policies}{176}{section*.239}%
