@@ -4944,6 +4944,55 @@ Not bad! This is kind of our first real world result. Any selection system, base
 \subsubsection{Gambling Policies}
 These refer to schemes that go beyond selection systems, and tell the gambler not only whether to bet or not - but how much as well.
 
+\paragraph{Gambling Policy Framework}
+\begin{enumerate}
+	\item Let $F_n$ denote the fortune the gambler has on the $nth$ play. $F_0$ is taken as his initial, nonrandom fortune.
+	
+	\item The wager specified for the $nth$ trial is $W_n$. The gambler cannot see the future, and so $W_n$ must depend only on $X_1, \cdots, X_{n-1}$, and his nonrandom initial fortune $F_0$, and so:
+	$$
+		W_n = g_n(F_0, X_1, \cdots, X_{n-1}) \geq 0
+	$$
+	Note that the wager is nonnegative, and in effect includes selection systems, as $W_n = 0$ corresponds to not betting at all. We note that $W_n$ is measurable $\fcal_{n-1}$, being a function of $X_1, \cdots, X_{n-1}$. Finally, we note that:
+	$$
+		F_n = F_{n-1} + W_nX_n
+	$$
+	And that $F_n$ must be measurable $\fcal_n$.
+	
+	\item Let $\tau(F_0,\omega)$ be a nonnegative integer for each $\omega \in \Omega$ and $F_0 \geq 0$. If $\tau = n$, the gambler plays on the $nth$ trial (betting $W_n$) and then stops; if $\tau = 0$, he does not bet in the first place. The event $\left[\omega: \tau(F_0, \omega) = n\right]$ represents the decision to stop just after the $nth$ trial, and so, for whatever value of $F_0$, it must depend only on $X_1, \cdots, X_n$. Thus, we assume that:
+	$$
+		\left[\omega : \tau(F_0,\omega) = n\right] \in \fcal_n \quad\quad n = 0, 1, 2, \cdots
+	$$
+	A $\tau$ satisfying this requirement is called a \textit{stopping time}. Note, it is not a SRV, as it has an infinite range. We do assume however that $P[\tau < \infty] = 1$, to make it certain that play will terminate.
+	
+	\item A betting system together with a stopping time is a \textit{gambling policy}. Let $\pi$ denote such a policy.
+	
+	\item With a stopping time, the gamblers fortune at time $n$ is:
+	$$
+		F^*_n = \begin{cases}
+		F_n & \text{ if $\tau \geq n$}\\
+		F_\tau & \text{ if $\tau \leq n$}
+		\end{cases}
+	$$
+	It should also be clear that if $W^*_n = I_{\tau \geq n} W_n$, then:
+	$$
+		F_n^* = F_{n-1}^* + I_{\tau \geq n} W_nX_n = F_{n-1}^* + W_n^*X_n
+	$$
+	These are the \textit{stopping time aware fortunes and wagers} (my name for them). Note that like $W_n$, $W_n^*$ is also measurable $\fcal_{n-1}$, and can itself be treated as a betting system. This is because:
+	$$
+		\left[\tau \geq n\right] = \left[\tau < n\right]^c = \left[\bigcup_{k=1}^{n-1} \tau = k\right]^c \in \fcal_{n-1}
+	$$
+	As each $\tau = k \in \fcal_{n-1}$ by our definition, and $\sigma$ algebras are closed unions and complements. And so, $I_{\tau \geq n}$ is measurable $\fcal_{n-1}$, and can be expressed as a function of $X_1, \cdots, X_{n-1}$, and thus so can $W_n^*$. Thus, we have that $W_n^*$ is independent $X_n$, and:
+	$$
+		E[F_n^*] = E[F_{n-1}^*] + E[W_n^*]E[X_n]
+	$$
+	Given that $X_n$ are iid distributed like $p,q$, if $p \leq q$, $E[X_n] \leq 0$. As $E[W_n^*] \geq 0$, the subfair case thus implies:
+	$$
+		F_0 = F_0^* \geq E[F_1^*] \geq E[F_2^*] \geq \cdots
+	$$
+\end{enumerate}
+
+\paragraph{Theorem 7.2: Expected Stopping Time Aware Fortune Value}
+
 \end{document}
 
 
