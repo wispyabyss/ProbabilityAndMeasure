@@ -4952,7 +4952,7 @@ These refer to schemes that go beyond selection systems, and tell the gambler no
 	$$
 		W_n = g_n(F_0, X_1, \cdots, X_{n-1}) \geq 0
 	$$
-	Note that the wager is nonnegative, and in effect includes selection systems, as $W_n = 0$ corresponds to not betting at all. We note that $W_n$ is measurable $\fcal_{n-1}$, being a function of $X_1, \cdots, X_{n-1}$. Finally, we note that:
+	Note that the wager is nonnegative, and in effect includes selection systems, as $W_n = 0$ corresponds to not betting at all. We note that $W_n$ is measurable $\fcal_{n-1}$, being a function of $X_1, \cdots, X_{n-1}$ (and $F_0$ is fixed and can be taken as part of the function). Finally, we note that:
 	$$
 		F_n = F_{n-1} + W_nX_n
 	$$
@@ -4991,7 +4991,30 @@ These refer to schemes that go beyond selection systems, and tell the gambler no
 	$$
 \end{enumerate}
 
-\paragraph{Theorem 7.2: Expected Stopping Time Aware Fortune Value}
+\paragraph{Theorem 7.2: Expected Stopping Time Aware Fortune Value} Note that $\lim_n F_n^* = F_\tau$ with probability $1$. This is because, when $n \geq \tau$, we have that $F_n^* = F_\tau$ by definition. And so, if ultimately $n \geq \tau$ with probability one, than we have the equality. As $\tau < \infty$ with probability $1$, we can conclude:
+$$
+	P\left[\lim_n F_n^* = F_\tau\right] = 1
+$$
+However, this \textit{does not immediately imply} $\lim_n E[F_n^*] = E[F_\tau]$. $E[F_\tau]$ takes in the possible values of $\tau$, and so it could take into account the infinite possible stopping times. NOTE: Technically, all we have proved so far has been for simple random variables. So, in reality, this portion is NOT rigorous. However, let's make the assumption that $F_\tau$ is a simple random variable. Note, $F_n^*$ is a simple random variable, as it could only be, at a maximum, some value of $F_0 + MaxWager_1 + MaxWager_2$, and I think the maximum wager at each time step is bounded (it certainly is if the gambler cannot take out loans).
+\\\\
+However, assume that $\lim_n E[F_n^*] = E[F_\tau]$. Then, we note that by our decreasing sequence property, in the subfair case, we can conclude:
+$$
+	E[F_\tau] \leq F_0
+$$
+If we just say that $F_\tau$ is a simple random variable, and then have a \textit{bounded policy} which implies:
+$$
+	0 \leq F_n^* \leq M \quad\quad\quad n = 0, 1, 2, \cdots
+$$
+Then note, we can make use of Theorem 5.4, which implies that we indeed have $\lim_n E[F_n^*] = E[F_\tau]$. This yields the theorem:
+\\\\
+For every policy, if $p \leq 1/2$, we have:
+$$
+	F_0 = F_0^* \geq E[F_1^*] \geq E[F_2^*] \geq \cdots
+$$
+If the policy is bounded, and $F_\tau$ has finite range, then $E[F_\tau] \leq F_0$. 
+
+\subsubsection{Bold Play}
+Note, the above tells us that, for whatever bounded policy we take - the expected value of our fortune at the stopping time will be less than our initial fortune. However - this is \textit{only} a result on the expected value. It is actually possible, and \textit{not} contradictory for us to say - there are specific policies that are better than others. Ie, better in the sense that, they will give us a higher probability of success than other policies - even though, in all cases, the policies are expected to yield us a fortune smaller than what we started at.
 
 \end{document}
 
