@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  11 APR 2025 09:03
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  12 APR 2025 09:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2783,7 +2783,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 5007--5011
 
  []
 
-[178] [179] (./ProbabilityAndMeasure.aux)
+[178]
+Underfull \hbox (badness 10000) in paragraph at lines 5019--5022
+
+ []
+
+[179] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 88378F80C2B170A09646430FEA1C83F1;29124.
  ) 

@@ -239,3 +239,4 @@
 \contentsline {paragraph}{Gambling Policy Framework}{176}{section*.240}%
 \contentsline {paragraph}{Theorem 7.2: Expected Stopping Time Aware Fortune Value}{178}{section*.241}%
 \contentsline {subsubsection}{Bold Play}{179}{section*.242}%
+\contentsline {paragraph}{Bold Play}{179}{section*.243}%
