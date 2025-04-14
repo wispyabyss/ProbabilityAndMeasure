@@ -240,3 +240,6 @@
 \contentsline {paragraph}{Theorem 7.2: Expected Stopping Time Aware Fortune Value}{178}{section*.241}%
 \contentsline {subsubsection}{Bold Play}{179}{section*.242}%
 \contentsline {paragraph}{Bold Play}{179}{section*.243}%
+\contentsline {paragraph}{Policy Framework}{179}{section*.244}%
+\contentsline {paragraph}{Theorem 7.3 - Bold Play is Optimal in the subfair case}{180}{section*.245}%
+\contentsline {paragraph}{Proof:}{180}{section*.246}%

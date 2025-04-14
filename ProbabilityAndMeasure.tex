@@ -5028,6 +5028,48 @@ $$
 $$
 Bold play has not terminated by time $k$ if it hasn't by time $k-1$, and we win if $F_k < 1/2$ or lose if $F_k > 1/2$. It follows by induction that the probability that bold play continues beyond time $n$ is at most $m^n$, for $m = max(p,q)$. 
 
+\paragraph{Policy Framework}
+\begin{enumerate}
+	\item We consider only policies $\pi$ that are bounded by 1, ie:
+	$$
+		0 \leq F_n^* \leq 1 \quad\quad\quad n = 0, 1, 2, \cdots
+	$$
+	
+	\item Assume play stops as soon as $F_n$ reaches $0$ or $1$, and that this is certain eventually to happen (ie, $P\left[\bigcup_n F_n = 0 \text{ or } 1\right] = 1$. Since $F_\tau$ assumes the values $0$ and $1$, and since:
+	$$
+		\left[F_\tau = x\right] = \bigcup_{n=0}^\infty [\tau = n] \cap [F_n = x]
+	$$
+	For $x = 0$ and $x = 1$, $F_\tau$ is a simple random variable. Recall, $F_n$ is a simple random variable (being a function of $W_n$ and $X_n$ and $F_0$), and so $[F_n = x]$ is measurable $\fcal_n$. Also recall our assumption is that $[\tau = n] \in \fcal_n$ as well, and so $F_\tau$ is indeed measurable $\fcal$.
+	
+	\item The policy $\pi$ leads to success if $F_\tau = 1$. Let $Q_\pi(x)$ be the probability of this for an initial fortune $F_0 = x$:
+	$$
+		Q_\pi(x) = P[F_\tau = 1] \quad\quad\quad \text{ for $F_0 = x$}
+	$$
+	Again, since $F_n$ is a function $\psi_n(F_0, X_1(\omega), \cdots, X_n(\omega)) = \psi_n(F_0, \omega)$, in expended notation this is:
+	$$
+		Q_\pi(x) = P\left[\omega : \psi_{\tau(x,\omega)}(x, \omega) = 1\right]
+	$$
+	
+	\item As $\pi$ specifies that play stops at the boundaries $0$ and $1$:
+	$$
+		Q_\pi(0) = 0 \quad\quad\quad
+		Q_\pi(1) = 1 \quad\quad\quad
+		0 \leq Q_\pi(x) \leq 1 \text{ for $0 \leq x \leq 1$}
+	$$
+	
+	\item Finally, note that bold play is one such policy $\pi$. We have that play is certain to terminate, as $m^n \to 0$. Further, $F_\tau$ only assumes the values of $0$ or $1$ and $F_n$ is bounded between $0$ and $1$. Let $Q$ be the $Q\pi$ for bold play.
+\end{enumerate}
+
+
+\paragraph{Theorem 7.3 - Bold Play is Optimal in the subfair case} In the subfair case, $Q_\pi(x) \leq Q(x)$ for all $\pi$ and all $x$.
+
+\paragraph{Proof:} Note, we will later show that under the assumption $p \leq q$, we have:
+$$
+	Q(x) \geq pQ(x + t) + qQ(x - t) \quad\quad
+	0 \leq x - t \leq x \leq x + 1 \leq 1
+$$
+We will prove why this equation proves optimality. However, we won't prove the equation - as I'm getting quite bored of this section.
+
 \end{document}
 
 
