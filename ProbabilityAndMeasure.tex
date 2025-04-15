@@ -5063,12 +5063,36 @@ Bold play has not terminated by time $k$ if it hasn't by time $k-1$, and we win 
 
 \paragraph{Theorem 7.3 - Bold Play is Optimal in the subfair case} In the subfair case, $Q_\pi(x) \leq Q(x)$ for all $\pi$ and all $x$.
 
-\paragraph{Proof:} Note, we will later show that under the assumption $p \leq q$, we have:
+\paragraph{Proof:} To be honest, I don't care about proving this. As this subsection, and the remaining subsections are optional, I'll end the notes for Gambling Systems here.
+
+\subsection{Problems}
+\subsubsection{7.1} A gambler with initial capital $a$ plays until his fortune increases $b$ units or he is ruined. Suppose that $\rho = q/p > 1$, and $p$ is the probability of success of an independent trial ($X_i = +1$). The chance of ultimate success is multiplied by $1 + \theta$ is his initial capital is infinite instead of $a$. Show that $0 < \theta < (\rho^a - 1)^{-1} < (a(\rho - 1))^{-1}$. Relate to example 7.3.
+\\\\
+Recall that if the initial capital $a < \infty$, the probability of ultimate success before ruin for $\rho \neq 1$ is:
 $$
-	Q(x) \geq pQ(x + t) + qQ(x - t) \quad\quad
-	0 \leq x - t \leq x \leq x + 1 \leq 1
+	\frac{\rho^a - 1}{\rho^{a + b} - 1}
 $$
-We will prove why this equation proves optimality. However, we won't prove the equation - as I'm getting quite bored of this section.
+If his capital is infinite, however, and $\rho > 1 \implies q > p$, the probability of success (ie, gain $b$ units from where he started, ie, go up $b$ before going down forever) is:
+$$
+	(p/q)^b = (1/\rho)^b
+$$
+So, given that the chance is multiplied by $1 + \theta$ in the infinite capital case, we have:
+$$
+	(1 + \theta)\left(\frac{\rho^a - 1}{\rho^{a + b} - 1}\right) = \rho^{-b} \implies
+	(1 + \theta)(\rho^a - 1) = \rho^a - \rho^{-b}
+$$
+$$
+	\implies
+	\theta = \frac{\rho^a - \rho^{-b}}{\rho^a - 1} - 1
+$$
+We first note, as $1 < \rho^b$, we have $\rho^{-b} < 1$. And so, we have that $\rho^a - \rho^{-b} > \rho^a - 1$, and so it is clear that $0 < \theta$. We can simplify some more to find:
+$$
+	\theta = \frac{\rho^a - \rho^{-b} - \rho^a + 1}{\rho^a - 1} = \frac{1 - \rho^{-b}}{\rho^a - 1}
+$$
+Note that $0 < 1 - \rho^{-b} < 1$, and so the above is a multiplication by a number between $0$ and $1$, which implies:
+$$
+	\theta < (\rho^a - 1)^{-1}
+$$
 
 \end{document}
 
