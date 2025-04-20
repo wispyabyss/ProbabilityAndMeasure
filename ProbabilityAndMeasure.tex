@@ -5066,7 +5066,7 @@ Bold play has not terminated by time $k$ if it hasn't by time $k-1$, and we win 
 \paragraph{Proof:} To be honest, I don't care about proving this. As this subsection, and the remaining subsections are optional, I'll end the notes for Gambling Systems here.
 
 \subsection{Problems}
-\subsubsection{7.1} A gambler with initial capital $a$ plays until his fortune increases $b$ units or he is ruined. Suppose that $\rho = q/p > 1$, and $p$ is the probability of success of an independent trial ($X_i = +1$). The chance of ultimate success is multiplied by $1 + \theta$ is his initial capital is infinite instead of $a$. Show that $0 < \theta < (\rho^a - 1)^{-1} < (a(\rho - 1))^{-1}$. Relate to example 7.3.
+\subsubsection{7.1 Comparing Gambler's Ruin Success with Different Fortunes} A gambler with initial capital $a$ plays until his fortune increases $b$ units or he is ruined. Suppose that $\rho = q/p > 1$, and $p$ is the probability of success of an independent trial ($X_i = +1$). The chance of ultimate success is multiplied by $1 + \theta$ is his initial capital is infinite instead of $a$. Show that $0 < \theta < (\rho^a - 1)^{-1} < (a(\rho - 1))^{-1}$. Relate to example 7.3.
 \\\\
 Recall that if the initial capital $a < \infty$, the probability of ultimate success before ruin for $\rho \neq 1$ is:
 $$
@@ -5093,6 +5093,37 @@ Note that $0 < 1 - \rho^{-b} < 1$, and so the above is a multiplication by a num
 $$
 	\theta < (\rho^a - 1)^{-1}
 $$
+Finally, we want to show that:
+$$
+	(\rho^a - 1)^{-1} < (a(\rho - 1))^{-1}
+$$
+Which follows if we show $a(\rho - 1) < \rho^a - 1$. We first note, that if $\rho = 1$, we have:
+$$
+	a (\rho - 1) = 0 = \rho^a - 1
+$$
+So, we just need the function:
+$$
+	f(\rho) = \rho^a - 1 - a(\rho - 1)
+$$
+To be \textit{increasing} for $\rho > 1$. The derivative of the above, with respect to $\rho$, is:
+$$
+	a\rho^{a-1} - a = a(\rho^{a-1} - 1)
+$$
+Given that $\rho^{a-1} - 1 > 0$, and $a > 1$, we can indeed conclude that:
+$$
+	(\rho^a - 1)^{-1} < (a(\rho - 1))^{-1}
+$$
+
+\paragraph{7.3} If $V_n$ is the set of $n$ long sequences of $\pm 1$'s (ie, contains $2^n$ sequences), the function $b_n$ (from our selection system) maps $V_{n-1}$ into $\{0,1\}$. A selection system is a sequence of such maps. Although there are uncountably many selection systems, how many have an \textit{effective} description in the sense of an algorithm or finite set of instructions by means of which a deputy (perhaps a machine) could operate the system for the gambler? An analysis of the question is a matter of mathematical logic, but one can see that there can be only countably many algorithms or finite sets of rules expressed in finite alphabets.
+\\\\
+Let $Y_1^\sigma, Y_2^\sigma, \cdots$ be the random variables of Theorem 7.1 for a particular system $\sigma$ (ie, $Y_i^\sigma$ is the result when the gambler makes his $ith$ bet under the selection system $\sigma$), and let $C_\sigma$ be the $\omega$ set where every $k$ tuple of $\pm 1$'s ($k$ arbitrary, just all possible tuples of size $k$) occurs in $Y_1^\sigma(\omega), Y_2^\sigma(\omega), \cdots$ with the right asymptotic frequency. This is in the sense of problem 6.12, ie: for the $k$ tuple $u_1, \cdots, u_k$, and $N_n(u_1, \cdots, u_k)$ the number of $t$ such that $1 \leq t \leq n$ and $Y_t^\sigma = u_1, \cdots, Y_{t+k-1}^\sigma = u_k$, we have:
+$$
+	n^{-1}N_n(u_1, \cdots, u_k) \to p(u_1) \cdots p(u_k)
+$$
+where each $p(+1) = p$ and $p(-1) = q$. Let $C$ be the intersection of $C_\sigma$ over all effective selection systems $\sigma$ (ie, I believe this is just a countable intersection). Show that $C$ lies in $\fcal$ (the $\sigma$-field in the probability space $(\Omega,\fcal,P)$ on which the $X_n$ are defined) and that $P(C) = 1$. A sequence $(X_1(\omega), X_2(\omega), \cdots)$ for $\omega$ in $C$ is called a \textit{collective}: a subsequence chosen by any of the effective rules $\sigma$ contains all $k$ tuples in the correct proportions.
+\\\\
+I think, this problem might require us to do problem 6.12 first. 
+
 
 \end{document}
 

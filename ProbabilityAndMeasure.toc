@@ -244,4 +244,5 @@
 \contentsline {paragraph}{Theorem 7.3 - Bold Play is Optimal in the subfair case}{180}{section*.245}%
 \contentsline {paragraph}{Proof:}{180}{section*.246}%
 \contentsline {subsection}{Problems}{181}{section*.247}%
-\contentsline {subsubsection}{7.1}{181}{section*.248}%
+\contentsline {subsubsection}{7.1 Comparing Gambler's Ruin Success with Different Fortunes}{181}{section*.248}%
+\contentsline {paragraph}{7.3}{182}{section*.249}%
