@@ -4595,6 +4595,60 @@ Note, we thus have the sum converges, and so we can conclude that $n^{-1}S_n \to
 	$$	
 \end{enumerate}
 
+\subsubsection{6.11 $m$ dependent, uniformly bounded, and mean $0$ $X_i$ convergence with probability $1$} Suppose that $X_1, X_2, \cdots$ are $m$ independent in the sense that random variables more than $m$ apart in the sequence are independent. More precisely, let $A_j^k = \sigma(X_j, \cdots, X_k)$, and assume that $A_{j_1}^{k_1}, \cdots, A_{j_l}^{k_l}$ are independent if $k_{i-1} + m < j_i$ for $i = 2, \cdots, l$. Note, independent random variables are $0$-dependent. Suppose that the $X_n$ have this property and are uniformly bounded and that $E[X_n] = 0$ for all $n$. Show that $n^{-1}S_n \to 0$ with probability $1$. 
+\\\\
+Hint: Consider the subsequences $X_i, X_{i+m+1}, X_{i+2(m+1)}, \cdots$ for $1 \leq i \leq m + 1$.
+\\\\
+Let's first make use of the hint. Let $Y_1, Y_2, \cdots$ correspond to one of the subsequences for $i \in [1, m + 1]$. Note that each $Y_i$ is independent, uniformly bounded, and $E[Y_i] = 0$. Recall, uniform boundedness tells us:
+$$
+	|Y_i| \leq M \implies Y_i^2 \leq M^2 \implies E[Y_i^2] \leq M^2
+$$
+And similarly:
+$$
+	E[Y_i^4] \leq M^4
+$$
+Let $S_n$ correspond to the sum of $Y_n$. Note that:
+$$
+	P\left[\lim_{n \to \infty} n^{-1}S_n = 0\right] = 1 \Leftrightarrow
+	\forall \epsilon > 0 \;,\; P\left[|n^{-1}S_n| > \epsilon \;\io\right] = 0
+$$
+We note that infinitely often events equals 0 if the probability of the individuals events converges, by BC-1. So, we examine:
+$$
+	P\left[|n^{-1}S_n| > \epsilon\right] = P\left[S_n^4 > n^4\epsilon^4\right] \leq
+	\frac{E[S_n^4]}{n^4\epsilon^4} = \frac{nE[Y_i^4] + 3n(n-1)E[Y_i^2][Y_j^2]}{n^4\epsilon^4}
+$$
+Where we make use of Markov's inequality, and the independence of $Y_i$. The above is bounded by:
+$$
+	\leq \frac{nM^4 + 6n(n-1)M^2}{n^4\epsilon^4}
+$$
+Clearly, this sum converges with the exponential $n^4$ term in the bottom. And so, in conclusion, we note that each of the subsequences $X_i, X_{i+m+1}, X_{i+2(m+1)}, \cdots$ for $1 \leq i \leq m + 1$ satisfies that their sequence average goes to $0$ with probability $1$. We now want to turn this fact into a conclusion about the entire sequence. Let $S^i_n$ correspond to the sum of the $Y_i$ for $1 \leq i \leq m+1$. We note that:
+$$
+	S_n = S^1_{n/m+1} + \cdots + S^{m+1}_{n/m+1}
+$$
+Note, of course, there will be some $\pm 1$ differences in the subscript, but essentially, the above is the case. I don't want to deal with floor/ceiling for now, the analysis still applies. We note that:
+$$
+	P\left[\lim_{n \to \infty} n^{-1}S_n = 0\right] =
+	P\left[\lim_{n \to \infty} n^{-1}\left[S^1_{n/m+1} + \cdots + S^{m+1}_{n/m+1}\right] = 0\right]
+$$
+Note, as $n/m+1 < n$, we have the above probability is lower bounded by:
+$$
+	\geq
+	P\left[\lim_{n \to \infty} \frac{m+1}{n}S^1_{n/m+1} + \cdots + \frac{m+1}{n}S^{m+1}_{n/m+1} = 0\right]
+$$
+As if the above converges to $0$, then it definitely converges to zero when divided by a larger number. We now note that an $\omega$ for which each of the terms converges to zero, is an $\omega$ for which the entire sum converges to zero. And so, note that the above is lower bounded by:
+$$
+	\geq
+	P\left[\bigcap_{i=1}^{m+1} \lim_{n \to \infty} \frac{m+1}{n}S^i_{n/m+1} = 0\right]
+$$
+Again, note, for the $\omega$ in this set, each limit equals $0$, and so for any $\epsilon > 0$, there is an $n$ large enough such that $|\frac{m+1}{n}S^i_{n/m+1}| < \epsilon/m+1$, we take the maximum of the $n$s, and the entire sum is bounded by $\epsilon$. We now note that the probability of the finite intersection of probability $1$ sets is probability $1$ (examine the complement, which is clearly probability $0$). And so, we have:
+$$
+	P\left[\lim_{n \to \infty} n^{-1}S_n = 0\right] \geq
+	P\left[\bigcap_{i=1}^{m+1} \lim_{n \to \infty} \frac{m+1}{n}S^i_{n/m+1} = 0\right] = 1
+$$
+And so, yes, we can conclude that for $m$ dependent $X_i$ uniformly bounded and mean $0$, we have their average converges to $0$ with probability $1$.
+
+\subsubsection{6.12} Suppose that the $X_n$ are independent and assume the values $x_1, \cdots, x_l$ with probabilities $p(x_1), \cdots, p(x_l)$. For $u_1, \cdots, u_k$ a $k$ tuple of the $x_i$'s, let $N_n(u_1, \cdots, u_k)$ be the frequency of the $k$ tuple in the first $n + k - 1$ trials. That is, the number of $t$ such that $1 \leq t \leq n$ and $X_t = u_1, \cdots, X_{t+k-1} = u_k$. Show that with probability $1$, all asymptotic relative frequencies are what they should be - that is, with probability $1$, $n^{-1}N_n(u_1, \cdots, u_k) \to p(u_1)\cdots p(u_k)$ for every $k$ and every $k$ tuple $u_1, \cdots, u_k$. 
+
 \subsubsection{6.14 Shannon's Theorem} Suppose that $X_1, X_2, \cdots$ are independent, identically distributed random variables taking on the values $1, \cdots, r$ with positive probabilities $p_1, \cdots, p_r$. If $p_n(i_1, \cdots, i_n) = p_{i_1} \cdots p_{i_n}$ and $p_n(\omega) = p_n(X_1(\omega), \cdots, X_n(\omega))$, then $p_n(\omega)$ is the probability that a new sequence of $n$ trials would produce the particular sequence $X_1(\omega), \cdots, X_n(\omega)$ of outcomes that happens actually to have been observed. Show that:
 $$
 	-\frac{1}{n}\log p_n(\omega) \to h = -\sum_{i=1}^r p_i\log(p_i)
