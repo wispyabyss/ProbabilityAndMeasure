@@ -4647,7 +4647,32 @@ $$
 $$
 And so, yes, we can conclude that for $m$ dependent $X_i$ uniformly bounded and mean $0$, we have their average converges to $0$ with probability $1$.
 
-\subsubsection{6.12} Suppose that the $X_n$ are independent and assume the values $x_1, \cdots, x_l$ with probabilities $p(x_1), \cdots, p(x_l)$. For $u_1, \cdots, u_k$ a $k$ tuple of the $x_i$'s, let $N_n(u_1, \cdots, u_k)$ be the frequency of the $k$ tuple in the first $n + k - 1$ trials. That is, the number of $t$ such that $1 \leq t \leq n$ and $X_t = u_1, \cdots, X_{t+k-1} = u_k$. Show that with probability $1$, all asymptotic relative frequencies are what they should be - that is, with probability $1$, $n^{-1}N_n(u_1, \cdots, u_k) \to p(u_1)\cdots p(u_k)$ for every $k$ and every $k$ tuple $u_1, \cdots, u_k$. 
+\subsubsection{6.12 For $X_i$ iid, Relative Asymptotic Frequencies Are What They Should Be} Suppose that the $X_n$ are independent and assume the values $x_1, \cdots, x_l$ with probabilities $p(x_1), \cdots, p(x_l)$. For $u_1, \cdots, u_k$ a $k$ tuple of the $x_i$'s, let $N_n(u_1, \cdots, u_k)$ be the frequency of the $k$ tuple in the first $n + k - 1$ trials. That is, the number of $t$ such that $1 \leq t \leq n$ and $X_t = u_1, \cdots, X_{t+k-1} = u_k$. Show that with probability $1$, all asymptotic relative frequencies are what they should be - that is, with probability $1$, $n^{-1}N_n(u_1, \cdots, u_k) \to p(u_1)\cdots p(u_k)$ for every $k$ and every $k$ tuple $u_1, \cdots, u_k$.
+\\\\
+Define the random variable $Y_n$ as follows:
+$$
+	Y_n = \begin{cases}
+	1 & \text{ if $X_n = u_1, \cdots, X_{n + k - 1} = u_k$}\\
+	0 & \text{ otherwise}
+	\end{cases}
+$$
+Clearly, the $Y_n$ are $k$ dependent. We also note that:
+$$
+	E[Y_n] = P[X_n = u_1, \cdots, X_{n + k - 1} = u_k] = p(u_1) \cdots p(u_k)
+$$
+So, we have that $Y_n - p(u_1) \cdots p(u_k)$ are $0$ mean, $k$ dependent, uniformly bounded (by $1$) simple random variables. By the previous question, this implies:
+$$
+	P\left[\lim_{n \to \infty} n^{-1}\sum_{i=1}^n Y_i - p(u_1) \cdots p(u_k) = 0\right] = 1
+$$
+$$
+	\implies
+	P\left[\lim_{n \to \infty} n^{-1}\sum_{i=1}^n Y_i = p(u_1) \cdots p(u_k)\right] = 1
+$$
+$$
+	\implies
+	P\left[\lim_{n \to \infty} n^{-1} N_n(u_1, \cdots, u_k) = p(u_1) \cdots p(u_k)\right] = 1
+$$
+Thus, we have with probability 1, all asymptotic relative frequencies are what they should be. qed.
 
 \subsubsection{6.14 Shannon's Theorem} Suppose that $X_1, X_2, \cdots$ are independent, identically distributed random variables taking on the values $1, \cdots, r$ with positive probabilities $p_1, \cdots, p_r$. If $p_n(i_1, \cdots, i_n) = p_{i_1} \cdots p_{i_n}$ and $p_n(\omega) = p_n(X_1(\omega), \cdots, X_n(\omega))$, then $p_n(\omega)$ is the probability that a new sequence of $n$ trials would produce the particular sequence $X_1(\omega), \cdots, X_n(\omega)$ of outcomes that happens actually to have been observed. Show that:
 $$

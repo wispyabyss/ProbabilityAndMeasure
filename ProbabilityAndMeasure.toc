@@ -226,25 +226,25 @@
 \contentsline {subsubsection}{6.6 Cantelli's Theorem}{164}{section*.227}%
 \contentsline {subsubsection}{6.7 Convergence of $n^{-2}S_{n^2}$ implies convergence of $n^{-1}S_n$}{165}{section*.228}%
 \contentsline {subsubsection}{6.11 $m$ dependent, uniformly bounded, and mean $0$ $X_i$ convergence with probability $1$}{166}{section*.229}%
-\contentsline {subsubsection}{6.12}{167}{section*.230}%
+\contentsline {subsubsection}{6.12 For $X_i$ iid, Relative Asymptotic Frequencies Are What They Should Be}{167}{section*.230}%
 \contentsline {subsubsection}{6.14 Shannon's Theorem}{168}{section*.231}%
-\contentsline {section}{Section 7 - Gambling Systems}{170}{section*.232}%
-\contentsline {subsection}{Notes}{170}{section*.233}%
+\contentsline {section}{Section 7 - Gambling Systems}{171}{section*.232}%
+\contentsline {subsection}{Notes}{171}{section*.233}%
 \contentsline {subsubsection}{Gambler's Ruin}{171}{section*.234}%
-\contentsline {paragraph}{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}{172}{section*.235}%
-\contentsline {paragraph}{Probability of Ruin}{174}{section*.236}%
-\contentsline {subsubsection}{Selection Systems}{174}{section*.237}%
+\contentsline {paragraph}{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}{173}{section*.235}%
+\contentsline {paragraph}{Probability of Ruin}{175}{section*.236}%
+\contentsline {subsubsection}{Selection Systems}{175}{section*.237}%
 \contentsline {paragraph}{Selection Systems Framework}{175}{section*.238}%
-\contentsline {paragraph}{Theorem 7.1 - Selection Systems Do Nothing}{176}{section*.239}%
+\contentsline {paragraph}{Theorem 7.1 - Selection Systems Do Nothing}{177}{section*.239}%
 \contentsline {paragraph}{Proof of Theorem 7.1}{177}{section*.240}%
-\contentsline {subsubsection}{Gambling Policies}{178}{section*.241}%
-\contentsline {paragraph}{Gambling Policy Framework}{178}{section*.242}%
-\contentsline {paragraph}{Theorem 7.2: Expected Stopping Time Aware Fortune Value}{180}{section*.243}%
+\contentsline {subsubsection}{Gambling Policies}{179}{section*.241}%
+\contentsline {paragraph}{Gambling Policy Framework}{179}{section*.242}%
+\contentsline {paragraph}{Theorem 7.2: Expected Stopping Time Aware Fortune Value}{181}{section*.243}%
 \contentsline {subsubsection}{Bold Play}{181}{section*.244}%
-\contentsline {paragraph}{Bold Play}{181}{section*.245}%
-\contentsline {paragraph}{Policy Framework}{181}{section*.246}%
-\contentsline {paragraph}{Theorem 7.3 - Bold Play is Optimal in the subfair case}{182}{section*.247}%
-\contentsline {paragraph}{Proof:}{182}{section*.248}%
+\contentsline {paragraph}{Bold Play}{182}{section*.245}%
+\contentsline {paragraph}{Policy Framework}{182}{section*.246}%
+\contentsline {paragraph}{Theorem 7.3 - Bold Play is Optimal in the subfair case}{183}{section*.247}%
+\contentsline {paragraph}{Proof:}{183}{section*.248}%
 \contentsline {subsection}{Problems}{183}{section*.249}%
 \contentsline {subsubsection}{7.1 Comparing Gambler's Ruin Success with Different Fortunes}{183}{section*.250}%
-\contentsline {paragraph}{7.3}{184}{section*.251}%
+\contentsline {paragraph}{7.3}{185}{section*.251}%

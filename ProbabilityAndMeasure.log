@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  21 APR 2025 08:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  22 APR 2025 09:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2747,8 +2747,26 @@ Overfull \hbox (21.0027pt too wide) in paragraph at lines 4623--4625
 ML/cmm/m/it/12 X[]; X[]; X[]; [] $
  []
 
-[166] [167]
-Overfull \hbox (51.83986pt too wide) detected at line 4678
+[166]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4650.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 4650.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 4650.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4650--4653
+
+ []
+
+[167] [168]
+Overfull \hbox (51.83986pt too wide) detected at line 4703
 \OMS/cmsy/m/n/12 ^^@[] [] \OML/cmm/m/it/12 Y[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/
 12 ^^@[] [] []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it
 /12 X[]\OT1/cmr/m/n/12 )) = \OMS/cmsy/m/n/12 ^^@[] [] [] \OT1/cmr/m/n/12 = \OMS
@@ -2756,116 +2774,116 @@ Overfull \hbox (51.83986pt too wide) detected at line 4678
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4682--4688
+Underfull \hbox (badness 10000) in paragraph at lines 4707--4713
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4682--4688
-
- []
-
-[168]
-Underfull \hbox (badness 10000) in paragraph at lines 4717--4721
+Underfull \hbox (badness 10000) in paragraph at lines 4707--4713
 
  []
 
 [169]
-Underfull \hbox (badness 10000) in paragraph at lines 4723--4727
+Underfull \hbox (badness 10000) in paragraph at lines 4742--4746
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4730--4735
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4730--4735
+Underfull \hbox (badness 10000) in paragraph at lines 4748--4752
 
  []
 
 [170]
-Underfull \hbox (badness 10000) in paragraph at lines 4737--4740
+Underfull \hbox (badness 10000) in paragraph at lines 4755--4760
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4750--4754
+Underfull \hbox (badness 10000) in paragraph at lines 4755--4760
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4762--4765
 
  []
 
 [171]
-Underfull \hbox (badness 10000) in paragraph at lines 4785--4789
+Underfull \hbox (badness 10000) in paragraph at lines 4775--4779
 
  []
 
-[172] [173] [174] [175]
-Overfull \hbox (9.95403pt too wide) detected at line 4939
+[172]
+Underfull \hbox (badness 10000) in paragraph at lines 4810--4814
+
+ []
+
+[173] [174] [175] [176]
+Overfull \hbox (9.95403pt too wide) detected at line 4964
 \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 =
  [] \OML/cmm/m/it/12 P []
  []
 
-[176]
-Overfull \hbox (36.42145pt too wide) detected at line 4945
+
+Overfull \hbox (36.42145pt too wide) detected at line 4970
 \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 P [] p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x
 \OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/c
 mr/m/n/12 ) [] \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 p\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 P []
  []
 
-
-Overfull \hbox (9.2011pt too wide) detected at line 4974
+[177]
+Overfull \hbox (9.2011pt too wide) detected at line 4999
 \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT
 1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 P []
  []
 
-[177]
-Underfull \hbox (badness 10000) in paragraph at lines 4993--4997
+[178]
+Underfull \hbox (badness 10000) in paragraph at lines 5018--5022
 
  []
 
-[178] [179]
-Underfull \hbox (badness 10000) in paragraph at lines 5051--5055
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 5061--5065
+[179]
+Underfull \hbox (badness 10000) in paragraph at lines 5076--5080
 
  []
 
 [180]
-Underfull \hbox (badness 10000) in paragraph at lines 5073--5076
+Underfull \hbox (badness 10000) in paragraph at lines 5086--5090
 
  []
 
 [181]
-Underfull \hbox (badness 10000) in paragraph at lines 5123--5126
+Underfull \hbox (badness 10000) in paragraph at lines 5098--5101
 
  []
 
-[182] [183]
-Underfull \hbox (badness 10000) in paragraph at lines 5171--5174
+[182]
+Underfull \hbox (badness 10000) in paragraph at lines 5148--5151
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 5176--5180
+[183]
+Underfull \hbox (badness 10000) in paragraph at lines 5196--5199
 
  []
 
-[184] (./ProbabilityAndMeasure.aux)
+[184]
+Underfull \hbox (badness 10000) in paragraph at lines 5201--5205
+
+ []
+
+[185] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 1B60A7B399FCD511B877FD0DAF0A12B5;30186.
+(rerunfilecheck)             Checksum: 9F1DFB5AE03A69EBB95300DC96ECC437;30559.
  ) 
 Here is how much of TeX's memory you used:
  9949 strings out of 476191
  154745 string characters out of 5812072
- 484748 words of memory out of 5000000
+ 485121 words of memory out of 5000000
  30544 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (184 pages).
+Output written on ProbabilityAndMeasure.pdf (185 pages).
