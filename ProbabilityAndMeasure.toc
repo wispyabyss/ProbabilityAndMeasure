@@ -1,4 +1,4 @@
-\contentsline {section}{Forward}{4}{section*.2}%
+\contentsline {section}{Forward}{5}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{5}{section*.3}%
 \contentsline {subsection}{Notes}{5}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{5}{section*.5}%
@@ -247,4 +247,5 @@
 \contentsline {paragraph}{Proof:}{183}{section*.248}%
 \contentsline {subsection}{Problems}{183}{section*.249}%
 \contentsline {subsubsection}{7.1 Comparing Gambler's Ruin Success with Different Fortunes}{183}{section*.250}%
-\contentsline {paragraph}{7.3}{185}{section*.251}%
+\contentsline {subsubsection}{7.3 Collectives and Asymptotic Frequencies of Sequences}{185}{section*.251}%
+\contentsline {subsubsection}{7.7 Progress and Pinch Gambling Policy}{186}{section*.252}%

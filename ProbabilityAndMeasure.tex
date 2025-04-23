@@ -5193,7 +5193,7 @@ $$
 	(\rho^a - 1)^{-1} < (a(\rho - 1))^{-1}
 $$
 
-\paragraph{7.3} If $V_n$ is the set of $n$ long sequences of $\pm 1$'s (ie, contains $2^n$ sequences), the function $b_n$ (from our selection system) maps $V_{n-1}$ into $\{0,1\}$. A selection system is a sequence of such maps. Although there are uncountably many selection systems, how many have an \textit{effective} description in the sense of an algorithm or finite set of instructions by means of which a deputy (perhaps a machine) could operate the system for the gambler? An analysis of the question is a matter of mathematical logic, but one can see that there can be only countably many algorithms or finite sets of rules expressed in finite alphabets.
+\subsubsection{7.3 Collectives and Asymptotic Frequencies of Sequences} If $V_n$ is the set of $n$ long sequences of $\pm 1$'s (ie, contains $2^n$ sequences), the function $b_n$ (from our selection system) maps $V_{n-1}$ into $\{0,1\}$. A selection system is a sequence of such maps. Although there are uncountably many selection systems, how many have an \textit{effective} description in the sense of an algorithm or finite set of instructions by means of which a deputy (perhaps a machine) could operate the system for the gambler? An analysis of the question is a matter of mathematical logic, but one can see that there can be only countably many algorithms or finite sets of rules expressed in finite alphabets.
 \\\\
 Let $Y_1^\sigma, Y_2^\sigma, \cdots$ be the random variables of Theorem 7.1 for a particular system $\sigma$ (ie, $Y_i^\sigma$ is the result when the gambler makes his $ith$ bet under the selection system $\sigma$), and let $C_\sigma$ be the $\omega$ set where every $k$ tuple of $\pm 1$'s ($k$ arbitrary, just all possible tuples of size $k$) occurs in $Y_1^\sigma(\omega), Y_2^\sigma(\omega), \cdots$ with the right asymptotic frequency. This is in the sense of problem 6.12, ie: for the $k$ tuple $u_1, \cdots, u_k$, and $N_n(u_1, \cdots, u_k)$ the number of $t$ such that $1 \leq t \leq n$ and $Y_t^\sigma = u_1, \cdots, Y_{t+k-1}^\sigma = u_k$, we have:
 $$
@@ -5201,8 +5201,23 @@ $$
 $$
 where each $p(+1) = p$ and $p(-1) = q$. Let $C$ be the intersection of $C_\sigma$ over all effective selection systems $\sigma$ (ie, I believe this is just a countable intersection). Show that $C$ lies in $\fcal$ (the $\sigma$-field in the probability space $(\Omega,\fcal,P)$ on which the $X_n$ are defined) and that $P(C) = 1$. A sequence $(X_1(\omega), X_2(\omega), \cdots)$ for $\omega$ in $C$ is called a \textit{collective}: a subsequence chosen by any of the effective rules $\sigma$ contains all $k$ tuples in the correct proportions.
 \\\\
-I think, this problem might require us to do problem 6.12 first. 
+I think, this problem might require us to do problem 6.12 first. Once 6.12 is done, this is trivial. In 6.12, we proved exactly that the set $C_\sigma$ consisting of $\omega$ such that each $k$ tuple occurs with the right relative frequency is both within $\fcal$, ie $C_\sigma \in \fcal$, being a limit of $\fcal$ measurable random variables, and $P[C_\sigma] = 1$. We have defined:
+$$
+	C = \bigcap_{\sigma \in \Sigma} C_\sigma
+$$
+Given the assumption of the problem that $\Sigma$ is countable, as the \textit{effective} description of algorithms in the real world are limited by finite alphabets/length, we have that $C \in \fcal$, being a countable intersection of $\fcal$ sets. We also note that a countable intersection of probability 1 sets is probability 1, and so $P(C) = 1$ as well. qed.
+\\\\
+Mainly, what this gives us is, that a sequence $(X_1(\omega), X_2(\omega), \cdots)$ for $\omega \in C$ is a \textit{collective} and occurs with probability one, and with probability one a subsequence chosen by any of the effective rules $\sigma$ contains all $k$ tuples in the correct proportions.
 
+\subsubsection{7.7 Progress and Pinch Gambling Policy} In ``progress and pinch," the wager, initially some integer, is increased by $1$ after a loss and decreased by $1$ after a win, the stopping rule being to quit if the next bet is $0$. Show that play is certain to terminate if and only if $p \geq \frac{1}{2}$. Show that $F_\tau = F_0 + \frac{1}{2}W_1^2 + \frac{1}{2}(\tau - 1)$. Infinite capital is required.
+\\\\
+First note, that each $W_n$ is a SRV. $W_n = g_n(F_0, X_1, \cdots, X_{n-1})$, and only takes on integer values between $0$ and $W_1 + n$. Similarly, $F_n$ is a SRV. We have that play is certain to terminate if and only if $P[\tau < \infty] = 1$. We want to show that this is true if and only if $p \geq \frac{1}{2}$. Note, a way we can think about this is similar to the initial section. We have infinite capital - and we keep on playing until the number of wins is larger than the number of losses, plus $W_1$. The moment this happens, $W_{n + 1} = 0$ and the stopping rule tells us to quit at time $n$.
+\\\\
+So, we want to know under what conditions on $p$ we have:
+$$
+	\text{$\#$ wins} = \text{$\#$ losses} + W_1
+$$
+With probability $1$. Intuitively, this will only be the case if $p \geq \frac{1}{2}$. Note, this follows rigorously from our gambling ruin framework as well. This can be be rephrased in terms of winning bets exceeding losing bets.
 
 \end{document}
 
