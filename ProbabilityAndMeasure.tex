@@ -5217,7 +5217,63 @@ So, we want to know under what conditions on $p$ we have:
 $$
 	\text{$\#$ wins} = \text{$\#$ losses} + W_1
 $$
-With probability $1$. Intuitively, this will only be the case if $p \geq \frac{1}{2}$. Note, this follows rigorously from our gambling ruin framework as well. This can be be rephrased in terms of winning bets exceeding losing bets.
+With probability $1$. Intuitively, this will only be the case if $p \geq \frac{1}{2}$ - ie, the drift is either towards more wins or completely random. Note, this follows rigorously from our gambling ruin framework as well. This can be be rephrased in terms of winning bets exceeding losing bets. We let $S_n$ be the sum of $X_i$:
+$$
+	S_n = \sum_{i=1}^n X_i
+$$
+We note that $\text{$\#$ wins} = \text{$\#$ losses} + W_1$ is equivalent to the condition that at some point, $S_n \geq W_1$. This is because again, $S_n \geq W_1$ implies that at the $nth$ trial, we have won $W_1$ times more than we have lost. In our gambling ruin framework, we proved:
+$$
+	P\left[\sup_n S_n \geq W_1\right] = \begin{cases}
+	1 & \text{ if $p \geq q$}\\
+	(p/q)^b & \text{if $p < q$}
+	\end{cases}
+$$
+So, in total, the above analysis is:
+$$
+	P\left[\tau < \infty\right] = 1 \Leftrightarrow
+	P\left[\text{$\#$ wins} = \text{$\#$ losses} + W_1\right] = 1 \Leftrightarrow
+	P\left[\sup_n S_n \geq W_1\right] = 1 \Leftrightarrow
+	p \geq 1/2
+$$
+Given that, we now want to show that $F_\tau = F_0 + \frac{1}{2}W_1^2 + \frac{1}{2}(\tau - 1)$ in the case of play terminating. Note that by the above, we can see that our wager at time $k$ is:
+$$
+	W_1 - S_{k-1}
+$$
+That much is clear. And so, we have that:
+$$
+	F_\tau = F_0 + \sum_{k=1}^{\tau - 1} (W_1 - S_{k-1})X_k
+	= F_0 + \sum_{k=1}^{\tau - 1} W_1X_k - S_{k-1}X_k
+$$
+$$
+	= F_0 + W_1S_{\tau - 1} - \sum_{k=1}^{\tau - 1} S_{k-1}X_k
+$$
+We now note an interesting identity. We have that:
+$$
+	\sum_{k=1}^y S_{k-1}X_k = \frac{1}{2}(S_y^2 - y)
+$$
+Why? Note that:
+$$
+	\frac{1}{2}(S_y^2 - y) = \frac{1}{2}\left[\sum_{k=1}^y X_k^2 + 2 \sum_{i < j} X_iX_j - y\right] =
+	\sum_{1 \leq i < j \leq y} X_iX_j
+$$
+Now, we also note that we have:
+$$
+	\sum_{k=1}^y S_{k-1}X_k = \sum_{1 \leq i < j \leq y} X_iX_j
+$$
+This can be noted by laying out the $S_k$ values in an array, and looking at how each of the $X_i$ are added up. Or, more rigorously, we can simplify to find the above:
+$$
+	\sum_{k=1}^y S_{k-1}X_k = \sum_{j=1}^y \left[\sum_{i=1}^{j-1} X_i\right]X_j = \sum_{1 \leq i < j \leq y} X_iX_j
+$$
+And so, in conclusion, we find:
+$$
+	F_\tau = F_0 + W_1S_{\tau - 1} - \frac{1}{2}(S_{\tau - 1}^2 - (\tau - 1)) =
+	F_0 + \frac{1}{2}(\tau - 1) + W_1S_{\tau - 1} - \frac{1}{2}S_{\tau - 1}^2
+$$
+Now, we just note that it is clear $S_\tau = W_1$, and so the above simplifies to:
+$$
+	F_\tau = F_0 + \frac{1}{2}W_1^2 + \frac{1}{2}(\tau - 1)
+$$
+And so, we would like $\tau$ to be as large as possible, actually. qed.
 
 \end{document}
 
