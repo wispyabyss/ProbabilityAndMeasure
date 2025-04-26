@@ -5275,7 +5275,7 @@ $$
 $$
 And so, we would like $\tau$ to be as large as possible, actually. qed.
 
-\subsubsection{7.8} Note - this is a bit tricky to understand. The idea is - the gambler in front of him has his list of numbers, and he uses that list of numbers to make bets on each of the $n$ iid trials, with positive probability $p$ and negative probability $q = 1 - p$. Just before the $nth$ trial, the gambler has before him a pattern $x_1, \cdots, x_k$ - note that $k$ varies with $n$. He bets $x_1 + x_k$, or $x_1$ in the case $k = 1$. If he loses, at the next stage he uses the pattern $x_1, \cdots, x_k, x_1 + x_k$ (or $x_1,x_1$ in case $k = 1$). If he wins, at the next stage he uses the pattern $x_2, \cdots, x_{k-1}$, unless the pattern is empty, in which case he quits. Intuitively, we only get the $x_1$ case above if the initial pattern is just $x_1$. 
+\subsubsection{7.8 Pattern Martingale Betting} Note - this is a bit tricky to understand. The idea is - the gambler in front of him has his list of numbers, and he uses that list of numbers to make bets on each of the $n$ iid trials, with positive probability $p$ and negative probability $q = 1 - p$. Just before the $nth$ trial, the gambler has before him a pattern $x_1, \cdots, x_k$ - note that $k$ varies with $n$. He bets $x_1 + x_k$, or $x_1$ in the case $k = 1$. If he loses, at the next stage he uses the pattern $x_1, \cdots, x_k, x_1 + x_k$ (or $x_1,x_1$ in case $k = 1$). If he wins, at the next stage he uses the pattern $x_2, \cdots, x_{k-1}$, unless the pattern is empty, in which case he quits. Intuitively, we only get the $x_1$ case above if the initial pattern is just $x_1$. 
 \\\\
 Show that play is certain to terminate if $p > 1/3$ and that the ultimate gain is the sum of the numbers in the initial pattern. Infinite capital is again required.
 \\\\
@@ -5290,6 +5290,23 @@ $$
 	L_n = L_{n - 1} - \left(3X_n + 1\right) / 2
 $$
 And it is clear that $L_n$ describes the pattern after the $nth$ trial. And so, $\tau$ is the smallest $n$ such that $L_n \leq 0$ (edge case, when $L_{n - 1} = 1$, we should subtract only $1$ in this case. However, subtracting $2$ is fine when we consider that we look for $L_n \leq 0$, not $L_n = 0$). We note that $\frac{1}{n}\sum_{n=1}^\infty \left(3X_n + 1\right)/2 > 0$ with probability $1$ if $p > 1/3$. And so, with probability $1$, we have that the subtractions go to negative infinity, and there exists $L_n < 0$ with probability $1$ if $p > 1/3$. So, we have that play is certain to terminate if $p > 1/3$. qed.
+
+\subsubsection{7.9 Stock Option Stopping Time} Suppose that $W_k = 1$, so that $F_k = F_0 + S_k$. Suppose that $p \geq q$ and $\tau$ is a stopping time such that $1 \leq \tau \leq n$ with probability $1$. Show that $E[F_\tau] \leq E[F_n]$, with equality in case $p = q$. Interpret this result in terms of a stock option that must be exercised by time $n$, where $F_0 + S_k$ represents the price of the stock at time $k$.
+\\\\
+Note, even though we have that the $F_k$ and $F_\tau$ are uniformly bounded (by $F_0 + n$), we can't make use of Theorem 7.2, as that only makes use of stopping time aware fortunes, which $F_n$ is not. However, we note that:
+$$
+	E[F_n - F_\tau] = E\left[\sum_{k=1}^n X_k \1{\tau < k}\right] = \sum_{k=1}^n E[X_k] P\left[\tau < k\right]
+$$
+Where the first step notes that when $\tau < k$, say $k - 1$, $F_\tau$ only consists of the bets made up to $X_{k - 1}$, and then the remaining $X_k$ are not part of $F_\tau$. This difference is what is included in $F_n$. The second step notes that $[\tau(F_0, \omega) = k] \in \fcal_k$, and so independence allows us to break out the multiplication of the indicator. Note that $E[X_k] = p - q$, and so the above simplifies to:
+$$
+	= \left(p - q\right) \sum_{k=1}^n P\left[\tau < k\right] = p - q
+$$
+When $p \geq q$, we have $E[F_\tau] \leq E[F_n]$. When $p = q$, we have equality. qed.
+\\\\
+We want to interpret this result in terms of a stock option that must be exercised by time $n$, where $F_0 + S_k$ is the price of the stock at time $k$. We have some strike price $V$. Ultimately, we want to exercise the option when $F_0 + S_k \geq V$, as otherwise, we should just buy the stock at the current price and save the option for later. If $p \geq q$, it is always better to wait until the end, as the expected value of the stock price keeps rising, making the strike price more valuable.
+
+\section{Section 8 - Markov Chains}
+\subsection{Notes}
 
 \end{document}
 
