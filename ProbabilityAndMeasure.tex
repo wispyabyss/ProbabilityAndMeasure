@@ -5307,6 +5307,68 @@ We want to interpret this result in terms of a stock option that must be exercis
 
 \section{Section 8 - Markov Chains}
 \subsection{Notes}
+\paragraph{Markov Chain Setup} Let $S$ be a finite or countable set. Suppose that to each pair $(i,j)$ in $S$ there is assigned a nonnegative number $p_{ij}$ and that these numbers satisfy the constraint:
+$$
+	\sum_{j \in S} p_{ij} = 1 \quad\quad\quad i \in S
+$$
+Let $X_0, X_1, X_2, \cdots$ be a sequence of random variables whose ranges are contained in $S$. The sequence is a \textit{Markov Chain} or \textit{Markov Process} if:
+$$
+	P[X_{n + 1} = j | X_0 = i_0, \cdots, X_n = i_n] =
+	P[X_{n + 1} = j | X_n = i_n] = p_{i_n j}
+$$
+For every sequence $i_0, \cdots, i_n$ in $S$ for which $P[X_0 = i_0, \cdots, X_n = i_n] > 0$ (note, otherwise, conditional probability is not defined). The set $S$ is the \textit{state space} and the $p_{ij}$ are the \textit{transition probabilities}. Part of the defining condition is that:
+$$
+	P[X_{n + 1} = j | X_n = i] = p_{ij}
+$$
+Does not vary with $n$. The \textit{initial probabilities} are:
+$$
+	\alpha_i = P[X_0 = i]
+$$
+The $\alpha_i$ are nonnegative and add up to 1, but the setup places no further restriction on them. Later, we will prove that there exists an underlying probability space $(\Omega, \fcal, P)$. The $p_{ij}$ form a \textit{transition matrix} $P = [p_{ij}]$ of the process. A \textit{stochastic matrix} is one whose entries are nonnegative and satisfy the $\sum_{j \in S} p_{ij} = 1$ condition - ie, that the values along one row sum up to 1. The transition matrix has this property.
+
+\paragraph{Markov Chain States} Recall, $S$ can be countably infinite. And so, the Markov Chain can consist of functions $X_n$ on $(\Omega, \fcal, P)$ that have \textit{infinite range}, and hence will not be simple random variables. This will not cause an issue, as we will not examine the expected values of these $X_n$. All that is required is that for each $i \in S$, the set $[\omega : X_n(\omega) = i] \in \fcal$ and thus has a probability.
+\\\\
+We also have that the $X_n$ do not have to assume real values. As an example, there is the random walk on the integer lattice of a $k$ dimensional space - each $X_n$ takes a value in $\R^k$. Note, this is still countable. But again, like the note above, the values of the $X_n$ will play no role - we just need that $[\omega : X_n(\omega) = i] \in \fcal$ for $i \in S$. Do note: there \textit{will} be expected values $E[f(X_n)]$ for real functions $f$ on $S$ with finite range, but then $f(X_n(\omega))$ will be a simple random variable as defined previously.
+
+\paragraph{High Order Transitions} First, recall the chain rule for conditional probabilities:
+$$
+	P[A \cap B \cap C] = P[A] P[B | A] P[C | A \cap B]
+$$
+And so on. This is just by fraction cancellation. Thus, we have:
+$$
+	P[X_0 = i_0, X_1 = i_1, X_2 = i_2] =
+	P[X_0 = i_0] P[X_1 = i_1 | X_0 = i_0] P[X_2 = i_2 | X_0 = i_0, X_1 = i_1]
+$$
+$$
+	= \alpha_{i_0} p_{i_0, i_1} p_{i_1, i_2}
+$$
+This can be extended to an arbitrary length finite sequence:
+$$
+	P[X_t = i_t, 0 \leq t \leq m] = a_{i_0} p_{i_0, i_1} \cdots p_{i_{m-1},i_m}
+$$
+For any sequences $i_0, i_1, \cdots, i_m$ of states. Further, we can find:
+$$
+	P[X_{m+t} = j_t, 1 \leq t \leq n | X_s = i_s, 0 \leq s \leq m] =
+	p_{i_m,j_1} p_{j_1,j_2} \cdots p_{j_{n-1},j_n}
+$$
+Note, this is easily found again by describing as the conditional probability ratio, making use of our previous result, and applying cancellations. Adding out the intermediate states, we find that:
+$$
+	p_{ij}^{(n)} = P[X_{m + n} = j | X_m = i] =
+	\sum_{k_1, \cdots, k_{n-1}} p_{ik_1}p_{k_1k_2} \cdots p_{k_{n-1}j}
+$$
+This is the \textit{nth order transition probability}, and clearly comes from separating out the probabilities across disjoint unions, and making use of our previous results. Note, it is also clear that $p_{ij}^{(n)}$ is the $(i,j)$ entry of $P^n$, the $nth$ power of the transition matrix $P$. If $S$ is infinite, $P$ is a matrix with infinitely many rows and columns. However, as the terms in $P$ are nonnegative, there are no convergence problems. It is natural to put:
+$$
+	p_{ij}^{(0)} = \delta_{ij}
+$$
+Then, $P^0$ is the identity $I$, as it should be. It is also clear that:
+$$
+	p_{ij}^{(m + n)} = \sum_v p_{iv}^{(m)}p_{vj}^{(n)}
+$$
+Via $P^mP^n$, and that we also have:
+$$
+	\sum_j p_{ij}^{(n)} = 1
+$$
+As we can replace $p_{ij}^{(n)}$ by its expanded term above, and note that if we are at state $i$, it will be in some state $j$ in $n$ steps with probability $1$.
 
 \end{document}
 
