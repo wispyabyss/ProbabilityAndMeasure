@@ -6,8 +6,8 @@
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{6}{section*.7}%
 \contentsline {paragraph}{Lemma - Chebyshev's Inequality}{7}{section*.8}%
 \contentsline {subsubsection}{The Strong Law of Large Numbers}{8}{section*.9}%
-\contentsline {paragraph}{Theorem 1.2}{8}{section*.10}%
-\contentsline {paragraph}{Theorem 1.3 - Lebesgue Measure Starting Point}{9}{section*.11}%
+\contentsline {paragraph}{Theorem 1.2}{9}{section*.10}%
+\contentsline {paragraph}{Theorem 1.3 - Lebesgue Measure Starting Point}{10}{section*.11}%
 \contentsline {subsubsection}{The Measure Theory of Diophantine Approximation}{11}{section*.12}%
 \contentsline {paragraph}{Theorem 1.4}{11}{section*.13}%
 \contentsline {paragraph}{Theorem 1.5}{12}{section*.14}%
@@ -17,48 +17,48 @@
 \contentsline {subsubsection}{1.2 Normal Numbers and Complements are Dense in $(0,1]$}{14}{section*.18}%
 \contentsline {subsubsection}{1.3 Trifling Set Properties}{14}{section*.19}%
 \contentsline {subsubsection}{1.4 Trifling Sets In Base $r$}{15}{section*.20}%
-\contentsline {subsubsection}{1.5 Cantor Set Is Trifling, Uncountable, and Perfect}{18}{section*.21}%
-\contentsline {subsubsection}{1.6 Alternate $S_n$ Integral Value Proof}{19}{section*.22}%
+\contentsline {subsubsection}{1.5 Cantor Set Is Trifling, Uncountable, and Perfect}{19}{section*.21}%
+\contentsline {subsubsection}{1.6 Alternate $S_n$ Integral Value Proof}{20}{section*.22}%
 \contentsline {subsubsection}{1.7 Vieta's Formula}{21}{section*.23}%
 \contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{23}{section*.24}%
 \contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{24}{section*.25}%
 \contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{25}{section*.26}%
-\contentsline {subsubsection}{1.11 Diophantine Approximation Properties}{26}{section*.27}%
+\contentsline {subsubsection}{1.11 Diophantine Approximation Properties}{27}{section*.27}%
 \contentsline {section}{Section 2 - Probability Measures}{28}{section*.28}%
 \contentsline {subsection}{Notes}{28}{section*.29}%
 \contentsline {paragraph}{Spaces}{28}{section*.30}%
-\contentsline {paragraph}{Assigning Probabilities}{28}{section*.31}%
+\contentsline {paragraph}{Assigning Probabilities}{29}{section*.31}%
 \contentsline {paragraph}{Classes of Sets}{29}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{29}{section*.33}%
-\contentsline {paragraph}{Examples}{29}{section*.34}%
+\contentsline {paragraph}{Examples}{30}{section*.34}%
 \contentsline {paragraph}{Definition - Generated Sigma Field}{30}{section*.35}%
 \contentsline {paragraph}{Example - Borel Sets}{30}{section*.36}%
-\contentsline {paragraph}{Probability Measures}{30}{section*.37}%
-\contentsline {paragraph}{Probability Space}{30}{section*.38}%
+\contentsline {paragraph}{Probability Measures}{31}{section*.37}%
+\contentsline {paragraph}{Probability Space}{31}{section*.38}%
 \contentsline {paragraph}{Discrete Probability Space}{31}{section*.39}%
 \contentsline {paragraph}{Massed Discrete Probability Space}{31}{section*.40}%
 \contentsline {paragraph}{Lebesgue Measure on the Unit Interval}{32}{section*.41}%
-\contentsline {paragraph}{Sequence Space}{32}{section*.42}%
+\contentsline {paragraph}{Sequence Space}{33}{section*.42}%
 \contentsline {paragraph}{Definition - Coordinate Functions}{33}{section*.43}%
 \contentsline {paragraph}{Definition: Cylinder of Rank $n$}{33}{section*.44}%
-\contentsline {paragraph}{Definition: Probability Measure on the Field of Cylinders}{33}{section*.45}%
+\contentsline {paragraph}{Definition: Probability Measure on the Field of Cylinders}{34}{section*.45}%
 \contentsline {paragraph}{Theorem 2.3}{34}{section*.46}%
 \contentsline {paragraph}{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty}{34}{section*.47}%
 \contentsline {paragraph}{Proof of Lemma}{34}{section*.48}%
 \contentsline {paragraph}{Extended Sequence Measure}{35}{section*.49}%
-\contentsline {subsection}{Problems}{35}{section*.50}%
-\contentsline {subsubsection}{2.1 Prove Set Theory Results Using Indicators}{35}{section*.51}%
-\contentsline {subsubsection}{2.2 Union and Intersection Equality Property}{36}{section*.52}%
+\contentsline {subsection}{Problems}{36}{section*.50}%
+\contentsline {subsubsection}{2.1 Prove Set Theory Results Using Indicators}{36}{section*.51}%
+\contentsline {subsubsection}{2.2 Union and Intersection Equality Property}{37}{section*.52}%
 \contentsline {subsubsection}{2.3 Equivalent and Non Equivalent Field Definitions}{37}{section*.53}%
 \contentsline {subsubsection}{2.4 Unions of increasing Fields are Fields, but not true for $\sigma $ fields}{37}{section*.54}%
 \contentsline {subsubsection}{2.5 Generated Field and Explicit Definition}{37}{section*.55}%
-\contentsline {subsubsection}{2.6 Comparing Fields and $\sigma $ fields}{37}{section*.56}%
+\contentsline {subsubsection}{2.6 Comparing Fields and $\sigma $ fields}{38}{section*.56}%
 \contentsline {subsubsection}{2.7 Extending a field/$\sigma $ field by $\{H\}$}{38}{section*.57}%
 \contentsline {subsubsection}{2.8 $\sigma $ algebra for class where $A^c$ is countable union of class elements}{38}{section*.58}%
-\contentsline {subsubsection}{2.9 Equivalent $\sigma $ algebra definition}{38}{section*.59}%
+\contentsline {subsubsection}{2.9 Equivalent $\sigma $ algebra definition}{39}{section*.59}%
 \contentsline {subsubsection}{2.10 Classes Generating The Discrete Field are Large}{39}{section*.60}%
 \contentsline {subsubsection}{2.11 Countably Generated Fields}{40}{section*.61}%
-\contentsline {subsubsection}{2.12 Cardinality of Fields and $\sigma $ Fields}{41}{section*.62}%
+\contentsline {subsubsection}{2.12 Cardinality of Fields and $\sigma $ Fields}{42}{section*.62}%
 \contentsline {subsubsection}{2.13 Probability Measure on Finite and CoFinite Sets}{43}{section*.63}%
 \contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{44}{section*.64}%
 \contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{45}{section*.65}%
@@ -253,6 +253,8 @@
 \contentsline {subsubsection}{7.9 Stock Option Stopping Time}{189}{section*.254}%
 \contentsline {section}{Section 8 - Markov Chains}{189}{section*.255}%
 \contentsline {subsection}{Notes}{189}{section*.256}%
-\contentsline {paragraph}{Markov Chain Setup}{189}{section*.257}%
+\contentsline {subsubsection}{Markov Chain Setup}{189}{section*.257}%
 \contentsline {paragraph}{Markov Chain States}{190}{section*.258}%
-\contentsline {paragraph}{High Order Transitions}{191}{section*.259}%
+\contentsline {subsubsection}{High Order Transitions}{191}{section*.259}%
+\contentsline {subsubsection}{An Existence Theorem}{192}{section*.260}%
+\contentsline {paragraph}{Theorem 8.1}{192}{section*.261}%

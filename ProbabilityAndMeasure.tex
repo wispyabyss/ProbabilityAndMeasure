@@ -5307,7 +5307,7 @@ We want to interpret this result in terms of a stock option that must be exercis
 
 \section{Section 8 - Markov Chains}
 \subsection{Notes}
-\paragraph{Markov Chain Setup} Let $S$ be a finite or countable set. Suppose that to each pair $(i,j)$ in $S$ there is assigned a nonnegative number $p_{ij}$ and that these numbers satisfy the constraint:
+\subsubsection{Markov Chain Setup} Let $S$ be a finite or countable set. Suppose that to each pair $(i,j)$ in $S$ there is assigned a nonnegative number $p_{ij}$ and that these numbers satisfy the constraint:
 $$
 	\sum_{j \in S} p_{ij} = 1 \quad\quad\quad i \in S
 $$
@@ -5330,7 +5330,7 @@ The $\alpha_i$ are nonnegative and add up to 1, but the setup places no further 
 \\\\
 We also have that the $X_n$ do not have to assume real values. As an example, there is the random walk on the integer lattice of a $k$ dimensional space - each $X_n$ takes a value in $\R^k$. Note, this is still countable. But again, like the note above, the values of the $X_n$ will play no role - we just need that $[\omega : X_n(\omega) = i] \in \fcal$ for $i \in S$. Do note: there \textit{will} be expected values $E[f(X_n)]$ for real functions $f$ on $S$ with finite range, but then $f(X_n(\omega))$ will be a simple random variable as defined previously.
 
-\paragraph{High Order Transitions} First, recall the chain rule for conditional probabilities:
+\subsubsection{High Order Transitions} First, recall the chain rule for conditional probabilities:
 $$
 	P[A \cap B \cap C] = P[A] P[B | A] P[C | A \cap B]
 $$
@@ -5369,6 +5369,56 @@ $$
 	\sum_j p_{ij}^{(n)} = 1
 $$
 As we can replace $p_{ij}^{(n)}$ by its expanded term above, and note that if we are at state $i$, it will be in some state $j$ in $n$ steps with probability $1$.
+
+\subsubsection{An Existence Theorem}
+\paragraph{Theorem 8.1} Suppose that $P = [p_{ij}]$ is a stochastic matrix and that $\alpha_i$ are nonnegative numbers satisfying $\sum_{i \in S} \alpha_i = 1$. There exists on some $(\Omega, \fcal, P)$ a Markov Chain $X_0, X_1, X_2, \cdots$ with initial probabilities $\alpha_i$ and transition probabilities $p_{ij}$.
+\\\\
+\textbf{Proof:} This is similar to Theorem 5.3, which we proved the existence of independent sequences of random variables for a sequence of finite support measures on the set of all subsets of $\R$. There, the space $(\Omega, \fcal, P)$ was $((0,1], \bcal, \lambda)$. The central part of the argument was decomposing intervals into subintervals of a specific length.
+\\\\
+Note. If $\delta_1 + \delta_2 + \cdots = b - a$, and $\delta_i \geq 0$, then $I_i = (b - \sum_{j \leq i} \delta_j, b - \sum_{j < i} \delta_j]$ decomposes $(a,b]$ into intervals of length $\delta_i$ for $i = 1, 2, \cdots$. This will be used repeatedly in the proofs - we will be decomposing intervals $(a,b]$ into subintervals of length $p_i(a,b]$, where $p_i$ adds to one. This construction directly corresponds with the $\delta_i$ construction.
+\\\\
+\textbf{1. Initial Probability Intervals} Suppose our state space is $S = \{1, 2, \cdots\}$. Really, this is only important to recognize that our stochastic matrix is countable, and helps us with our subscript indices. First, decompose $(0,1]$ into a countable partition $I_1^{(0)}, I_2^{(0)}, \cdots$ subintervals of length (and thus probability via $P = \lambda$) $P(I_i^{(0)}) = \alpha_i$. 
+\\\\
+\textbf{2. Transition Probability Intervals} Next, decompose each $I_i^{(0)}$ into a countable partition $I_{ij_1}^{1}, I_{ij_2}^{(1)}, \cdots$ subintervals of length $P(I_{ij}^{(1)}) = \alpha_ip_{ij}$. Continuing inductively gives a sequence of partitions $\{I_{i_0,\cdots,i_n}^{(n)} : i_0, \cdots, i_n \in S\}$ where each refines the preceding, and:
+$$
+	P\left(I_{i_0,\cdots,i_n}^{(n)}\right) = \alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}
+$$
+Now, we define our random variables. We have $X_n(\omega) = i$ if $\omega \in \bigcup_{i_0, \cdots, i_{n-1}} I_{i_0, \cdots, i_{n-1}, i}^{(n)}$. This is just a simple function sum. It should be clear that:
+$$
+	[X_0 = i_0, \cdots, X_n = i_n] = I_{i_0, \cdots, i_n}^{(n)}
+$$
+The LHS is a finite intersection of unions of intervals, where each previous union limits what intervals we are actually looking at. Thus, it is clear that:
+$$
+	P\left[X_0 = i_0, \cdots, X_n = i_n\right] = P\left[I_{i_0, \cdots, i_n}^{(n)}\right] =
+	\alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}
+$$
+It should thus be clear that we have:
+$$
+	P\left[X_0 = i\right] = \alpha_i
+$$
+Which was one of our Markov Chain conditions. We also have:
+$$
+	P\left[X_{n+1} = j | X_0 = i_0, \cdots, X_n = i_n\right] = 
+	\frac{P\left[I_{i_0, \cdots, i_n,j}^{(n+1)}\right]}{P\left[I_{i_0, \cdots, i_n}^{(n)}\right]} =
+	\frac{\alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n} p_{i_nj}}{\alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}} =
+	p_{i_nj}
+$$
+Which is another one of our Markov Chain conditions. We also need that this equals $P[X_{n+1} = j | X_n = i_n]$, which we find via:
+$$
+	= \frac{P\left[X_{n+1} = j, X_n = i_n\right]}{P\left[X_n = i_n\right]} =
+	\frac
+	{\sum_{i_0, \cdots, i_{n-1}} \alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}p_{i_nj}}
+	{\sum_{i_0, \cdots, i_{n-1}} \alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}} 
+$$
+$$
+	=
+	p_{i_nj}
+	\frac
+	{\sum_{i_0, \cdots, i_{n-1}} \alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}}
+	{\sum_{i_0, \cdots, i_{n-1}} \alpha_{i_0}p_{i_0i_1} \cdots p_{i_{n-1}i_n}} =
+	p_{i_nj}
+$$
+Where the only tricky part is that the first numerator probability extends over the union of all disjoint intervals of the form $I_{i_0, \cdots, i_{n-1}, i_n, j}$ with the fixed $i_n$ and $j$. This completes the construction - as we have all the probabilities are correct, and $X_n = i$ is measurable. $X_i$ is still not a simple random variable. For other countable spaces $S$ - let $g$ be a one-to-one mapping between $\{1, 2, \cdots\}$ and $S$. Replace the $X_n$ as already constructed with $g(X_n)$. Easy enough. And, it is clear that the argument works for $S$ finite. qed.
 
 \end{document}
 
