@@ -5510,6 +5510,81 @@ $$
 	f_{ij} & \text{ if $f_{jj} = 1$}
 	\end{cases}
 $$
+Note, just to clear up the conditioning. We \textit{directly} have that:
+$$
+	P_i\left[X_n = j \text{ at least $k$ times}\right] =
+	P\left[X_n = j \text{ at least $k$ times} | X_0 = i\right]
+$$
+$$
+	=
+	\frac{P\left[X_n = j \text{ at least $k$ times}, X_0 = i\right]}{P[X_0 = i]}
+$$
+Note that:
+$$
+	\left\{X_n = j \text{ at least $1$ times}, X_0 = i\right\} \supseteq 
+	\left\{X_n = j \text{ at least $2$ times}, X_0 = i\right\} \supseteq \cdots
+$$
+And so, we can make use of monotone convergence theorem to find that:
+$$
+	\lim_{k \to \infty} P\left[X_n = j \text{ at least $k$ times}, X_0 = i\right] =
+	P\left[\bigcap_{k = 1}^\infty X_n = j \text{ at least $k$ times}, X_0 = i\right]
+$$
+Note that that $\omega$ inside of that intersection are also inside of $X_n = j \io$, and so we find:
+$$
+	\lim_{k \to \infty} f_{ij}f_{jj}^{k - 1} =
+	\frac{P\left[X_n = j \;\io, X_0 = i\right]}{P[X_0 = i]} = P_i\left[X_n = j \;\io\right]
+$$
+So, we do see that all the standard theorems worked under $P_i$. Note now, we don't actually have to perform these long derivations over the event $X_0 = i$, as we do have that $P_i$ is a probability measure. Ie, we have that $(\Omega, \fcal, P_i)$ is a probability space given that $(\Omega, \fcal, P_i)$ is a probability space. And so, we can apply the normal theorems to all sets that appear within our $P_i$ expressions. And so, if we take $i = j$, then we find:
+$$
+	P_i\left[X_n = i \;\io\right] =
+	\begin{cases}
+		0 & \text{ if $f_{ii} < 1$}\\
+		1 & \text{ if $f_{ii} = 1$}
+	\end{cases}
+$$
+Thus, transience is equivalent to not returning to $i$ infinitely often, whereas persistence is equivalent to returning to $i$ infinitely often. These statements might have been intuitive, but the above argument proved it rigorously. We now give an expanded equivalent definition.
+
+\paragraph{Theorem 8.2 Transience and Persistence Criteria}
+\begin{enumerate}
+	\item Transience of $i$ is equivalent to $P_i\left[X_n = i \;\io\right] = 0$ and to $\sum_n p_{ii}^{(n)} < \infty$
+	\item Persistence of $i$ is equivalent to $P_i\left[X_n = i \;\io\right] = 1$ and to $\sum_n p_{ii}^{(n)} = \infty$
+\end{enumerate}
+Note, the infinitely often statement has already been proven, we just need to add the sum criteria.
+\\\\
+\textbf{Proof} By the first Borel-Cantelli lemma, $\sum_n p_{ii}^{(n)} < \infty$ implies that:
+$$
+	P_i\left[X_n = i \;\io\right] = 0
+$$
+For one, this needs to be broken down a bit. We do note that conditioning on a set of nonzero probability $(X_0 = i)$ does yield another probability distribution. However, this seems a bit confusing. We recall, we have:
+$$
+	p_{ii}^{(n)} = P\left[X_{m+n} = i|X_m = i\right]
+$$
+Note, that we can take $m = 0$, and so:
+$$
+	p_{ii}^{(n)} = P_i\left[X_n = i\right]
+$$
+And as $P_i$ is a probability measure on $\fcal$, we indeed have that if the sum of the above events converges, we have that:
+$$
+	P_i\left[X_n = i \;\io\right] = 0
+$$
+By our previous statement, that is equivalent to transience of $i$. And so, if we number the three statements in the first line as 1, 2, 3, and the three in the second line 4, 5, 6, we so far have:
+$$
+	2 \implies 1, 3 \implies 2
+$$
+If we prove $1 \implies 3$, then we have the first three conditions are equivalent. Note, it will also prove the final three conditions are equivalent, as we have $\not 1 = 4, \not 2 = 5, \not 3 = 6$. And so, as $1, 2, 3$ are equivalent, we will also have $\not 1, \not 2, \not 3$ are equivalent, which means the second line of the theorem is true as well. So now, we just try and prove that transience of $i$, ie $f_{ii} < 1$, implies $\sum_n p_{ii}^{(n)} < \infty$. Note that:
+$$
+	p_{ij}^{(n)} = P_i\left[X_n = j\right] =
+	\sum_{s = 0}^{n-1} P_i\left[X_1 \neq j, \cdots, X_{n - s - 1} \neq j, X_{n - s} = j, X_n = j\right]
+$$
+This is known as a \textit{first passage} argument. We are analyzing $p_{ij}^{(n)}$ as \textit{equivalent} to entering $j$ for the first time at some time step before $n$, and then entering $j$ at time $n$ as well. Note that this is just breaking down a disjoint union. However, its use comes from giving us a recurrent term. We note the above equals:
+$$
+	= \sum_{s = 0}^{n-1} \frac{P\left[X_1 \neq j, \cdots, X_{n - s - 1} \neq j, X_{n - s} = j, X_n = j\right]}
+	{P\left[X_0 = i\right]}
+$$
+$$
+	= \sum_{s = 0}^{n-1} P_i\left[X_1 \neq j, \cdots, X_{n - s - 1} \neq j, X_{n - s} = j\right]P_j\left[X_n = j\right]
+$$
+
 
 \end{document}
 

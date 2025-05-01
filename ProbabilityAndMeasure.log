@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  30 APR 2025 08:46
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  1 MAY 2025 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3010,7 +3010,22 @@ Overfull \hbox (15.67352pt too wide) detected at line 5491
 12 = [] \OML/cmm/m/it/12 P[] []
  []
 
-[195] (./ProbabilityAndMeasure.aux)
+
+Overfull \hbox (0.7251pt too wide) detected at line 5526
+[] \OMS/cmsy/m/n/12 ^^S [] ^^S [] 
+ []
+
+
+Overfull \hbox (29.88644pt too wide) detected at line 5531
+[] \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P []
+ []
+
+[195]
+Underfull \hbox (badness 10000) in paragraph at lines 5552--5555
+
+ []
+
+[196] [197] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: FB456C978123995BEAAF978931B3F87E;32582.
  ) 
@@ -3023,4 +3038,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (195 pages).
+Output written on ProbabilityAndMeasure.pdf (197 pages).

@@ -259,3 +259,4 @@
 \contentsline {subsubsection}{An Existence Theorem}{192}{section*.260}%
 \contentsline {paragraph}{Theorem 8.1}{192}{section*.261}%
 \contentsline {subsubsection}{Transience and Persistence}{194}{section*.262}%
+\contentsline {paragraph}{Theorem 8.2 Transience and Persistence Criteria}{196}{section*.263}%
