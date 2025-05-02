@@ -5569,9 +5569,9 @@ $$
 $$
 By our previous statement, that is equivalent to transience of $i$. And so, if we number the three statements in the first line as 1, 2, 3, and the three in the second line 4, 5, 6, we so far have:
 $$
-	2 \implies 1, 3 \implies 2
+	3 \implies 2 \quad\quad 2 \implies 1
 $$
-If we prove $1 \implies 3$, then we have the first three conditions are equivalent. Note, it will also prove the final three conditions are equivalent, as we have $\not 1 = 4, \not 2 = 5, \not 3 = 6$. And so, as $1, 2, 3$ are equivalent, we will also have $\not 1, \not 2, \not 3$ are equivalent, which means the second line of the theorem is true as well. So now, we just try and prove that transience of $i$, ie $f_{ii} < 1$, implies $\sum_n p_{ii}^{(n)} < \infty$. Note that:
+If we prove $1 \implies 3$, then we have the first three conditions are equivalent via a circle. Note, it will also prove the final three conditions are equivalent, as we have $\not 1 = 4, \not 2 = 5, \not 3 = 6$. And so, as $1, 2, 3$ are equivalent, we will also have $\not 1, \not 2, \not 3$ are equivalent, which means the second line of the theorem is true as well (note, we already have $5$ and $4$ are equivalent like we have $1$ and $2$ where equivalent, but we don't need them). So now, we just try and prove that transience of $i$, ie $f_{ii} < 1$, implies $\sum_n p_{ii}^{(n)} < \infty$. Note that:
 $$
 	p_{ij}^{(n)} = P_i\left[X_n = j\right] =
 	\sum_{s = 0}^{n-1} P_i\left[X_1 \neq j, \cdots, X_{n - s - 1} \neq j, X_{n - s} = j, X_n = j\right]
@@ -5582,9 +5582,54 @@ $$
 	{P\left[X_0 = i\right]}
 $$
 $$
-	= \sum_{s = 0}^{n-1} P_i\left[X_1 \neq j, \cdots, X_{n - s - 1} \neq j, X_{n - s} = j\right]P_j\left[X_n = j\right]
+	= \sum_{s = 0}^{n-1} 
+	P_i\left[X_1 \neq j, \cdots, X_{n - s - 1} \neq j, X_{n - s} = j\right]
+	P_j\left[X_s = j\right]
 $$
+Note, this follows \textit{directly} from our earlier statement that:
+$$
+	P_i\left[(X_1, \cdots, X_m) \in I, (X_{m+1}, \cdots, X_{m + n}) \in J\right]
+$$
+$$
+	=
+	P_i\left[(X_1, \cdots, X_m) \in I\right]
+	P_j\left[(X_{m+1}, \cdots, X_{m + n}) \in J\right]
+$$
+Given all sequences in $I$ end with $j$. Above, we can let $I$ be the sequences that for the first $n - s - 1$ states does not equal $j$, and then equals $j$ at the final state. We can let $J$ be the sequences such that $X_{n - s + 1}, \cdots, X_{n - 1}$ are anything, and $X_n = j$. The above sum simplifies to the following, directly via definitions:
+$$
+	p_{ij}^{(n)} = \sum_{s=0}^{n-1} f_{ij}^{(n-s)}p_{jj}^{(s)}
+$$
+Therefore:
+$$
+	\sum_{t=1}^n p_{ii}^{(t)} =
+	\sum_{t=1}^n \sum_{s=0}^{t-1} f_{ii}^{(t-s)}p_{ii}^{(s)} =
+	\sum_{s=0}^{n-1} p_{ii}^{(s)} \sum_{t=s+1}^n f_{ii}^{(t-s)}
+$$
+This, this is just a reshuffling. We note that the $p_{ii}^{(s)}$ terms only appear for $s = 0, \cdots, n - 1$. We distribute out the multiplications for each $p_{ii}^{(s)}$ term. Only if $t \geq s + 1$, is there a non zero $f_{ii}^{(t-s)}p_{ii}^{(s)}$ term. Finally, note that $f_{ii}$ is the sum of all $f_{ii}^{(n)}$ terms, and so we can easily bound the above by:
+$$
+	\leq \sum_{s=0}^{n-1} p_{ii}^{(s)} f_{ii} \leq
+	\sum_{s=0}^n p_{ii}^{(s)} f_{ii}
+$$
+We can use this inequality to find a relation between $f_{ii}$ and $\sum_n p_{ii}^{(n)}$. Note, as $p_{ii}^{(0)} = 1$, we have that:
+$$
+	\sum_{t=1}^n p_{ii}^{(t)} - f_{ii} \sum_{t=1}^n p_{ii}^{(t)} \leq f_{ii} \implies
+	(1 - f_{ii})\sum_{t=1}^n p_{ii}^{(t)} \leq f_{ii}
+$$
+If $f_{ii} < 1$, the division is well defined, and we have:
+$$
+	\sum_{t=1}^n p_{ii}^{(t)} \leq \frac{f_{ii}}{1 - f_{ii}}
+$$
+And as the partial sums are bounded, so is the infinite sum. Thus, we have proved that all the statements are equivalent. qed.
 
+\paragraph{Example 8.6 - Polya's Theorem} The statement is that for the symmetric $k$ dimensional random walk (over the $k$ dimensional integer lattice), all states are persistent if $k = 1$ or $k = 2$, or are transient for $k \geq 3$. This first notes that, by symmetry, it is clear that $p_{ii}^{(n)}$, the return in $n$ states to the state $i$, is the same for all $i$. And so, we denote this probability as $a_n^k$ to denote the dependence on the dimension $k$. Also, clearly we have that $a_{2n + 1}^k = 0$, as we cannot return in an odd number of steps. Now, we just go about proving the sums or infinite or convergent.  We note that:
+$$
+	a_{2n}^1 = {2n \choose n} \frac{1}{2^{2n}}
+$$
+Each choice of left or right is the same probability (of $1/2$), and we need $n$ of the $2n$ steps to be left, and the other $n$ right. By Stirling's formula, we have that $a_{2n}^1 \sim (pn)^{-1/2}$. This sum converges, and the state is transient.
+\\\\
+For $k = 2$, it is the same argument. Find the equivalent combinatorial form for a choice of $4$ directions, use Stirling's formula, and show that the sum is infinite. It is the same for $k \geq 3$, but note that the combinatorial shit is harder, and more in depth. And the sum converges. I don't think these details are important for now, and so I skip them.
+
+\paragraph{Definition: Irreducible} A Markov chain is called \textit{irreducible} if $p_{ij}^{(n)} > 0$ for some $n$, for each $i$ and $j$. Essentially, it is possible to get from any one state to another. 
 
 \end{document}
 
