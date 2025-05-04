@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  2 MAY 2025 12:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  3 MAY 2025 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3030,7 +3030,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 5627--5631
 
  []
 
-[198] [199] (./ProbabilityAndMeasure.aux)
+[198]
+Overfull \hbox (3.79572pt too wide) in paragraph at lines 5638--5639
+[]\T1/lmr/m/n/12 All states are per-sis-tent, $\OML/cmm/m/it/12 P[] [] \OT1/cmr
+/m/n/12 = 1$ \T1/lmr/m/n/12 for all $\OML/cmm/m/it/12 i$\T1/lmr/m/n/12 , and $[
+][] \OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 =
+ []
+
+[199] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: FB456C978123995BEAAF978931B3F87E;32582.
  ) 

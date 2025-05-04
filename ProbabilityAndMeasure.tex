@@ -5563,7 +5563,7 @@ Note, that we can take $m = 0$, and so:
 $$
 	p_{ii}^{(n)} = P_i\left[X_n = i\right]
 $$
-And as $P_i$ is a probability measure on $\fcal$, we indeed have that if the sum of the above events converges, we have that:
+And as $P_i$ is a probability measure on $\fcal$, we indeed have that if the sum of the probability of the above events converges, we have that:
 $$
 	P_i\left[X_n = i \;\io\right] = 0
 $$
@@ -5629,7 +5629,25 @@ Each choice of left or right is the same probability (of $1/2$), and we need $n$
 \\\\
 For $k = 2$, it is the same argument. Find the equivalent combinatorial form for a choice of $4$ directions, use Stirling's formula, and show that the sum is infinite. It is the same for $k \geq 3$, but note that the combinatorial shit is harder, and more in depth. And the sum converges. I don't think these details are important for now, and so I skip them.
 
-\paragraph{Definition: Irreducible} A Markov chain is called \textit{irreducible} if $p_{ij}^{(n)} > 0$ for some $n$, for each $i$ and $j$. Essentially, it is possible to get from any one state to another. 
+\paragraph{Definition: Irreducible} A Markov chain is called \textit{irreducible} if $p_{ij}^{(n)} > 0$ for some $n$, for each $i$ and $j$. Essentially, it is possible to get from any one state to another.
+
+\paragraph{Theorem 8.3 - Irreducible Markov Chains are persistent or transient} If the Markov chain is irreducible, then one of the following two alternatives holds:
+\begin{enumerate}
+	\item All states are transient, $P_i\left[\bigcup_j [X_n = j \; \io]\right] = 0$ for all $i$, and $\sum_n p_{ij}^{(n)} < \infty$ for all $i$ and $j$.
+	
+	\item All states are persistent, $P_i\left[\bigcap_j [X_n = j \; \io]\right] = 1$ for all $i$, and $\sum_n p_{ij}^{(n)} = \infty$ for all $i$ and $j$. 
+\end{enumerate}
+
+
+\paragraph{Example: Irreducible Finite Markov Chains are Persistent} Recall that we have $\sum_j p_{ij}^{(n)} = 1$. We note that if $\sum_n p_{ij}^{(n)} < \infty$ for all $i$ and $j$, then we must have:
+$$
+	\sum_j \sum_{n=1}^\infty p_{ij}^{(n)} < \infty
+$$
+Note, we can conclude this is finite, because $j$ is just a finite sum of finite values. As the series converges, we can switch the order:
+$$
+	= \sum_{n=1}^\infty \sum_j p_{ij}^{(n)} = \sum_{n=1}^\infty 1 = \infty
+$$
+Which gives us a contradiction. So, we must have that for some pair $i$ and $j$, $\sum_n p_{ij}^{(n)} = \infty$. This implies we are in case 2, and so a finite irreducible Markov chain must be persistent. qed.
 
 \end{document}
 
