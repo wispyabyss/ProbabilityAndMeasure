@@ -5421,8 +5421,8 @@ $$
 Where the only tricky part is that the first numerator probability extends over the union of all disjoint intervals of the form $I_{i_0, \cdots, i_{n-1}, i_n, j}$ with the fixed $i_n$ and $j$. This completes the construction - as we have all the probabilities are correct, and $X_n = i$ is measurable. $X_i$ is still not a simple random variable. For other countable spaces $S$ - let $g$ be a one-to-one mapping between $\{1, 2, \cdots\}$ and $S$. Replace the $X_n$ as already constructed with $g(X_n)$. Easy enough. And, it is clear that the argument works for $S$ finite. qed.
 \\\\
 And so, although the Markov Chain \textit{is} the sequence $X_0, X_1, \cdots$ - we often just speak of the chain as if it were matrix $P$, with initial probabilities $\alpha_i$. The above theorem just justifies our use of probability theory apparatus - such as the Borel-Cantelli lemmas, other convergence lemmas, or inequalities.
-\\\\
-From now on, we will fix a chain $X_0, X_1, \cdots$ satisfying $\alpha_i > 0$ for all $i$. Denote by $P_i$ probabilities conditional on $[X_0 = i]$ - ie, we have $P_i(A) = P[A_i | X_0 = i]$. thus, we have:
+
+\paragraph{Cylinder Sequences Split Property} From now on, we will fix a chain $X_0, X_1, \cdots$ satisfying $\alpha_i > 0$ for all $i$. Denote by $P_i$ probabilities conditional on $[X_0 = i]$ - ie, we have $P_i(A) = P[A_i | X_0 = i]$. thus, we have:
 $$
 	P_{i_0}\left[X_t = i_t \,,\, 1 \leq t \leq n\right] =
 	\frac{P\left[X_t = i_t \,,\, 0 \leq t \leq n\right]}{P[X_0 = i_{0}]} =
@@ -5638,6 +5638,56 @@ For $k = 2$, it is the same argument. Find the equivalent combinatorial form for
 	\item All states are persistent, $P_i\left[\bigcap_j [X_n = j \; \io]\right] = 1$ for all $i$, and $\sum_n p_{ij}^{(n)} = \infty$ for all $i$ and $j$. 
 \end{enumerate}
 
+\paragraph{Proof:} For each $i$ and $j$ there exists $r$ and $s$ such that $p_{ij}^{(r)} > 0$ and $p_{ji}^{(s)} > 0$ - this is irreducibility. Note:
+$$
+	p_{ii}^{(r + s + n)} \geq p_{ij}^{(r)}p_{jj}^{(n)}p_{ji}^{(s)}
+$$
+Intuitively, this is because not all paths from $i$ to $i$ have to go from $i$ to $j$ and then $j$ to $i$. Rigorously, this comes from making use of our cylinder sequences property two times, restricting the cylinders on indexes $n + s$ and then $s$. From $p_{ij}^{(r)}p_{ji}^{(s)}$ we note that $\sum_n p_{ii}^{(n)} < \infty$ implies $\sum_n p_{jj}^{(n)} < \infty$: and so, if one state is transient, they all are. Thus, if one state is persistent, they all must be as well. This gives the split between the two options.
+\\\\
+If all the states are transient, recall that we proved earlier:
+$$
+	P_i\left[X_n = j \; \io\right] = 0
+$$
+And so, it is clear that for all $i$:
+$$
+	P_i\left[\bigcup_j [X_n = j \; \io]\right] = 0
+$$
+Now note:
+$$
+	\sum_{n=1}^\infty p_{ij}^{(n)} = \sum_{n=1}^\infty \sum_{\nu = 1}^n f_{ij}^{(\nu)} p_{jj}^{(n - \nu)}
+$$
+This comes directly from our previous theorem. Rearranging the su gives us:
+$$
+	= \sum_{\nu = 1}^\infty f_{ij}^{(\nu)} \sum_{m = 0}^\infty p_{jj}^{(m)} \leq \sum_{m = 0}^\infty p_{jj}^{(m)}
+$$
+Noting that $f_{ij}^{(\nu)}$ represents probabilities of disjoint events. Thus, it follows that if $j$ is transient (which we have assumed is true for all states), then $\sum_{n=1}^\infty p_{ij}^{(n)}$ converges for all $i$. Thus, we have proved the properties of the first case, assuming all states are transient.
+\\\\
+Now, we assume that all the states in our irreducible chain are persistent. In this case, by Theorem 8.2, we have:
+$$
+	P_j\left[X_n = j \; \io\right] = 1
+$$
+And we have:
+$$
+	p_{ji}^{(m)} = P_j\left[[X_m = i] \cap [X_n = j \; \io]\right]
+$$
+As intersecting with a probability $1$ set does not reduce the probability. This is bounded by:
+$$
+	\leq \sum_{n > m} P_j\left[X_m = i, X_{m + 1} \neq j, \cdots, X_{n - 1} \neq j, X_n = j\right]
+$$
+As clearly, each $\omega$ in the first probability would appear in one of the sets in the disjoint union described above. By our cylinder sequence property, the above equals:
+$$
+	= \sum_{n > m} p_{ji}^{(m)}f_{ij}^{n - m} = p_{ji}^{(m)}f_{ij}
+$$
+Note - as there is an $m$ for which $p_{ji}^{(m)} > 0$, we must have that $f_{ij} = 1$, as $f_{ij}$ is between 0 and 1, as it represents a probability, and the above property can only be satisfied by $f_{ij} \geq 1$. Note, this property can only be concluded when we note all states are persistent. Again, by our earlier transience definition, we proved that:
+$$
+	P_i\left[X_n = j \; \io\right] = f_{ij} = 1
+$$
+Which allows us to conclude:
+$$
+	P_i\left[\bigcap_j [X_n = j \; \io]\right] = 1
+$$
+As the intersection of probability one sets is probability $1$. Further, if we have that $\sum_n p_{ij}^{(n)} < \infty$ for some $i$ and $j$, it would follow via the first Borel-Cantelli lemma that $P_i\left[X_n = j \; \io\right] = 0$, which again, cannot be the case. And so, we have proved all the statements in the second case defined by the Theorem. qed.
+
 
 \paragraph{Example: Irreducible Finite Markov Chains are Persistent} Recall that we have $\sum_j p_{ij}^{(n)} = 1$. We note that if $\sum_n p_{ij}^{(n)} < \infty$ for all $i$ and $j$, then we must have:
 $$
@@ -5647,7 +5697,7 @@ Note, we can conclude this is finite, because $j$ is just a finite sum of finite
 $$
 	= \sum_{n=1}^\infty \sum_j p_{ij}^{(n)} = \sum_{n=1}^\infty 1 = \infty
 $$
-Which gives us a contradiction. So, we must have that for some pair $i$ and $j$, $\sum_n p_{ij}^{(n)} = \infty$. This implies we are in case 2, and so a finite irreducible Markov chain must be persistent. qed.
+Which gives us a contradiction. So, we must have that for some pair $i$ and $j$, $\sum_n p_{ij}^{(n)} = \infty$. This implies we are in case 2, and so a finite irreducible Markov chain must always be persistent. qed.
 
 \end{document}
 

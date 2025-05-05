@@ -258,9 +258,11 @@
 \contentsline {subsubsection}{High Order Transitions}{191}{section*.259}%
 \contentsline {subsubsection}{An Existence Theorem}{192}{section*.260}%
 \contentsline {paragraph}{Theorem 8.1}{192}{section*.261}%
-\contentsline {subsubsection}{Transience and Persistence}{194}{section*.262}%
-\contentsline {paragraph}{Theorem 8.2 Transience and Persistence Criteria}{196}{section*.263}%
-\contentsline {paragraph}{Example 8.6 - Polya's Theorem}{198}{section*.264}%
-\contentsline {paragraph}{Definition: Irreducible}{199}{section*.265}%
-\contentsline {paragraph}{Theorem 8.3 - Irreducible Markov Chains are persistent or transient}{199}{section*.266}%
-\contentsline {paragraph}{Example: Irreducible Finite Markov Chains are Persistent}{199}{section*.267}%
+\contentsline {paragraph}{Cylinder Sequences Split Property}{193}{section*.262}%
+\contentsline {subsubsection}{Transience and Persistence}{194}{section*.263}%
+\contentsline {paragraph}{Theorem 8.2 Transience and Persistence Criteria}{196}{section*.264}%
+\contentsline {paragraph}{Example 8.6 - Polya's Theorem}{198}{section*.265}%
+\contentsline {paragraph}{Definition: Irreducible}{199}{section*.266}%
+\contentsline {paragraph}{Theorem 8.3 - Irreducible Markov Chains are persistent or transient}{199}{section*.267}%
+\contentsline {paragraph}{Proof:}{199}{section*.268}%
+\contentsline {paragraph}{Example: Irreducible Finite Markov Chains are Persistent}{201}{section*.269}%
