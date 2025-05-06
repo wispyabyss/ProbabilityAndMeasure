@@ -5699,6 +5699,26 @@ $$
 $$
 Which gives us a contradiction. So, we must have that for some pair $i$ and $j$, $\sum_n p_{ij}^{(n)} = \infty$. This implies we are in case 2, and so a finite irreducible Markov chain must always be persistent. qed.
 
+\paragraph{Example 8.8: Polya's Theorem} Note that we proved in a symmetric random walk, for dimensions 1 and 2 every state was persistent, and dimensions greater than or equal to 3, every state is transient. Given that the chain is irreducible, this matches with the above theorem. However, also note, the above theorem implies that no matter \textit{where} we start, in a dimension 1 or 2 symmetric random walk, we visit each state infinitely often. In dimensions 3 or more, we visit no state infinitely often, and so we must go to infinity.
+
+\paragraph{Example 8.9: Random Walk On the Line Properties} Note that, for the random walk on the line, we have that every state is persistent, and:
+$$
+	\sum_n p_{ij}^{(n)} = \infty
+$$
+However, also note that if $n$ and $j - i$ have the same parity:
+$$
+	p_{ij}^{(n)} = {n \choose \frac{n + j - i}{2}} \frac{1}{2^n} \quad\quad\quad |j - i| \leq n
+$$
+This is easy to note just by choosing paths which go to the right $j - i$ times more, and:
+$$
+	\frac{n + j - i}{2} - \left[n - \frac{n + j - i}{2}\right] = j - i
+$$
+This is maximal is $j = i$ or $j = i \pm 1$. By Stirling's formula, the maximal value is order $n^{-1/2}$. Therefore:
+$$
+	\lim_n p_{ij}^{(n)} \approx \lim_n n^{-1/2} = 0
+$$
+And so, even though the probabilities sum to infinity, they go to zero. So, think of something like $1/n$. This always holds in the transience case (that the limit is zero), but we see it can also hold in the persistent case.
+
 \end{document}
 
 
