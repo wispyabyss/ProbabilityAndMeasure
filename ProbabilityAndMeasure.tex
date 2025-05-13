@@ -5501,7 +5501,7 @@ $$
 $$
 	= f_{ij}f_{jj}^{k - 1}
 $$
-And so now, taking $k \to \infty$, and making use of monotone convergence theorem, we have:
+And so now, taking $k \to \infty$, and making use of continuity from below, we have:
 $$
 	P_i\left[X_n = j \;\io\right] =
 	\lim_{k \to \infty} f_{ij}f_{jj}^{k - 1} =
@@ -5656,7 +5656,7 @@ Now note:
 $$
 	\sum_{n=1}^\infty p_{ij}^{(n)} = \sum_{n=1}^\infty \sum_{\nu = 1}^n f_{ij}^{(\nu)} p_{jj}^{(n - \nu)}
 $$
-This comes directly from our previous theorem. Rearranging the su gives us:
+This comes directly from our previous theorem. Rearranging the sum gives us:
 $$
 	= \sum_{\nu = 1}^\infty f_{ij}^{(\nu)} \sum_{m = 0}^\infty p_{jj}^{(m)} \leq \sum_{m = 0}^\infty p_{jj}^{(m)}
 $$
@@ -5718,6 +5718,57 @@ $$
 	\lim_n p_{ij}^{(n)} \approx \lim_n n^{-1/2} = 0
 $$
 And so, even though the probabilities sum to infinity, they go to zero. So, think of something like $1/n$. This always holds in the transience case (that the limit is zero), but we see it can also hold in the persistent case.
+
+\subsubsection{Another Criterion for Persistence} Let $Q = [q_{ij}]$ be a matrix whose rows and columns are indexed by the elements of a finite or countable $U$. Suppose that it is \textit{substochastic} in the sense that $q_{ij} \geq 0$ and $\sum_j q_{ij} \leq 1$ - ie, the rows sum to less than $1$. Let $Q^n = [q_{ij}^{(n)}]$ be the $nth$ power, defined inductively as:
+$$
+	q_{ij}^{(n+1)} = \sum_\nu q_{i\nu}q_{\nu j}^{(n)} \quad\quad\quad
+	q_{ij}^{(0)} = \delta_{ij}
+$$
+Note, this just replicates matrix multiplication, but is also defined for infinite matrices. We also have that it converges, being a nonnegative sum bounded from above by $1$ (note inductively, each $q_{i\nu}$ sums to less than $1$ across $\nu$, and the multiplicative factor $q_{\nu j}^{(n)} < 1$). 
+\\\\
+Consider the row sums:
+$$
+	\sigma_i^{(n)} = \sum_j q_{ij}^{(n)}
+$$
+It follows that:
+$$
+	\sigma_i^{(n+1)} = \sum_j q_{ij}^{(n + 1)} =
+	\sum_j \sum_\nu q_{i\nu}q_{\nu j}^{(n)} =
+	\sum_\nu q_{i\nu} \sum_j q_{\nu j}^{(n)} =
+	\sum_\nu q_{i\nu} \sigma_\nu^{(n)} =
+	\sum_j q_{ij} \sigma_j^{(n)}
+$$
+Since $Q$ is substochastic and $\sigma_i^{(1)} < 1$, we can find another similar derivation to above (noting the equivalent nth power definition where the $n$ matrix is on the left):
+$$
+	\sigma_i^{(n+1)} = \sum_j \sum_\nu q_{i\nu}^{(n)}q_{\nu j} = 
+	\sum_\nu q_{i\nu}^{(n)} \sum_j q_{\nu j} =
+	\sum_\nu q_{i\nu}^{(n)} \sigma_\nu^{(1)} \leq \sigma_i^{(n)}
+$$
+Therefore, the monotone limits:
+$$
+	\sigma_i = \lim_n \sigma_i^{(n)} = \lim_n \sum_j q_{ij}^{(n)}
+$$
+exist (monotonically decreasing, bounded below by zero). We actually note that we can find the limit by the Weierstrass M-test - recall:
+$$
+	\sigma_i = \lim_n \sigma_i^{(n)} = \lim_n \sigma_i^{(n + 1)} =
+	\lim_n \sum_j q_{ij} \sigma_j^{(n)}
+$$
+For an individual term in the sum, we have:
+$$
+	\lim_n q_{ij} \sigma_j^{(n)} = q_{ij} \sigma_j
+$$
+Again, we have noted that all the limits exist, and everything is bounded. And so, by the Weierstrass M-test, we have:
+$$
+	\sigma_i = \sum_j q_{ij} \sigma_j
+$$
+Thus, the $\sigma_i$ are the solution to the system:
+$$
+	\begin{cases}
+	x_i = \sum_{j \in U} q_{ij} x_j & \text{ $i \in U$}\\
+	0 \leq x_i \leq 1 & \text{ $i \in U$}
+	\end{cases}
+$$
+
 
 \end{document}
 
