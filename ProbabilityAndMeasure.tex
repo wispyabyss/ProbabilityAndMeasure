@@ -5744,7 +5744,16 @@ $$
 	\sum_\nu q_{i\nu}^{(n)} \sum_j q_{\nu j} =
 	\sum_\nu q_{i\nu}^{(n)} \sigma_\nu^{(1)} \leq \sigma_i^{(n)}
 $$
-Therefore, the monotone limits:
+Equality can be seen by expanding out:
+$$
+	q_{ij}^{(n)} = \sum_{k_{n-1}} q_{ik_{n-1}}^{(n-1)} q_{k_{n-1}j} = \cdots
+	= \sum_{k_{n-1}} \cdots \sum_{k_1} q_{ik_1} q_{k_1k_2} \cdots q_{k_{n-2}k_{n-1}} q_{k_{n-1}j}
+$$
+$$
+	= \sum_{k_1} \cdots \sum_{k_{n-1}} q_{ik_1} q_{k_1k_2} \cdots q_{k_{n-2}k_{n-1}} q_{k_{n-1}j} =
+	\sum_{k_1} q_{ik_1} q_{k_1j}^{(n-1)}
+$$
+Where we can switch the order of the sums via convergence, and switching the sums signifies we are collecting from the right side first. Therefore, the monotone limits:
 $$
 	\sigma_i = \lim_n \sigma_i^{(n)} = \lim_n \sum_j q_{ij}^{(n)}
 $$
