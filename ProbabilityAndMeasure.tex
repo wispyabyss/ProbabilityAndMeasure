@@ -5770,14 +5770,65 @@ Again, we have noted that all the limits exist, and everything is bounded. And s
 $$
 	\sigma_i = \sum_j q_{ij} \sigma_j
 $$
-Thus, the $\sigma_i$ are the solution to the system:
+Thus, the $\sigma_i$ are a solution to the system:
 $$
 	\begin{cases}
 	x_i = \sum_{j \in U} q_{ij} x_j & \text{ $i \in U$}\\
 	0 \leq x_i \leq 1 & \text{ $i \in U$}
 	\end{cases}
 $$
+Now, we note something about all possible solutions to the system. We have that $x_i = \sum_j q_{ij} x_j \leq \sum_j q_{ij} = \sigma_i^{(1)}$, as the $x_j$ are between zero and 1. If we have that $x_i \leq \sigma_i^{(n)}$ for all $i$, this implies:
+$$
+	x_i \leq \sum_j q_{ij} \sigma_j^{(n)} = \sigma_i^{(n+1)}
+$$
+Given that we have $x_i \leq \sigma_i^{(1)}$, induction implies that $x_i \leq \sigma_i^{(n)}$ for all $n$. By the monotonicity of limits, we must have that $x_i \leq \sigma_i$. Thus, we have that $\sigma_i$ is the \textit{maximal} solution to the above system of equations. This gives us the following lemma:
 
+\paragraph{Lemma 1: Substochastic Matrix Row Sum Limits Criteria} For a substochastic matrix $Q$, the limits $\sigma_i = \lim_n \sigma_i^{(n)}$ are the \textit{maximal} solution of:
+$$
+	\begin{cases}
+	x_i = \sum_{j \in U} q_{ij} x_j & \text{ $i \in U$}\\
+	0 \leq x_i \leq 1 & \text{ $i \in U$}
+	\end{cases}
+$$
+Now suppose that $U$ is a subset of the state space $S$. The $p_{ij}$ for $i$ and $j$ in $U$ give a substochastic matrix $Q$. It is easy enough to visualize how we would pick out the rows and columns of $P$ to form $Q$. The row sums are:
+$$
+	\sigma_i^{(n)} = \sum_{j_1, \cdots, j_n \in U^n} p_{ij_1}p_{j_1j_2} \cdots p_{j_{n-1}j_n}
+$$
+Note: this is just by noting that:
+$$
+	q_{ij}^{(n)} = \sum_{j_1 \in U} \sum_{j_2 \in U} \cdots \sum_{j_{n-1} \in U} q_{ij_1}q_{j_1j_2} \cdots q_{j_{n-1}j}
+$$
+And noting that the row sum would also vary the $j$ across $U$. Note, by our cylinder sequence property, we can find that this is equal to the probability:
+$$
+	\sigma_i^{(n)} = P_i\left[X_t \in U, t \leq n\right]
+$$
+If we let $n \to \infty$, we have:
+$$
+	\sigma_i = P_i\left[X_t \in U, t = 1, 2, \cdots\right] \quad\quad\quad i \in U
+$$
+Note, the RHS comes from continuity from above. And so, $\sigma_i$ is the probability that the system remains forever in $U$, given that it starts at $i$. And so, the following theorem is an immediate consequence of the above lemma, and the discussion above:
+
+\paragraph{Theorem 8.4 Probability to Stay in a Subset Forever} For $U \subset S$ the probabilities (indexed by $i \in U$):
+$$
+	\sigma_i = P_i\left[X_t \in U, t = 1, 2, \cdots\right] \quad\quad\quad i \in U
+$$
+are the maximal solution of the system:
+$$
+	\begin{cases}
+	x_i = \sum_{j \in U} p_{ij} x_j & \text{ $i \in U$}\\
+	0 \leq x_i \leq 1 & \text{ $i \in U$}
+	\end{cases}
+$$
+Note - $x_i \geq 0$ is slightly redundant, as we have $x_i = 0$ is a solution, and we take a maximal solution. 
+
+\paragraph{Example 8.10} If we take the random walk, and let $U = \{0,1,2, \cdots\}$, we have the system of equations is:
+$$
+	\begin{cases}
+	x_i &= px_{i+1} + qx_{i-1}\\
+	x_0 &= px_1
+	\end{cases}
+$$
+Note: This is a \textit{difference equation}, which we can find solutions for.
 
 \end{document}
 
