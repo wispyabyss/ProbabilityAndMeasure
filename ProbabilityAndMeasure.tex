@@ -5829,6 +5829,46 @@ $$
 	\end{cases}
 $$
 Note: This is a \textit{difference equation}, which we can find solutions for.
+\\\\
+Now, we just consider the same setup, but with $U = S - \{i_0\}$ for an arbitrary state $i_0$:
+$$
+	\begin{cases}
+	x_i = \sum_{j \neq i_0} p_{ij}x_j & \text{ for $i \neq i_0$}\\
+	0 \leq x_i \leq 1 & \text{ for $i \neq i_0$}
+	\end{cases}
+$$
+We have that this system gives us another definition for transience. Again, note intuitively - the event that we stay in $U = S - \{i_0\}$ forever with nonzero probability must imply that $i_0$ is transient, as it means that starting from $i_0$, there is a non zero probability that we never come back to $i_0$.
+
+\paragraph{Theorem 8.5 Transience is Equivalent to Staying in a Subset Forever} An irreducible chain is transient if and only if:
+$$
+	\begin{cases}
+	x_i = \sum_{j \neq i_0} p_{ij}x_j & \text{ for $i \neq i_0$}\\
+	0 \leq x_i \leq 1 & \text{ for $i \neq i_0$}
+	\end{cases}
+$$
+Has a non trivial solution for some arbitrary $i_0 \in S$. Note, non trivial implies that there is a solution outside of $x_i = 0$, which always satisfies the equations.
+
+\paragraph{Proof of Theorem 8.5} The probabilities:
+$$
+	1 - f_{ii_0} = P_i\left[\left(\bigcup_{n = 1}^\infty X_n = i_0\right)^c\right] =
+	P_i\left[X_n \neq i_0, \; n \geq 1\right] \text{ for $i \neq i_0$}
+$$
+Are, by Theorem 8.4, the maximal solution to our equation. Ie, we have that maximal $\sigma_i = 1 - f_{ii_0}$. Therefore, we have a nontrivial solution for an arbitrary $i_0$ if and only if $f_{ii_0} < 1$ for some $i \neq i_0$. If the chain is persistent - Theorem 8.3 implies that for persistent, irreducible chains, we have that $f_{ii_0} = 1$, and so for persistent chains, it is impossible to have a nontrivial solution.
+\\\\
+So, all we need to show is that a transient irreducible chain has a nontrivial solution, and then we get our theorem. As a nontrivial solution implies not persistent, and a transient chain implies nontrivial. Suppose the chain is transient. We have:
+$$
+	f_{i_0i_0} = P_{i_0}\left[X_1 = i_0\right] +
+	\sum_{n=2}^\infty \sum_{i \neq i_0} P_{i_0}\left[X_1 = i, X_2 \neq i_0, \cdots, X_{n-1} \neq i_0, X_n = i_0\right]
+$$
+Where above, we use the $f_{i_0i_0}^{(n)}$ definition, and we decompose it based on the first step. By our cylinder sequence property, the above equals:
+$$
+	= p_{i_0i_0} + \sum_{n=2}^\infty \sum_{i \neq i_0} p_{i_0i} f_{ii_0}^{(n - 1)}
+	= p_{i_0i_0} + \sum_{i \neq i_0} p_{i_0i} \sum_{n=2}^\infty f_{ii_0}^{(n - 1)}
+	= p_{i_0i_0} + \sum_{i \neq i_0} p_{i_0i} f_{ii_0}
+$$
+Where we could switch the sums by convergence (increasing, bounded by 1). Since $f_{i_0i_0} < 1$, and $p_{i_0i_0} + \sum_{i \neq i_0} p_{i_0i} = 1$, it follows that $f_{ii_0} < 1$ for some $i \neq i_0$. Thus, we have a nontrivial solution. Thus, transience implies a nontrivial solution to our system of equations. qed.
+
+\paragraph{Example 8.11} Again, we can make use of difference equation solutions to find the $x_k$ solutions for a queuing model, one in which at evert step, one person leaves the line, and 0, 1, or 2 people join it. There is a non trivial solution if $t_0 < t_2$, ie the probability of zero customers joining the line is less than the probability of 2 customers joining the line. We can see intuitively, $t_0 < t_2$ implies that the line will grow unboundedly, and so every state must be transient.
 
 \end{document}
 

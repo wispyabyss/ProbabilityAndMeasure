@@ -272,3 +272,6 @@
 \contentsline {paragraph}{Lemma 1: Substochastic Matrix Row Sum Limits Criteria}{204}{section*.273}%
 \contentsline {paragraph}{Theorem 8.4 Probability to Stay in a Subset Forever}{205}{section*.274}%
 \contentsline {paragraph}{Example 8.10}{205}{section*.275}%
+\contentsline {paragraph}{Theorem 8.5 Transience is Equivalent to Staying in a Subset Forever}{205}{section*.276}%
+\contentsline {paragraph}{Proof of Theorem 8.5}{206}{section*.277}%
+\contentsline {paragraph}{Example 8.11}{206}{section*.278}%
