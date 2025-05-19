@@ -5870,6 +5870,51 @@ Where we could switch the sums by convergence (increasing, bounded by 1). Since 
 
 \paragraph{Example 8.11} Again, we can make use of difference equation solutions to find the $x_k$ solutions for a queuing model, one in which at evert step, one person leaves the line, and 0, 1, or 2 people join it. There is a non trivial solution if $t_0 < t_2$, ie the probability of zero customers joining the line is less than the probability of 2 customers joining the line. We can see intuitively, $t_0 < t_2$ implies that the line will grow unboundedly, and so every state must be transient.
 
+\subsubsection{Stationary Distributions} Suppose the chain has initial probabilities $\pi_i$ satisfying:
+$$
+	\sum_{i \in S} \pi_i p_{ij} = \pi_j \quad\quad j \in S
+$$
+By induction, we have that:
+$$
+	\sum_{i \in S} \pi_i p_{ij}^{(n)} =
+	\sum_{i \in S} \pi_i \sum_{k \in S} p_{ik}^{(n-1)}p_{kj} =
+	\sum_{k \in S} p_{kj} \sum_{i \in S} \pi_i p_{ik}^{(n-1)} =
+	\sum_{k \in S} \pi_k p_{kj} = \pi_j \quad\quad j \in S
+$$
+If $\pi_i$ is the probability that $X_0 = i$, then the left side above is the probability that $X_n = j$. Note, we have that:
+$$
+	P[X_n = j] = \sum_{i \in S} P[X_0 = i] P[X_n = j | X_0 = i] = \sum_{i \in S} \pi_i p_{ij}^{(n)}
+$$
+The above is the law of total probability for conditional expectation. Note we just remove the probability $0$ starting states $i$ from the summation (as $P[X_n = j]$ is the same on a probability 1 set), and reintroduce them in the sum with $\pi_i = 0$. And so, our starting condition thus implies that the probability of $[X_n = j]$ is the same for all $n$. A set of probabilities satisfying:
+$$
+	\sum_{i \in S} \pi_i p_{ij} = \pi_j \quad\quad j \in S
+$$
+Is thus called a \textit{stationary distribution}. The existence of such a distribution implies that the chain is very stable. I think, we might later prove that the limit of the chain will go towards this distribution.
+\\\\
+To discuss this, we need the notion of periodicity. The state $j$ has \textit{period} $t$ if $p_{jj}^{(n)} > 0$ implies that $t$ divides $n$, and if $t$ is the largest integer with this property. Ie, if $t$ doesn't divide $n$, we have that $p_{jj}^{(n)} = 0$. In other words, the period of $j$ is the greatest common divisor of the set of integers:
+$$
+	\left[n : \; n \geq 1, \; p_{jj}^{(n)} > 0\right]
+$$
+If the chain is irreducible, there are $r$ and $s$ for which $p_{ij}^{(r)}$ and $p_{ji}^{(s)}$ are positive, and so:
+$$
+	p_{ii}^{(r + s + n)} \geq p_{ij}^{(r)} p_{jj}^{(n)} p_{ji}^{(s)}
+$$
+Via or cylinder sequences property. Let $t_i$ and $t_j$ be the periods of $i$ and $j$. Taking $n = 0$ above implies that $t_i$ divides $r + s$. By the inequality, it follows that $p_{jj}^{(n)} > 0$ implies that $t_i$ divides $r + s + n$ - and hence, it must divide $n$ as well. Thus, $t_i$ divides each integer in the periodicity set for $j$, and so $t_i \leq t_j$. We can interchange and find $t_j \leq t_i$. Thus, for an irreducible chain, we have:
+$$
+	t_i = t_j
+$$
+For all states $i,j$, and we can thus talk about the \textit{period of the chain}. An irreducible chain is called \textit{aperiodic} if the period is $1$, ie each state has a period of $1$.
+
+\paragraph{Lemma 2} In an irreducible, aperiodic chain, for each $i$ and $j$, $p_{ij}^n > 0$ for all $n$ exceeding some $n_0(i,j)$.
+\\\\
+\textbf{Proof} As $p_jj^{(m+n)} \geq p_{jj}^{(m)}p_{jj}^{(n)}$, if $M$ is the set $\left[n : \; n \geq 1, \; p_{jj}^{(n)} > 0\right]$, then $m,n \in M$ implies $m + n \in M$. It is a fact of number theory that if a set of positive integers is closed under addition, and has a greatest common divisor of $1$, then it contains all integers exceeding some $n_1$. This isn't intuitive - because $1$ is not necessarily in the set, so we can't just add 1 continuously.
+\\\\
+Given $i$ and $j$, choose $r$ so that $p_{ij}^{(r)} > 0$. If $n > n_0  = n_1 + r$, then $p_{ij}^{(n)} \geq p_{ij}^{(r)}p_{jj}^{(n-r)} > 0$.
+\\\\
+Ie, for $i,j$, find the $n_1$ for $j$ that we know exists, and set $n_0 = n_1 + r$. qed.
+
+\paragraph{A21} Suppose that $M$ is a set of positive integers closed under addition and that $M$ has greatest common divisor $1$. Then $M$ contains all integers exceeding some $n_0$.
+
 \end{document}
 
 

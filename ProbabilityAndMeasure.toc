@@ -275,3 +275,6 @@
 \contentsline {paragraph}{Theorem 8.5 Transience is Equivalent to Staying in a Subset Forever}{205}{section*.276}%
 \contentsline {paragraph}{Proof of Theorem 8.5}{206}{section*.277}%
 \contentsline {paragraph}{Example 8.11}{206}{section*.278}%
+\contentsline {subsubsection}{Stationary Distributions}{207}{section*.279}%
+\contentsline {paragraph}{Lemma 2}{208}{section*.280}%
+\contentsline {paragraph}{A21}{208}{section*.281}%
