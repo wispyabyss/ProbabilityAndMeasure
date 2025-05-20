@@ -5913,7 +5913,31 @@ Given $i$ and $j$, choose $r$ so that $p_{ij}^{(r)} > 0$. If $n > n_0  = n_1 + r
 \\\\
 Ie, for $i,j$, find the $n_1$ for $j$ that we know exists, and set $n_0 = n_1 + r$. qed.
 
+\paragraph{Bezout's Identity} Let $a,b$ be integers with $gcd(a,b) = d$. Then there exist integers $x$ and $y$ such that $ax + by = d$. \textbf{Proof:} Let $S = \{ax + by | x,y \in \Z \text{ and } ax + by > 0\}$. Clearly, $S$ is nonempty, and has a minimum element $d = as + bt$. To prove that $d$ is the gcd of $a$ and $b$, we need $d$ is a divisor of both, and that for any other common divisor, $c \leq d$.
+\\\\
+We can write $a = dq + r$ for $0 \leq r < d$. We note that $r = a - qd = a - q(as + bt) = a(1-qs) - b(qt) \in S$. Thus, we must have $r = 0$. Thus, $d$ is a divisor of $a$, and similarly is a divisor of $b$.
+\\\\
+Now, let $c$ be any common divisor of $a$ and $b$. One has that:
+$$
+	d = as + bt = cus + cvt = c(us + vt)
+$$
+Thus, $c$ is a divisor of $d$. As $d > 0$, and $c > 0$ - this implies $c \leq d$. qed.
+
 \paragraph{A21} Suppose that $M$ is a set of positive integers closed under addition and that $M$ has greatest common divisor $1$. Then $M$ contains all integers exceeding some $n_0$.
+\\\\
+First, given $M$, define $M_1$ as the set of all integers $m, -m, m - m'$ such that $m,m' \in M$. $M_1$ is clearly closed under addition and subtraction (which stems from $M$ being closed under addition). Let $d$ be the \textit{smallest} positive element of $M_1$. If $n \in M_1$, write $n = qd + r$, where $r \leq 0 < d$ and $q$ is an integer. It is clear that there exists a unique pair $(q,r)$ that describes $n$. Note that $qd \in M_1$, as $M_1$ is closed under addition and subtraction. Thus, we have:
+$$
+	r = n - qd \in M_1
+$$
+As $M_1$ is closed under subtraction. Note that as $d$ is the \textit{smallest} positive integer in $M_1$, we must have that $r$ is equal to $0$, as $r$ is either $0$ or a positive integer between $0$ and $d$. Thus, each $n \in M_1$ can be written as $qd$, and $d$ divides all integers in $M_1$. Thus, $d$ divides all integers in $M$ - and since $M$ has greatest common divisor $1$, $d = 1$. Thus, $M_1$ consists of all the integers.
+\\\\
+Now, write $1 = m - m'$ for $m$ and $m'$ in $M$. Note, we do this for the case where $1$ is not in $M$ - as otherwise, the proof is clearly true. As for why we can find such an $m$ and $m'$ - first note that we have $x,x' \in M$ where $x \neq x'$, and $gcd(x,x') = 1$. By Bezout's identity, there exists $a$ and $b$ such that $ax - bx' = 1$. While $a \leq 0$ or $b \leq 0$, update using $a = a + x'$ and $b = b + x$. Note that:
+$$
+	(a + x')x - (b + x)x' = ax + x'x - bx' - xx' = ax - bx' = 1
+$$
+So yes, such an $m$ and $m'$ can be found in $M$, as we have $ax \in M$ and $bx' \in M$, when $a$ and $b$ are positive, given that $M$ is closed under addition.
+\\\\
+Take $n_0 = (m + m')^2$. 
 
 \end{document}
 

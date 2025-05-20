@@ -277,4 +277,5 @@
 \contentsline {paragraph}{Example 8.11}{206}{section*.278}%
 \contentsline {subsubsection}{Stationary Distributions}{207}{section*.279}%
 \contentsline {paragraph}{Lemma 2}{208}{section*.280}%
-\contentsline {paragraph}{A21}{208}{section*.281}%
+\contentsline {paragraph}{Bezout's Identity}{208}{section*.281}%
+\contentsline {paragraph}{A21}{209}{section*.282}%
