@@ -5907,7 +5907,7 @@ For all states $i,j$, and we can thus talk about the \textit{period of the chain
 
 \paragraph{Lemma 2} In an irreducible, aperiodic chain, for each $i$ and $j$, $p_{ij}^n > 0$ for all $n$ exceeding some $n_0(i,j)$.
 \\\\
-\textbf{Proof} As $p_jj^{(m+n)} \geq p_{jj}^{(m)}p_{jj}^{(n)}$, if $M$ is the set $\left[n : \; n \geq 1, \; p_{jj}^{(n)} > 0\right]$, then $m,n \in M$ implies $m + n \in M$. It is a fact of number theory that if a set of positive integers is closed under addition, and has a greatest common divisor of $1$, then it contains all integers exceeding some $n_1$. This isn't intuitive - because $1$ is not necessarily in the set, so we can't just add 1 continuously.
+\textbf{Proof} As $p_{jj}^{(m+n)} \geq p_{jj}^{(m)}p_{jj}^{(n)}$, if $M$ is the set $\left[n : \; n \geq 1, \; p_{jj}^{(n)} > 0\right]$, then $m,n \in M$ implies $m + n \in M$. It is a fact of number theory that if a set of positive integers is closed under addition, and has a greatest common divisor of $1$, then it contains all integers exceeding some $n_1$. This isn't intuitive - because $1$ is not necessarily in the set, so we can't just add 1 continuously.
 \\\\
 Given $i$ and $j$, choose $r$ so that $p_{ij}^{(r)} > 0$. If $n > n_0  = n_1 + r$, then $p_{ij}^{(n)} \geq p_{ij}^{(r)}p_{jj}^{(n-r)} > 0$.
 \\\\
@@ -5917,27 +5917,65 @@ Ie, for $i,j$, find the $n_1$ for $j$ that we know exists, and set $n_0 = n_1 + 
 \\\\
 We can write $a = dq + r$ for $0 \leq r < d$. We note that $r = a - qd = a - q(as + bt) = a(1-qs) - b(qt) \in S$. Thus, we must have $r = 0$. Thus, $d$ is a divisor of $a$, and similarly is a divisor of $b$.
 \\\\
-Now, let $c$ be any common divisor of $a$ and $b$. One has that:
+Now, let $c$ be any common divisor of $a$ and $b$. Ie, $a = cu$ and $b = cv$ for integers $u$ and $v$. One has that:
 $$
 	d = as + bt = cus + cvt = c(us + vt)
 $$
-Thus, $c$ is a divisor of $d$. As $d > 0$, and $c > 0$ - this implies $c \leq d$. qed.
+Thus, $c$ is a divisor of $d$. As $d > 0$ - we cannot have that $c > d$. Thus, $c \leq d$. qed.
 
 \paragraph{A21} Suppose that $M$ is a set of positive integers closed under addition and that $M$ has greatest common divisor $1$. Then $M$ contains all integers exceeding some $n_0$.
 \\\\
-First, given $M$, define $M_1$ as the set of all integers $m, -m, m - m'$ such that $m,m' \in M$. $M_1$ is clearly closed under addition and subtraction (which stems from $M$ being closed under addition). Let $d$ be the \textit{smallest} positive element of $M_1$. If $n \in M_1$, write $n = qd + r$, where $r \leq 0 < d$ and $q$ is an integer. It is clear that there exists a unique pair $(q,r)$ that describes $n$. Note that $qd \in M_1$, as $M_1$ is closed under addition and subtraction. Thus, we have:
-$$
-	r = n - qd \in M_1
-$$
-As $M_1$ is closed under subtraction. Note that as $d$ is the \textit{smallest} positive integer in $M_1$, we must have that $r$ is equal to $0$, as $r$ is either $0$ or a positive integer between $0$ and $d$. Thus, each $n \in M_1$ can be written as $qd$, and $d$ divides all integers in $M_1$. Thus, $d$ divides all integers in $M$ - and since $M$ has greatest common divisor $1$, $d = 1$. Thus, $M_1$ consists of all the integers.
-\\\\
-Now, write $1 = m - m'$ for $m$ and $m'$ in $M$. Note, we do this for the case where $1$ is not in $M$ - as otherwise, the proof is clearly true. As for why we can find such an $m$ and $m'$ - first note that we have $x,x' \in M$ where $x \neq x'$, and $gcd(x,x') = 1$. By Bezout's identity, there exists $a$ and $b$ such that $ax - bx' = 1$. While $a \leq 0$ or $b \leq 0$, update using $a = a + x'$ and $b = b + x$. Note that:
+Write $1 = m - m'$ for $m$ and $m'$ in $M$. Note, we do this for the case where $1$ is not in $M$ - as otherwise, the proof is clearly true. As for why we can find such an $m$ and $m'$ - first note that we have $x,x' \in M$ where $x \neq x'$, and $gcd(x,x') = 1$. By Bezout's identity, there exists $a$ and $b$ such that $ax - bx' = 1$. While either $a \leq 0$ or $b \leq 0$, update using $a = a + x'$ and $b = b + x$. Note that:
 $$
 	(a + x')x - (b + x)x' = ax + x'x - bx' - xx' = ax - bx' = 1
 $$
 So yes, such an $m$ and $m'$ can be found in $M$, as we have $ax \in M$ and $bx' \in M$, when $a$ and $b$ are positive, given that $M$ is closed under addition.
 \\\\
-Take $n_0 = (m + m')^2$. 
+Take $n_0 = (m + m')^2$. Given $n > n_0$, write:
+$$
+	n = q(m + m') + r \quad\quad\text{ where } 0 \leq r < m + m'
+$$
+From $n > n_0 \geq (r + 1)(m + m')$, it follows that:
+$$
+	q = \frac{n - r}{m + m'} > \frac{(r + 1)(m + m') - r}{m + m'} =
+	r + 1 - \frac{r}{m + m'} > r
+$$
+And so now, we will be able to express $n$ as a linear combination of $m$ and $m'$, which is in $M$, as $M$ is closed under addition. We have:
+$$
+	n = q(m + m') + r \cdot 1 =
+	q(m + m') + r(m - m') = (q + r)m + (q-r)m'
+$$
+And since $q + r \geq q - r > 0$, our coefficients are positive, and $n$ lies in $M$. Thus, for all $n > n_0$, we have that $n \in M$. qed.
+
+\paragraph{Theorem 8.6 Aperiodic Irreducible Chains Approach The Stationary Distribution} Suppose for an irreducible, aperiodic chain that there exists a stationary distribution - a solution to:
+$$
+	\sum_{i \in S} \pi_i p_{ij} = \pi_j
+$$
+Satisfying $\pi_i \geq 0$ and $\sum_i \pi_i = 1$ (note, we could always rescale the sum if the previous two properties applied). Then, the chain is persistent:
+$$
+	\lim_n p_{ij}^{(n)} = \pi_j
+$$
+For all $i$ and $j$, the $\pi_j$ are all positive, and the stationary distribution is unique.
+\\\\
+The main point of the conclusion is that the effect of the initial state wears off. Whatever initial distribution $\alpha_i$ that the chain may have, if $\lim_n p_{ij}^{(n)} = \pi_j$ holds, then it follows by the Weierstrass $M$ test that the probability $\sum_i \alpha_i p_{ij}^{(n)} = P[X_n = j]$ converges to $\pi_j$ as well.
+
+\paragraph{Proof of Theorem 8.6} This is a complex proof. It involves taking a \textit{coupled chain} or the original chain. Overall, the main point of the proof is to conclude the $\lim_n p_{ij}^{(n)} = \pi_j$ property. We do that by first looking at the coupled chain, and noting that it is irreducible and persistent. Then, we can find no matter what starting position $(i,j)$ we have, the chain will always reach state $(i_0,i_0)$. And after that point - both coordinates of the coupled chain act the same probabilistically. This allows us to conclude that for $k$ large enough, $p_{ik}^{(n)}$ and $p_{jk}^{(n)}$ are the same. With this property, we can conclude our stationary distribution limit.
+
+\paragraph{Definition: Coupled Markov Chain} Say we have an initial state space $S$ and stochastic matrix $P$. Theorem 8.1 says that there does exist a Markov chain for any given initial probabilities. For an existing Markov Chain, we can also just take its state space $S$ and stochastic matrix $P$. Now, consider a state space $S \times S$ and transition probabilities:
+$$
+	p(ij, kl) = p_{ik}p_{jl}
+$$
+Note that as clearly $0 \leq p(ij, kl) \leq 1$ and:
+$$
+	\sum_{kl} p(ij, kl) = \sum_{kl} p_{ik}p_{jl} = \sum_k p_{ik} \sum_l p_{jl} = \sum_k p_{ik} = 1
+$$
+$p(ij, kl)$ forms a stochastic matrix $P$. By Theorem 8.1, as $S \times S$ is still countable, there does exist a Markov chain $(X_n, Y_n), n = 0, 1, \cdots$ having positive initial probabilities and transition probabilities:
+$$
+	P\left[(X_{n+1}, Y_{n+1}) = (k,l) | (X_n, Y_n) = (i, j)\right] = p(ij, kl)
+$$
+Note, the $(X_n, Y_n)$ are just notation, Theorem 8.1 above proves for a random variable $S_n$, and we break $S_n$ down into components.
+
+\paragraph{A coupled chain is irreducible if the original chain is irreducible and aperiodic}
 
 \end{document}
 
