@@ -5973,9 +5973,65 @@ $p(ij, kl)$ forms a stochastic matrix $P$. By Theorem 8.1, as $S \times S$ is st
 $$
 	P\left[(X_{n+1}, Y_{n+1}) = (k,l) | (X_n, Y_n) = (i, j)\right] = p(ij, kl)
 $$
-Note, the $(X_n, Y_n)$ are just notation, Theorem 8.1 above proves for a random variable $S_n$, and we break $S_n$ down into components.
+Note, the $(X_n, Y_n)$ are just notation, Theorem 8.1 above proves for a random variable $S_n$, and we break $S_n$ down into components. We also note that:
+$$
+	p^{(n)}(ij, kl) = \sum_{(t_1, t_1'), \cdots, (t_{n-1}, t_{n-1}') \in (S \times S)^{n-1}} 
+	p(ij, t_1t_1') p(t_1t_1', t_2t_2') \cdots p(t_{n-1}t_{n-1}', kl)
+$$
+$$
+	= \sum_{(t_1, t_1'), \cdots, (t_{n-1}, t_{n-1}') \in (S \times S)^{n-1}}
+	p_{it_1}p_{jt_1'} \cdot p_{t_1t_2}p_{t_1't_2'} \cdots p_{t_{n-1}k}p_{t_{n-1}'l}
+$$
+$$
+	= \sum_{t_1, \cdots t_{n-1} \in S^{n-1}} \sum_{t_1', \cdots t_{n-1}' \in S^{n-1}}
+	p_{it_1}p_{jt_1'} \cdot p_{t_1t_2}p_{t_1't_2'} \cdots p_{t_{n-1}k}p_{t_{n-1}'l}
+$$
+$$
+	= \sum_{t_1, \cdots t_{n-1} \in S^{n-1}} p_{it_1}p_{t_1t_2} \cdots p_{t_{n-1}k}
+	\sum_{t_1', \cdots t_{n-1}' \in S^{n-1}}
+	p_{jt_1'}p_{t_1't_2'} \cdots p_{t_{n-1}'l}
+$$
+$$
+	= p_{jl}^{(n)} \sum_{t_1, \cdots t_{n-1} \in S^{n-1}} p_{it_1}p_{t_1t_2} \cdots p_{t_{n-1}k}
+$$
+$$
+	= p_{ik}^{(n)}p_{jl}^{(n)}
+$$
 
-\paragraph{A coupled chain is irreducible if the original chain is irreducible and aperiodic}
+\paragraph{SubLemma 8.6.1: An irreducible aperiodic chain creates an irreducible coupled chain} From lemma 2, we recall that in an irreducible aperiodic chain, for each $i$ and $j$, $p_{ij}^{(n)} > 0$ for all $n$ exceeding some $n_0(i,j)$. Take two arbitrary states $ij, kl$ in our coupled chain. Note for:
+$$
+	n_0 = \max(n_0(i,k), n_0(j,l))
+$$
+We have $n \geq n_0$ implies:
+$$
+	p^{(n)}(ij, kl) = p_{ik}^{(n)}p_{jl}^{(n)} > 0
+$$
+And thus, the coupled chain is \textit{irreducible}. 
+
+\paragraph{SubLemma 8.6.2: Irreducible Chain with Stationary Distribution is Persistence} Assume that an irreducible Markov Chain has a stationary distribution, ie for $\pi_i \geq 0$, $\sum_i \pi_i = 1$ we have:
+$$
+	\sum_{i \in S} \pi_i p_{ij} = \pi_j \implies
+	\sum_{i \in S} \pi_i p_{ij}^{(n)} = \pi_j
+$$
+We will prove the chain is persistent. Assume otherwise, that it is transient. Theorem 8.3 implies that:
+$$
+	\sum_n p_{ij}^{(n)} < \infty \implies \lim_n p_{ij}^{(n)} = 0
+$$
+We note that $\lim_n \pi_i p_{ij}^{(n)} = 0$, $\pi_i p_{ij}^{(n)} < \pi_i$, and $\sum_i \pi_i = 1$. Thus, by the Weierstrass $M$ test, we have for each $j$:
+$$
+	\pi_j = \lim_n \pi_j = \lim_n \sum_{i \in S} \pi_i p_{ij}^{(n)} = \lim_n \sum_{i \in S} 0 = 0
+$$
+This contradicts $\sum_i \pi_i = 1$, and so an Irreducible Chain with Stationary Distribution must be persistent.
+
+\paragraph{SubLemma 8.6.3: Coupled Chain of Stationary Distribution Chain has a Stationary Distribution} Note that $\pi(ij) = \pi_i\pi_j$ forms a stationary distribution for the coupled chain. This is because:
+$$
+	\sum_{ij \in S \times S} \pi_{ij} p(ij, kl) =
+	\sum_{ij \in S \times S} \pi_i\pi_j p_{ik} p_{jl} =
+	\sum_{i \in S} \pi_i p_{ik} \sum_{j \in S} \pi_j p_{jl} =
+	\pi_l \sum_{i \in S} \pi_i p_{ik} =
+	\pi_l \pi_k = \pi(kl)
+$$
+With the three lemmas above, we note that the coupled chain based off of the original irreducible, aperiodic chain with stationary distribution, is an irreducible chain with a stationary distribution that is also persistent.
 
 \end{document}
 
