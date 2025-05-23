@@ -6033,6 +6033,111 @@ $$
 $$
 With the three lemmas above, we note that the coupled chain based off of the original irreducible, aperiodic chain with stationary distribution, is an irreducible chain with a stationary distribution that is also persistent.
 
+
+\paragraph{SubLemma 8.6.4: Irreducible and Persistent Coupled Chains imply $\lim_n |p_{ik}^{(n)} - p_{jk}^{(n)}| = 0$} We have our coupled Markov Chain $(X_n, Y_n)$ with transition probabilities:
+$$
+	P\left[(X_{n+1}, Y_{n+1}) = (k, l) | (X_n, Y_n) = (i, j)\right] = p(ij, kl) = p_{ik}p_{jl}
+$$
+Which we assume is irreducible and persistent. It follows that, for an arbitrary initial state $(i,j)$, for an arbitrary $i_0 \in S$, we have:
+$$
+	P_{ij}\left[(X_n, Y_n) = (i_0, i_0) \io\right] = 1
+$$
+This is directly by Theorem 8.3 for an irreducible persistent chain. Let $\tau$ be the smallest integer such that $X_\tau = Y_\tau = i_0$. We note that $\tau$ is finite with probability $1$, as:
+$$
+	P_{ij}\left[\omega : \tau < \infty\right] =
+	P_{ij}\left[\bigcup_n X_n = Y_n = i_0\right] \geq P_{ij}\left[(X_n, Y_n) = (i_0, i_0) \io\right] = 1
+$$
+Using the cylinder sequence property on the coupled chain, if $m \leq n$, we have:
+$$
+	P_{ij}\left[(X_n, Y_n) = (k,l), \tau = m\right]
+$$
+$$
+	=
+	P_{ij}\left[(X_t, Y_t) \neq (i_0, i_0), t < m, (X_m, Y_m) = (i_0, i_0)\right] \times
+	P_{i_0i_0}\left[(X_{n - m}, Y_{n - m}) = (k, l)\right]
+$$
+Note, we just replaced $\tau = m$ with its corresponding essentially $f_{ij,i_0i_0}^m$ term, and split the cylinders. The above equals:
+$$
+	= P_{ij}\left[\tau = m\right]p_{i_0k}^{(n-m)}p_{i_0l}^{(n-m)}
+$$
+Where the above uses our higher order transition probabilities on the coupled chain we proved above. We can now add out all the states $l$:
+$$
+	P_{ij}\left[X_n = k, \tau = m\right] =
+	\sum_{l \in S} P_{ij}\left[(X_n, Y_n) = (k,l), \tau = m\right] =
+	\sum_{l \in S} P_{ij}\left[\tau = m\right]p_{i_0k}^{(n-m)}p_{i_0l}^{(n-m)}
+$$
+$$
+	= P_{ij}\left[\tau = m\right]p_{i_0k}^{(n-m)}
+$$
+We can similarly find that:
+$$
+	P_{ij}\left[Y_n = l, \tau = m\right] = P_{ij}\left[\tau = m\right]p_{i_0l}^{(n-m)}
+$$
+If we take $k = l$, we find:
+$$
+	P_{ij}\left[X_n = k, \tau = m\right] = P_{ij}\left[Y_n = k, \tau = m\right]
+$$
+We can add over $m = 1, \cdots, n$ to find that:
+$$
+	P_{ij}\left[X_n = k, \tau \leq n\right] = P_{ij}\left[Y_n = k, \tau \leq n\right]
+$$
+This property makes sense - after $\tau$, ie if we are at time $n \geq \tau$ - a time at which $X$ and $Y$ are equal - $X_n$ and $Y_n$ enter states with the same probability. From this, it follows:
+$$
+	P_{ij}\left[X_n = k\right] = P_{ij}\left[X_n = k, \tau \leq n \cup \tau > n\right] \leq
+	P_{ij}\left[X_n = k, \tau \leq n\right] + P_{ij}\left[\tau > n\right]
+$$
+$$
+	= P_{ij}\left[Y_n = k, \tau \leq n\right] + P_{ij}\left[\tau > n\right] \leq 
+	P_{ij}\left[Y_n = k\right] + P_{ij}\left[\tau > n\right]
+$$
+Basic probability rules are used above. We can interchange to also find:
+$$
+	P_{ij}\left[Y_n = k\right] \leq P_{ij}\left[X_n = k\right] + P_{ij}\left[\tau > n\right]
+$$
+We also note:
+$$
+	P_{ij}\left[X_n = k\right] = \sum_l P_{ij}\left[(X_n, Y_n) = (k,l)\right] = \sum_l p^{(n)}(ij, kl) =
+	p_{ik}^{(n)}\sum_l p_{jl}^{(n)} = p_{ik}^{(n)} 
+$$
+Putting it all together, we have:
+$$
+	\left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| =
+	\left|P_{ij}\left[X_n = k\right] - P_{ij}\left[Y_n = k\right]\right| \leq P_{ij}\left[\tau > n\right]
+$$
+Where in the last step we note that the inequalities we have above proved that the absolute difference between the probabilities was no more than $P_{ij}\left[\tau > n\right]$. As $\tau$ is finite with probability $1$, we can conclude:
+$$
+	\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| = 0
+$$
+
+\paragraph{Proof Of Theorem 8.6} We tie all the 4 sublemmas together. As our initial markov chain is irreducible and aperiodic, we note that our coupled markov chain is irreducible. As our initial markov chain has a stationary distribution, our coupled chain has one as well. We note that as our coupled chain is irreducible and has a stationary distribution - it is persistent. Finally, we note that as our coupled chain is persistent and irreducible, we have that for the higher order transition probabilities on our initial chain:
+$$
+	\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| = 0
+$$
+We now note:
+$$
+	\pi_k - p_{jk}^{(n)} = \sum_{i \in S} \pi_i p_{ik}^{(n)} - p_{jk}^{(n)}
+$$
+By our higher order stationary distribution property. As $\sum_i \pi_i = 1$, the above equals:
+$$
+	= \sum_{i \in S} \pi_i p_{ik}^{(n)} - \sum_{i \in S} \pi_i p_{jk}^{(n)} =
+	\sum_{i \in S} \pi_i \left[p_{ik}^{(n)} - p_{jk}^{(n)}\right]
+$$
+And so, we find by the Weierstrass M Test:
+$$
+	\lim_n \pi_k - p_{jk}^{(n)} = \lim_n \sum_{i \in S} \pi_i \left[p_{ik}^{(n)} - p_{jk}^{(n)}\right] =
+	\lim_n \sum_{i \in S} 0 = 0
+$$
+And thus, we can conclude that for an irreducible aperiodic markov chain with a stationary distribution, we have:
+$$
+	\lim_n p_{ij}^{(n)} = \pi_j
+$$
+Note, that this equality would hold for any stationary distribution - and so the stationary distribution is unique, as we could define it by the above limit. All that remains is to show that the stationary distribution is positive - ie, $\pi_j > 0$. Choose $r$ and $s$ so that $p_{ij}^{(r)}$ and $p_{ji}^{(s)}$ are positive. Assume that $\pi_j = 0$. Then we note:
+$$
+	0 = \pi_i = \lim_{n \to \infty} p_{ji}^{(n)} \geq \lim_{m \to \infty} p_{ji}^{(s)}p_{ij}^{(m)}p_{ji}^{(s)} =
+	p_{ji}^{(s)}p_{ji}^{(s)} \pi_j 
+$$
+We can go the other way as well, to find that if one stationary distribution is zero, they all are. This would contradict them summing to one. qed.
+
 \end{document}
 
 

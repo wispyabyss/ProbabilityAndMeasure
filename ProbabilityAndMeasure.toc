@@ -285,3 +285,5 @@
 \contentsline {paragraph}{SubLemma 8.6.1: An irreducible aperiodic chain creates an irreducible coupled chain}{211}{section*.286}%
 \contentsline {paragraph}{SubLemma 8.6.2: Irreducible Chain with Stationary Distribution is Persistence}{211}{section*.287}%
 \contentsline {paragraph}{SubLemma 8.6.3: Coupled Chain of Stationary Distribution Chain has a Stationary Distribution}{212}{section*.288}%
+\contentsline {paragraph}{SubLemma 8.6.4: Irreducible and Persistent Coupled Chains imply $\qopname \relax m{lim}_n |p_{ik}^{(n)} - p_{jk}^{(n)}| = 0$}{212}{section*.289}%
+\contentsline {paragraph}{Proof Of Theorem 8.6}{214}{section*.290}%
