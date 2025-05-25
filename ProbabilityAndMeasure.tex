@@ -6106,7 +6106,7 @@ $$
 $$
 Where in the last step we note that the inequalities we have above proved that the absolute difference between the probabilities was no more than $P_{ij}\left[\tau > n\right]$. As $\tau$ is finite with probability $1$, we can conclude:
 $$
-	\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| = 0
+	\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| \leq \lim_n P_{ij}\left[\tau > n\right] = 0
 $$
 
 \paragraph{Proof Of Theorem 8.6} We tie all the 4 sublemmas together. As our initial markov chain is irreducible and aperiodic, we note that our coupled markov chain is irreducible. As our initial markov chain has a stationary distribution, our coupled chain has one as well. We note that as our coupled chain is irreducible and has a stationary distribution - it is persistent. Finally, we note that as our coupled chain is persistent and irreducible, we have that for the higher order transition probabilities on our initial chain:
@@ -6131,12 +6131,83 @@ And thus, we can conclude that for an irreducible aperiodic markov chain with a 
 $$
 	\lim_n p_{ij}^{(n)} = \pi_j
 $$
-Note, that this equality would hold for any stationary distribution - and so the stationary distribution is unique, as we could define it by the above limit. All that remains is to show that the stationary distribution is positive - ie, $\pi_j > 0$. Choose $r$ and $s$ so that $p_{ij}^{(r)}$ and $p_{ji}^{(s)}$ are positive. Assume that $\pi_j = 0$. Then we note:
+Note, that this equality would hold for any stationary distribution - and so the stationary distribution is unique, as we could define it by the above limit. All that remains is to show that the stationary distribution is positive - ie, $\pi_j > 0$. Choose $r$ and $s$ so that $p_{ij}^{(r)}$ and $p_{ji}^{(s)}$ are positive, which exist as our chain is irreducible. Assume that $\pi_j = 0$. Then we note:
 $$
-	0 = \pi_i = \lim_{n \to \infty} p_{ji}^{(n)} \geq \lim_{m \to \infty} p_{ji}^{(s)}p_{ij}^{(m)}p_{ji}^{(s)} =
-	p_{ji}^{(s)}p_{ji}^{(s)} \pi_j 
+	0 = \pi_j = \lim_n p_{jj}^{(n)} \geq \lim_n p_{ji}^{(s)}p_{ii}^{(n-s-r)}p_{ij}^{(r)} =
+	p_{ji}^{(s)}p_{ij}^{(r)} \lim_n p_{ii}^{(n-s-r)} = p_{ji}^{(s)}p_{ij}^{(r)} \pi_i
 $$
-We can go the other way as well, to find that if one stationary distribution is zero, they all are. This would contradict them summing to one. qed.
+$$
+	\implies 0 = p_{ji}^{(s)}p_{ij}^{(r)} \pi_i \implies \pi_i = 0
+$$
+And so, if one $\pi_j$ is zero, we can conclude the same for every state. This contradicts $\sum_i \pi_i = 1$, as a countable sum of zeros is zero. Thus, we must have that for all states $i$, $\pi_i > 0$. qed.
+
+\paragraph{A14 - The Diagonal Method} Suppose that each row of the array:
+$$
+	\begin{array}{cccc}
+	x_{11} & x_{12} & x_{13} & \cdots\\
+	x_{21} & x_{22} & x_{23} & \cdots\\
+	\vdots & \vdots & \vdots & \ddots
+	\end{array}
+$$
+Is a bounded sequence of real numbers. Then there exists an increasing sequence $n_1, n_2, \cdots$ of integers such that the limit:
+$$
+	\lim_k x_{r,n_k}
+$$
+Exists for each $r$.
+\\\\
+\textbf{Proof of the Diagonal Method} First note - the Heine-Borel theorem implies that every bounded sequence of real numbers has a convergent subsequence. This is just Bolzano Weierstrass - which says something along the lines of every sequence has a monotone subsequence, and boundedness means we can take the monotone convergence theorem. However, I think it can also be proved by Heine-Borel. Assume we have a sequence of real numbers between $[a,b]$. Then, we can take an interval of length $(b-a)/2$ around each point, find a finite cover - and note the sequence is contained within this cover. And decrease the length of the cover, find an infinite amount of points remain, and so on. Anyway - by whatever method you choose, we do have every compact sequence has a convergence subsequence.
+\\\\
+From the first row, select a convergence subsequence $x_{1,n_{1,1}}, x_{1,n_{1,2}}, x_{1,n_{1,3}}, \cdots$. Note that $x_{2,n_{1,1}}, x_{2,n_{1,2}}, x_{2,n_{1,3}}, \cdots$ is still a bounded sequence, and so has a convergence subsequence - which we index as:
+$$
+	x_{2,n_{2,1}}, x_{2,n_{2,2}}, x_{2,n_{2,3}}, \cdots
+$$
+Note that $\{n_{2,k}\}$ is an increasing sequence of integers, a subsequence of the original $\{n_{1,k}\}$, and so both $\lim_k x_{2,n_{2,k}}$ and $\lim_k x_{1,n_{2,k}}$ exists. We continue inductively, to find an array:
+$$
+	\begin{array}{cccc}
+	n_{1,1} & n_{1,2} & n_{1,3} & \cdots\\
+	n_{2,1} & n_{2,2} & n_{2,3} & \cdots\\
+	\vdots & \vdots & \vdots & \ddots
+	\end{array}
+$$
+This array has three properties:
+\begin{enumerate}
+	\item Each row is an increasing sequence of integers
+	\item The $rth$ row is a subsequence of the $(r-1)$ row
+	\item For each $r$, $\lim_k x_{t,r_{n,k}}$ exists for $t \leq r$
+\end{enumerate}
+Let $n_k = n_{k,k}$. As each row is increasing, and contained in the preceding row - $n_1, n_2, n_3, \cdots$ is an increasing sequence of integers. Furthermore, $n_r, n_{r+1}, n_{r+2}, \cdots$ is a subsequence of the $rth$ row. Thus, $x_{r, n_r}, x_{r, n_{r+1}}, x_{r, n_{r+2}}, \cdots$ is a subsequence of a convergence subsequence, and therefore convergence. Thus, $\lim_k x_{r,n_k}$ exists for each $r$. qed.
+\\\\
+This is actually such a cool theorem. I like it a lot. I think it is because of the $n_k = n_{k,k}$ portion. I was confused of how we would actually take the sequences into infinity, and combine them into one. It seemed to be a finite property to me. But, we took it to infinity by taking a portion of each of the sequences. Not fucking bad!
+
+\paragraph{Theorem 8.7 Aperiodic Irreducible Chains with no Stationary Distribution have a Null Long Term Distribution} If an irreducible, aperiodic chain has no stationary distribution, then:
+$$
+	\lim_n p_{ij}^{(n)} = 0
+$$
+For all $i$ and $j$.
+
+\paragraph{Proof of Theorem 8.7} If the chain is transient - note that Theorem 8.3 implies $\sum_n p_{ij}^{(n)} < \infty \implies \lim_n p_{ij}^{(n)} = 0$. So, we consider just the persistent case.
+\\\\
+In the persistent case, we consider the coupled chain. Recall that the coupled chain of an aperiodic irreducible chain is irreducible as well. If the coupled chain is transient - well, again, as in Theorem 8.3, we have:
+$$
+	\sum_n p^{(n)}(ii,jj) < \infty \implies
+	\sum_n (p_{ij}^{(n)})^2 < \infty \implies
+	\lim_n (p_{ij}^{(n)})^2 = 0 \implies
+	\lim_n p_{ij}^{(n)} = 0
+$$
+So yet again, we examine one more layer down - we have the chain is aperiodic, irreducible, and persistent, and the coupled chain is irreducible and persistent. By SubLemma 8.6.4 - we thus have:
+$$
+	\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| = 0
+$$
+So, now we assume that for some state pairs - we do \textit{not} have that $\lim_n p_{ij}^{(n)} = 0$. By the definition of not converging - we must have a sequence of $n_u$ such that $p_{ij}^{n_u}$ is bounded away from $0$. Let $M$ be the set of $j$ such that $\lim_n p_{ij}^{(n)} \neq 0$. Note that we only consider $j$, as it is independent of $i$ - given that $\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| = 0$, if we have one $i$ such that $\lim_n p_{ij}^{(n)} \neq 0$, then that must be the case for all $i$.
+\\\\
+Anyway. Note that as $S$ is countable, $S \times S$ must be countable as well, and so we can list each sequence $p_{ij}^{(n)}$ into an array of rows. If $\lim_n p_{ij}^{(n)} \neq 0$, we replace that row sequence with the infinite sequence of $p_{ij}^{n_u}$ which is bounded away from zero. Now, we have each row in the array is bounded - and so, we can apply the diagonal method to find a sequence of $n_u$ such that each row converges - ie, $\lim_n p_{ij}^{(n_u)}$ exists. Now, we note that $\lim_n p_{ij}^{(n_u)} = \lim_n p_{kj}^{(n_u)}$, by our subtraction property above. And so, for every state pair $(i,j)$, we have a $t_j$ such that:
+$$
+	\lim_u p_{ij}^{(n_u)} = t_j
+$$
+By contradiction, our assumption is that at least one $t_j$ does not equal zero. $t_j$ is nonnegative for each $j$, and positive for some, at least one $j$.
+\\\\
+The next portion of the proof relies on taking arbitrary finite subsets $M \subset S$, and using finiteness to extract out some necessary properties.
+
 
 \end{document}
 

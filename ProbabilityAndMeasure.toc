@@ -287,3 +287,6 @@
 \contentsline {paragraph}{SubLemma 8.6.3: Coupled Chain of Stationary Distribution Chain has a Stationary Distribution}{212}{section*.288}%
 \contentsline {paragraph}{SubLemma 8.6.4: Irreducible and Persistent Coupled Chains imply $\qopname \relax m{lim}_n |p_{ik}^{(n)} - p_{jk}^{(n)}| = 0$}{212}{section*.289}%
 \contentsline {paragraph}{Proof Of Theorem 8.6}{214}{section*.290}%
+\contentsline {paragraph}{A14 - The Diagonal Method}{215}{section*.291}%
+\contentsline {paragraph}{Theorem 8.7 Aperiodic Irreducible Chains with no Stationary Distribution have a Null Long Term Distribution}{216}{section*.292}%
+\contentsline {paragraph}{Proof of Theorem 8.7}{216}{section*.293}%
