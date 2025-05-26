@@ -6200,13 +6200,64 @@ $$
 $$
 So, now we assume that for some state pairs - we do \textit{not} have that $\lim_n p_{ij}^{(n)} = 0$. By the definition of not converging - we must have a sequence of $n_u$ such that $p_{ij}^{n_u}$ is bounded away from $0$. Let $M$ be the set of $j$ such that $\lim_n p_{ij}^{(n)} \neq 0$. Note that we only consider $j$, as it is independent of $i$ - given that $\lim_n \left|p_{ik}^{(n)} - p_{jk}^{(n)}\right| = 0$, if we have one $i$ such that $\lim_n p_{ij}^{(n)} \neq 0$, then that must be the case for all $i$.
 \\\\
-Anyway. Note that as $S$ is countable, $S \times S$ must be countable as well, and so we can list each sequence $p_{ij}^{(n)}$ into an array of rows. If $\lim_n p_{ij}^{(n)} \neq 0$, we replace that row sequence with the infinite sequence of $p_{ij}^{n_u}$ which is bounded away from zero. Now, we have each row in the array is bounded - and so, we can apply the diagonal method to find a sequence of $n_u$ such that each row converges - ie, $\lim_n p_{ij}^{(n_u)}$ exists. Now, we note that $\lim_n p_{ij}^{(n_u)} = \lim_n p_{kj}^{(n_u)}$, by our subtraction property above. And so, for every state pair $(i,j)$, we have a $t_j$ such that:
+Anyway. Note that as $S$ is countable, $S \times S$ must be countable as well, and so we can list each sequence $p_{ij}^{(n)}$ into a countable array of rows corresponding to each pair $(i,j)$. If $\lim_n p_{ij}^{(n)} \neq 0$, we replace that row sequence with the infinite sequence of $p_{ij}^{n_u}$ which is bounded away from zero. Now, we have each row in the array is bounded - and so, we can apply the diagonal method to find a sequence of $n_u$ such that each row converges - ie, $\lim_n p_{ij}^{(n_u)}$ exists. Now, we note that $\lim_n p_{ij}^{(n_u)} = \lim_n p_{kj}^{(n_u)}$, by our subtraction property above. And so, for every state pair $(i,j)$, we have a $t_j$ such that:
 $$
 	\lim_u p_{ij}^{(n_u)} = t_j
 $$
 By contradiction, our assumption is that at least one $t_j$ does not equal zero. $t_j$ is nonnegative for each $j$, and positive for some, at least one $j$.
 \\\\
-The next portion of the proof relies on taking arbitrary finite subsets $M \subset S$, and using finiteness to extract out some necessary properties.
+The next portion of the proof relies on taking arbitrary finite subsets $M \subset S$, and using finiteness to extract out some necessary properties. If $M$ is a finite set of states, then note:
+$$
+	\sum_{j \in M} t_j = \sum_{j \in M} \lim_u p_{ij}^{(n_u)} =
+	\lim_u \sum_{j \in M} p_{ij}^{(n_u)} \leq 1
+$$
+As each term in the limit is bounded by $1$. Thus, we have:
+$$
+	0 < t = \sum_j t_j \leq 1
+$$
+Clearly, we have $0 < t$, as at least one $t_j$ is positive. We also note that it is bounded above by $1$, as $\sum_j t_j$ is the limit of finite sub sums, each of which is bounded by $1$. Now note:
+$$
+	\sum_{k \in M} p_{ik}^{(n_u)} p_{kj} \leq p_{ij}^{(n_u + 1)} =
+	\sum_k p_{ik}p_{kj}^{(n_u)}
+$$
+As for why the above is the case - note the inductive definition of $p_{ij}^{(n_u + 1)}$, which has two expressions as a sum with the $p^{(n_u)}$ term on the left or the right. The first $\leq$ comes form the fact that $M$ is finite. Note that this implies:
+$$
+	\implies
+	\lim_u \sum_{k \in M} p_{ik}^{(n_u)} p_{kj} \leq
+	\lim_u \sum_k p_{ik}p_{kj}^{(n_u)}
+$$
+$$
+	\implies
+	\sum_{k \in M} \lim_u p_{ik}^{(n_u)} p_{kj} \leq
+	\sum_k \lim_u p_{ik}p_{kj}^{(n_u)}
+$$
+We can pass the first limit inside by a finite sum, and the second limit can be passed inside by the Weierstrass $M$ test ($p_{ik}p_{kj}^{(n_u)} \to p_{ik}t_j$, each of the terms $p_{ik}p_{kj}^{(n_u)}$ is bounded by $p_{ik}$, the sum across $k$ of which is $1$). And so, we have:
+$$
+	\implies
+	\sum_{k \in M} t_k p_{kj} \leq
+	\sum_k \lim_u p_{ik}t_j =
+	t_j
+$$
+As this is true for each finite set of states $M$, we have:
+$$
+	\sum_k t_k p_{kj} \leq t_j
+$$
+Assume the inequality is strict for one $t_j$. Then, we must have:
+$$
+	t = \sum_k t_k =
+	\sum_k \sum_j t_k p_{kj} =
+	\sum_j \sum_k t_k p_{kj} <
+	\sum_j t_j = t_j
+$$
+This is a contradiction. So, we must assume that for all $j$:
+$$
+	\sum_k t_k p_{kj} = t_j
+$$
+Note that if we then set $\pi_j = t_j/t$, we have a stationary distribution - which gives us another contradiction. So, in our final case, where our chain is irreducible, aperiodic, and persistent - and the coupled chain is irreducible and persistent - the assumption that there was some pair $(i,j)$ such that $\lim_n p_{ij}^{(n)} \neq 0$ always leads to a contradiction. And so, we must in fact therefore have that in this final case, for all pairs $(i,j)$, we have:
+$$
+	\lim_n p_{ij}^{(n)} = 0
+$$
+And therefore, we can conclude that the theorem holds in all cases. qed.
 
 
 \end{document}
