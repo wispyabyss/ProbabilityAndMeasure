@@ -6247,7 +6247,7 @@ $$
 	t = \sum_k t_k =
 	\sum_k \sum_j t_k p_{kj} =
 	\sum_j \sum_k t_k p_{kj} <
-	\sum_j t_j = t_j
+	\sum_j t_j = t
 $$
 This is a contradiction. So, we must assume that for all $j$:
 $$
@@ -6258,6 +6258,16 @@ $$
 	\lim_n p_{ij}^{(n)} = 0
 $$
 And therefore, we can conclude that the theorem holds in all cases. qed.
+
+\paragraph{Mean Return Time} Define:
+$$
+	\mu_j = \sum_{n=1}^\infty nf_{jj}^{(n)}
+$$
+This can be taken as the \textit{mean return time}, ie the average number of steps it takes to come back to state $j$ if you started at state $j$. If the series diverges, write $\mu_j = \infty$. In the persistent case, this sum is to be thought of as the average number of steps to first return to $j$, given that $X_0 = j$. Note, this isn't a simple random variable, as there is no upper bound to the number of steps to return to $j$. However, we won't use expected values here.
+\\\\
+Also, note that the value doesn't make sense in the transient case - as there is a chance that we never come back. Ie, the probability of first return is less than $1$. And so, $\mu_j$ wouldn't be an average return time - as it doesn't take into account the $\omega$ where we don't return.
+
+\paragraph{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions} Suppose that $j$ is persistent and that $\lim_n p_{jj}^{(n)} = u$. Then $u > 0$ if and only if $\mu_j < \infty$, in which case $u = 1/\mu_j$. Under the convention that $0 = 1/\infty$, the case $u = 0$ and $\mu_j = \infty$ are consistent as well.
 
 
 \end{document}

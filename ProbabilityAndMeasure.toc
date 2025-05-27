@@ -290,3 +290,5 @@
 \contentsline {paragraph}{A14 - The Diagonal Method}{215}{section*.291}%
 \contentsline {paragraph}{Theorem 8.7 Aperiodic Irreducible Chains with no Stationary Distribution have a Null Long Term Distribution}{216}{section*.292}%
 \contentsline {paragraph}{Proof of Theorem 8.7}{216}{section*.293}%
+\contentsline {paragraph}{Mean Return Time}{219}{section*.294}%
+\contentsline {paragraph}{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions}{219}{section*.295}%
