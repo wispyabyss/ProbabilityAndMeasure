@@ -5925,7 +5925,7 @@ Thus, $c$ is a divisor of $d$. As $d > 0$ - we cannot have that $c > d$. Thus, $
 
 \paragraph{A21} Suppose that $M$ is a set of positive integers closed under addition and that $M$ has greatest common divisor $1$. Then $M$ contains all integers exceeding some $n_0$.
 \\\\
-Write $1 = m - m'$ for $m$ and $m'$ in $M$. Note, we do this for the case where $1$ is not in $M$ - as otherwise, the proof is clearly true. As for why we can find such an $m$ and $m'$ - first note that we have $x,x' \in M$ where $x \neq x'$, and $gcd(x,x') = 1$. By Bezout's identity, there exists $a$ and $b$ such that $ax - bx' = 1$. While either $a \leq 0$ or $b \leq 0$, update using $a = a + x'$ and $b = b + x$. Note that:
+Write $1 = m - m'$ for $m$ and $m'$ in $M$. Note, we do this for the case where $1$ is not in $M$ - as otherwise, the proof is clearly true. As for why we can find such an $m$ and $m'$ - first note that we have $x,x' \in M$ where $x \neq x'$, $gcd(x,x') = 1$, and $x,x' > 0$. By Bezout's identity, there exists $a$ and $b$ such that $ax - bx' = 1$. While either $a \leq 0$ or $b \leq 0$, update using $a = a + x'$ and $b = b + x$. Note that:
 $$
 	(a + x')x - (b + x)x' = ax + x'x - bx' - xx' = ax - bx' = 1
 $$
@@ -6268,7 +6268,94 @@ This can be taken as the \textit{mean return time}, ie the average number of ste
 Also, note that the value doesn't make sense in the transient case - as there is a chance that we never come back. Ie, the probability of first return is less than $1$. And so, $\mu_j$ wouldn't be an average return time - as it doesn't take into account the $\omega$ where we don't return.
 
 \paragraph{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions} Suppose that $j$ is persistent and that $\lim_n p_{jj}^{(n)} = u$. Then $u > 0$ if and only if $\mu_j < \infty$, in which case $u = 1/\mu_j$. Under the convention that $0 = 1/\infty$, the case $u = 0$ and $\mu_j = \infty$ are consistent as well.
-
+\\\\
+\textbf{Proof of Lemma 3} For $k \geq 0$, let $\rho_k = \sum_{n > k} f_{jj}^{(n)}$. Note, we are only considering a single persistent state $j$ here. Consider the double series:
+\begin{align*}
+f_{jj}^{(1)} + f_{jj}^{(2)} + f_{jj}^{(3)} + \cdots\\
+f_{jj}^{(2)} + f_{jj}^{(3)} + \cdots\\
+f_{jj}^{(3)} + \cdots\\
++ \cdots
+\end{align*}
+The sum of the $kth$ row is $\rho_k$. The $nth$ column sums to $nf_{jj}^{(n)}$. By arbitrary order is the nonnegative series converges (noting that we can take the double sum as equivalent to supremum of finite sums, which doesn't depend on order) - we thus have:
+$$
+	\mu_j = \sum_{k=0}^\infty \rho_k
+$$
+Since $j$ is persistent, the $P_j$ probability that the system \textit{does not} hit $j$ up to time $n$ is the probability that it hits $j$ after time $n$ (as it will hit $j$ with probability 1), and this is $\rho_n$. Ie:
+$$
+	P_j\left[X_1 \neq j, \cdots, X_n \neq j\right] =
+	P_j\left[X_1 \neq j, \cdots, X_n \neq j \cap \left[\bigcup_k X_k = j\right]\right]
+$$
+$$
+	=
+	P_j\left[X_1 \neq j, \cdots, X_n \neq j \cap \left[\bigcup_{k > n} X_k = j\right]\right]
+$$
+Recall that:
+$$
+	\bigcup_{k > n} \left[X_k = j\right] =
+	\bigcup_{k > n} \left[X_{n + 1} \neq j, \cdots, X_{k-1} \neq j, X_k = j\right]
+$$
+So, continuing with our equality:
+$$
+	=
+	P_j\left[X_1 \neq j, \cdots, X_n \neq j \cap \left[\bigcup_{k > n} X_{n + 1} \neq j, \cdots, X_{k-1} \neq j, X_k = j\right]\right]
+$$
+$$
+	=
+	P_j\left[\bigcup_{k > n} X_1 \neq j, \cdots, X_n \neq j, X_{n + 1} \neq j, \cdots, X_{k-1} \neq j, X_k = j\right]
+$$
+$$
+	= \sum_{k > n} f_{jj}^{(k)} = \rho_n
+$$
+So, in total, we have that:
+$$
+	P_j\left[X_1 \neq j, \cdots, X_n \neq j\right] = \rho_n
+$$
+With this identity, we can conclude:
+$$
+	1 - p_{jj}^{(n)} = P_j\left[X_n \neq j\right]
+$$
+$$
+	= P_j\left[X_1 \neq j, \cdots, X_n \neq j\right] +
+	\sum_{k=1}^{n-1} P_j\left[X_k = j, X_{k+1} \neq j, \cdots, X_n \neq j\right]
+$$
+Note, this is via a \textit{last passage} argument, and disjoint unions - ie, split it up by the $\omega$ that last hit $j$ at some time between $1$ and $n$. With our identity, and the cylinder sequence property, this equals:
+$$
+	= \rho_n + \sum_{k=1}^{n-1} p_{jj}^{(k)} \rho_{n-k}
+$$
+As $\rho_0 = 1$, we can rearrange the equality to give us something nice: for persistent $j$, we have:
+$$
+	1 = \rho_0 p_{jj}^{(n)} + \rho_1 p_{jj}^{(n-1)} + \cdots \rho_{n-1} p_{jj}^{(1)} + \rho_n p_{jj}^{(0)}
+$$
+For the equation on the right - only keep the first $k$ terms. Note that inductively, we have that:
+$$
+	1 \geq \rho_0 p_{jj}^{(n)} + \rho_1 p_{jj}^{(n-1)} + \cdots + \rho_k p_{jj}^{(n-k)}
+$$
+This is for \textit{all $n$}. And so, we can take $n \to \infty$, which gives us:
+$$
+	1 \geq (\rho_0 + \cdots + \rho_k)\lim_{n} p_{jj}^{(n)} = (\rho_0 + \cdots + \rho_k) u
+$$
+Note - again, we have assumed that the limit exists. Therefore, $u > 0$ implies that $\sum_k \rho_k$ converges, and so $u > 0$ implies:
+$$
+	\mu_j = \sum_{k = 0}^\infty \rho_k < \infty
+$$
+So, at the very least, we have that $u > 0$ implies that $\mu_j$ converges. Now, we want to know $u = 1/\mu_j$. Write $x_{nk} = \rho_k p_{jj}^{(n-k)}$ for $0 \leq k \leq n$ and $x_{nk} = 0$ for $n < k$ - note these are our sums above, ie:
+$$
+	\sum_{k=0}^\infty x_{nk} = \sum_{k=0}^n \rho_k p_{jj}^{(n-k)} = 1
+$$
+Then, $0 \leq x_{nk} \leq \rho_k$, and $\lim_n x_{nk} = \rho_k u$. If $\mu_j < \infty$, then $\sum \rho_k$ converges, and it follows by the Weierstrass $M$ test that:
+$$
+	1 = \sum_{k=0}^\infty x_{nk} \to \sum_{k=0}^\infty \rho_k u \implies
+	1 = \mu_j u \implies u = 1/\mu_j
+$$
+Before we conclude, I want to clear up the if and only if. Assume $u > 0$ - then, our first equality derivation implies $\sum_k \rho_k$ converges, in which case the sum equals $\mu_j$ which also converges. So that gives us:
+$$
+	u > 0 \implies \mu_j < \infty
+$$
+Now, what about the other direction. Assume that $\mu_j < \infty$. Then, we know that our sum $\sum_k \rho_k$ converges. Ok - then, we can apply our m test to find that:
+$$
+	1 = \mu_j u \implies u > 0
+$$
+And in the case that $u > 0$ - then we have $\mu_j < \infty$, $\sum_k \rho_k$ converges, and the above equality can still be derived. qed.
 
 \end{document}
 
