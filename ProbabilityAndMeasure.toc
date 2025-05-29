@@ -292,3 +292,4 @@
 \contentsline {paragraph}{Proof of Theorem 8.7}{216}{section*.293}%
 \contentsline {paragraph}{Mean Return Time}{219}{section*.294}%
 \contentsline {paragraph}{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions}{219}{section*.295}%
+\contentsline {paragraph}{Theorem 8.8: Classification of Irreducible Aperiodic Markov Chains}{222}{section*.296}%

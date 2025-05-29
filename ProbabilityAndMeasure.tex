@@ -6356,6 +6356,22 @@ $$
 	1 = \mu_j u \implies u > 0
 $$
 And in the case that $u > 0$ - then we have $\mu_j < \infty$, $\sum_k \rho_k$ converges, and the above equality can still be derived. qed.
+\\\\
+We can now note the law of large numbers bears on the relation $u = 1/\mu_j$ in the persistent case. Let $V_n$ be the number of visits to state $j$ up to time $n$. If the time from one visit to the next is about $\mu_j$, then theoretically, $V_n$ should be about $n/\mu_j \implies V_n/n \approx 1/\mu_j$. But (if $X_0 = j$) $V_n/n$ has expected value $n^{-1}\sum_{k=1}^n p_{jj}^{(k)}$, which goes to $u$ under the hypothesis of Lemma 3. Just something interesting to note - I'm not really gonna try to remember this, don't think it is too important.
+\\\\
+Consider an irreducible, aperiodic, persistent chain. There are two possibilities. If there is a stationary distribution, the the limits $\lim_n p_{ij}^{(n)} = \pi_j$ are positive, and the chain is called \textit{positive persistent}. By Lemma 3, it then follows that $\pi_j = u$, which implies that $\mu_j < \infty$ (the mean return time) and $\pi_j = 1/\mu_j$ for all $j$. In this case, it is not actually necessary to assume persistence, as the existence of a stationary distribution implies persistence.
+\\\\
+The second case is if we have no stationary distribution, but we are still persistent. Then the limits $\lim_n p_{ij}^{(n)} = 0$, and the mean return times $\mu_j = \infty$ again by lemma 3 for all $j$. This, taken with Theorem 8.3 (irreducible chains are either transient or persistent) give us a complete classification:
+
+\paragraph{Theorem 8.8: Classification of Irreducible Aperiodic Markov Chains} For an irreducible, aperiodic chain there are three possibilities:
+\begin{enumerate}
+	\item The chain is transient; then for all $i$ and $j$, $\lim_n p_{ij}^{(n)} = 0$ (by Theorem 8.3) and in fact $\sum_n p_{ij}^{(n)} < \infty$ (again by Theorem 8.3)
+	
+	\item The chain is persistent but there exists no stationary distribution (the null persistent case). Then for all $i$ and $j$, $p_{ij}^{(n)}$ goes to $0$ (Theorem 8.7) but so slowly that $\sum_n p_{ij}^{(n)} = \infty$ and thus $\mu_j = \infty$ for all $j$ (Lemma 3).
+	
+	\item There exists a stationary distribution $\pi_j$ and (hence) the chain is persistent (the positive persistent case). Then for all $i$ and $j$, $\lim_n p_{ij}^{(n)} = \pi_j > 0$ and $\mu_j = 1/\pi_j < \infty$.
+\end{enumerate}
+Note the asymptotic properties of the $p_{ij}^{(n)}$ are distinct in all three cases, and so they characterize the three cases. qed.
 
 \end{document}
 
