@@ -5951,11 +5951,11 @@ And since $q + r \geq q - r > 0$, our coefficients are positive, and $n$ lies in
 $$
 	\sum_{i \in S} \pi_i p_{ij} = \pi_j
 $$
-Satisfying $\pi_i \geq 0$ and $\sum_i \pi_i = 1$ (note, we could always rescale the sum if the previous two properties applied). Then, the chain is persistent:
+Satisfying $\pi_i \geq 0$ and $\sum_i \pi_i = 1$ (note, we could always rescale the sum if the previous two properties applied). Then, the chain is persistent, and we have:
 $$
 	\lim_n p_{ij}^{(n)} = \pi_j
 $$
-For all $i$ and $j$, the $\pi_j$ are all positive, and the stationary distribution is unique.
+For all $i$ and $j$, with the $\pi_j$ are all positive, and the stationary distribution is unique.
 \\\\
 The main point of the conclusion is that the effect of the initial state wears off. Whatever initial distribution $\alpha_i$ that the chain may have, if $\lim_n p_{ij}^{(n)} = \pi_j$ holds, then it follows by the Weierstrass $M$ test that the probability $\sum_i \alpha_i p_{ij}^{(n)} = P[X_n = j]$ converges to $\pi_j$ as well.
 
@@ -6173,7 +6173,7 @@ This array has three properties:
 \begin{enumerate}
 	\item Each row is an increasing sequence of integers
 	\item The $rth$ row is a subsequence of the $(r-1)$ row
-	\item For each $r$, $\lim_k x_{t,r_{n,k}}$ exists for $t \leq r$
+	\item For each $r$, $\lim_k x_{t,n_{r,k}}$ exists for $t \leq r$
 \end{enumerate}
 Let $n_k = n_{k,k}$. As each row is increasing, and contained in the preceding row - $n_1, n_2, n_3, \cdots$ is an increasing sequence of integers. Furthermore, $n_r, n_{r+1}, n_{r+2}, \cdots$ is a subsequence of the $rth$ row. Thus, $x_{r, n_r}, x_{r, n_{r+1}}, x_{r, n_{r+2}}, \cdots$ is a subsequence of a convergence subsequence, and therefore convergence. Thus, $\lim_k x_{r,n_k}$ exists for each $r$. qed.
 \\\\
