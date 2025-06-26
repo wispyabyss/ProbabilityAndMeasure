@@ -253,13 +253,13 @@
 \contentsline {subsubsection}{7.9 Stock Option Stopping Time}{189}{section*.254}%
 \contentsline {section}{Section 8 - Markov Chains}{189}{section*.255}%
 \contentsline {subsection}{Notes}{189}{section*.256}%
-\contentsline {subsubsection}{Markov Chain Setup}{189}{section*.257}%
+\contentsline {subsubsection}{8.1 Markov Chain Setup}{189}{section*.257}%
 \contentsline {paragraph}{Markov Chain States}{190}{section*.258}%
-\contentsline {subsubsection}{High Order Transitions}{191}{section*.259}%
-\contentsline {subsubsection}{An Existence Theorem}{192}{section*.260}%
+\contentsline {subsubsection}{8.2 High Order Transitions}{191}{section*.259}%
+\contentsline {subsubsection}{8.3 An Existence Theorem}{192}{section*.260}%
 \contentsline {paragraph}{Theorem 8.1}{192}{section*.261}%
 \contentsline {paragraph}{Cylinder Sequences Split Property}{193}{section*.262}%
-\contentsline {subsubsection}{Transience and Persistence}{194}{section*.263}%
+\contentsline {subsubsection}{8.4 Transience and Persistence}{194}{section*.263}%
 \contentsline {paragraph}{Theorem 8.2 Transience and Persistence Criteria}{196}{section*.264}%
 \contentsline {paragraph}{Example 8.6 - Polya's Theorem}{198}{section*.265}%
 \contentsline {paragraph}{Definition: Irreducible}{199}{section*.266}%
@@ -268,14 +268,14 @@
 \contentsline {paragraph}{Example: Irreducible Finite Markov Chains are Persistent}{201}{section*.269}%
 \contentsline {paragraph}{Example 8.8: Polya's Theorem}{201}{section*.270}%
 \contentsline {paragraph}{Example 8.9: Random Walk On the Line Properties}{202}{section*.271}%
-\contentsline {subsubsection}{Another Criterion for Persistence}{202}{section*.272}%
+\contentsline {subsubsection}{8.5 Another Criterion for Persistence}{202}{section*.272}%
 \contentsline {paragraph}{Lemma 1: Substochastic Matrix Row Sum Limits Criteria}{204}{section*.273}%
 \contentsline {paragraph}{Theorem 8.4 Probability to Stay in a Subset Forever}{205}{section*.274}%
 \contentsline {paragraph}{Example 8.10}{205}{section*.275}%
 \contentsline {paragraph}{Theorem 8.5 Transience is Equivalent to Staying in a Subset Forever}{205}{section*.276}%
 \contentsline {paragraph}{Proof of Theorem 8.5}{206}{section*.277}%
 \contentsline {paragraph}{Example 8.11}{206}{section*.278}%
-\contentsline {subsubsection}{Stationary Distributions}{207}{section*.279}%
+\contentsline {subsubsection}{8.6 Stationary Distributions}{207}{section*.279}%
 \contentsline {paragraph}{Lemma 2}{208}{section*.280}%
 \contentsline {paragraph}{Bezout's Identity}{208}{section*.281}%
 \contentsline {paragraph}{A21}{209}{section*.282}%
@@ -293,3 +293,5 @@
 \contentsline {paragraph}{Mean Return Time}{219}{section*.294}%
 \contentsline {paragraph}{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions}{219}{section*.295}%
 \contentsline {paragraph}{Theorem 8.8: Classification of Irreducible Aperiodic Markov Chains}{222}{section*.296}%
+\contentsline {subsubsection}{8.7 Exponential Convergence}{223}{section*.297}%
+\contentsline {paragraph}{Theorem 8.9 Exponential Convergence to Stationary Distribution in Finite Case}{223}{section*.298}%

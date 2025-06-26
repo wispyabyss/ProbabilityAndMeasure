@@ -5307,7 +5307,7 @@ We want to interpret this result in terms of a stock option that must be exercis
 
 \section{Section 8 - Markov Chains}
 \subsection{Notes}
-\subsubsection{Markov Chain Setup} Let $S$ be a finite or countable set. Suppose that to each pair $(i,j)$ in $S$ there is assigned a nonnegative number $p_{ij}$ and that these numbers satisfy the constraint:
+\subsubsection{8.1 Markov Chain Setup} Let $S$ be a finite or countable set. Suppose that to each pair $(i,j)$ in $S$ there is assigned a nonnegative number $p_{ij}$ and that these numbers satisfy the constraint:
 $$
 	\sum_{j \in S} p_{ij} = 1 \quad\quad\quad i \in S
 $$
@@ -5330,7 +5330,7 @@ The $\alpha_i$ are nonnegative and add up to 1, but the setup places no further 
 \\\\
 We also have that the $X_n$ do not have to assume real values. As an example, there is the random walk on the integer lattice of a $k$ dimensional space - each $X_n$ takes a value in $\R^k$. Note, this is still countable. But again, like the note above, the values of the $X_n$ will play no role - we just need that $[\omega : X_n(\omega) = i] \in \fcal$ for $i \in S$. Do note: there \textit{will} be expected values $E[f(X_n)]$ for real functions $f$ on $S$ with finite range, but then $f(X_n(\omega))$ will be a simple random variable as defined previously.
 
-\subsubsection{High Order Transitions} First, recall the chain rule for conditional probabilities:
+\subsubsection{8.2 High Order Transitions} First, recall the chain rule for conditional probabilities:
 $$
 	P[A \cap B \cap C] = P[A] P[B | A] P[C | A \cap B]
 $$
@@ -5370,7 +5370,7 @@ $$
 $$
 As we can replace $p_{ij}^{(n)}$ by its expanded term above, and note that if we are at state $i$, it will be in some state $j$ in $n$ steps with probability $1$.
 
-\subsubsection{An Existence Theorem}
+\subsubsection{8.3 An Existence Theorem}
 \paragraph{Theorem 8.1} Suppose that $P = [p_{ij}]$ is a stochastic matrix and that $\alpha_i$ are nonnegative numbers satisfying $\sum_{i \in S} \alpha_i = 1$. There exists on some $(\Omega, \fcal, P)$ a Markov Chain $X_0, X_1, X_2, \cdots$ with initial probabilities $\alpha_i$ and transition probabilities $p_{ij}$.
 \\\\
 \textbf{Proof:} This is similar to Theorem 5.3, which we proved the existence of independent sequences of random variables for a sequence of finite support measures on the set of all subsets of $\R$. There, the space $(\Omega, \fcal, P)$ was $((0,1], \bcal, \lambda)$. The central part of the argument was decomposing intervals into subintervals of a specific length.
@@ -5447,7 +5447,7 @@ $$
 	P_j\left[(X_{m+1}, \cdots, X_{m + n}) \in J\right]
 $$
 
-\subsubsection{Transience and Persistence}
+\subsubsection{8.4 Transience and Persistence}
 Define:
 $$
 	f_{ij}^{(n)} =
@@ -5719,7 +5719,7 @@ $$
 $$
 And so, even though the probabilities sum to infinity, they go to zero. So, think of something like $1/n$. This always holds in the transience case (that the limit is zero), but we see it can also hold in the persistent case.
 
-\subsubsection{Another Criterion for Persistence} Let $Q = [q_{ij}]$ be a matrix whose rows and columns are indexed by the elements of a finite or countable $U$. Suppose that it is \textit{substochastic} in the sense that $q_{ij} \geq 0$ and $\sum_j q_{ij} \leq 1$ - ie, the rows sum to less than $1$. Let $Q^n = [q_{ij}^{(n)}]$ be the $nth$ power, defined inductively as:
+\subsubsection{8.5 Another Criterion for Persistence} Let $Q = [q_{ij}]$ be a matrix whose rows and columns are indexed by the elements of a finite or countable $U$. Suppose that it is \textit{substochastic} in the sense that $q_{ij} \geq 0$ and $\sum_j q_{ij} \leq 1$ - ie, the rows sum to less than $1$. Let $Q^n = [q_{ij}^{(n)}]$ be the $nth$ power, defined inductively as:
 $$
 	q_{ij}^{(n+1)} = \sum_\nu q_{i\nu}q_{\nu j}^{(n)} \quad\quad\quad
 	q_{ij}^{(0)} = \delta_{ij}
@@ -5870,7 +5870,7 @@ Where we could switch the sums by convergence (increasing, bounded by 1). Since 
 
 \paragraph{Example 8.11} Again, we can make use of difference equation solutions to find the $x_k$ solutions for a queuing model, one in which at evert step, one person leaves the line, and 0, 1, or 2 people join it. There is a non trivial solution if $t_0 < t_2$, ie the probability of zero customers joining the line is less than the probability of 2 customers joining the line. We can see intuitively, $t_0 < t_2$ implies that the line will grow unboundedly, and so every state must be transient.
 
-\subsubsection{Stationary Distributions} Suppose the chain has initial probabilities $\pi_i$ satisfying:
+\subsubsection{8.6 Stationary Distributions} Suppose the chain has initial probabilities $\pi_i$ satisfying:
 $$
 	\sum_{i \in S} \pi_i p_{ij} = \pi_j \quad\quad j \in S
 $$
@@ -6372,6 +6372,65 @@ The second case is if we have no stationary distribution, but we are still persi
 	\item There exists a stationary distribution $\pi_j$ and (hence) the chain is persistent (the positive persistent case). Then for all $i$ and $j$, $\lim_n p_{ij}^{(n)} = \pi_j > 0$ and $\mu_j = 1/\pi_j < \infty$.
 \end{enumerate}
 Note the asymptotic properties of the $p_{ij}^{(n)}$ are distinct in all three cases, and so they characterize the three cases. qed.
+
+\subsubsection{8.7 Exponential Convergence}
+This section - I will only take notes, and record theorem statements. I will not have proof flashcards.
+
+\paragraph{Theorem 8.9 Exponential Convergence to Stationary Distribution in Finite Case} If the state space is \textit{finite} and the chain is irreducible and aperiodic, then there is a stationary distribution $\{\pi_i\}$ and:
+$$
+	|p_{ij}^{(n)} - \pi_j| < A\rho^n
+$$
+Where $A \geq 0$ and $0 \leq \rho < 1$.
+\\\\
+\textbf{Proof:} Let $m_j^{(n)} = \min_i p_{ij}^{(n)}$ and $M_j^{(n)} = \max_i p_{ij}^{(n)}$. Note that:
+$$
+	m_j^{(n+1)} = \min_i \sum_{\nu} p_{i\nu}p_{\nu j}^{(n)} \geq
+	\min_i \sum_{\nu} p_{i\nu}m_j^{(n)} = m_j^{(n)}
+$$
+Similarly, we can find:
+$$
+	M_j^{(n+1)} \leq M_j^{(n)}
+$$
+So, we have:
+$$
+	0 \leq m_j^{(1)} \leq m_j^{(2)} \leq \cdots \leq M_j^{(2)} \leq M_j^{(1)} \leq 1
+$$
+Let $s$ be the number of states. Let $\delta = \min_{ij} p_{ij}$. It is clear that $\sum_j p_{ij} \geq s\delta$, and so $0 \leq \delta \leq s^{-1}$. Fix states $u$ and $v$ for now. Let $\sum'$ denote the summation over $j$ in $S$ satisfying $p_{uj} \geq p_{vj}$. Similarly, let $\sum''$ denote the summation over $j$ in $S$ satisfying $p_{uj} < p_{vj}$. Note, both sums taken together go over all $j$ in $S$. Then:
+$$
+	\sum' (p_{uj} - p_{vj}) + \sum'' (p_{uj} - p_{vj}) = 1 - 1 = 0
+$$
+As $\sum' p_{vj} + \sum'' p_{uj} \geq \sum_j \delta = s\delta$, we have:
+$$
+	\sum' (p_{uj} - p_{vj}) =
+	\sum' p_{uj} - \sum' p_{vj} =
+	1 - \sum'' p_{uj} - \sum' p_{vj} =
+	1 - \left[\sum' p_{vj} + \sum'' p_{uj}\right] \leq 1 - s\delta
+$$
+And so, with all of our equations above, we find:
+$$
+	p_{uk}^{n+1} - p_{vk}^{n+1} =
+	\sum_j (p_{uj} - p_{vj}) p_{jk}^{(n)} =
+	\sum' (p_{uj} - p_{vj}) p_{jk}^{(n)} + \sum'' (p_{uj} - p_{vj}) p_{jk}^{(n)}
+$$
+Note, the LHS sum is positive, and the RHS sum is negative, and so it is bounded by:
+$$
+	\leq \sum' (p_{uj} - p_{vj}) M_k^{(n)} + \sum'' (p_{uj} - p_{vj}) m_k^{(n)}
+$$
+Now, as $\sum' (p_{uj} - p_{vj}) + \sum'' (p_{uj} - p_{vj}) = 0$, we have $\sum'' (p_{uj} - p_{vj}) = -\sum' (p_{uj} - p_{vj})$, and so the above equals:
+$$
+	= \sum' (p_{uj} - p_{vj}) (M_k^{(n)} - m_k^{(n)}) \leq
+	(1-s\delta)(M_k^{(n)} - m_k^{(n)})
+$$
+Since the chosen $u$ and $v$ were arbitrary, we have (ie, applied to all the choices of $u$ and $v$):
+$$
+	(M_k^{(n + 1)} - m_k^{(n + 1)}) \leq (1-s\delta)(M_k^{(n)} - m_k^{(n)})
+$$
+Therefore, we have $M_k^{(n)} - m_k^{(n)} \leq (1-s\delta)^n$. It follows (by the first inequality we had) that $m_j^{(n)}$ and $M_j^{(n)}$ have a common limit $\pi_j$, and that:
+$$
+	\left|p_{ij}^{(n)} - \pi_j\right| \leq (1-s\delta)^n
+$$
+For all $i \in S$. Take $A = 1$ and $\rho = 1 - s\delta$. Note that $\pi_i$ are stationary probabilities, and we get our theorem. Note - this proof doesn't rely on any of the preceding theory. qed.
+
 
 \end{document}
 
