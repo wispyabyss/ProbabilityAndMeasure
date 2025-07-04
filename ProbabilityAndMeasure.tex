@@ -6431,6 +6431,67 @@ $$
 $$
 For all $i \in S$. Take $A = 1$ and $\rho = 1 - s\delta$. Note that $\pi_i$ are stationary probabilities, and we get our theorem. Note - this proof doesn't rely on any of the preceding theory. qed.
 
+\subsubsection{8.8 Optimal Stopping} $S$ is finite for the remainder of the Markov chain section.
+
+\paragraph{Stopping Time/Markov Time} A function $\tau$ on $\Omega$ for which $\tau(\omega)$ is a nonnegative integer for each $\omega$. This function becomes a stopping time/markov time if:
+$$
+	\left[\omega : \tau(\omega) = n\right] \in \fcal_n = \sigma(X_0, X_1, \cdots, X_n)
+$$
+As $S$ is finite, the $X_n$ are simple random variables, and the generated sigma algebra is well defined for us. Note, it will be necessary to allow $\tau(\omega)$ to take a special value of $\infty$ on a set of probability $0$.
+\\\\
+Now, we note that if $f$ is a function on $S$, $f(X_0), f(X_1), \cdots$ are SRV. For one - I don't know why we have to add a function, why not just encode it as the state? But, I don't think that matters. We make a game, where an observer will follow the states of the system, and receive a payout of $f(X_\tau)$. $\tau$ encodes the strategy - and so, the problem for the observer is to find a $\tau$ such that he maximizes $E[f(X_\tau)]$.
+\\\\
+Some things to note. I think - if $S$ is finite, then couldn't we just always wait an infinite amount of time until we see the $s \in S$ that maximizes $f(s)$? I'm not sure what goes into the strategy. I think the setup needs to be more clear. I think - perhaps we don't know the complete output of $f$, or all of the states $S$. 
+
+\paragraph{Conditional Expected Value} If $P(A) > 0$ and $Y = \sum_j y_j I_{B_j}$ is a simple random variable, the $B_j$ forming a finite decomposition of $\Omega$ into $\fcal$ sets, the conditional expected value of $Y$ given $A$ is defined by:
+$$
+	E[Y|A] = \sum_j y_j P(B_j|A)
+$$
+Compare this with the normal equation for simple random variables:
+$$
+	E[Y] = \sum_j y_j P(B_j)
+$$
+Denote by $E_i$ conditional expected values for the case $A = [X_0 = i]$:
+$$
+	E_i[Y] = E[Y|X_0 = i] = \sum_j y_j P_i(B_j)
+$$
+The stopping-time problem becomes finding a $\tau$ so as to maximize simultaneously $E_i[f(X_\tau)]$ for all initial states $i$. We do want to find that $f(X_\tau)$ is a \textit{simple} random variable. If $x$ lies in the range of $f$, which is finite (on $S$), and if $\tau$ is everywhere finite, then:
+$$
+	\left[\omega : f(X_{\tau(\omega)}(\omega)) = x\right] =
+	\bigcup_{n=0}^\infty \left[\omega: \tau(\omega) = n, f(X_n(\omega)) = x\right]
+$$
+This lies in $\fcal$, as each $\sigma(X_0, X_1, \cdots, X_n) \subseteq \fcal$, and $\sigma(X_i) \subseteq \fcal$, and $\fcal$ is closed under intersections and countable unions. So, $f(X_\tau)$ has a finite range, and is measurable $\fcal$. Note, some edge cases - we want to allow stopping times where $\tau(\omega) = \infty$, with probability zero. We can just set $f(X_{\tau(\omega)}(\omega)) = 0$ when $\tau(\omega) = \infty$, and note that this case is still measurable $\fcal$, as $P[\omega : \tau(\omega) = \infty] = 0$ (implicitly assuming it is measurable as it has probability zero).
+
+\paragraph{Value at $i$} The game with payoff function $f$ has at $i$ the value:
+$$
+	v(i) = \sup E_i\left[f(X_\tau)\right]
+$$
+The supremum extending over all Markov times $\tau$. It will turn out that the supremum is actually \textit{achieved} - there always exists an optimal stopping time. It will also turn out that the achieved $\tau$ is a supremum for all $i$. The problem is to calculate $v(i)$, and find the best $\tau$. If the chain is irreducible, the system must pass through every state, and the best strategy is obviously to wait until the system enters a state for which $f$ is maximal. Note - this is what I was saying above. This describes an optimal $\tau$, and $v_i = \max f$ for all $i$. For this reason - the interesting cases are those in which some states are transient, and others are absorbing ($p_{ii} = 1$).
+\\\\
+Finally, it is starting to become clear. This is where it becomes tricky - there will be some transient states that give you a pretty high score. The question is - do you take that score, or do you continue on the chain, risking entering the absorbing state with a probably suboptimal score.
+
+\paragraph{Excessive/Superharmonic Function} A function $\varphi$ on $S$ is \textit{excessive} or \textit{superharmonic} if:
+$$
+	\sum_j p_{ij} \varphi(j) \leq \varphi(i) \quad\quad\quad \forall i \in S
+$$
+Note, this is similar to our another criterion for persistence equation, but we have $\leq$ instead of $=$. In terms of conditional expectation, the requirement is:
+$$
+	E_i\left[\varphi(X_1)\right] \leq \varphi(i)
+$$
+
+\paragraph{Lemma 8.4: The value function $v$ is excessive} Given $\epsilon$, choose for each $j$ in $S$ a ``good" stopping time $\tau_j$, satisfying:
+$$
+	E_j\left[f(X_{\tau_j})\right] > v(j) - \epsilon
+$$
+Note, by the definition of supremum, such a $\tau_j$ exists for each $v(j)$. Recall that by definition:
+$$
+	[\tau_j = n] = \left[(X_0, \cdots, X_n) \in I_{jn}\right]
+$$
+For some set $I_{jn}$ of $(n+1)$ long sequences of states (this is by the set being in $\fcal_n$, which is equal to all such sets on the RHS. We choose the specific $I_{jn}$ corresponding to our event). Set $\tau = n+1$ (for $n \geq 0$) on the set:
+$$
+	\left[X_1 = j\right] \cap \left[(X_1, \cdots, X_{n+1}) \in I_{jn}\right]
+$$
+
 
 \end{document}
 
