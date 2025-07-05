@@ -6479,7 +6479,7 @@ $$
 	E_i\left[\varphi(X_1)\right] \leq \varphi(i)
 $$
 
-\paragraph{Lemma 8.4: The value function $v$ is excessive} Given $\epsilon$, choose for each $j$ in $S$ a ``good" stopping time $\tau_j$, satisfying:
+\paragraph{Lemma 8.4: The value function $v$ is excessive} Note, to show that the function $v(i)$ is excessive, we need to show that the supremum across $\tau$ for a single $i$ $\sup E_i\left[f(X_\tau)\right]$ is greater than or equal to the other supremums, multiplied by the $p_{ij}$ probabilities. We do this by examining specific $\tau$, which we will describe below. First, given $\epsilon > 0$, choose for each $j$ in $S$ a ``good" stopping time $\tau_j$, satisfying:
 $$
 	E_j\left[f(X_{\tau_j})\right] > v(j) - \epsilon
 $$
@@ -6491,7 +6491,82 @@ For some set $I_{jn}$ of $(n+1)$ long sequences of states (this is by the set be
 $$
 	\left[X_1 = j\right] \cap \left[(X_1, \cdots, X_{n+1}) \in I_{jn}\right]
 $$
+So, note that we should have $\bigcup_{n=0}^\infty [\tau_j = n]$ is probability $1$ - and so they are a disjoint union that forms a probability $1$ set. I just want to find that $\tau$ is finite with probability $1$ as well - which we can see is the case, because:
+$$
+	P\left[\tau < \infty\right] =
+	P\left[\bigcup_{n=0}^\infty \tau = n\right] \geq
+	P\left[\bigcup_{n=0}^\infty \tau = n + 1\right]
+$$
+$$
+	= P\left[\bigcup_{n=0}^\infty \bigcup_{j \in S} X_1 = j \cap (X_1, \cdots, X_{n+1}) \in I_{jn}\right]
+$$
+Now, we note that each of these sets is disjoint across the first step $j$, so the above equals:
+$$
+	= \sum_{j \in S} P\left[X_1 = j \cap \bigcup_{n=0}^\infty (X_1, \cdots, X_{n+1}) \in I_{jn}\right]
+$$
+If we find $P\left[\bigcup_{n=0}^\infty (X_1, \cdots, X_{n+1}) \in I_{jn}\right] = 1$, then we note that $P[X_1 = j]$ equals the intersected probability (as probability $1$ does not minimize the value). I believe, we should have:
+$$
+	P\left[(X_1, \cdots, X_{n+1}) \in I_{jn}\right] =
+	P\left[(X_0, \cdots, X_n) \in I_{jn}\right]
+$$
+As, we can find:
+$$
+	P\left[(X_1, \cdots, X_{n+1}) \in I_{jn}\right] = 
+	\sum_{i \in S} P\left[X_0 = i, (X_1, \cdots, X_{n+1}) \in I_{jn}\right]
+$$
+We can break this up by specific sequence, use the conditional chain rule to break up into $\alpha_i p_{ij_1} p_{j_2j_3} \cdots p_{j_{n-1}j_n}$ probability sums, bring out the $\alpha_i$ with a common factor, sum the $\alpha_i$ to $1$, and get the $P\left[(X_0, \cdots, X_n) \in I_{jn}\right]$ value. So we have equality. Now, we can thus conclude:
+$$
+	P\left[\bigcup_{n=0}^\infty (X_1, \cdots, X_{n+1}) \in I_{jn}\right] =
+	\sum_{n=0}^\infty P\left[(X_1, \cdots, X_{n+1}) \in I_{jn}\right] =
+	\sum_{n=0}^\infty P\left[(X_0, \cdots, X_n) \in I_{jn}\right]
+$$
+$$
+	= P\left[\bigcup_{n=0}^\infty (X_0, \cdots, X_n) \in I_{jn}\right] = P\left[\bigcup_{n=0}^\infty \tau_j = n\right] =
+	P\left[\tau < \infty\right] = 1
+$$
+Where we note that each $I_{jn}$ corresponds to disjoint coordinate value requirements. And so, we can find:
+$$
+	P\left[\tau < \infty\right] \geq
+	\sum_{j \in S} P\left[X_1 = j \cap \bigcup_{n=0}^\infty (X_1, \cdots, X_{n+1}) \in I_{jn}\right] =
+	\sum_{j \in S} P\left[X_1 = j\right] = 1
+$$
+And so we do have that $\tau$ is a stopping time. It essentially takes one step (always, it doesn't stop at zero or one), and then from the new state $X_1$, it adds the ``good" stopping time conditions we found for $\tau_j$. Anyway. We have everything defined. And so, we find:
+$$
+	E_i\left[f(X_\tau)\right] =
+	\sum_k \sum_{n=0}^\infty P_i\left[\tau = n + 1, X_{n + 1} = k\right]f(k)
+$$
+$$
+	E_i\left[f(X_\tau)\right] =
+	\sum_{n=0}^\infty \sum_j \sum_k P_i\left[X_1 = j, (X_1, \cdots, X_{n+1}) \in I_{jn}, X_{n + 1} = k\right]f(k)
+$$
+Note: the first line is just the definition of the expectation (noting that $\tau = 0, \tau = 1$ are probability zero sets), the second line breaks down $\tau = n + 1$, and we break across the disjoint $X_1 = j$ cases. Using the cylinder sequence property, the above is:
+$$
+	= \sum_{n=0}^\infty \sum_j \sum_k p_{ij}P_j\left[(X_0, \cdots, X_n) \in I_{jn}, X_n = k\right]f(k)
+$$
+$$
+	= \sum_j p_{ij} \sum_{n=0}^\infty\sum_k P_j\left[\tau_j = n, X_n = k\right]f(k)
+$$
+$$
+	= \sum_j p_{ij} E_j\left[f(X_{\tau_j})\right]
+$$
+By the definition of $\tau_j$, and noting that $v(i)$ is the supremum across $\tau$, we have:
+$$
+	v(i) \geq E_i\left[f(X_\tau)\right] = \sum_j p_{ij} E_j\left[f(X_{\tau_j})\right] \geq
+	\sum_j p_{ij}(v(j) - \epsilon) =
+	\sum_j p_{ij}v(j) - \epsilon
+$$
+Note, the $\epsilon$ was arbitrary, and so we can indeed conclude:
+$$
+	v(i) \geq \sum_j p_{ij}v(j)
+$$
+And by definition, $v$ is thus \textit{excessive}. qed.
 
+\paragraph{Lemma 8.5 Excessive Functions Beat Stopping Times} Suppose that $\varphi$ is excessive. Then:
+\begin{enumerate}
+	\item For all stopping times $\tau$, $\varphi(i) \geq E_i\left[\varphi(X_\tau)\right]$
+	\item For all pairs of stopping times satisfying $\sigma \leq \tau$, $E_i\left[\varphi(X_\sigma)\right] \geq E_i\left[\varphi(X_\tau)\right]$
+\end{enumerate}
+The first I am not sure is intuitive, but the second seems like it might be. The excessive property seems to directly correlate with the idea that the expected value of the following step is less than the value of the current one. And note what the first part is saying. For an excessive payoff function, we have that $\tau = 0$ is an optimal strategy. This is because, $E_i$ essentially assumes that $[X_0 = i]$, in which case, $\tau = 0$ gives us a payoff of $\varphi(i)$, which is greater than the expected value of any other payoff function.
 
 \end{document}
 
