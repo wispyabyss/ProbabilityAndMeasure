@@ -6483,7 +6483,7 @@ $$
 $$
 	E_j\left[f(X_{\tau_j})\right] > v(j) - \epsilon
 $$
-Note, by the definition of supremum, such a $\tau_j$ exists for each $v(j)$. Recall that by definition:
+Note, by the definition of supremum, such a $\tau_j$ exists for each $v(j)$. Recall that by definition, as $\tau_j = n \in \fcal_n$:
 $$
 	[\tau_j = n] = \left[(X_0, \cdots, X_n) \in I_{jn}\right]
 $$
@@ -6559,14 +6559,125 @@ Note, the $\epsilon$ was arbitrary, and so we can indeed conclude:
 $$
 	v(i) \geq \sum_j p_{ij}v(j)
 $$
-And by definition, $v$ is thus \textit{excessive}. qed.
+And by definition, $v$ is thus \textit{excessive}. qed. At a high level, we created a stopping time $\tau$ as a conglomeration of stopping times $\tau_j$ that came from $v_i$ - and showed that this $\tau$ satisfied the superharmonic property, which therefore implied $v$ is excessive/superharmonic.
 
 \paragraph{Lemma 8.5 Excessive Functions Beat Stopping Times} Suppose that $\varphi$ is excessive. Then:
 \begin{enumerate}
 	\item For all stopping times $\tau$, $\varphi(i) \geq E_i\left[\varphi(X_\tau)\right]$
 	\item For all pairs of stopping times satisfying $\sigma \leq \tau$, $E_i\left[\varphi(X_\sigma)\right] \geq E_i\left[\varphi(X_\tau)\right]$
 \end{enumerate}
-The first I am not sure is intuitive, but the second seems like it might be. The excessive property seems to directly correlate with the idea that the expected value of the following step is less than the value of the current one. And note what the first part is saying. For an excessive payoff function, we have that $\tau = 0$ is an optimal strategy. This is because, $E_i$ essentially assumes that $[X_0 = i]$, in which case, $\tau = 0$ gives us a payoff of $\varphi(i)$, which is greater than the expected value of any other payoff function.
+The first I am not sure is intuitive, but the second seems like it might be. The excessive property seems to directly correlate with the idea that the expected value of the following step is less than the value of the current one. And note what the first part is saying. For an excessive payoff function, we have that $\tau = 0$ is an optimal strategy. This is because, $E_i$ essentially assumes that $[X_0 = i]$, in which case, $\tau = 0$ gives us a payoff of $\varphi(i)$, which is greater than the expected value of any other payoff function. Ie, for $\tau = 0$, $E_i\left[\varphi(X_\tau)\right] = \varphi(i) \geq v_\varphi(i) = \sup_\tau E_i\left[\varphi(X_\tau)\right]$.
+\\\\
+\textbf{Proof} We first try and prove 1. Define $\tau_n = \min\left\{\tau,N\right\}$. Note that $\tau_N$ is a stopping time as well (we could do it rigorously, but it seems intuitive that $P[\tau_n < \infty] = 1$, as it won't be greater than $1$, and $\tau_N = k \in \fcal_k$, which we can take from $\tau$). Note that:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] =
+	\sum_{n=0}^{N-1} \sum_k P_i\left[\tau_N = n, X_n = k\right]\varphi(k) +
+	\sum_{n=N}^\infty \sum_k P_i\left[\tau_N = n, X_n = k\right]\varphi(k)
+$$
+We can rewrite the above as:
+$$
+	=
+	\sum_{n=0}^{N-1} \sum_k P_i\left[\tau = n, X_n = k\right]\varphi(k) +
+	\sum_k P_i\left[\tau \geq N, X_N = k\right]\varphi(k)
+$$
+The first sum, we just replaced $\tau_N$ with $\tau$, as they are equal for $n < N$. For the second sum, we note that if $\tau_N$ can only equal $N$, which happens in the case if $\tau \geq N$. Essentially, we removed probability zero terms, and redefined the $\tau_N = N$ term to an equivalent event. As $\tau \geq N = \left[\tau < N\right]^c \in \fcal_{N - 1}$, we can rewrite the second sum as (using a final passage argument + cylinder sequences, we can make use of cylinder sequences as $\tau \geq N$ just imposes conditions on the first $N - 1$ Markov random variables):
+$$
+	\sum_k P_i\left[\tau \geq N, X_N = k\right]\varphi(k) =
+	\sum_k \sum_j P_i\left[\tau \geq N, X_{N-1} = j, X_N = k\right]\varphi(k)
+$$
+$$
+	= \sum_k \sum_j P_i\left[\tau \geq N, X_{N-1} = j\right]p_{jk}\varphi(k)
+$$
+Now, using the fact that $\varphi$ is excessive, we have:
+$$
+	\leq \sum_j P_i\left[\tau \geq N, X_{N-1} = j\right]\varphi(j)
+$$
+We substitute this back into our above expression:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] \leq
+	\sum_{n=0}^{N-1} \sum_k P_i\left[\tau = n, X_n = k\right]\varphi(k) +
+	\sum_k P_i\left[\tau \geq N, X_{N-1} = k\right]\varphi(k)
+$$
+$$
+	=
+	\sum_{n=0}^{N-2} \sum_k P_i\left[\tau = n, X_n = k\right]\varphi(k) +
+	\sum_k P_i\left[\tau = N-1, X_{N-1} = k\right]\varphi(k) +
+$$
+$$
+	\sum_k P_i\left[\tau \geq N, X_{N-1} = k\right]\varphi(k)
+$$
+$$
+	=
+	\sum_{n=0}^{N-2} \sum_k P_i\left[\tau = n, X_n = k\right]\varphi(k) +
+	\sum_k P_i\left[\tau \geq N - 1, X_{N-1} = k\right]\varphi(k)
+$$
+Where we are adding together disjoint unions in the final step. We note that:
+$$
+	E_i\left[\varphi(X_{\tau_{N-1}})\right] =
+	\sum_{n=0}^{N-2} \sum_k P_i\left[\tau = n, X_n = k\right]\varphi(k) +
+	\sum_k P_i\left[\tau \geq N - 1, X_{N-1} = k\right]\varphi(k)
+$$
+And so, we can conclude, for excessive $\varphi$:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] \leq
+	E_i\left[\varphi(X_{\tau_{N-1}})\right]
+$$
+As $\tau_0 = 0$, and so $E_i\left[\varphi(X_0)\right] = \varphi(i)$, we have for all $N$:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] \leq \varphi(i)
+$$
+On the probability 1 set of $\omega$ where $\tau(\omega)$ is finite, we have:
+$$
+	\varphi(X_{\tau_N(\omega)}(\omega)) \to \varphi(X_{\tau(\omega)}(\omega))
+$$
+Recall Theorem 5.4: If the $\varphi(X_{\tau_N})$ are uniformly bounded (and they are, as they each have the same range that is finite), and if $\varphi(X_\tau) = \lim_N \varphi(X_{\tau_N})$ with probability 1 (which is the case, as noted above), then we have:
+$$
+	E_i\left[\varphi(X_\tau)\right] = \lim_N E_i\left[\varphi(X_{\tau_N})\right]
+$$
+Note, as discussed before, $P_i$ satisfies all of the properties of a probability measure. Thus, we can conclude that:
+$$
+	E_i\left[\varphi(X_\tau)\right] = \lim_N E_i\left[\varphi(X_{\tau_N})\right] \leq
+	\lim_N \varphi(i) = \varphi(i)
+$$
+\textbf{2.} Now, we want to prove the second statement, for all pairs of stopping times satisfying $\sigma \leq \tau$, $E_i\left[\varphi(X_\sigma)\right] \geq E_i\left[\varphi(X_\tau)\right]$. It is very similar to the first proof. Define $\tau_N = \min\left\{\tau, \sigma + N\right\}$. Note that $\tau_N$ is similarly a stopping time. Further:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] = \sum_{n=0}^{\infty} \sum_k P_i\left[\tau_N = n, X_{\tau_n} = k\right]\varphi(k)
+$$
+We break this up into cases: $\tau < \sigma + N$, and $\tau \geq \sigma + N$. We first note that we can break this up across the infinite values that $\sigma$ can take on:
+$$
+	= \sum_{m=0}^\infty \sum_{n=0}^{\infty} \sum_k P_i\left[\sigma = m, \tau = m + n, X_{\tau_n} = k\right]\varphi(k)
+$$
+We now note, that if $m + n \geq m + N$, we have that $\tau_n = m + N$. Otherwise, $\tau_n = m + n$. So, we can break the expectation up as:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] =
+	\sum_{m=0}^\infty \sum_{n=0}^{N - 1} \sum_k P_i\left[\sigma = m, \tau = m + n, X_{m + n} = k\right]\varphi(k)
+$$
+$$
+	+
+	\sum_{m=0}^\infty \sum_k P_i\left[\sigma = m, \tau \geq m + N, X_{m + N} = k\right]\varphi(k)
+$$
+We can make the same cylinder sequence argument as before on the second sum, and find that:
+$$
+	E_i\left[\varphi(X_{\tau_N})\right] \leq
+	E_i\left[\varphi(X_{\tau_{N-1}})\right] \leq E_i\left[\varphi(X_{\tau_0})\right] = E_i\left[\varphi(X_\sigma)\right]
+$$
+Make use of the same limit argument as in part 1, and we can indeed conclude that:
+$$
+	E_i\left[\varphi(X_\tau)\right] \leq E_i\left[\varphi(X_\sigma)\right]
+$$
+And thus, we have proved both statements. qed.
+
+\paragraph{Lemma 8.6 If an excessive function $\varphi$ dominates the payoff function $g$, then it dominates the value function $v$ as well} Note, $g$ dominates $h$ means for all $i$, $g(i) \geq h(i)$.
+\\\\
+\textbf{Proof:} Note that $\varphi(i) \geq E_i\left[\varphi(X_\tau)\right]$ for all stopping times $\tau$, by the previous lemma. By the well orderedness of expectation, this implies that $E_i\left[\varphi(X_\tau)\right] \geq E_i\left[f(X_\tau)\right]$ for all $\tau$. As this is true for all $\tau$, we must have:
+$$
+	\varphi(i) \geq \sup_\tau E_i\left[f(X_\tau)\right] = v(i)
+$$
+qed.
+\\\\
+As $\tau = 0$ is a stopping time, we also have that $v$ dominates $f$. Lemmas 4 and 6 thus characterize $v$:
+
+\paragraph{Theorem 8.10} The value function $v$ is the minimal excessive function dominating $f$. Note how this stems from our lemmas 8.4, 8.5, and 8.6.
 
 \end{document}
 
