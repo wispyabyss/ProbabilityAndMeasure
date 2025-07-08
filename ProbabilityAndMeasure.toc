@@ -302,5 +302,6 @@
 \contentsline {paragraph}{Excessive/Superharmonic Function}{226}{section*.303}%
 \contentsline {paragraph}{Lemma 8.4: The value function $v$ is excessive}{226}{section*.304}%
 \contentsline {paragraph}{Lemma 8.5 Excessive Functions Beat Stopping Times}{229}{section*.305}%
-\contentsline {paragraph}{Lemma 8.6 If an excessive function $\varphi $ dominates the payoff function $g$, then it dominates the value function $v$ as well}{231}{section*.306}%
+\contentsline {paragraph}{Lemma 8.6 If an excessive function $\varphi $ dominates the payoff function $f$, then it dominates the value function $v$ as well}{231}{section*.306}%
 \contentsline {paragraph}{Theorem 8.10}{232}{section*.307}%
+\contentsline {paragraph}{Theorem 8.11 - The Hitting Time $\tau _0$ is Optimal}{233}{section*.308}%

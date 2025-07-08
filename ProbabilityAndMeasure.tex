@@ -6566,9 +6566,9 @@ And by definition, $v$ is thus \textit{excessive}. qed. At a high level, we crea
 	\item For all stopping times $\tau$, $\varphi(i) \geq E_i\left[\varphi(X_\tau)\right]$
 	\item For all pairs of stopping times satisfying $\sigma \leq \tau$, $E_i\left[\varphi(X_\sigma)\right] \geq E_i\left[\varphi(X_\tau)\right]$
 \end{enumerate}
-The first I am not sure is intuitive, but the second seems like it might be. The excessive property seems to directly correlate with the idea that the expected value of the following step is less than the value of the current one. And note what the first part is saying. For an excessive payoff function, we have that $\tau = 0$ is an optimal strategy. This is because, $E_i$ essentially assumes that $[X_0 = i]$, in which case, $\tau = 0$ gives us a payoff of $\varphi(i)$, which is greater than the expected value of any other payoff function. Ie, for $\tau = 0$, $E_i\left[\varphi(X_\tau)\right] = \varphi(i) \geq v_\varphi(i) = \sup_\tau E_i\left[\varphi(X_\tau)\right]$.
+The first I am not sure is intuitive, but the second seems like it might be. The excessive property seems to directly correlate with the idea that the expected value of the following step is less than the value of the current one. And note what the first part is saying. For an excessive payoff function, we have that $\tau = 0$ is an optimal strategy. This is because, $E_i$ essentially assumes that $[X_0 = i]$, in which case, $\tau = 0$ gives us a payoff of $\varphi(i)$, which is greater than the expected value of any other payoff function. Ie, for $\tau = 0$, $E_i\left[\varphi(X_\tau)\right] = \varphi(i) \geq v_\varphi(i) = \sup_\tau E_i\left[\varphi(X_\tau)\right]$. In the case where the payoff function is excessive - the value is actually achievable. And, the optimal $\tau$ works for all initial states $i$. 
 \\\\
-\textbf{Proof} We first try and prove 1. Define $\tau_n = \min\left\{\tau,N\right\}$. Note that $\tau_N$ is a stopping time as well (we could do it rigorously, but it seems intuitive that $P[\tau_n < \infty] = 1$, as it won't be greater than $1$, and $\tau_N = k \in \fcal_k$, which we can take from $\tau$). Note that:
+\textbf{Proof} We first try and prove 1. Define $\tau_n = \min\left\{\tau,N\right\}$. Note that $\tau_N$ is a stopping time as well (we could do it rigorously, but it seems intuitive that $P[\tau_n < \infty] = 1$, as it won't be greater than $N$, and $\tau_N = k \in \fcal_k$, which we can take from $\tau$). Note that:
 $$
 	E_i\left[\varphi(X_{\tau_N})\right] =
 	\sum_{n=0}^{N-1} \sum_k P_i\left[\tau_N = n, X_n = k\right]\varphi(k) +
@@ -6643,11 +6643,7 @@ $$
 $$
 	E_i\left[\varphi(X_{\tau_N})\right] = \sum_{n=0}^{\infty} \sum_k P_i\left[\tau_N = n, X_{\tau_n} = k\right]\varphi(k)
 $$
-We break this up into cases: $\tau < \sigma + N$, and $\tau \geq \sigma + N$. We first note that we can break this up across the infinite values that $\sigma$ can take on:
-$$
-	= \sum_{m=0}^\infty \sum_{n=0}^{\infty} \sum_k P_i\left[\sigma = m, \tau = m + n, X_{\tau_n} = k\right]\varphi(k)
-$$
-We now note, that if $m + n \geq m + N$, we have that $\tau_n = m + N$. Otherwise, $\tau_n = m + n$. So, we can break the expectation up as:
+We break this up into cases: $\tau < \sigma + N$, and $\tau \geq \sigma + N$. If $m + n \geq m + N$, we have that $\tau_n = m + N$. Otherwise, $\tau_n = m + n$. So, we can break the expectation up as (noting that $\sigma \leq \tau$ allows us to express $\tau$ as an addition on top of the value of $\sigma$):
 $$
 	E_i\left[\varphi(X_{\tau_N})\right] =
 	\sum_{m=0}^\infty \sum_{n=0}^{N - 1} \sum_k P_i\left[\sigma = m, \tau = m + n, X_{m + n} = k\right]\varphi(k)
@@ -6667,17 +6663,102 @@ $$
 $$
 And thus, we have proved both statements. qed.
 
-\paragraph{Lemma 8.6 If an excessive function $\varphi$ dominates the payoff function $g$, then it dominates the value function $v$ as well} Note, $g$ dominates $h$ means for all $i$, $g(i) \geq h(i)$.
+\paragraph{Lemma 8.6 If an excessive function $\varphi$ dominates the payoff function $f$, then it dominates the value function $v$ as well} Note, $g$ dominates $h$ means for all $i$, $g(i) \geq h(i)$.
 \\\\
 \textbf{Proof:} Note that $\varphi(i) \geq E_i\left[\varphi(X_\tau)\right]$ for all stopping times $\tau$, by the previous lemma. By the well orderedness of expectation, this implies that $E_i\left[\varphi(X_\tau)\right] \geq E_i\left[f(X_\tau)\right]$ for all $\tau$. As this is true for all $\tau$, we must have:
 $$
 	\varphi(i) \geq \sup_\tau E_i\left[f(X_\tau)\right] = v(i)
 $$
 qed.
-\\\\
-As $\tau = 0$ is a stopping time, we also have that $v$ dominates $f$. Lemmas 4 and 6 thus characterize $v$:
 
-\paragraph{Theorem 8.10} The value function $v$ is the minimal excessive function dominating $f$. Note how this stems from our lemmas 8.4, 8.5, and 8.6.
+\paragraph{Theorem 8.10} The value function $v$ is the minimal excessive function dominating $f$. \textbf{Proof:} Examine $\varphi$, the minimal excessive function dominating $f$. Note, by lemma 8.6, this implies:
+$$
+	\varphi(i) \geq v(i)
+$$
+Now note, for all other excessive functions $\varphi'$ dominating $f$, we have:
+$$
+	\varphi'(i) \geq \varphi(i)
+$$
+By the definition of minimal. Examine the stopping time $\tau = 0$. We have that:
+$$
+	v(i) = \sup_\tau E_i\left[f(X_\tau)\right] \geq 
+	E_i\left[f(X_0)\right] = f(i)
+$$
+So the value function $v$ dominates $f$. We now recall, lemma 4 tells us that $v$ is excessive. So, $v$ is an excessive function $\varphi'$ that dominates $f$, and so we have:
+$$
+	v(i) \geq \varphi(i) \quad\quad\quad
+	\varphi(i) \geq v(i) \quad\implies\quad
+	v(i) = \varphi(i)
+$$
+And thus, we can conclude that the value function $v$ is the minimal excessive function dominating $f$.
+\\\\
+So, now we know what the value of $v$ is. Can we find a stopping time $\tau$ that achieves it, and it achieves $v(i)$ for all $i$? Consider the set of states $M$ for which $v(i) = f(i)$. We first note that $M$ is nonempty. At the very least, it contains the $i \in M$ on which $f(i)$ is maximized. Recall, we assume $S$ is finite, so this is a nonempty set of states. Why does $f(i)$ being maximized imply $v(i) = f(i)$? Well, we have that $\tau = 0$ is a stopping time, and for those $i$, we have:
+$$
+	v(i) = E_i\left[f(X_\tau)\right]
+$$
+As considering going to any other state would lower the expected value. So yes, $M$ is nonempty, and we call it the \textit{support set}.
+\\\\
+Define:
+$$
+	A = \bigcap_{n=0}^\infty \left[X_n \not\in M\right]
+$$
+This is the event that the chain never enters $M$. We want to show that $P_i(A) = 0$ for all $i$. This is trivial if $M = S$. So, assume $M \subset S$. Choose $\delta > 0$ such that $f(i) \leq v(i) - \delta$ for all $i \in S - M$. Again, such a $\delta$ is possible, given that the set is finite. Note that:
+$$
+	E_i\left[f(X_\tau)\right] =
+	\sum_{n=0}^\infty \sum_k P_i\left[\tau = n, X_n = k\right]f(k) 
+$$
+$$
+	\leq
+	\sum_{n=0}^\infty \sum_{k \in M} P_i\left[\tau = n, X_n = k\right]v(k) +
+	\sum_{n=0}^\infty \sum_{k \not\in M} P_i\left[\tau = n, X_n = k\right](v(k) - \delta)
+$$
+Distribute the $v(k)$, we find:
+$$
+	= E_i\left[v(X_\tau)\right] - \delta P_i\left[X_\tau \in S - M\right]
+$$
+Now, we note that $P_i(A) \leq P_i\left[X_\tau \in S - M\right]$, as $\omega$ in the set on the left are contained in the $\omega$ that make the set on the right. And so, we have:
+$$
+	E_i\left[f(X_\tau)\right] \leq
+	E_i\left[v(X_\tau)\right] - \delta P_i(A)
+$$
+Take the supremum over $\tau$. This implies:
+$$
+	v(i) \leq \sup_\tau E_i\left[v(X_\tau)\right] - \delta P_i(A)
+$$
+As $v$ is excessive, lemma 5 tells us that $\tau = 0$ is an optimal strategy, ie maximizes the supremum, and so, we have:
+$$
+	v(i) \leq v(i) - \delta P_i(A)
+$$
+Thus, we must have $P_i(A) = 0$.
+\\\\
+And so, we can conclude, whatever the initial state, the system is certain to enter the support set $M$. Define:
+$$
+	\tau_0(\omega) = \min\left[n : X_n(\omega) \in M\right]
+$$
+This is the hitting time for $M$. $\tau_0$ is a Markov time - $\tau_0$ is finite with probability 1, and $\tau_0(\omega) = n$ is in $\fcal_n$. This is because:
+$$
+	\left[\tau_0(\omega) = n\right] = \bigcup_{k = 1}^{n-1} X_k(\omega) \not\in M \cap X_n(\omega) \in M
+$$
+This is clearly just a restriction on the sequences of the first $n$ Markov states. It may be the case that $X_n(\omega) \not\in M$ for all $n$, in which case $\tau_0(\omega) = \infty$ - but this is probability zero.
+
+\paragraph{Theorem 8.11 - The Hitting Time $\tau_0$ is Optimal} We will prove that $E_i\left[f(X_{\tau_0})\right] = v(i)$ for all $i$.
+\\\\
+\textbf{Proof:} The goal of the proof is to show that $\varphi(i) = E_i\left[f(X_{\tau_0})\right]$ is both greater than or equal to and less than or equal to $v(i)$. This will be done making use of the fact that $v(i)$ is the minimal excessive function dominating $f$.
+\\\\
+By the definition of the hitting time, we have that $f(X_{\tau_0}) = v(X_{\tau_0})$. Note that we must then have:
+$$
+	\varphi(i) = E_i\left[f(X_{\tau_0})\right] = E_i\left[v(X_{\tau_0})\right]
+$$
+First, we want to show $\varphi$ is excessive, as this will allow us to then show it dominates $f$, and thus greater than $v$. Define:
+$$
+	\tau_1(\omega) = \min\left[n \geq 1 : X_n(\omega) \in M\right]
+$$
+$\tau_1$ is similarly a Markov time. We have:
+$$
+	E_i\left[v(X_{\tau_1})\right] =
+	\sum_{n=1}^\infty \sum_{k \in M} P_i\left[X_1 \not\in M, \cdots, X_{n-1} \not\in M, X_n = k\right] v(k)
+$$
+The above is equivalent to $\tau_1 = n, X_n = k$. 
 
 \end{document}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  7 JUL 2025 12:16
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  8 JUL 2025 11:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3290,14 +3290,14 @@ mr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ) + [] [] \OML/cmm/m/it/12 P[] []
 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
  []
 
-
+[229]
 Overfull \hbox (3.38599pt too wide) detected at line 6600
 \OML/cmm/m/it/12 E[] [] \OMS/cmsy/m/n/12 ^^T [] [] \OML/cmm/m/it/12 P[] [] '\OT
 1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ) + [] \OML/cmm/m/it/12 P[] [] 
 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
  []
 
-[229]
+
 Overfull \hbox (37.3024pt too wide) detected at line 6619
 \OML/cmm/m/it/12 E[] [] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 P[] [] '\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ) + [] \OML/cmm/m/it/12 P[] [] '\O
@@ -3305,16 +3305,36 @@ T1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
  []
 
 [230]
-Underfull \hbox (badness 10000) in paragraph at lines 6670--6673
+Underfull \hbox (badness 10000) in paragraph at lines 6666--6669
+
+ []
+
+[231]
+Underfull \hbox (badness 10000) in paragraph at lines 6692--6696
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6675--6679
+Underfull \hbox (badness 10000) in paragraph at lines 6698--6702
 
  []
 
-[231] [232] (./ProbabilityAndMeasure.aux)
+[232]
+Underfull \hbox (badness 10000) in paragraph at lines 6731--6735
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6744--6749
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6744--6749
+
+ []
+
+[233] [234] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 7F0E77C5712E319685E4CA8CECBB76F5;33504.
  ) 
@@ -3327,4 +3347,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (232 pages).
+Output written on ProbabilityAndMeasure.pdf (234 pages).
