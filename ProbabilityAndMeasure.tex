@@ -32,6 +32,7 @@
 \newcommand{\dcal}{\mathcal{D}}
 \newcommand{\fcal}{\mathcal{F}}
 \newcommand{\bcal}{\mathcal{B}}
+\newcommand{\rcal}{\mathcal{R}}
 \newcommand{\gcal}{\mathcal{G}}
 \newcommand{\hcal}{\mathcal{H}}
 \newcommand{\mcal}{\mathcal{M}}
@@ -6743,7 +6744,7 @@ This is clearly just a restriction on the sequences of the first $n$ Markov stat
 
 \paragraph{Theorem 8.11 - The Hitting Time $\tau_0$ is Optimal} We will prove that $E_i\left[f(X_{\tau_0})\right] = v(i)$ for all $i$.
 \\\\
-\textbf{Proof:} The goal of the proof is to show that $\varphi(i) = E_i\left[f(X_{\tau_0})\right]$ is both greater than or equal to and less than or equal to $v(i)$. This will be done making use of the fact that $v(i)$ is the minimal excessive function dominating $f$.
+\textbf{Proof:} The goal of the proof is to show that $\varphi(i) = E_i\left[f(X_{\tau_0})\right]$ is both greater than or equal to and less than or equal to $v(i)$. This will be done making use of the fact that $v(i)$ is the minimal excessive function dominating $f$. However, note that $v(i) = \sup_\tau E_i\left[f(X_\tau)\right] \geq \varphi(i)$, so all we need to prove is the other direction, that $\varphi(i) \geq v(i)$. This can be done by showing $\varphi(i)$ is an excessive function, and it dominates $f$.
 \\\\
 By the definition of the hitting time, we have that $f(X_{\tau_0}) = v(X_{\tau_0})$. Note that we must then have:
 $$
@@ -6758,7 +6759,84 @@ $$
 	E_i\left[v(X_{\tau_1})\right] =
 	\sum_{n=1}^\infty \sum_{k \in M} P_i\left[X_1 \not\in M, \cdots, X_{n-1} \not\in M, X_n = k\right] v(k)
 $$
-The above is equivalent to $\tau_1 = n, X_n = k$. 
+The above is equivalent to $\tau_1 = n, X_n = k$. Note, we can sum over the possible $j$ values for $X_0$, to get:
+$$
+	= \sum_{n=1}^\infty \sum_{k \in M} \sum_{j \in S} P_i\left[X_0 = j, X_1 \not\in M, \cdots, X_{n-1} \not\in M, X_n = k\right] v(k)
+$$
+By cylinder sequences, this gives us:
+$$
+	= \sum_{n=1}^\infty \sum_{k \in M} \sum_{j \in S} p_{ij}P_j\left[X_0 \not\in M, \cdots, X_{n-2} \not\in M, X_{n-1} = k\right] v(k)
+$$
+Switching the order of the sums, we get:
+$$
+	= \sum_{j \in S} p_{ij} \sum_{n=1}^\infty \sum_{k \in M} P_j\left[X_0 \not\in M, \cdots, X_{n-2} \not\in M, X_{n-1} = k\right] v(k)
+$$
+$$
+	= \sum_{j \in S} p_{ij} E_j\left[v(X_{\tau_0})\right]
+$$
+As $\tau_0 \leq \tau_1$, and $v$ is excessive by lemma 4, we can conclude by lemma 5:
+$$
+	\varphi(i) = E_i\left[v(X_{\tau_0})\right] \geq E_i\left[v(X_{\tau_1})\right] =
+	\sum_{j \in S} p_{ij} E_j\left[v(X_{\tau_0})\right] =
+	\sum_{j \in S} p_{ij} \varphi(i)
+$$
+Thus, we have that by definition, $\varphi$ is excessive. Now, we just need to show that it dominates $f$, ie $\varphi(i) \geq f(i)$. As $\tau_0 = 0$ for $X_0 \in M$, if $i \in M$, then:
+$$
+	\varphi(i) = E_i\left[f(X_0)\right] = f(i)
+$$
+So, now we use proof by contradiction. Assume that $\varphi(i) < f(i)$ for some values of $i$ in $S - M$, and choose $i_0$ to maximize $f(i) - \varphi(i)$. Then:
+$$
+	\psi(i) = \varphi(i) + f(i_0) - \varphi(i_0)
+$$
+Dominates $f$, and is excessive, being the sum of a constant $f(i_0) - \varphi(i_0)$ and excessive $\varphi$. By Theorem 8.10, $\psi$ must dominate $v$, so that:
+$$
+	\psi(i_0) \geq v(i_0) \implies
+	\varphi(i_0) + f(i_0) - \varphi(i_0) \geq v(i_0) \implies
+	f(i_0) \geq v(i_0) \implies
+	f(i_0) = v(i_0)
+$$
+Recall, this implies $i_0 \in M$, a contradiction. So, we have that $\varphi$ dominates $f$, and is excessive, and thus:
+$$
+	\varphi(i) \geq v(i) \implies
+	E_i\left[f(X_{\tau_0})\right] = v(i)
+$$
+And with that, we have proven that the stopping time $\tau_0$, the hitting time of $M$, the support set on which $f(i) = v(i)$, is an optimal strategy that equals $\sup_\tau E_i\left[f(X_\tau)\right]$ for all starting states $i$. qed.
+
+\paragraph{Example 8.16} Consider the symmetric random walk with absorbing barriers at $0$ and $r$. Let $f$ take values on each of the states $0$ to $r$. What is the optimal stopping time? First, we need to find the support set $M$, where:
+$$
+	f(i) = \sup_{\tau} E_i\left[f(X_\tau)\right] = v(i)
+$$
+Well, simpler than trying to calculate that expected value - $v(i)$ is the minimal excessive function that dominates $f$. Note, to be excessive on the symmetric random walk, requires:
+$$
+	\varphi(i) \geq \frac{1}{2}\varphi(i-1) + \frac{1}{2}\varphi(i)
+$$
+This is essentially a concave requirement on $S$. So, $v$ is the minimal concave function that dominates $f$. Note, we can do this geometrically - I will give a picture from the book here:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{excessive_concave.jpg}
+	\caption{$v$ geometrically}
+	\label{fig:excessive_concave_1}
+\end{figure}
+Note that to dominate $f$, the function $v$ has to be above the points that meet the dots in the picture. However, we also require $v$ to be concave. The minimal ``concavity" is a straight line - as this gives us equality on the concave condition. And so, for the symmetric random walk with absorbing barriers - the set of $M$ are the points that are on the convex hull (smallest polygon enclosing all points, with no inward curves. The bottom line and left and right line are included).
+\\\\
+I like this, because it ties a theoretical result to something that I think could be concluded intuitively. Note that in the left example, you would never stop at the inner points, as you will (with probability 1) go to a higher point. However, you do stop at the left and right line, because there is a high probability (1/2) that you will have to stop at a lower value.
+
+
+\section{Section 9 - Large Deviations and The Iterated Logarithm}
+\subsection{Notes} Note, I am skipping, as this is an optional chapter, and I am eager to continue on to general random variables and measure.
+
+
+\section{Section 10 - General Measures}
+\subsection{Notes}
+\subsubsection{Classes of Sets} We want to find a analogues to the Borel sets for the entire real line, and $k$ dimensional Euclidean space. 
+
+\paragraph{Example 10.1 - $k$ dimensional Borel Sets} Let $x = (x_1, \cdots ,x_k)$ be the generic point of Euclidean $k$ space $\R^k$. The bounded rectangles:
+$$
+	\left[x = (x_1, \cdots, x_k) : a_i < x_i \leq b_i, i = 1, \cdots, k\right]
+$$
+Will play in $\R^k$ the role intervals $(a,b]$ played in $(0,1]$. Let $\rcal^k$ be the $\sigma$ field generated by these rectangles. This is the analogue of the class $\bcal$ of Borel sets in $(0,1]$. The elements of $\rcal^k$ are the $k$-dimensional borel sets. For $k=1$, they are also called the linear Borel sets.
+\\\\
+Note that $\rcal^k$ contains the open sets. Each point in an open set contains an open rational rectangle - the countable union of these rectangles forms the open set, and so the open set is in the sigma field, being a countable union of sets in the field. As complements, the closed sets are also within $\rcal^k$. We can also find that $\rcal^k$ is generated by the open or closed sets (as intersections of open sets form the rectangles above). This also implies the rational rectangles generate $\rcal^k$. 
 
 \end{document}
 

@@ -1,8 +1,8 @@
 \contentsline {section}{Forward}{5}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{5}{section*.3}%
 \contentsline {subsection}{Notes}{5}{section*.4}%
-\contentsline {subsubsection}{The Unit Interval}{5}{section*.5}%
-\contentsline {subsubsection}{The Weak Law of Large Numbers}{6}{section*.6}%
+\contentsline {subsubsection}{The Unit Interval}{6}{section*.5}%
+\contentsline {subsubsection}{The Weak Law of Large Numbers}{7}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{7}{section*.7}%
 \contentsline {paragraph}{Lemma - Chebyshev's Inequality}{8}{section*.8}%
 \contentsline {subsubsection}{The Strong Law of Large Numbers}{8}{section*.9}%
@@ -21,287 +21,294 @@
 \contentsline {subsubsection}{1.6 Alternate $S_n$ Integral Value Proof}{20}{section*.22}%
 \contentsline {subsubsection}{1.7 Vieta's Formula}{22}{section*.23}%
 \contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{24}{section*.24}%
-\contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{24}{section*.25}%
-\contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{25}{section*.26}%
+\contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{25}{section*.25}%
+\contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{26}{section*.26}%
 \contentsline {subsubsection}{1.11 Diophantine Approximation Properties}{27}{section*.27}%
-\contentsline {section}{Section 2 - Probability Measures}{28}{section*.28}%
-\contentsline {subsection}{Notes}{28}{section*.29}%
-\contentsline {paragraph}{Spaces}{28}{section*.30}%
+\contentsline {section}{Section 2 - Probability Measures}{29}{section*.28}%
+\contentsline {subsection}{Notes}{29}{section*.29}%
+\contentsline {paragraph}{Spaces}{29}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{29}{section*.31}%
 \contentsline {paragraph}{Classes of Sets}{29}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{30}{section*.33}%
 \contentsline {paragraph}{Examples}{30}{section*.34}%
-\contentsline {paragraph}{Definition - Generated Sigma Field}{30}{section*.35}%
+\contentsline {paragraph}{Definition - Generated Sigma Field}{31}{section*.35}%
 \contentsline {paragraph}{Example - Borel Sets}{31}{section*.36}%
 \contentsline {paragraph}{Probability Measures}{31}{section*.37}%
 \contentsline {paragraph}{Probability Space}{31}{section*.38}%
-\contentsline {paragraph}{Discrete Probability Space}{31}{section*.39}%
-\contentsline {paragraph}{Massed Discrete Probability Space}{31}{section*.40}%
-\contentsline {paragraph}{Lebesgue Measure on the Unit Interval}{32}{section*.41}%
+\contentsline {paragraph}{Discrete Probability Space}{32}{section*.39}%
+\contentsline {paragraph}{Massed Discrete Probability Space}{32}{section*.40}%
+\contentsline {paragraph}{Lebesgue Measure on the Unit Interval}{33}{section*.41}%
 \contentsline {paragraph}{Sequence Space}{33}{section*.42}%
-\contentsline {paragraph}{Definition - Coordinate Functions}{33}{section*.43}%
+\contentsline {paragraph}{Definition - Coordinate Functions}{34}{section*.43}%
 \contentsline {paragraph}{Definition: Cylinder of Rank $n$}{34}{section*.44}%
 \contentsline {paragraph}{Definition: Probability Measure on the Field of Cylinders}{34}{section*.45}%
-\contentsline {paragraph}{Theorem 2.3}{34}{section*.46}%
-\contentsline {paragraph}{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty}{34}{section*.47}%
+\contentsline {paragraph}{Theorem 2.3}{35}{section*.46}%
+\contentsline {paragraph}{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty}{35}{section*.47}%
 \contentsline {paragraph}{Proof of Lemma}{35}{section*.48}%
 \contentsline {paragraph}{Extended Sequence Measure}{36}{section*.49}%
 \contentsline {subsection}{Problems}{36}{section*.50}%
 \contentsline {subsubsection}{2.1 Prove Set Theory Results Using Indicators}{36}{section*.51}%
 \contentsline {subsubsection}{2.2 Union and Intersection Equality Property}{37}{section*.52}%
-\contentsline {subsubsection}{2.3 Equivalent and Non Equivalent Field Definitions}{37}{section*.53}%
-\contentsline {subsubsection}{2.4 Unions of increasing Fields are Fields, but not true for $\sigma $ fields}{37}{section*.54}%
+\contentsline {subsubsection}{2.3 Equivalent and Non Equivalent Field Definitions}{38}{section*.53}%
+\contentsline {subsubsection}{2.4 Unions of increasing Fields are Fields, but not true for $\sigma $ fields}{38}{section*.54}%
 \contentsline {subsubsection}{2.5 Generated Field and Explicit Definition}{38}{section*.55}%
 \contentsline {subsubsection}{2.6 Comparing Fields and $\sigma $ fields}{38}{section*.56}%
-\contentsline {subsubsection}{2.7 Extending a field/$\sigma $ field by $\{H\}$}{38}{section*.57}%
+\contentsline {subsubsection}{2.7 Extending a field/$\sigma $ field by $\{H\}$}{39}{section*.57}%
 \contentsline {subsubsection}{2.8 $\sigma $ algebra for class where $A^c$ is countable union of class elements}{39}{section*.58}%
 \contentsline {subsubsection}{2.9 Equivalent $\sigma $ algebra definition}{39}{section*.59}%
-\contentsline {subsubsection}{2.10 Classes Generating The Discrete Field are Large}{39}{section*.60}%
-\contentsline {subsubsection}{2.11 Countably Generated Fields}{40}{section*.61}%
+\contentsline {subsubsection}{2.10 Classes Generating The Discrete Field are Large}{40}{section*.60}%
+\contentsline {subsubsection}{2.11 Countably Generated Fields}{41}{section*.61}%
 \contentsline {subsubsection}{2.12 Cardinality of Fields and $\sigma $ Fields}{42}{section*.62}%
-\contentsline {subsubsection}{2.13 Probability Measure on Finite and CoFinite Sets}{43}{section*.63}%
-\contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{44}{section*.64}%
-\contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{45}{section*.65}%
+\contentsline {subsubsection}{2.13 Probability Measure on Finite and CoFinite Sets}{44}{section*.63}%
+\contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{45}{section*.64}%
+\contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{46}{section*.65}%
 \contentsline {subsubsection}{2.18 Stochastic Arithmetic}{47}{section*.66}%
-\contentsline {subsubsection}{2.19 Nonatomic Probability Spaces}{52}{section*.67}%
-\contentsline {subsubsection}{2.21 Generating Sigma Algebras ``From the Inside"}{55}{section*.68}%
+\contentsline {subsubsection}{2.19 Nonatomic Probability Spaces}{53}{section*.67}%
+\contentsline {subsubsection}{2.21 Generating Sigma Algebras ``From the Inside"}{56}{section*.68}%
 \contentsline {subsubsection}{2.22}{57}{section*.69}%
-\contentsline {section}{Section 3 - Existence and Extension}{57}{section*.70}%
-\contentsline {subsection}{Notes}{57}{section*.71}%
-\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{57}{section*.72}%
-\contentsline {subsubsection}{Construction of the Extension}{57}{section*.73}%
-\contentsline {paragraph}{Outer Measure}{57}{section*.74}%
+\contentsline {section}{Section 3 - Existence and Extension}{58}{section*.70}%
+\contentsline {subsection}{Notes}{58}{section*.71}%
+\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{58}{section*.72}%
+\contentsline {subsubsection}{Construction of the Extension}{58}{section*.73}%
+\contentsline {paragraph}{Outer Measure}{58}{section*.74}%
 \contentsline {paragraph}{Inner Measure}{58}{section*.75}%
-\contentsline {paragraph}{$P^*$ Measurable}{58}{section*.76}%
-\contentsline {paragraph}{Properties of $P^*$ and $\mathcal {M}$}{58}{section*.77}%
-\contentsline {paragraph}{Lemma 1 - The class $\mathcal {M}$ is a field}{59}{section*.78}%
-\contentsline {paragraph}{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mathcal {M}$}{59}{section*.79}%
-\contentsline {paragraph}{Lemma 3 - The class $\mathcal {M}$ is a $\sigma $ field, and $P^*$ restricted to $\mathcal {M}$ is countably additive}{60}{section*.80}%
+\contentsline {paragraph}{$P^*$ Measurable}{59}{section*.76}%
+\contentsline {paragraph}{Properties of $P^*$ and $\mathcal {M}$}{59}{section*.77}%
+\contentsline {paragraph}{Lemma 1 - The class $\mathcal {M}$ is a field}{60}{section*.78}%
+\contentsline {paragraph}{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mathcal {M}$}{60}{section*.79}%
+\contentsline {paragraph}{Lemma 3 - The class $\mathcal {M}$ is a $\sigma $ field, and $P^*$ restricted to $\mathcal {M}$ is countably additive}{61}{section*.80}%
 \contentsline {paragraph}{Lemma 4 - If $P^*$ is defined by the outer measure, then $\mathcal {F}_0 \subset \mathcal {M}$}{61}{section*.81}%
-\contentsline {paragraph}{Lemma 5 - If $P^*$ is defined by the outer measure, then $P^*(A) = P(A)$ for $A \in \mathcal {F}_0$}{61}{section*.82}%
-\contentsline {paragraph}{Proof of Extension in Theorem 3.1}{61}{section*.83}%
-\contentsline {subsubsection}{Uniqueness of the Extension and the $\pi -\lambda $ Theorem}{61}{section*.84}%
+\contentsline {paragraph}{Lemma 5 - If $P^*$ is defined by the outer measure, then $P^*(A) = P(A)$ for $A \in \mathcal {F}_0$}{62}{section*.82}%
+\contentsline {paragraph}{Proof of Extension in Theorem 3.1}{62}{section*.83}%
+\contentsline {subsubsection}{Uniqueness of the Extension and the $\pi -\lambda $ Theorem}{62}{section*.84}%
 \contentsline {paragraph}{$\pi $ System}{62}{section*.85}%
 \contentsline {paragraph}{$\lambda $ System}{62}{section*.86}%
-\contentsline {paragraph}{Lemma 6 $\pi $ and $\lambda $ implies $\sigma $}{62}{section*.87}%
-\contentsline {paragraph}{Theorem 3-2: $\pi -\lambda $ Theorem}{62}{section*.88}%
+\contentsline {paragraph}{Lemma 6 $\pi $ and $\lambda $ implies $\sigma $}{63}{section*.87}%
+\contentsline {paragraph}{Theorem 3-2: $\pi -\lambda $ Theorem}{63}{section*.88}%
 \contentsline {paragraph}{Theorem 3-3 Uniqueness of Extensions}{64}{section*.89}%
-\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{64}{section*.90}%
-\contentsline {paragraph}{Monotone Classes}{64}{section*.91}%
-\contentsline {paragraph}{Theorem 3.4 - Halmos's Monotone Class Theorem}{64}{section*.92}%
+\contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{65}{section*.90}%
+\contentsline {paragraph}{Monotone Classes}{65}{section*.91}%
+\contentsline {paragraph}{Theorem 3.4 - Halmos's Monotone Class Theorem}{65}{section*.92}%
 \contentsline {subsubsection}{Lebesgue Measure on the Unit Interval}{65}{section*.93}%
-\contentsline {paragraph}{Example 1 - Subintervals around rationals}{65}{section*.94}%
-\contentsline {paragraph}{Example 2 - $k$ Repeated Sequences}{65}{section*.95}%
+\contentsline {paragraph}{Example 1 - Subintervals around rationals}{66}{section*.94}%
+\contentsline {paragraph}{Example 2 - $k$ Repeated Sequences}{66}{section*.95}%
 \contentsline {paragraph}{Completeness}{66}{section*.96}%
-\contentsline {paragraph}{Nonmeasurable Sets}{66}{section*.97}%
-\contentsline {paragraph}{Definition: Set Shifts/Translations}{66}{section*.98}%
-\contentsline {paragraph}{Vitali Sets}{67}{section*.99}%
+\contentsline {paragraph}{Nonmeasurable Sets}{67}{section*.97}%
+\contentsline {paragraph}{Definition: Set Shifts/Translations}{67}{section*.98}%
+\contentsline {paragraph}{Vitali Sets}{68}{section*.99}%
 \contentsline {subsection}{Problems}{68}{section*.100}%
 \contentsline {subsubsection}{3.1 Finite vs. Countable Additivity}{68}{section*.101}%
 \contentsline {subsubsection}{3.2 Redefining the Inner and Outer Measure}{69}{section*.102}%
-\contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{71}{section*.103}%
+\contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{72}{section*.103}%
 \contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{73}{section*.104}%
-\contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{75}{section*.105}%
-\contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{77}{section*.106}%
+\contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{76}{section*.105}%
+\contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{78}{section*.106}%
 \contentsline {subsubsection}{3.14 Lebesgue Measure 0 Sets that are not Borel Sets}{79}{section*.107}%
 \contentsline {subsubsection}{3.18 All non-zero outer measure sets contain a non (borel) measurable subset}{80}{section*.108}%
-\contentsline {subsubsection}{3.19 Existence of an Intermediate Borel Set $0 < \lambda (A \cap G) < \lambda (G)$ for all nonempty open $G$}{80}{section*.109}%
-\contentsline {subsubsection}{3.20 No Intermediate Borel Set on All Intervals $a\lambda (I) \leq \lambda (A \cap I) \leq b\lambda (I)$}{82}{section*.110}%
-\contentsline {section}{Section 4 - Denumerable Probabilities}{84}{section*.111}%
-\contentsline {subsection}{Notes}{84}{section*.112}%
-\contentsline {subsubsection}{General Formulas}{84}{section*.113}%
-\contentsline {paragraph}{Conditional Probability}{84}{section*.114}%
-\contentsline {subsubsection}{Limit Sets}{85}{section*.115}%
-\contentsline {paragraph}{Lim Inf and Lim Sup}{85}{section*.116}%
-\contentsline {paragraph}{Example 1}{86}{section*.117}%
-\contentsline {paragraph}{Theorem 4.1 - Ordering of Limit Probabilities}{86}{section*.118}%
-\contentsline {paragraph}{Example 4.2}{87}{section*.119}%
-\contentsline {subsubsection}{Independent Events}{87}{section*.120}%
-\contentsline {paragraph}{Example 4.5}{88}{section*.121}%
-\contentsline {paragraph}{Independence of Classes}{88}{section*.122}%
-\contentsline {paragraph}{Theorem 4.2 - Independence of Generated $\sigma $ field}{89}{section*.123}%
-\contentsline {paragraph}{Independence of Infinite Classes}{89}{section*.124}%
-\contentsline {paragraph}{Corollary 1 - Independence of Generated $\sigma $ fields (infinite version)}{89}{section*.125}%
-\contentsline {paragraph}{Corollary 2}{90}{section*.126}%
-\contentsline {paragraph}{Example 4.7}{90}{section*.127}%
-\contentsline {subsubsection}{Subfields}{91}{section*.128}%
-\contentsline {paragraph}{Interpreting Theorem 4.2}{91}{section*.129}%
-\contentsline {paragraph}{Partial Information as Partitions}{92}{section*.130}%
-\contentsline {paragraph}{Example 4.10 - Breakdown of Information Interpretation}{92}{section*.131}%
-\contentsline {subsubsection}{The Borel-Cantelli Lemmas}{93}{section*.132}%
-\contentsline {paragraph}{Theorem 4.3 First Borel-Cantelli Lemma}{93}{section*.133}%
-\contentsline {paragraph}{Theorem 4.4 Second Borel-Cantelli Lemma}{93}{section*.134}%
-\contentsline {subsubsection}{The Zero-One Law}{94}{section*.135}%
-\contentsline {paragraph}{Definition: Tail $\sigma $ Field}{94}{section*.136}%
-\contentsline {paragraph}{Example 4.18 Lipsup and Liminf are Tail Events}{94}{section*.137}%
-\contentsline {paragraph}{Example 4.19 Run Lengths Being a specific length are tail events}{95}{section*.138}%
-\contentsline {paragraph}{Theorem 4.5 - Kolmogorov's Zero-One Law}{95}{section*.139}%
-\contentsline {paragraph}{Example 4.20 - Borel Cantelli and Zero One Law}{96}{section*.140}%
-\contentsline {paragraph}{Example 4.21 - Run Length At time $n$ longer than $r_n$ infinitely often}{96}{section*.141}%
-\contentsline {subsection}{Problems}{97}{section*.142}%
-\contentsline {subsubsection}{4.1 Equating Set $\qopname \relax m{lim\,inf}$ and $\qopname \relax m{lim\,sup}$ definitions with the sequence definitions}{97}{section*.143}%
-\contentsline {subsubsection}{4.3 Rotated Square $\qopname \relax m{lim\,sup}$ and $\qopname \relax m{lim\,inf}$}{99}{section*.144}%
-\contentsline {subsubsection}{4.7 Independence Complement Criteria}{100}{section*.145}%
-\contentsline {subsubsection}{4.8 Class $\mathcal {A}$ Partitions of $\Omega $}{101}{section*.146}%
-\contentsline {subsubsection}{4.10 Independence does not imply Independent Information}{102}{section*.147}%
-\contentsline {subsubsection}{4.11 Different Criteria for $P(\qopname \relax m{lim\,sup}_n A_n) = 1$}{105}{section*.148}%
-\contentsline {subsubsection}{4.14 Infinite Independent Events Criteria for a Nonatomic Space}{111}{section*.149}%
-\contentsline {subsubsection}{4.15 Density of the Square-Free Integers}{115}{section*.150}%
-\contentsline {section}{Section 5 - Simple Random Variables}{117}{section*.151}%
-\contentsline {subsection}{Notes}{117}{section*.152}%
-\contentsline {subsubsection}{Simple Random Variables Definitions}{117}{section*.153}%
-\contentsline {paragraph}{Definition - Simple Random Variable}{117}{section*.154}%
-\contentsline {paragraph}{Definition - Measurable with Respect to a Sub-$\sigma $-field}{118}{section*.155}%
-\contentsline {paragraph}{Definition - $\sigma $ field generated by a simple random variable $X$}{118}{section*.156}%
-\contentsline {paragraph}{Theorem 5.1 - Simple Random Variable Generated $\sigma $ Fields and Function of Simple Random Variables}{118}{section*.157}%
-\contentsline {paragraph}{Proof of Theorem 5.1}{119}{section*.158}%
-\contentsline {paragraph}{Example 5.2}{121}{section*.159}%
-\contentsline {subsubsection}{Convergence of Simple Random Variables}{121}{section*.160}%
-\contentsline {paragraph}{Definition: Convergence in Probability}{122}{section*.161}%
-\contentsline {paragraph}{Theorem 5.2 - Convergence with Probability 1, and Convergence in Probability}{122}{section*.162}%
-\contentsline {paragraph}{Example 5.4}{122}{section*.163}%
-\contentsline {subsubsection}{Independence}{123}{section*.164}%
-\contentsline {paragraph}{Definition - Independent Simple Random Variables}{123}{section*.165}%
-\contentsline {paragraph}{Independent Functions of Independent SRVs (2d Array Argument)}{123}{section*.166}%
-\contentsline {paragraph}{Example 5.6 Permutation Cycles}{125}{section*.167}%
-\contentsline {subsubsection}{Existence of Independent Sequences}{127}{section*.168}%
-\contentsline {paragraph}{Definition - Distribution}{127}{section*.169}%
-\contentsline {paragraph}{Theorem 5.3 - Existence of SRV distributions for arbitrary finite support measures}{127}{section*.170}%
-\contentsline {paragraph}{Proof of Theorem 5.3}{127}{section*.171}%
-\contentsline {paragraph}{Usefulness of the Existence of SRV Distributions for Arbitrary Finite Support Measures}{128}{section*.172}%
-\contentsline {subsubsection}{Expected Value}{129}{section*.173}%
-\contentsline {paragraph}{Definition: Expected Value}{129}{section*.174}%
-\contentsline {paragraph}{Properties of the Expected Value}{129}{section*.175}%
-\contentsline {paragraph}{Definition - Uniformly Bounded}{130}{section*.176}%
-\contentsline {paragraph}{Theorem 5.4 - Uniformly Bounded Sequence implies Uniformly Bounded Limit}{130}{section*.177}%
-\contentsline {paragraph}{Example 5.7 - Counter Example to Theorem 5.4 Without Uniform Boundedness}{130}{section*.178}%
-\contentsline {paragraph}{Corollary to 5.4}{130}{section*.179}%
-\contentsline {paragraph}{Expected Value for Independent Random Variables}{131}{section*.180}%
-\contentsline {paragraph}{Variance}{131}{section*.181}%
-\contentsline {paragraph}{Alternate Expected Value Definition}{131}{section*.182}%
-\contentsline {subsubsection}{Inequalities}{132}{section*.183}%
-\contentsline {paragraph}{Markov's Inequality}{132}{section*.184}%
-\contentsline {paragraph}{Chebyshev's Inequality}{132}{section*.185}%
-\contentsline {paragraph}{Jensen's Inequality}{133}{section*.186}%
-\contentsline {paragraph}{Holder's Inequality}{133}{section*.187}%
-\contentsline {paragraph}{Schwarz's Inequality}{134}{section*.188}%
-\contentsline {paragraph}{Lyapounov's Inequality}{134}{section*.189}%
-\contentsline {subsection}{Problems}{134}{section*.190}%
-\contentsline {subsubsection}{5.1 Measurable on a Tail Field implies $X = c$ with probability 1}{134}{section*.191}%
-\contentsline {subsubsection}{5.2 - Existence of independent SRV $X_i$ with density $\mu _i$ for finite support $\mu _i$ on a nonatomic space}{135}{section*.192}%
-\contentsline {subsubsection}{5.3 - Expected Value minimizes Variance}{136}{section*.193}%
-\contentsline {subsubsection}{5.4 Chebyshev's Inequality can reach equality}{137}{section*.194}%
-\contentsline {subsubsection}{5.5 Cantelli's Inequality}{137}{section*.195}%
-\contentsline {subsubsection}{5.8 Multiple Variable Jensen Inequality}{139}{section*.196}%
-\contentsline {subsubsection}{5.9 Prove Holders for nonnegative $X$, $Y$ via Jensen's}{141}{section*.197}%
-\contentsline {subsubsection}{5.10 Prove Minkowski's Inequality for nonnegative $X$, $Y$ via Jensen's}{142}{section*.198}%
-\contentsline {subsubsection}{5.11 Average Number of Successful Bernoulli Trials approaches $p$}{143}{section*.199}%
-\contentsline {subsubsection}{5.12 Expected Value as Infinite Probability Sum}{144}{section*.200}%
-\contentsline {subsubsection}{5.15 Convergence in Probability does not imply Convergence with Probability One}{144}{section*.201}%
-\contentsline {subsubsection}{5.16 Independent Sets on a Discrete Space}{145}{section*.202}%
-\contentsline {subsubsection}{5.19 Average Prime Power of Pos Integer Prime Factorizations}{147}{section*.203}%
-\contentsline {subsubsection}{5.20}{150}{section*.204}%
-\contentsline {section}{Section 6 - The Law of Large Numbers}{151}{section*.205}%
-\contentsline {subsection}{Notes}{151}{section*.206}%
-\contentsline {subsubsection}{The Strong Law}{151}{section*.207}%
-\contentsline {paragraph}{Definition - Identically Distributed}{151}{section*.208}%
-\contentsline {paragraph}{Theorem 6.1 - The Strong Law of Large Numbers (SRV)}{151}{section*.209}%
-\contentsline {subsubsection}{The Weak Law}{152}{section*.210}%
-\contentsline {paragraph}{Theorem: The Weak Law of Large Numbers}{152}{section*.211}%
-\contentsline {paragraph}{Example 6.3 - Length of Cycles in a Permutation using the Weak Law}{153}{section*.212}%
-\contentsline {subsubsection}{Bernstein's Theorem}{153}{section*.213}%
-\contentsline {paragraph}{Theorem 6.2}{154}{section*.214}%
-\contentsline {paragraph}{Proof: $f$ continuous on a compact interval implies $f$ is \textit {uniformly continuous}}{154}{section*.215}%
-\contentsline {paragraph}{Proof of Theorem 6.2}{154}{section*.216}%
-\contentsline {subsubsection}{Refinement of the Second Borel-Cantelli Lemma}{155}{section*.217}%
-\contentsline {paragraph}{Reproving The Second Borel-Cantelli Lemma with $N_n$}{156}{section*.218}%
-\contentsline {paragraph}{Theorem 6.3: Second Borel Cantelli Lemma Refinement}{157}{section*.219}%
-\contentsline {paragraph}{Proof of Theorem 6.3}{157}{section*.220}%
-\contentsline {paragraph}{Example 6.5}{158}{section*.221}%
-\contentsline {subsection}{Problems}{159}{section*.222}%
-\contentsline {subsubsection}{6.1 Convergence With Probability ``Finite" Terms Condition}{159}{section*.223}%
-\contentsline {subsubsection}{6.2 Number of Cycles In a Length $n$ permutation bound}{160}{section*.224}%
-\contentsline {subsubsection}{6.3 Approximate Number of Inversions in a Random Permutation}{160}{section*.225}%
-\contentsline {subsubsection}{6.5 Poisson's Theorem}{163}{section*.226}%
-\contentsline {subsubsection}{6.6 Cantelli's Theorem}{164}{section*.227}%
-\contentsline {subsubsection}{6.7 Convergence of $n^{-2}S_{n^2}$ implies convergence of $n^{-1}S_n$}{165}{section*.228}%
-\contentsline {subsubsection}{6.11 $m$ dependent, uniformly bounded, and mean $0$ $X_i$ convergence with probability $1$}{166}{section*.229}%
-\contentsline {subsubsection}{6.12 For $X_i$ iid, Relative Asymptotic Frequencies Are What They Should Be}{167}{section*.230}%
-\contentsline {subsubsection}{6.14 Shannon's Theorem}{168}{section*.231}%
-\contentsline {section}{Section 7 - Gambling Systems}{171}{section*.232}%
-\contentsline {subsection}{Notes}{171}{section*.233}%
-\contentsline {subsubsection}{Gambler's Ruin}{171}{section*.234}%
-\contentsline {paragraph}{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}{173}{section*.235}%
-\contentsline {paragraph}{Probability of Ruin}{175}{section*.236}%
-\contentsline {subsubsection}{Selection Systems}{175}{section*.237}%
-\contentsline {paragraph}{Selection Systems Framework}{175}{section*.238}%
-\contentsline {paragraph}{Theorem 7.1 - Selection Systems Do Nothing}{177}{section*.239}%
-\contentsline {paragraph}{Proof of Theorem 7.1}{177}{section*.240}%
-\contentsline {subsubsection}{Gambling Policies}{179}{section*.241}%
-\contentsline {paragraph}{Gambling Policy Framework}{179}{section*.242}%
-\contentsline {paragraph}{Theorem 7.2: Expected Stopping Time Aware Fortune Value}{181}{section*.243}%
-\contentsline {subsubsection}{Bold Play}{181}{section*.244}%
-\contentsline {paragraph}{Bold Play}{182}{section*.245}%
-\contentsline {paragraph}{Policy Framework}{182}{section*.246}%
-\contentsline {paragraph}{Theorem 7.3 - Bold Play is Optimal in the subfair case}{183}{section*.247}%
-\contentsline {paragraph}{Proof:}{183}{section*.248}%
-\contentsline {subsection}{Problems}{183}{section*.249}%
-\contentsline {subsubsection}{7.1 Comparing Gambler's Ruin Success with Different Fortunes}{183}{section*.250}%
-\contentsline {subsubsection}{7.3 Collectives and Asymptotic Frequencies of Sequences}{185}{section*.251}%
-\contentsline {subsubsection}{7.7 Progress and Pinch Gambling Policy}{186}{section*.252}%
-\contentsline {subsubsection}{7.8 Pattern Martingale Betting}{188}{section*.253}%
-\contentsline {subsubsection}{7.9 Stock Option Stopping Time}{189}{section*.254}%
-\contentsline {section}{Section 8 - Markov Chains}{189}{section*.255}%
-\contentsline {subsection}{Notes}{189}{section*.256}%
-\contentsline {subsubsection}{8.1 Markov Chain Setup}{189}{section*.257}%
-\contentsline {paragraph}{Markov Chain States}{190}{section*.258}%
-\contentsline {subsubsection}{8.2 High Order Transitions}{191}{section*.259}%
-\contentsline {subsubsection}{8.3 An Existence Theorem}{192}{section*.260}%
-\contentsline {paragraph}{Theorem 8.1}{192}{section*.261}%
-\contentsline {paragraph}{Cylinder Sequences Split Property}{193}{section*.262}%
-\contentsline {subsubsection}{8.4 Transience and Persistence}{194}{section*.263}%
-\contentsline {paragraph}{Theorem 8.2 Transience and Persistence Criteria}{196}{section*.264}%
-\contentsline {paragraph}{Example 8.6 - Polya's Theorem}{198}{section*.265}%
-\contentsline {paragraph}{Definition: Irreducible}{199}{section*.266}%
-\contentsline {paragraph}{Theorem 8.3 - Irreducible Markov Chains are persistent or transient}{199}{section*.267}%
-\contentsline {paragraph}{Proof:}{199}{section*.268}%
-\contentsline {paragraph}{Example: Irreducible Finite Markov Chains are Persistent}{201}{section*.269}%
-\contentsline {paragraph}{Example 8.8: Polya's Theorem}{201}{section*.270}%
-\contentsline {paragraph}{Example 8.9: Random Walk On the Line Properties}{202}{section*.271}%
-\contentsline {subsubsection}{8.5 Another Criterion for Persistence}{202}{section*.272}%
-\contentsline {paragraph}{Lemma 1: Substochastic Matrix Row Sum Limits Criteria}{204}{section*.273}%
-\contentsline {paragraph}{Theorem 8.4 Probability to Stay in a Subset Forever}{205}{section*.274}%
-\contentsline {paragraph}{Example 8.10}{205}{section*.275}%
-\contentsline {paragraph}{Theorem 8.5 Transience is Equivalent to Staying in a Subset Forever}{205}{section*.276}%
-\contentsline {paragraph}{Proof of Theorem 8.5}{206}{section*.277}%
-\contentsline {paragraph}{Example 8.11}{206}{section*.278}%
-\contentsline {subsubsection}{8.6 Stationary Distributions}{207}{section*.279}%
-\contentsline {paragraph}{Lemma 2}{208}{section*.280}%
-\contentsline {paragraph}{Bezout's Identity}{208}{section*.281}%
-\contentsline {paragraph}{A21}{209}{section*.282}%
-\contentsline {paragraph}{Theorem 8.6 Aperiodic Irreducible Chains Approach The Stationary Distribution}{209}{section*.283}%
-\contentsline {paragraph}{Proof of Theorem 8.6}{210}{section*.284}%
-\contentsline {paragraph}{Definition: Coupled Markov Chain}{210}{section*.285}%
-\contentsline {paragraph}{SubLemma 8.6.1: An irreducible aperiodic chain creates an irreducible coupled chain}{211}{section*.286}%
-\contentsline {paragraph}{SubLemma 8.6.2: Irreducible Chain with Stationary Distribution is Persistence}{211}{section*.287}%
-\contentsline {paragraph}{SubLemma 8.6.3: Coupled Chain of Stationary Distribution Chain has a Stationary Distribution}{212}{section*.288}%
-\contentsline {paragraph}{SubLemma 8.6.4: Irreducible and Persistent Coupled Chains imply $\qopname \relax m{lim}_n |p_{ik}^{(n)} - p_{jk}^{(n)}| = 0$}{212}{section*.289}%
-\contentsline {paragraph}{Proof Of Theorem 8.6}{214}{section*.290}%
-\contentsline {paragraph}{A14 - The Diagonal Method}{215}{section*.291}%
-\contentsline {paragraph}{Theorem 8.7 Aperiodic Irreducible Chains with no Stationary Distribution have a Null Long Term Distribution}{216}{section*.292}%
-\contentsline {paragraph}{Proof of Theorem 8.7}{216}{section*.293}%
-\contentsline {paragraph}{Mean Return Time}{219}{section*.294}%
-\contentsline {paragraph}{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions}{219}{section*.295}%
-\contentsline {paragraph}{Theorem 8.8: Classification of Irreducible Aperiodic Markov Chains}{222}{section*.296}%
-\contentsline {subsubsection}{8.7 Exponential Convergence}{223}{section*.297}%
-\contentsline {paragraph}{Theorem 8.9 Exponential Convergence to Stationary Distribution in Finite Case}{223}{section*.298}%
-\contentsline {subsubsection}{8.8 Optimal Stopping}{224}{section*.299}%
-\contentsline {paragraph}{Stopping Time/Markov Time}{224}{section*.300}%
-\contentsline {paragraph}{Conditional Expected Value}{225}{section*.301}%
-\contentsline {paragraph}{Value at $i$}{226}{section*.302}%
-\contentsline {paragraph}{Excessive/Superharmonic Function}{226}{section*.303}%
-\contentsline {paragraph}{Lemma 8.4: The value function $v$ is excessive}{226}{section*.304}%
-\contentsline {paragraph}{Lemma 8.5 Excessive Functions Beat Stopping Times}{229}{section*.305}%
-\contentsline {paragraph}{Lemma 8.6 If an excessive function $\varphi $ dominates the payoff function $f$, then it dominates the value function $v$ as well}{231}{section*.306}%
-\contentsline {paragraph}{Theorem 8.10}{232}{section*.307}%
-\contentsline {paragraph}{Theorem 8.11 - The Hitting Time $\tau _0$ is Optimal}{233}{section*.308}%
+\contentsline {subsubsection}{3.19 Existence of an Intermediate Borel Set $0 < \lambda (A \cap G) < \lambda (G)$ for all nonempty open $G$}{81}{section*.109}%
+\contentsline {subsubsection}{3.20 No Intermediate Borel Set on All Intervals $a\lambda (I) \leq \lambda (A \cap I) \leq b\lambda (I)$}{83}{section*.110}%
+\contentsline {section}{Section 4 - Denumerable Probabilities}{85}{section*.111}%
+\contentsline {subsection}{Notes}{85}{section*.112}%
+\contentsline {subsubsection}{General Formulas}{85}{section*.113}%
+\contentsline {paragraph}{Conditional Probability}{85}{section*.114}%
+\contentsline {subsubsection}{Limit Sets}{86}{section*.115}%
+\contentsline {paragraph}{Lim Inf and Lim Sup}{86}{section*.116}%
+\contentsline {paragraph}{Example 1}{87}{section*.117}%
+\contentsline {paragraph}{Theorem 4.1 - Ordering of Limit Probabilities}{87}{section*.118}%
+\contentsline {paragraph}{Example 4.2}{88}{section*.119}%
+\contentsline {subsubsection}{Independent Events}{88}{section*.120}%
+\contentsline {paragraph}{Example 4.5}{89}{section*.121}%
+\contentsline {paragraph}{Independence of Classes}{89}{section*.122}%
+\contentsline {paragraph}{Theorem 4.2 - Independence of Generated $\sigma $ field}{90}{section*.123}%
+\contentsline {paragraph}{Independence of Infinite Classes}{90}{section*.124}%
+\contentsline {paragraph}{Corollary 1 - Independence of Generated $\sigma $ fields (infinite version)}{90}{section*.125}%
+\contentsline {paragraph}{Corollary 2}{91}{section*.126}%
+\contentsline {paragraph}{Example 4.7}{91}{section*.127}%
+\contentsline {subsubsection}{Subfields}{92}{section*.128}%
+\contentsline {paragraph}{Interpreting Theorem 4.2}{92}{section*.129}%
+\contentsline {paragraph}{Partial Information as Partitions}{93}{section*.130}%
+\contentsline {paragraph}{Example 4.10 - Breakdown of Information Interpretation}{93}{section*.131}%
+\contentsline {subsubsection}{The Borel-Cantelli Lemmas}{94}{section*.132}%
+\contentsline {paragraph}{Theorem 4.3 First Borel-Cantelli Lemma}{94}{section*.133}%
+\contentsline {paragraph}{Theorem 4.4 Second Borel-Cantelli Lemma}{94}{section*.134}%
+\contentsline {subsubsection}{The Zero-One Law}{95}{section*.135}%
+\contentsline {paragraph}{Definition: Tail $\sigma $ Field}{95}{section*.136}%
+\contentsline {paragraph}{Example 4.18 Lipsup and Liminf are Tail Events}{95}{section*.137}%
+\contentsline {paragraph}{Example 4.19 Run Lengths Being a specific length are tail events}{96}{section*.138}%
+\contentsline {paragraph}{Theorem 4.5 - Kolmogorov's Zero-One Law}{96}{section*.139}%
+\contentsline {paragraph}{Example 4.20 - Borel Cantelli and Zero One Law}{97}{section*.140}%
+\contentsline {paragraph}{Example 4.21 - Run Length At time $n$ longer than $r_n$ infinitely often}{97}{section*.141}%
+\contentsline {subsection}{Problems}{98}{section*.142}%
+\contentsline {subsubsection}{4.1 Equating Set $\qopname \relax m{lim\,inf}$ and $\qopname \relax m{lim\,sup}$ definitions with the sequence definitions}{98}{section*.143}%
+\contentsline {subsubsection}{4.3 Rotated Square $\qopname \relax m{lim\,sup}$ and $\qopname \relax m{lim\,inf}$}{100}{section*.144}%
+\contentsline {subsubsection}{4.7 Independence Complement Criteria}{101}{section*.145}%
+\contentsline {subsubsection}{4.8 Class $\mathcal {A}$ Partitions of $\Omega $}{102}{section*.146}%
+\contentsline {subsubsection}{4.10 Independence does not imply Independent Information}{103}{section*.147}%
+\contentsline {subsubsection}{4.11 Different Criteria for $P(\qopname \relax m{lim\,sup}_n A_n) = 1$}{106}{section*.148}%
+\contentsline {subsubsection}{4.14 Infinite Independent Events Criteria for a Nonatomic Space}{112}{section*.149}%
+\contentsline {subsubsection}{4.15 Density of the Square-Free Integers}{116}{section*.150}%
+\contentsline {section}{Section 5 - Simple Random Variables}{118}{section*.151}%
+\contentsline {subsection}{Notes}{118}{section*.152}%
+\contentsline {subsubsection}{Simple Random Variables Definitions}{118}{section*.153}%
+\contentsline {paragraph}{Definition - Simple Random Variable}{118}{section*.154}%
+\contentsline {paragraph}{Definition - Measurable with Respect to a Sub-$\sigma $-field}{119}{section*.155}%
+\contentsline {paragraph}{Definition - $\sigma $ field generated by a simple random variable $X$}{119}{section*.156}%
+\contentsline {paragraph}{Theorem 5.1 - Simple Random Variable Generated $\sigma $ Fields and Function of Simple Random Variables}{119}{section*.157}%
+\contentsline {paragraph}{Proof of Theorem 5.1}{120}{section*.158}%
+\contentsline {paragraph}{Example 5.2}{122}{section*.159}%
+\contentsline {subsubsection}{Convergence of Simple Random Variables}{122}{section*.160}%
+\contentsline {paragraph}{Definition: Convergence in Probability}{123}{section*.161}%
+\contentsline {paragraph}{Theorem 5.2 - Convergence with Probability 1, and Convergence in Probability}{123}{section*.162}%
+\contentsline {paragraph}{Example 5.4}{123}{section*.163}%
+\contentsline {subsubsection}{Independence}{124}{section*.164}%
+\contentsline {paragraph}{Definition - Independent Simple Random Variables}{124}{section*.165}%
+\contentsline {paragraph}{Independent Functions of Independent SRVs (2d Array Argument)}{124}{section*.166}%
+\contentsline {paragraph}{Example 5.6 Permutation Cycles}{126}{section*.167}%
+\contentsline {subsubsection}{Existence of Independent Sequences}{128}{section*.168}%
+\contentsline {paragraph}{Definition - Distribution}{128}{section*.169}%
+\contentsline {paragraph}{Theorem 5.3 - Existence of SRV distributions for arbitrary finite support measures}{128}{section*.170}%
+\contentsline {paragraph}{Proof of Theorem 5.3}{128}{section*.171}%
+\contentsline {paragraph}{Usefulness of the Existence of SRV Distributions for Arbitrary Finite Support Measures}{129}{section*.172}%
+\contentsline {subsubsection}{Expected Value}{130}{section*.173}%
+\contentsline {paragraph}{Definition: Expected Value}{130}{section*.174}%
+\contentsline {paragraph}{Properties of the Expected Value}{130}{section*.175}%
+\contentsline {paragraph}{Definition - Uniformly Bounded}{131}{section*.176}%
+\contentsline {paragraph}{Theorem 5.4 - Uniformly Bounded Sequence implies Uniformly Bounded Limit}{131}{section*.177}%
+\contentsline {paragraph}{Example 5.7 - Counter Example to Theorem 5.4 Without Uniform Boundedness}{131}{section*.178}%
+\contentsline {paragraph}{Corollary to 5.4}{131}{section*.179}%
+\contentsline {paragraph}{Expected Value for Independent Random Variables}{132}{section*.180}%
+\contentsline {paragraph}{Variance}{132}{section*.181}%
+\contentsline {paragraph}{Alternate Expected Value Definition}{132}{section*.182}%
+\contentsline {subsubsection}{Inequalities}{133}{section*.183}%
+\contentsline {paragraph}{Markov's Inequality}{133}{section*.184}%
+\contentsline {paragraph}{Chebyshev's Inequality}{133}{section*.185}%
+\contentsline {paragraph}{Jensen's Inequality}{134}{section*.186}%
+\contentsline {paragraph}{Holder's Inequality}{134}{section*.187}%
+\contentsline {paragraph}{Schwarz's Inequality}{135}{section*.188}%
+\contentsline {paragraph}{Lyapounov's Inequality}{135}{section*.189}%
+\contentsline {subsection}{Problems}{135}{section*.190}%
+\contentsline {subsubsection}{5.1 Measurable on a Tail Field implies $X = c$ with probability 1}{135}{section*.191}%
+\contentsline {subsubsection}{5.2 - Existence of independent SRV $X_i$ with density $\mu _i$ for finite support $\mu _i$ on a nonatomic space}{136}{section*.192}%
+\contentsline {subsubsection}{5.3 - Expected Value minimizes Variance}{137}{section*.193}%
+\contentsline {subsubsection}{5.4 Chebyshev's Inequality can reach equality}{138}{section*.194}%
+\contentsline {subsubsection}{5.5 Cantelli's Inequality}{138}{section*.195}%
+\contentsline {subsubsection}{5.8 Multiple Variable Jensen Inequality}{140}{section*.196}%
+\contentsline {subsubsection}{5.9 Prove Holders for nonnegative $X$, $Y$ via Jensen's}{142}{section*.197}%
+\contentsline {subsubsection}{5.10 Prove Minkowski's Inequality for nonnegative $X$, $Y$ via Jensen's}{143}{section*.198}%
+\contentsline {subsubsection}{5.11 Average Number of Successful Bernoulli Trials approaches $p$}{144}{section*.199}%
+\contentsline {subsubsection}{5.12 Expected Value as Infinite Probability Sum}{145}{section*.200}%
+\contentsline {subsubsection}{5.15 Convergence in Probability does not imply Convergence with Probability One}{145}{section*.201}%
+\contentsline {subsubsection}{5.16 Independent Sets on a Discrete Space}{146}{section*.202}%
+\contentsline {subsubsection}{5.19 Average Prime Power of Pos Integer Prime Factorizations}{148}{section*.203}%
+\contentsline {subsubsection}{5.20}{151}{section*.204}%
+\contentsline {section}{Section 6 - The Law of Large Numbers}{152}{section*.205}%
+\contentsline {subsection}{Notes}{152}{section*.206}%
+\contentsline {subsubsection}{The Strong Law}{152}{section*.207}%
+\contentsline {paragraph}{Definition - Identically Distributed}{152}{section*.208}%
+\contentsline {paragraph}{Theorem 6.1 - The Strong Law of Large Numbers (SRV)}{152}{section*.209}%
+\contentsline {subsubsection}{The Weak Law}{153}{section*.210}%
+\contentsline {paragraph}{Theorem: The Weak Law of Large Numbers}{153}{section*.211}%
+\contentsline {paragraph}{Example 6.3 - Length of Cycles in a Permutation using the Weak Law}{154}{section*.212}%
+\contentsline {subsubsection}{Bernstein's Theorem}{154}{section*.213}%
+\contentsline {paragraph}{Theorem 6.2}{155}{section*.214}%
+\contentsline {paragraph}{Proof: $f$ continuous on a compact interval implies $f$ is \textit {uniformly continuous}}{155}{section*.215}%
+\contentsline {paragraph}{Proof of Theorem 6.2}{155}{section*.216}%
+\contentsline {subsubsection}{Refinement of the Second Borel-Cantelli Lemma}{156}{section*.217}%
+\contentsline {paragraph}{Reproving The Second Borel-Cantelli Lemma with $N_n$}{157}{section*.218}%
+\contentsline {paragraph}{Theorem 6.3: Second Borel Cantelli Lemma Refinement}{158}{section*.219}%
+\contentsline {paragraph}{Proof of Theorem 6.3}{158}{section*.220}%
+\contentsline {paragraph}{Example 6.5}{159}{section*.221}%
+\contentsline {subsection}{Problems}{160}{section*.222}%
+\contentsline {subsubsection}{6.1 Convergence With Probability ``Finite" Terms Condition}{160}{section*.223}%
+\contentsline {subsubsection}{6.2 Number of Cycles In a Length $n$ permutation bound}{161}{section*.224}%
+\contentsline {subsubsection}{6.3 Approximate Number of Inversions in a Random Permutation}{161}{section*.225}%
+\contentsline {subsubsection}{6.5 Poisson's Theorem}{164}{section*.226}%
+\contentsline {subsubsection}{6.6 Cantelli's Theorem}{165}{section*.227}%
+\contentsline {subsubsection}{6.7 Convergence of $n^{-2}S_{n^2}$ implies convergence of $n^{-1}S_n$}{166}{section*.228}%
+\contentsline {subsubsection}{6.11 $m$ dependent, uniformly bounded, and mean $0$ $X_i$ convergence with probability $1$}{167}{section*.229}%
+\contentsline {subsubsection}{6.12 For $X_i$ iid, Relative Asymptotic Frequencies Are What They Should Be}{168}{section*.230}%
+\contentsline {subsubsection}{6.14 Shannon's Theorem}{169}{section*.231}%
+\contentsline {section}{Section 7 - Gambling Systems}{172}{section*.232}%
+\contentsline {subsection}{Notes}{172}{section*.233}%
+\contentsline {subsubsection}{Gambler's Ruin}{172}{section*.234}%
+\contentsline {paragraph}{Proof of $s_c(a) = ps_c(a + 1) + qs_c(a - 1)$}{174}{section*.235}%
+\contentsline {paragraph}{Probability of Ruin}{176}{section*.236}%
+\contentsline {subsubsection}{Selection Systems}{176}{section*.237}%
+\contentsline {paragraph}{Selection Systems Framework}{176}{section*.238}%
+\contentsline {paragraph}{Theorem 7.1 - Selection Systems Do Nothing}{178}{section*.239}%
+\contentsline {paragraph}{Proof of Theorem 7.1}{178}{section*.240}%
+\contentsline {subsubsection}{Gambling Policies}{180}{section*.241}%
+\contentsline {paragraph}{Gambling Policy Framework}{180}{section*.242}%
+\contentsline {paragraph}{Theorem 7.2: Expected Stopping Time Aware Fortune Value}{182}{section*.243}%
+\contentsline {subsubsection}{Bold Play}{182}{section*.244}%
+\contentsline {paragraph}{Bold Play}{183}{section*.245}%
+\contentsline {paragraph}{Policy Framework}{183}{section*.246}%
+\contentsline {paragraph}{Theorem 7.3 - Bold Play is Optimal in the subfair case}{184}{section*.247}%
+\contentsline {paragraph}{Proof:}{184}{section*.248}%
+\contentsline {subsection}{Problems}{184}{section*.249}%
+\contentsline {subsubsection}{7.1 Comparing Gambler's Ruin Success with Different Fortunes}{184}{section*.250}%
+\contentsline {subsubsection}{7.3 Collectives and Asymptotic Frequencies of Sequences}{186}{section*.251}%
+\contentsline {subsubsection}{7.7 Progress and Pinch Gambling Policy}{187}{section*.252}%
+\contentsline {subsubsection}{7.8 Pattern Martingale Betting}{189}{section*.253}%
+\contentsline {subsubsection}{7.9 Stock Option Stopping Time}{190}{section*.254}%
+\contentsline {section}{Section 8 - Markov Chains}{190}{section*.255}%
+\contentsline {subsection}{Notes}{190}{section*.256}%
+\contentsline {subsubsection}{8.1 Markov Chain Setup}{190}{section*.257}%
+\contentsline {paragraph}{Markov Chain States}{191}{section*.258}%
+\contentsline {subsubsection}{8.2 High Order Transitions}{192}{section*.259}%
+\contentsline {subsubsection}{8.3 An Existence Theorem}{193}{section*.260}%
+\contentsline {paragraph}{Theorem 8.1}{193}{section*.261}%
+\contentsline {paragraph}{Cylinder Sequences Split Property}{194}{section*.262}%
+\contentsline {subsubsection}{8.4 Transience and Persistence}{195}{section*.263}%
+\contentsline {paragraph}{Theorem 8.2 Transience and Persistence Criteria}{197}{section*.264}%
+\contentsline {paragraph}{Example 8.6 - Polya's Theorem}{199}{section*.265}%
+\contentsline {paragraph}{Definition: Irreducible}{200}{section*.266}%
+\contentsline {paragraph}{Theorem 8.3 - Irreducible Markov Chains are persistent or transient}{200}{section*.267}%
+\contentsline {paragraph}{Proof:}{200}{section*.268}%
+\contentsline {paragraph}{Example: Irreducible Finite Markov Chains are Persistent}{202}{section*.269}%
+\contentsline {paragraph}{Example 8.8: Polya's Theorem}{202}{section*.270}%
+\contentsline {paragraph}{Example 8.9: Random Walk On the Line Properties}{203}{section*.271}%
+\contentsline {subsubsection}{8.5 Another Criterion for Persistence}{203}{section*.272}%
+\contentsline {paragraph}{Lemma 1: Substochastic Matrix Row Sum Limits Criteria}{205}{section*.273}%
+\contentsline {paragraph}{Theorem 8.4 Probability to Stay in a Subset Forever}{206}{section*.274}%
+\contentsline {paragraph}{Example 8.10}{206}{section*.275}%
+\contentsline {paragraph}{Theorem 8.5 Transience is Equivalent to Staying in a Subset Forever}{206}{section*.276}%
+\contentsline {paragraph}{Proof of Theorem 8.5}{207}{section*.277}%
+\contentsline {paragraph}{Example 8.11}{207}{section*.278}%
+\contentsline {subsubsection}{8.6 Stationary Distributions}{208}{section*.279}%
+\contentsline {paragraph}{Lemma 2}{209}{section*.280}%
+\contentsline {paragraph}{Bezout's Identity}{209}{section*.281}%
+\contentsline {paragraph}{A21}{210}{section*.282}%
+\contentsline {paragraph}{Theorem 8.6 Aperiodic Irreducible Chains Approach The Stationary Distribution}{210}{section*.283}%
+\contentsline {paragraph}{Proof of Theorem 8.6}{211}{section*.284}%
+\contentsline {paragraph}{Definition: Coupled Markov Chain}{211}{section*.285}%
+\contentsline {paragraph}{SubLemma 8.6.1: An irreducible aperiodic chain creates an irreducible coupled chain}{212}{section*.286}%
+\contentsline {paragraph}{SubLemma 8.6.2: Irreducible Chain with Stationary Distribution is Persistence}{212}{section*.287}%
+\contentsline {paragraph}{SubLemma 8.6.3: Coupled Chain of Stationary Distribution Chain has a Stationary Distribution}{213}{section*.288}%
+\contentsline {paragraph}{SubLemma 8.6.4: Irreducible and Persistent Coupled Chains imply $\qopname \relax m{lim}_n |p_{ik}^{(n)} - p_{jk}^{(n)}| = 0$}{213}{section*.289}%
+\contentsline {paragraph}{Proof Of Theorem 8.6}{215}{section*.290}%
+\contentsline {paragraph}{A14 - The Diagonal Method}{216}{section*.291}%
+\contentsline {paragraph}{Theorem 8.7 Aperiodic Irreducible Chains with no Stationary Distribution have a Null Long Term Distribution}{217}{section*.292}%
+\contentsline {paragraph}{Proof of Theorem 8.7}{217}{section*.293}%
+\contentsline {paragraph}{Mean Return Time}{220}{section*.294}%
+\contentsline {paragraph}{Lemma 3 - Persistent States Have Consistent Mean Return Times And Limiting Distributions}{220}{section*.295}%
+\contentsline {paragraph}{Theorem 8.8: Classification of Irreducible Aperiodic Markov Chains}{223}{section*.296}%
+\contentsline {subsubsection}{8.7 Exponential Convergence}{224}{section*.297}%
+\contentsline {paragraph}{Theorem 8.9 Exponential Convergence to Stationary Distribution in Finite Case}{224}{section*.298}%
+\contentsline {subsubsection}{8.8 Optimal Stopping}{225}{section*.299}%
+\contentsline {paragraph}{Stopping Time/Markov Time}{225}{section*.300}%
+\contentsline {paragraph}{Conditional Expected Value}{226}{section*.301}%
+\contentsline {paragraph}{Value at $i$}{227}{section*.302}%
+\contentsline {paragraph}{Excessive/Superharmonic Function}{227}{section*.303}%
+\contentsline {paragraph}{Lemma 8.4: The value function $v$ is excessive}{227}{section*.304}%
+\contentsline {paragraph}{Lemma 8.5 Excessive Functions Beat Stopping Times}{230}{section*.305}%
+\contentsline {paragraph}{Lemma 8.6 If an excessive function $\varphi $ dominates the payoff function $f$, then it dominates the value function $v$ as well}{232}{section*.306}%
+\contentsline {paragraph}{Theorem 8.10}{233}{section*.307}%
+\contentsline {paragraph}{Theorem 8.11 - The Hitting Time $\tau _0$ is Optimal}{234}{section*.308}%
+\contentsline {paragraph}{Example 8.16}{236}{section*.309}%
+\contentsline {section}{Section 9 - Large Deviations and The Iterated Logarithm}{237}{section*.310}%
+\contentsline {subsection}{Notes}{237}{section*.311}%
+\contentsline {section}{Section 10 - General Measures}{238}{section*.312}%
+\contentsline {subsection}{Notes}{238}{section*.313}%
+\contentsline {subsubsection}{Classes of Sets}{238}{section*.314}%
+\contentsline {paragraph}{Example 10.1 - $k$ dimensional Borel Sets}{238}{section*.315}%
