@@ -312,3 +312,7 @@
 \contentsline {subsection}{Notes}{238}{section*.313}%
 \contentsline {subsubsection}{Classes of Sets}{238}{section*.314}%
 \contentsline {paragraph}{Example 10.1 - $k$ dimensional Borel Sets}{238}{section*.315}%
+\contentsline {paragraph}{Theorem 10.1}{238}{section*.316}%
+\contentsline {paragraph}{The Borel Sets lie in the Linear Borel Sets}{239}{section*.317}%
+\contentsline {subsubsection}{Measures}{240}{section*.318}%
+\contentsline {paragraph}{Definition: Measure}{240}{section*.319}%
