@@ -6890,6 +6890,54 @@ $$
 \end{enumerate}
 I will note - the third condition doesn't require that all such unions are in $\fcal$, and $\fcal$ being a field doesn't guarantee it either. The measure $\mu$ is \textit{finite} or \textit{infinite} as $\mu(\Omega) < \infty$ or $\mu(\Omega) = \infty$. It is a probability measure if $\mu(\Omega) = 1$.
 
+\paragraph{Definition: $\sigma$ finite} If $\Omega = A_1 \cup A_2 \cup \cdots$ for some finite or countable sequence of $\fcal$ sets satisfying $\mu(A_k) < \infty$, then $\mu$ is $\sigma$-finite. This notion will be significant later on. By our above definitions of finite/infinite measure, a finite measure is clearly $\sigma$ finite, and a $\sigma$ finite measure may be finite or infinite. If $\acal$ is a subclass of $\fcal$, and $\Omega = \cup_k A_k$ for some finite or infinite sequence of $\acal$ sets satisfying $\mu(A_k) < \infty$, then $\mu$ is \textit{$\sigma$ finite on $\acal$}.
+\\\\
+It is important to note that $\sigma$ finiteness is a joint property of the space $\Omega$, the measure $\mu$, and the class $\acal$.
+
+\paragraph{Definition: Measure Space} If $\mu$ is a measure on a $\sigma$ field $\fcal$ in $\Omega$, the triple $(\Omega, \fcal, \mu)$ is a \textit{measure space} - note, not used if $\fcal$ is only a field. It is $\sigma$ finite, infinite, or finite based on whether $\mu$ has that property. If $\mu(A^c) = 0$ for an $\fcal$ set $A$, then $A$ is a \textit{support} of $\mu$, and $\mu$ is \textit{concentrated} on $A$. For a finite measure, $A$ is a support if and only if $\mu(A) = \mu(\Omega)$.
+
+\paragraph{Example 10.2 - Discrete Space} A measure $\mu$ on $(\Omega, \fcal)$ (called a measurable space) is \textit{discrete} if there are finitely or countable many points $\omega_i$ in $\Omega$ and masses $m_i$ in $[0,\infty]$ such that $\mu(A) = \sum_{\omega_i \in A} m_i$ for $A \in \fcal$. 
+
+\paragraph{Example 10.3 - The Counting Measure} Let $\fcal$ be the $\sigma$ field of all subsets of an arbitrary $\Omega$, and let $\mu(A)$ be the number of points in $A$, where $\mu(A) = \infty$ if $A$ is not finite. Then, $\mu$ is the \textit{counting measure}. It is finite if and only if $\Omega$ is finite, and is $\sigma$ finite if and only if $\Omega$ is countable.
+
+\paragraph{Carry Over from Probability Measures to General Measures} A lot of the properties we derived for probability measures carry over to general measures. Note that:
+\begin{enumerate}
+	\item $\mu$ is monotone: examine $\mu(B) = \mu(A) + \mu(B - A)$
+	\item We can only write $\mu(B - A) = \mu(B) - \mu(A)$ if $\mu(B) < \infty$
+	\item We still have the inclusion-exclusion principle
+	\item We still have the proof of finite subadditivity, as before:
+	$$
+		\mu\left(\bigcup_{k=1}^n A_k\right) \leq
+		\sum_{k=1}^n \mu(A_k)
+	$$
+	The proof being just replace $A_k$ with $B_k$, which is disjoint from all the previous $A_k$. Note $\mu(B_k) \leq \mu(A_k)$.
+\end{enumerate}
+
+\paragraph{Theorem 10.2} Let $\mu$ be a measure on a field $\fcal$. We have:
+\begin{enumerate}
+	\item \textbf{Continuity From Below} If $A_n$ and $A$ lie in $\fcal$ and $A_n \uparrow A$, then:
+	$$
+		\mu(A_n) \uparrow \mu(A)
+	$$
+	
+	\item \textbf{Continuity form Above} If $A_n$ and $A$ lie in $\fcal$ and $A_n \downarrow A$, and if $\mu(A_1) < \infty$ (or any $\mu(A_k) < \infty$) then:
+	$$
+		\mu(A_n) \downarrow \mu(A)
+	$$
+	
+	\item \textbf{Countable Subadditivity} If $A_1, A_2, \cdots$, and $\bigcup_{k=1}^\infty A_k$ lies in $\fcal$, then:
+	$$
+		\mu\left(\bigcup_{k=1}^\infty A_k\right) \leq \sum_{k=1}^\infty \mu(A_k)
+	$$
+	
+	\item If $\mu$ is $\sigma$ finite on $\fcal$, then $\fcal$ cannot contain an uncountable, disjoint collection of sets of positive $\mu$-measure.
+\end{enumerate}
+\textbf{Proof:} The proof for $1$ is the same as it is for probability measure: express $A$ as a disjoint union of $B_k$ (each $B_k$ represents the increment added to $A_k$ from $A_{k-1}$), and note limit sums are equal to $A_k$. The proof for $3$ is also the same as it is for probability measure: use part $1$ expressing the union as $\uparrow$, and then use the same reasoning as for finite additivity.
+\\\\
+The proof is essentially the same for $2$: if $\mu(A_1) < \infty$, subtraction is possible and $A_1 - A_n \uparrow A_1 - A$ implies that $\mu(A_1) - \mu(A_n) = \mu(A_1 - A_n) \uparrow \mu(A_1 - A) = \mu(A_1) - \mu(A)$, now just rearrange.
+\\\\
+So, the real meat comes in part 4. Let $\left[B_\theta: \theta \in \Theta\right]$ be a disjoint collection of $\fcal$ sets satisfying $\mu(B_\theta) > 0$. Consider an $\fcal$ set $A$ for which $\mu(A) < \infty$.
+
 
 \end{document}
 
