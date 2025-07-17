@@ -6936,7 +6936,93 @@ It is important to note that $\sigma$ finiteness is a joint property of the spac
 \\\\
 The proof is essentially the same for $2$: if $\mu(A_1) < \infty$, subtraction is possible and $A_1 - A_n \uparrow A_1 - A$ implies that $\mu(A_1) - \mu(A_n) = \mu(A_1 - A_n) \uparrow \mu(A_1 - A) = \mu(A_1) - \mu(A)$, now just rearrange.
 \\\\
-So, the real meat comes in part 4. Let $\left[B_\theta: \theta \in \Theta\right]$ be a disjoint collection of $\fcal$ sets satisfying $\mu(B_\theta) > 0$. Consider an $\fcal$ set $A$ for which $\mu(A) < \infty$.
+So, the real meat comes in part 4. Let $\left[B_\theta: \theta \in \Theta\right]$ be a disjoint collection of $\fcal$ sets satisfying $\mu(B_\theta) > 0$. We will prove that $\Theta$ must be countable. Consider an $\fcal$ set $A$ for which $\mu(A) < \infty$. If $\theta_1, \cdots, \theta_n$ are distinct indices satisfying:
+$$
+	\mu\left(A \cap B_{\theta_i}\right) \geq \epsilon > 0
+$$
+Then we must have:
+$$
+	n\epsilon \leq \sum_{i=1}^n \mu(A \cap B_{\theta_i}) \leq \mu(A)
+$$
+And so:
+$$
+	n \leq \mu(A)/\epsilon
+$$
+Thus, we must have that the index set:
+$$
+	\left[\theta: \mu(A \cap B_{\theta}) > \epsilon\right]
+$$
+Is finite. If it wasn't - we could make a contradiction proving $\infty \leq \mu(A)/\epsilon$. If we take a union over positive rational $\epsilon$, we muts have:
+$$
+	\left[\theta: \mu(A \cap B_\theta) > 0\right]
+$$
+Is a countable index set. As $\mu$ is $\sigma$ finite, $\Omega = \cup_k A_k$ for $\mu(A_k) < \infty$, $A_k \in \fcal$. But then, define the index set:
+$$
+	\Theta_k = \left[\theta: \mu(A_k \cap B_\theta) > 0\right]
+$$
+$\Theta_k$ must be countable. As $\mu(B_\theta) > 0$, there must be a $k$ such that $\mu(A_k \cap B_\theta) > 0$ - if they all equaled zero, we would have a contradiction with countable subadditivity. Thus, each $B_\theta$ must appear in one of the $\Theta_k$ sets. And so:
+$$
+	\Theta = \bigcup_k \Theta_k
+$$
+And thus $\Theta$ is countable. qed.
+
+\subsubsection{Uniqueness} 
+According to Theorem 3.3, probability measures agreeing on a $\pi$ system $\pcal$ agree on $\sigma(\pcal)$ - this is by the $\pi$ $\lambda$ theorem. There is an extension in the general case
+
+\paragraph{Theorem 10.3 - Uniqueness of General Measure Extension} Suppose that $\mu_1$ and $\mu_2$ are measures on $\sigma(\pcal)$, where $\pcal$ is a $\pi$ system, and suppose they are $\sigma$ finite on $\pcal$. If $\mu_1$ and $\mu_2$ agree on $\pcal$, then they agree on $\sigma(\pcal)$.
+\\\\
+I guess one question I would have before the proof - is what does $\sigma$ finite mean on $\pcal$? Does $\pcal$ contain $\Omega$? \textbf{Proof} Suppose that $B \in \pcal$ and $\mu_1(B) = \mu_2(B) < \infty$, and let $\lcal_B$ be the class of sets $A$ in $\sigma(\pcal)$ for which $\mu_1(B \cap A) = \mu_2(B \cap A)$. Then $\lcal_B$ is a $\lambda$ system (clearly contains $\omega$, complements by subtraction and $\mu(B) < \infty$, and countable disjoint unions via additivity of $\mu$) containing $\pcal$ ($\pi$ system contains intersections) and hence containing $\sigma(\pcal)$ via the $\pi-\lambda$ theorem.
+\\\\
+By $\sigma$-finiteness, there exists $\pcal$ sets $B_k$ satisfying $\Omega = \bigcup_k B_k$ and $\mu_1(B_k) = \mu_2(B_k) < \infty$. By inclusion-exclusion:
+$$
+	\mu_\alpha\left(\bigcup_{i=1}^n (B_i \cap A)\right) = \sum_{1 \leq i \leq n} \mu_\alpha(B_i \cap A) -
+	\sum_{1 \leq i < j \leq n} \mu_\alpha(B_i \cap B_j \cap A) + \cdots
+$$
+For $\alpha = 1, 2$ and all $n$. Since $\pcal$ is a $\pi$ system, it contains all the intersections of $B_i$, and via the above argument, the terms on the RHS above are equal for $\mu_1$ and $\mu_2$. The LHS is thus equal for both as well. Now, we take $n \to \infty$, and use continuity from below, to find:
+$$
+	\mu_1(A) = \lim_{n \to \infty} \mu_1\left(\bigcup_{i=1}^n (B_i \cap A)\right) =
+	\mu_2\left(\bigcup_{i=1}^n (B_i \cap A)\right) = \mu_2(A)
+$$
+For $A \in \sigma(\pcal)$. Thus, we have equality on $\sigma(\pcal)$. qed.
+
+\paragraph{Theorem 10.4} Suppose $\mu_1$ and $\mu_2$ are finite measures on $\sigma(\pcal)$, where $\pcal$ is a $\pi$ system and $\Omega$ is a finite or countable union of sets in $\pcal$. If $\mu_1$ and $\mu_2$ agree on $\pcal$, then they agree on $\sigma(\pcal)$.
+\\\\
+\textbf{Proof} By hypothesis, $\Omega = \bigcup_k B_k$ for $\pcal$ sets $B_k$, and we of course have $\mu_\alpha(B_k) < \mu_\alpha(\Omega) < \infty$. So, $\mu_1$ and $\mu_2$ are $\sigma$ finite on $\pcal$, and Theorem 10.3 above applies. qed.
+
+\subsection{Problems}
+\subsubsection{10.1 Equivalent Measure Definition} Show that if conditions $(i)$ and $(iii)$ in the definition of measure hold, and if $\mu(A) < \infty$ for some $A \in \fcal$, then condition $(ii)$ holds.
+\\\\
+We note that by countable additivity:
+$$
+	\mu\left(A \cup \emptyset\right) = \mu(A) + \mu(\emptyset) \implies
+	\mu(A) - \mu(A) = \mu(\emptyset) \implies \mu(\emptyset) = 0
+$$
+Note, we require $\mu(A) < \infty$, as otherwise subtraction is not defined.
+
+\subsubsection{10.2 Finite vs. Countable Additivity on a Countable $\Omega$} On the $\sigma$ field of all subsets of $\Omega = \{1, 2, \cdots\}$ put $\mu(A) = \sum_{k \in A} 2^{-k}$ if $A$ is finite and $\mu(A) = \infty$ otherwise. Is $\mu$ finitely additive? Countably additive?
+\\\\
+I would first say that $\mu$ is finitely additive. If you have the finite disjoint union of finite sets - then we will just get out the sum. If you add a countably additive set in there - both sides will be infinite. Note, a finite amount of finite sets won't get to countable additivity.
+\\\\
+The issue comes with a countable amount of finite sets. Take $A_k = \{k\}$. We have:
+$$
+	\mu(\bigcup A_k) = \infty
+$$
+Clearly. However, we also have:
+$$
+	\sum_k \mu(A) = \sum_k 2^{-k} = 1
+$$
+So that is where countable additivity breaks down.
+
+\subsubsection{10.3 Continuity From Above Extension}
+\begin{enumerate}
+	\item In connection with Theorem 10.2(ii), show that if $A_n \downarrow A$ and $\mu(A_k) < \infty$ for some $k$, then $\mu(A_n) \downarrow \mu(A)$. Note, I actually noted this in the theorem. You can make use of the first $\mu(A_k) < \infty$, instead of $A_1$.
+	
+	\item Find an example in which $A_n \downarrow A$, $\mu(A_n) = \infty$ for all $n$, and $A = \emptyset$.
+	\\\\
+	I think, we could take $\fcal = \rcal^1$, and I think its corresponding measure in the next section, $\lambda$. We have that $A_n = \bigcup_{k = n}^\infty (n, n+1]$ (note, I could write $(n, \infty)$, but I think this makes it clearer that it is within the first linear borel set). Clearly $A_n \downarrow A = \emptyset$. Take an $x \in \R$, clearly it doesn't belong to some $A_n$. We also have $\mu(A_n) = \infty$, again via additivity of the measure.
+	\\\\
+	Perhaps, that isn't the best example, as we haven't defined it yet. We could do the counting measure on $\Omega = \{1, 2, \cdots\}$ with $\fcal = 2^\Omega$. Same idea, $A_n = \{n, n + 1, \cdots\}$. 
+\end{enumerate}
 
 
 \end{document}

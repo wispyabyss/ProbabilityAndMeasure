@@ -1,6 +1,6 @@
 \contentsline {section}{Forward}{5}{section*.2}%
-\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{5}{section*.3}%
-\contentsline {subsection}{Notes}{5}{section*.4}%
+\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{6}{section*.3}%
+\contentsline {subsection}{Notes}{6}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{6}{section*.5}%
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{7}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{7}{section*.7}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{Notes}{29}{section*.29}%
 \contentsline {paragraph}{Spaces}{29}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{29}{section*.31}%
-\contentsline {paragraph}{Classes of Sets}{29}{section*.32}%
+\contentsline {paragraph}{Classes of Sets}{30}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{30}{section*.33}%
 \contentsline {paragraph}{Examples}{30}{section*.34}%
 \contentsline {paragraph}{Definition - Generated Sigma Field}{31}{section*.35}%
@@ -322,3 +322,10 @@
 \contentsline {paragraph}{Example 10.3 - The Counting Measure}{240}{section*.323}%
 \contentsline {paragraph}{Carry Over from Probability Measures to General Measures}{241}{section*.324}%
 \contentsline {paragraph}{Theorem 10.2}{241}{section*.325}%
+\contentsline {subsubsection}{Uniqueness}{242}{section*.326}%
+\contentsline {paragraph}{Theorem 10.3 - Uniqueness of General Measure Extension}{243}{section*.327}%
+\contentsline {paragraph}{Theorem 10.4}{243}{section*.328}%
+\contentsline {subsection}{Problems}{243}{section*.329}%
+\contentsline {subsubsection}{10.1 Equivalent Measure Definition}{243}{section*.330}%
+\contentsline {subsubsection}{10.2 Finite vs. Countable Additivity on a Countable $\Omega $}{244}{section*.331}%
+\contentsline {subsubsection}{10.3 Continuity From Above Extension}{244}{section*.332}%
