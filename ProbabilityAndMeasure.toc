@@ -329,3 +329,5 @@
 \contentsline {subsubsection}{10.1 Equivalent Measure Definition}{243}{section*.330}%
 \contentsline {subsubsection}{10.2 Finite vs. Countable Additivity on a Countable $\Omega $}{244}{section*.331}%
 \contentsline {subsubsection}{10.3 Continuity From Above Extension}{244}{section*.332}%
+\contentsline {subsubsection}{10.4 Generalization of $\qopname \relax m{lim}, \qopname \relax m{lim\,inf}, \qopname \relax m{lim\,sup}$ ordering}{245}{section*.333}%
+\contentsline {subsection}{10.6}{245}{section*.334}%

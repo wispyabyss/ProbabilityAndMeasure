@@ -3,10 +3,11 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{graphicx} %Used for photos
-\usepackage{float} %Used for inline figures
 \usepackage{bbm} % Used for indicator function
+\usepackage{comment} %Used for comments
 \usepackage{enumitem} % Used for enumerate w/ \alpha or roman
+\usepackage{float} %Used for inline figures
+\usepackage{graphicx} %Used for photos
 \usepackage{hyperref} % Used for links, such as table of contents links
 
 \title{Probability and Measure Solutions}
@@ -7024,11 +7025,50 @@ So that is where countable additivity breaks down.
 	Perhaps, that isn't the best example, as we haven't defined it yet. We could do the counting measure on $\Omega = \{1, 2, \cdots\}$ with $\fcal = 2^\Omega$. Same idea, $A_n = \{n, n + 1, \cdots\}$. 
 \end{enumerate}
 
+\subsubsection{10.4 Generalization of $\lim, \liminf, \limsup$ ordering} Recall Theorem 4.1 part 1: For each sequence of sets $A_n$:
+$$
+	P\left[\liminf_n A_n\right] \leq \liminf_n P(A_n) \leq \limsup_n P(A_n) \leq
+	P\left[\limsup_n A_n\right]
+$$
+We want to generalize for arbitrary measures:
+$$
+	\mu\left[\liminf_n A_n\right] \leq \liminf_n \mu(A_n) \leq \limsup_n \mu(A_n) \leq
+	\mu\left[\limsup_n A_n\right]
+$$
+Show that the left inequality always holds, and the right inequality holds if $\mu\left(\bigcup_{k \geq n} A_k\right) < \infty$ for some $n$.
+\\\\
+Note, these restrictions come from when we can conclude continuity from above/below. Let $B_n = \bigcap_{k \geq n} A_k$ and $C_n = \bigcup_{k \geq n} A_k$. Note that $B_n \uparrow \liminf_n A_n$. So, by Theorem 10.2, we have:
+$$
+	\mu\left[\liminf_n A_n\right] = \lim_n \mu(B_n) = \liminf_n \mu(B_n) \leq
+	\liminf_n \mu(A_n)
+$$
+Note, the liminf always exists. We similarly note that $C_n \downarrow \limsup_n A_n$ - by the extension to Theorem 10.2 in the previous problem, if there is some $\mu(C_n) < \infty$, then we have:
+$$
+	\mu\left[\limsup_n A_n\right] = \lim_n \mu(C_n) = \limsup_n \mu(C_n) \geq \limsup_n \mu(A_n)
+$$
+
+\begin{comment}
+	\subsection{10.5 Construct a Complete Measure Space} A measure space $(\Omega, \fcal, \mu)$ is \textit{complete} if $A \subset B$, $B \in \fcal$ and $\mu(B) = 0$ together imply $A \in \fcal$. Use the ideas of problem 3.10 to construct a complete measures space $(\Omega, \fcal^+, \mu^+)$ such that $\fcal \subset \fcal^+$ and $\mu$ and $\mu^+$ agree on $\fcal$.
+	
+	Note: I think this problem comes too early. First let us define a unique extension, so that we know if a complete space even exists
+\end{comment}
+
+\subsection{10.6} The condition in Theorem 10.2(iv) essentially characterizes $\sigma$ finiteness.
+\begin{enumerate}
+	\item Suppose that $(\Omega, \fcal, \mu)$ has no ``infinite atoms" in the sense that for every $A \in \fcal$, if $\mu(A) = \infty$, then there is in $\fcal$ a $B$ such that $B \subset A$ and $0 < \mu(B) < \infty$. Show that if $\fcal$ does not contain an uncountable, disjoint collection of sets of positive measure, then $\mu$ is $\sigma$ finite (Use Zorn's lemma).
+	\\\\
+	Zorn's Lemma States: If $P$ is a partially ordered set (has an inequality, but not every element is comparable) such that every ordered chain has an upper bound in $P$ (ie, every chain of inequalities has an element greater than every element in the chain), then $P$ has at least one maximal element (an element such that no other element is greater than it).
+	\\\\
+	So now, we know that $\fcal$ does not contain an uncountable disjoint collection of sets of positive measure, and $\fcal$ does not have any infinite atoms.
+	\\\\
+	I think it can be done in the following way - iteratively. Assume $\mu$ is not $\sigma$ finite. Define $\fcal_1$ as the set of $A \in \fcal$ such that $\mu(A) < \infty$, or $A = \bigcup A_i$ where $\mu(A_i) < \infty$ and $A_i \cap A_j = \emptyset$. Note, $\fcal_1$ is partially ordered by $\subseteq$. Each chain of elements is bounded above - a countable chain is clear, but consider an uncountable one. Say we have an uncountable chain, with an uncountable amount of distinct sets. Then, this is a contradiction - because:
+	$$
+		A_1 \subset A_2 \implies A_2 - A_1 \in \Omega
+	$$
+	But then, we have an uncountable amount of disjoint sets in $\Omega$. So, this is a contradiction. So, our chains are countable, are all bounded - Zorn's lemma tells us there exists a maximal element $C_1 \in \fcal_1$. 
+\end{enumerate}
 
 \end{document}
-
-
-
 
 
 
