@@ -7053,7 +7053,7 @@ $$
 	Note: I think this problem comes too early. First let us define a unique extension, so that we know if a complete space even exists
 \end{comment}
 
-\subsection{10.6} The condition in Theorem 10.2(iv) essentially characterizes $\sigma$ finiteness.
+\subsubsection{10.6 Characterizing $\sigma$ finiteness} The condition in Theorem 10.2(iv) essentially characterizes $\sigma$ finiteness.
 \begin{enumerate}
 	\item Suppose that $(\Omega, \fcal, \mu)$ has no ``infinite atoms" in the sense that for every $A \in \fcal$, if $\mu(A) = \infty$, then there is in $\fcal$ a $B$ such that $B \subset A$ and $0 < \mu(B) < \infty$. Show that if $\fcal$ does not contain an uncountable, disjoint collection of sets of positive measure, then $\mu$ is $\sigma$ finite (Use Zorn's lemma).
 	\\\\
@@ -7065,8 +7065,92 @@ $$
 	$$
 		A_1 \subset A_2 \implies A_2 - A_1 \in \Omega
 	$$
-	But then, we have an uncountable amount of disjoint sets in $\Omega$. So, this is a contradiction. So, our chains are countable, are all bounded - Zorn's lemma tells us there exists a maximal element $C_1 \in \fcal_1$. 
+	But then, we have an uncountable amount of disjoint sets in $\Omega$. So, this is a contradiction. So, our chains are countable, are all bounded - Zorn's lemma tells us there exists a maximal element $C_1 \in \fcal_1$.
+	\\\\
+	This is actually incorrect, I think. We are allowed to have uncountable, disjoint sets, if they have zero measure. We could have $\mu(A_1) = \mu(A_2)$, with $A_1 \subseteq A_2$.
+	\\\\
+	\textbf{Real Proof} First, we consider the case where $\fcal$ is countable. Take a union of every $\mu(A) < \infty$. Examine:
+	$$
+		\Omega - \bigcup A = C
+	$$
+	We want to show $C = \emptyset$. If that is not the case, note that $\mu(C) < \infty$ is a contradiction, as then $C$ would be included in the union. So, we must have $\mu(C) = \infty$. Note, we have assumed there are no infinite atoms, and so there must be some $B \subset C$ where $\mu(B) < \infty$. However, this leads to another contradiction, $B$ is then within our union, but $B$ is also outside of it. So, if $C \neq \emptyset$, we always have a contradiction, and we must thus have $\Omega$ is $\sigma$ finite (as the union above is uncountable).
+	\\\\
+	Now, we consider the case where $\fcal$ is uncountable. Let $\ical$ index every countable union of non-infinite measure. Ie, for $i \in \ical$, we have that:
+	$$
+		C_i = \bigcup_{j=1}^\infty C_{ij} \quad\text{ such that } \mu(C_{ij}) < \infty
+	$$
+	By contradiction, assume that $\Omega$ is not $\sigma$ finite. Then, for every $i \in \ical$, we must have:
+	$$
+		A_i = \Omega - C_i \quad\implies\quad A_i \neq \emptyset
+	$$
+	We note that $\mu(A_i) < \infty$ leads to a contradiction, as then $C_i \cup A_i$ is a countable union of non infinite measure sets that equals $\Omega$. So, we must have $\mu(A_i) = \infty$. As we have no infinite atoms, we must have a $B_i \subset A_i$ such that $0 < \mu(B_i) < \infty$.
+	\\\\
+	Use the axiom of choice, I guess, to select the $B_k$ that are disjoint from $B_i$. We note that there must be an uncountable amount of them. Assume that there is only a countable amount - note, we can easily create a countable amount of them. List them all out, from $B_1, B_2, \cdots$. As they are countable, we are able to list them in such a way. Now note:
+	$$
+		C_t = B_i \cup \bigcup_{k=1}^\infty B_k
+	$$
+	Forms a countable union in our index, which is why we set the above equal to $C_t$. This yields $B_t$, another positive measure set that is disjoint from the countable list we gave above, of every disjoint positive measure set from $B_i$. Thus, assuming that the set of $B_k$ that are disjoint from $B_i$ is countable is a contradiction, as any such countable set containing everything can yield another set that should be in there, but isn't.
+	\\\\
+	Thus, the $B_k$ that are disjoint from $B_i$ must be uncountable. Thus, assuming that $A_i$ is not empty for each countable union of non infinite measure sets leads to a contradiction that $\fcal$ contains an uncountable, disjoint collection of sets of positive measure. So, we must have for some $i$, $A_i = \emptyset$, and thus $\Omega$ is $\sigma$ finite. qed.
+	
+	\item Show by example that this is false without the condition that there are no infinite atoms.
+	\\\\
+	Maybe let $\fcal$ be the $\sigma$ algebra containing the two sets, the even integers and the odd integers, in $\Z$. Note, this $\fcal$ doesn't contain an uncountable disjoint collection of sets of positive measure. Note, however, $\fcal$ contains infinite atoms. $\mu$ is not $\sigma$ finite either, as we cannot express $\Omega$ as a countable union of finite measure sets.
 \end{enumerate}
+
+\section{Section 11 - Outer Measure}
+\subsection{Notes}
+\subsubsection{Outer Measure} 
+\paragraph{Definition - Outer Measure} An \textit{outer measure} is a set function $\mu^*$ that is defined for all subsets of a space $\Omega$ and has these four properties:
+\begin{enumerate}
+	\item $\mu^*(A) \in [0,\infty]$ for every $A \subset \Omega$
+	\item $\mu^*(\emptyset) = 0$
+	\item $\mu^*$ is monotone; $A \subset B$ implies $\mu^*(A) \leq \mu^*(B)$
+	\item $\mu^*$ is countable subadditive; $\mu^*\left(\bigcup_n A_n\right) \leq \sum_n \mu^*(A_n)$
+\end{enumerate}
+The set function $P^*$, defined by (3.1) is an example. This generalizes:
+
+\paragraph{Example 11.1 - General Outer Measure of a Set Function} Let $\rho$ be a set function on a class $\acal$ in $\Omega$. Assume that $\emptyset \in \acal$ and $\rho(\emptyset) = 0$, and that $\rho(A) \in [0,\infty]$ for $A \in \acal$; $\rho$ and $\acal$ are otherwise arbitrary. Put:
+$$
+	\mu^*(A) = \inf \sum_n \rho(A_n)
+$$
+Where the infimum extends over all finite and countable coverings of $A$ by $\acal$ sets $A_n$. If no such covering exists - take $\mu^*(A) = \infty$, following the convention that the infimum over the empty set in $\infty$.
+\\\\
+We have that $\mu^*$ is an outer measure. It clearly satisfies $1, 2, 3$. We just go over $4$. If $\mu^*(A_n) = \infty$ for some $n$, then obviously the inequality will trivially hold. Assume that each $A_n$ is finite. Cover each $A_n$ by $\acal$ sets $B_{nk}$ satisfying:
+$$
+	\sum_k \rho(B_{nk}) < \mu^*(A_n) + \epsilon/2^n
+$$
+Then, we note that all of these covers together cover the union, and so:
+$$
+	\mu^*\left(\bigcup_n A_n\right) \leq \sum_{n,k} \rho(B_{nk}) < \sum_n \mu^*(A_n) + \epsilon
+$$
+Take $\epsilon$ to zero as normal. Thus, $\mu^*$ is an outer measure.
+
+\paragraph{$\mu^*$ Measurable} Define $A$ to be $\mu^*$-measurable if:
+$$
+	\mu^*(A \cap E) + \mu^*(A^c \cap E) = \mu^*(E)
+$$
+For every $E$. This is the general version of (3.4) used in section 3. By subadditivity, it is equivalent to saying $A$ satisfies:
+$$
+	\mu^*(A \cap E) + \mu^*(A^c \cap E) \leq \mu^*(E)
+$$
+Denote $\mcal(\mu^*)$ as the class of $\mu^*$ measurable sets. The book now notes - we can replace $P^*$ with $\mu^*$, and $\mcal$ with $\mcal(\mu^*)$, symbol by symbol, and the proof still holds for lemmas 3.1, 3.2, 3.3. I will just list out their statements here:
+\begin{enumerate}
+	\item Lemma 3.1 - The class $\mcal(\mu^*)$ is a field. Yeah, it makes sense - $\mcal(\mu^*)$ is clearly closed under complements and similarly closed under intersections.
+	
+	\item Lemma 3.2 - If $A_1, A_2, \cdots$ is a finite or infinite sequence of disjoint $\mcal(\mu^*)$ sets, then for each $E \subset \Omega$:
+	$$
+		\mu^*\left(E \cap \left(\bigcup_k A_k\right)\right) = \sum_k \mu^*\left(E \cap A_k\right)
+	$$
+	Again, yeah, the lemma still makes sense.
+	
+	\item Lemma 3.3 - The class $\mcal(\mu^*)$ is a $\sigma$ field, and $\mu^*$ restricted to $\mcal$ is countably additive. Yeah, this still makes sense.
+\end{enumerate}
+If $\mu^*$ is countably additive, and also satisfies the properties 1, 2, 3, 4, we can also conclude it is a measure. So, we have the following theorem:
+
+\paragraph{Theorem 11.1 - Induced Measure} If $\mu^*$ is an outer measure, then $\mcal(\mu^*)$ is a $\sigma$ field, and $\mu^*$ restricted to $\mcal(\mu^*)$ is a measure.
+
+\subsubsection{Extension}
 
 \end{document}
 
