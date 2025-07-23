@@ -7151,6 +7151,86 @@ If $\mu^*$ is countably additive, and also satisfies the properties 1, 2, 3, 4, 
 \paragraph{Theorem 11.1 - Induced Measure} If $\mu^*$ is an outer measure, then $\mcal(\mu^*)$ is a $\sigma$ field, and $\mu^*$ restricted to $\mcal(\mu^*)$ is a measure.
 
 \subsubsection{Extension}
+\paragraph{Theorem 11.2 - Extension of a Measure} A measure on a field has an extension to the generated $\sigma$ field.
+\textbf{Proof:} Note, we don't need to prove this, as the result will actually follow from a strong form of the proof in Theorem 11.3. qed. Also note - if the original measure on the field is $\sigma$ finite, Theorem 10.3 implies that the extension is unique. Recall, Theorem 10.3 says that if there are two measure on a generated sigma field, and the generator is a $\pi$ system, and the measures agree on the $\pi$ system and are $\sigma$ finite (note, one is $\sigma$ finite implies the other is), then they agree on the entire generated sigma field.
+
+\paragraph{Definition - Semi-Ring} A class of sets $\acal$ is a \textit{semiring} if:
+\begin{enumerate}
+	\item $\emptyset \in \acal$
+	\item $A, B \in \acal$ implies $A \cap B \in \acal$
+	\item $A, B \in \acal$ and $A \subset B$ implies there exists disjoint $C_1, \cdots, C_n \in \acal$ such that:
+	$$
+		B - A = \bigcup_{k=1}^n C_k
+	$$
+\end{enumerate}
+Some simple examples - the class of finite intervals in $\Omega = \R^1$. Clearly the intersection of two such finite intervals is a finite interval. The set minus is also at most a pair of disjoint intervals. Also, the class of subintervals of $\Omega = (0,1]$ is a semiring as well, with the same reasoning.
+
+\paragraph{Theorem 11.3 Measure Semi-Ring Extension} Suppose that $\mu$ is a set function on a semiring of $\acal$. Suppose that $\mu$ has values in $[0,\infty]$, $\mu(\emptyset) = 0$, and $\mu$ is finitely additive and countably subadditive. Then $\mu$ extends to a measure on $\sigma(\acal)$.
+\\\\
+First note - this contains Theorem 11.2. A field is clearly a semiring. A measure also satisfies all the given properties, definitionally, on $\acal$.
+\\\\
+\textbf{Proof:} Let $A, B$, $C_k$ be as in condition 3 of the semiring. By finite additivity:
+$$
+	\mu(B) = \mu(A) + \sum_{k=1}^n \mu(C_k) \geq \mu(A)
+$$
+Thus, our set function $\mu$ is monotone. Take our outer measure $\mu^*$ - recall, defined as:
+$$
+	\mu^*(A) = \inf \sum_n \mu(A_n)
+$$
+Where the infimum extends over coverings of $A$ by $\acal$ sets, and an empty infimum yields infinity. We first want to show that $\acal \subset \mcal(\mu^*)$. Then, if we show $\mu^*$ and $\mu$ agree on $\acal$, we can say that $\mu^*$ is our extension - Theorem 11.1 tells us that $\mu^*$ is a measure on $\mcal(\mu^*)$, and it would continue to be one when restricted to $\sigma(\acal)$.
+\\\\
+Take $A \in \acal$. If $\mu^*(E) = \infty$, then our condition for being in $\mcal(\mu^*)$:
+$$
+	\mu^*(A \cap E) + \mu^*(A^c \cap E) \leq \mu^*(E)
+$$
+hold trivially. So, assume $\mu^*(E) < \infty$. For an $\epsilon > 0$, use the definition of infimum to find $A_n$ such that:
+$$
+	\sum_n \mu(A_n) < \mu^*(E) + \epsilon
+$$
+As $A$ is a semiring, $B_n = A \cap A_n$ is in $\acal$, and $A^c \cap A_n = A_n - B_n$ has the form:
+$$
+	\bigcup_{k=1}^{m_n} C_{nk}
+$$
+Note that:
+$$
+	A_n = A \cap A_n \bigcup A^c \cap A_n = B_n \cup \bigcup_{k=1}^{m_n} C_{nk}
+$$
+Which is a disjoint union. Note that:
+$$
+	A \cap E \subset A \cap \bigcup_n A_n = \bigcup_n B_n
+$$
+Finally, note that:
+$$
+	A^c \cap E \subset A^c \cap \bigcup_n A_n =
+	\bigcup_n A_n - B_n =
+	\bigcup_n \bigcup_{k=1}^{m_n} C_{nk}
+$$
+We now conclude (via countable subadditivity):
+$$
+	\mu^*(A \cap E) + \mu^*(A^c \cap E) \leq
+	\sum_n \mu(B_n) + \sum_n \sum_{k=1}^{m_n} \mu(C_{nk}) =
+	\sum_n \mu(A_n) < \mu^*(E) + \epsilon
+$$
+Take $\epsilon \to 0$, and yes, we can conclude that $\acal \subset \mcal(\mu^*)$.
+\\\\
+Onto the next step. We want to show that $\mu^*$ and $\mu$ agree on $\acal$. If $A \subset \bigcup_n A_n$ for $\acal$ sets $A$ and $A_n$, then by countable subadditivity and monotonicity, we have:
+$$
+	\mu(A) \leq \sum_n \mu(A \cap A_n) \leq \sum_n \mu(A_n)
+$$
+Thus, $A \in \acal$ implies $\mu(A) \leq \mu^*(A)$. We note that $\mu^*(A) \leq \mu(A)$, just by the definition of the infimum, and so we can easily conclude that:
+$$
+	\mu(A) = \mu^*(A)
+$$
+And so now, we wrap up. We have:
+$$
+	\acal \subseteq \mcal(\mu^*) \implies
+	\sigma(\acal) \subseteq \mcal(\mu^*)
+$$
+And $\mu^*$ restricted to $\sigma(\acal)$ is a measure. As $\mu^*$ agrees with $\mu$ on $\acal$, $\mu^*$ is a measure that is an extension of $\mu$ on $\sigma(\acal)$. qed.
+
+\paragraph{Example 11.2 - Second Example of the Lebesgue Measure on the Unit Interval} Note that the subintervals of $\Omega = (0,1]$ is a \textit{semiring}. This is distinct from the disjoint finite unit of intervals, which is a field. For $\mu$ take length $\lambda(a,b] = b - a$. By Theorem 1.3, we already have that $\lambda$ is finitely additive and countably subadditive. By theorem 11.3, $\lambda$ extends to a measure on the class $\sigma(\acal) = \bcal$ of Borel sets in $(0,1]$. 
+
+\paragraph{Example 11.3 - The Lebesgue Measure on the Real Line} Take $\acal$ as the semi ring of finite intervals on the real line $\R$, and $\lambda_1(a,b] = b - a$. We have that $\lambda_1$ is finitely additive and countably subadditive on $\acal$ (note Theorem 1.3 doesn't need to be restricted to $(0,1]$). Thus, $\lambda_1$ extends to the $\sigma$ field $\rcal^1$ of linear Borel sets, which is generated by $\acal$ definitionally. This defines the Lebesgue measure $\lambda_1$ over the whole real line.
 
 \end{document}
 
