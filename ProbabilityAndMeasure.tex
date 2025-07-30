@@ -6874,7 +6874,7 @@ And thus, we have equality, and have proven the second statement. qed.
 $$
 	\sigma(\acal \cap (0,1]) = \sigma(\acal) \cap (0,1]
 $$
-Ie, $\rcal^1$, restricted to the unit interval (the LHS) is equal to the generated sigma algebra from the half open intervals in $(0,1]$ (the RHS), which is $\bcal$. Ie, we have:
+Ie, $\rcal^1$, restricted to the unit interval (the RHS) is equal to the generated sigma algebra from the half open intervals in $(0,1]$ (the LHS), which is $\bcal$. Ie, we have:
 $$
 	\bcal = \rcal^1 \cap (0,1]
 $$
@@ -6883,7 +6883,7 @@ $$
 \paragraph{Definition: Measure} A set function $\mu$ on a field $\fcal$ in $\Omega$ is called a \textit{measure} if it satisfies these conditions:
 \begin{enumerate}
 	\item $\mu(A) \in [0,\infty]$ for $A \in \fcal$
-	\item $\mu(\emptyset) \neq 0$
+	\item $\mu(\emptyset) = 0$
 	\item If $A_1, A_2, \cdots$ is a disjoint sequence of $\fcal$ sets and if $\bigcup_{k=1}^\infty A_k \in \fcal$, then:
 	$$
 		\mu\left(\bigcup_{k=1}^\infty A_k\right) = \sum_{k=1}^\infty \mu(A_k)
@@ -6953,7 +6953,7 @@ Thus, we must have that the index set:
 $$
 	\left[\theta: \mu(A \cap B_{\theta}) > \epsilon\right]
 $$
-Is finite. If it wasn't - we could make a contradiction proving $\infty \leq \mu(A)/\epsilon$. If we take a union over positive rational $\epsilon$, we muts have:
+Is finite. If it wasn't - we could make a contradiction proving for some $B \subset A$, we have $\mu(B) > \mu(A)$. If we take a union over positive rational $\epsilon$, we must have:
 $$
 	\left[\theta: \mu(A \cap B_\theta) > 0\right]
 $$
@@ -6970,9 +6970,9 @@ And thus $\Theta$ is countable. qed.
 \subsubsection{Uniqueness} 
 According to Theorem 3.3, probability measures agreeing on a $\pi$ system $\pcal$ agree on $\sigma(\pcal)$ - this is by the $\pi$ $\lambda$ theorem. There is an extension in the general case
 
-\paragraph{Theorem 10.3 - Uniqueness of General Measure Extension} Suppose that $\mu_1$ and $\mu_2$ are measures on $\sigma(\pcal)$, where $\pcal$ is a $\pi$ system, and suppose they are $\sigma$ finite on $\pcal$. If $\mu_1$ and $\mu_2$ agree on $\pcal$, then they agree on $\sigma(\pcal)$.
+\paragraph{Theorem 10.3 - Uniqueness of General Measure Extension} Suppose that $\mu_1$ and $\mu_2$ are measures on $\sigma(\pcal)$, where $\pcal$ is a $\pi$ system, and suppose they are $\sigma$ finite on $\pcal$ (ie, countable $\pcal$ sets with non infinite measure union to $\Omega$). If $\mu_1$ and $\mu_2$ agree on $\pcal$, then they agree on $\sigma(\pcal)$.
 \\\\
-I guess one question I would have before the proof - is what does $\sigma$ finite mean on $\pcal$? Does $\pcal$ contain $\Omega$? \textbf{Proof} Suppose that $B \in \pcal$ and $\mu_1(B) = \mu_2(B) < \infty$, and let $\lcal_B$ be the class of sets $A$ in $\sigma(\pcal)$ for which $\mu_1(B \cap A) = \mu_2(B \cap A)$. Then $\lcal_B$ is a $\lambda$ system (clearly contains $\omega$, complements by subtraction and $\mu(B) < \infty$, and countable disjoint unions via additivity of $\mu$) containing $\pcal$ ($\pi$ system contains intersections) and hence containing $\sigma(\pcal)$ via the $\pi-\lambda$ theorem.
+\textbf{Proof} Suppose that $B \in \pcal$ and $\mu_1(B) = \mu_2(B) < \infty$, and let $\lcal_B$ be the class of sets $A$ in $\sigma(\pcal)$ for which $\mu_1(B \cap A) = \mu_2(B \cap A)$. Then $\lcal_B$ is a $\lambda$ system (clearly contains $\omega$, complements by subtraction and $\mu(B) < \infty$, and countable disjoint unions via additivity of $\mu$) containing $\pcal$ ($\pi$ system contains intersections) and hence containing $\sigma(\pcal)$ via the $\pi-\lambda$ theorem.
 \\\\
 By $\sigma$-finiteness, there exists $\pcal$ sets $B_k$ satisfying $\Omega = \bigcup_k B_k$ and $\mu_1(B_k) = \mu_2(B_k) < \infty$. By inclusion-exclusion:
 $$
@@ -7002,7 +7002,7 @@ Note, we require $\mu(A) < \infty$, as otherwise subtraction is not defined.
 
 \subsubsection{10.2 Finite vs. Countable Additivity on a Countable $\Omega$} On the $\sigma$ field of all subsets of $\Omega = \{1, 2, \cdots\}$ put $\mu(A) = \sum_{k \in A} 2^{-k}$ if $A$ is finite and $\mu(A) = \infty$ otherwise. Is $\mu$ finitely additive? Countably additive?
 \\\\
-I would first say that $\mu$ is finitely additive. If you have the finite disjoint union of finite sets - then we will just get out the sum. If you add a countably additive set in there - both sides will be infinite. Note, a finite amount of finite sets won't get to countable additivity.
+I would first say that $\mu$ is finitely additive. If you have the finite disjoint union of finite sets - then we will just get out the sum. If you add a countable set in there - both sides will be infinite. Note, a finite amount of finite sets won't get to countable additivity.
 \\\\
 The issue comes with a countable amount of finite sets. Take $A_k = \{k\}$. We have:
 $$
@@ -7075,7 +7075,7 @@ $$
 	$$
 	We want to show $C = \emptyset$. If that is not the case, note that $\mu(C) < \infty$ is a contradiction, as then $C$ would be included in the union. So, we must have $\mu(C) = \infty$. Note, we have assumed there are no infinite atoms, and so there must be some $B \subset C$ where $\mu(B) < \infty$. However, this leads to another contradiction, $B$ is then within our union, but $B$ is also outside of it. So, if $C \neq \emptyset$, we always have a contradiction, and we must thus have $\Omega$ is $\sigma$ finite (as the union above is uncountable).
 	\\\\
-	Now, we consider the case where $\fcal$ is uncountable. Let $\ical$ index every countable union of non-infinite measure. Ie, for $i \in \ical$, we have that:
+	Now, we consider the case where $\fcal$ is uncountable. Let $\ical$ index every countable union of non-infinite measure sets. Ie, for $i \in \ical$, we have that:
 	$$
 		C_i = \bigcup_{j=1}^\infty C_{ij} \quad\text{ such that } \mu(C_{ij}) < \infty
 	$$
@@ -7163,7 +7163,10 @@ If $\mu^*$ is countably additive, and also satisfies the properties 1, 2, 3, 4, 
 		B - A = \bigcup_{k=1}^n C_k
 	$$
 \end{enumerate}
-Some simple examples - the class of finite intervals in $\Omega = \R^1$. Clearly the intersection of two such finite intervals is a finite interval. The set minus is also at most a pair of disjoint intervals. Also, the class of subintervals of $\Omega = (0,1]$ is a semiring as well, with the same reasoning.
+Some simple examples - the class of finite intervals in $\Omega = \R^1$. Clearly the intersection of two such finite intervals is a finite interval. The set minus is also at most a pair of disjoint intervals. Also, the class of subintervals of $\Omega = (0,1]$ is a semiring as well, with the same reasoning. Every field is a semiring as well, as:
+$$
+	B - A = B \cap A^c \in \fcal
+$$
 
 \paragraph{Theorem 11.3 Measure Semi-Ring Extension} Suppose that $\mu$ is a set function on a semiring of $\acal$. Suppose that $\mu$ has values in $[0,\infty]$, $\mu(\emptyset) = 0$, and $\mu$ is finitely additive and countably subadditive. Then $\mu$ extends to a measure on $\sigma(\acal)$.
 \\\\
