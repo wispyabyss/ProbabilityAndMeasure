@@ -5,12 +5,12 @@
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{7}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{7}{section*.7}%
 \contentsline {paragraph}{Lemma - Chebyshev's Inequality}{8}{section*.8}%
-\contentsline {subsubsection}{The Strong Law of Large Numbers}{8}{section*.9}%
+\contentsline {subsubsection}{The Strong Law of Large Numbers}{9}{section*.9}%
 \contentsline {paragraph}{Theorem 1.2}{9}{section*.10}%
 \contentsline {paragraph}{Theorem 1.3 - Lebesgue Measure Starting Point}{10}{section*.11}%
 \contentsline {subsubsection}{The Measure Theory of Diophantine Approximation}{12}{section*.12}%
 \contentsline {paragraph}{Theorem 1.4}{12}{section*.13}%
-\contentsline {paragraph}{Theorem 1.5}{12}{section*.14}%
+\contentsline {paragraph}{Theorem 1.5}{13}{section*.14}%
 \contentsline {paragraph}{Theorem 1.6}{13}{section*.15}%
 \contentsline {subsection}{Problems}{14}{section*.16}%
 \contentsline {subsubsection}{1.1 Infinite Independent Events on a Discrete Space (are impossible)}{14}{section*.17}%
@@ -346,8 +346,10 @@
 \contentsline {paragraph}{Example 11.3 - The Lebesgue Measure on the Real Line}{252}{section*.347}%
 \contentsline {paragraph}{The Lebesgue Measure on the Borel Set and the first Linear Borel Set Coincide}{252}{section*.348}%
 \contentsline {subsubsection}{An Approximation Theorem}{252}{section*.349}%
-\contentsline {paragraph}{Lemma 11.1 - Semi Ring Intersection Equality}{252}{section*.350}%
+\contentsline {paragraph}{Lemma 11.1 - Semi Ring Intersection Equality}{253}{section*.350}%
 \contentsline {paragraph}{Theorem 11.4 - Approximating the Measure With Semiring Values}{253}{section*.351}%
 \contentsline {paragraph}{Corollary 11.4.1 Approximation on Finite Measures}{255}{section*.352}%
 \contentsline {paragraph}{Corollary 11.4.2 Monotonicty Extends to $\sigma $ field}{255}{section*.353}%
 \contentsline {paragraph}{Lemma 11.2 Monotonicity of Set Functions on a Semi-ring}{255}{section*.354}%
+\contentsline {subsection}{Problems}{256}{section*.355}%
+\contentsline {subsubsection}{11.1 Measure Extension to $\sigma $ field without Theorem 11.3}{256}{section*.356}%

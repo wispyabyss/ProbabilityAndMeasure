@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  30 JUL 2025 11:34
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  31 JUL 2025 10:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -389,12 +389,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--76
 
  []
 
+[6]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 89.
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 101--107
 
  []
@@ -466,12 +467,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 241--247
 
  []
 
-
+[13]
 Underfull \hbox (badness 10000) in paragraph at lines 263--266
 
  []
 
-[13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 285.
@@ -3643,17 +3643,50 @@ Underfull \hbox (badness 10000) in paragraph at lines 7318--7321
 
  []
 
-[255] [256] (./ProbabilityAndMeasure.aux)
+[255]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7354.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 7354.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7354.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7354--7358
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7358--7361
+
+ []
+
+[256]
+Underfull \hbox (badness 10000) in paragraph at lines 7372--7376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7378--7382
+
+ []
+
+[257] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: C4A91B7699333A5F1440572058D38CBD;36763.
+(rerunfilecheck)             Checksum: 311377E327716E37655C75D3D900126B;37212.
  ) 
 Here is how much of TeX's memory you used:
- 10021 strings out of 476191
- 156188 string characters out of 5812072
- 492566 words of memory out of 5000000
- 30611 multiletter control sequences out of 15000+600000
+ 10022 strings out of 476191
+ 156202 string characters out of 5812072
+ 493032 words of memory out of 5000000
+ 30612 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (256 pages).
+Output written on ProbabilityAndMeasure.pdf (257 pages).

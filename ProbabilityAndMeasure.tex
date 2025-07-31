@@ -7176,7 +7176,7 @@ First note - this contains Theorem 11.2. A field is clearly a semiring. A measur
 $$
 	\mu(B) = \mu(A) + \sum_{k=1}^n \mu(C_k) \geq \mu(A)
 $$
-Thus, our set function $\mu$ is monotone. Take our outer measure $\mu^*$ - recall, defined as:
+Thus, our set function $\mu$ is monotone on $\acal$. Take our outer measure $\mu^*$ - recall, defined as:
 $$
 	\mu^*(A) = \inf \sum_n \mu(A_n)
 $$
@@ -7208,13 +7208,13 @@ $$
 	\bigcup_n A_n - B_n =
 	\bigcup_n \bigcup_{k=1}^{m_n} C_{nk}
 $$
-We now conclude (via countable subadditivity):
+We now conclude:
 $$
 	\mu^*(A \cap E) + \mu^*(A^c \cap E) \leq
 	\sum_n \mu(B_n) + \sum_n \sum_{k=1}^{m_n} \mu(C_{nk}) =
 	\sum_n \mu(A_n) < \mu^*(E) + \epsilon
 $$
-Take $\epsilon \to 0$, and yes, we can conclude that $\acal \subset \mcal(\mu^*)$.
+The first step is the definition of the outer measure - we take the infimum of covering sums, and as the $B_n$ and $C_{nk}$ are covering, we get less than the corresponding sums. The next equality is via finite additivity on $\acal$, and the $B_n$ and $C_{nk}$ being disjoint. Take $\epsilon \to 0$, and yes, we can conclude that $\acal \subset \mcal(\mu^*)$.
 \\\\
 Onto the next step. We want to show that $\mu^*$ and $\mu$ agree on $\acal$. If $A \subset \bigcup_n A_n$ for $\acal$ sets $A$ and $A_n$, then by countable subadditivity and monotonicity, we have:
 $$
@@ -7349,6 +7349,40 @@ As the $B_i$ are disjoint, all the $C_{ij}$ are disjoint, and finite additivity 
 $$
 	\mu(A) = \sum_{ij} \mu(C_{ij}) \leq \sum_i \mu(A_i)
 $$
+
+\subsection{Problems}
+\subsubsection{11.1 Measure Extension to $\sigma$ field without Theorem 11.3} The proof of Theorem 3.1 (a probability measure on a field has a unique extension to the generated $\sigma$ field) applies if the probability measure is replaced by a finite measure - it really is just a matter of rescaling, and above we proved all the steps are essentially the same.
+\\\\
+Take as a starting point then the fact that a finite measure on a field extends uniquely to the generated $\sigma$ field. With the following steps, we can prove Theorem 11.2 - ie, removing the assumption of finiteness - without relying on Theorem 11.3.
+\begin{enumerate}
+	\item Let $\mu$ be a measure (not necessarily even $\sigma$-finite) on a field $\fcal_0$, and let $\fcal = \sigma(\fcal_0)$. If $A$ is a nonempty set in $\fcal_0$ and $\mu(A) < \infty$, restrict $\mu$ to a finite measure $\mu_A$ on the field $\fcal_0 \cap A$, and extend $\mu_A$ to a finite measure $\hat{\mu}_A$ on the $\sigma$ field $\fcal \cap A$ generated in $A$ by $\fcal_0 \cap A$.
+	\\\\
+	To be honest - I don't think there is a question here. We do have that $\fcal_0 \cap A$ is still a field. We note that $\mu_A$ is still a measure on that field. It is finite, as we have $A$ is our $\omega$, and $\mu_A(A) = \mu(A) < \infty$. We thus have, by the starting point, that $\mu_A$ finite measure on the field $\fcal_0 \cap A$ extends uniquely to:
+	$$
+		\sigma(\fcal_0 \cap A)
+	$$
+	Then, make use of Theorem 10. We have that $\fcal_0$ generates $\fcal$ in $\Omega$, and so $\fcal_0 \cap A$ generates the restricted $\sigma$ field $\sigma(\fcal_0) \cap A = \fcal \cap A$:
+	$$
+		\sigma(\fcal_0 \cap A) = \fcal \cap A
+	$$
+	
+	\item Suppose that $E \in \fcal$. If there exist disjoint $\fcal_0$ sets $A_n$ such that $E \subset \bigcup_n A_n$ and $\mu(A_n) < \infty$, put:
+	$$
+		\hat{\mu}(E) = \sum_n \hat{\mu}_{A_n}(E \cap A_n)
+	$$
+	And prove consistency. Otherwise put $\hat{\mu}(E) = \infty$.
+	\\\\
+	So, suppose that we have two satisfying sequences, $E \subset \bigcup_n A_n$ and $E \subset \bigcup_n B_n$. We want to prove that $\hat{\mu}(E)$ is the same for both. We note - how is:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n)
+	$$
+	Defined? Well - note that $E \cap A_n \in \fcal \cap A_n$, and that $\hat{\mu}_{A_n}$ is well defined for that set - as an extension.
+	\\\\
+	To be honest - I don't think this is well defined. What if we are double counting? Like I feel we should at least take an infimum of some kind. Ohh - we assume disjoint. Ok. This actually makes it easier - because I think we should consider for two such disjoint sequences $A_n$ and $B_m$:
+	$$
+		\hat{\mu}(E) = \sum_n\sum_m \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m)
+	$$
+\end{enumerate}
 
 \end{document}
 
