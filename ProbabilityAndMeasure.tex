@@ -7357,11 +7357,11 @@ Take as a starting point then the fact that a finite measure on a field extends 
 \begin{enumerate}
 	\item Let $\mu$ be a measure (not necessarily even $\sigma$-finite) on a field $\fcal_0$, and let $\fcal = \sigma(\fcal_0)$. If $A$ is a nonempty set in $\fcal_0$ and $\mu(A) < \infty$, restrict $\mu$ to a finite measure $\mu_A$ on the field $\fcal_0 \cap A$, and extend $\mu_A$ to a finite measure $\hat{\mu}_A$ on the $\sigma$ field $\fcal \cap A$ generated in $A$ by $\fcal_0 \cap A$.
 	\\\\
-	To be honest - I don't think there is a question here. We do have that $\fcal_0 \cap A$ is still a field. We note that $\mu_A$ is still a measure on that field. It is finite, as we have $A$ is our $\omega$, and $\mu_A(A) = \mu(A) < \infty$. We thus have, by the starting point, that $\mu_A$ finite measure on the field $\fcal_0 \cap A$ extends uniquely to:
+	To be honest - I don't think there is a question here. We do have that $\fcal_0 \cap A$ is still a field. We note that $\mu_A$ is still a measure on that field. It is finite, as we have $A$ is our $\Omega$, and $\mu_A(A) = \mu(A) < \infty$. We thus have, by the starting point, that $\mu_A$ finite measure on the field $\fcal_0 \cap A$ extends uniquely to:
 	$$
 		\sigma(\fcal_0 \cap A)
 	$$
-	Then, make use of Theorem 10. We have that $\fcal_0$ generates $\fcal$ in $\Omega$, and so $\fcal_0 \cap A$ generates the restricted $\sigma$ field $\sigma(\fcal_0) \cap A = \fcal \cap A$:
+	Then, make use of Theorem 10-1. We have that $\fcal_0$ generates $\fcal$ in $\Omega$, and so $\fcal_0 \cap A$ generates the restricted $\sigma$ field $\sigma(\fcal_0) \cap A = \fcal \cap A$:
 	$$
 		\sigma(\fcal_0 \cap A) = \fcal \cap A
 	$$
@@ -7382,6 +7382,79 @@ Take as a starting point then the fact that a finite measure on a field extends 
 	$$
 		\hat{\mu}(E) = \sum_n\sum_m \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m)
 	$$
+	We want to show that the above is equal to $\hat{\mu}(E)$ defined on $A_n$ and $B_m$, in which case we will have equality between the two definitions. Mainly, I want to show:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n) = \sum_m \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m)
+	$$
+	Recall - $\hat{\mu}_{A_n}$ is a measure on $\fcal \cap A_n$. Note that as $B_m \in \fcal_0$, we must have that $E \cap B_m \cap A_n \in \fcal \cap A_n$. Note that we have the $B_m$ are disjoint, and:
+	$$
+		E \cap A_n = E \cap A_n \cap \bigcup_m B_m
+	$$
+	And so, via countable additivity of a measure, we have:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n) = \sum_m \hat{\mu}_{A_n}(E \cap A_n \cap B_m)
+	$$
+	So really, we have consistency will follow, if we can show:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n \cap B_m) = \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m)
+	$$
+	First, examine the core definition:
+	$$
+		\hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m) =
+		\inf \sum_k \mu_{A_n \cap B_m}(D_k) =
+		\inf \sum_k \mu(D_k)
+	$$
+	Where $D_k \in \fcal_0 \cap A_n \cap B_m$, and $\bigcup_k D_k \supseteq E \cap A_n \cap B_m$. Note, we must have that:
+	$$
+		D_k = D_k' \cap A_n \cap B_m \quad\quad\quad D_k' \in \fcal_0
+	$$
+	Thus, we have that via $\fcal_0$ being a field, $D_k' \cap B_m \in \fcal_0$, and so $D_k \in \fcal_0 \cap A_n$. Thus, every covering of $E \cap A_n \cap B_m$ in $\fcal_0 \cap A_n \cap B_m$ corresponds to a covering of $E \cap A_n \cap B_m$ in $\fcal_0 \cap A_n$, and so we must have via an infimum over a larger set:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n \cap B_m) \leq \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m)
+	$$
+	Now, we want to go in the opposite direction. Examine a $C_k$ such that:
+	$$
+		\sum_k \mu_{A_n}(C_k) < \hat{\mu}_{A_n}(E \cap A_n \cap B_m) + \epsilon
+	$$
+	This via the definition of the infimum. Note that $\bigcup_k C_k \cap B_m$ still covers $E \cap A_n \cap B_m$, and so:
+	$$
+		\hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m) \leq
+		\sum_k \mu_{A_n \cap B_m}(C_k \cap B_m) =
+		\sum_k \mu(C_k \cap B_m) \leq
+		\sum_k \mu(C_k)
+	$$
+	$$
+		= \sum_k \mu_{A_n}(C_k) < \hat{\mu}_{A_n}(E \cap A_n \cap B_m) + \epsilon
+	$$
+	Take $\epsilon$ to zero, and so we also have:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n \cap B_m) \geq \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m)
+	$$
+	Note, what we have implicitly used is that for sets in $\fcal_0 \cap A_n$ and $\fcal_0 \cap A_n \cap B_m$, $\mu_{A_n}(U) = \mu(U)$ and $\mu_{A_n \cap B_m}(U) = \mu(U)$, as the measures are just restrictions to smaller fields - ie, the values don't change. So, in all, we have:
+	$$
+		\hat{\mu}_{A_n}(E \cap A_n \cap B_m) = \hat{\mu}_{A_n \cap B_m}(E \cap A_n \cap B_m) =
+		\hat{\mu}_{B_m}(E \cap A_n \cap B_m)
+	$$
+	Via symmetry. And so, we can conclude that the definition of $\hat{\mu}(E)$ is consistent.
+	
+	\item Show that $\hat{\mu}$ is a measure on $\fcal$ and agrees with $\mu$ on $\fcal_0$.
+	\\\\
+	First, we show that it is a measure on $\fcal$. We need it to be countably additive, and to have the empty set be measure $0$. Well, lets start with something easy. We have:
+	$$
+		\hat{\mu}(\emptyset) = \hat{\mu}_{A_n}(\emptyset \cap A_n) = 0
+	$$
+	Now, countable additivity. We take disjoint $E_1, E_2, \cdots$. If any of the $\hat{\mu}(E_n) = \infty$, we have the statement is true, so assume all are finite. We examine:
+	$$
+		\hat{\mu}\left(\bigcup_n E_n\right)
+	$$
+	I think, for each $E_n$, we can take a sequence $A_{nk}$ that are disjoint, in $\fcal_0$, and cover $E_n$ - that is what we get via assuming finiteness. Note that these $A_{nk}$ are still countable, and can be listed like $A_1, A_2, \cdots$ (a countable amount of countable sets is still countable). They can be formed into a disjoint cover of $\bigcup_n E_n$. This is via taking:
+	$$
+		B_1 = A_1 \quad\quad\quad
+		B_2 = A_2 \setminus A_1 \quad\quad\quad
+		B_3 = A_3 \setminus (A_1 \cup A_2)
+	$$
+	And so on. So, we have that we can find a cover of disjoint $\acal_0$ sets that cover the disjoint union in the case that each $\hat{\mu}(E_n) < \infty$.
+	
 \end{enumerate}
 
 \end{document}
