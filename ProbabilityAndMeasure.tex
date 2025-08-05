@@ -7453,9 +7453,91 @@ Take as a starting point then the fact that a finite measure on a field extends 
 		B_2 = A_2 \setminus A_1 \quad\quad\quad
 		B_3 = A_3 \setminus (A_1 \cup A_2)
 	$$
-	And so on. So, we have that we can find a cover of disjoint $\acal_0$ sets that cover the disjoint union in the case that each $\hat{\mu}(E_n) < \infty$.
+	And so on. So, we have that we can find a cover of disjoint $\acal_0$ sets that cover the disjoint union in the case that each $\hat{\mu}(E_n) < \infty$. Thus, by definition, we have:
+	$$
+		\hat{\mu}\left(\bigcup_n E_n\right) =
+		\sum_t \hat{\mu}_{B_t}\left(\bigcup_n E_n \cap B_t\right) =
+		\sum_t \sum_n \hat{\mu}_{B_t}\left(E_n \cap B_t\right)
+	$$
+	The first equality is definitional, and the last one makes use of the fact that $\hat{\mu}$ is a measure, and so countable additivity applies for disjoint sets. Now, note that the sequence $B_1, B_2, \cdots$ is a disjoint sequence of $\fcal_0$ sets that cover each $E_n$ - so, they can also be used to apply the definition of $\hat{\mu}$. We find:
+	$$
+		= \sum_n \sum_t \hat{\mu}_{B_t}\left(E_n \cap B_t\right)
+		= \sum_n \hat{\mu}(E_n)
+	$$
+	Where in the first equality we just switched the order of the sum (nonnegative sum, fine to switch). And so, we do have countable additivity. So, in total: $\hat{\mu}$ is defined for each $E \in \fcal$, returns a number in $[0,\infty]$, is zero for the $\emptyset$, and is countably additive. So, it is a measure. Now, we just want to show that $\hat{\mu}$ agrees with $\mu$ on $\fcal_0$. Well, we have that $\hat{\mu}$ is consistent. Note for $E \in \fcal_0$, we have that $E$ itself is a disjoint sequence covering $E$. And so, we have:
+	$$
+		\hat{\mu}(E) = \hat{\mu}_E(E \cap E) = \mu(E)
+	$$
+	And so in conclusion: we have constructed an extension for $\mu$ on a field $\fcal_0$, even if the measure is not finite on $\fcal_0$.
 	
 \end{enumerate}
+
+\subsubsection{11.2 Countable Subadditivity on Rings} Suppose that $\mu$ is a nonnegative and finitely additive set function on a semiring $\acal$.
+\begin{enumerate}
+	\item Use Lemmas 1 and 2, without reference to Theorem 11.3, to show that $\mu$ is countably subadditive if and only if it is countably additive.
+	
+	\item Find an example where $\mu$ is not countably subadditive.
+\end{enumerate}
+So, for the first part. We have an if and only if. First, assume that $\mu$ is countably additive on its semiring. Ie, if $A_1, A_2, \cdots$ are in $\acal$ and disjoint, and the union is in $\acal$ as well, we have:
+$$
+	\mu\left(\bigcup_n A_n\right) = \sum_n\mu\left(A_n\right)
+$$
+We want to show this proves countable subadditivity. Take $B_1, B_2, \cdots$ in $\acal$. Assume their union is within $\acal$ as well. We have by Lemma 1:
+$$
+	B_n \cap B_1^c \cap \cdots \cap B_{n-1}^c = C_{n1} \cup \cdots \cup C_{nm_n}
+$$
+These $C$ form a disjoint union, whose union is $B$, the union of the $B_i$, which is in $\acal$. Countable additivity gives us:
+$$
+	\mu\left(\bigcup_n B_n\right) =
+	\mu\left(\bigcup_{n,i} C_{ni}\right) =
+	\sum_{n,i} \mu(C_{ni})
+$$
+Via finite additivity, it is clear that:
+$$
+	\sum_{i=1}^{m_n} \mu(C_{ni}) \leq \mu(B_n)
+$$
+So, that gives us:
+$$
+	\mu\left(\bigcup_n B_n\right) \leq \sum_n \mu(B_i)
+$$
+So countable additivity implies countable subadditivity. Now, go the other direction. Assume we have countable subadditivity. Thus, to show equality, we really just need to show for disjoint $A_n$, we have:
+$$
+	\mu\left(\bigcup_n A_n\right) \geq \sum_n\mu\left(A_n\right)
+$$
+This can come pretty directly from Lemma 2. We have that $A = \bigcup_n A_n$. We have that $\bigcup_{n=1}^k A_n \subseteq A$ clearly, and so by lemma 2 part 1 (as the $A_n$ are disjoint), we have:
+$$
+	\sum_{n=1}^k\mu\left(A_n\right) \leq \mu\left(\bigcup_n A_n\right)
+$$
+Now, just take a limit of $k \to \infty$ (we can take a limit on the sum), which will allow us to conclude countable additivity:
+$$
+	\mu\left(\bigcup_n A_n\right) = \sum_n\mu\left(A_n\right)
+$$
+qed. We now go to the second part - find an example of a semiring $\acal$ where $\mu$ is not countably subadditive. One simple semiring is the half open finite intervals on the real line $\R^1$. The intersection of two intervals is clearly a finite interval, and the set minus of finite intervals is a union of disjoint intervals. We are looking for a nonnegative, finitely additive, but not countably subadditive set function on this $\acal$.
+\\\\
+I will actually try a different ring - inspired by question 10.2. Let $\acal$ consist of subsets of $\Omega = \{1, 2, \cdots\}$, being intervals with no jumps - ie, we can not have something like $\{x, x + 2\}$ - if $x, y \in I$, then every integer between $x$ and $y$ must also be in the interval. We clearly contain intersections (as if $x,y$ are in both $I_1$, and $I_2$, each number between them is in the intersection) and setminuses are disjoint unions of sets in $\acal$.
+\\\\
+We let $\mu(I) = \sum_{k \in I} 2^{-k}$ if $I$ is finite and $\mu(I) = \infty$ if it contains a non finite amount of elements. It is clear that $\mu$ is finitely additive and nonnegative, similar to what was proved in 10.2. However, $\mu$ is not countably additive. Take sets $I_n = \{n\}$. There disjoint union is within $\acal$, but the disjoint sum is $1$, whereas the set function on the union is infinity.
+\\\\
+Now, we note by the above theorem - this implies that $\mu$ is also not countably subadditive. This can be the seen with the same example of $I_n = \{n\}$, as we have:
+$$
+	\infty = \mu(\cup_n I_n) \geq \sum_n \mu(I_n) = 1
+$$
+
+\subsection{11.4 - Riesz Representation Theorem 1} Let $\Lambda$ be a real linear functional on a vector lattice $\lcal$ of (finite) real functions on a space $\Omega$.
+\\\\
+Let us unpack what this means. First, what is $\lcal$. It is a vector space of finite real valued functions. If $f \in \lcal$, we have $f: \Omega \to \R$, and $f(\omega) < \infty$ for $\omega \in \Omega$. We also have that $\lcal$ is closed under addition of functions, and scalar multiplication - this comes from being a vector space.
+\\\\
+We now go on to what a lattice means. In general, it means we have for each pair of elements of $\lcal$, we have a join and meet value also contained within $\lcal$, where the join is greater than the two, and the meet is less than the two. Less abstractly, we have for $f,g \in \lcal$:
+$$
+	f \wedge g: \Omega \to \R \quad\quad
+	(f \wedge g)(\omega) = \max(f(\omega), g(\omega)) \quad\quad
+	f \wedge g \in \lcal
+$$
+$$
+	f \vee g: \Omega \to \R \quad\quad
+	(f \vee g)(\omega) = \min(f(\omega), g(\omega)) \quad\quad
+	f \vee g \in \lcal
+$$
 
 \end{document}
 
