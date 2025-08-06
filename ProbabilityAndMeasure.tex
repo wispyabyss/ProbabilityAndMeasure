@@ -7523,21 +7523,95 @@ $$
 	\infty = \mu(\cup_n I_n) \geq \sum_n \mu(I_n) = 1
 $$
 
-\subsection{11.4 - Riesz Representation Theorem 1} Let $\Lambda$ be a real linear functional on a vector lattice $\lcal$ of (finite) real functions on a space $\Omega$.
+\subsubsection{11.4 - Riesz Representation Part 1} Let $\Lambda$ be a real linear functional on a vector lattice $\lcal$ of (finite) real functions on a space $\Omega$.
 \\\\
 Let us unpack what this means. First, what is $\lcal$. It is a vector space of finite real valued functions. If $f \in \lcal$, we have $f: \Omega \to \R$, and $f(\omega) < \infty$ for $\omega \in \Omega$. We also have that $\lcal$ is closed under addition of functions, and scalar multiplication - this comes from being a vector space.
 \\\\
 We now go on to what a lattice means. In general, it means we have for each pair of elements of $\lcal$, we have a join and meet value also contained within $\lcal$, where the join is greater than the two, and the meet is less than the two. Less abstractly, we have for $f,g \in \lcal$:
 $$
-	f \wedge g: \Omega \to \R \quad\quad
-	(f \wedge g)(\omega) = \max(f(\omega), g(\omega)) \quad\quad
-	f \wedge g \in \lcal
-$$
-$$
 	f \vee g: \Omega \to \R \quad\quad
-	(f \vee g)(\omega) = \min(f(\omega), g(\omega)) \quad\quad
+	(f \vee g)(\omega) = \max(f(\omega), g(\omega)) \quad\quad
 	f \vee g \in \lcal
 $$
+$$
+	f \wedge g: \Omega \to \R \quad\quad
+	(f \wedge g)(\omega) = \min(f(\omega), g(\omega)) \quad\quad
+	f \wedge g \in \lcal
+$$
+Now, we also have that $\Lambda$ is a real linear functional. A functional is a map from a vector space $V$ to its field. So, $\Lambda: \lcal \to \R$. We also have that $\Lambda$ is linear, and so:
+$$
+	\Lambda(\alpha f + \beta g) = \alpha\Lambda(f) + \beta\Lambda(g)
+$$
+Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - note, I think that comes from the lattice definition. Assume further of $\Lambda$ that it is positive in the sense that $f \geq 0$ (pointwise) implies $\Lambda(f) \geq 0$ and continuous from above at $0$ in the sense that $f_n \downarrow 0$ (pointwise) implies $\Lambda(f_n) \to 0$. Those are indeed extra conditions on $\Lambda$.
+
+\begin{enumerate}
+	\item If $f \leq g$ and $f,g \in \lcal$, define $\Omega \times \R$ an ``interval":
+	$$
+		(f,g] = \left\{(\omega,t): f(\omega) < t \leq g(\omega)\right\}
+	$$
+	Show that these sets form a semiring $\acal_0$.
+	\\\\
+	To be a semi ring - we need finite intersections, set minus (of nested sets) equal to a disjoint union of elements in $\acal_0$, and $\emptyset \in \acal_0$.
+	\\\\
+	First, note that $f \leq f$, and so:
+	$$
+		(f,f] = \left\{(\omega,t): f(\omega) < t \leq f(\omega)\right\} = \emptyset \in \acal_0
+	$$
+	Now, consider intersections. We have $f_1 \leq g_1$ and $f_2 \leq g_2$. We have:
+	$$
+		(f_1,g_1] \cap (f_2,g_2] =
+		\left\{(\omega,t): f_1(\omega) < t \leq g_1(\omega)\right\} \cap
+		\left\{(\omega,t): f_2(\omega) < t \leq g_2(\omega)\right\}
+	$$
+	Take $(\omega,t)$ in the intersection. We have that $f_1(\omega) < t \leq g_1(\omega)$, and $f_2(\omega) < t \leq g_2(\omega)$. Thus, $t$ is bigger than the maximum of the $f$, and smaller than (or equal to) the minimum of the $g$. And so, we have:
+	$$
+		(\omega,t) \in (f_1 \vee f_2, g_1 \wedge g_2]
+	$$
+	We can similarly go in the other direction to show equality. And so, as $f_1 \vee f_2, g_1 \wedge g_2 \in \lcal$, we have:
+	$$
+		(f_1,g_1] \cap (f_2,g_2] = (f_1 \vee f_2, g_1 \wedge g_2] \in \acal_0
+	$$
+	The last item we need to show is the set minus property. Suppose that $(f_1,g_1] \subseteq (f_2,g_2]$. Examine:
+	$$
+		(f_2,g_2] - (f_1,g_1] =
+		\left\{(\omega,t): f_2(\omega) < t \leq g_2(\omega)\right\} - \left\{(\omega,t): f_1(\omega) < t \leq g_1(\omega)\right\}
+	$$
+	Take an $(\omega,t)$ in the above set. We know that $(\omega,t)$ satisfies $f_2(\omega) < t \leq g_2(\omega)$, but we also must have either $t \leq f_1(\omega)$, or $t > g_1(\omega)$. In the first case, we have that:
+	$$
+		(\omega,t) \in (f_2, g_2 \wedge f_1]
+	$$
+	As $f_2(\omega) < t \leq \min(g_2(\omega), f_1(\omega))$, as $t$ is less than or equal to both items in the minimum. In the other case, we have that:
+	$$
+		(\omega,t) \in (f_2 \vee g_1, g_2]
+	$$
+	Now, note that both of these sets are disjoint. That is because, if $t > g_1(\omega)$, we have $t > f_1(\omega)$, as $g_1 \geq f_1$. Similarly, if $t \leq f_1$, we must have $t \leq g_1$. And so, we have:
+	$$
+		(f_2,g_2] - (f_1,g_1] = (f_2, g_2 \wedge f_1] \cup (f_2 \vee g_1, g_2]
+	$$
+	Note, we only showed $\subseteq$, but the other direction is clear as well.
+	
+	\item Define a set function $\nu_0$ on $\acal_0$ by:
+	$$
+		\nu_0(f,g] = \Lambda(g - f)
+	$$
+	Show that $\nu_0$ is finitely additive and countably subadditive on $\acal_0$ (note, proving this will allow us to make use of Theorem 11.3). Take finite disjoint $(f_1,g_1], \cdots, (f_n,g_n]$. Examine:
+	$$
+		\nu_0\left(\bigcup_{i=1}^n (f_i,g_i]\right)
+	$$
+	To be honest, we only have a definition for $\nu_0$ when there is a single function. Finite additivity for a semiring is predicated on the fact that we have:
+	$$
+		\bigcup_{i=1}^n (f_i,g_i] = (f,g]
+	$$
+	Similar, for countable subadditivity, we need:
+	$$
+		\bigcup_i (f_i,g_i] = (f,g]
+	$$
+	Now, consider the case where $(f,g] \subseteq \bigcup_i (f_i,g_i]$. Then, we know for all $\omega$:
+	$$
+		(f(\omega),g(\omega)] \subseteq \bigcup_i (f_i(\omega), g_i(\omega)]
+	$$
+	
+\end{enumerate}
 
 \end{document}
 

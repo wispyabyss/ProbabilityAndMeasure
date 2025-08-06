@@ -354,4 +354,4 @@
 \contentsline {subsection}{Problems}{256}{section*.355}%
 \contentsline {subsubsection}{11.1 Measure Extension to $\sigma $ field without Theorem 11.3}{256}{section*.356}%
 \contentsline {subsubsection}{11.2 Countable Subadditivity on Rings}{260}{section*.357}%
-\contentsline {subsection}{11.4 - Riesz Representation Theorem 1}{262}{section*.358}%
+\contentsline {subsubsection}{11.4 - Riesz Representation Part 1}{262}{section*.358}%
