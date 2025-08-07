@@ -7523,11 +7523,11 @@ $$
 	\infty = \mu(\cup_n I_n) \geq \sum_n \mu(I_n) = 1
 $$
 
-\subsubsection{11.4 - Riesz Representation Part 1} Let $\Lambda$ be a real linear functional on a vector lattice $\lcal$ of (finite) real functions on a space $\Omega$.
+\subsubsection{11.4 - Function Lattice Semi-ring + Measure: Riesz Representation Part 1} Let $\Lambda$ be a real linear functional on a vector lattice $\lcal$ of (finite) real functions on a space $\Omega$.
 \\\\
 Let us unpack what this means. First, what is $\lcal$. It is a vector space of finite real valued functions. If $f \in \lcal$, we have $f: \Omega \to \R$, and $f(\omega) < \infty$ for $\omega \in \Omega$. We also have that $\lcal$ is closed under addition of functions, and scalar multiplication - this comes from being a vector space.
 \\\\
-We now go on to what a lattice means. In general, it means we have for each pair of elements of $\lcal$, we have a join and meet value also contained within $\lcal$, where the join is greater than the two, and the meet is less than the two. Less abstractly, we have for $f,g \in \lcal$:
+We now go on to what a lattice means. In general, it means for each pair of elements of $\lcal$, we have a join and meet value also contained within $\lcal$, where the join is greater than the two, and the meet is less than the two. Less abstractly, we have for $f,g \in \lcal$:
 $$
 	f \vee g: \Omega \to \R \quad\quad
 	(f \vee g)(\omega) = \max(f(\omega), g(\omega)) \quad\quad
@@ -7542,7 +7542,7 @@ Now, we also have that $\Lambda$ is a real linear functional. A functional is a 
 $$
 	\Lambda(\alpha f + \beta g) = \alpha\Lambda(f) + \beta\Lambda(g)
 $$
-Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - note, I think that comes from the lattice definition. Assume further of $\Lambda$ that it is positive in the sense that $f \geq 0$ (pointwise) implies $\Lambda(f) \geq 0$ and continuous from above at $0$ in the sense that $f_n \downarrow 0$ (pointwise) implies $\Lambda(f_n) \to 0$. Those are indeed extra conditions on $\Lambda$.
+Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - note, I think that comes from the lattice definition. I guess, $1 \in \lcal$ might not be immediate from the vector space definition (we have a scalar 1, but not an element 1). Assume further of $\Lambda$ that it is positive in the sense that $f \geq 0$ (pointwise) implies $\Lambda(f) \geq 0$ and continuous from above at $0$ in the sense that $f_n \downarrow 0$ (pointwise) implies $\Lambda(f_n) \to 0$. Those are indeed extra conditions on $\Lambda$.
 
 \begin{enumerate}
 	\item If $f \leq g$ and $f,g \in \lcal$, define $\Omega \times \R$ an ``interval":
@@ -7610,6 +7610,89 @@ Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - no
 	$$
 		(f(\omega),g(\omega)] \subseteq \bigcup_i (f_i(\omega), g_i(\omega)]
 	$$
+	This is clear from the definitions. Theorem 1.3 directly tells us that we thus have:
+	$$
+		g(\omega) - f(\omega) \leq \sum_i g_i(\omega) - f_i(\omega)
+	$$
+	Define:
+	$$
+		h_n = \left[g - f - \sum_{i \leq n} g_i - f_i\right] \vee 0
+	$$
+	Note that as for each $\omega$, we have $\lim_{n \to \infty} h_n(\omega) = 0$. The pointwise limit of the first functions is $\leq 0$, while the $\vee 0$ ensures we don't go below zero. We also have:
+	$$
+		g - f \leq \left[\sum_{i \leq n} g_i - f_i\right] + h_n
+	$$
+	Again, it would be equality if we didn't have the $\vee$, but the $\vee$ increases the function giving us the above inequality. Now, we have continuity of $\Lambda$ gives us:
+	$$
+		\Lambda(h_n) \to 0
+	$$
+	With these facts, we will prove countable subadditivity. We have that:
+	$$
+		\nu_0\left(\bigcup_i (f_i,g_i]\right) =
+		\nu_0\left((f,g]\right) = \Lambda(g - f)
+	$$
+	Now, as $g - f \leq \left[\sum_{i \leq n} g_i - f_i\right] + h_n$ for all $n$, we have for all $n$:
+	$$
+		\Lambda(g - f) \leq \Lambda\left[\left[\sum_{i \leq n} g_i - f_i\right] + h_n\right]
+	$$
+	As for why that is. Take functions $p,q$, where $p \leq q$. Then, $q - p \geq 0$, which implies $\Lambda(q - p) \geq 0$, which implies $\Lambda(q) - \Lambda(p) \geq 0$ (via linearity) which implies $\Lambda(q) \geq \Lambda(p)$. By linearity, we have:
+	$$
+		\Lambda\left[\left[\sum_{i \leq n} g_i - f_i\right] + h_n\right] =
+		\sum_{i \leq n}\Lambda\left[g_i - f_i\right] + \Lambda\left[h_n\right] =
+		\sum_{i \leq n} \nu_0(f_i,g_i] + \Lambda\left[h_n\right]
+	$$
+	And so, for all $n$, we have:
+	$$
+		\nu_0\left(\bigcup_i (f_i,g_i]\right) \leq \sum_{i \leq n} \nu_0(f_i,g_i] + \Lambda\left[h_n\right]
+	$$
+	Take a $\lim_{n \to \infty}$ on both sides, note that $\lim_{n \to \infty} \Lambda(h_n) = 0$, and conclude:
+	$$
+		\nu_0\left(\bigcup_i (f_i,g_i]\right) \leq \sum_i \nu_0(f_i,g_i]
+	$$
+	Now, we consider finite additivity. We have for disjoint intervals:
+	$$
+		\bigcup_i (f_i,g_i] = (f,g]
+	$$
+	By Theorem 1.3, we have as the $(f_i,g_i]$ are disjoint:
+	$$
+		g(\omega) - f(\omega) = \sum_{i=1}^n g_i(\omega) - f_i(\omega)
+	$$
+	This equality is for all $\omega$, and so the functions are equal. As $\Lambda$ is linear, we have:
+	$$
+		\nu_0(f,g] =
+		\Lambda(g - f) = 
+		\Lambda\left(\sum_{i=1}^n g_i - f_i\right) =
+		\sum_{i=1}^n \Lambda(g_i - f_i)
+	$$
+	Thus, we have proved finite additivity, and countable subadditivity.
+\end{enumerate}
+
+\subsubsection{11.5: Riesz Representation Part 2}
+\begin{enumerate}
+	\item Assume $f \in \lcal$ and let $f_n = (n(f - f \wedge 1)) \wedge 1$. Show that $f(\omega) \leq 1$ implies $f_n(\omega) = 0$ for all $n$ and $f(\omega) > 1$ implies $f_n(\omega) = 1$ for all sufficiently large $n$. Conclude that for $x > 0$:
+	$$
+		(0, xf_n] \uparrow [\omega: f(\omega) > 1] \times (0, x]
+	$$
+	Assume $f(\omega) \leq 1$. Then, we have $f(\omega) \wedge 1 = f(\omega)$. $f(\omega) - f(\omega) = 0$, $n(0) = 0$, and $0 \wedge 1 = 0$. Thus, if $f(\omega) \leq 1$, we have:
+	$$
+		f_n(\omega) = 0
+	$$
+	For all $n$. Now, assume $f(\omega) > 1$. Then, $f(\omega) \wedge 1 = 1$. And so:
+	$$
+		f_n(\omega) = n(f(\omega) - 1) \wedge 1
+	$$
+	I think it is clear, that for $n > 0$, $1$ will be the minimum, and so $f_n(\omega) = 1$ for sufficiently large $n$. Now, take $x > 0$. We examine:
+	$$
+		(0, xf_n] = \left\{(\omega, t) : 0 < t \leq xf_n(\omega)\right\}
+	$$
+	If $f(\omega) \leq 1$, then there are no satisfying $(\omega, t)$. If $f(\omega) > 1$, then for $n$ large enough, the right hand side $xf_n(\omega) \to 1$. Note ,as $n$ increases, $xf_n$ can only increase. And so, in terms of sets, we have as $n \to \infty$:
+	$$
+		(0, xf_n] \uparrow \left[\omega : f(\omega) > 1\right] \times (0, x]
+	$$
+	
+	\item Let $\fcal$ be the smallest $\sigma$-field with respect to which every $f$ in $\lcal$ is measurable: $\fcal = \sigma\left[f^{-1}H : f \in \lcal, H \in \rcal^1\right]$. Note, $f$ is measurable on a $\sigma$ field if $f^{-1}(H)$ is within that sigma field, for all $H \in \rcal^1$. Note, we didn't worry about $\rcal^1$ earlier with Simple Random Variables, because we only really had to consider finite element $H \subseteq \R$.
+	\\\\
+	Let $\fcal_0$ be the class of $A$ in $\fcal$ for which $A \times (0,1] \in \sigma(\acal_0)$. Show that $\fcal_0$ is a semiring and that $\fcal = \sigma(\fcal_0)$. 
 	
 \end{enumerate}
 
