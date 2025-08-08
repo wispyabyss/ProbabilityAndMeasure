@@ -7667,7 +7667,7 @@ Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - no
 	Thus, we have proved finite additivity, and countable subadditivity.
 \end{enumerate}
 
-\subsubsection{11.5: Riesz Representation Part 2}
+\subsubsection{11.5: Riesz Representation Part 2} Note, this problem is essentially a continuation of the previous problem. Use the previous definitions.
 \begin{enumerate}
 	\item Assume $f \in \lcal$ and let $f_n = (n(f - f \wedge 1)) \wedge 1$. Show that $f(\omega) \leq 1$ implies $f_n(\omega) = 0$ for all $n$ and $f(\omega) > 1$ implies $f_n(\omega) = 1$ for all sufficiently large $n$. Conclude that for $x > 0$:
 	$$
@@ -7693,8 +7693,72 @@ Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - no
 	\item Let $\fcal$ be the smallest $\sigma$-field with respect to which every $f$ in $\lcal$ is measurable: $\fcal = \sigma\left[f^{-1}H : f \in \lcal, H \in \rcal^1\right]$. Note, $f$ is measurable on a $\sigma$ field if $f^{-1}(H)$ is within that sigma field, for all $H \in \rcal^1$. Note, we didn't worry about $\rcal^1$ earlier with Simple Random Variables, because we only really had to consider finite element $H \subseteq \R$.
 	\\\\
 	Let $\fcal_0$ be the class of $A$ in $\fcal$ for which $A \times (0,1] \in \sigma(\acal_0)$. Show that $\fcal_0$ is a semiring and that $\fcal = \sigma(\fcal_0)$. 
+	\\\\
+	First note that $\fcal_0$ is a $\sigma$ algebra on $\Omega$. Functions $f: \Omega \to \R$, and so $f^{-1}(H)$ for $H \in \rcal^1$ are subsets of $\Omega$. Recall, $\acal_0$ is the sets of the form $(f,g]$, for $f,g \in \lcal$ and $f \leq g$. So, $\fcal_0$ is sets of $\fcal$ $A$ (where $A \subseteq \Omega$) such that:
+	$$
+		A \times (0,1] \in \sigma(\acal_0)
+	$$
+	First, we want to show the empty set is contained within $\fcal_0$. Do we have:
+	$$
+		\emptyset \times (0,1] \in \sigma(\acal_0)
+	$$
+	Note, $\emptyset \times (0,1] = \emptyset$, which we already determined is within $\acal_0$, as $\acal_0$ is a semiring. Now, take $A, B \in \fcal_0$. We want to show:
+	$$
+		(A \cap B) \times (0,1] \in \sigma(\acal_0)
+	$$
+	Well, both $A$ and $B$ satisfy:
+	$$
+		A \times (0,1] \in \sigma(\acal_0) \quad\quad\quad
+		B \times (0,1] \in \sigma(\acal_0)
+	$$
+	As $\sigma(\acal_0)$ is a sigma algebra, we have:
+	$$
+		\left[A \times (0,1]\right] \cap \left[B \times (0,1]\right] =
+		\left[A \cap B \times (0,1]\right] \in \sigma(\acal_0)
+	$$
+	Also note that as $\fcal$ is a $\sigma$ field, $A \cap B \in \fcal$.
+	\\\\
+	So now, the final ring property would be for $A \subset B \in \fcal_0$, we have disjoint $C_1, \cdots, C_n \in \fcal_0$ such that:
+	$$
+		B - A = C_1 \cup \cdots \cup C_n
+	$$
+	Note that as $\sigma(\acal_0)$ is a $\sigma$ algebra, we have:
+	$$
+		(B - A) \times (0,1] =
+		\left[B \times (0,1]\right] - \left[A \times (0,1]\right] \in \sigma(\acal_0)
+	$$
+	So note, we have that $B - A \in \fcal$, and the above property implies $B - A \in \fcal_0$. So, $\fcal_0$ is actually closed under proper differences - which is enough to prove our semiring fact.
+	\\\\
+	Now, we want to prove that $\fcal = \sigma(\fcal_0)$. Note that $\fcal_0 \subseteq \fcal$. And so, if we have:
+	$$
+		\fcal \subseteq \sigma(\fcal_0)
+	$$
+	Then equality must follow - because if we didn't have equality, then $\fcal$ would be a smaller $\sigma$ algebra containing $\fcal_0$ than $\sigma(\fcal_0)$, which would be a contradiction. First note - for $f \in \lcal$, we have that:
+	$$
+		(0, f_n] \uparrow [\omega : f(\omega) > 1] \times (0,1]
+	$$
+	That is by the previous part. Note that $[\omega : f(\omega) > 1] \in \fcal$. Now, we want to show that:
+	$$
+		[\omega : f(\omega) > 1] \times (0,1] \in \sigma(\acal_0)
+	$$
+	As that will imply $[\omega : f(\omega) > 1] \in \fcal_0$. Well, $[\omega : f(\omega) > 1] \times (0,1]$ is the union of sets $(0,f_n] \in \acal_0$, and so yes, we do have the above fact. And so, we can conclude for all $f \in \lcal$, we have:
+	$$
+		[\omega : f(\omega) > 1] \in \fcal_0
+	$$
+	Now, we note that $xf \in \lcal$ and $-xf \in \lcal$ for $x > 0$. This is because $\lcal$ is a vector space, and $f + \cdots + f \in \lcal$. Thus, we can also conclude:
+	$$
+		[f > x] \in \fcal_0 \quad\quad\quad [f > -x] \in \fcal_0 \quad\quad\quad
+		[f < x] \in \fcal_0 \quad\quad\quad [f < -x] \in \fcal_0
+	$$
+	Note that the sets $(-\infty, -x)$ and $(x, \infty)$ generate $\rcal^1$. Any finite interval of the form $(x, y]$ can be formed by a finite amount of intersections, unions, and complements of the given form - and those intervals generate $\rcal^1$. So note - we can take those finite amount of intersections, unions, and complements to find that:
+	$$
+		f^{-1}(a,b] \in \sigma(\fcal_0)
+	$$
+	Note, as $(a,b]$ generate $\rcal^1$, we have that $f^{-1}(a,b]$ generates $\fcal$. I believe this is a fact that we will see again and again, so going over the proof of that here. 
 	
 \end{enumerate}
+
+\subsubsection{Pullback Lemma}
 
 \end{document}
 
