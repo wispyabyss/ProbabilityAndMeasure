@@ -7755,24 +7755,93 @@ Assume further of $\lcal$ that $f \in \lcal$ implies $f \wedge 1 \in \lcal$ - no
 		[\omega : f(\omega) > -x] \in \fcal_0 \implies
 		[\omega \in f^{-1}(-x,\infty)] \in \fcal_0
 	$$
-	Note that the sets $(-x, \infty)$ and $(x, \infty)$ generate $\rcal^1$. Any finite interval of the form $(x, y]$ can be formed by a finite amount of intersections, unions, and complements of the given form - and those intervals generate $\rcal^1$. So note - we can take those finite amount of intersections, unions, and complements to find that:
+	Note that the sets $(-x, \infty)$ and $(x, \infty)$ generate $\rcal^1$. Any finite interval of the form $(x, y]$ can be formed by a finite amount of intersections, unions, and complements of the given form - and those intervals generate $\rcal^1$. We let $B$ be the sets of the form $(-x, \infty), (x, \infty)$ for $x > 0$. We thus have that:
 	$$
-		f^{-1}(a,b] \in \sigma(\fcal_0)
+		f^{-1}(B) \subseteq \fcal_0 \implies
+		\sigma(f^{-1}(B)) \subseteq \sigma(\fcal_0)
 	$$
-	This is true for every interval $(a,b]$. Now, we make the final push to prove:
+	By above, we have $\sigma(B) = \rcal^1$. And so, by the pullback lemma below (proved as the following problem) - we have that:
 	$$
-		\fcal = \sigma(\fcal_0)
+		f^{-1}(\sigma(B)) = \sigma(f^{-1}(B)) \subseteq \sigma(\fcal_0)
 	$$
-	Note that intervals $(-x,\infty)$ and $(x,\infty)$ generate $\rcal^1$. And so, by the pullback lemma below - we have that:
+	Now, recall what we are trying to prove. We want to show that:
 	$$
-		\sigma(\fcal_0) \supseteq \sigma(f^{-1}(-x,\infty) \cup f^{-1}(x,\infty) | x > 0) = 
-		f^{-1}(\rcal^1)
+		\fcal = \sigma\left[\left\{f^{-1}(H) : f \in \lcal, H \in \rcal^1\right\}\right] \subseteq \sigma(\fcal_0)
 	$$
-	We have that is true for every $f \in \lcal$. Thus, we have:
+	Note, we kind of are approaching this statement. We have that $f^{-1}(\rcal^1)$, for a single $f$, is a $\sigma$ algebra, and for each $f \in \lcal$, we have $f^{-1}(\rcal^1) \subseteq \sigma(\fcal_0)$. We thus have that:
 	$$
-		\fcal = \sigma(\bigcup_{f \in \lcal} f^{-1}(\rcal^1)) \subseteq \sigma(\fcal_0)
+		\bigcup_{f \in \lcal} f^{-1}(\rcal^1) \subseteq \sigma(\fcal_0)
 	$$
-	Note: this is kind of confusing. But, I think it is correct. For the first step - note that sets of the form $f^{-1}(\rcal^1)$ are what generate $\fcal$. And so, taking the $\sigma$ algebra over the generating set gives equality. Now, for the second step - $\subseteq$. We have that $f^{-1}(\rcal^1) \subseteq \sigma(\fcal_0)$. As this is a $\sigma$ algebra
+	But we don't necessarily have that this union is a $\sigma$ algebra. What we want to prove is:
+	$$
+		\fcal = \sigma\left[\bigcup_{f \in \lcal} f^{-1}(\rcal^1)\right] \subseteq \sigma(\fcal_0)
+	$$
+	However, note that this is the wrong way of looking at it. We can equivalently prove:
+	$$
+		\fcal = \sigma\left[\bigcup_{f \in \lcal} \sigma(f^{-1}(B))\right] \subseteq \sigma(\fcal_0)
+	$$
+	And this will follow from our ``Generated Sigma Algebra of Union of Generated Sigma Algebras Lemma", which follows as a problem. By that problem, we have:
+	$$
+		\sigma\left[\bigcup_{f \in \lcal} \sigma(f^{-1}(B))\right] =
+		\sigma\left[\bigcup_{f \in \lcal} f^{-1}(B)\right]
+	$$
+	As noted above, we have:
+	$$
+		\bigcup_{f \in \lcal} f^{-1}(B) \subseteq \fcal_0
+	$$
+	And so, by the Union of Sigma Algebras Lemma, we have:
+	$$
+		\implies
+		\sigma\left[\bigcup_{f \in \lcal} f^{-1}(B)\right] \subseteq \fcal_0
+		\implies
+		\sigma\left[\bigcup_{f \in \lcal} \sigma(f^{-1}(B))\right] \subseteq \sigma(\fcal_0)
+	$$
+	$$
+		\implies
+		\sigma\left[\bigcup_{f \in \lcal} f^{-1}(\rcal)\right] \subseteq \sigma(\fcal_0)
+		\implies
+		\fcal \subseteq \sigma(\fcal_0)
+	$$
+	And thus, we have proved that $\fcal_0$ is a semiring, and that $\fcal = \sigma(\fcal_0)$.
+	
+	\item Let $\nu$ be the extension of $\nu_0$ (from the previous problem) to $\sigma(\acal_0)$, and for $A \in \fcal_0$, define:
+	$$
+		\mu_0(A) = \nu(A \times (0,1])
+	$$
+	Show that $\mu_0$ is finitely additive and countably subadditive on the semiring $\fcal_0$.
+	\\\\
+	First - recall that $\nu_0$ is finitely additive and countably subadditive on $\acal_0$, which is a semiring. Further $\nu_0(\emptyset) = 0$, and is nonnegative, and so by Theorem 11.3, it extends to a measure on $\sigma(\acal_0)$. This is what we let $\nu$ be. Note - given that $\acal_0$ is a semiring, I don't think we have uniqueness of $\nu$.
+	\\\\
+	Now, consider $\mu_0$, on $\fcal_0$, which we proved is a semiring. First, note that $\mu_0$ is nonnegative, as $\nu$ is nonnegative, and:
+	$$
+		\mu_0(\emptyset) = \nu(\emptyset \times (0,1]) = \nu(\emptyset) = 0
+	$$
+	So, we would have all the prerequisites for extending $\mu_0$ to $\sigma(\fcal_0) = \fcal$ if we can prove that $\mu_0$ is finitely additive and countably subadditive on $\fcal_0$. Take disjoint $A_1, \cdots, A_n \in \fcal_0$. Assume that their union is $A$, and $A \in \fcal_0$ as well. We have:
+	$$
+		\mu_0\left[A\right] =
+		\mu_0\left[\bigcup_{i=1}^n A_i\right] =
+		\nu\left[\left[\bigcup_{i=1}^n A_i\right] \times (0,1]\right] =
+		\nu\left[\bigcup_{i=1}^n \left[A_i \times (0,1]\right]\right]
+	$$
+	First - note this is well defined. As $A_i \in \fcal_0$, we have $A_i \times (0,1] \in \sigma(\acal_0)$ - by definition. As $\sigma(\acal_0)$ is a sigma algebra, their union is contained within the $\sigma$ algebra as well, and has a measure defined by $\nu$. Now, as $\nu$ is countably additive (being a measure), we have:
+	$$
+		=
+		\sum_{i=1}^n
+		\nu\left[A_i \times (0,1]\right] =
+		\sum_{i=1}^n \mu_0(A_i)
+	$$
+	We can use a similar proof to prove countable subadditivity:
+	$$
+		\mu_0\left[A\right] =
+		\mu_0\left[\bigcup_i A_i\right] = 
+		\nu\left[\left[\bigcup_i A_i\right] \times (0,1]\right] =
+		\nu\left[\bigcup_i \left[A_i \times (0,1]\right]\right]
+	$$
+	$$
+		\leq \sum_i \nu\left[A_i \times (0,1]\right] = \sum_i \mu_0(A_i)
+	$$
+	And thus, $\mu_0$ is a finitely additive and countably subadditive set function on the semi ring $\fcal_0$. qed.
+	
 	
 \end{enumerate}
 
@@ -7833,6 +7902,42 @@ $$
 	\sigma(f^{-1}(C)) = f^{-1}(\sigma(C))
 $$
 And thus we have the pullback lemma for inverse functions and generated sigma algebras. qed.
+
+\subsubsection{Generated Sigma Algebra of Union of Generated Sigma Algebras Lemma} Note that for any class of families $\{S_i\}_{i \in \ical}$, we have:
+$$
+	\sigma\left[\bigcup_{i \in \ical} \sigma(S_i)\right] =
+	\sigma\left[\bigcup_{i \in \ical} S_i\right]
+$$
+One direction is immediate: as $\bigcup_{i \in \ical} S_i \subseteq \bigcup_{i \in \ical} \sigma(S_i)$, we have:
+$$
+	\sigma\left[\bigcup_{i \in \ical} S_i\right] \subseteq \sigma\left[\bigcup_{i \in \ical} \sigma(S_i)\right]
+$$
+Now, we go the other direction. We want to prove:
+$$
+	\sigma\left[\bigcup_{i \in \ical} \sigma(S_i)\right] \subseteq
+	\sigma\left[\bigcup_{i \in \ical} S_i\right]
+$$
+Note that:
+$$
+	\sigma(S_i) \subseteq \sigma\left[\bigcup_{i \in \ical} S_i\right]
+$$
+As the RHS is included in the intersection definition of $\sigma(S_i)$. This is true for each $i$, and so:
+$$
+	\bigcup_{i \in \ical} \sigma(S_i) \subseteq \sigma\left[\bigcup_{i \in \ical} S_i\right]
+$$
+Now, this implies:
+$$
+	\sigma\left[\bigcup_{i \in \ical} \sigma(S_i)\right] \subseteq
+	\sigma\left[\bigcup_{i \in \ical} S_i\right]
+$$
+As the LHS is the smallest sigma algebra containing the inner union. And so, we have proved equality. qed.
+
+\section{Section 12 - Measures in Euclidean Space}
+\subsection{Notes}
+\subsubsection{Lebesgue Measure} We have that the finite intervals on the real line are a semiring. With $\lambda_1(a, b] = b - a$, we have a finite and countable set function on this semiring (Theorem 1.3). By Theorem 11.3, this extends to a measure $\lambda$ on $\rcal^1$. By Theorem 10.3, we have that this is the only measure on $\rcal^1$ such that $\lambda(a,b] = b - a$. This is because a semiring is a $\pi$ system first, and because second, there is a covering of $\Omega$ by finite measure sets in our semi ring (and so the semi ring is $\sigma$ finite as well).
+\\\\
+In $\R^k$, there is an analogous $k$ dimensional Lebesgue measure $\lambda_k$ on the class $\rcal^k$ of $k$ dimensional borel sets. Example 11.4 shows us that the class of bounded rectangles is indeed a semiring.
+
 
 \end{document}
 

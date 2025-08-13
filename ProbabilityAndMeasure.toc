@@ -356,4 +356,8 @@
 \contentsline {subsubsection}{11.2 Countable Subadditivity on Rings}{260}{section*.357}%
 \contentsline {subsubsection}{11.4 - Function Lattice Semi-ring + Measure: Riesz Representation Part 1}{262}{section*.358}%
 \contentsline {subsubsection}{11.5: Riesz Representation Part 2}{266}{section*.359}%
-\contentsline {subsubsection}{Pullback Lemma For Inverse Functions and Generated Sigma Algebras}{269}{section*.360}%
+\contentsline {subsubsection}{Pullback Lemma For Inverse Functions and Generated Sigma Algebras}{270}{section*.360}%
+\contentsline {subsubsection}{Generated Sigma Algebra of Union of Generated Sigma Algebras Lemma}{272}{section*.361}%
+\contentsline {section}{Section 12 - Measures in Euclidean Space}{272}{section*.362}%
+\contentsline {subsection}{Notes}{272}{section*.363}%
+\contentsline {subsubsection}{Lebesgue Measure}{272}{section*.364}%
