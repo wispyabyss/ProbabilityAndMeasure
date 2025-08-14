@@ -7936,7 +7936,66 @@ As the LHS is the smallest sigma algebra containing the inner union. And so, we 
 \subsection{Notes}
 \subsubsection{Lebesgue Measure} We have that the finite intervals on the real line are a semiring. With $\lambda_1(a, b] = b - a$, we have a finite and countable set function on this semiring (Theorem 1.3). By Theorem 11.3, this extends to a measure $\lambda$ on $\rcal^1$. By Theorem 10.3, we have that this is the only measure on $\rcal^1$ such that $\lambda(a,b] = b - a$. This is because a semiring is a $\pi$ system first, and because second, there is a covering of $\Omega$ by finite measure sets in our semi ring (and so the semi ring is $\sigma$ finite as well).
 \\\\
-In $\R^k$, there is an analogous $k$ dimensional Lebesgue measure $\lambda_k$ on the class $\rcal^k$ of $k$ dimensional borel sets. Example 11.4 shows us that the class of bounded rectangles is indeed a semiring.
+In $\R^k$, there is an analogous $k$ dimensional Lebesgue measure $\lambda_k$ on the class $\rcal^k$ of $k$ dimensional borel sets. Example 11.4 shows us that the class of bounded rectangles is indeed a semiring. However - I'm not sure if we have been given a set function yet. I think this chapter is so that we can build up to a measure on $\rcal^k$, starting off with the semiring of bounded rectangles.
+\\\\
+$\lambda_k$ will be our $k$ dimensional Lebesgue measure $\lambda_k$ on the class $\rcal^k$ of $k$ dimensional borel sets. It is specified by the requirement that bounded rectangles have measure:
+$$
+	\lambda_k\left[x : a_i < x_i \leq b_i, i = 1, \cdots, k\right] = \prod_{i=1}^k (b_i - a_i)
+$$
+This is ordinary volume of a bounded rectangle. Length if $k = 1$, area if $k = 2$, volume if $k = 3$, or hypervolume if $k \geq 4$.
+\\\\
+Note that the intersection of rectangles is indeed a rectangle - a semiring is also a $\pi$ system. So, if we had a measure on $\rcal^k$ - the uniqueness Theorem in 10.3 would allow us to conclude that the value of $\lambda_k$ on the rectangles completely determines its value on all of $\rcal^k$ (as the rectangles generate $\rcal^k$, and we have that $\Omega$ is $\sigma$ finite over the rectangle values). However - we still need to prove existence of a measure on $\rcal^k$.
+\\\\
+One way to do this would be via Theorem 11.3, I guess - prove that $\lambda_k$ on the rectangles is finitely additive and countably subadditive. A second construction is given in this chapter. A third, independent construction can be done via the general Theory of product measures (section 18). For the moment, assume existence on $\rcal^k$ of a measure $\lambda_k$.
+
+\paragraph{Theorem 12.1 - $\lambda_k$ is Translation Invariant} If $A \in \rcal^k$,then $A + x = \left\{a + x : a \in A\right\} \in \rcal^k$ and $\lambda_k(A) = \lambda_k(A + k)$.
+\\\\
+\textbf{Proof:} If $\gcal$ is the class of $A$ such that $A + x$ is in $\rcal^k$ for all $x$, then $\gcal$ is a $\sigma$ field containing the bounded rectangles. Clearly contains $\emptyset$. We have it contains complements:
+$$
+	A^c + x = (A + x)^c \in \rcal^k \text{ for all $x$} \implies
+	A^c \in \gcal
+$$
+And countably unions
+$$
+	(\bigcup_k A_k) + x = \bigcup_k (A_k + x) \in \rcal^k \text{ for all $x$} \implies \bigcup_k A_k \in \gcal
+$$
+And so, by definition of generation, $\rcal^k \subseteq \gcal$. As $\gcal \subseteq \rcal^k$ (as $\gcal$ only contains elements of $\rcal^k$), we have equality. So, we note that $\rcal^k$ contains all translations of sets within itself.
+\\\\
+For fixed $x$ define a measure $\mu$ on $\rcal^k$ by $\mu(A) = \lambda_k(A + x)$. First - note that $\mu$ is defined on all of $\rcal^k$. Second, note that $\mu$ must be a measure, as we can take the measure properties from $\lambda_k$, and give them to $\mu$. Finally, note that for a bounded rectangle $B$, we have:
+$$
+	\mu(B) = \lambda_k(B + x) = \lambda_k(B)
+$$
+As it is clear, for the definition of $\lambda_k$ on bounded rectangles, $\lambda_k$ is translation invariant on the bounded rectangles. Now, as the bounded rectangles both generate $\rcal^k$, and are $\sigma$ finite $\pi$-systems - Theorem 10.3 implies $\mu$ and $\lambda_k$ agree on all of $\rcal^k$. This can be proved for all $x$. Thus, for any $A \in \rcal^k$, and any $x$, we have:
+$$
+	\lambda_k(A + x) = \mu(A) = \lambda_k(A)
+$$
+And thus, we have that $\lambda_k$ is translation invariant. qed.
+
+\paragraph{Measure of $k - 1$ Dimensional Hyperplanes in $\rcal^k$} \textbf{Proof:} 
+Now, we examine subspaces. Assume that $A$ is a $(k-1)$ dimensional subspace of $\rcal^k$. So, a vector space. Assume $x$ lies outside of $A$. Note that the hyperplanes:
+$$
+	A + tx
+$$
+Are disjoint for real $t$. IF $A \in \rcal^k$ - by Theorem 12.1, we have that for each $t$, $A + tx$ has the same measure. Note that $\lambda_k$ is $\sigma$ finite on $\rcal^k$ - and so Theorem 10.2 implies that $\rcal^k$ cannot contain an uncountable, disjoint collection of sets of positive $\lambda_k$ measure. And so if $A$ had positive measure, or any of the $A + tx$ had positive measure - translation invariance would imply that each of the uncountable disjoint sets would have positive measure, which would contradict Theorem 10.2.4. And so, the common measure of each $A + tx$ must be zero. Thus, we can conclude that \textit{every $k-1$ dimensional hyperplane has $k$ dimensional Lebesgue measure 0}.
+
+\paragraph{Theorem 12.2 Measure $\lambda_k$ across linear transformations} If $T: \R^k \to \R^k$ is linear and nonsingular, then $A \in \rcal^k$ implies that $TA \in \rcal^k$ and:
+$$
+	\lambda_k(TA) = \left|\det T\right| \cdot \lambda_k(A)
+$$
+Note: before we begin the proof. This is giving me vibes similar to change of variables. We just have different notions of volumes - and in all cases, the determinant seems to pop up, when we compare volumes of different spaces under linear transformations.
+\\\\
+Also note what this theorem is telling us. If $\det T = \pm 1$ - such as the case for orthogonal (rotation) or unitary (reflection) matrices - then the volume of $TA$ is the same as that for $A$. Thus, rigid transformations or isometries (which are orthogonal transformations followed by a translation) - preserve Lebesgue measure, when we combine Theorems 12.1 and 12.2. An affine transformation has the form:
+$$
+	Fx = Tx + x_0
+$$
+It is nonsingular (invertible) if $T$ is. This is clear, as a translation is easily invertible. It follows by Theorems 12.1 and 12.2 that $\lambda_k(FA) = \left|\det T\right| \cdot \lambda_k(A)$ in the non singular case.
+\\\\
+\textbf{Proof of Theorem 12.2} First note, non singularity of $T$ allows us to conclude:
+$$
+	T\bigcup_n A_n = \bigcup_n T A_n \quad\quad\quad
+	TA^c = (TA)^c
+$$
+And so, the class $\gcal = \left[A : TA \in \rcal^k\right]$ is a $\sigma$ field. Since $TA$ is open for open $A$ ($T$ is continuous, we can find open balls etc).
 
 
 \end{document}
