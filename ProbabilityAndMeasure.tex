@@ -7984,6 +7984,8 @@ $$
 $$
 Note: before we begin the proof. This is giving me vibes similar to change of variables. We just have different notions of volumes - and in all cases, the determinant seems to pop up, when we compare volumes of different spaces under linear transformations.
 \\\\
+Just a funny idea. Say we want to calculate the determinant of a linear transformation. We could just describe a volume with $n$ sample points on the surface, examine their location under $T$, and then try and find an approximate volume of the space spanned by the mapped points.  
+\\\\
 Also note what this theorem is telling us. If $\det T = \pm 1$ - such as the case for orthogonal (rotation) or unitary (reflection) matrices - then the volume of $TA$ is the same as that for $A$. Thus, rigid transformations or isometries (which are orthogonal transformations followed by a translation) - preserve Lebesgue measure, when we combine Theorems 12.1 and 12.2. An affine transformation has the form:
 $$
 	Fx = Tx + x_0
@@ -7995,7 +7997,93 @@ $$
 	T\bigcup_n A_n = \bigcup_n T A_n \quad\quad\quad
 	TA^c = (TA)^c
 $$
-And so, the class $\gcal = \left[A : TA \in \rcal^k\right]$ is a $\sigma$ field. Since $TA$ is open for open $A$ ($T$ is continuous, we can find open balls etc).
+And so, the class $\gcal = \left[A : TA \in \rcal^k\right]$ is a $\sigma$ field. We now want to show that it is equal to $\rcal^k$, which comes from showing a generating set is contained in $\gcal$. Since $TA$ is open for open $A$ (if $T$ is nonsingular, $T$ is continuous, we can find open balls etc), it follows that $\gcal$ contains the open sets. The open sets generate $\rcal^k$, and so we can conclude:
+$$
+	\gcal = \rcal^k \text{ and so } A \in \rcal^k \implies TA \in \rcal^k
+$$
+Now, we need to prove:
+$$
+	\lambda_k(TA) = |\det T| \cdot \lambda_k(A)
+$$
+For $A \in \rcal^k$, set $\mu_1(A) = \lambda_k(TA)$ and $\mu_2(A) = |\det T| \cdot \lambda_k(A)$. Then $\mu_1$ and $\mu_2$ are measures, and by Theorem 10.3 they will agree on $\rcal^k$ if they agree on the $\pi$-system of rational bounded rectangles (which, recall, generate $\rcal^k$, and $\R^k$ is $\sigma$ finite on this set). This setup is the same as how we prove Theorem 12.2. Note, $\mu_1$ and $\mu_2$ being measures comes directly from $\lambda_k$ being a measure.
+\\\\
+So, we want to prove for rectangles $A$ with rational sides, $\mu_1(A) = \mu_2(A)$. Now, note that any such rational rectangle is a finite disjoint union of translated rectangles:
+$$
+	A = [x: 0 < x_i \leq c, i = 1, \cdots, k]
+$$
+If we prove equality for such $A$, and $B$ is a rational rectangle with $B = \bigcup_{i=1}^n A_i + x_i$, then we have:
+$$
+	\mu_1(B) = \lambda_k\left[T\left[\bigcup_{i=1}^n A_i + x_i\right]\right] =
+	\lambda_k\left[\bigcup_{i=1}^n T\left[A_i + x_i\right]\right]:
+$$
+Note, the above is still a disjoint union (via invertibility):
+$$
+	= \sum_{i=1}^n \lambda_k\left[T\left[A_i + x_i\right]\right]
+	= \sum_{i=1}^n \lambda_k\left[T\left[A_i\right] + T(x_i)\right]
+$$
+Note, linearity of $T$ allows us to break up the summation. Translation invariance, and to be proved equality on $A_i$ as described, and finite countability, give us:
+$$
+	= \sum_{i=1}^n \lambda_k\left[T\left[A_i\right]\right]
+	= \sum_{i=1}^n \mu_1(A_i)
+	= \sum_{i=1}^n \mu_2(A_i)
+	= \sum_{i=1}^n |\det T|\lambda_k\left[A_i\right]
+$$
+$$
+	= |\det T| \sum_{i=1}^n \lambda_k\left[A_i + x_i\right]
+	= |\det T| \lambda_k\left[B\right] = \mu_2(B)
+$$
+And so, for Theorem 12.2 to be proved, to show the equality of $\lambda_k(TA) = |\det T| \cdot \lambda_k(A)$, we just need to prove equality on $A$ of the form:
+$$
+	A = [x: 0 < x_i \leq c, i = 1, \cdots, k]
+$$
+For rational $c$. Now recall linear algebra: a general linear transformation $T$ can be described as the finite product of elementary matrices (Gaussian-Jordan Elimination). Ie, $T$ can be represented as a finite product of elementary linear translations of the form:
+\begin{enumerate}
+	\item $T(x_1, \cdots, x_k) = (x_{\pi 1}, \cdots, x_{\pi k})$, where $\pi$ is a permutation of $\{1, \cdots, k\}$.
+	\item $T(x_1, \cdots, x_k) = (\alpha x_1, x_2, \cdots, x_k)$
+	\item $T(x_1, \cdots, x_k) = (x_1 + x_2, x_2, \cdots, x_k)$
+\end{enumerate}
+(Note, the usual appearance of these 3 elementary operations is just a single swap, scalar multiplication in any entry, and addition of any two entries. However, any permutation, combined with just scalar multiplication/entry addition in the first slot is equivalent).
+\\\\
+Note, we can make use of this product fact, and just check equality of $\mu_1(A) = \mu_2(A)$ with $T$ of the elementary form, to prove equality for all $T$. So first, we will prove our equality for $A$ of the given form, across the 3 different elementary $T$:
+\begin{enumerate}
+	\item Note that for a permutation matrix, $\det T = \pm 1$. Think of just the volume of the spanned surface - it is unchanged. Or just think of cofactor expansion. Now, note:
+	$$
+		TA = A
+	$$
+	This can be seen by noting: $T(ce_i) = ce_j$. Note, how the square of side length $c$ at the origin doesn't change under $T$. And so:
+	$$
+		\mu_1(A) = \lambda_k(TA) = \lambda_k(A) = |\det T| \lambda_k(A) = \mu_2(A)
+	$$
+	
+	\item Now, consider a scalar matrix $T$. It is clear that $\det(T) = \alpha$. Also, it is clear that:
+	$$
+		TA = [x: 0 < x_1 \leq \alpha c, 0 < x_i \leq c, i = 2, \cdots, k]
+	$$
+	And so:
+	$$
+		\lambda_k(TA) = c\alpha \cdot c^{k-1} =
+		\det|T| c^k = \det|T| \lambda_k(A)
+	$$
+	That is for positive $\alpha$. If $\alpha = 0$ $T$ would be non singular, so we can ignore that case. If $\alpha < 0$, we have:
+	$$
+		TA = [x: \alpha c \leq x_1 < 0, 0 < x_i \leq c, i = 2, \cdots, k]
+	$$
+	$$
+		\implies \lambda_k(TA) = c\alpha \cdot c^{k-1} =
+		\det|T| c^k = \det|T| \lambda_k(A)
+	$$
+	Same thing, equality for all valid $\alpha$.
+	
+	\item The final case is row adding $T$. We have that $\det T = 1$. This is clear via cofactor expansion along the first row (the one will be ignored). Let $B = \left[x : 0 < x_i \leq c, i = 3, \cdots, k\right]$ where $B = \R^k$ if $k < 3$, and define:
+	$$
+		B_1 = [x : 0 < x_1 \leq x_2 \leq c] \cap B \quad\quad
+		B_2 = [x : 0 < x_2 < x_1 \leq c] \cap B
+	$$
+	$$
+		B_3 = [x : c < x_1 \leq c + x_2, 0 < x_2 \leq c] \cap B
+	$$
+	Note that $A = B_1 \cup B_2$, a disjoint union accounting for all cases of $0 < x_1 \leq c, 0 < x_2 \leq c$. Note that $TA = B_2 \cup B_3$.
+\end{enumerate}
 
 
 \end{document}
