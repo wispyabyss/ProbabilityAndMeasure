@@ -7946,7 +7946,7 @@ This is ordinary volume of a bounded rectangle. Length if $k = 1$, area if $k = 
 \\\\
 Note that the intersection of rectangles is indeed a rectangle - a semiring is also a $\pi$ system. So, if we had a measure on $\rcal^k$ - the uniqueness Theorem in 10.3 would allow us to conclude that the value of $\lambda_k$ on the rectangles completely determines its value on all of $\rcal^k$ (as the rectangles generate $\rcal^k$, and we have that $\Omega$ is $\sigma$ finite over the rectangle values). However - we still need to prove existence of a measure on $\rcal^k$.
 \\\\
-One way to do this would be via Theorem 11.3, I guess - prove that $\lambda_k$ on the rectangles is finitely additive and countably subadditive. A second construction is given in this chapter. A third, independent construction can be done via the general Theory of product measures (section 18). For the moment, assume existence on $\rcal^k$ of a measure $\lambda_k$.
+One way to do this would be via Theorem 11.3, I guess - prove that $\lambda_k$ on the rectangles is finitely additive and countably subadditive. A second construction is given in this chapter. A third, independent construction can be done via the general Theory of product measures (section 18). For the moment, assume existence on $\rcal^k$ of a measure $\lambda_k$ that agrees with the set function on the semiring above - ie, the hypervolume definition for bounded rectangles.
 
 \paragraph{Theorem 12.1 - $\lambda_k$ is Translation Invariant} If $A \in \rcal^k$,then $A + x = \left\{a + x : a \in A\right\} \in \rcal^k$ and $\lambda_k(A) = \lambda_k(A + k)$.
 \\\\
@@ -7969,14 +7969,14 @@ As it is clear, for the definition of $\lambda_k$ on bounded rectangles, $\lambd
 $$
 	\lambda_k(A + x) = \mu(A) = \lambda_k(A)
 $$
-And thus, we have that $\lambda_k$ is translation invariant. qed.
+And thus, we have that $\lambda_k$ is translation invariant on all of $\rcal^k$. qed.
 
 \paragraph{Measure of $k - 1$ Dimensional Hyperplanes in $\rcal^k$} \textbf{Proof:} 
 Now, we examine subspaces. Assume that $A$ is a $(k-1)$ dimensional subspace of $\rcal^k$. So, a vector space. Assume $x$ lies outside of $A$. Note that the hyperplanes:
 $$
 	A + tx
 $$
-Are disjoint for real $t$. IF $A \in \rcal^k$ - by Theorem 12.1, we have that for each $t$, $A + tx$ has the same measure. Note that $\lambda_k$ is $\sigma$ finite on $\rcal^k$ - and so Theorem 10.2 implies that $\rcal^k$ cannot contain an uncountable, disjoint collection of sets of positive $\lambda_k$ measure. And so if $A$ had positive measure, or any of the $A + tx$ had positive measure - translation invariance would imply that each of the uncountable disjoint sets would have positive measure, which would contradict Theorem 10.2.4. And so, the common measure of each $A + tx$ must be zero. Thus, we can conclude that \textit{every $k-1$ dimensional hyperplane has $k$ dimensional Lebesgue measure 0}.
+Are disjoint for real $t$. If $A \in \rcal^k$ - by Theorem 12.1, we have that for each $t$, $A + tx$ has the same measure. Note that $\lambda_k$ is $\sigma$ finite on $\rcal^k$ - and so Theorem 10.2 implies that $\rcal^k$ cannot contain an uncountable, disjoint collection of sets of positive $\lambda_k$ measure. And so if $A$ had positive measure, or any of the $A + tx$ had positive measure - translation invariance would imply that each of the uncountable disjoint sets would have positive measure, which would contradict Theorem 10.2.4. And so, the common measure of each $A + tx$ must be zero. Thus, we can conclude that \textit{every $k-1$ dimensional hyperplane has $k$ dimensional Lebesgue measure 0}.
 
 \paragraph{Theorem 12.2 Measure $\lambda_k$ across linear transformations} If $T: \R^k \to \R^k$ is linear and nonsingular, then $A \in \rcal^k$ implies that $TA \in \rcal^k$ and:
 $$
@@ -7997,21 +7997,24 @@ $$
 	T\bigcup_n A_n = \bigcup_n T A_n \quad\quad\quad
 	TA^c = (TA)^c
 $$
-And so, the class $\gcal = \left[A : TA \in \rcal^k\right]$ is a $\sigma$ field. We now want to show that it is equal to $\rcal^k$, which comes from showing a generating set is contained in $\gcal$. Since $TA$ is open for open $A$ (if $T$ is nonsingular, $T$ is continuous, we can find open balls etc), it follows that $\gcal$ contains the open sets. The open sets generate $\rcal^k$, and so we can conclude:
+And so, the class $\gcal = \left[A : TA \in \rcal^k\right]$ is a $\sigma$ field. We now want to show that it is equal to $\rcal^k$, which comes from showing a generating set is contained in $\gcal$. Since $TA$ is open for open $A$ (if $T$ is nonsingular, $T$ is continuous, we can find open balls etc), it follows that $\gcal$ contains the open sets. 
+The open sets generate $\rcal^k$, and so we can conclude:
 $$
 	\gcal = \rcal^k \text{ and so } A \in \rcal^k \implies TA \in \rcal^k
 $$
+Actually - I don't think this is correct. If $A$ is open, $TA$ is indeed open - but why does $A$ being open imply that $TA \in \rcal^k$? Oh, because $TA$ is also open, $TA \in \rcal^k$ via all open sets being in $\rcal^k$, and so $A \in \gcal$ definitionally. So we can continue on.
+\\\\
 Now, we need to prove:
 $$
 	\lambda_k(TA) = |\det T| \cdot \lambda_k(A)
 $$
-For $A \in \rcal^k$, set $\mu_1(A) = \lambda_k(TA)$ and $\mu_2(A) = |\det T| \cdot \lambda_k(A)$. Then $\mu_1$ and $\mu_2$ are measures, and by Theorem 10.3 they will agree on $\rcal^k$ if they agree on the $\pi$-system of rational bounded rectangles (which, recall, generate $\rcal^k$, and $\R^k$ is $\sigma$ finite on this set). This setup is the same as how we prove Theorem 12.2. Note, $\mu_1$ and $\mu_2$ being measures comes directly from $\lambda_k$ being a measure.
+For $A \in \rcal^k$, set $\mu_1(A) = \lambda_k(TA)$ and $\mu_2(A) = |\det T| \cdot \lambda_k(A)$. Then $\mu_1$ and $\mu_2$ are measures, and by Theorem 10.3 they will agree on $\rcal^k$ if they agree on the $\pi$-system of rational bounded rectangles (which, recall, generate $\rcal^k$, and $\rcal^k$ is $\sigma$ finite on this set). This setup is the same as how we prove Theorem 12.2. Note, $\mu_1$ and $\mu_2$ being measures comes directly from $\lambda_k$ being a measure.
 \\\\
 So, we want to prove for rectangles $A$ with rational sides, $\mu_1(A) = \mu_2(A)$. Now, note that any such rational rectangle is a finite disjoint union of translated rectangles:
 $$
 	A = [x: 0 < x_i \leq c, i = 1, \cdots, k]
 $$
-If we prove equality for such $A$, and $B$ is a rational rectangle with $B = \bigcup_{i=1}^n A_i + x_i$, then we have:
+If we prove equality for all such $A$ (rational squares with lower corner at $0$), and $B$ is a rational rectangle with $B = \bigcup_{i=1}^n A_i + x_i$, then we have (note, all such $B$ can be described by these squares - take each rational side length $\frac{p_1}{q_1}, \cdots, \frac{p_n}{q_n}$, and then take squares of side length $\frac{1}{q_1 \cdots q_n}$):
 $$
 	\mu_1(B) = \lambda_k\left[T\left[\bigcup_{i=1}^n A_i + x_i\right]\right] =
 	\lambda_k\left[\bigcup_{i=1}^n T\left[A_i + x_i\right]\right]:
@@ -8080,10 +8083,50 @@ Note, we can make use of this product fact, and just check equality of $\mu_1(A)
 		B_2 = [x : 0 < x_2 < x_1 \leq c] \cap B
 	$$
 	$$
-		B_3 = [x : c < x_1 \leq c + x_2, 0 < x_2 \leq c] \cap B
+		B_3 = [x : c < x_1 \leq c + x_2, 0 < x_2 \leq c]
 	$$
-	Note that $A = B_1 \cup B_2$, a disjoint union accounting for all cases of $0 < x_1 \leq c, 0 < x_2 \leq c$. Note that $TA = B_2 \cup B_3$.
+	Note that $A = B_1 \cup B_2$, a disjoint union accounting for all cases of $0 < x_1 \leq c, 0 < x_2 \leq c$. 
+	\\\\
+	Note that $TA = B_2 \cup B_3$. This can be seen by first noting that $B_2$ are points in the original $A$ that can be expressed as points mapped into $TA$. Take for example, in the square $[0, 5] \times [0, 5]$. We have the point $(3, 1)$. It is clear that $0 < 1 < 3 \leq 5$. $(3,1)$ can be expressed as $T(2,1)$. The point is - if $x_2 < x_1$, then we have:
+	$$
+		(x_1,x_2) = T(x_1 - x_2,x_2)
+	$$
+	And we still have that $x_1 - x_2 > 0 \in B$.
+	\\\\
+	Trying another proof. Take $(y_1, \cdots, y_k) \in TA$. Then:
+	$$
+		(y_1, \cdots, y_k) = T(x_1, \cdots, x_k) \implies
+		y_1 = x_1 + x_2
+	$$
+	We have $y_1$ is in two cases. We can have $0 < y_2 < y_1 \leq c$. Or, we have $c < y_1 \leq c + y_2$ and $0 < y_2 \leq c$. Split it up into two cases. Assume $y_1 \leq c$. Then, we must have that $y_2 < y_1$. This is because:
+	$$
+		y_1 = x_1 + y_2 > y_2
+	$$
+	Note, we also have $y \in B$, as we have that $y_2 < y_2 \leq c$. Now, assume that $c < y_1$. It is clear that $0 < y_2 \leq c$ is always satisfied. We also have that $y_1 \leq c + y_2$. Again, this is because:
+	$$
+		y_1 = x_1 + y_2 \leq c + y_2
+	$$
+	And so, we have $TA \subseteq B_2 \cup B_3$. We can go the other way as well - express each point in $B_2$ and $B_3$ as a point in $A$ under $T$. This is done above.
+	\\\\
+	It is also easy to see that $B_1 + (c,0,\cdots,0) = B_3$. And so, we have:
+	$$
+		\mu_1(A) = \lambda_k(TA) = \lambda_k(B_2) + \lambda_k(B_3) = \lambda_k(B_2) + \lambda_k(B_1) = 
+		\lambda_k(A) = |\det T|\lambda_k(A) = \mu_2(A)
+	$$
 \end{enumerate}
+And so, under elementary transformations $T$, for rational squares $A$ with corner at $0$, we have $\mu_1(A) = \mu_2(A)$. Now, take any $T$. Express it as a composition of a finite number of elementary transformations:
+$$
+	T = T_n \circ \cdots \circ T_1
+$$
+Actually, prove by induction. First note that:
+$$
+	|\det T|\lambda_k(A) =
+	|\det T_2||\det T_1|\lambda_k(A) =
+	|\det T_2|\lambda_k(T_1A)	
+$$
+Note - I think Billingsley messes up here. We need equality for all rectangles, with lower left corner at the origin. Note - $T$ will always keep the origin at the origin. Or - maybe note that $T_1A$ can be expressed as a union of translated squares at the origin.
+\\\\
+Note. We can extend to all cubes via translation invariance, and rectangles. Then, maybe we can try and extend to all measurable sets - the property of elementary linear transformations. I think this is what we need. Maybe make use of Theorem 11.4.
 
 
 \end{document}
