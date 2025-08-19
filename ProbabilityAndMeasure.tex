@@ -8118,16 +8118,93 @@ And so, under elementary transformations $T$, for rational squares $A$ with corn
 $$
 	T = T_n \circ \cdots \circ T_1
 $$
-Actually, prove by induction. First note that:
-$$
-	|\det T|\lambda_k(A) =
-	|\det T_2||\det T_1|\lambda_k(A) =
-	|\det T_2|\lambda_k(T_1A)	
-$$
 Note - I think Billingsley messes up here. We need equality for all rectangles, with lower left corner at the origin. Note - $T$ will always keep the origin at the origin. Or - maybe note that $T_1A$ can be expressed as a union of translated squares at the origin.
 \\\\
-Note. We can extend to all cubes via translation invariance, and rectangles. Then, maybe we can try and extend to all measurable sets - the property of elementary linear transformations. I think this is what we need. Maybe make use of Theorem 11.4.
+Note. I make the following argument. Take a rational rectangle. Note that each rational rectangle can be expressed as a disjoint union of rational squares translated from the origin:
+$$
+	A = \bigcup_{i=1}^n A_i + x_i
+$$
+Take an elementary linear transformation $T$. We have shown that:
+$$
+	\mu_1(A_i) = \lambda_k(TA_i) = |\det T| \lambda_k(A_i) = \mu_2(A_i)
+$$
+Via the argument made above (ie, using linearity of $T$, countable additivity of $\mu_j$, and equality under translations), we thus have for any rational rectangle $A$ for linear transformations $T$:
+$$
+	\lambda_k(TA) = |\det T| \lambda_k(A)
+$$
+Now, we have that rational rectangles $A$ generate $\rcal^k$ (and are a $\pi$ system). We note that by Theorem 10.3, as $\mu_1$ and $\mu_2$ are measures on which the rational rectangles are equal for elementary $T$ (and $\sigma$ finite on the rational rectangles) we have that for elementary $T$, $\mu_1$ and $\mu_2$ are equal on all of $\rcal^k$. NOTE: the difference is, we are applying this argument not for all $T$, but just elementary $T$. Now, take a non elementary $T$. We have:
+$$
+	T = T_n \circ \cdots \circ T_1
+$$
+Examine for any $A \in \rcal^k$:
+$$
+	|\det T|\lambda_k(A) =
+	|\det T_n| \cdots |\det T_1|\lambda_k(A) =
+$$
+This is via the multiplicativity of the determinant. Now, we have via the argument above:
+$$
+	= |\det T_n| \cdots |\det T_2|\lambda_k(T_1(A)) = |\det T_n| \cdots |\det T_3|\lambda_k(T_2(T_1(A)))
+$$
+This is because, each $T_k \circ \cdots T_1(A)$ is still within $\rcal^k$, and we proved equality of bringing in the linear transformation for elementary transformations, for all $A \in \rcal^k$. Continuing, the above becomes:
+$$
+	= \lambda_k(T_n(\cdots T_2(T_1(A)))) =
+	\lambda_k(TA)
+$$
+Thus, we are able to conclude, for all nonsingular linear transformations $T: \R^k \to \R^k$, for all $A \in \rcal^k$, we have $TA \in \rcal^k$, and:
+$$
+	\lambda_k(TA) = |\det T|\lambda_k(A)
+$$
+qed.
 
+\subsubsection{Regularity}
+
+\paragraph{Definition - Regularity} As far as I can tell, regularity just means that the measure of a set can be approximated by closed subsets or open supersets.
+
+\paragraph{Theorem 12.3 Property of Regularity - Finite Measures on Bounded Sets of $\rcal^k$ implies Measure is Regular} Suppose that $\mu$ is a measure on $\rcal^k$ such that $\mu(A) < \infty$ if $A$ is bounded.
+\begin{enumerate}
+	\item For $A \in \rcal^k$ and $\epsilon > 0$, there exist a closed $C$ and an open $G$ such that:
+	$$
+		C \subset A \subset G
+	$$
+	And $\mu(G - C) < \epsilon$.
+	
+	\item If $\mu(A) < \infty$, then $\mu(A) = \sup \mu(K)$, the supremum extending over compact subsets $K$ of $A$.
+\end{enumerate}
+First note - the second part follows from the first. Without relying on the first part - we have that $\mu(A) < \infty$ implies that:
+$$
+	\mu(A - A_0) < \epsilon
+$$
+For a bounded subset $A_0$ of $A$. Let $C_n$ be any increasing sequence of bounded Borel Sets that exhausts $\R^k$. Ie, we can let $C_n$ be the rectangles $[-n,n]^k$. Set $A_n := A \cap C_n$. Then, $A_n \uparrow A$. Further, each $A_n$ is bounded, as $C_n$ is bounded. By continuity from below, we have:
+$$
+	\lim_n \mu(A_n) = \mu(A)
+$$
+Note, this is all valid so far, because we are considering $\mu$ a measure on $\rcal^k$. For any $\epsilon > 0$, there is thus a bounded $A_n$ such that:
+$$
+	\left|\mu(A) - \mu(A_n)\right| < \epsilon \implies
+	\mu(A - A_n) < \epsilon
+$$
+Note, we can only compare a subtraction like this, as $\mu(A) < \infty$. So, we indeed have our fact - if $\mu(A) < \infty$, for $A \in \rcal^k$, then there is a bounded subset $A_0$ of $A$ such that:
+$$
+	\mu\left(A - A_0\right) < \epsilon
+$$
+It follows from the first part that $\mu(A_0 - K) < \epsilon$ for a closed and hence compact subset $K$ of $A_0$. So, just making both $\epsilon$ small enough, we can find a compact subset $K$ of $A$ such that $\mu\left(A - K\right) < \epsilon$, which implies that the supremum across $\mu(K)$ of those compact subsets is equal to $\mu(A)$.
+\\\\
+So now, we just need to prove part (1). Consider first a bounded rectangle $A = \left[x : a_i < x_i \leq b_i, i \leq k\right]$. The set $G_n = \left[x : a_i < x_i < b_i + n^{-1}, i \leq k\right]$ is open, and $G_n \downarrow A$. Since $\mu(G_1)$ is finite by hypothesis, continuity from above gives us:
+$$
+	\mu(G_n - A) < \epsilon
+$$
+For large $n$. A bounded rectangle can thus be approximated from the outside by open sets. Recall the rectangles form a semi ring - This is Example 11.4. For an arbitrary set $A \in \rcal^k$, as the semiring generates $\rcal^k$ - theorem 11.4(i) tells us there exist disjoint bounded rectangles $A_k$ such that:
+$$
+	A \subset \bigcup_k A_k \quad\text{ and }\quad
+	\mu\left[\left(\bigcup_k A_k\right) - A\right] < \epsilon
+$$
+Now, choose open sets $G_k$ such that $A_k \subset G_k$ and $\mu(G_k - A_k) < \epsilon/2^k$. Then, $G = \bigcup_k G_k$ is open, and:
+$$
+	\mu(G - A) < 2\epsilon
+$$
+And remember $\epsilon$ was arbitrary. Thus, the general $k$ dimensional Borel set can be approximated from the outside by open sets. To approximate from the inside by closed sets - pass to complements.
+
+\subsubsection{Specifying Measures on the Line} There are on the line $\R$ many measures other than $\lambda$ that are important for probability theory. 
 
 \end{document}
 
