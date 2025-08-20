@@ -8204,7 +8204,118 @@ $$
 $$
 And remember $\epsilon$ was arbitrary. Thus, the general $k$ dimensional Borel set can be approximated from the outside by open sets. To approximate from the inside by closed sets - pass to complements.
 
-\subsubsection{Specifying Measures on the Line} There are on the line $\R$ many measures other than $\lambda$ that are important for probability theory. 
+\subsubsection{Specifying Measures on the Line} There are on the line $\R$ many measures other than $\lambda$ that are important for probability theory. Think about it - we have things like the normal distribution, poisson distribution, exponential distribution - all with different cummulative distribution functions, each describing different probabilities on the real line. This section kind of dives into that.
+\\\\
+There is a useful way to describe the collection of all measures on $\rcal^1$ that assign finite measure to each bounded set. Let $\mu$ be such a measure on $\rcal^1$. Define a real function $F$ by:
+$$
+	F(x) = \begin{cases}
+	\mu(0,x] & \text{ if $x \geq 0$}\\
+	-\mu(x,0] & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+Note how $F(x)$ is non decreasing. $\mu$ is always positive - and so as $x$ goes from negative to positive, $F(x)$ goes from negative to positive. Also note, nondecreasing comes from the monotonicity of the measure. As $\mu(A) < \infty$ for bounded $A$, $F$ is also finite for each $x$.
+\\\\
+Suppose that $x_n \downarrow x$. If $x \geq 0$, we can make use of continuity from above to find:
+$$
+	\mu(0,x_n] \downarrow \mu(0,x] \implies
+	F(x_n) \downarrow F(x)
+$$
+If $x < 0$, apply continuity from below (once $x_n$ becomes less than zero, $x_n \downarrow x$)
+$$
+	\mu(x_n,0] \uparrow \mu(x,0] \implies
+	F(x_n) \downarrow F(x)
+$$
+Thus, in all cases, $x_n \downarrow x$ implies $F(x_n) \downarrow F(x)$. Thus, $F$ is continuous from the right. Not bad! Finally, we have:
+$$
+	\mu(a,b] = F(b) - F(a)
+$$
+For every bounded interval $(a,b]$. If $a \leq 0$ and $0 \leq b$, we have:
+$$
+	\mu(a,b] = \mu(a,0] + \mu(0,b] = F(b) - F(a)
+$$
+If $0 \leq a \leq b$, we have:
+$$
+	\mu(a,b] = \mu(0,b] - \mu(0,a] = F(b) - F(a)
+$$
+And the $a \leq b \leq 0$ case is similar. So, we have the properties of $F$:
+\begin{enumerate}
+	\item $F(x)$ is finite for each $x$
+	\item $F$ is nondecreasing
+	\item $F$ is continuous from the right
+	\item $\mu(a,b] = F(b) - F(a)$
+\end{enumerate}
+Note, if $\mu$ is the Lebesgue measure, we have:
+$$
+	F(x) =
+	\begin{cases}
+	x = \mu(0,x] & \text{ if $x \geq 0$}\\
+	x = -\mu(x,0] & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+So, the Lebesgue measure is the case $F(x) = x$.
+\\\\
+Recall, the finite intervals form a $\pi$ system generating $\rcal^1$ - and so, as:
+$$
+	\mu(a,b] = F(b) - F(a)
+$$
+If we are given the function $F$, it completely determines $\mu$ via Theorem 10.3 (tied with the finiteness of $F$ implying that $\mu$ is $\sigma$ finite on the $\pi$ system of finite intervals). However - note that $\mu$ does not determine $F$. As, if $F$ satisfies the above equation, so does $F(x) + c$. However, $\mu$ does determine $F$, within an additive constant.
+
+\paragraph{Cumulative Distribution Function} For finite $\mu$, it is customary to standardize $F$ not by our cases, but:
+$$
+	F(x) = \mu(-\infty,x]
+$$
+Note, we need $\mu$ to be finite, as otherwise, the above value could be infinite. I do want to note that the two functions agree, in the finite case. We have:
+$$
+	F(x) = \mu(-\infty,x] \text{ compared with }
+	F(x) = \begin{cases}
+	\mu(0,x] & \text{ if $x \geq 0$}\\
+	-\mu(x,0] & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+Oh note -it is clear that the $F$ value is actually different. However, we just use the first case for finite $\mu$. In such a case, it is clear that:
+$$
+	\lim_{x \to \infty} F(x) = 0
+$$
+Why? we have that $\mu(\emptyset)$ is zero, and for $x_n \downarrow -\infty$, we have $\emptyset = \bigcap_n (-\infty,x_n]$. We also have $\lim_{x \to \infty} F(x) = \mu(\rcal^1)$, which is clear. If $\mu$ is a probability measure, $F$ is called a \textit{distribution function}, or a \textit{cumulative distribution function}.
+\\\\
+Measures $\mu$ are often specified by means of the function $F$. The following theorem ensures that to each $F$, there does exist a $\mu$:
+
+\paragraph{Theorem 12.4 - Existence of Measure on $\rcal^1$ Via a Function $F$} If $F$ is a nondecreasing, right continuous real function on the line, there exists on $\rcal^1$ a unique measure $\mu$ satisfying:
+$$
+	\mu(a,b] = F(b) - F(a)
+$$
+For all $a$ and $b$. \textbf{Proof:} Note, uniqueness comes from Theorem 10.3. The proof of existence is almost the same as the construction of the Lebesgue measure, which is the case $F(x) = x$. However, we don't give it here - as we will prove a more general version in Theorem 12.5.
+\\\\
+Some things to also note. I think for both of the $F$ we have:
+$$
+	F(x) = \mu(-\infty,x] \text{ for finite $\mu$ (like a Probability Measure) vs }
+	F(x) = \begin{cases}
+		\mu(0,x] & \text{ if $x \geq 0$}\\
+		-\mu(x,0] & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+$F$ in both cases is nondecreasing, clearly. Right continuous, also clearly (we can apply continuity from above in all cases for a finite measure). Also, in both cases, satisfies the equation for bounded intervals.
+
+\subsubsection{Specifying Measures in $\rcal^k$} The $\sigma$ field $\rcal^k$ of $k$ dimensional Borel sets is generated by the class of bounded rectangles:
+$$
+	A = \left[x: a_i < x_i \leq b_i : i = 1, \cdots, k\right]
+$$
+Consider sets of the form:
+$$
+	S_x = \left\{y : y_i \leq x_i, i = 1, \cdots, k\right\}
+$$
+Note, sets like $S_x$ are kind of the higher dimensional analogues of the half infinite intervals $(-\infty,x]$. $S_x$ is closed, and we can express bounded rectangles something like:
+$$
+	A = S_{b_1, \cdots, b_k} - 
+	\left[S_{(a_1,b_2,\cdots,b_k)} \cup S_{(b_1,a_1,\cdots,b_k)} \cup \cdots \cup S_{(b_1,b_2,\cdots,a_k)}\right]
+$$
+Note, $S_{b_1, \cdots, b_k}$ contains all of $A$, and some infinite portions, which we remove via the unions (which keep an open interval on the correct side). Therefore, we can see that the class of sets $S_x$ actually generate $\rcal^k$. We have:
+$$
+	\{A\} \subseteq \sigma(S_k) \implies \rcal^k \subseteq \sigma(S_k)
+$$
+However, it is also clear that $\sigma(S_k) \subseteq \rcal^k$, as $\{S_k\} \subseteq \{A\} \implies \sigma(S_k) \subseteq \rcal^k$. This class of $S_k$ is also a $\pi$ system, clearly.
+\\\\
+We now want to find an analogue of the equation $\mu(a,b] = F(b) - F(a)$ in higher dimensions. A bounded rectangle has $2^k$ vertices - for each entry in $(x_1, \cdots, x_k)$, we have a choice of $2$ - $a_i$ or $b_i$. 
 
 \end{document}
 

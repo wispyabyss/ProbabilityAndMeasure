@@ -3,8 +3,8 @@
 \contentsline {subsection}{Notes}{6}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{6}{section*.5}%
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{7}{section*.6}%
-\contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{7}{section*.7}%
-\contentsline {paragraph}{Lemma - Chebyshev's Inequality}{8}{section*.8}%
+\contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{8}{section*.7}%
+\contentsline {paragraph}{Lemma - Chebyshev's Inequality}{9}{section*.8}%
 \contentsline {subsubsection}{The Strong Law of Large Numbers}{9}{section*.9}%
 \contentsline {paragraph}{Theorem 1.2}{10}{section*.10}%
 \contentsline {paragraph}{Theorem 1.3 - Lebesgue Measure Starting Point}{11}{section*.11}%
@@ -15,12 +15,12 @@
 \contentsline {subsection}{Problems}{14}{section*.16}%
 \contentsline {subsubsection}{1.1 Infinite Independent Events on a Discrete Space (are impossible)}{14}{section*.17}%
 \contentsline {subsubsection}{1.2 Normal Numbers and Complements are Dense in $(0,1]$}{15}{section*.18}%
-\contentsline {subsubsection}{1.3 Trifling Set Properties}{15}{section*.19}%
-\contentsline {subsubsection}{1.4 Trifling Sets In Base $r$}{16}{section*.20}%
+\contentsline {subsubsection}{1.3 Trifling Set Properties}{16}{section*.19}%
+\contentsline {subsubsection}{1.4 Trifling Sets In Base $r$}{17}{section*.20}%
 \contentsline {subsubsection}{1.5 Cantor Set Is Trifling, Uncountable, and Perfect}{20}{section*.21}%
 \contentsline {subsubsection}{1.6 Alternate $S_n$ Integral Value Proof}{21}{section*.22}%
-\contentsline {subsubsection}{1.7 Vieta's Formula}{22}{section*.23}%
-\contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{24}{section*.24}%
+\contentsline {subsubsection}{1.7 Vieta's Formula}{23}{section*.23}%
+\contentsline {subsubsection}{1.8 Differences between the Weak and Strong Law Is Uniform Convergence}{25}{section*.24}%
 \contentsline {subsubsection}{1.9 Nowhere Dense Set Existence and Properties}{25}{section*.25}%
 \contentsline {subsubsection}{1.10 Normal Numbers are of the First Category}{26}{section*.26}%
 \contentsline {subsubsection}{1.11 Diophantine Approximation Properties}{28}{section*.27}%
@@ -29,10 +29,10 @@
 \contentsline {paragraph}{Spaces}{29}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{30}{section*.31}%
 \contentsline {paragraph}{Classes of Sets}{30}{section*.32}%
-\contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{30}{section*.33}%
+\contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{31}{section*.33}%
 \contentsline {paragraph}{Examples}{31}{section*.34}%
 \contentsline {paragraph}{Definition - Generated Sigma Field}{31}{section*.35}%
-\contentsline {paragraph}{Example - Borel Sets}{31}{section*.36}%
+\contentsline {paragraph}{Example - Borel Sets}{32}{section*.36}%
 \contentsline {paragraph}{Probability Measures}{32}{section*.37}%
 \contentsline {paragraph}{Probability Space}{32}{section*.38}%
 \contentsline {paragraph}{Discrete Probability Space}{32}{section*.39}%
@@ -40,21 +40,21 @@
 \contentsline {paragraph}{Lebesgue Measure on the Unit Interval}{33}{section*.41}%
 \contentsline {paragraph}{Sequence Space}{34}{section*.42}%
 \contentsline {paragraph}{Definition - Coordinate Functions}{34}{section*.43}%
-\contentsline {paragraph}{Definition: Cylinder of Rank $n$}{34}{section*.44}%
+\contentsline {paragraph}{Definition: Cylinder of Rank $n$}{35}{section*.44}%
 \contentsline {paragraph}{Definition: Probability Measure on the Field of Cylinders}{35}{section*.45}%
 \contentsline {paragraph}{Theorem 2.3}{35}{section*.46}%
 \contentsline {paragraph}{Lemma: If $A_n \downarrow A$, where the $A_n$ are nonempty cylinders, then $A$ is nonempty}{35}{section*.47}%
-\contentsline {paragraph}{Proof of Lemma}{35}{section*.48}%
-\contentsline {paragraph}{Extended Sequence Measure}{36}{section*.49}%
+\contentsline {paragraph}{Proof of Lemma}{36}{section*.48}%
+\contentsline {paragraph}{Extended Sequence Measure}{37}{section*.49}%
 \contentsline {subsection}{Problems}{37}{section*.50}%
 \contentsline {subsubsection}{2.1 Prove Set Theory Results Using Indicators}{37}{section*.51}%
 \contentsline {subsubsection}{2.2 Union and Intersection Equality Property}{38}{section*.52}%
 \contentsline {subsubsection}{2.3 Equivalent and Non Equivalent Field Definitions}{38}{section*.53}%
 \contentsline {subsubsection}{2.4 Unions of increasing Fields are Fields, but not true for $\sigma $ fields}{38}{section*.54}%
-\contentsline {subsubsection}{2.5 Generated Field and Explicit Definition}{38}{section*.55}%
+\contentsline {subsubsection}{2.5 Generated Field and Explicit Definition}{39}{section*.55}%
 \contentsline {subsubsection}{2.6 Comparing Fields and $\sigma $ fields}{39}{section*.56}%
 \contentsline {subsubsection}{2.7 Extending a field/$\sigma $ field by $\{H\}$}{39}{section*.57}%
-\contentsline {subsubsection}{2.8 $\sigma $ algebra for class where $A^c$ is countable union of class elements}{39}{section*.58}%
+\contentsline {subsubsection}{2.8 $\sigma $ algebra for class where $A^c$ is countable union of class elements}{40}{section*.58}%
 \contentsline {subsubsection}{2.9 Equivalent $\sigma $ algebra definition}{40}{section*.59}%
 \contentsline {subsubsection}{2.10 Classes Generating The Discrete Field are Large}{40}{section*.60}%
 \contentsline {subsubsection}{2.11 Countably Generated Fields}{41}{section*.61}%
@@ -62,49 +62,49 @@
 \contentsline {subsubsection}{2.13 Probability Measure on Finite and CoFinite Sets}{44}{section*.63}%
 \contentsline {subsubsection}{2.14 First Category $\sigma $ Field}{45}{section*.64}%
 \contentsline {subsubsection}{2.15 Differences between $B_0$ and $C_0$}{46}{section*.65}%
-\contentsline {subsubsection}{2.18 Stochastic Arithmetic}{47}{section*.66}%
+\contentsline {subsubsection}{2.18 Stochastic Arithmetic}{48}{section*.66}%
 \contentsline {subsubsection}{2.19 Nonatomic Probability Spaces}{53}{section*.67}%
 \contentsline {subsubsection}{2.21 Generating Sigma Algebras ``From the Inside"}{56}{section*.68}%
-\contentsline {subsubsection}{2.22}{57}{section*.69}%
+\contentsline {subsubsection}{2.22}{58}{section*.69}%
 \contentsline {section}{Section 3 - Existence and Extension}{58}{section*.70}%
 \contentsline {subsection}{Notes}{58}{section*.71}%
 \contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{58}{section*.72}%
 \contentsline {subsubsection}{Construction of the Extension}{58}{section*.73}%
 \contentsline {paragraph}{Outer Measure}{58}{section*.74}%
-\contentsline {paragraph}{Inner Measure}{58}{section*.75}%
+\contentsline {paragraph}{Inner Measure}{59}{section*.75}%
 \contentsline {paragraph}{$P^*$ Measurable}{59}{section*.76}%
 \contentsline {paragraph}{Properties of $P^*$ and $\mathcal {M}$}{59}{section*.77}%
 \contentsline {paragraph}{Lemma 1 - The class $\mathcal {M}$ is a field}{60}{section*.78}%
 \contentsline {paragraph}{Lemma 2 - $P^*$ Condition on Countable Disjoint Sets in $\mathcal {M}$}{60}{section*.79}%
 \contentsline {paragraph}{Lemma 3 - The class $\mathcal {M}$ is a $\sigma $ field, and $P^*$ restricted to $\mathcal {M}$ is countably additive}{61}{section*.80}%
-\contentsline {paragraph}{Lemma 4 - If $P^*$ is defined by the outer measure, then $\mathcal {F}_0 \subset \mathcal {M}$}{61}{section*.81}%
+\contentsline {paragraph}{Lemma 4 - If $P^*$ is defined by the outer measure, then $\mathcal {F}_0 \subset \mathcal {M}$}{62}{section*.81}%
 \contentsline {paragraph}{Lemma 5 - If $P^*$ is defined by the outer measure, then $P^*(A) = P(A)$ for $A \in \mathcal {F}_0$}{62}{section*.82}%
 \contentsline {paragraph}{Proof of Extension in Theorem 3.1}{62}{section*.83}%
 \contentsline {subsubsection}{Uniqueness of the Extension and the $\pi -\lambda $ Theorem}{62}{section*.84}%
-\contentsline {paragraph}{$\pi $ System}{62}{section*.85}%
-\contentsline {paragraph}{$\lambda $ System}{62}{section*.86}%
+\contentsline {paragraph}{$\pi $ System}{63}{section*.85}%
+\contentsline {paragraph}{$\lambda $ System}{63}{section*.86}%
 \contentsline {paragraph}{Lemma 6 $\pi $ and $\lambda $ implies $\sigma $}{63}{section*.87}%
 \contentsline {paragraph}{Theorem 3-2: $\pi -\lambda $ Theorem}{63}{section*.88}%
-\contentsline {paragraph}{Theorem 3-3 Uniqueness of Extensions}{64}{section*.89}%
+\contentsline {paragraph}{Theorem 3-3 Uniqueness of Extensions}{65}{section*.89}%
 \contentsline {paragraph}{Theorem 3.1 - Probability Measure Extension Theorem}{65}{section*.90}%
 \contentsline {paragraph}{Monotone Classes}{65}{section*.91}%
 \contentsline {paragraph}{Theorem 3.4 - Halmos's Monotone Class Theorem}{65}{section*.92}%
-\contentsline {subsubsection}{Lebesgue Measure on the Unit Interval}{65}{section*.93}%
+\contentsline {subsubsection}{Lebesgue Measure on the Unit Interval}{66}{section*.93}%
 \contentsline {paragraph}{Example 1 - Subintervals around rationals}{66}{section*.94}%
 \contentsline {paragraph}{Example 2 - $k$ Repeated Sequences}{66}{section*.95}%
-\contentsline {paragraph}{Completeness}{66}{section*.96}%
+\contentsline {paragraph}{Completeness}{67}{section*.96}%
 \contentsline {paragraph}{Nonmeasurable Sets}{67}{section*.97}%
 \contentsline {paragraph}{Definition: Set Shifts/Translations}{67}{section*.98}%
 \contentsline {paragraph}{Vitali Sets}{68}{section*.99}%
-\contentsline {subsection}{Problems}{68}{section*.100}%
-\contentsline {subsubsection}{3.1 Finite vs. Countable Additivity}{68}{section*.101}%
-\contentsline {subsubsection}{3.2 Redefining the Inner and Outer Measure}{69}{section*.102}%
+\contentsline {subsection}{Problems}{69}{section*.100}%
+\contentsline {subsubsection}{3.1 Finite vs. Countable Additivity}{69}{section*.101}%
+\contentsline {subsubsection}{3.2 Redefining the Inner and Outer Measure}{70}{section*.102}%
 \contentsline {subsubsection}{3.3 Countable Additivity and the Outer Measure}{72}{section*.103}%
-\contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{73}{section*.104}%
+\contentsline {subsubsection}{3.6 Extension for a Finitely Additive Probability Measure on a Field}{74}{section*.104}%
 \contentsline {subsubsection}{3.7 Finitely Additive Field Extension}{76}{section*.105}%
 \contentsline {subsubsection}{3.8 Finitely Additive Field Extension to Power Set Field}{78}{section*.106}%
-\contentsline {subsubsection}{3.14 Lebesgue Measure 0 Sets that are not Borel Sets}{79}{section*.107}%
-\contentsline {subsubsection}{3.18 All non-zero outer measure sets contain a non (borel) measurable subset}{80}{section*.108}%
+\contentsline {subsubsection}{3.14 Lebesgue Measure 0 Sets that are not Borel Sets}{80}{section*.107}%
+\contentsline {subsubsection}{3.18 All non-zero outer measure sets contain a non (borel) measurable subset}{81}{section*.108}%
 \contentsline {subsubsection}{3.19 Existence of an Intermediate Borel Set $0 < \lambda (A \cap G) < \lambda (G)$ for all nonempty open $G$}{81}{section*.109}%
 \contentsline {subsubsection}{3.20 No Intermediate Borel Set on All Intervals $a\lambda (I) \leq \lambda (A \cap I) \leq b\lambda (I)$}{83}{section*.110}%
 \contentsline {section}{Section 4 - Denumerable Probabilities}{85}{section*.111}%
@@ -368,3 +368,6 @@
 \contentsline {paragraph}{Definition - Regularity}{280}{section*.369}%
 \contentsline {paragraph}{Theorem 12.3 Property of Regularity - Finite Measures on Bounded Sets of $\mathcal {R}^k$ implies Measure is Regular}{280}{section*.370}%
 \contentsline {subsubsection}{Specifying Measures on the Line}{282}{section*.371}%
+\contentsline {paragraph}{Cumulative Distribution Function}{283}{section*.372}%
+\contentsline {paragraph}{Theorem 12.4 - Existence of Measure on $\mathcal {R}^1$ Via a Function $F$}{284}{section*.373}%
+\contentsline {subsubsection}{Specifying Measures in $\mathcal {R}^k$}{284}{section*.374}%
