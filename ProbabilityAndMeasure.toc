@@ -371,3 +371,7 @@
 \contentsline {paragraph}{Cumulative Distribution Function}{283}{section*.372}%
 \contentsline {paragraph}{Theorem 12.4 - Existence of Measure on $\mathcal {R}^1$ Via a Function $F$}{284}{section*.373}%
 \contentsline {subsubsection}{Specifying Measures in $\mathcal {R}^k$}{284}{section*.374}%
+\contentsline {paragraph}{Signum Of Rectangle Vertex}{285}{section*.375}%
+\contentsline {paragraph}{Difference Around The Rectangle $A$}{285}{section*.376}%
+\contentsline {paragraph}{Theorem 12.5 - Obtaining Measures on $\mathcal {R}^k$ from Functions on $\mathbb {R}^k$}{287}{section*.377}%
+\contentsline {paragraph}{Proof Of Theorem 12.5}{287}{section*.378}%

@@ -50,6 +50,7 @@
 \newcommand{\curl}{\text{curl}}
 \newcommand{\trace}{\text{trace}}
 \newcommand{\grad}{\text{grad}}
+\newcommand{\sgn}{\text{sgn}}
 \newcommand{\io}{\text{i.o.}}
 
 
@@ -8315,7 +8316,89 @@ $$
 $$
 However, it is also clear that $\sigma(S_k) \subseteq \rcal^k$, as $\{S_k\} \subseteq \{A\} \implies \sigma(S_k) \subseteq \rcal^k$. This class of $S_k$ is also a $\pi$ system, clearly.
 \\\\
-We now want to find an analogue of the equation $\mu(a,b] = F(b) - F(a)$ in higher dimensions. A bounded rectangle has $2^k$ vertices - for each entry in $(x_1, \cdots, x_k)$, we have a choice of $2$ - $a_i$ or $b_i$. 
+We now want to find an analogue of the equation $\mu(a,b] = F(b) - F(a)$ in higher dimensions. A bounded rectangle has $2^k$ vertices - for each entry in $(x_1, \cdots, x_k)$, we have a choice of $2$ - $a_i$ or $b_i$. Define the signum of a vertex on the rectangle as:
+
+\paragraph{Signum Of Rectangle Vertex} Take a bounded rectangle:
+$$
+	A = \left[x: a_i < x_i \leq b_i : i = 1, \cdots, k\right]
+$$
+There are $2^k$ vertices. For $x$ a vertex of the rectangle, define $\sgn_A(x)$, the signum of the vertex, be $+1$ or $-1$, corresponding with whether the number of $1 \leq i \leq k$ satisfying $x_i = a_i$ is even or odd. For a bounded rectangle in $\R^2$, the top right vertex has number $0$, and thus signum $+1$. The bottom left vertex has count $2$, and thus signum $+1$. The other two vertices (top left, bottom right) have count $1$, and thus signum $-1$.
+
+\paragraph{Difference Around The Rectangle $A$} $A$ is our bounded rectangle. For a real function $F$ on $\R^k$, the difference of $F$ around the vertices of $A$ is:
+$$
+	\Delta_A F = \sum \sgn_A(x) \cdot F(x)
+$$
+In the case that $k = 1$ - then, we have $A = (a,b]$, and $\Delta_A F = F(b) - F(a)$. In the case $k = 2$, we have:
+$$
+	\Delta_A F = F(b_1,b_2) - F(b_1,a_2) - F(a_1,b_2) + F(a_1,a_2)
+$$
+So, we can see that $\Delta_A F$ is kind of a generalization of what we need in $\mu(a,b] = F(b) - F(a)$.
+\\\\
+Suppose that $\mu$ is a finite measure on $\rcal^k$ and consider the analogue of $F(x) = \mu(-\infty,x]$:
+$$
+	F(x) = \mu\left[y: y_i \leq x_i, i = 1, \cdots, k\right]
+$$
+Note, these are half infinite rectangles. Suppose that $S_x$ is defined as previously. Suppose that $A$ is a bounded rectangle. Then:
+$$
+	\mu(A) = \Delta_A F
+$$
+To see this - make use of:
+$$
+	A = S_{b_1, \cdots, b_k} - 
+	\left[S_{(a_1,b_2,\cdots,b_k)} \cup S_{(b_1,a_1,\cdots,b_k)} \cup \cdots \cup S_{(b_1,b_2,\cdots,a_k)}\right]
+$$
+Apply the inclusion-exclusion principle:
+$$
+	\mu(A) = \mu\left[S_{b_1, \cdots, b_k} - 
+	\left[S_{(a_1,b_2,\cdots,b_k)} \cup S_{(b_1,a_1,\cdots,b_k)} \cup \cdots \cup S_{(b_1,b_2,\cdots,a_k)}\right]\right]
+$$
+$$
+	= \mu\left[S_{b_1, \cdots, b_k}\right] - 
+	\mu\left[S_{(a_1,b_2,\cdots,b_k)} \cup S_{(b_1,a_1,\cdots,b_k)} \cup \cdots \cup S_{(b_1,b_2,\cdots,a_k)}\right]
+$$
+$$
+	= F(b_1, \cdots, b_k) - \sum_i \mu(S_i) + \sum_{i < j} \mu(S_i \cap S_j) - \cdots + 
+	(-1)^k \mu(S_1 \cap \cdots \cap S_k)
+$$
+Where $S_i$ refers to $S_{(b_1,\cdots,b_{i-1},a_i,b_{i+1},\cdots,b_k)}$. Now - note what each $S_i \cap S_j$ is. This is just:
+$$
+	S_i \cap S_j = S_{(b_1,\cdots,b_{i-1},a_i,b_{i+1},\cdots,b_{j-1},a_j,b_{j+1},\cdots,b_k)}
+$$
+So, each of the intersection terms just is another half infinite rectangle. We can again replace the $\mu$ term with $F$:
+$$
+	\mu(A) = F(b_1, \cdots, b_k) - \sum_i F(x_i) + \sum_{i < j} F(x_{ij}) - \cdots + (-1)^k F(x_{1,\cdots,k})
+$$
+Where $x_{i_1,\cdots,i_p}$ refers to the vertex of $A$, with $a_i$ in the index parameters, and $b_i$ in the non indexed parameters. note that the sign added to the term is $+1/-1$ corresponding to whether or not the number of $a_i$ is in the vertex an even/odd amount of times. Thus, we have:
+$$
+	\mu(A) = \Delta_A F
+$$
+Note - we require $\mu$ to be a finite measure, so that the measure of these half infinite rectangles is finite, and subtraction will be well defined. Suppose that $x^{(n)} \downarrow x$ in the sense that $x_i^{(n)} \downarrow x_i$ as $n \to \infty$ for each $i = 1, \cdots, k$. Then $S_{x^{(n)}} \downarrow S_x$, and hence $F(x^{(n)}) \to F(x)$ by continuity from above. In this sense, $F$ is continuous from above. Thus, we have that $F$ is a function of the sort that we talk about in the next theorem.
+\\\\
+Note, the book says that we could also have an analogue of:
+$$
+	F(x) =
+	\begin{cases}
+		x = \mu(0,x] & \text{ if $x \geq 0$}\\
+		x = -\mu(x,0] & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+In $\rcal^k$ for a measure $\mu$ that is finite on bounded sets - but, it is more complicated. The corresponding example for finite $\mu$ that we give above is easier.
+
+\paragraph{Theorem 12.5 - Obtaining Measures on $\rcal^k$ from Functions on $\R^k$} Suppose that the real function $F$ on $\R^k$ is continuous from above, and satisfies $\Delta_A F \geq 0$ for bounded rectangles $A$. Then there exists a unique measure $\mu$ on $\rcal^k$ satisfying:
+$$
+	\mu(A) = \Delta_A F
+$$
+For Bounded Rectangles on $A$.
+\\\\
+\textbf{Theorem Notes} For one, I just took a quick look at the theorem. It just makes use of Theorem 11.3 - we just need to prove finite additivity and countable subadditivity. Note that $\mu(\emptyset) = \Delta_\emptyset F = 0$, as we can just take the emptyset as a rectangle where $a_i = b_i$, and the sum will cancel out. Thus, $\mu(A)$ on the bounded rectangles would be a finite valued set function. Note how we will also get uniqueness immediately out of Theorem 10.3 (as a consequence of existence), as the bounded rectangles are a sigma finite $\pi$ system generating $\rcal^k$.
+\\\\
+Also, note where the Lebesgue Measure fits in. Take $F(x) = x_1 \cdot x_2 \cdots x_k$. Here, we have that:
+$$
+	\mu(A) = \Delta_A F = (b_1 - a_1)(b_2 - a_2)\cdots(b_k - a_k)
+$$
+For a bounded rectangle $A$. Note, we used distribution to conclude the above. And so, $\mu(A)$ is our $k$-dimensional Lebesgue measure on the bounded rectangles. Note that $F$ is continuous, and so continuous from above, and satisfies $\Delta_A F \geq 0$ for bounded rectangles $A$, and so this Theorem 12.5 will prove existence of a unique extension on $\rcal^k$. Not bad!
+
+\paragraph{Proof Of Theorem 12.5}
 
 \end{document}
 
