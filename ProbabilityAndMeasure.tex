@@ -8338,7 +8338,7 @@ Suppose that $\mu$ is a finite measure on $\rcal^k$ and consider the analogue of
 $$
 	F(x) = \mu\left[y: y_i \leq x_i, i = 1, \cdots, k\right]
 $$
-Note, these are half infinite rectangles. Suppose that $S_x$ is defined as previously. Suppose that $A$ is a bounded rectangle. Then:
+Note, these are half infinite rectangles with top right corner at $x$. Suppose that $S_x$ is defined as previously. Suppose that $A$ is a bounded rectangle. Then:
 $$
 	\mu(A) = \Delta_A F
 $$
@@ -8372,7 +8372,7 @@ Where $x_{i_1,\cdots,i_p}$ refers to the vertex of $A$, with $a_i$ in the index 
 $$
 	\mu(A) = \Delta_A F
 $$
-Note - we require $\mu$ to be a finite measure, so that the measure of these half infinite rectangles is finite, and subtraction will be well defined. Suppose that $x^{(n)} \downarrow x$ in the sense that $x_i^{(n)} \downarrow x_i$ as $n \to \infty$ for each $i = 1, \cdots, k$. Then $S_{x^{(n)}} \downarrow S_x$, and hence $F(x^{(n)}) \to F(x)$ by continuity from above. In this sense, $F$ is continuous from above. Thus, we have that $F$ is a function of the sort that we talk about in the next theorem.
+Overall, we expressed $A$ in terms of half infinite rectangles $S$, and then matched the terms with $\Delta_AF$. Note - we require $\mu$ to be a finite measure, so that the measure of these half infinite rectangles is finite, and subtraction will be well defined. Suppose that $x^{(n)} \downarrow x$ in the sense that $x_i^{(n)} \downarrow x_i$ as $n \to \infty$ for each $i = 1, \cdots, k$. Then $S_{x^{(n)}} \downarrow S_x$, and hence $F(x^{(n)}) \to F(x)$ by continuity from above. In this sense, $F$ is continuous from above. Thus, we have that $F$ is a function of the sort that we talk about in the next theorem.
 \\\\
 Note, the book says that we could also have an analogue of:
 $$
@@ -8390,7 +8390,7 @@ $$
 $$
 For Bounded Rectangles on $A$.
 \\\\
-\textbf{Theorem Notes} For one, I just took a quick look at the theorem. It just makes use of Theorem 11.3 - we just need to prove finite additivity and countable subadditivity. Note that $\mu(\emptyset) = \Delta_\emptyset F = 0$, as we can just take the emptyset as a rectangle where $a_i = b_i$, and the sum will cancel out. Thus, $\mu(A)$ on the bounded rectangles would be a finite valued set function. Note how we will also get uniqueness immediately out of Theorem 10.3 (as a consequence of existence), as the bounded rectangles are a sigma finite $\pi$ system generating $\rcal^k$.
+\textbf{Theorem Notes} For one, I just took a quick look at the theorem. It just makes use of Theorem 11.3 - we just need to prove finite additivity and countable subadditivity. This comes from noting the bounded rectangles are a semi-ring that generate $\rcal^k$. Note that $\mu(\emptyset) = \Delta_\emptyset F = 0$, as we can just take the emptyset as a rectangle where $a_i = b_i$, and the sum will cancel out. Thus, $\mu(A)$ on the bounded rectangles would be a finite valued set function. Note how we will also get uniqueness immediately out of Theorem 10.3 (as a consequence of existence), as the bounded rectangles are a sigma finite $\pi$ system generating $\rcal^k$.
 \\\\
 Also, note where the Lebesgue Measure fits in. Take $F(x) = x_1 \cdot x_2 \cdots x_k$. Here, we have that:
 $$
@@ -8398,7 +8398,74 @@ $$
 $$
 For a bounded rectangle $A$. Note, we used distribution to conclude the above. And so, $\mu(A)$ is our $k$-dimensional Lebesgue measure on the bounded rectangles. Note that $F$ is continuous, and so continuous from above, and satisfies $\Delta_A F \geq 0$ for bounded rectangles $A$, and so this Theorem 12.5 will prove existence of a unique extension on $\rcal^k$. Not bad!
 
-\paragraph{Proof Of Theorem 12.5}
+\paragraph{Proof Of Theorem 12.5} So, we just need to prove the existence of a measure extension. To make use of Theorem 11.3 - we will first show that $\mu$ as defined is finitely additive on the class of bounded rectangles.
+\\\\
+Suppose that each side $I_i = (a_i,b_i]$ of a bounded rectangle is partitioned into $n_i$ subintervals:
+$$
+	J_{ij} = (t_{i,j-1},t_{ij}) \quad\text{ for $j = 1,\cdots,n_i$ and $a_i = t_{i0} < t_{i1} < \cdots < t_{in_i} = b_i$}
+$$
+Then, we would have $n_1n_2\cdots n_k$ rectangles of the form:
+$$
+	B_{j_1,\cdots,j_k} = J_{1j_1} \times \cdots \times J_{kj_k}
+$$
+That partition $A$. We call such a partition \textit{regular}. We will first note that $\mu$ is additive across regular partitions:
+$$
+	\mu(A) = \sum_{j1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k})
+$$
+And note - this should hopefully be intuitive, in the sense that the values that make up $\Delta_{B_{j_1,\cdots,j_k}} F$ cancel out on shared vertices, leaving only the vertices that make $\Delta_A F$. We have:
+$$
+	\sum_{j1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k}) =
+	\sum_{j1,\cdots,j_j} \Delta_{B_{j_1,\cdots,j_k}} F =
+	\sum_{j1,\cdots,j_j} \sum_x \sgn_B x \cdot F(x)
+$$
+Where the sum across $x$ is just the vertices of $B$. Now, we rearrange as:
+$$
+	= \sum_x F(x) \sum_{B} \sgn_B x
+$$
+Where the left sum is all the vertices noted above, and the right sum is all the $B$ that share the vertex $x$. Now, assume $x$ is one of the interior vertices - ie, an $x$ that is a vertex of one or more $B$, but not a vertex of $A$. Then, there must be an $i$ such that $x_i \neq a_i, x_i \neq b_i$ - this is because $x_i$ is not a vertex of $A$. There could be several such $i$ - but fix only one. Then:
+$$
+	x_i = t_{ij} \quad\text{ for $0 < j < n_i$}
+$$
+The rectangles $B$ of which $x$ is a vertex therefore come in pairs:
+$$
+	B' = B_{j_1, \cdots, j_i, \cdots, j_k} \quad\quad\quad
+	B'' = B_{j_1, \cdots, j_i + 1, \cdots, j_k}
+$$
+What does this mean - Note, we have $J_{ij} = (t_{i,j-1},t_{ij}]$ and $J_{i,j+1} = (t_{ij},t_{i,j+1}]$. So, if we increase $j_i$ by 1, we get the $J_{i,j+1}$ interval that includes $t_{ij}$ as the lower bound, rather than the upper bound. We can see this easier with a picture:
+	\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{shared_vertex_rectangles.jpg}
+	\caption{Theorem 12.5 Shared Vertex Rectangles}
+	\label{fig:example2}
+\end{figure} 
+So, yeah, each $B$ with a vertex on $x$ has a pair along the $i$ axis, corresponding to whether or not $x_i = t_{ij}$ is an upper bound or lower bound in that dimension. Note:
+$$
+	\sgn_{B'} x = - \sgn_{B''} x
+$$
+As for why this is - note all the other intervals are the same. Ie, we have something like:
+$$
+	J_{1j_1} \times \cdots \times J_{ij} \times \cdots \times J_{kj_k} \quad\text{ vs }\quad
+	J_{1j_1} \times \cdots \times J_{i,j+1} \times \cdots \times J_{kj_k}
+$$
+Note, $\sgn x$ is the count related to the rectangle, oh how many coordinates in $x$ are in the lower bound. Note, the $x$ should have the same lower bound count, except in the $J_{ij}$ vs. $J_{i,j+1}$ interval, and so the signs must be negative of each other. Thus, we have the inner sum on the right below is zero if $x$ is on the interior:
+$$
+	= \sum_x F(x) \sum_{B} \sgn_B x
+$$
+So, now we consider the vertices $x$ that are not in the interior - ie, shared by $A$. For those vertices, we have that $x$ is the vertex of only one of the $B$ as well. Further, it is clear that the $\sgn_B x = \sgn_A x$ - you can think of this visually, with the $B$ lining up in the corner of $A$, and $x$ having the same count of $x_i$ being a lower bound for $B$ and $A$. Thus, we have:
+$$
+	\sum_{j1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k}) = 
+	\sum_{x in A} F(x) \sgn_B x =
+	\sum_{x \in A} \sgn_A x f(x) = \mu(A)
+$$
+And so, we have countable additivity across regular partitions of a bounded rectangle $A$. Now, suppose that $A = \bigcup_{u=1}^n A_u$, where $A$ is a bounded rectangle, which has the form of a Cartesian product:
+$$
+	A = I_1 \times \cdots \times I_k
+$$
+We also have:
+$$
+	A_u = I_{1u} \times \cdots I_{ku}
+$$
+Across the $k$ dimensions. Assume the $A_u$ are disjoint. For each $1 \leq i \leq k$, the intervals $I_{i1}, \cdots, I_{in}$ must equal $I_i$.
 
 \end{document}
 
