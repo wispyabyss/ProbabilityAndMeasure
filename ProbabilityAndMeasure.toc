@@ -375,3 +375,4 @@
 \contentsline {paragraph}{Difference Around The Rectangle $A$}{285}{section*.376}%
 \contentsline {paragraph}{Theorem 12.5 - Obtaining Measures on $\mathcal {R}^k$ from Functions on $\mathbb {R}^k$}{287}{section*.377}%
 \contentsline {paragraph}{Proof Of Theorem 12.5}{287}{section*.378}%
+\contentsline {subsubsection}{Strange Euclidean Sets}{292}{section*.379}%

@@ -8410,13 +8410,13 @@ $$
 $$
 That partition $A$. We call such a partition \textit{regular}. We will first note that $\mu$ is additive across regular partitions:
 $$
-	\mu(A) = \sum_{j1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k})
+	\mu(A) = \sum_{j_1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k})
 $$
 And note - this should hopefully be intuitive, in the sense that the values that make up $\Delta_{B_{j_1,\cdots,j_k}} F$ cancel out on shared vertices, leaving only the vertices that make $\Delta_A F$. We have:
 $$
-	\sum_{j1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k}) =
-	\sum_{j1,\cdots,j_j} \Delta_{B_{j_1,\cdots,j_k}} F =
-	\sum_{j1,\cdots,j_j} \sum_x \sgn_B x \cdot F(x)
+	\sum_{j_1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k}) =
+	\sum_{j_1,\cdots,j_j} \Delta_{B_{j_1,\cdots,j_k}} F =
+	\sum_{j_1,\cdots,j_j} \sum_x \sgn_B x \cdot F(x)
 $$
 Where the sum across $x$ is just the vertices of $B$. Now, we rearrange as:
 $$
@@ -8453,9 +8453,9 @@ $$
 $$
 So, now we consider the vertices $x$ that are not in the interior - ie, shared by $A$. For those vertices, we have that $x$ is the vertex of only one of the $B$ as well. Further, it is clear that the $\sgn_B x = \sgn_A x$ - you can think of this visually, with the $B$ lining up in the corner of $A$, and $x$ having the same count of $x_i$ being a lower bound for $B$ and $A$. Thus, we have:
 $$
-	\sum_{j1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k}) = 
-	\sum_{x in A} F(x) \sgn_B x =
-	\sum_{x \in A} \sgn_A x f(x) = \mu(A)
+	\sum_{j_1,\cdots,j_j} \mu(B_{j_1,\cdots,j_k}) = 
+	\sum_{x \in A} F(x) \sgn_B x =
+	\sum_{x \in A} \sgn_A x F(x) = \mu(A)
 $$
 And so, we have countable additivity across regular partitions of a bounded rectangle $A$. Now, suppose that $A = \bigcup_{u=1}^n A_u$, where $A$ is a bounded rectangle, which has the form of a Cartesian product:
 $$
@@ -8465,7 +8465,85 @@ We also have:
 $$
 	A_u = I_{1u} \times \cdots I_{ku}
 $$
-Across the $k$ dimensions. Assume the $A_u$ are disjoint. For each $1 \leq i \leq k$, the intervals $I_{i1}, \cdots, I_{in}$ must equal $I_i$.
+Across the $k$ dimensions. Assume the $A_u$ are disjoint. For each $1 \leq i \leq k$, the intervals $I_{i1}, \cdots, I_{in}$ must equal $I_i$. We want to show countable additivity. The overall idea will be - to break up each $A_u$ in such a way, that each $A_u$ has a regular partition, and the union of these regular partitions forms a regular partition of $A$. And then, we can just use additivity of regular partitions to find additivity.
+\\\\
+Note, each $I_i$ is split up by the endpoints of $I_{iu}$. We have $I_i$ is partitioned by disjoint subintervals $J_{i1}, \cdots, J_{in_i}$, such that each $I_{iu}$ is the union of certain of the $J_{ij}$. Easy enough! Look at the picture in the book for understanding, it is really helpful. The rectangles $B$ of the form:
+$$
+	B_{j_1,\cdots,j_k} = J_{1j_1} \times \cdots \times J_{kj_k}
+$$
+Form a regular partition of $A$ - this is clear. Furthermore, the $B$'s contained in a single $A_u$ form a regular partition of $A_u$. As the $A_u$ are disjoint, we have:
+$$
+	\mu(A) = \sum_B \mu(B) =
+	\sum_{u=1}^n \sum_{B \subset A_u} \mu(B) =
+	\sum_{u=1}^n \mu(A_u)
+$$
+Therefore, our $\mu$ is finitely additive on the class $\ical^k$ of bounded $k$-dimensional rectangles.
+\\\\
+As noted initially - and as in Example 11.4 - $\ical^k$ is a semiring. And so, Theorem 11.3 can apply. So we now work on countable additivity. If $A_,A_1,\cdots,A_n$ are sets in $\ical^k$, then by Lemma 11.2 of the preceding section, we have:
+$$
+	A \subseteq \bigcup_{u=1}^n A_u \implies
+	\mu(A) \leq \sum_{u=1}^n \mu(A_u)
+$$
+So, we have finite subadditivity on $\ical^k$. Suppose then that $A \subseteq \bigcup_{u=1}^\infty A_u$. We want to extend to/show countable subadditivity:
+$$
+	\mu(A) \leq \sum_{u=1}^\infty \mu(A_u)
+$$
+Suppose that $\epsilon > 0$. Take the definition of bounded rectangle $A$ as:
+$$
+	A = \left[x: a_i < x_i \leq b_i : i = 1, \cdots, k\right]
+$$
+Now, define:
+$$
+	B = \left[x: a_i + \delta < x_i \leq b_i : i = 1, \cdots, k\right]
+$$
+Note, we assume that $a_i < b_i$ for this to work with $\delta$ small enough - and note, that is fine, because if $a_i = b_i$, then we immediately have $\mu(A) = 0$ via cancellations on $\Delta_A F$, and countable subadditivity is thus immediate as well. Note for $\delta$ small enough, we have:
+$$
+	\mu(A) - \epsilon < \mu(B)
+$$
+This is because $F$ is continuous from above, so take any $\delta$ approaching zero, and we have $\lim \mu(B_\delta) = \mu(A)$. Also, we have that $\mu(B) < \mu(A)$, via finite additivity. Note that $A$ contains $B$, and the closure of $B$:
+$$
+	\overline{B} = \left[x: a_i + \delta \leq x_i \leq b_i : i = 1, \cdots, k\right]
+$$
+Similarly, for each $u$ there is an $\ical^k$ a set:
+$$
+	B_u = \left[x: a_{iu} < x_i \leq b_{iu} + \delta_u : i = 1, \cdots, k\right]
+$$
+Such that:
+$$
+	\mu(B_u) < \mu(A_u) + \epsilon/2^u
+$$
+And $A_u$ is in the interior of $B_u$:
+$$
+	\mathring{B_u} = \left[x: a_{iu} < x_i < b_{iu} + \delta_u : i = 1, \cdots, k\right]
+$$
+And so, in total, we have:
+$$
+	\overline{B} \subset A \subseteq \bigcup_{u=1}^\infty A_u \subseteq \bigcup_{u=1}^\infty \mathring{B_u}
+$$
+Now, via Heine-Borel, we have closed rectangles are compact, and so every cover by open sets has a finite subcover. And so, there is some $n$ such that:
+$$
+	B \subset \overline{B} \subseteq \bigcup_{u=1}^n \mathring{B_u} \subset \bigcup_{u=1}^n B_u
+$$
+Note now, our Lemma 11.2 note applies, and so:
+$$
+	\mu(A) - \epsilon < \mu(B) \leq \sum_{u=1}^n \mu(B_u) < \sum_{u=1}^\infty \mu(A_u) + \epsilon
+$$
+As $\epsilon$ is arbitrary, we can take $\epsilon$ to zero, to find:
+$$
+	\mu(A) \leq \sum_{u=1}^\infty \mu(A_u)
+$$
+Thus, $\mu$, as defined, is finitely additive and countably subadditive on the semiring $\ical^k$. By Theorem 11.3, $\mu$ extends to a measure on $\rcal^k = \sigma(\ical^k)$. By Theorem 10.3, this measure is unique. Thus, we have proved the theorem. qed.
+
+\subsubsection{Strange Euclidean Sets}
+This is an extra section. It just goes over (note, at a very high level) the Banach Tarski theorem. Recall what congruent means - two shapes are the same size and shape. And they can be moved by rotation/reflection/translation to fit on one another. Ie, one can be obtained from the other via a non-singular linear transformation with determinant 1, or a translation. Take $A$ and $B$ are in $\R^k$, such that they can be decomposed into $A_1, \cdots, A_n$ and $B_1, \cdots, B_n$ where $A_i$ and $B_i$ are congruent. $A$ and $B$ are called \textit{congruent by dissection}. If all the pieces of $A_i$ and $B_i$ are borel sets, then of course:
+$$
+	\lambda_k(A) = \lambda_k(B)
+$$
+Via additivity, Theorem 12.1, and Theorem 12.2. But if nonmeasurable sets are allowed in the dissections, then something crazy happens. If $k \geq 3$, and if $A$ and $B$ are bounded sets in $\R^k$ and have nonempty interiors, then $A$ and $B$ are congruent by dissection. Ie, we can find nonmeasurable sets that are congruent, and dissect $A$ and $B$ in a disjoint union - even if $A$ and $B$ are completely different.
+\\\\
+This is usually illustrated this way: it is possible to break a solid ball the size of a pea into finitely many pieces, and then put them back together in such a way (after a congruent transformation) to get a solid ball the size of the sun.
+\\\\
+Note - the issue is, the pieces are not solids, but an infinite scattering of points - recall, this matches what a non measurable set it, like with Vitali's construction.
 
 \end{document}
 
