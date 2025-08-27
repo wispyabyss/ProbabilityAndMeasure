@@ -376,3 +376,5 @@
 \contentsline {paragraph}{Theorem 12.5 - Obtaining Measures on $\mathcal {R}^k$ from Functions on $\mathbb {R}^k$}{287}{section*.377}%
 \contentsline {paragraph}{Proof Of Theorem 12.5}{287}{section*.378}%
 \contentsline {subsubsection}{Strange Euclidean Sets}{292}{section*.379}%
+\contentsline {subsection}{Problems}{292}{section*.380}%
+\contentsline {subsubsection}{12.1 Translation Invariant Measures}{292}{section*.381}%

@@ -8545,6 +8545,39 @@ This is usually illustrated this way: it is possible to break a solid ball the s
 \\\\
 Note - the issue is, the pieces are not solids, but an infinite scattering of points - recall, this matches what a non measurable set it, like with Vitali's construction.
 
+\subsection{Problems}
+\subsubsection{12.1 Translation Invariant Measures} Suppose that $\mu$ is a measure on $\rcal^1$ that is finite for bounded sets and is translation-invariant: $\mu(A + x) = \mu(A)$. Show that $\mu(A) = a\lambda(A)$ for some $a \geq 0$. Extend to $\R^k$.
+\\\\
+First, note that length $1$ bounded intervals generate $\rcal^1$. We have that:
+$$
+	(a,\infty) = \bigcup_{k=1}^\infty (a + k - 1, a + k]
+$$
+Something similar for $(-\infty,b)$. We found in problem 11.5 that $(a,\infty),(-\infty,b)$ generate $\rcal^1$. And so, we have for $B$ the set of length one intervals, and $C$ the half infinite intervals:
+$$
+	B \subseteq C \implies
+	\sigma(B) \subseteq \sigma(C) = \rcal^1
+$$
+$$
+	C \subseteq \sigma(B) \implies \rcal^1 \subseteq \sigma(B) \implies
+	\rcal^1 = \sigma(B)
+$$
+Now, note that via translation invariance, for every length 1 interval $A \in B$, we have:
+$$
+	\mu(A) = a
+$$
+Note that $a\lambda(A)$ is a measure. We have that:
+$$
+	\mu(A) = a = a * 1 = a\lambda(A)
+$$
+For all $A \in B$.
+\\\\
+Note, I tried to make use of Theorem 10.3, but the length 1 intervals are not a $\pi$ system - an intersection could lead to a non length 1 interval. Anyway. Update $B$ to the bounded intervals - that is indeed a $\pi$ system. I think we can still conclude:
+$$
+	\mu(A) = a\lambda(A)
+$$
+For $A \in B$. I think - we can conclude Theorem 12.2 for our measure $\mu$ as well. I am going to go over it - but if it does apply to $\mu$ as well, we can note that scaling by $s$ an interval is a linear transformation $T$ with determinant $s$. Which would be helpful. Or, we can conclude that $\mu(0,1/n] = 1/n\mu(0,1]$. And use rational bounded intervals.
+
+
 \end{document}
 
 
