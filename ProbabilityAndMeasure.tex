@@ -8576,7 +8576,86 @@ $$
 	\mu(A) = a\lambda(A)
 $$
 For $A \in B$. I think - we can conclude Theorem 12.2 for our measure $\mu$ as well. I am going to go over it - but if it does apply to $\mu$ as well, we can note that scaling by $s$ an interval is a linear transformation $T$ with determinant $s$. Which would be helpful. Or, we can conclude that $\mu(0,1/n] = 1/n\mu(0,1]$. And use rational bounded intervals.
+\\\\
+Note - the rational intervals generate $\rcal^1$. The rational intervals are also a $\pi$ system. So, if $\mu(I) = a\lambda(I)$ for all rational intervals, then we can conclude that $\mu$ and $a\lambda$, as measures, are equal on all of $\rcal^1$ via the uniqueness of extension Theorem 10.3. As noted above, all length $1$ intervals $I = (a,a+1]$ for rational $a$ have the same measure - say $\mu(A) = a = a\lambda(A)$ - by translation invariance. Now, I will note that all intervals $I_n$ of length $1/n$ have measure:
+$$
+	\mu(I_n) = a/n = a \lambda(I_n)
+$$
+By translation invariance, we know the intervals:
+$$
+	(0,1/n], \cdots, (n-1/n,1]
+$$
+All have the same measure. Via countable additivity, we have:
+$$
+	n\mu(1,1/n] = \mu(0,1] \implies \mu(0,1/n] = a/n \implies
+	\mu(I_n) = a\lambda(I_n)
+$$
+Now, take any rational interval $A = (p_1/q_1,p_2/q_2]$. Take $n = q_1 * q_2$. We have $p_2q_1 - p_1q_2$ length $1/n$ intervals that partition $A$:
+$$
+	(p_1q_2/q_1q_2, (p_1q_2 + 1)/q_1q_2], \cdots,
+	((p_2q_1-1)/q_1q_2, p_2q_1/q_1q_2]
+$$
+Via countable additivity, we have:
+$$
+	\mu(A) = (p_2q_1 - p_1q_2)\mu(0,1/q_1q_2] =
+	a * \left[\frac{p_2q_1 - p_1q_2}{q_1q_2}\right] = a \left[\frac{p_2}{q_2} - \frac{p_1}{q_1}\right] = a\lambda(A)
+$$
+Thus, the equality holds over the rational intervals. Thus, if $\mu$ is a measure on $\rcal^1$ that is finite for bounded sets and is translation invariant, we have:
+$$
+	\mu(A) = a\lambda(A)
+$$
+For some $a \geq 0$. We can extend to $\R^k$ via examining rational rectangles. I guess we could use rational squares - we find $a$ by examining $\mu([0,1]^k)$, then we partition $[0,1]^k$ into $n^k$ squares $[0,1/n]^k$. Same overall argument, to get the same overall result.
 
+\subsubsection{12.2 Measure of a Borel Set is Greater than an Interval} Suppose that $A \in \rcal^1$, $\lambda(A) > 0$, and $0 < \theta < 1$. Show that there is a bounded open interval $I$ such that:
+$$
+	\lambda(A \cap I) \geq \theta \lambda(I)
+$$
+First, note that we can assume $\lambda(A)$ is finite. This is because the finite case proves the infinite case. Note that $(\R,\rcal^1,\lambda)$ contains no infinite atoms. This is because, we have:
+$$
+	A \cap [-n,n] \uparrow A \implies
+	\lim \lambda(A \cap [-n,n]) = \infty
+$$
+And so, there must be some subset $A_n = A \cap [-n,n] \subseteq A$ such that $0 < \lambda(A_n) < \infty$. This is because each $\lambda(A_n) < 2n < \infty$. Also, if each was zero, that would contradict the limit. Anyway, if we have prove the finite case, there for chosen $\lambda(A)$ infinite with $\theta$, we have a $A_n$ where $\lambda(A_n)$ is finite, and the finite case proves there is an $I$ such that:
+$$
+	\lambda(A \cap I) \geq \lambda(A_n \cap I) \geq \theta \lambda(I)
+$$
+So now, we assume $A$ is finite, and try and prove the statement. We can find an open $G$ such that:
+$$
+	A \subset G \text{ and } \lambda(A) \geq \theta\lambda(G)
+$$
+First note Theorem 12.3 - as $\lambda$ is a measure on $\rcal^1$ that is finite if $A \in \rcal^1$ is bounded, we have for $A \in \rcal^1$ and any $\epsilon > 0$, there is an open set $G$ such that $A \subseteq G$ and:
+$$
+	\lambda(G - A) < \epsilon
+$$
+Note - if $\lambda(A) < \infty$, we have $\lambda(G) = \lambda(A) + \lambda(G - A) = \lambda(A) + \epsilon < \infty$. So, we can break up the subtraction - for any $\epsilon$, we can find an open $G$ such that:
+$$
+	\lambda(G) - \lambda(A) < \epsilon \implies
+	\lambda(A) > \lambda(G) - \epsilon
+$$
+Choose $\epsilon$ small enough such that $\lambda(G) - \epsilon > \theta\lambda(G)$, which is possible as $0 < \theta < 1$. And so, we can indeed conclude that there is an open $G$ such that:
+$$
+	A \subset G \text{ and } \lambda(A) \geq \theta\lambda(G)
+$$
+Now, we note that every open set can be written as a disjoint union of open intervals $I_n$:
+$$
+	G = \bigcup_n I_n
+$$
+We always go over this proof - write two points in $G$ are in the same equivalence class if they are in an interval contained within $G$. There are only countably many such intervals, as each one contains a rational. Note that via countable additivity and $A \subseteq G \implies A \cap G = A$:
+$$
+	\sum_n \lambda\left[A \cap I_n\right] =
+	\lambda\left[A \cap \bigcup_n I_n\right] =
+	\lambda(A) \geq \theta\lambda\left[\bigcup_n I_n\right] =
+	\theta\sum_n \lambda(I_n)
+$$
+Note, if for each $I_n$, we have $\lambda(A \cap I_n) < \theta \lambda(I_n)$, then the above inequality would be contradicted. Thus, there is an $I_n$ such that:
+$$
+	\lambda(A \cap I_n) \geq \theta \lambda(I_n)
+$$
+We have thus shown that for $A \in \rcal^1$, $\lambda(A) > 0$, and $0 < \theta < 1$, there is a bounded (each $I_n$ must be bounded, or $G$ would have infinite measure) open interval $I$ such that:
+$$
+	\lambda(A \cap I) \geq \theta \lambda(I)
+$$
+qed.
 
 \end{document}
 

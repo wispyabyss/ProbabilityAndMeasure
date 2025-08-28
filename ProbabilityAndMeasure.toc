@@ -378,3 +378,4 @@
 \contentsline {subsubsection}{Strange Euclidean Sets}{292}{section*.379}%
 \contentsline {subsection}{Problems}{292}{section*.380}%
 \contentsline {subsubsection}{12.1 Translation Invariant Measures}{292}{section*.381}%
+\contentsline {subsubsection}{12.2 Measure of a Borel Set is Greater than an Interval}{294}{section*.382}%
