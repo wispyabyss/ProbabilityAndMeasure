@@ -8657,6 +8657,35 @@ $$
 $$
 qed.
 
+\subsubsection{12.3 Difference Set of a Positive Measure Borel Set Contains the Origin} If $A \in \rcal^1$ and $\lambda(A) > 0$, then the origin is interior to the difference set:
+$$
+	D(A) = \left[x - y: x,y \in A\right]
+$$
+I guess - this is kind of a density thing to me. The origin being in the \textit{interior} of the difference set implies that it has an interval around it - so, we have at least one set of points in $A$ that kind of has the thickness of an interval.
+\\\\
+Take $A \in \rcal^1$ such that $\lambda(A) > 0$. For $\theta = 3/4$, by the above problem 12.2, there is a bounded open interval $I$ such that:
+$$
+	\lambda(A \cap I) \geq \theta\lambda(I)
+$$
+Suppose that $|z| < \lambda(I)/2$. Note that both $A \cap I$ and $(A \cap I) + z$ are contained in an interval of length less than $3\lambda(I)/2$. This is because both are contained within $I \cup (I + \lambda(I)/2)$. Thus, the two sets cannot be disjoint, as both sets satisfy:
+$$
+	\lambda(A \cap I) \geq \frac{3}{4}\lambda(I) \quad\quad\quad
+	\lambda(A \cap I + z) \geq \frac{3}{4}\lambda(I)
+$$ 
+And disjoint would imply $\lambda((A \cap I) \cup (A \cap I) + z) \geq 3\lambda(I)/2$, which would contradict $\lambda((A \cap I) \cup (A \cap I) + z) < 3\lambda(I)/2$. So, there is some $x \in A \cap I$ such that $x \in (A \cap I) + z$, which implies $y = x - z \in A \cap I$. Thus, we have:
+$$
+	x - y = x - x + z = z \in D(A)
+$$
+And this is true for all $|z| < \lambda(I)/2$, which does imply zero has an interval around it in $D(A)$, which implies zero is in the interior of the difference set. qed.
+
+\subsubsection{12.4} The following constructions leads to a subset $H$ of the unit interval that is nonmeasurable in the extreme sense that its inner and outer Lebesgue measures are $0$ and $1$: $\lambda_*(H) = 0$ while $\lambda^*(H) = 1$. I will be filling in the details. The ideas are similar to the construction of the Vitali set. It will be convenient to work in $G = [0,1)$ - let $\oplus$ and $\ominus$ denote addition and subtraction modulo $1$ in $G$, which is a group with identity zero.
+
+\begin{enumerate}
+	\item Fix an irrational $\theta$ in $G$ and for $n = 0, \pm 1, \pm 2, \cdots$ let $\theta_n$ be $n\theta$ reduced modulo $1$. Show that $\theta_n \oplus \theta_m = \theta_{n + m}, \theta_n \ominus \theta_m = \theta_{n-m}$, and the $\theta_n$ are distinct. Show that $\left\{\theta_{2n} : n = 0, \pm 1, \cdots\right\}$ and $\left\{\theta_{2n + 1} : n = 0, \pm 1, \cdots\right\}$ are dense in $G$.
+	\\\\
+	So, we have a lot of stuff to prove. 
+\end{enumerate}
+
 \end{document}
 
 
