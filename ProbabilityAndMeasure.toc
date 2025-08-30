@@ -380,4 +380,4 @@
 \contentsline {subsubsection}{12.1 Translation Invariant Measures}{292}{section*.381}%
 \contentsline {subsubsection}{12.2 Measure of a Borel Set is Greater than an Interval}{294}{section*.382}%
 \contentsline {subsubsection}{12.3 Difference Set of a Positive Measure Borel Set Contains the Origin}{295}{section*.383}%
-\contentsline {subsubsection}{12.4}{296}{section*.384}%
+\contentsline {subsubsection}{12.4 Extreme NonMeasurable Sets in $\mathcal {R}$}{296}{section*.384}%

@@ -8678,12 +8678,62 @@ $$
 $$
 And this is true for all $|z| < \lambda(I)/2$, which does imply zero has an interval around it in $D(A)$, which implies zero is in the interior of the difference set. qed.
 
-\subsubsection{12.4} The following constructions leads to a subset $H$ of the unit interval that is nonmeasurable in the extreme sense that its inner and outer Lebesgue measures are $0$ and $1$: $\lambda_*(H) = 0$ while $\lambda^*(H) = 1$. I will be filling in the details. The ideas are similar to the construction of the Vitali set. It will be convenient to work in $G = [0,1)$ - let $\oplus$ and $\ominus$ denote addition and subtraction modulo $1$ in $G$, which is a group with identity zero.
+\subsubsection{12.4 Extreme NonMeasurable Sets in $\rcal$} The following constructions leads to a subset $H$ of the unit interval that is nonmeasurable in the extreme sense that its inner and outer Lebesgue measures are $0$ and $1$: $\lambda_*(H) = 0$ while $\lambda^*(H) = 1$. I will be filling in the details. The ideas are similar to the construction of the Vitali set. It will be convenient to work in $G = [0,1)$ - let $\oplus$ and $\ominus$ denote addition and subtraction modulo $1$ in $G$, which is a group with identity zero.
 
 \begin{enumerate}
 	\item Fix an irrational $\theta$ in $G$ and for $n = 0, \pm 1, \pm 2, \cdots$ let $\theta_n$ be $n\theta$ reduced modulo $1$. Show that $\theta_n \oplus \theta_m = \theta_{n + m}, \theta_n \ominus \theta_m = \theta_{n-m}$, and the $\theta_n$ are distinct. Show that $\left\{\theta_{2n} : n = 0, \pm 1, \cdots\right\}$ and $\left\{\theta_{2n + 1} : n = 0, \pm 1, \cdots\right\}$ are dense in $G$.
 	\\\\
-	So, we have a lot of stuff to prove. 
+	So, we have a lot of stuff to prove. First, I will tackle $\theta_n \oplus \theta_m = \theta_{n + m}$. This is essentially proving something like mod addition is additive. We have:
+	$$
+		n\theta = b_n + r_n \quad\quad\quad
+		m\theta = b_m + r_m
+	$$
+	For some $b_n,r_m \in \Z$, and $r_n,r_m \in [0,1]$. And so, we have:
+	$$
+		(n + m)\theta = n\theta + m\theta = (b_n + b_m) + (r_n + r_m)
+	$$
+	And so now, we have:
+	$$
+		\theta_{n + m} = (n + m)\theta \mod 1 = (b_n + b_m) + (r_n + r_m) \mod 1 = (r_n + r_m) \mod 1
+	$$
+	This is clear, as $(b_n + b_m)$ is an integer. Now, note that:
+	$$
+		\theta_n \oplus \theta_m = (r_n + r_m) \mod 1
+	$$
+	And so, both sides are equal. We similarly have $\theta_n \ominus \theta_m = \theta_{n-m}$. Now, we want to find that the $\theta_n$ are distinct. Assume for $n \neq m$, we have:
+	$$
+		\theta_n = \theta_m \implies
+		(n\theta \mod 1) = (m\theta \mod 1)
+	$$
+	This implies that:
+	$$
+		n\theta = b_n + r_n \quad\quad\quad m\theta = b_m + r_m
+	$$
+	For $b_n,b_m \in \Z$ and $r_n,r_m \in [0,1)$ and $r_n = r_m$. This implies:
+	$$
+		n\theta - m\theta = b_n - b_m \implies
+		\theta = \frac{b_n - b_m}{n - m}
+	$$
+	Which would imply $\theta$ is rational, which would be a contradiction. And so, each $\theta_n$ must be distinct. Finally, we want to show that both:
+	$$
+		\left\{\theta_{2n} : n = 0, \pm 1, \cdots\right\} \quad\quad\text{ and }\quad\quad
+		\left\{\theta_{2n + 1} : n = 0, \pm 1, \cdots\right\}
+	$$
+	Are dense in $G$. Recall, this means that for every $x \in G$, and every open interval containing $x$ in $G$, a member of both sets is in that interval. More simply, every open interval in $G$ has a nonzero intersection with the two sets above. Take $I = (a,b)$. We can restrict $a$ and $b$ to be rational - that is because, there is a rational interval contained within every interval, as the rationals are dense, and so if the sets meet the rational interval, they meet the bigger interval containing the rational interval as well. So:
+	$$
+		I = \left(\frac{p_1}{q_1}, \frac{p_2}{q_2}\right)
+	$$
+	Also, I think we can maybe prove for $\theta$ rational first - as we have that the rationals are dense, and we can take a rational close enough to our irrational. Prove something like that. Actually no, I think the rationals might repeat, because for $a/b$, we have $a(b + a)/b = ab/b + a/b = a + a/b$, for which $\mod 1$ would be $a/b$. 
+	\\\\
+	Maybe consider it like this. Assume that your set hits:
+	$$
+		(0, 1/n]
+	$$
+	Then, your set must also hit:
+	$$
+		(1/n,2/n], \cdots, (n-1/n,n/n]
+	$$
+	As we can just take $\theta_m \in (0,1/n]$, and multiply it by $2,3,4,\cdots,n$ (as $\theta_{km} = \theta_m \oplus \cdots \oplus \theta_m$, which becomes normal plus as $\theta_m$ is a remainder within $(0,1/n]$). If I can show something similar - that being within $(k/n,k+1/n]$ implies within each of the other sets (mod 1), then I think we are there - as we can just take $n$ arbitrarily large, partition $(0,1]$ such that one of the sets is in $I$. 
 \end{enumerate}
 
 \end{document}
