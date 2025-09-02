@@ -8587,7 +8587,7 @@ $$
 $$
 All have the same measure. Via countable additivity, we have:
 $$
-	n\mu(1,1/n] = \mu(0,1] \implies \mu(0,1/n] = a/n \implies
+	n\mu(0,1/n] = \mu(0,1] \implies \mu(0,1/n] = a/n \implies
 	\mu(I_n) = a\lambda(I_n)
 $$
 Now, take any rational interval $A = (p_1/q_1,p_2/q_2]$. Take $n = q_1 * q_2$. We have $p_2q_1 - p_1q_2$ length $1/n$ intervals that partition $A$:
@@ -8615,7 +8615,7 @@ $$
 	A \cap [-n,n] \uparrow A \implies
 	\lim \lambda(A \cap [-n,n]) = \infty
 $$
-And so, there must be some subset $A_n = A \cap [-n,n] \subseteq A$ such that $0 < \lambda(A_n) < \infty$. This is because each $\lambda(A_n) < 2n < \infty$. Also, if each was zero, that would contradict the limit. Anyway, if we have prove the finite case, there for chosen $\lambda(A)$ infinite with $\theta$, we have a $A_n$ where $\lambda(A_n)$ is finite, and the finite case proves there is an $I$ such that:
+And so, there must be some subset $A_n = A \cap [-n,n] \subseteq A$ such that $0 < \lambda(A_n) < \infty$. This is because each $\lambda(A_n) < 2n < \infty$. Also, if each was zero, that would contradict the limit. Anyway, if we have provde the finite case, there for chosen $\lambda(A)$ infinite with $\theta$, we have a $A_n$ where $\lambda(A_n)$ is finite, and the finite case proves there is an $I$ such that:
 $$
 	\lambda(A \cap I) \geq \lambda(A_n \cap I) \geq \theta \lambda(I)
 $$
@@ -8627,7 +8627,7 @@ First note Theorem 12.3 - as $\lambda$ is a measure on $\rcal^1$ that is finite 
 $$
 	\lambda(G - A) < \epsilon
 $$
-Note - if $\lambda(A) < \infty$, we have $\lambda(G) = \lambda(A) + \lambda(G - A) = \lambda(A) + \epsilon < \infty$. So, we can break up the subtraction - for any $\epsilon$, we can find an open $G$ such that:
+Note - if $\lambda(A) < \infty$, we have $\lambda(G) = \lambda(A) + \lambda(G - A) < \lambda(A) + \epsilon < \infty$. So, we can break up the subtraction - for any $\epsilon$, we can find an open $G$ such that:
 $$
 	\lambda(G) - \lambda(A) < \epsilon \implies
 	\lambda(A) > \lambda(G) - \epsilon
@@ -8733,7 +8733,40 @@ And this is true for all $|z| < \lambda(I)/2$, which does imply zero has an inte
 	$$
 		(1/n,2/n], \cdots, (n-1/n,n/n]
 	$$
-	As we can just take $\theta_m \in (0,1/n]$, and multiply it by $2,3,4,\cdots,n$ (as $\theta_{km} = \theta_m \oplus \cdots \oplus \theta_m$, which becomes normal plus as $\theta_m$ is a remainder within $(0,1/n]$). If I can show something similar - that being within $(k/n,k+1/n]$ implies within each of the other sets (mod 1), then I think we are there - as we can just take $n$ arbitrarily large, partition $(0,1]$ such that one of the sets is in $I$. 
+	As we can just take $\theta_m \in (0,1/n]$, and multiply it by $2,3,4,\cdots,n$ (as $\theta_{km} = \theta_m \oplus \cdots \oplus \theta_m$, which becomes normal plus as $\theta_m$ is a remainder within $(0,1/n]$). If I can show something similar - that being within $(k/n,k+1/n]$ implies within each of the other sets (mod 1), then I think we are there - as we can just take $n$ arbitrarily large, partition $(0,1]$ such that one of the sets is in $I$.
+	\\\\
+	Let's try this. Split $G$ into finitely many intervals of length less than $\epsilon > 0$ - one of them must contain points $\theta_{2n}$ and $\theta_{2m}$, with $\theta_{2n} < \theta_{2m}$. This is because each $\theta_n$ is distinct, and so we are putting an infinite amount of points into a finite number of intervals. If the number of intervals is $k$, consider $\theta_{2 * 1}, \cdots, \theta_{2 * 2k}$.
+	\\\\
+	If $k = m - n$, then $0 < \theta_{2m} - \theta_{2n} = \theta_{2m} \ominus \theta_{2n} = \theta_{2k} < \epsilon$. First step is obvious, second step is because the subtraction is entirely within $[0,1]$, and third step is because they share an interval. The points $\theta_{2kl}$ for $1 \leq l \leq \floor{\theta_{2k}^{-1}}$ form a chain - in which the distance from each to the next is less than $\epsilon$, the first is to the left of $\epsilon$, and the last is to the right of $1 - \epsilon$.
+	\\\\
+	Ahhh! This is essentially what I wanted to prove above - for each irrational, we have a $\theta_{2k}$ between $(0,1/n]$ - and so, there is a $2kl$ inside of each of the intervals: 
+	$$
+		(0, 1/n], (1/n,2/n], \cdots, (n-1/n,n/n]
+	$$
+	Clearly, that implies there is a $\theta_{2kl}$ inside of \textit{any} interval $I$. This proves the first set is dense, and the second set is clearly dense via a similar argument as well.
+	
+	\item Take $x$ and $y$ to be equivalent if $x \ominus y$ lies in $\left\{\theta_n: n = 0, \pm 1, \cdots\right\}$, which is a subgroup of $G$. Note - $G$ is a group w/ $\oplus$, with associativity clear, identity $0$, and inverse element negative $y = 1 - x \in G$. And by the above, $\oplus$ stays inside of $\left\{\theta_n: n = 0, \pm 1, \cdots\right\}$, $0$ is in the set, and the inverse would just be $\theta_{-n}$, as $\theta_{-n} + \theta_n = \theta_{-n + n} = \theta_0 = 0$.
+	\\\\
+	Let $S$ contain one representative from each equivalence class (each irrational defines an equivalence class with a countable number of other irrationals). Show that:
+	$$
+		G = \bigcup_n (S \oplus \theta_n)
+	$$
+	Where the union is disjoint. Put:
+	$$
+		H = \bigcup_n (S \oplus \theta_{2n})
+	$$
+	And show that:
+	$$
+		G - H = H \oplus \theta
+	$$
+	\textbf{Problem Start}: Note, it is clear that $\bigcup_n (S \oplus \theta_n)$ is a disjoint union. Take $x \in (S \oplus \theta_n)$ and $x \in (S \oplus \theta_m)$. Note, as adding $\theta_n$ stays inside the subgroup - we have that $x = \theta_k \oplus \theta_n = \theta_{k + n}$ and $x = \theta_k + \theta_m = \theta_{k + m}$ for some irrational $\theta$. Thus, we must have $\theta_{k + m} = \theta_{k + n} \implies m = n$, which is a contradiction. So, we have a disjoint union. Now, we want to show this union equals $G$. Clearly, we have:
+	$$
+		G \supseteq \bigcup_n (S \oplus \theta_n)
+	$$
+	So, we go the other direction. Take $x \in G$. Assume $x$ is not in the union. So, $x \neq G$ clearly. We have that every interval containing $x$ intersects with some $(S \oplus \theta_n)$. Note - I think the definition $\left\{\theta_n: n = 0, \pm 1, \cdots\right\}$ allows for rational $\theta$ as well - as the multiplication $k\theta$ for irrational $\theta$ would always be rational. Anyway, in this case, I think it is clear that $x \in [x]$, the corresponding equivalence class, and so we get equality.
+	\\\\
+	Note - still confused by this. I think, perhaps we have that $S$ takes one representative from each coset? These would be sets of the form $g \in G$, $gH = \{g \oplus h : h \in H\}$. The question also includes (each coset) when it mentioned equivalence classes. I think this would allow for rationals. As, if $g$ is rational, and $n = 0$, we have $\theta_0 = 0 \implies g \oplus \theta_0 = g$. And, we fix a single irrational $\theta$. I think this is how it must be done, actually. So, we will pick up from here.
+	
 \end{enumerate}
 
 \end{document}
