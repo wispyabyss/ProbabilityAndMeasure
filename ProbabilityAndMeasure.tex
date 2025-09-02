@@ -8766,8 +8766,111 @@ And this is true for all $|z| < \lambda(I)/2$, which does imply zero has an inte
 	So, we go the other direction. Take $x \in G$. Assume $x$ is not in the union. So, $x \neq G$ clearly. We have that every interval containing $x$ intersects with some $(S \oplus \theta_n)$. Note - I think the definition $\left\{\theta_n: n = 0, \pm 1, \cdots\right\}$ allows for rational $\theta$ as well - as the multiplication $k\theta$ for irrational $\theta$ would always be rational. Anyway, in this case, I think it is clear that $x \in [x]$, the corresponding equivalence class, and so we get equality.
 	\\\\
 	Note - still confused by this. I think, perhaps we have that $S$ takes one representative from each coset? These would be sets of the form $g \in G$, $gH = \{g \oplus h : h \in H\}$. The question also includes (each coset) when it mentioned equivalence classes. I think this would allow for rationals. As, if $g$ is rational, and $n = 0$, we have $\theta_0 = 0 \implies g \oplus \theta_0 = g$. And, we fix a single irrational $\theta$. I think this is how it must be done, actually. So, we will pick up from here.
+	\\\\
+	\textbf{Problem Start 2} Define:
+	$$
+		AB = \left\{\theta_n: n = 0, \pm 1, \cdots\right\}
+	$$
+	For some irrational number $\theta$. Recall, $B$ is a subgroup of $G$ - we talked about this above. Define the set:
+	$$
+		[x] = xB
+	$$
+	Which is the left coset of the subgroup of $B$. Recall from group theory - left cosets are equivalence classes. This is equal to the equivalence relation:
+	$$
+		a \sim b \Leftrightarrow a^{-1}b \in B \Leftrightarrow
+		(1 - a) \oplus b \in B \Leftrightarrow b \ominus a \in B
+	$$
+	Which is the statement in the problem (note, both subtractions differ by 1, modulo 1, so we get the equality). So, if we let $S$ take one element from each of the distinct left cosets, we want to show:
+	$$
+		G = \bigcup_n (S \oplus \theta_n)
+	$$
+	For a disjoint union. Equality is clear - as we take $x \in G$, note that for some $y \in [x]$, we have $y \in S$, and definitionally, we note that there is some $\theta_n$ such that $x = y \oplus \theta_n$, which implies $x$ is in the union. And so, we just need to show it is a disjoint union. Again, similar argument as when we were doing the problem incorrectly. If not disjoint, there is an $x \in S \oplus \theta_n$ and $x \in S \oplus \theta_m$. As $[x]$ belongs to the same equivalence class, that tells us $x = y \oplus \theta_n = y \oplus \theta_m \implies m = n$. And so, we have that the union is disjoint as well.
+	\\\\
+	We now move onto the final part of the problem. Define:
+	$$
+		H = \bigcup_n (S \oplus \theta_{2n})
+	$$
+	And show that:
+	$$
+		G - H = H \oplus \theta
+	$$
+	I think it is similar to showing that $H$ and $H \oplus \theta$ are disjoint, and their union equals $G$. Clearly, their union equals $G$, as:
+	$$
+		H \cup H \oplus \theta =
+		\bigcup_n (S \oplus \theta_{2n}) \cup \bigcup_n (S \oplus \theta_{2n} \oplus \theta) =
+		\bigcup_n (S \oplus \theta_{2n}) \cup \bigcup_n (S \oplus \theta_{2n + 1}) =
+		\bigcup_n (S \oplus \theta_n) = G
+	$$
+	And now, we just have to show that they are disjoint. Well, if $x \in H$, and $x \in H \oplus \theta$, then we have:
+	$$
+		x = y + \theta_{2n} \quad\quad\quad
+		x = y + \theta_{2m + 1}
+	$$
+	Again, this would imply $2n = 2m + 1$. However, this is a contradiction, as for integer $m$ and $n$, this implies an even number equals an odd number, which is not possible. And so, we cannot have an $x$ in both sets, and so they are disjoint. Thus, we can conclude:
+	$$
+		G - H = H \oplus \theta
+	$$
+	
+	\item Suppose that $A$ is a Borel set contained in $H$. If $\lambda(A) > 0$, then $D(a)$ contains an interval $(0,\epsilon)$; but then some $\theta_{2k + 1}$ lies in $(0,\epsilon) \subset D(A) \subset D(H)$, and so $\theta_{2k + 1} = h_1 - h_2 = h_1 \ominus h_2 = (s_1 \oplus \theta_{2n_1}) \ominus (s_2 \oplus \theta_{2n_2})$ for some $h_1,h_2$ in $H$ and some $s_1,s_2$ in $S$. Deduce that $s_1 = s_2$ and obtain a contradiction. Conclude that $\lambda_*(H) = 0$.
+	\\\\
+	We have that:
+	$$
+		s_1 \ominus s_2 = \theta_{2k + 1} \ominus \theta_{2n_1} \oplus \theta_{2n_2} = \theta_{2k+1} \ominus \theta_{2(n_1-n_2)} =
+		\theta_{2(k + n_1 - n_2) + 1}
+	$$
+	This is just via using associativity rules of the group operation. We note that $s_1$ and $s_2$ must be in the same subgroup - as the difference between them is in $B$, ie a multiple of our original irrational. However, as $s_1$ and $s_2$ are both a member of $S$ - which only contains one member from each subgroup - we have that $s_1 = s_2$. Thus, we have:
+	$$
+		0 = \theta_{2(k + n_1 - n_2) + 1} \implies
+		0 = 2(k + n_1 - n_2) + 1
+	$$
+	This is a contradiction, as we cannot have an odd number equal to zero. And so, our first statement is incorrect. We cannot have a Borel set contained in $H$, with $\lambda(A) > 0$. So, all Borel sets contained in $H$ must satisfy:
+	$$
+		\lambda(A) = 0
+	$$
+	Note, this implies:
+	$$
+		\lambda_*(A) = 0
+	$$
+	This comes from problem 3.2, where we found for a probability measure $P$ on a field $\fcal_0$, for every subset of $\Omega$:
+	$$
+		P^*(A) = \inf\left[P(C): A \subset C, C \in \fcal\right]
+	$$
+	$$
+		P_*(A) = \sup\left[P(C): C \subset A, C \in \fcal\right]
+	$$
+	Note, we can extend the argument to $\lambda$, to find:
+	$$
+		\lambda^*(A) = \inf\left[\lambda(C): A \subset C, C \in \rcal^1\right]
+	$$
+	$$
+		\lambda_*(A) = \sup\left[\lambda(C): C \subset A, C \in \rcal^1\right]
+	$$
+	And so, we have $\lambda_*(H) = 0$, as the supremum of a set containing only zeros is zero.
+	
+	\item Show that $\lambda_*(H \oplus \theta) = 0$ and $\lambda^*(H) = 1$.
+	\\\\
+	I think it is clear, via translation invariance, that $\lambda_*(H) = \lambda_*(H \oplus \theta) = 0$. At the very least, we can make a similar argument to above. For $\lambda^*(H)$ - note that:
+	$$
+		\lambda_*(G - H) = \lambda_*(H \oplus \theta) = 0
+	$$
+	$$
+		\implies 1 - \lambda^*((G - H)^c)) = 0 \implies
+		\lambda^*((G - H)^c)) = 1 \implies
+		\lambda^*(H) = 1
+	$$
+	This comes from noting that $G - H = H^c$, and so $(G - H)^c = (H^c)^c = H$. 
 	
 \end{enumerate}
+
+\subsubsection{12.5 Extreme NonMeasurable Sets in $\rcal$ - 2} The construction here gives sets $H_n$ such that $H_n \uparrow G$ and $\lambda_*(H_n) = 0$. If $J_n = G - H_n$, then $J_n \downarrow \emptyset$ and $\lambda^*(J_n) = 1$.
+\begin{enumerate}
+	\item Let $H_n = \bigcup_{k=-n}^n (S \oplus \theta_k)$, so that $H_n \uparrow G$. show that the sets $H_n \oplus \theta_{(2n + 1)v}$ are disjoint for different $v$.
+	\\\\
+	So, it is clear $H_n \uparrow G$, and $\lambda_*(H_n) \leq \lambda_*(H) = 0$. We just need to show the disjoint part. Well, note that $H_n \oplus \theta_{(2n_1)v}$ is just sets $S \oplus \theta_k$, for $k = \{-n, \cdots, -1, 0, 1, \cdots, n\} + (2n + 1)v$. For each $v$, this is a different disjoint subset of $k$, (say $k = 1$, then our set looks like $\{n + 1, \cdots, 3n + 1\}$, etc). And so clearly, each $H_n \oplus \theta_{(2n + 1)v}$ is disjoint for different integer $v$.
+
+	\item Suppose that $A$ is a Borel set contained in $H_n$. Show that $A$ and indeed all the $A \oplus \theta_{(2n + 1)v}$ have Lebesgue measure 0. To be honest - I'm just going to use the monotonicity of the outer measure, which just gives all of these sets are subsets of some $H_n$, which has lower measure zero, which transfers to the lower measure, and thus measure, of $A$.
+\end{enumerate}
+
 
 \end{document}
 
