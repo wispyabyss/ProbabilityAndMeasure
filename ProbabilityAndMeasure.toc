@@ -382,3 +382,4 @@
 \contentsline {subsubsection}{12.3 Difference Set of a Positive Measure Borel Set Contains the Origin}{295}{section*.383}%
 \contentsline {subsubsection}{12.4 Extreme NonMeasurable Sets in $\mathcal {R}$}{296}{section*.384}%
 \contentsline {subsubsection}{12.5 Extreme NonMeasurable Sets in $\mathcal {R}$ - 2}{302}{section*.385}%
+\contentsline {subsubsection}{12.10 $k$ dimensional analogue of Specifying Measures}{303}{section*.386}%

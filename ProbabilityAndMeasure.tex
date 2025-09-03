@@ -8871,6 +8871,57 @@ And this is true for all $|z| < \lambda(I)/2$, which does imply zero has an inte
 	\item Suppose that $A$ is a Borel set contained in $H_n$. Show that $A$ and indeed all the $A \oplus \theta_{(2n + 1)v}$ have Lebesgue measure 0. To be honest - I'm just going to use the monotonicity of the outer measure, which just gives all of these sets are subsets of some $H_n$, which has lower measure zero, which transfers to the lower measure, and thus measure, of $A$.
 \end{enumerate}
 
+\subsubsection{12.10 $k$ dimensional analogue of Specifying Measures} Before I state the problem, recall that if $\mu$ is a measure on $\rcal^1$ that assigns finite measures to a bounded set, we could define a real finite function $F$ by:
+$$
+	F(x) = \begin{cases}
+	\mu(0,x] & \text{ if $x \geq 0$}\\
+	-\mu(x,0] & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+This was continuous from above, and satisfied $\mu(a,b] = F(b) - F(a)$. For a finite $\mu$, we could standardize $F$ with:
+$$
+	F(x) = \mu(-\infty,x]
+$$
+This was the cumulative distribution function. This gave rise to Theorem 12.4, which was a special case of Theorem 12.5, which we proved. 12.4 said - if $F$ is a nondecreasing, right-continuous real function on the line, there exists on $\rcal^1$ a unique measure $\mu$ satisfying $\mu(a,b] = F(b) - F(a)$ for all $a$ and $b$. Theorem 12.5 said - if there was a real function $F$ on $\R^k$ that is continuous from above (ie, $x_n \to x$, and each coordinate is nondecreasing) and satisfies $\Delta_AF \geq 0$ for bounded rectangles $A$, then there exists a unique measure $\mu$ on $\rcal^k$ satisfying $\mu(A) = \Delta_AF$ for all bounded rectangles $A$.
+\\\\
+Now note - $\mu(A) = \Delta_AF$ makes sense, if we take $F(x) = \mu(S_x)$, for the half infinite rectangle $S_x$ that has top vertex at $x \in \R^k$. Then, $\Delta_A F$ subtracts out the other rectangles, giving the correct definition. However, this requires $\mu$ to be finite on half infinite intervals - ie, this is the analogue of $F(x) = \mu(-\infty,x]$. We want the analogue of the other $F(x)$, in $\R^k$. I think this problem gives that analogue.
+\\\\
+\textbf{Problem Part 1:} Let $I_t$ be $(0,t]$ for $t \geq 0$ and $(t,0]$ for $t \leq 0$, and let $A_x = I_{x_1} \times \cdots \times I_{x_k}$. Let $\varphi(x)$ be $+1$ or $-1$ according as the number of $i$, $1 \leq i \leq k$, for which $x_i < 0$ is even or odd. Show that, if $F(x) = \varphi(x)\mu(A_x)$, then:
+$$
+	\mu(A) = \Delta_A F
+$$
+Holds for bounded rectangles $A$.
+\\\\
+We will go from the right side to the left side. We have:
+$$
+	\Delta_A F = \sum_x \sgn_A(x) \cdot F(x) =
+	\sum_x \sgn_A(x) \varphi(x) \mu(A_x)
+$$
+Where $x$ are the vertices of $A$. Note, if $A$ is a bounded rectangle, where in each dimension, $a_i < 0$ and $b_i > 0$, this is just the sum of measures of a partition of $A$ around the origin - see the picture:
+\begin{center}
+\includegraphics[width=0.8\textwidth]{rec_diff_1.jpg}
+\end{center}
+The trickier part is if $A$ is a bounded rectangle, and either $0 \leq a_i < b_i$, or $a_i < b_i \leq 0$. However, the cancellations should still work out:
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{rec_diff_2.jpg}
+\end{center}
+I guess the difficult part is generalizing this argument. I think, consider $A = [a_1,b_1] \times \cdots [a_n,b_n]$. Each interval $[a_i,b_i]$ can be expressed as:
+$$
+	[a_i,b_i] = I_{a_i} \cup I_{b_i} \text{ or } = I_{b_i} - I_{a_i} \text{ or } = I_{a_i} - I_{b_i}
+$$
+Corresponding to whether or not $a_i,b_i$ are positive and negative, both positive, or both negative. We then consider $2^k$ rectangles
+$$
+	A_x = I_{x_1} \times \cdots \times I_{x_k}
+$$
+Where each $x_i$ is either $a_i$ or $b_i$. At a high level - we know, at least via the pictures - there is a partition of the vertices - $P$ and $Q$, such that if $x \in P$, we want to add the measure of $A_x$, and if $x \in Q$, we want to remove the measure of $A_x$, to get the measure of $A$ - something like:
+$$
+	\mu(A) = \sum_{x \in P} \mu(A_x) - \sum_{x \in Q} \mu(A_x)
+$$
+the question is - does $\sgn_A(x) \varphi(x)$ being positive imply $x \in P$, and $\sgn_A(x) \varphi(x)$ being negative imply $x \in Q$? Well - consider $A_x$. I think $\sgn_A(x) \varphi(x)$ is positive if $A_x$ intersects with $A$, and negative if it doesn't. This is actually incorrect - I think there is a case where it is positive, and we want to add back a section we double subtracted.
+\\\\
+I'm going to stick with intuition on this one. Thought about it for a while, couldn't really think of how to prove it rigorously. Other than, maybe going case by case?
+\\\\
+\textbf{Problem Part 2:} Call $F$ degenerate if it is a function of some $k-1$ of the coordinates, the requirement in the case $k = 1$ being that $F$ is constant. Show that $\Delta_A F = 0$ for every bounded rectangle if and only if $F$ is a finite sum of degenerate functions - $\mu(A) = \Delta_AF$ determines $F$ to within addition of a function of this sort.
 
 \end{document}
 
