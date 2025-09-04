@@ -8922,6 +8922,99 @@ the question is - does $\sgn_A(x) \varphi(x)$ being positive imply $x \in P$, an
 I'm going to stick with intuition on this one. Thought about it for a while, couldn't really think of how to prove it rigorously. Other than, maybe going case by case?
 \\\\
 \textbf{Problem Part 2:} Call $F$ degenerate if it is a function of some $k-1$ of the coordinates, the requirement in the case $k = 1$ being that $F$ is constant. Show that $\Delta_A F = 0$ for every bounded rectangle if and only if $F$ is a finite sum of degenerate functions - $\mu(A) = \Delta_AF$ determines $F$ to within addition of a function of this sort.
+\\\\
+I'm just going to try and prove that if $F$ is degenerate, then $\Delta_A F = 0$ for every bounded rectangle. This should be clear - as we can just pair upper/lower coordinates on the degenerate point, and the sum should be zero. Define:
+$$
+	A = \left[x: a_i < x_i \leq b_i : i = 1, \cdots, k\right]
+$$
+We have:
+$$
+	\Delta_A(F) = \sum_{x_1 = a_1,b_1} \cdots \sum_{x_k = a_k,b_k} \sgn_A(x_1, \cdots, x_k) F(x_1, \cdots, x_k)
+$$
+Note, the order of a finite sum doesn't matter via commutativity. Let $F$ be degenerate in the $i$ dimension - ie, $F$ doesn't change with changes in the $ith$ coordinate. Rewrite the sum as:
+$$
+	= \sum_{x_1 = a_1,b_1} \cdots \sum_{x_k = a_k,b_k} 
+	F(x_1, \cdots, x_k) \left[\sgn_A(x_1, \cdots, a_i, \cdots, x_k) + \sgn_A(x_1, \cdots, b_i, \cdots, x_k)\right]
+$$
+Where the sums on the left don't include the $x_i$ sum. Note that the $\sgn_A$ is opposite signs, when only one coordinate is changed, and so the above equals:
+$$
+	= \sum_{x_1 = a_1,b_1} \cdots \sum_{x_k = a_k,b_k} 
+	F(x_1, \cdots, x_k) \left[0\right] = 0
+$$
+
+\subsubsection{12.11} Let $G$ be a nondecreasing, right-continuous function on the line, and put $F(x,y) = \min\{G(x),y\}$. Show that $F$ satisfies the conditions of Theorem 12.5, that the curve $C = \left[(x,G(x)) : x \in \R^1\right]$ supports the corresponding measure, and that $\lambda_2(C) = 0$.
+\\\\
+If $\mu$ is our resultant measure, to show that $C$ supports it, we want to show $\mu(C) = 1$. First, we will prove that $F: \R^2 \to \R$ satisfies the conditions for Theorem 12.5. We need $F$ is continuous from above, and satisfies $\Delta_AF \geq 0$ for bounded rectangles $A$. Take $(x_i,y_i) \to (x,y)$, where $x_i \downarrow x$ and $y_i \downarrow y$. To show continuity from above, we need:
+$$
+	\lim_i F(x_i,y_i) = F(x,y)
+$$
+Note, $\min$ is a continuous function. And so:
+$$
+	\lim_i F(x_i,y_i) = \lim_i \min\{G(x_i),y_i\} =
+	\min\{\lim_i G(x_i), \lim_i y_i\} = \min\{G(x),y\} = F(x,y)
+$$
+That is one part. Take a bounded rectangle $A$. Examine:
+$$
+	\Delta_AF =
+	\sum_{x_i = a_1,b_1} \sum_{y_i = a_2,b_2} \sgn_A(x_i,y_i)F(x_i,y_i)
+$$
+$$
+	= F(b_1,b_2) - F(a_1,b_2) - F(b_1,a_2) + F(a_1,a_2)
+$$
+$$
+	= \min\{G(b_1),b_2\} - \min\{G(a_1),b_2\} - \min\{G(b_1),a_2\} + \min\{G(a_1),a_2\}
+$$
+We have some cases. If $G(b_1) \geq b_2$, we have $G(b_1) \geq a_2$. So then, the above becomes:
+$$
+	(b_2 - a_2) + \min\{G(a_1),a_2\} - \min\{G(a_1),b_2\}
+$$
+Note, if $G(a_1) \leq a_2$, the above is nonnegative. If $a_2 \leq G(a_1) \leq b_2$, then we have $(b_2 - a_2) - (b_2 - G(a_1)$, which is still nonnegative. Finally, if $b_2 \leq G(a_1)$, the above is zero. So in all cases, $\Delta_AF \geq 0$ if $G(b_1) \geq b_2$. You can similarly analyze if $G(b_1) \leq b_2$. Anyway, we do have for all bounded rectangles $A$:
+$$
+	\Delta_AF \geq 0
+$$
+So, we can make use of Theorem 12.5. There exists a unique measure $\mu$ on $\rcal^2$ satisfying $\mu(A) = \Delta_AF$ for bounded rectangles $A \in \rcal^2$. We now want to calculate:
+$$
+	\mu(C)
+$$
+All I can really think of is describing $C$ as a union of open rectangles, and making use of continuity from above. Say we partition $\R$ into the intervals of length $1/n$, starting from $0$. Let $t_0 = 0, t_1 = 1/n$, etc, and $s_0 = 0, s_1 = -1/n$, etc. We have:
+$$
+	C \subseteq A_n = \left[\bigcup_{i=0}^n [t_i, t_{i+1}] \times [G(t_i), G(t_{i+1})]\right]
+	\cup
+	\left[\bigcup_{i=0}^n [s_{i+1}, s_i] \times [G(s_{i+1}), G(s_i)]\right]
+$$
+Where $A_n$ refers to the intervals of being length $n$. I think it is clear that:
+$$
+	A_1 \supseteq A_2 \supseteq A_3 \supseteq \cdots
+$$
+My one question is - do we have:
+$$
+	C = \bigcap_{n=1}^\infty A_n
+$$
+Clearly, we have $\subseteq$. So we need the other direction. I think one issue is - given that $G$ is right continuous, I think our intersection contains any vertical line segments that might appear in jump discontinuities. Let us first assume that $G$ is continuous. In which case, I think it is clear that:
+$$
+	C \supseteq \bigcap_{n=1}^\infty A_n
+$$
+As take an $x \in \bigcap_{n=1}^\infty A_n$. Clearly, it is a part of an infinite number of $[a_n/n,(a_n+1)/n] \times  [G(a_n/n), G((a_n+1)/n)]$ rectangles (assume positive wlog). Note, we can find a subsequence of $b_n, G(b_n)$ of these interval edges, where $b_n$ is decreasing, which implies $x = \lim_n (b_n,G(b_n)) \implies x \in G$. Now, for the jump discontinuity case - I think from each $A_n$, we just remove the intervals where $[t_i,t_{i+1}]$ contains a jump discontinuity. Note, this can be done, because given that $G$ is monotone, it can only have a countable amount of jump discontinuities. Take a look at Calculus on Manifolds, like problem 1-30. Not a proof, but I know I have proved this before.
+\\\\
+So now, let us look at the measure of $A_n$. If we prove:
+$$
+	\mu(A_n^c) = 0
+$$
+Because then, we would have:
+$$
+	\mu(C^c) = \mu\left[\left[\bigcap_{n=1}^\infty A_n\right]^c\right] =
+	\mu\left[\bigcup_{n=1}^\infty A_n^c\right] = 0
+$$
+And this is actually the correct definition of support - that the measure of the complement of the set is zero. Note - if $\mu$ was a probability measure, we could just conclude this is $\mu(C) = 1$, which is where my confusion from earlier came. Now, the issue is - $A_n^c$, visually, would be like a bunch of unbounded sets, going upward. I think we just need to prove the measure of each of these unbounded rectangles is zero. I think, a starting point is - if $A$ bounded rectangle is completely below the line $C$, and we examine:
+$$
+	\mu(A) = \Delta_AF =
+	\min\{G(b_1),b_2\} - \min\{G(a_1),b_2\} - \min\{G(b_1),a_2\} + \min\{G(a_1),a_2\}
+$$
+I believe it simplifies to:
+$$
+	b_2 - b_2 - a_2 + a_2 = 0
+$$
+We will carry on from there next time.
 
 \end{document}
 
