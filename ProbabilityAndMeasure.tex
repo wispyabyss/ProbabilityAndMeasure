@@ -8942,7 +8942,7 @@ $$
 	F(x_1, \cdots, x_k) \left[0\right] = 0
 $$
 
-\subsubsection{12.11} Let $G$ be a nondecreasing, right-continuous function on the line, and put $F(x,y) = \min\{G(x),y\}$. Show that $F$ satisfies the conditions of Theorem 12.5, that the curve $C = \left[(x,G(x)) : x \in \R^1\right]$ supports the corresponding measure, and that $\lambda_2(C) = 0$.
+\subsubsection{12.11 Measures On $\rcal^2$ Supported By Curves} Let $G$ be a nondecreasing, right-continuous function on the line, and put $F(x,y) = \min\{G(x),y\}$. Show that $F$ satisfies the conditions of Theorem 12.5, that the curve $C = \left[(x,G(x)) : x \in \R^1\right]$ supports the corresponding measure, and that $\lambda_2(C) = 0$.
 \\\\
 If $\mu$ is our resultant measure, to show that $C$ supports it, we want to show $\mu(C) = 1$. First, we will prove that $F: \R^2 \to \R$ satisfies the conditions for Theorem 12.5. We need $F$ is continuous from above, and satisfies $\Delta_AF \geq 0$ for bounded rectangles $A$. Take $(x_i,y_i) \to (x,y)$, where $x_i \downarrow x$ and $y_i \downarrow y$. To show continuity from above, we need:
 $$
@@ -9010,11 +9010,51 @@ $$
 	\mu(A) = \Delta_AF =
 	\min\{G(b_1),b_2\} - \min\{G(a_1),b_2\} - \min\{G(b_1),a_2\} + \min\{G(a_1),a_2\}
 $$
-I believe it simplifies to:
+I think, it will help more with a picture.
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{problem_12_11_1.jpg}
+\end{center}
+We have that $A_n^c$ is the countable disjoint union of these infinite rectangles above and below each rectangle that makes up $A_n$. Each of these infinite rectangles is the countable disjoint union of smaller bounded rectangles as shown above, like $A$ and $B$. Each of these satisfy $\mu(A) = \mu(B) = 0$. And so, each of these infinite rectangles has measure zero, and so $A_n^c$ is the disjoint union of measure 0 rectangles. Thus, we have:
 $$
-	b_2 - b_2 - a_2 + a_2 = 0
+	\mu(A_n^c) = 0
 $$
-We will carry on from there next time.
+And we can thus conclude that $\mu(C^c) = 0$, and thus the curve $C$ supports the corresponding measure $\mu$.
+\\\\
+We finally want to note that $\lambda_2(C) = 0$. I think, we can note that on an interval $[-n,n]$, the curve $C$ must be uniformly continuous. See Bernstein's Theorem in these notes. $C$ will be uniformly continuous outside of the jump discontinuities. If we make the same construction as above, keeping out the jump discontinuities, we will have for some $1/n$ small enough, all rectangles will have height less than $\epsilon$ via uniform continuity. The total area covering $C \cap [-n,n]$ would thus be $\leq [-n,n] * \epsilon$. And so, for all $\epsilon > 0$, we have:
+$$
+	\lambda_2(C \cap [-n,n]) \leq 2n * \epsilon \implies
+	\lambda_2(C \cap [-n,n]) = 0 \implies
+	\lambda_2(C) = 0
+$$
+
+\subsubsection{12.12} Let $F_1$ and $F_2$ be nondecreasing, right-continuous functions on the line and put:
+$$
+	F(x_1,x_2) = F(x_1)F(x_2)
+$$
+Show that $F$ satisfies the conditions of Theorem 12.5. Note, nondecreasing will give us $\Delta_AF \geq 0$ for bounded rectangles in $\rcal^2$, and $F$ is continuous from above via both $F_1$ and $F_2$ being nondecreasing.
+\\\\
+Let $\mu,\mu_1,\mu_2$ be the measures corresponding to $F,F_1,F_2$. Note, we can make use of Theorem 12.5 to get these unique measures on $\rcal^2,\rcal^1,\rcal^1$ respectively. Prove that $\mu(A_1 \times A_2) = \mu_1(A_1)\mu_2(A_2)$ for intervals $A_1$ and $A_2$. This $\mu$ is the product of $\mu_1$ and $\mu_2$ - product measures are studied in a general setting in Section 18.
+\\\\
+So, take intervals $A_1 = (a_1,b_1]$ and $A_2 = (a_2,b_2]$. We have:
+$$
+	\mu(A_1 \times A_2) =
+	\Delta_{A_1 \times A_2}F =
+	F(b_1,b_2) - F(a_1,b_2) - F(b_1,a_2) + F(a_1,a_2)
+$$
+$$
+	= F_1(b_1)F_2(b_2) - F_1(a_1)F_2(b_2) - F_1(b_1)F_2(a_2) + F_1(a_1)F_2(a_2) 
+$$
+$$
+	= F_1(b_1)\left[F_2(b_2) - F_2(a_2)\right] - F_1(a_a)\left[F_2(b_2) - F_2(a_2)\right]
+$$
+$$
+	= \left[F_1(b_1) - F_1(a_1)\right]\left[F_2(b_2) - F_2(a_2)\right] = \mu_1(A_1)\mu_2(A_2)
+$$
+Thus, we have proved all the statements in the question. qed.
+
+\section{Section 13 - Measurable Functions And Mappings}
+\subsection{Notes}
+\subsubsection{Measurable Mappings}
 
 \end{document}
 
