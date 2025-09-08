@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2023.6.24)  5 SEP 2025 12:00
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  8 SEP 2025 10:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,12 +511,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--327
 
  []
 
-
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 330--333
 
  []
 
-[17]
+
 Underfull \hbox (badness 10000) in paragraph at lines 345--349
 
  []
@@ -541,12 +541,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 393--396
 
  []
 
-
+[20]
 Underfull \hbox (badness 10000) in paragraph at lines 397--400
 
  []
 
-[20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 401--404
 
  []
@@ -593,17 +593,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 527--532
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--540
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 535--540
-
- []
-
 [25]
+Underfull \hbox (badness 10000) in paragraph at lines 535--540
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 535--540
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 541--546
 
  []
@@ -618,12 +618,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 564--568
 
  []
 
-
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 574--578
 
  []
 
-[27]
+
 Underfull \hbox (badness 10000) in paragraph at lines 579--582
 
  []
@@ -4261,17 +4261,76 @@ Underfull \hbox (badness 10000) in paragraph at lines 9033--9039
 
  []
 
-[310] [311] (./ProbabilityAndMeasure.aux)
+[310]
+Underfull \hbox (badness 10000) in paragraph at lines 9063--9067
+
+ []
+
+[311]
+Overfull \hbox (0.71849pt too wide) in paragraph at lines 9072--9073
+ []\T1/lmr/bx/n/12 Example 13.1[] \T1/lmr/m/n/12 A real func-tion $\OML/cmm/m/i
+t/12 f$ \T1/lmr/m/n/12 with fi-nite range is mea-sur-able if $\OML/cmm/m/it/12 
+f[]\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 g 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9083--9087
+
+ []
+
+
+Overfull \hbox (21.86133pt too wide) in paragraph at lines 9083--9087
+\T1/lmr/m/n/12 which in turn im-plies that $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T
+[]T\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = [] = [] =
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9088.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 9088.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 9088.
+
+[312]
+Overfull \hbox (1.39023pt too wide) in paragraph at lines 9091--9093
+\T1/lmr/m/n/12 For real func-tions $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/c
+mm/m/it/12 !\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 . Since the sets $\OML/cmm/m/it/12
+ S[] \OT1/cmr/m/n/12 = []$ \T1/lmr/m/n/12 ("south-
+ []
+
+
+Overfull \hbox (105.95593pt too wide) in paragraph at lines 9099--9104
+\T1/lmr/m/n/12 able $\OMS/cmsy/m/n/12 F\OML/cmm/m/it/12 =\OMS/cmsy/m/n/12 R$\T1
+/lmr/m/n/12 . Then, $[] \OMS/cmsy/m/n/12 2 F$ \T1/lmr/m/n/12 for any $\OML/cmm/
+m/it/12 x[]$\T1/lmr/m/n/12 , which im-plies $[] \OMS/cmsy/m/n/12 2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9099--9104
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9099--9104
+
+ []
+
+[313] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: C0D6CA8AA4553FFA38C1B9E11D838A0C;43111.
+(rerunfilecheck)             Checksum: 3F3434DD51DFC264DE74F19D54A49D85;43257.
  ) 
 Here is how much of TeX's memory you used:
  10061 strings out of 476191
- 157029 string characters out of 5812072
- 500207 words of memory out of 5000000
+ 157029 string characters out of 5812073
+ 500360 words of memory out of 5000000
  30647 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1121b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (311 pages).
+Output written on ProbabilityAndMeasure.pdf (313 pages).

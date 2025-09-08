@@ -9054,7 +9054,57 @@ Thus, we have proved all the statements in the question. qed.
 
 \section{Section 13 - Measurable Functions And Mappings}
 \subsection{Notes}
+Recall our definition for a simple random variable from Section 5. If a real function $X$ on $\Omega$ has a finite range, it is a simple random variable if $[\omega : X(\omega) = x]$ lies in the basic $\sigma$ field $\fcal$ for each $x$. The requirement for a general (ie non finite) real function $X$ is stronger - namely $[\omega : X(\omega) \in H]$ must lie in $\fcal$ for every linear Borel set $H$. We give an abstract version of this definition to simplify the theory.
+
 \subsubsection{Measurable Mappings}
+\paragraph{Definition - Measurable Mapping} Let $(\Omega,\fcal)$ and $(\Omega',\fcal')$ be two \textit{measurable spaces} - ie, they have measures (which I will denote $\mu$ and $\mu'$, but that is not needed yet). For a mapping $T: \Omega \to \Omega'$, consider the inverse images:
+$$
+	T^{-1}A' = \left[\omega \in \Omega : T\omega \in A'\right] \quad\quad\text{ for }\quad\quad A' \subset \Omega'
+$$
+The mapping $T$ is \textit{measurable} $\fcal/\fcal'$ if $T^{-1}A' \in \fcal$ for each $A' \in \fcal'$.
+\\\\
+For a real function $f$, the image space $\Omega'$ is the line $\R^1$, and $\rcal^1$ is always tacitly understood to play the role of $\fcal'$. A real function $f$ on $\Omega$ is thus measurable $\fcal$ (or just measurable, we can exclude the $\fcal$ when it is understood) if it is measurable $\fcal/\rcal^1$ - that is, $f^{-1}H \in \fcal$ for every $H \in \rcal^1$.
+
+\paragraph{Definition - Random Variable} A random variable is a real function on some measurable space $(\Omega,\fcal)$ that is \textit{measurable} (ie, measurable $\fcal/\rcal^1$). The point of the definition is to ensure that $[\omega : f(\omega) \in H]$ has a measure or probability for all sufficiently regular sets $H$ or real numbers - that is, for all borel sets $H$.
+
+\paragraph{Connections} I will note some connections, that I am seeing over and over and over again. A lot of math, it seems like, is the practice of taking complicated areas, back into non complicated areas. Or, into areas that we understand. With manifolds, we have coordinate functions/atlases, that take us back to euclidean space. With probability, we have random variables, which take us back into measurable spaces. In both cases - the functions and their inverses have additional structure, that allow us to make better conclusions. Whether it be the full rank for manifolds, or the measurability or random variables.
+
+\paragraph{Example 13.1} A real function $f$ with finite range is measurable if $f^{-1}\{x\} \in \fcal$ for \textit{each singleton $\{x\}$}. This, however, is too weak of a condition to impose on the general $f$. On the other hand, for a measurable $f$ with finite range, $f^{-1}H \in \fcal$ for \textit{every} $H \subset \R$ (take the finite elements of the subset to a finite union). But, this is too strong of a condition to impose - note that for $(\Omega,\fcal) = (\R, \rcal^1)$, even $f(x) = x$ fails to satisfy the condition (take a nonmeasurable $H$). So, our measurable condition should hopefully be not to weak, not to strong. 
+
+\paragraph{Theorem 13.1 - Measurable Generator Sets and Composition of Measurable Functions} Take measurable spaces $(\Omega,\fcal),(\Omega',\fcal'),(\Omega'',\fcal'')$. Let $T: \Omega \to \Omega'$ and $T': \Omega' \to \Omega''$.
+\begin{enumerate}
+	\item If $T^{-1}A' \in \fcal$ for each $A' \in \acal'$ and $\acal'$ generates $\fcal'$, then $T$ is measurable $\fcal/\fcal'$
+	
+	\item If $T$ is measurable $\fcal/\fcal'$ and $T'$ is measurable $\fcal'/\fcal''$, then $T'T$ is measurable $\fcal/\fcal''$.
+\end{enumerate}
+\textbf{Proof} We first prove part 1. Note that $T^{-1}(A'^C) = (T^{-1}A')^C$. Similarly, note $T^{-1}\left[\bigcup_n A'_n\right] = \bigcup_n T^{-1}A'_n$. As $\fcal$ is a $\sigma$ field in $\Omega$, the class $[A' : T^{-1}A' \in \fcal]$ is a $\sigma$ field in $\Omega'$ (as it contains unions, being unions stay inside $\fcal$, and complements, as complements stay inside $\fcal$). If this $\sigma$ field contains $\acal'$, it must also contain $\sigma(\acal')$. Ie, say that $\acal' \subseteq [A' : T^{-1}A' \in \fcal]$. As $\sigma(\acal')$ is the smallest sigma field containing $\acal'$, we have:
+$$
+	\sigma(\acal') \subseteq [A' : T^{-1}A' \in \fcal]
+$$
+Now, the condition of part 1, is that $\fcal' = \sigma(\acal')$, and that $\acal' \subseteq [A' : T^{-1}A' \in \fcal]$. Thus, we also have that $\fcal' \subseteq [A' \in \Omega' : T^{-1}A' \in \fcal]$. Thus, definitionally, we have $T$ must be measurable $\fcal/\fcal'$.
+\\\\
+Now, we prove part 1. We have that $A'' \in \fcal''$ implies that $(T')^{-1}A'' \in \fcal'$, which in turn implies that $(T'T)^{-1}A'' = \left[\omega : T'T\omega \in A''\right] = \left[\omega: T\omega \in (T')^{-1}A''\right] = T^{-1}\left[(T')^{-1}A''\right] \in \fcal$. Anyway, long story short, take $A'' \in \fcal''$ back through two measurable functions, to find $(T'T)^{-1}A'' \in \fcal$. And so, $T'T$ is measurable $\fcal/\fcal''$. qed.
+
+\subsubsection{Mappings into $\R^k$} For a mapping $f: \Omega \to \R^k$ carrying $\Omega$ into $k$ space, $\rcal^k$ is always understood to be the $\sigma$ field of the image space. In probabilistic contexts, a measurable mapping into $\R^k$ is called a \textit{random vector}. Now $f$ must have the form:
+$$
+	f(\omega) = (f_1(\omega), \cdots, f_k(\omega))
+$$
+For real functions $f_j(\omega)$. Since the sets $S_x = \left[y : y_i \leq x_i, i = 1, \cdots, k\right]$ ("southwest regions") generate $\rcal^k$, Theorem 13.1 implies that $f$ is measurable $\fcal$ if and only if the set:
+$$
+	\left[\omega: f_1(\omega) \leq x_1, \cdots, f_k(\omega) \leq x_k\right] =
+	\bigcap_{j=1}^k \left[\omega: f_j(\omega) \leq x_j\right]
+$$
+Lies in $\fcal$ for each $(x_1, \cdots, x_k)$. The condition clearly holds if each $f_j$ is measurable $\fcal$. On the other hand, if $x_j = x$ is fixed and $x_1 = \cdots = x_{j-1} = x_{j+1} = \cdots = x_k = n$ goes to $\infty$, the sets defined above increase to $\left\{\omega: f_j(\omega) \leq x\right\}$. Therefore, $f$ is measurable $\fcal$ if and only if each component function $f_j$ is measurable $\fcal$.
+
+\paragraph{Theorem - $f:\Omega \to \R^k$ measurable $\fcal/\rcal^k$ if and only if each component is measurable $\fcal/\rcal$} First, assume that each component is measurable $\fcal/\rcal$. Then, $\left[\omega: f_j(\omega) \leq x_j\right] \in \fcal$ for any $x_j$, which implies $\left[\omega: f_1(\omega) \leq x_1, \cdots, f_k(\omega) \leq x_k\right] \in \fcal$, which implies $f$ is measurable $\rcal^k$ via Theorem 13.1.
+\\\\
+Now, assume that $f$ is measurable $\fcal/\rcal^k$. The countable union argument above implies that each $f_j$ must be measurable $\fcal/\rcal$. qed.
+\\\\
+This is a very practical criterion for mappings into $\R^k$.
+
+\paragraph{Definition - Borel Functions} A mapping $f: \R^i \to \R^k$ that is measurable $\rcal^i/\rcal^k$ is called a \textit{Borel Function}.
+
+\paragraph{Theorem 13.2 - Continuity Implies Measurability} If $f: \R^i \to \R^k$ is continuous, then it is measurable. 
 
 \end{document}
 

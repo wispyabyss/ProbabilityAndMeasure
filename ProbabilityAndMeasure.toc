@@ -1,6 +1,6 @@
 \contentsline {section}{Forward}{6}{section*.2}%
-\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{6}{section*.3}%
-\contentsline {subsection}{Notes}{6}{section*.4}%
+\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{7}{section*.3}%
+\contentsline {subsection}{Notes}{7}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{7}{section*.5}%
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{8}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{8}{section*.7}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{Notes}{30}{section*.29}%
 \contentsline {paragraph}{Spaces}{30}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{30}{section*.31}%
-\contentsline {paragraph}{Classes of Sets}{30}{section*.32}%
+\contentsline {paragraph}{Classes of Sets}{31}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{31}{section*.33}%
 \contentsline {paragraph}{Examples}{31}{section*.34}%
 \contentsline {paragraph}{Definition - Generated Sigma Field}{32}{section*.35}%
@@ -388,3 +388,12 @@
 \contentsline {section}{Section 13 - Measurable Functions And Mappings}{311}{section*.389}%
 \contentsline {subsection}{Notes}{311}{section*.390}%
 \contentsline {subsubsection}{Measurable Mappings}{311}{section*.391}%
+\contentsline {paragraph}{Definition - Measurable Mapping}{311}{section*.392}%
+\contentsline {paragraph}{Definition - Random Variable}{311}{section*.393}%
+\contentsline {paragraph}{Connections}{311}{section*.394}%
+\contentsline {paragraph}{Example 13.1}{312}{section*.395}%
+\contentsline {paragraph}{Theorem 13.1 - Measurable Generator Sets and Composition of Measurable Functions}{312}{section*.396}%
+\contentsline {subsubsection}{Mappings into $\mathbb {R}^k$}{313}{section*.397}%
+\contentsline {paragraph}{Theorem - $f:\Omega \to \mathbb {R}^k$ measurable $\mathcal {F}/\mathcal {R}^k$ if and only if each component is measurable $\mathcal {F}/\mathcal {R}$}{313}{section*.398}%
+\contentsline {paragraph}{Definition - Borel Functions}{313}{section*.399}%
+\contentsline {paragraph}{Theorem 13.2 - Continuity Implies Measurability}{313}{section*.400}%
