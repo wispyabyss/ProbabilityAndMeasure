@@ -9104,7 +9104,75 @@ This is a very practical criterion for mappings into $\R^k$.
 
 \paragraph{Definition - Borel Functions} A mapping $f: \R^i \to \R^k$ that is measurable $\rcal^i/\rcal^k$ is called a \textit{Borel Function}.
 
-\paragraph{Theorem 13.2 - Continuity Implies Measurability} If $f: \R^i \to \R^k$ is continuous, then it is measurable. 
+\paragraph{Theorem 13.2 - Continuity Implies Measurability} If $f: \R^i \to \R^k$ is continuous, then it is measurable. This just requires checking that
+$$
+	\left[\omega: f_1(\omega) \leq x_1, \cdots, f_k(\omega) \leq x_k\right] \in \rcal^i
+$$
+However, note, this is checking that the inverse of a closed set $S_x$ is in $\rcal^i$ - ie, $f^{-1}(S_x) \in \rcal^i$. Recall the definition of continuity implies that the inverse of a closed set is closed. Also, recall that all closed sets are borel sets. And so, $f$ must be measurable if it is continuous, as $f^{-1}(S_x)$ is a closed set and within $\rcal^i$. qed.
+
+\paragraph{Theorem 13.3 - Composition of Measurable Function With Measurable Components is Measurable} If $f_j: \Omega \to \R^1$ is measurable $\fcal$, $j=1,\cdots,k$, then $g(f_1(\omega), \cdots, f_k(\omega))$ is measurable $\fcal$ if $g: \R^k \to \R^1$ is measurable - in particular, if it is continuous.
+\\\\
+This proof is just an amalgamation of the previous statements. $f = (f_1, \cdots, f_k)$ is measurable by our component measurability theorem. $g \circ f$ is measurable by Theorem 13.1.ii. And so we have that $g \circ f = g(f_1(\omega), \cdots, f_k(\omega))$ is measurable if each of the components and $g$ is. qed.
+\\\\
+Some consequences of the theorem. Taking $g(x_1, \cdots, x_k)$ to be $\sum_{i=1}^k x_i, \prod_{i=1}^k x_i, \max(x_1, \cdots, x_k)$ in turn shows that sums, products, and maxima of measurable functions are measurable. If $f(\omega)$ is real and measurable, then so are $\sin f(\omega), e^{tf(\omega)}$, and so on, as both are equivalent to infinite sums and exponential products (note, each exponential is a measurable function via finiteness... I just don't know whether an infinite sum is measurable). If $f(\omega)$ never vanishes, then $1/f(\omega)$ is measurable as well.
+
+\subsubsection{Limits and Measurability} 
+For a real function $f$ - it is convenient to admit the artificial values $\infty$ and $-\infty$ - to work on the extended real line $[-\infty,\infty]$. We define a new definition of measurability:
+
+\paragraph{Measurable on the Extended Real Line} $f : \Omega \to [-\infty,\infty]$ is measurable $\fcal$ if $[\omega : f(\omega) \in H]$ lies in $\fcal$ for each Borel Set $H$ of (finite) real numbers, and if $[\omega: f(\omega) = \infty]$ and $[\omega: f(\omega) = -\infty]$ both lie in $\fcal$.
+\\\\
+This notion is needed/convenient for when we are using limits/suprema.
+
+\paragraph{Theorem 13.4 - Measurability of Supremums and Limits} Suppose that $f_1,f_2,\cdots$ are real functions measurable $\fcal$.
+\begin{enumerate}
+	\item The functions $\sup_n f_n, \inf_n f_n, \limsup_n f_n, \liminf_n f_n$ are measurable $\fcal$
+	\item If $\lim_n f_n$ exists everywhere, then it is measurable $\fcal$
+	\item The $\omega$-set where $\{f_n(\omega)\}$ converges lies in $\fcal$
+	\item If $f$ is measurable $\fcal$, then the $\omega$-set where $f_n(\omega) \to f(\omega)$ lies in $\fcal$
+\end{enumerate}
+\textbf{Proof:} Part One. Recall, to prove that $g: \Omega \to \R$ is measurable, we just need $g^{-1}(-\infty,x) \in \fcal$. Extended measurability also needs us to check $g^{-1}(-\infty),g^{-1}(\infty) \in \fcal$. Note that:
+$$
+	\left[\omega : \sup_n f_n(\omega) \leq x\right] =
+	\bigcap_n [\omega : f_n(\omega) \leq x] \in \fcal
+$$
+$$
+	\left[\omega : \sup_n f_n(\omega) = \infty\right] =
+	\bigcup_n \bigcap_{j=0}^\infty [\omega : f_n(\omega) \geq j] \in \fcal
+$$
+$$
+	\left[\omega : \sup_n f_n(\omega) = -\infty\right] =
+	\bigcup_n \bigcap_{j = 0}^{-\infty} [\omega : f_n(\omega) \leq j] \in \fcal
+$$
+So, $\sup_n f_n$ is measurable. Measurability of $\inf_n f_n$ follows in much the same way. We thus have:
+$$
+	\limsup_n f_n = \inf_n \sup_{k \geq n} f_k
+	\quad\quad\text{ and }\quad\quad
+	\liminf_n f_n = \sup_n \inf_{k \geq n} f_k
+$$
+Are both measurable, being the $\inf/\sup$ of measurable functions. Part Two. If $\lim_n f_n$ exists, then it coincides with both $\limsup_n f_n$ and $\liminf_n f_n$, and so $f_n$ is measurable. Part Three. Note that the $\omega$ set where $\{f_n(\omega)\}$ converges is:
+$$
+	\left[\omega : \limsup_n f_n(\omega) = \liminf_n f_n(\omega)\right]
+$$
+Note, both the functions are measurable. We have that the set where measurable functions are equal is measurable. Say $f$ and $g$ are measurable. We have:
+$$
+	A = \left[\omega : f(\omega) = g(\omega)\right] = 
+	\left[\omega : f(\omega) \leq g(\omega)\right] \cap
+	\left[\omega : g(\omega) \leq f(\omega)\right]
+$$
+So now, we just have to prove that the inequality sets are within $\fcal$. We have:
+$$
+	\left\{f < g\right\} = \bigcup_{q \in \Q} \left[\left\{f < q\right\} \cap \left\{g < q\right\}\right]
+$$
+As if $f(\omega) < g(\omega)$, there must be a rational between them. Thus, via measurability of $g$ and $f$, we have $\left\{f < g\right\} \in \fcal$. Now, note $\left\{g \leq f\right\} = \left\{f < g\right\}^c \in \fcal$. And so, unwrapping to the top, we have if $f$ and $g$ are measurable:
+$$
+	\left[\omega : f(\omega) = g(\omega)\right] \in \fcal \implies \left[\omega : \limsup_n f_n(\omega) = \liminf_n f_n(\omega)\right] \in \fcal
+$$
+Part Four. We have the $\omega$ set where $f_n(\omega) \to f(\omega)$ can be expressed as:
+$$
+	\left[\omega : \limsup_n f_n(\omega) = \liminf_n f_n(\omega)\right] \cap
+	\left[\omega : \limsup_n f_n(\omega) = f(\omega)\right] \in \fcal
+$$
+Where we make use of our equality fact above, and the fact that $f$ is measurable $\fcal$. qed.
 
 \end{document}
 

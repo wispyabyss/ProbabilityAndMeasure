@@ -397,3 +397,7 @@
 \contentsline {paragraph}{Theorem - $f:\Omega \to \mathbb {R}^k$ measurable $\mathcal {F}/\mathcal {R}^k$ if and only if each component is measurable $\mathcal {F}/\mathcal {R}$}{313}{section*.398}%
 \contentsline {paragraph}{Definition - Borel Functions}{313}{section*.399}%
 \contentsline {paragraph}{Theorem 13.2 - Continuity Implies Measurability}{313}{section*.400}%
+\contentsline {paragraph}{Theorem 13.3 - Composition of Measurable Function With Measurable Components is Measurable}{314}{section*.401}%
+\contentsline {subsubsection}{Limits and Measurability}{314}{section*.402}%
+\contentsline {paragraph}{Measurable on the Extended Real Line}{314}{section*.403}%
+\contentsline {paragraph}{Theorem 13.4 - Measurability of Supremums and Limits}{314}{section*.404}%
