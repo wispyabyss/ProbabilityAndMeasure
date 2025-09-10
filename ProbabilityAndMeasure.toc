@@ -401,3 +401,6 @@
 \contentsline {subsubsection}{Limits and Measurability}{314}{section*.402}%
 \contentsline {paragraph}{Measurable on the Extended Real Line}{314}{section*.403}%
 \contentsline {paragraph}{Theorem 13.4 - Measurability of Supremums and Limits}{314}{section*.404}%
+\contentsline {paragraph}{Definition - Simple Function}{316}{section*.405}%
+\contentsline {paragraph}{Theorem 13.5 - Sequence of Simple Functions To Measurable Functions}{316}{section*.406}%
+\contentsline {subsubsection}{Transformation of Measures}{318}{section*.407}%

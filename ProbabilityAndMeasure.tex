@@ -9130,20 +9130,20 @@ This notion is needed/convenient for when we are using limits/suprema.
 	\item The $\omega$-set where $\{f_n(\omega)\}$ converges lies in $\fcal$
 	\item If $f$ is measurable $\fcal$, then the $\omega$-set where $f_n(\omega) \to f(\omega)$ lies in $\fcal$
 \end{enumerate}
-\textbf{Proof:} Part One. Recall, to prove that $g: \Omega \to \R$ is measurable, we just need $g^{-1}(-\infty,x) \in \fcal$. Extended measurability also needs us to check $g^{-1}(-\infty),g^{-1}(\infty) \in \fcal$. Note that:
+\textbf{Proof:} Part One. Recall, to prove that $g: \Omega \to \R$ is measurable, we just need $g^{-1}(-\infty,x) \in \fcal$ - as then each $A \in \rcal$ satisfies $g^{-1}(A) \in \fcal$ via Theorem 13.1.i. Extended measurability also needs us to check $g^{-1}(-\infty),g^{-1}(\infty) \in \fcal$. Note that:
 $$
 	\left[\omega : \sup_n f_n(\omega) \leq x\right] =
 	\bigcap_n [\omega : f_n(\omega) \leq x] \in \fcal
 $$
 $$
 	\left[\omega : \sup_n f_n(\omega) = \infty\right] =
-	\bigcup_n \bigcap_{j=0}^\infty [\omega : f_n(\omega) \geq j] \in \fcal
+	\bigcap_{j=0}^\infty \bigcup_n [\omega : f_n(\omega) \geq j] \in \fcal
 $$
 $$
 	\left[\omega : \sup_n f_n(\omega) = -\infty\right] =
-	\bigcup_n \bigcap_{j = 0}^{-\infty} [\omega : f_n(\omega) \leq j] \in \fcal
+	\bigcap_{j = 0}^{-\infty} \bigcup_n [\omega : f_n(\omega) \leq j] \in \fcal
 $$
-So, $\sup_n f_n$ is measurable. Measurability of $\inf_n f_n$ follows in much the same way. We thus have:
+Note, I had to switch the order of the intersection/union above. For the supremum, we want $\omega$ such that there is some $f_n(\omega) \geq j$ for each $j$ - as then the supremum for that $\omega$ would be infinite. Similar case for $-\infty$. So, $\sup_n f_n$ is measurable. Measurability of $\inf_n f_n$ follows in much the same way. We thus have:
 $$
 	\limsup_n f_n = \inf_n \sup_{k \geq n} f_k
 	\quad\quad\text{ and }\quad\quad
@@ -9153,7 +9153,7 @@ Are both measurable, being the $\inf/\sup$ of measurable functions. Part Two. If
 $$
 	\left[\omega : \limsup_n f_n(\omega) = \liminf_n f_n(\omega)\right]
 $$
-Note, both the functions are measurable. We have that the set where measurable functions are equal is measurable. Say $f$ and $g$ are measurable. We have:
+Note, both the functions are measurable. We prove that the set where measurable functions are equal is measurable. Say $f$ and $g$ are measurable. We have:
 $$
 	A = \left[\omega : f(\omega) = g(\omega)\right] = 
 	\left[\omega : f(\omega) \leq g(\omega)\right] \cap
@@ -9163,7 +9163,7 @@ So now, we just have to prove that the inequality sets are within $\fcal$. We ha
 $$
 	\left\{f < g\right\} = \bigcup_{q \in \Q} \left[\left\{f < q\right\} \cap \left\{g < q\right\}\right]
 $$
-As if $f(\omega) < g(\omega)$, there must be a rational between them. Thus, via measurability of $g$ and $f$, we have $\left\{f < g\right\} \in \fcal$. Now, note $\left\{g \leq f\right\} = \left\{f < g\right\}^c \in \fcal$. And so, unwrapping to the top, we have if $f$ and $g$ are measurable:
+As if $f(\omega) < g(\omega)$, there must be a rational between them via density of the rationals. Thus, via measurability of $g$ and $f$, we have $\left\{f < g\right\} \in \fcal$. Now, note $\left\{g \leq f\right\} = \left\{f < g\right\}^c \in \fcal$. And so, unwrapping to the top, we have if $f$ and $g$ are measurable:
 $$
 	\left[\omega : f(\omega) = g(\omega)\right] \in \fcal \implies \left[\omega : \limsup_n f_n(\omega) = \liminf_n f_n(\omega)\right] \in \fcal
 $$
@@ -9173,6 +9173,62 @@ $$
 	\left[\omega : \limsup_n f_n(\omega) = f(\omega)\right] \in \fcal
 $$
 Where we make use of our equality fact above, and the fact that $f$ is measurable $\fcal$. qed.
+
+\paragraph{Definition - Simple Function} A \textit{simple} real function is one with finite range; it can be put in the form:
+$$
+	f = \sum_i x_i \1{A_i}
+$$
+Where the $A_i$ form a finite decomposition of $\Omega$. If it clearly measurable $\fcal$ if each $A_i$ lies in $\fcal$. Most results for measurable functions are usually first proved for simple functions, and then extended to general measurable functions, by the following theorem:
+
+\paragraph{Theorem 13.5 - Sequence of Simple Functions To Measurable Functions} If $f$ is real and measurable $\fcal$, there exists a sequence $\{f_n\}$ of simple functions, each measurable $\fcal$, such that:
+$$
+	0 \leq f_n(\omega) \uparrow f(\omega) \text{ if $f(\omega) \geq 0$}
+$$
+And
+$$
+	0 \geq f_n(\omega) \downarrow f(\omega) \text{ if $f(\omega) \leq 0$}
+$$
+\textbf{Proof:} Define:
+$$
+	f_n(\omega) = \begin{cases}
+	-n & \text{ if $-\infty \leq f(\omega) \leq -n$}\\
+	-(k-1)2^{-n} & \text{ if $-k2^{-n} < f(\omega) \leq -(k-1)2^{-n}$ and $1 \leq k \leq n2^n$}\\
+	(k-1)2^{-n} & \text{ if $(k-1)2^{-n} \leq f(\omega) < k2^{-n}$ and $1 \leq k \leq n2^n$}\\
+	n& \text{ if $n \leq f(\omega) \leq \infty$}
+	\end{cases}
+$$
+We just need to prove the desired properties for this sequence. First, I want to note that $f_n(\omega)$ is well defined for each pair of $(n,\omega)$ - ie, we belong to one of the cases above. Assume that $0 \leq f(\omega)$, but $f(\omega) < n$. So, we can't be in one of the first two cases, and we can't be the last case. Need to prove the third case applies. We have that there must be some $k$ such that:
+$$
+	(k-1)2^{-n} \leq f(\omega) < k2^{-n}
+$$
+With $1 \leq k \leq n2^n$. Note the values that this sequence ranges through:
+\begin{align*}
+	0 \leq f(\omega) < 2^{-n} & \text{ value: } 0\\
+	2^{-n} \leq f(\omega) < 2 * 2^{-n} & \text{ value: } 2^{-n}\\
+	2 * 2^{-n} \leq f(\omega) < 3 * 2^{-n} & \text{ value: } 2*2^{-n}\\
+	3 * 2^{-n} \leq f(\omega) < 4 * 2^{-n} & \text{ value: } 3*2^{-n}\\
+	\vdots & \vdots\\
+	n - 2 * 2^{-n} \leq f(\omega) < n - 2^{-n}& \text{ value: } n - 2 * 2^{-n}\\
+	n - 2^{-n} \leq f(\omega) < n& \text{ value: } n - 2^{-n}\\
+\end{align*}
+So, we have these buckets, that clearly partition all the possible places that $f(\omega)$ could be, so $f_n(\omega)$ is well defined. It is also measurable, being a simple function, where each set $A$ is $f^{-1}(a,b)$, which is within $\fcal$ via measurability of $f$. Finally, note that the buckets are essentially splitting the interval of $f$ between $0$ and $n$ finer and finer and finer. Also note, that when $0 \leq f(\omega)$, we are taking the value of $f(\omega)$ that is smaller than $f$. Clearly, we have $f_n(\omega) \uparrow f(\omega)$ when $0 \leq f(\omega)$. This is because, we are essentially dividing how ``fine" our value for $f(\omega)$ is by two. Here is what we are doing. $f(\omega)$ has a dyadic expansion - see chapter 1. But essentially, $f(\omega) = n + 0.(d_1)(d_2)(d_3)\cdots$. $f_n(\omega)$ increases to that maximum $n$ - and when it reaches it, it then adds the first $n$ decimals (in binary) from below, and keeps on adding them. We clearly must have that $f_1(\omega) \leq f_2(\omega) \leq \cdots$. We also have $f_n(\omega) \to f(\omega)$, as for any $\epsilon > 0$, we have some big enough $N$ such that $2^{-N} < \epsilon$ - and our expansion will be within that distance.
+\\\\
+Note, a similar argument can be made for when $f(\omega) \leq 0$. Also, note in the case that $f(\omega) = \pm \infty$, we have $f_n(\omega) \to \pm \infty$ via $\pm n$. So, we have indeed found that if $f$ is real and measurable $\fcal$, there exists a sequence $\{f_n\}$ of simple functions, each measurable $\fcal$, such that:
+$$
+	0 \leq f_n(\omega) \uparrow f(\omega) \text{ if $f(\omega) \geq 0$}
+$$
+And
+$$
+	0 \geq f_n(\omega) \downarrow f(\omega) \text{ if $f(\omega) \leq 0$}
+$$
+And we have proved the theorem. qed.
+
+\subsubsection{Transformation of Measures}
+Let $(\Omega,\fcal)$ and $(\Omega',\fcal')$ be measurable spaces, and suppose that the mapping $T: \Omega \to \Omega'$ is measurable $\fcal/\fcal'$. Given a measure $\mu$ on $\fcal$, define a set function $\mu T^{-1}$ on $\fcal'$ be:
+$$
+	\mu T^{-1}(A') = \mu(T^{-1}A') \quad\quad\text{ for $A' \in \fcal'$}
+$$
+We have that $\mu T^{-1}$ is a \textit{measure on $\fcal'$}.
 
 \end{document}
 
