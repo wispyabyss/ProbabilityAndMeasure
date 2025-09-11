@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  10 SEP 2025 11:52
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  11 SEP 2025 11:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4355,17 +4355,64 @@ Underfull \hbox (badness 10000) in paragraph at lines 9213--9217
 
  []
 
-[317] [318] (./ProbabilityAndMeasure.aux)
+[317]
+Underfull \hbox (badness 10000) in paragraph at lines 9234--9238
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9240--9243
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9245--9251
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9245--9251
+
+ []
+
+[318]
+Overfull \hbox (8.40895pt too wide) detected at line 9254
+\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/
+cmm/m/it/12 B[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = [](\OML/
+cmm/m/it/12 A[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9254--9258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9261--9264
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9270--9274
+
+ []
+
+[319]
+Underfull \hbox (badness 10000) in paragraph at lines 9286--9290
+
+ []
+
+[320] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 0BC51DAF67BFF26C40C829D7C3AB1738;43639.
+(rerunfilecheck)             Checksum: 515505943D80E06C6B5C8B9C4127A7B8;44215.
  ) 
 Here is how much of TeX's memory you used:
- 10061 strings out of 476191
- 157029 string characters out of 5812073
- 500756 words of memory out of 5000000
- 30647 multiletter control sequences out of 15000+600000
+ 10062 strings out of 476191
+ 157043 string characters out of 5812073
+ 501356 words of memory out of 5000000
+ 30648 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (318 pages).
+Output written on ProbabilityAndMeasure.pdf (320 pages).

@@ -9228,7 +9228,71 @@ Let $(\Omega,\fcal)$ and $(\Omega',\fcal')$ be measurable spaces, and suppose th
 $$
 	\mu T^{-1}(A') = \mu(T^{-1}A') \quad\quad\text{ for $A' \in \fcal'$}
 $$
-We have that $\mu T^{-1}$ is a \textit{measure on $\fcal'$}.
+We have that $\mu T^{-1}$ is a \textit{measure on $\fcal'$}. First, note that $\mu T^{-1}$ is a set function on $\fcal'$, ie, it is well defined on $\fcal'$. Take $A' \in \fcal'$. Note that $T^{-1}A' \in \fcal$ as $T$ is measurable, and hence $\mu T^{-1}(A')$ has a well defined value. Now, as:
+$$
+	T^{-1}\bigcup_n A_n' = \bigcup_n T^{-1} A_n'
+$$
+And the union maintains disjointness (ie, the $T^{-1} A_n'$ are disjoint if the $A_n'$ are), we have countable additivity of $\mu T^{-1}$ follows from the countable additivity of $\mu$. And as $\mu T^{-1}$ has the range of $\mu$, and $\mu T^{-1}(\emptyset) = \mu(\emptyset) = 0$, $\mu T^{-1}$ satisfies all the properties of a \textit{measure on $\fcal'$}. We will use this transformation many times in our notes.
+\\\\
+If $\mu$ is finite, so is $\mu T^{-1}$; if $\mu$ is a probability measure, so is $\mu T^{-1}$.
+
+\subsection{Problems}
+\subsubsection{13.1 Piecewise Functions of Measurable Functions are Measurable} Functions are often defined in pieces (for example, let $f(x)$ be $x^3$ or $x^{-1}$ as $x \geq 0$ or $x < 0$), and the following result shows that the function is measurable if the pieces are.
+\\\\
+Consider the measurable spaces $(\Omega,\fcal)$ and $(\Omega',\fcal')$ and a map $T: \Omega \to \Omega'$. Let $A_1, A_2, \cdots$ be a countable covering of $\Omega$ by $\fcal$ sets. Consider the $\sigma$ field in $A_n$:
+$$
+	\fcal_n = \left[A : A \subset A_n, A \in \fcal\right]
+$$
+And the restriction $T_n$ of $T$ to $A_n$. Show that $T$ is measurable $\fcal/\fcal'$ if and only if $T_n$ is measurable $\fcal_n/\fcal'$ for each $n$.
+\\\\
+First, assume that $T$ is measurable $\fcal/\fcal'$ for each $n$. Note, it is possible for these $T_n$ to be measurable. If $B = T^{-1}(B')$ for $B' \in \fcal'$, we have that $T_n^{-1} = B \cap A_n$. Note, as $A_n \in \fcal$, and $B \in \fcal$, we have $B \cap A_n \in \fcal$, and $B \cap A_n \subset A_n$, so $B \cap A_n \in \fcal_n$. Also, it is easy to show that $\fcal_n$ is a $\sigma$ field on $A_n$. Both of these facts prove that $T_n$ is measurable on $\fcal_n/\fcal'$ for each $n$, if $T$ is measurable $\fcal/\fcal'$. 
+\\\\
+Anyway. Now, we just assume that $T_n$ is measurable $\fcal_n/\fcal'$ for each $n$. Take $B' \in \fcal'$. We have that:
+$$
+	B = T^{-1}(B') \text{ and we can decompose $B$ as the disjoint union: }
+	B = \bigcup_n (A_n \cap B)
+$$
+Note, $(A_n \cap B) = T_n^{-1}(B') \implies A_n \cap B \in \fcal_n$. Thus, by definition, we have $A_n \cap B \in \fcal$ for each $n$. Thus, $B$ is a disjoint countable union of $\fcal$ sets, and $T$ is measurable $\fcal/\fcal'$. qed.
+\\\\
+And so, we have concluded that $T$ is measurable $\fcal/\fcal'$ if and only if $T_n$ is measurable $\fcal_n/\fcal'$ for each $n$. As for why this proves the piecewise point. Well, it proves the piecewise statement, if the individual pieces are defined on disjoint, measurable sets. Then, $T_n$ represents each of the pieces on measurable set $A_n$, and if $T_n$ is measurable on the entire space, it will also be measurable with respect to $(A_n,\fcal_n)$, when restricted to $A_n$. This proves the piecewise statement.
+
+\subsubsection{13.2}
+\begin{enumerate}
+	\item For a map $T$ and $\sigma$ fields $\fcal$ and $\fcal'$, define $T^{-1}\fcal' = \left[T^{-1} A' : A' \in \fcal'\right]$ and $T\fcal = \left[A' : T^{-1}A' \in \fcal\right]$. Show that $T^{-1}\fcal'$ and $T\fcal$ are $\sigma$ fields, and that measurability $\fcal/\fcal'$ is equivalent to $T^{-1}\fcal' \subset \fcal$ and $\fcal' \subset T\fcal$.
+	\\\\
+	First, we want to prove that $T^{-1}\fcal'$ is a $\sigma$ field. I think it is clear that it is closed under unions, by what we found above:
+	$$
+		T^{-1}\bigcup_n A_n' = \bigcup_n T^{-1} A_n'
+	$$
+	So, the RHS is an arbitrary union, and the LHS is an inverse of a set within $\fcal'$, which is in the $\sigma$ field. We also note that it is closed under complements:
+	$$
+		\left[T^{-1}A_n'\right]^c = T^{-1}\left[(A_n')^c\right] \in T^{-1}\fcal'
+	$$
+	Finally, note that $T^{-1}\fcal'$ must contain the emptyset. Thus, $T^{-1}\fcal'$ is a $\sigma$ field on $\Omega$. Now, as for $T\fcal$, we make use of the same facts as above (union and complement expressions above apply for $T\fcal$) to prove it is a $\sigma$ algebra.
+	\\\\
+	So, we just need to prove that measurability $\fcal/\fcal'$ is equivalent to $T^{-1}\fcal' \subset \fcal$ and $\fcal' \subset T\fcal$. First, assume $T$ is measurable $\fcal/\fcal'$. Take $A \in T^{-1}\fcal' \implies A = T^{-1} A' : A' \in \fcal' \implies A \in \fcal$. Now, take $A' \in \fcal' \implies T^{-1}A' \in \fcal \implies A' \in T\fcal$. We thus have one direction. Now, assume:
+	$$
+		T^{-1}\fcal' \subset \fcal \quad\text{ and }\quad \fcal' \subset T\fcal
+	$$
+	We want to show that this means $T$ is measurable $\fcal/\fcal'$. Take $A' \in \fcal'$. By assumption, we have:
+	$$
+		A' \in T\fcal \implies T^{-1}A' \in \fcal
+	$$
+	And thus, $T$ is measurable, by definition.
+	
+	\item For given $\fcal'$, $T^{-1}\fcal'$, which is the smallest $\sigma$ field for which $T$ is measurable $\fcal/\fcal'$, is by definition the $\sigma$ field \textit{generated} by $T$. Ie - we have a $\sigma$ field in the range, and we create a $\sigma$ field $T^{-1}\fcal'$ in the domain by just saying the inverse of $\fcal'$ sets are in our sigma field $\fcal = T^{-1}\fcal'$. Note, any other $\sigma$ field $\fcal$ such that $T$ is measurable $\fcal/\fcal'$ must satisfy:
+	$$
+		T^{-1}\fcal' \subset \fcal
+	$$
+	For simple random variables describe $\sigma(X_1, \cdots, X_n)$ in these terms.
+	\\\\
+	Recall what $\sigma(X_1, \cdots, X_n)$ means. We have that $X_1, \cdots, X_n$ are simple random variables, which in this section, for generalized functions, means that:
+	$$
+		X_i: \Omega \to \Omega' \quad\quad\quad X_i(\omega) = \sum_{j=1}^{n_i} x_i \1{A_j}
+	$$
+	Where the $A_j$ form a finite decomposition of $\Omega$, and as we assume $X_i$ is measurable, then the $A_j$ must be measurable.
+	 
+\end{enumerate}
 
 \end{document}
 

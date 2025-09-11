@@ -404,3 +404,6 @@
 \contentsline {paragraph}{Definition - Simple Function}{316}{section*.405}%
 \contentsline {paragraph}{Theorem 13.5 - Sequence of Simple Functions To Measurable Functions}{316}{section*.406}%
 \contentsline {subsubsection}{Transformation of Measures}{318}{section*.407}%
+\contentsline {subsection}{Problems}{318}{section*.408}%
+\contentsline {subsubsection}{13.1 Piecewise Functions of Measurable Functions are Measurable}{318}{section*.409}%
+\contentsline {subsubsection}{13.2}{319}{section*.410}%
