@@ -9456,6 +9456,87 @@ $$
 $$
 Where $r$ and $s$ are defined as above. This is a countable union, and it is non empty. Clearly, we have $\supseteq$ - but what about the other direction, $\subseteq$? Well, for $\omega \in \Omega$ that satisfies $f(\omega) + g(\omega) < x$, it will be in one of those rational pairs. So, we have equality. It is a countable union because $\Q^2$ is countable. Finally, as $f$ and $g$ are measurable, the set on the left is within $\fcal$, for each $x$. And so, $f + g$ is measurable. qed.
 
+\subsubsection{13.7} Consider on $\R^1$ the smallest class $H$ (that is, the intersection of all classes) of real functions containing all the continuous functions and closed under pointwise passages to the limit. The elements of $H$ are called \textit{Baire} functions. Show that the Baire functions and the Borel functions on $\R^1$ are the same thing.
+\\\\
+I am going to start with another definition of the Baire functions. Note that the continuous functions $C(\R,\R)$ are not closed under pointwise limits. And so, we can form the following Baire classes:
+\begin{enumerate}
+	\item Baire Class 0 - All continuous functions.
+	\item Baire Class 1 - Pointwise limits of sequences of Baire class 0 functions (some places say either includes/excludes Baire class 0 functions, I will leave ambiguous for now).
+	\item Baire Class 2 - Pointwise limits of sequences of Baire class 1 functions.
+	\item And so on.
+\end{enumerate}
+Note - the Baire functions would take a union of these classes. However, this gets into ordinals - something I am not super familiar with yet. We have class $\omega$ is:
+$$
+	\text{Baire Class $\omega =$} \bigcup_{i=0}^n \text{Baire Class $n$}
+$$
+But then, we can take pointwise limits of class $\omega$ sets to get Baire Class $\omega + 1$. Note, after going through $\omega + 1, \omega + 2, \cdots$, we get to $\omega \cdot 2$, or $\omega + \omega$. We can continue on, taking unions, getting $\omega \cdot 2 + 1, \cdots$ to $\omega \cdot 3, \omega \cdot 4$, and so on. We form the set of ordinals:
+$$
+	\omega \cdot m + n
+$$
+For natural numbers $m,n$. This has an ordinal associated it with it as well - the union of these, which would be represented by $\omega^2$. Note, I am describing it as "union," but it really means something like "upper bound" (see the \href{https://en.wikipedia.org/wiki/Ordinal_number}{Ordinal Number Wiki}). We will ultimately get something like $\omega^3$, as the union of sets:
+$$
+	\omega^2 \cdot m + n
+$$
+And os on, and so on. We can even get to $\epsilon_0$ (\href{https://en.wikipedia.org/wiki/Epsilon_number}{epsilon naught}), which would be:
+$$
+	\epsilon_0 = \omega^{\omega^{\omega^{\cdots}}} = \sup\left\{\omega, \omega^\omega, \omega^{\omega^{\omega}}, \cdots\right\}
+$$
+Note, in each case - the ordinal is the upper bound/union of a \textit{countable class}. Call these \textit{countable ordinals}. The smallest \textit{uncountable ordinal} is the set of all countable ordinals, expressed as $\omega_1$. I believe the Baire functions might be the union of all countable ordinals - see the \href{https://en.wikipedia.org/wiki/Baire_function}{Baire Function Wiki}, which defines the Baire functions for each countable ordinal. 
+\\\\
+So, for the Borel functions on $\R^1$, are the functions $f: \R \to \R$ that are measurable $\rcal/\rcal$. In the previous chapter, we proved that continuous functions are measurable, and pointwise limits of measurable functions are measurable. And so, we must have:
+$$
+	H \subseteq B
+$$
+Where we let $B$ here stand for the Borel functions. This is because, the pointwise limits of any measurable function are still contained within the borel set $B$ - ie, we contain all the unions describing the Baire functions above.
+\\\\
+Now, for the other direction. Taken from the solutions. First, note that $H$ is closed under $f + g, fg, f - g$, and $f \vee g$ (which is maximum). First, take $f,g \in H$. I think, the book says to note that:
+$$
+	[g: f + g \in H]
+$$
+Is closed under the passage to limits. We need to note - if we have some $g_1, g_2, \cdots$, such that each $f + g_1 \in H, f + g_2 \in H, \cdots$, which has a limit $g$ - then $f + g \in H$. Well, as $f + g_i \in H$ - we have:
+$$
+	\lim_i f + g_i \in H
+$$
+As $H$ is closed under pointwise limits. As $\lim_i f + g_i = f + g \in H$, we have that $g$ is in the above set. Now, why does this imply that if $f,g \in H$, then $f + g \in H$? Well, I think it is true, if we note:
+$$
+	[g: f + g \in H] = H
+$$
+And I think that is indeed the case, if we prove that it contains the continuous functions (as then it is the Baire functions, definitionally). It should - as the addition of two continuous functions are continuous - and $f + g$ can then be expressed all the way back as a pointwise limit of some sort. Note, it is true if $f$ is continuous, and if $f$ is the pointwise limit of continuous functions, and so on.
+\\\\
+So yes, we can conclude that $f + g \in H$> We can similarly conclude $fg \in H$, as the $\lim_i fg_i = fg$, and the same limit property also applies to $f - g$, $f \vee g$. And so, we do have $H$ is closed under addition, multiplication, subtraction, and maximum.
+\\\\
+Define:
+$$
+	f_n(x) = \begin{cases}
+	1 & \text{ if $x \leq \alpha$}\\
+	1 - n(x-\alpha) & \text{ if $\alpha \leq x \leq \alpha + n^{-1}$}\\
+	0 & \text{ if $\alpha + n^{-1} \leq x$}
+	\end{cases}
+$$
+This is just the line to $1$ at $\alpha$, and then a downward slope. Clearly, the pointwise limit is:
+$$
+	\lim_n f_n(x) = \1{x \in (-\infty,a]}
+$$
+We will now show that:
+$$
+	L = \left[A : \1{A} \in H\right]
+$$
+Is a $\lambda$ system. Ie - $\R \in L$, $A \in L \implies A^c \in L$, and \textit{disjoint} union $\bigcup_{i=1}^\infty A_i \in L$. If we do that, as $L$ clearly contains sets $(-\infty,a]$ by the above (which is a $\pi$ system, clearly closed under intersection), the $\pi-\lambda$ theorem would tell us that the above set contains $\sigma(-\infty,a] = \rcal$. In which case, $H$ would contain all indicators of Borel Sets first, then all simple borel functions second via closed under addition. Finally, $H$ would contain all Borel functions via pointwise limits of Borel functions, and Theorem 13.5.
+\\\\
+First, $\R \in L$, as $\1{\R}$ is the continuous constant function $1$, which is in $H$ via continuity. Now, we prove complements. We have $\1{A^c} = 1 - \1{A} \in H$ as $H$ is closed under subtraction. Finally, we clearly have for disjoint $A_i$:
+$$
+	\1{\bigcup_{i=1}^\infty A_i} = \lim_{i \to \infty} \1{A_1} + \cdots + \1{A_i} \in H
+$$
+The limit clearly exists pointwise, and each sum is within $H$ closed under addition. And so, we indeed have that $L$ is a $\lambda$ system, and using the steps outlined above, we can conclude:
+$$
+	B \subset H
+$$
+In total, we thus have:
+$$
+	B = H
+$$
+And so the Baire functions and the Borel functions are the same thing. qed.
+
 
 \end{document}
 
