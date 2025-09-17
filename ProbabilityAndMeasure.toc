@@ -410,4 +410,6 @@
 \contentsline {subsubsection}{13.3 Existence of Intermediate Measurable Function}{323}{section*.411}%
 \contentsline {subsubsection}{13.4 Equivalence Between Problem 13.3 And Theorem 5.1(ii)}{324}{section*.412}%
 \contentsline {subsubsection}{13.5 Measurability of Addition Directly}{325}{section*.413}%
-\contentsline {subsubsection}{13.7}{325}{section*.414}%
+\contentsline {subsubsection}{13.7 Baire and Borel Function Equivalence}{325}{section*.414}%
+\contentsline {subsubsection}{13.9 Egoroff's Theorem (Uniform Convergence on a Pointwise Convergent Subset)}{328}{section*.415}%
+\contentsline {subsubsection}{13.12 Circular Lebesgue Measure}{329}{section*.416}%

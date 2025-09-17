@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  16 SEP 2025 10:32
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  17 SEP 2025 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,33 +314,33 @@ File: l3backend-xetex.def 2022-01-12 L3 backend support: XeTeX
 ) (./ProbabilityAndMeasure.aux)
 \openout1 = `ProbabilityAndMeasure.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 59.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 5
-9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6
+0.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-Package hyperref Info: Link coloring OFF on input line 59.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+Package hyperref Info: Link coloring OFF on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -353,21 +353,21 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count289
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
 
 (./ProbabilityAndMeasure.out) (./ProbabilityAndMeasure.out)
 \@outlinefile=\write4
 \openout4 = `ProbabilityAndMeasure.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -380,12 +380,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \openout5 = `ProbabilityAndMeasure.toc'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--68
+Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 74--77
+Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
 
@@ -393,20 +393,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--77
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 90.
+(amsmath)                 on input line 91.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--108
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--108
+Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
 
 [8]
-Overfull \hbox (57.68405pt too wide) detected at line 137
+Overfull \hbox (57.68405pt too wide) detected at line 138
 [][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )\OML
 /cmm/m/it/12 d! \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 c[]\OT1/cmr/m/n/12 (\OML/
 cmm/m/it/12 x[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) \OMS
@@ -418,80 +418,80 @@ OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U
  []
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 148--154
+Underfull \hbox (badness 10000) in paragraph at lines 149--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--154
+Underfull \hbox (badness 10000) in paragraph at lines 149--155
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--160
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--160
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 177--181
+Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--191
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 209--213
+Underfull \hbox (badness 10000) in paragraph at lines 210--214
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 224--228
+Underfull \hbox (badness 10000) in paragraph at lines 225--229
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 242--248
+Underfull \hbox (badness 10000) in paragraph at lines 243--249
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--248
+Underfull \hbox (badness 10000) in paragraph at lines 243--249
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 264--267
+Underfull \hbox (badness 10000) in paragraph at lines 265--268
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 286.
+(hyperref)                removing `math shift' on input line 287.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 286.
+(hyperref)                removing `math shift' on input line 287.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 286--289
+Underfull \hbox (badness 10000) in paragraph at lines 287--290
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 291--295
+Underfull \hbox (badness 10000) in paragraph at lines 292--296
 
  []
 
 
-Overfull \hbox (34.20651pt too wide) in paragraph at lines 307--309
+Overfull \hbox (34.20651pt too wide) in paragraph at lines 308--310
 \T1/lmr/m/n/12 Note that $\OML/cmm/m/it/12 I[]$ \T1/lmr/m/n/12 cov-ers $[]$. Ta
 ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
  we have $[]$
@@ -500,71 +500,71 @@ ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 317.
+(hyperref)                removing `math shift' on input line 318.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 317.
+(hyperref)                removing `math shift' on input line 318.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--327
+Underfull \hbox (badness 10000) in paragraph at lines 324--328
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 330--333
+Underfull \hbox (badness 10000) in paragraph at lines 331--334
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--349
+Underfull \hbox (badness 10000) in paragraph at lines 346--350
 
  []
 
 
-Overfull \hbox (22.48218pt too wide) detected at line 351
+Overfull \hbox (22.48218pt too wide) detected at line 352
 \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
  []
 
 [18]
-Overfull \hbox (53.37004pt too wide) detected at line 354
+Overfull \hbox (53.37004pt too wide) detected at line 355
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--367
+Underfull \hbox (badness 10000) in paragraph at lines 364--368
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 393--396
+Underfull \hbox (badness 10000) in paragraph at lines 394--397
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 397--400
+Underfull \hbox (badness 10000) in paragraph at lines 398--401
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--404
+Underfull \hbox (badness 10000) in paragraph at lines 402--405
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 406.
+(hyperref)                removing `math shift' on input line 407.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 406.
+(hyperref)                removing `subscript' on input line 407.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 406.
+(hyperref)                removing `math shift' on input line 407.
 
 [21]
-Overfull \hbox (4.17073pt too wide) detected at line 445
+Overfull \hbox (4.17073pt too wide) detected at line 446
 [][] \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )\O
 ML/cmm/m/it/12 d! \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 M[]\OT1/cmr/m/n/12 (0) = \
 OML/cmm/m/it/12 n [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^C 
@@ -572,395 +572,395 @@ OML/cmm/m/it/12 n [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^C
  []
 
 [22]
-Overfull \hbox (33.5807pt too wide) detected at line 464
+Overfull \hbox (33.5807pt too wide) detected at line 465
 \OT1/cmr/m/n/12 = [] [](\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] [] + [] []
 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] []
  []
 
 [23]
-Overfull \hbox (67.60648pt too wide) detected at line 484
+Overfull \hbox (67.60648pt too wide) detected at line 485
 [] [][] [] [] \OML/cmm/m/it/12 d! \OT1/cmr/m/n/12 = [][] [] [] \OML/cmm/m/it/12
  d! \OT1/cmr/m/n/12 = [][] [] [] \OML/cmm/m/it/12 d!
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 527--532
+Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 527--532
+Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 535--540
+Underfull \hbox (badness 10000) in paragraph at lines 536--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--540
+Underfull \hbox (badness 10000) in paragraph at lines 536--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--546
+Underfull \hbox (badness 10000) in paragraph at lines 542--547
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 541--546
+Underfull \hbox (badness 10000) in paragraph at lines 542--547
 
  []
 
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 564--568
+Underfull \hbox (badness 10000) in paragraph at lines 565--569
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 574--578
+Underfull \hbox (badness 10000) in paragraph at lines 575--579
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 579--582
+Underfull \hbox (badness 10000) in paragraph at lines 580--583
 
  []
 
 [28]
-Underfull \hbox (badness 10000) in paragraph at lines 600--603
+Underfull \hbox (badness 10000) in paragraph at lines 601--604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--613
+Underfull \hbox (badness 10000) in paragraph at lines 610--614
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 629--632
+Underfull \hbox (badness 10000) in paragraph at lines 630--633
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 633--636
+Underfull \hbox (badness 10000) in paragraph at lines 634--637
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--642
+Underfull \hbox (badness 10000) in paragraph at lines 638--643
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 637--642
+Underfull \hbox (badness 10000) in paragraph at lines 638--643
 
  []
 
 [30] [31]
-Underfull \hbox (badness 10000) in paragraph at lines 682--685
+Underfull \hbox (badness 10000) in paragraph at lines 683--686
 
  []
 
 [32]
-Underfull \hbox (badness 10000) in paragraph at lines 686--690
+Underfull \hbox (badness 10000) in paragraph at lines 687--691
 
  []
 
 [33]
-Underfull \hbox (badness 10000) in paragraph at lines 706--710
+Underfull \hbox (badness 10000) in paragraph at lines 707--711
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--715
+Underfull \hbox (badness 10000) in paragraph at lines 713--716
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--720
+Underfull \hbox (badness 10000) in paragraph at lines 718--721
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 717--720
+Underfull \hbox (badness 10000) in paragraph at lines 718--721
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 729--733
+Underfull \hbox (badness 10000) in paragraph at lines 730--734
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 744--749
+Underfull \hbox (badness 10000) in paragraph at lines 745--750
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 744--749
+Underfull \hbox (badness 10000) in paragraph at lines 745--750
 
  []
 
 [36] [37] [38]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 819.
+(hyperref)                removing `math shift' on input line 820.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 819.
+(hyperref)                removing `\sigma' on input line 820.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 819.
+(hyperref)                removing `math shift' on input line 820.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 833.
+(hyperref)                removing `math shift' on input line 834.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 833.
+(hyperref)                removing `\sigma' on input line 834.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 833.
+(hyperref)                removing `math shift' on input line 834.
 
 [39]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 843.
+(hyperref)                removing `math shift' on input line 844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 843.
+(hyperref)                removing `\sigma' on input line 844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 843.
+(hyperref)                removing `math shift' on input line 844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 843.
+(hyperref)                removing `math shift' on input line 844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 843.
+(hyperref)                removing `math shift' on input line 844.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 858.
+(hyperref)                removing `math shift' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 858.
+(hyperref)                removing `\sigma' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 858.
+(hyperref)                removing `math shift' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 858.
+(hyperref)                removing `math shift' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 858.
+(hyperref)                removing `superscript' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 858.
+(hyperref)                removing `math shift' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 864.
+(hyperref)                removing `math shift' on input line 865.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 864.
+(hyperref)                removing `\sigma' on input line 865.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 864.
+(hyperref)                removing `math shift' on input line 865.
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 884--889
+Underfull \hbox (badness 10000) in paragraph at lines 885--890
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 884--889
+Underfull \hbox (badness 10000) in paragraph at lines 885--890
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 890--893
+Underfull \hbox (badness 10000) in paragraph at lines 891--894
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 898--901
+Underfull \hbox (badness 10000) in paragraph at lines 899--902
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--916
+Underfull \hbox (badness 10000) in paragraph at lines 908--917
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--916
+Underfull \hbox (badness 10000) in paragraph at lines 908--917
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--916
+Underfull \hbox (badness 10000) in paragraph at lines 908--917
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 907--916
+Underfull \hbox (badness 10000) in paragraph at lines 908--917
 
  []
 
 [42]
-Underfull \hbox (badness 10000) in paragraph at lines 917--920
+Underfull \hbox (badness 10000) in paragraph at lines 918--921
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 922.
+(hyperref)                removing `math shift' on input line 923.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 922.
+(hyperref)                removing `\sigma' on input line 923.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 922.
+(hyperref)                removing `math shift' on input line 923.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 922--925
+Underfull \hbox (badness 10000) in paragraph at lines 923--926
 
  []
 
 [43]
-Underfull \hbox (badness 10000) in paragraph at lines 939--943
+Underfull \hbox (badness 10000) in paragraph at lines 940--944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 945--949
+Underfull \hbox (badness 10000) in paragraph at lines 946--950
 
  []
 
 [44]
-Underfull \hbox (badness 10000) in paragraph at lines 961--964
+Underfull \hbox (badness 10000) in paragraph at lines 962--965
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 968--971
+Underfull \hbox (badness 10000) in paragraph at lines 969--972
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 975--978
+Underfull \hbox (badness 10000) in paragraph at lines 976--979
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 980.
+(hyperref)                removing `math shift' on input line 981.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 980.
+(hyperref)                removing `\sigma' on input line 981.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 980.
+(hyperref)                removing `math shift' on input line 981.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--993
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 980--993
+Underfull \hbox (badness 10000) in paragraph at lines 981--994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--993
+Underfull \hbox (badness 10000) in paragraph at lines 981--994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--993
+Underfull \hbox (badness 10000) in paragraph at lines 981--994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--993
+Underfull \hbox (badness 10000) in paragraph at lines 981--994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 980--993
+Underfull \hbox (badness 10000) in paragraph at lines 981--994
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 981--994
 
  []
 
 [45] [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 998.
+(hyperref)                removing `math shift' on input line 999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 998.
+(hyperref)                removing `subscript' on input line 999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 998.
+(hyperref)                removing `math shift' on input line 999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 998.
+(hyperref)                removing `math shift' on input line 999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 998.
+(hyperref)                removing `subscript' on input line 999.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 998.
+(hyperref)                removing `math shift' on input line 999.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1003
+Underfull \hbox (badness 10000) in paragraph at lines 999--1004
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 998--1003
+Underfull \hbox (badness 10000) in paragraph at lines 999--1004
 
  []
 
 [47]
-Underfull \hbox (badness 10000) in paragraph at lines 1029--1033
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1034
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1041--1045
+Underfull \hbox (badness 10000) in paragraph at lines 1042--1046
 
  []
 
 [48]
-Overfull \hbox (51.12727pt too wide) detected at line 1047
+Overfull \hbox (51.12727pt too wide) detected at line 1048
 \OML/cmm/m/it/12 D\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 [ \OML/c
 mm/m/it/12 B\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cm
 m/m/it/12 A \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) = [] \OML/cm
@@ -973,58 +973,58 @@ cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1061
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1062
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1061
+Underfull \hbox (badness 10000) in paragraph at lines 1056--1062
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1071--1075
+Underfull \hbox (badness 10000) in paragraph at lines 1072--1076
 
  []
 
 [49]
-Underfull \hbox (badness 10000) in paragraph at lines 1105--1109
+Underfull \hbox (badness 10000) in paragraph at lines 1106--1110
 
  []
 
 [50]
-Underfull \hbox (badness 10000) in paragraph at lines 1138--1142
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1143
 
  []
 
 [51]
-Underfull \hbox (badness 10000) in paragraph at lines 1144--1148
+Underfull \hbox (badness 10000) in paragraph at lines 1145--1149
 
  []
 
 
-Overfull \hbox (85.83473pt too wide) detected at line 1152
+Overfull \hbox (85.83473pt too wide) detected at line 1153
 [] [] \OML/cmm/m/it/12 A[] [] A[] \OMS/cmsy/m/n/12 2 M [] \OML/cmm/m/it/12 A[] 
 \OMS/cmsy/m/n/12 2 M []  [] \OML/cmm/m/it/12 A[] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1165--1169
+Underfull \hbox (badness 10000) in paragraph at lines 1166--1170
 
  []
 
 [52]
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1177
+Underfull \hbox (badness 10000) in paragraph at lines 1172--1178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1171--1177
+Underfull \hbox (badness 10000) in paragraph at lines 1172--1178
 
  []
 
 
-Overfull \hbox (65.29805pt too wide) detected at line 1183
+Overfull \hbox (65.29805pt too wide) detected at line 1184
 \OML/cmm/m/it/12 D\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 ^^@ \OML
 /cmm/m/it/12 B\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 D\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ) = \OML/cmm/m/
@@ -1039,182 +1039,182 @@ n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )
  []
 
 [53]
-Underfull \hbox (badness 10000) in paragraph at lines 1207--1210
+Underfull \hbox (badness 10000) in paragraph at lines 1208--1211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1212--1215
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1216
 
  []
 
 [54]
-Underfull \hbox (badness 10000) in paragraph at lines 1229--1233
+Underfull \hbox (badness 10000) in paragraph at lines 1230--1234
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1238--1241
+Underfull \hbox (badness 10000) in paragraph at lines 1239--1242
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1242--1247
+Underfull \hbox (badness 10000) in paragraph at lines 1243--1248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1242--1247
+Underfull \hbox (badness 10000) in paragraph at lines 1243--1248
 
  []
 
 [55]
-Overfull \hbox (13.78857pt too wide) detected at line 1250
+Overfull \hbox (13.78857pt too wide) detected at line 1251
 \OMS/cmsy/m/n/12 H[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f;g   H[] \OT1/cmr/m/n/
 12 = []
  []
 
 
-Overfull \hbox (24.45088pt too wide) in paragraph at lines 1250--1254
+Overfull \hbox (24.45088pt too wide) in paragraph at lines 1251--1255
 \T1/lmr/m/n/12 We de-fine $\OML/cmm/m/it/12 H[]$ \T1/lmr/m/n/12 above in the fo
 l-low-ing way. We let $\OML/cmm/m/it/12 h[] \OT1/cmr/m/n/12 = [] []$\T1/lmr/m/n
 /12 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1250--1254
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1255
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1257--1261
+Underfull \hbox (badness 10000) in paragraph at lines 1258--1262
 
  []
 
 [56]
-Underfull \hbox (badness 10000) in paragraph at lines 1274--1277
+Underfull \hbox (badness 10000) in paragraph at lines 1275--1278
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1282--1289
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1282--1289
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1290
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1282--1289
+Underfull \hbox (badness 10000) in paragraph at lines 1283--1290
 
  []
 
 [57]
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1305
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1300--1305
+Underfull \hbox (badness 10000) in paragraph at lines 1301--1306
 
  []
 
 [58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 1354--1357
+Underfull \hbox (badness 10000) in paragraph at lines 1355--1358
 
  []
 
 [60] [61]
-Underfull \hbox (badness 10000) in paragraph at lines 1415--1419
+Underfull \hbox (badness 10000) in paragraph at lines 1416--1420
 
  []
 
 [62]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1448.
+(hyperref)                removing `math shift' on input line 1449.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\pi' on input line 1448.
+(hyperref)                removing `\pi' on input line 1449.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 1448.
+(hyperref)                removing `\lambda' on input line 1449.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 1448.
+(hyperref)                removing `math shift' on input line 1449.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1460--1465
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1460--1465
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1466
 
  []
 
 [63]
-Underfull \hbox (badness 10000) in paragraph at lines 1468--1471
+Underfull \hbox (badness 10000) in paragraph at lines 1469--1472
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1473--1478
+Underfull \hbox (badness 10000) in paragraph at lines 1474--1479
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1485--1489
+Underfull \hbox (badness 10000) in paragraph at lines 1486--1490
 
  []
 
 [64]
-Underfull \hbox (badness 10000) in paragraph at lines 1495--1499
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1500
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1500--1503
+Underfull \hbox (badness 10000) in paragraph at lines 1501--1504
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1505--1511
+Underfull \hbox (badness 10000) in paragraph at lines 1506--1512
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1505--1511
+Underfull \hbox (badness 10000) in paragraph at lines 1506--1512
 
  []
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 1516--1519
+Underfull \hbox (badness 10000) in paragraph at lines 1517--1520
 
  []
 
 [66]
-Underfull \hbox (badness 10000) in paragraph at lines 1532--1536
+Underfull \hbox (badness 10000) in paragraph at lines 1533--1537
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1537--1540
+Underfull \hbox (badness 10000) in paragraph at lines 1538--1541
 
  []
 
 [67]
-Underfull \hbox (badness 10000) in paragraph at lines 1542--1546
+Underfull \hbox (badness 10000) in paragraph at lines 1543--1547
 
  []
 
 
-Overfull \hbox (41.60138pt too wide) detected at line 1561
+Overfull \hbox (41.60138pt too wide) detected at line 1562
 \OML/cmm/m/it/12 ^^U [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^U [] \OT1/cmr/m/n/
 12 = [] \OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[] \OMS/cmsy/m/n
 /12 ^^H \OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 ^^U\OT1/cmr/m
@@ -1222,22 +1222,22 @@ Overfull \hbox (41.60138pt too wide) detected at line 1561
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1565--1570
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1571
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1565--1570
+Underfull \hbox (badness 10000) in paragraph at lines 1566--1571
 
  []
 
 [68]
-Underfull \hbox (badness 10000) in paragraph at lines 1585--1588
+Underfull \hbox (badness 10000) in paragraph at lines 1586--1589
 
  []
 
 [69]
-Overfull \hbox (27.98921pt too wide) detected at line 1596
+Overfull \hbox (27.98921pt too wide) detected at line 1597
 [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) \OM
 S/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr
 /m/n/12 )  =[]\OMS/cmsy/m/n/12 )  [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cm
@@ -1248,23 +1248,23 @@ m/it/12 A[]\OT1/cmr/m/n/12 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1603--1606
+Underfull \hbox (badness 10000) in paragraph at lines 1604--1607
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1617--1621
+Underfull \hbox (badness 10000) in paragraph at lines 1618--1622
 
  []
 
 
-Overfull \hbox (25.21707pt too wide) detected at line 1624
+Overfull \hbox (25.21707pt too wide) detected at line 1625
 \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = [] [
 ] \OMS/cmsy/m/n/12 ^^U [] []
  []
 
 [70]
-Overfull \hbox (15.11319pt too wide) detected at line 1629
+Overfull \hbox (15.11319pt too wide) detected at line 1630
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) = \OML/c
 mm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B\OT1/cmr/m/n/12 ) = \OML/cmm/m
 /it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/
@@ -1277,77 +1277,77 @@ m/it/12 B\OT1/cmr/m/n/12 )
  []
 
 
-Overfull \hbox (3.97298pt too wide) detected at line 1649
+Overfull \hbox (3.97298pt too wide) detected at line 1650
 \OT1/cmr/m/n/12 = [] [] = [] []
  []
 
 [71]
-Underfull \hbox (badness 10000) in paragraph at lines 1688--1691
+Underfull \hbox (badness 10000) in paragraph at lines 1689--1692
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1695--1698
+Underfull \hbox (badness 10000) in paragraph at lines 1696--1699
 
  []
 
 [72]
-Underfull \hbox (badness 10000) in paragraph at lines 1712--1717
+Underfull \hbox (badness 10000) in paragraph at lines 1713--1718
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1712--1717
+Underfull \hbox (badness 10000) in paragraph at lines 1713--1718
 
  []
 
 [73]
-Underfull \hbox (badness 10000) in paragraph at lines 1732--1735
+Underfull \hbox (badness 10000) in paragraph at lines 1733--1736
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1738--1742
+Underfull \hbox (badness 10000) in paragraph at lines 1739--1743
 
  []
 
 [74]
-Underfull \hbox (badness 10000) in paragraph at lines 1756--1759
+Underfull \hbox (badness 10000) in paragraph at lines 1757--1760
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1765--1771
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1765--1771
+Underfull \hbox (badness 10000) in paragraph at lines 1766--1772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1790--1794
+Underfull \hbox (badness 10000) in paragraph at lines 1791--1795
 
  []
 
 [75]
-Underfull \hbox (badness 10000) in paragraph at lines 1809--1813
+Underfull \hbox (badness 10000) in paragraph at lines 1810--1814
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1821--1824
+Underfull \hbox (badness 10000) in paragraph at lines 1822--1825
 
  []
 
 [76]
-Underfull \hbox (badness 10000) in paragraph at lines 1835--1839
+Underfull \hbox (badness 10000) in paragraph at lines 1836--1840
 
  []
 
 
-Overfull \hbox (17.12239pt too wide) detected at line 1848
+Overfull \hbox (17.12239pt too wide) detected at line 1849
 \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 ) = 1 \O
 MS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E[]\OT
 1/cmr/m/n/12 ) = 1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\O
@@ -1360,166 +1360,166 @@ mr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )
  []
 
 [77]
-Underfull \hbox (badness 10000) in paragraph at lines 1888--1891
+Underfull \hbox (badness 10000) in paragraph at lines 1889--1892
 
  []
 
 
-Overfull \hbox (32.1364pt too wide) detected at line 1895
+Overfull \hbox (32.1364pt too wide) detected at line 1896
 \OML/cmm/m/it/12 Q\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 [\OML/cmm/m/it/12 C[]\OT1/c
 mr/m/n/12 ) = \OML/cmm/m/it/12 Q [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Q []
  []
 
 [78]
-Underfull \hbox (badness 10000) in paragraph at lines 1928--1932
+Underfull \hbox (badness 10000) in paragraph at lines 1929--1933
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1935--1942
+Underfull \hbox (badness 10000) in paragraph at lines 1936--1943
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1935--1942
+Underfull \hbox (badness 10000) in paragraph at lines 1936--1943
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1935--1942
+Underfull \hbox (badness 10000) in paragraph at lines 1936--1943
 
  []
 
 [79]
-Underfull \hbox (badness 10000) in paragraph at lines 1951--1957
+Underfull \hbox (badness 10000) in paragraph at lines 1952--1958
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1951--1957
+Underfull \hbox (badness 10000) in paragraph at lines 1952--1958
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1958--1963
+Underfull \hbox (badness 10000) in paragraph at lines 1959--1964
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1958--1963
+Underfull \hbox (badness 10000) in paragraph at lines 1959--1964
 
  []
 
 [80]
-Underfull \hbox (badness 10000) in paragraph at lines 1988--1993
+Underfull \hbox (badness 10000) in paragraph at lines 1989--1994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1988--1993
+Underfull \hbox (badness 10000) in paragraph at lines 1989--1994
 
  []
 
 [81]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2009.
+(hyperref)                removing `math shift' on input line 2010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 2009.
+(hyperref)                removing `\lambda' on input line 2010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cap' on input line 2009.
+(hyperref)                removing `\cap' on input line 2010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 2009.
+(hyperref)                removing `\lambda' on input line 2010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2009.
+(hyperref)                removing `math shift' on input line 2010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2009.
+(hyperref)                removing `math shift' on input line 2010.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2009.
+(hyperref)                removing `math shift' on input line 2010.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2016--2021
+Underfull \hbox (badness 10000) in paragraph at lines 2017--2022
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2016--2021
+Underfull \hbox (badness 10000) in paragraph at lines 2017--2022
 
  []
 
 [82]
-Overfull \hbox (13.90274pt too wide) in paragraph at lines 2030--2037
+Overfull \hbox (13.90274pt too wide) in paragraph at lines 2031--2038
 \T1/lmr/m/n/12 end-points. Con-struct dis-joint, nowhere dense Borel sets $\OML
 /cmm/m/it/12 A[]; B[]; A[]; B[]; [] $
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2030--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2038
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2030--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2038
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2030--2037
+Underfull \hbox (badness 10000) in paragraph at lines 2031--2038
 
  []
 
 [83]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2065.
+(hyperref)                removing `math shift' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 2065.
+(hyperref)                removing `\lambda' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 2065.
+(hyperref)                removing `\leq' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 2065.
+(hyperref)                removing `\lambda' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\cap' on input line 2065.
+(hyperref)                removing `\cap' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leq' on input line 2065.
+(hyperref)                removing `\leq' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\lambda' on input line 2065.
+(hyperref)                removing `\lambda' on input line 2066.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2065.
+(hyperref)                removing `math shift' on input line 2066.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2067--2070
+Underfull \hbox (badness 10000) in paragraph at lines 2068--2071
 
  []
 
 [84]
-Overfull \hbox (2.32024pt too wide) detected at line 2077
+Overfull \hbox (2.32024pt too wide) detected at line 2078
 \OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = \OML
 /cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = [] [] 
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 ) [] \OM
@@ -1528,12 +1528,12 @@ L/cmm/m/it/12 A \OMS/cmsy/m/n/12 ^^R [] \OML/cmm/m/it/12 A[] [] A[] \OMS/cmsy/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2081--2085
+Underfull \hbox (badness 10000) in paragraph at lines 2082--2086
 
  []
 
 
-Overfull \hbox (28.59282pt too wide) detected at line 2089
+Overfull \hbox (28.59282pt too wide) detected at line 2090
 \OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 ) \OML/c
 mm/m/it/12 < b[]^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )  =[]\OM
 S/cmsy/m/n/12 )  [] \OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 I[]\O
@@ -1544,37 +1544,37 @@ T1/cmr/m/n/12 ) \OML/cmm/m/it/12 < b[]^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2095--2098
+Underfull \hbox (badness 10000) in paragraph at lines 2096--2099
 
  []
 
 [85]
-Underfull \hbox (badness 10000) in paragraph at lines 2116--2119
+Underfull \hbox (badness 10000) in paragraph at lines 2117--2120
 
  []
 
 [86]
-Underfull \hbox (badness 10000) in paragraph at lines 2135--2141
+Underfull \hbox (badness 10000) in paragraph at lines 2136--2142
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2135--2141
+Underfull \hbox (badness 10000) in paragraph at lines 2136--2142
 
  []
 
 [87]
-Underfull \hbox (badness 10000) in paragraph at lines 2164--2168
+Underfull \hbox (badness 10000) in paragraph at lines 2165--2169
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2176--2180
+Underfull \hbox (badness 10000) in paragraph at lines 2177--2181
 
  []
 
 
-Overfull \hbox (10.05016pt too wide) in paragraph at lines 2183--2185
+Overfull \hbox (10.05016pt too wide) in paragraph at lines 2184--2186
 \T1/lmr/m/n/12 Recall, that if $[][] \U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m
 /it/12 A[]\OT1/cmr/m/n/12 ) = [][] \U/msb/m/n/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/i
 t/12 A[]\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 , then they both equal $[] \OML/cmm/m/
@@ -1582,77 +1582,77 @@ it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 ,
  []
 
 [88]
-Underfull \hbox (badness 10000) in paragraph at lines 2211--2215
+Underfull \hbox (badness 10000) in paragraph at lines 2212--2216
 
  []
 
 [89]
-Underfull \hbox (badness 10000) in paragraph at lines 2217--2221
+Underfull \hbox (badness 10000) in paragraph at lines 2218--2222
 
  []
 
 [90]
-Underfull \hbox (badness 10000) in paragraph at lines 2256--2259
+Underfull \hbox (badness 10000) in paragraph at lines 2257--2260
 
  []
 
 [91]
-Underfull \hbox (badness 10000) in paragraph at lines 2267--2271
+Underfull \hbox (badness 10000) in paragraph at lines 2268--2272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2280--2284
+Underfull \hbox (badness 10000) in paragraph at lines 2281--2285
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2292--2295
+Underfull \hbox (badness 10000) in paragraph at lines 2293--2296
 
  []
 
 [92]
-Underfull \hbox (badness 10000) in paragraph at lines 2302--2305
+Underfull \hbox (badness 10000) in paragraph at lines 2303--2306
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2306--2309
+Underfull \hbox (badness 10000) in paragraph at lines 2307--2310
 
  []
 
 [93]
-Underfull \hbox (badness 10000) in paragraph at lines 2313--2319
+Underfull \hbox (badness 10000) in paragraph at lines 2314--2320
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2313--2319
+Underfull \hbox (badness 10000) in paragraph at lines 2314--2320
 
  []
 
 [94]
-Underfull \hbox (badness 10000) in paragraph at lines 2340--2344
+Underfull \hbox (badness 10000) in paragraph at lines 2341--2345
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2345--2348
+Underfull \hbox (badness 10000) in paragraph at lines 2346--2349
 
  []
 
 [95]
-Underfull \hbox (badness 10000) in paragraph at lines 2365--2371
+Underfull \hbox (badness 10000) in paragraph at lines 2366--2372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2365--2371
+Underfull \hbox (badness 10000) in paragraph at lines 2366--2372
 
  []
 
 [96]
-Overfull \hbox (12.51962pt too wide) detected at line 2407
+Overfull \hbox (12.51962pt too wide) detected at line 2408
 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ! \OT1/cmr/m/n/12 : \OML/cmm/m/it/12 l[]\OT1/
 cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U \OML/cmm/m
 /it/12 r[][]\OT1/cmr/m/n/12 ] = [] [][\OML/cmm/m/it/12 w \OT1/cmr/m/n/12 : \OML
@@ -1663,213 +1663,213 @@ OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 H[] \OMS/cmsy/m/n/12 \ [] \ \OML/cmm/m/it/12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2410--2413
+Underfull \hbox (badness 10000) in paragraph at lines 2411--2414
 
  []
 
 [97]
-Underfull \hbox (badness 10000) in paragraph at lines 2421--2425
+Underfull \hbox (badness 10000) in paragraph at lines 2422--2426
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2431--2441
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2431--2441
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2431--2441
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2442
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2431--2441
+Underfull \hbox (badness 10000) in paragraph at lines 2432--2442
 
  []
 
 [98]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2451.
+(hyperref)                removing `math shift' on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 2451.
+(hyperref)                removing `\mathop' on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 2451.
+(hyperref)                removing `\mathgroup' on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 2451.
+(hyperref)                removing `\symoperators' on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 2451.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2451.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 2451.
+(hyperref)                removed on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 2451.
+(hyperref)                removing `\nmlimits@' on input line 2452.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2451.
+(hyperref)                removing `math shift' on input line 2452.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2456--2460
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 1.95871pt
+(hyperref)                removed on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nmlimits@' on input line 2452.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2452.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2457--2461
 
  []
 
 [99]
-Underfull \hbox (badness 10000) in paragraph at lines 2466--2470
+Underfull \hbox (badness 10000) in paragraph at lines 2467--2471
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2493
+Underfull \hbox (badness 10000) in paragraph at lines 2482--2494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2493
+Underfull \hbox (badness 10000) in paragraph at lines 2482--2494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2493
+Underfull \hbox (badness 10000) in paragraph at lines 2482--2494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2493
+Underfull \hbox (badness 10000) in paragraph at lines 2482--2494
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2481--2493
+Underfull \hbox (badness 10000) in paragraph at lines 2482--2494
 
  []
 
 [100]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2494.
+(hyperref)                removing `math shift' on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 2494.
+(hyperref)                removing `\mathop' on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 2494.
+(hyperref)                removing `\mathgroup' on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 2494.
+(hyperref)                removing `\symoperators' on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 2494.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2494.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 2494.
+(hyperref)                removed on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 2494.
+(hyperref)                removing `\nmlimits@' on input line 2495.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2494.
+(hyperref)                removing `math shift' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathop' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 1.95871pt
+(hyperref)                removed on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nmlimits@' on input line 2495.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 2495.
 
 File: problem-4.3.a.jpg Graphic file (type bmp)
 <problem-4.3.a.jpg>
 [101]
-Underfull \hbox (badness 10000) in paragraph at lines 2532--2536
+Underfull \hbox (badness 10000) in paragraph at lines 2533--2537
 
  []
 
 
-Overfull \hbox (27.43735pt too wide) in paragraph at lines 2539--2544
+Overfull \hbox (27.43735pt too wide) in paragraph at lines 2540--2545
 \T1/lmr/m/n/12 For events $\OML/cmm/m/it/12 A[]; []  ; A[]$ \T1/lmr/m/n/12 con-
 sider the $\OT1/cmr/m/n/12 2[]$ \T1/lmr/m/n/12 equa-tions $\OML/cmm/m/it/12 P\O
 T1/cmr/m/n/12 (\OML/cmm/m/it/12 B[] \OMS/cmsy/m/n/12 \ [] \ \OML/cmm/m/it/12 B[
@@ -1879,65 +1879,65 @@ mr/m/n/12 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2539--2544
+Underfull \hbox (badness 10000) in paragraph at lines 2540--2545
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2539--2544
+Underfull \hbox (badness 10000) in paragraph at lines 2540--2545
 
  []
 
 [102]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2556.
+(hyperref)                removing `math shift' on input line 2557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2556.
+(hyperref)                removing `math shift' on input line 2557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2556.
+(hyperref)                removing `math shift' on input line 2557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 2556.
+(hyperref)                removing `\Omega' on input line 2557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2556.
+(hyperref)                removing `math shift' on input line 2557.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2559--2564
+Underfull \hbox (badness 10000) in paragraph at lines 2560--2565
 
  []
 
 [103]
-Overfull \hbox (32.38905pt too wide) in paragraph at lines 2576--2577
+Overfull \hbox (32.38905pt too wide) in paragraph at lines 2577--2578
 []\T1/lmr/m/n/12 The $\OML/cmm/m/it/12 ^^[$ \T1/lmr/m/n/12 field in prob-lem 3.
 5. In prob-lem 3.5, we have $\OT1/cmr/m/n/12 
  = []$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2579--2583
+Underfull \hbox (badness 10000) in paragraph at lines 2580--2584
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2585--2590
+Underfull \hbox (badness 10000) in paragraph at lines 2586--2591
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2585--2590
+Underfull \hbox (badness 10000) in paragraph at lines 2586--2591
 
  []
 
 [104] [105]
-Overfull \hbox (4.04645pt too wide) detected at line 2649
+Overfull \hbox (4.04645pt too wide) detected at line 2650
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 H \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 G[]\OT1
 /cmr/m/n/12 ) \OMS/cmsy/m/n/12 [ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 H[] \OMS/cms
 y/m/n/12 \ \OML/cmm/m/it/12 G[]\OT1/cmr/m/n/12 ) = (\OML/cmm/m/it/12 H \OMS/cms
@@ -1951,100 +1951,100 @@ G[]\OT1/cmr/m/n/12 ) + \OML/cmm/m/it/12 ^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 G[
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2649--2653
+Underfull \hbox (badness 10000) in paragraph at lines 2650--2654
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2661--2665
+Underfull \hbox (badness 10000) in paragraph at lines 2662--2666
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2671--2677
+Underfull \hbox (badness 10000) in paragraph at lines 2672--2678
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2671--2677
+Underfull \hbox (badness 10000) in paragraph at lines 2672--2678
 
  []
 
 [106]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2678.
+(hyperref)                removing `math shift' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 2678.
+(hyperref)                removing `\mathop' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 2678.
+(hyperref)                removing `\mathgroup' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 2678.
+(hyperref)                removing `\symoperators' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2678.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 2678.
+(hyperref)                removed on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 2678.
+(hyperref)                removing `\nmlimits@' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2678.
+(hyperref)                removing `subscript' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 2678.
+(hyperref)                removing `subscript' on input line 2679.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 2678.
+(hyperref)                removing `math shift' on input line 2679.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2687--2691
+Underfull \hbox (badness 10000) in paragraph at lines 2688--2692
 
  []
 
 [107]
-Underfull \hbox (badness 10000) in paragraph at lines 2719--2724
+Underfull \hbox (badness 10000) in paragraph at lines 2720--2725
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2719--2724
+Underfull \hbox (badness 10000) in paragraph at lines 2720--2725
 
  []
 
 [108]
-Overfull \hbox (1.86275pt too wide) in paragraph at lines 2726--2728
+Overfull \hbox (1.86275pt too wide) in paragraph at lines 2727--2729
 \T1/lmr/m/n/12 As noted above, we can prove this prob-a-bil-ity equals one if e
 ach $[][] \OML/cmm/m/it/12 A[]$
  []
 
 
-Overfull \hbox (49.99593pt too wide) detected at line 2736
+Overfull \hbox (49.99593pt too wide) detected at line 2737
 \OT1/cmr/m/n/12 = [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2743--2747
+Underfull \hbox (badness 10000) in paragraph at lines 2744--2748
 
  []
 
 [109]
-Overfull \hbox (60.01262pt too wide) detected at line 2781
+Overfull \hbox (60.01262pt too wide) detected at line 2782
 \OMS/cmsy/m/n/12 1 \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML
 /cmm/m/it/12 A[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 A[] \OMS/cmsy/m/n/12 \ [] 
 \ \OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 )[] \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/12 
@@ -2054,48 +2054,48 @@ Overfull \hbox (60.01262pt too wide) detected at line 2781
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2792--2797
+Underfull \hbox (badness 10000) in paragraph at lines 2793--2798
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2792--2797
+Underfull \hbox (badness 10000) in paragraph at lines 2793--2798
 
  []
 
 [110]
-Underfull \hbox (badness 10000) in paragraph at lines 2798--2801
+Underfull \hbox (badness 10000) in paragraph at lines 2799--2802
 
  []
 
 [111]
-Underfull \hbox (badness 10000) in paragraph at lines 2841--2844
+Underfull \hbox (badness 10000) in paragraph at lines 2842--2845
 
  []
 
 [112]
-Underfull \hbox (badness 10000) in paragraph at lines 2879--2885
+Underfull \hbox (badness 10000) in paragraph at lines 2880--2886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2879--2885
+Underfull \hbox (badness 10000) in paragraph at lines 2880--2886
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2892--2896
+Underfull \hbox (badness 10000) in paragraph at lines 2893--2897
 
  []
 
 [113] [114]
-Overfull \hbox (2.67331pt too wide) in paragraph at lines 2936--2938
+Overfull \hbox (2.67331pt too wide) in paragraph at lines 2937--2939
 \T1/lmr/m/n/12 Note, $\OML/cmm/m/it/12 c$ \T1/lmr/m/n/12 has at most two dyadic
  ex-pan-sions (ter-mi-nat-ing and non-terminating): 
  []
 
 
-Overfull \hbox (12.28923pt too wide) detected at line 2962
+Overfull \hbox (12.28923pt too wide) detected at line 2963
 [] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS
 /cmsy/m/n/12 \ \OML/cmm/m/it/12 C[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \OML/
 cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 \ \OML/cmm/m/
@@ -2109,23 +2109,23 @@ cmr/m/n/12 0
  []
 
 [115]
-Underfull \hbox (badness 10000) in paragraph at lines 2989--2993
+Underfull \hbox (badness 10000) in paragraph at lines 2990--2994
 
  []
 
 [116]
-Underfull \hbox (badness 10000) in paragraph at lines 3013--3017
+Underfull \hbox (badness 10000) in paragraph at lines 3014--3018
 
  []
 
 
-Overfull \hbox (46.18405pt too wide) detected at line 3034
+Overfull \hbox (46.18405pt too wide) detected at line 3035
 \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/
 12 = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = [] [] \OMS/cmsy/m/n/12 ! []
  []
 
 [117] [118] [119] [120]
-Overfull \hbox (30.21033pt too wide) in paragraph at lines 3184--3188
+Overfull \hbox (30.21033pt too wide) in paragraph at lines 3185--3189
 \T1/lmr/m/n/12 Note - $\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 Y \OT1/cmr/m/n/12 = \O
 ML/cmm/m/it/12 y\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 ^^[\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 X[]; []  ; X[]\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 , if
@@ -2135,12 +2135,12 @@ mr/m/n/12 (\OML/cmm/m/it/12 X[]; []  ; X[]\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 , if
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3184--3188
+Underfull \hbox (badness 10000) in paragraph at lines 3185--3189
 
  []
 
 [121]
-Overfull \hbox (9.96794pt too wide) in paragraph at lines 3205--3206
+Overfull \hbox (9.96794pt too wide) in paragraph at lines 3206--3207
  []\T1/lmr/bx/n/12 Example 5.2[] \T1/lmr/m/n/12 Let $\OML/cmm/m/it/12 s[]\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) = [][] \OML/cmm/m/it/12 r[]\OT1/
 cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )$ \T1/lmr/m/n/12 be the par-tial
@@ -2148,97 +2148,97 @@ cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )$ \T1/lmr/m/n/12 be the par-tial
  []
 
 [122]
-Overfull \hbox (25.44386pt too wide) in paragraph at lines 3215--3217
+Overfull \hbox (25.44386pt too wide) in paragraph at lines 3216--3218
 \T1/lmr/m/n/12 The nor-mal num-ber the-o-rem is es-sen-tially con-cerned with $
 \OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) = \OML
 /cmm/m/it/12 n[] [][] d[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3219--3223
+Underfull \hbox (badness 10000) in paragraph at lines 3220--3224
 
  []
 
 
-Overfull \hbox (34.84726pt too wide) detected at line 3231
+Overfull \hbox (34.84726pt too wide) detected at line 3232
 \OT1/cmr/m/n/12 0 \OMS/cmsy/m/n/12 ^^T [] \OML/cmm/m/it/12 P [] \OMS/cmsy/m/n/1
 2 ^^T [] \OML/cmm/m/it/12 P [] \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 P [] \OT1/
 cmr/m/n/12 = 0
  []
 
 [123]
-Underfull \hbox (badness 10000) in paragraph at lines 3256--3260
+Underfull \hbox (badness 10000) in paragraph at lines 3257--3261
 
  []
 
 [124]
-Overfull \hbox (31.59015pt too wide) in paragraph at lines 3270--3271
+Overfull \hbox (31.59015pt too wide) in paragraph at lines 3271--3272
  []\T1/lmr/bx/n/12 Definition - In-de-pen-dent Sim-ple Ran-dom Vari-ables[] \T1
 /lmr/m/n/12 A se-quence $\OML/cmm/m/it/12 X[]; X[]; [] $
  []
 
 [125]
-Underfull \hbox (badness 10000) in paragraph at lines 3303--3307
+Underfull \hbox (badness 10000) in paragraph at lines 3304--3308
 
  []
 
 [126]
-Underfull \hbox (badness 10000) in paragraph at lines 3333--3341
+Underfull \hbox (badness 10000) in paragraph at lines 3334--3342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3333--3341
+Underfull \hbox (badness 10000) in paragraph at lines 3334--3342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3333--3341
+Underfull \hbox (badness 10000) in paragraph at lines 3334--3342
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3343--3349
+Underfull \hbox (badness 10000) in paragraph at lines 3344--3350
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3343--3349
+Underfull \hbox (badness 10000) in paragraph at lines 3344--3350
 
  []
 
 [127]
-Underfull \hbox (badness 10000) in paragraph at lines 3355--3359
+Underfull \hbox (badness 10000) in paragraph at lines 3356--3360
 
  []
 
 [128]
-Underfull \hbox (badness 10000) in paragraph at lines 3369--3373
+Underfull \hbox (badness 10000) in paragraph at lines 3370--3374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3380--3385
+Underfull \hbox (badness 10000) in paragraph at lines 3381--3386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3380--3385
+Underfull \hbox (badness 10000) in paragraph at lines 3381--3386
 
  []
 
 [129]
-Underfull \hbox (badness 10000) in paragraph at lines 3391--3395
+Underfull \hbox (badness 10000) in paragraph at lines 3392--3396
 
  []
 
 [130]
-Underfull \hbox (badness 10000) in paragraph at lines 3406--3410
+Underfull \hbox (badness 10000) in paragraph at lines 3407--3411
 
  []
 
 
-Overfull \hbox (7.7306pt too wide) in paragraph at lines 3424--3425
+Overfull \hbox (7.7306pt too wide) in paragraph at lines 3425--3426
  []\T1/lmr/bx/n/12 Definition - Uni-formly Bounded[] \T1/lmr/m/n/12 If there is
  a fi-nite $\OML/cmm/m/it/12 K$ \T1/lmr/m/n/12 such that $\OMS/cmsy/m/n/12 j\OM
 L/cmm/m/it/12 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )\OMS/cmsy/
@@ -2246,115 +2246,115 @@ m/n/12 j ^^T
  []
 
 [131]
-Underfull \hbox (badness 10000) in paragraph at lines 3426--3430
+Underfull \hbox (badness 10000) in paragraph at lines 3427--3431
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3440--3443
+Underfull \hbox (badness 10000) in paragraph at lines 3441--3444
 
  []
 
 [132] [133] [134] [135]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3570.
+(hyperref)                removing `math shift' on input line 3571.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3570.
+(hyperref)                removing `math shift' on input line 3571.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3572--3575
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3577--3581
+Underfull \hbox (badness 10000) in paragraph at lines 3573--3576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3582--3587
+Underfull \hbox (badness 10000) in paragraph at lines 3578--3582
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3582--3587
+Underfull \hbox (badness 10000) in paragraph at lines 3583--3588
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3583--3588
 
  []
 
 [136]
-Underfull \hbox (badness 10000) in paragraph at lines 3588--3591
+Underfull \hbox (badness 10000) in paragraph at lines 3589--3592
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3598.
+(hyperref)                removing `math shift' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3598.
+(hyperref)                removing `subscript' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3598.
+(hyperref)                removing `math shift' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3598.
+(hyperref)                removing `math shift' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 3598.
+(hyperref)                removing `\mu' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3598.
+(hyperref)                removing `subscript' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3598.
+(hyperref)                removing `math shift' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3598.
+(hyperref)                removing `math shift' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mu' on input line 3598.
+(hyperref)                removing `\mu' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 3598.
+(hyperref)                removing `subscript' on input line 3599.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3598.
+(hyperref)                removing `math shift' on input line 3599.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3598--3603
+Underfull \hbox (badness 10000) in paragraph at lines 3599--3604
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3598--3603
+Underfull \hbox (badness 10000) in paragraph at lines 3599--3604
 
  []
 
 [137]
-Underfull \hbox (badness 10000) in paragraph at lines 3630--3633
+Underfull \hbox (badness 10000) in paragraph at lines 3631--3634
 
  []
 
 [138] [139]
-Underfull \hbox (badness 10000) in paragraph at lines 3701--3704
+Underfull \hbox (badness 10000) in paragraph at lines 3702--3705
 
  []
 
 [140]
-Overfull \hbox (0.78961pt too wide) detected at line 3729
+Overfull \hbox (0.78961pt too wide) detected at line 3730
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X \OT1/cmr/m/n/12 = \OML/cm
 m/m/it/12 x\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it
 /12 X \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x; \OT1/cmr/m/n/12 
@@ -2365,12 +2365,12 @@ cmm/m/it/12 x; Y \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ]
  []
 
 [141]
-Underfull \hbox (badness 10000) in paragraph at lines 3758--3762
+Underfull \hbox (badness 10000) in paragraph at lines 3759--3763
 
  []
 
 
-Overfull \hbox (51.85834pt too wide) detected at line 3789
+Overfull \hbox (51.85834pt too wide) detected at line 3790
 \OML/cmm/m/it/12 '[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [] [
 ] = \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 (\OM
 L/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 ) + (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it
@@ -2384,33 +2384,33 @@ OML/cmm/m/it/12 b
 [142]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3808.
+(hyperref)                removing `math shift' on input line 3809.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3808.
+(hyperref)                removing `math shift' on input line 3809.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3808.
+(hyperref)                removing `math shift' on input line 3809.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3808.
+(hyperref)                removing `math shift' on input line 3809.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3808--3811
+Underfull \hbox (badness 10000) in paragraph at lines 3809--3812
 
  []
 
 
-Overfull \hbox (27.8038pt too wide) detected at line 3815
+Overfull \hbox (27.8038pt too wide) detected at line 3816
 \OML/cmm/m/it/12 f[] \OT1/cmr/m/n/12 = []   \OML/cmm/m/it/12 f[] \OT1/cmr/m/n/1
 2 = []   \OML/cmm/m/it/12 f[] \OT1/cmr/m/n/12 = []
  []
 
 [143]
-Overfull \hbox (3.92674pt too wide) in paragraph at lines 3830--3830
+Overfull \hbox (3.92674pt too wide) in paragraph at lines 3831--3831
 [][]\T1/lmr/bx/n/12 5.10 Prove Minkowski's In-equal-ity for non-neg-a-tive $\OM
 L/cmm/m/it/12 X$\T1/lmr/bx/n/12 , $\OML/cmm/m/it/12 Y$ \T1/lmr/bx/n/12 via Jens
 en's 
@@ -2418,50 +2418,50 @@ en's
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3830.
+(hyperref)                removing `math shift' on input line 3831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3830.
+(hyperref)                removing `math shift' on input line 3831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3830.
+(hyperref)                removing `math shift' on input line 3831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3830.
+(hyperref)                removing `math shift' on input line 3831.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3859.
+(hyperref)                removing `math shift' on input line 3860.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 3859.
+(hyperref)                removing `math shift' on input line 3860.
 
 [144] [145]
-Underfull \hbox (badness 10000) in paragraph at lines 3923--3928
+Underfull \hbox (badness 10000) in paragraph at lines 3924--3929
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3923--3928
+Underfull \hbox (badness 10000) in paragraph at lines 3924--3929
 
  []
 
 [146]
-Underfull \hbox (badness 10000) in paragraph at lines 3949--3954
+Underfull \hbox (badness 10000) in paragraph at lines 3950--3955
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3949--3954
+Underfull \hbox (badness 10000) in paragraph at lines 3950--3955
 
  []
 
 
-Overfull \hbox (68.05083pt too wide) detected at line 3961
+Overfull \hbox (68.05083pt too wide) detected at line 3962
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 1\OML/
 cmm/m/it/12 ; \OT1/cmr/m/n/12 5\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 9\OML/cmm/m/i
 t/12 ; [] \OMS/cmsy/m/n/12 g  \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = \OMS/cmsy/
@@ -2475,22 +2475,22 @@ m/n/12 4\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 8\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12
  []
 
 [147]
-Underfull \hbox (badness 10000) in paragraph at lines 3969--3973
+Underfull \hbox (badness 10000) in paragraph at lines 3970--3974
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3983--3987
+Underfull \hbox (badness 10000) in paragraph at lines 3984--3988
 
  []
 
 [148]
-Underfull \hbox (badness 10000) in paragraph at lines 3995--3999
+Underfull \hbox (badness 10000) in paragraph at lines 3996--4000
 
  []
 
 [149]
-Overfull \hbox (86.05551pt too wide) detected at line 4023
+Overfull \hbox (86.05551pt too wide) detected at line 4024
 \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ^^K[] \OMS/cmsy/m/n/12 ^^
 U \OML/cmm/m/it/12 k[]; i \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 u\OT1/cmr/m/n/1
 2 ] = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] \OT1/cm
@@ -2498,17 +2498,17 @@ r/m/n/12 = [] [] \OMS/cmsy/m/n/12 ! []
  []
 
 [150]
-Underfull \hbox (badness 10000) in paragraph at lines 4070--4074
+Underfull \hbox (badness 10000) in paragraph at lines 4071--4075
 
  []
 
 [151] [152] [153]
-Underfull \hbox (badness 10000) in paragraph at lines 4193--4197
+Underfull \hbox (badness 10000) in paragraph at lines 4194--4198
 
  []
 
 [154]
-Overfull \hbox (19.52658pt too wide) detected at line 4218
+Overfull \hbox (19.52658pt too wide) detected at line 4219
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[] \OT1/cmr/m/n/12 = 1] = 
 [] = \OML/cmm/m/it/12 E\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 ] =
  \OML/cmm/m/it/12 m[]   Var\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12
@@ -2517,17 +2517,17 @@ Overfull \hbox (19.52658pt too wide) detected at line 4218
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4234--4239
+Underfull \hbox (badness 10000) in paragraph at lines 4235--4240
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4234--4239
+Underfull \hbox (badness 10000) in paragraph at lines 4235--4240
 
  []
 
 [155]
-Overfull \hbox (83.37701pt too wide) in paragraph at lines 4242--4243
+Overfull \hbox (83.37701pt too wide) in paragraph at lines 4243--4244
  []\T1/lmr/bx/n/12 Proof of The-o-rem 6.2[] \T1/lmr/m/n/12 Let $\OML/cmm/m/it/1
 2 M \OT1/cmr/m/n/12 = [][] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 
 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 j$\T1/lmr/m/n/12 , and let
@@ -2536,7 +2536,7 @@ Overfull \hbox (83.37701pt too wide) in paragraph at lines 4242--4243
  []
 
 
-Overfull \hbox (3.60957pt too wide) detected at line 4254
+Overfull \hbox (3.60957pt too wide) detected at line 4255
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 S \OT1/cmr/m/n/12 = \OML/cm
 m/m/it/12 k\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = []\OML/c
 mm/m/it/12 x[]\OT1/cmr/m/n/12 (1 \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x\OT1/cm
@@ -2544,79 +2544,79 @@ r/m/n/12 )[]
  []
 
 [156]
-Underfull \hbox (badness 10000) in paragraph at lines 4259--4263
+Underfull \hbox (badness 10000) in paragraph at lines 4260--4264
 
  []
 
 LaTeX Font Info:    Trying to load font information for U+bbm on input line 426
-5.
+6.
 (/usr/share/texlive/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 )
-Underfull \hbox (badness 10000) in paragraph at lines 4289--4293
+Underfull \hbox (badness 10000) in paragraph at lines 4290--4294
 
  []
 
 [157]
-Overfull \hbox (74.07108pt too wide) detected at line 4300
+Overfull \hbox (74.07108pt too wide) detected at line 4301
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 N[] \OMS/cmsy/m/n/12 ^^T \O
 ML/cmm/m/it/12 x\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 P [] \OMS/cmsy/m/n/12 ^^T 
 \OML/cmm/m/it/12 P [] \OMS/cmsy/m/n/12 ^^T [] ^^T []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4314--4318
+Underfull \hbox (badness 10000) in paragraph at lines 4315--4319
 
  []
 
 [158]
-Overfull \hbox (3.42667pt too wide) in paragraph at lines 4319--4320
+Overfull \hbox (3.42667pt too wide) in paragraph at lines 4320--4321
  []\T1/lmr/bx/n/12 Theorem 6.3: Sec-ond Borel Can-telli Lemma Re-fine-ment[] \T
 1/lmr/m/n/12 If $[] \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1
 /cmr/m/n/12 )$
  []
 
 [159]
-Underfull \hbox (badness 10000) in paragraph at lines 4361--4365
+Underfull \hbox (badness 10000) in paragraph at lines 4362--4366
 
  []
 
 [160]
-Underfull \hbox (badness 10000) in paragraph at lines 4380--4384
+Underfull \hbox (badness 10000) in paragraph at lines 4381--4385
 
  []
 
 [161]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4407.
+(hyperref)                removing `math shift' on input line 4408.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4407.
+(hyperref)                removing `math shift' on input line 4408.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4407--4410
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 4436--4442
+Underfull \hbox (badness 10000) in paragraph at lines 4408--4411
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4436--4442
+Underfull \hbox (badness 10000) in paragraph at lines 4437--4443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4437--4443
 
  []
 
 [162] [163]
-Underfull \hbox (badness 10000) in paragraph at lines 4468--4474
+Underfull \hbox (badness 10000) in paragraph at lines 4469--4475
 
  []
 
 
-Overfull \hbox (29.57433pt too wide) in paragraph at lines 4468--4474
+Overfull \hbox (29.57433pt too wide) in paragraph at lines 4469--4475
 \T1/lmr/m/n/12 Thus, by in-duc-tion, there are $\OML/cmm/m/it/12 n\OT1/cmr/m/n/
 12 !$ \T1/lmr/m/n/12 pos-si-ble \T1/lmr/m/it/12 dif-fer-ent vec-tors \T1/lmr/m/
 n/12 for $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
@@ -2625,12 +2625,12 @@ n/12 for $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4468--4474
+Underfull \hbox (badness 10000) in paragraph at lines 4469--4475
 
  []
 
 
-Overfull \hbox (26.60753pt too wide) detected at line 4481
+Overfull \hbox (26.60753pt too wide) detected at line 4482
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[] \OT1/cmr/m/n/12 = \OML/
 cmm/m/it/12 x[]; \OT1/cmr/m/n/12 1 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 i \OMS
 /cmsy/m/n/12 ^^T \OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ] = [] = [] = \OML/cmm/m/it/
@@ -2640,114 +2640,114 @@ OT1/cmr/m/n/12 = \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4481--4485
+Underfull \hbox (badness 10000) in paragraph at lines 4482--4486
 
  []
 
 [164]
-Underfull \hbox (badness 10000) in paragraph at lines 4510--4513
+Underfull \hbox (badness 10000) in paragraph at lines 4511--4514
 
  []
 
 [165]
-Underfull \hbox (badness 10000) in paragraph at lines 4535--4538
+Underfull \hbox (badness 10000) in paragraph at lines 4536--4539
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4556.
+(hyperref)                removing `math shift' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4556.
+(hyperref)                removing `superscript' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4556.
+(hyperref)                removing `subscript' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4556.
+(hyperref)                removing `superscript' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4556.
+(hyperref)                removing `math shift' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4556.
+(hyperref)                removing `math shift' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 4556.
+(hyperref)                removing `superscript' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4556.
+(hyperref)                removing `subscript' on input line 4557.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4556.
+(hyperref)                removing `math shift' on input line 4557.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4558--4561
+Underfull \hbox (badness 10000) in paragraph at lines 4559--4562
 
  []
 
 [166]
-Underfull \hbox (badness 10000) in paragraph at lines 4580--4583
+Underfull \hbox (badness 10000) in paragraph at lines 4581--4584
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4601.
+(hyperref)                removing `subscript' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4601.
+(hyperref)                removing `math shift' on input line 4602.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4601--4606
+Underfull \hbox (badness 10000) in paragraph at lines 4602--4607
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4601--4606
+Underfull \hbox (badness 10000) in paragraph at lines 4602--4607
 
  []
 
 [167]
-Overfull \hbox (21.0027pt too wide) in paragraph at lines 4626--4628
+Overfull \hbox (21.0027pt too wide) in paragraph at lines 4627--4629
 \T1/lmr/m/n/12 so, in con-clu-sion, we note that each of the sub-se-quences $\O
 ML/cmm/m/it/12 X[]; X[]; X[]; [] $
  []
@@ -2755,23 +2755,23 @@ ML/cmm/m/it/12 X[]; X[]; X[]; [] $
 [168]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4653.
+(hyperref)                removing `math shift' on input line 4654.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 4653.
+(hyperref)                removing `subscript' on input line 4654.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 4653.
+(hyperref)                removing `math shift' on input line 4654.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4653--4656
+Underfull \hbox (badness 10000) in paragraph at lines 4654--4657
 
  []
 
 [169] [170]
-Overfull \hbox (51.83986pt too wide) detected at line 4706
+Overfull \hbox (51.83986pt too wide) detected at line 4707
 \OMS/cmsy/m/n/12 ^^@[] [] \OML/cmm/m/it/12 Y[] \OT1/cmr/m/n/12 = \OMS/cmsy/m/n/
 12 ^^@[] [] []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it
 /12 X[]\OT1/cmr/m/n/12 )) = \OMS/cmsy/m/n/12 ^^@[] [] [] \OT1/cmr/m/n/12 = \OMS
@@ -2779,58 +2779,58 @@ Overfull \hbox (51.83986pt too wide) detected at line 4706
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4710--4716
+Underfull \hbox (badness 10000) in paragraph at lines 4711--4717
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4710--4716
+Underfull \hbox (badness 10000) in paragraph at lines 4711--4717
 
  []
 
 [171]
-Underfull \hbox (badness 10000) in paragraph at lines 4745--4749
+Underfull \hbox (badness 10000) in paragraph at lines 4746--4750
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4751--4755
+Underfull \hbox (badness 10000) in paragraph at lines 4752--4756
 
  []
 
 [172]
-Underfull \hbox (badness 10000) in paragraph at lines 4758--4763
+Underfull \hbox (badness 10000) in paragraph at lines 4759--4764
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4758--4763
+Underfull \hbox (badness 10000) in paragraph at lines 4759--4764
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4765--4768
+Underfull \hbox (badness 10000) in paragraph at lines 4766--4769
 
  []
 
 [173]
-Underfull \hbox (badness 10000) in paragraph at lines 4778--4782
+Underfull \hbox (badness 10000) in paragraph at lines 4779--4783
 
  []
 
 [174]
-Underfull \hbox (badness 10000) in paragraph at lines 4813--4817
+Underfull \hbox (badness 10000) in paragraph at lines 4814--4818
 
  []
 
 [175] [176] [177] [178]
-Overfull \hbox (9.95403pt too wide) detected at line 4967
+Overfull \hbox (9.95403pt too wide) detected at line 4968
 \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 =
  [] \OML/cmm/m/it/12 P []
  []
 
 
-Overfull \hbox (36.42145pt too wide) detected at line 4973
+Overfull \hbox (36.42145pt too wide) detected at line 4974
 \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 P [] p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x
 \OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/c
 mr/m/n/12 ) [] \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 p\OT1/c
@@ -2838,63 +2838,63 @@ mr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 P []
  []
 
 [179]
-Overfull \hbox (9.2011pt too wide) detected at line 5002
+Overfull \hbox (9.2011pt too wide) detected at line 5003
 \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]\OT
 1/cmr/m/n/12 ) [] \OML/cmm/m/it/12 P []
  []
 
 [180]
-Underfull \hbox (badness 10000) in paragraph at lines 5021--5025
+Underfull \hbox (badness 10000) in paragraph at lines 5022--5026
 
  []
 
 [181]
-Underfull \hbox (badness 10000) in paragraph at lines 5079--5083
+Underfull \hbox (badness 10000) in paragraph at lines 5080--5084
 
  []
 
 [182]
-Underfull \hbox (badness 10000) in paragraph at lines 5089--5093
+Underfull \hbox (badness 10000) in paragraph at lines 5090--5094
 
  []
 
 [183]
-Underfull \hbox (badness 10000) in paragraph at lines 5101--5104
+Underfull \hbox (badness 10000) in paragraph at lines 5102--5105
 
  []
 
 [184]
-Underfull \hbox (badness 10000) in paragraph at lines 5151--5154
+Underfull \hbox (badness 10000) in paragraph at lines 5152--5155
 
  []
 
 [185]
-Underfull \hbox (badness 10000) in paragraph at lines 5199--5202
+Underfull \hbox (badness 10000) in paragraph at lines 5200--5203
 
  []
 
 [186]
-Underfull \hbox (badness 10000) in paragraph at lines 5204--5208
+Underfull \hbox (badness 10000) in paragraph at lines 5205--5209
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5210--5214
+Underfull \hbox (badness 10000) in paragraph at lines 5211--5215
 
  []
 
 [187]
-Underfull \hbox (badness 10000) in paragraph at lines 5215--5220
+Underfull \hbox (badness 10000) in paragraph at lines 5216--5221
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5215--5220
+Underfull \hbox (badness 10000) in paragraph at lines 5216--5221
 
  []
 
 
-Overfull \hbox (53.28067pt too wide) detected at line 5240
+Overfull \hbox (53.28067pt too wide) detected at line 5241
 \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/12 , \OML/cmm/m/it/12 P
  [] \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/12 , \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/1
 2 = 1 \OMS/cmsy/m/n/12 , \OML/cmm/m/it/12 p \OMS/cmsy/m/n/12 ^^U \OT1/cmr/m/n/1
@@ -2902,37 +2902,37 @@ Overfull \hbox (53.28067pt too wide) detected at line 5240
  []
 
 [188]
-Underfull \hbox (badness 10000) in paragraph at lines 5281--5286
+Underfull \hbox (badness 10000) in paragraph at lines 5282--5287
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5281--5286
+Underfull \hbox (badness 10000) in paragraph at lines 5282--5287
 
  []
 
 [189]
-Underfull \hbox (badness 10000) in paragraph at lines 5288--5292
+Underfull \hbox (badness 10000) in paragraph at lines 5289--5293
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5297--5300
+Underfull \hbox (badness 10000) in paragraph at lines 5298--5301
 
  []
 
 [190]
-Underfull \hbox (badness 10000) in paragraph at lines 5306--5310
+Underfull \hbox (badness 10000) in paragraph at lines 5307--5311
 
  []
 
 [191]
-Underfull \hbox (badness 10000) in paragraph at lines 5332--5335
+Underfull \hbox (badness 10000) in paragraph at lines 5333--5336
 
  []
 
 
-Overfull \hbox (62.78615pt too wide) detected at line 5344
+Overfull \hbox (62.78615pt too wide) detected at line 5345
 \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 X[] \OT1/cmr/m/n/12 = \OML/
 cmm/m/it/12 i[]; X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[]; X[] \OT1/cmr/m/n/1
 2 = \OML/cmm/m/it/12 i[]\OT1/cmr/m/n/12 ] = \OML/cmm/m/it/12 P\OT1/cmr/m/n/12 [
@@ -2946,27 +2946,27 @@ X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 i[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 X[
  []
 
 [192]
-Underfull \hbox (badness 10000) in paragraph at lines 5377--5386
+Underfull \hbox (badness 10000) in paragraph at lines 5378--5387
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5377--5386
+Underfull \hbox (badness 10000) in paragraph at lines 5378--5387
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5377--5386
+Underfull \hbox (badness 10000) in paragraph at lines 5378--5387
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5377--5386
+Underfull \hbox (badness 10000) in paragraph at lines 5378--5387
 
  []
 
 [193]
-Overfull \hbox (35.2931pt too wide) in paragraph at lines 5388--5390
+Overfull \hbox (35.2931pt too wide) in paragraph at lines 5389--5391
 \T1/lmr/m/n/12 Now, we de-fine our ran-dom vari-ables. We have $\OML/cmm/m/it/1
 2 X[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 i$
  \T1/lmr/m/n/12 if $\OML/cmm/m/it/12 ! \OMS/cmsy/m/n/12 2 [][] \OML/cmm/m/it/12
@@ -2974,22 +2974,22 @@ Overfull \hbox (35.2931pt too wide) in paragraph at lines 5388--5390
  []
 
 [194]
-Overfull \hbox (24.17696pt too wide) detected at line 5408
+Overfull \hbox (24.17696pt too wide) detected at line 5409
 \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = [] = [] = \OML/cmm/m/it/12 p[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5423--5427
+Underfull \hbox (badness 10000) in paragraph at lines 5424--5428
 
  []
 
 [195]
-Underfull \hbox (badness 10000) in paragraph at lines 5462--5466
+Underfull \hbox (badness 10000) in paragraph at lines 5463--5467
 
  []
 
 
-Overfull \hbox (78.20139pt too wide) detected at line 5469
+Overfull \hbox (78.20139pt too wide) detected at line 5470
 \OML/cmm/m/it/12 X[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 j; []
   ; X[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/it/12 j; X[] \OT1/cmr/m/
 n/12 = \OML/cmm/m/it/12 j; X[] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = \OML/cmm/m/i
@@ -2999,61 +2999,61 @@ ML/cmm/m/it/12 j; []  ; X[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 j
  []
 
 
-Overfull \hbox (12.2237pt too wide) detected at line 5484
+Overfull \hbox (12.2237pt too wide) detected at line 5485
 \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] P[] [] \OT1/c
 mr/m/n/12 = \OML/cmm/m/it/12 P[] [] P[] [] [] P[] []
  []
 
 [196]
-Overfull \hbox (15.67352pt too wide) detected at line 5494
+Overfull \hbox (15.67352pt too wide) detected at line 5495
 \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/
 12 = [] \OML/cmm/m/it/12 P[] []
  []
 
 
-Overfull \hbox (0.7251pt too wide) detected at line 5529
+Overfull \hbox (0.7251pt too wide) detected at line 5530
 [] \OMS/cmsy/m/n/12 ^^S [] ^^S [] 
  []
 
 
-Overfull \hbox (29.88644pt too wide) detected at line 5534
+Overfull \hbox (29.88644pt too wide) detected at line 5535
 [] \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P []
  []
 
 [197]
-Underfull \hbox (badness 10000) in paragraph at lines 5555--5558
+Underfull \hbox (badness 10000) in paragraph at lines 5556--5559
 
  []
 
 [198] [199]
-Underfull \hbox (badness 10000) in paragraph at lines 5630--5634
+Underfull \hbox (badness 10000) in paragraph at lines 5631--5635
 
  []
 
 [200]
-Overfull \hbox (3.79572pt too wide) in paragraph at lines 5641--5642
+Overfull \hbox (3.79572pt too wide) in paragraph at lines 5642--5643
 []\T1/lmr/m/n/12 All states are per-sis-tent, $\OML/cmm/m/it/12 P[] [] \OT1/cmr
 /m/n/12 = 1$ \T1/lmr/m/n/12 for all $\OML/cmm/m/it/12 i$\T1/lmr/m/n/12 , and $[
 ][] \OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5647--5651
+Underfull \hbox (badness 10000) in paragraph at lines 5648--5652
 
  []
 
 [201]
-Underfull \hbox (badness 10000) in paragraph at lines 5665--5669
+Underfull \hbox (badness 10000) in paragraph at lines 5666--5670
 
  []
 
 [202] [203]
-Underfull \hbox (badness 10000) in paragraph at lines 5729--5733
+Underfull \hbox (badness 10000) in paragraph at lines 5730--5734
 
  []
 
 
-Overfull \hbox (12.35976pt too wide) detected at line 5743
+Overfull \hbox (12.35976pt too wide) detected at line 5744
 \OML/cmm/m/it/12 ^^[[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 q[] \OT1/cmr/m/n/1
 2 = [] [] \OML/cmm/m/it/12 q[]q[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 q[] [] 
 q[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 q[]^^[[] \OT1/cmr/m/n/12 = [] \OML/cm
@@ -3061,17 +3061,17 @@ m/m/it/12 q[]^^[[]
  []
 
 [204] [205] [206]
-Underfull \hbox (badness 10000) in paragraph at lines 5833--5837
+Underfull \hbox (badness 10000) in paragraph at lines 5834--5838
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5858--5862
+Underfull \hbox (badness 10000) in paragraph at lines 5859--5863
 
  []
 
 [207] [208]
-Overfull \hbox (18.91849pt too wide) detected at line 5886
+Overfull \hbox (18.91849pt too wide) detected at line 5887
 [] \OML/cmm/m/it/12 ^^Y[]p[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 ^^Y[] [] p[]
 p[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 p[] [] ^^Y[]p[] \OT1/cmr/m/n/12 = [] 
 \OML/cmm/m/it/12 ^^Y[]p[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y[]  j \OMS/cmsy
@@ -3079,52 +3079,52 @@ p[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 p[] [] ^^Y[]p[] \OT1/cmr/m/n/12 = []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5894--5898
+Underfull \hbox (badness 10000) in paragraph at lines 5895--5899
 
  []
 
 [209]
-Underfull \hbox (badness 10000) in paragraph at lines 5911--5918
+Underfull \hbox (badness 10000) in paragraph at lines 5912--5919
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5911--5918
+Underfull \hbox (badness 10000) in paragraph at lines 5912--5919
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5911--5918
+Underfull \hbox (badness 10000) in paragraph at lines 5912--5919
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5919--5924
+Underfull \hbox (badness 10000) in paragraph at lines 5920--5925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5919--5924
+Underfull \hbox (badness 10000) in paragraph at lines 5920--5925
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5929--5932
+Underfull \hbox (badness 10000) in paragraph at lines 5930--5933
 
  []
 
 [210]
-Underfull \hbox (badness 10000) in paragraph at lines 5934--5938
+Underfull \hbox (badness 10000) in paragraph at lines 5935--5939
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5960--5964
+Underfull \hbox (badness 10000) in paragraph at lines 5961--5965
 
  []
 
 [211] [212] [213]
-Overfull \hbox (46.9233pt too wide) detected at line 6036
+Overfull \hbox (46.9233pt too wide) detected at line 6037
 [] \OML/cmm/m/it/12 ^^Y[]p\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ij; kl\OT1/cmr/m/n/
 12 ) = [] \OML/cmm/m/it/12 ^^Y[]^^Y[]p[]p[] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/
 12 ^^Y[]p[] [] ^^Y[]p[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y[] [] ^^Y[]p[] \O
@@ -3133,53 +3133,53 @@ T1/cmr/m/n/12 = \OML/cmm/m/it/12 ^^Y[]^^Y[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12
  []
 
 
-Overfull \hbox (18.37625pt too wide) detected at line 6061
+Overfull \hbox (18.37625pt too wide) detected at line 6062
 \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 P[] [] \OMS/cmsy/m/n/12 ^^B \OML/cmm/m/it/12
  P[] []
  []
 
 
-Overfull \hbox (45.65631pt too wide) detected at line 6071
+Overfull \hbox (45.65631pt too wide) detected at line 6072
 \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 P[] [] \OT1/cmr/m
 /n/12 = [] \OML/cmm/m/it/12 P[] [] p[]p[]
  []
 
 [214]
-Overfull \hbox (6.74504pt too wide) detected at line 6104
+Overfull \hbox (6.74504pt too wide) detected at line 6105
 \OML/cmm/m/it/12 P[] [] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 P[] [] \OT1/cmr/m
 /n/12 = [] \OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ij; kl\OT1/cmr
 /m/n/12 ) = \OML/cmm/m/it/12 p[] [] p[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 p[]
  []
 
 [215] [216]
-Underfull \hbox (badness 10000) in paragraph at lines 6158--6164
+Underfull \hbox (badness 10000) in paragraph at lines 6159--6165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6158--6164
+Underfull \hbox (badness 10000) in paragraph at lines 6159--6165
 
  []
 
 
-Overfull \hbox (11.59993pt too wide) in paragraph at lines 6181--6184
+Overfull \hbox (11.59993pt too wide) in paragraph at lines 6182--6185
 \OML/cmm/m/it/12 n[]; n[]; n[]; [] $ \T1/lmr/m/n/12 is a sub-se-quence of the $
 \OML/cmm/m/it/12 rth$ \T1/lmr/m/n/12 row. Thus, $\OML/cmm/m/it/12 x[]; x[]; x[]
 ; [] $
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6181--6184
+Underfull \hbox (badness 10000) in paragraph at lines 6182--6185
 
  []
 
 [217]
-Underfull \hbox (badness 10000) in paragraph at lines 6191--6194
+Underfull \hbox (badness 10000) in paragraph at lines 6192--6195
 
  []
 
 
-Overfull \hbox (11.62546pt too wide) detected at line 6199
+Overfull \hbox (11.62546pt too wide) detected at line 6200
 [] \OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ii; jj\OT1/cmr/m/n/12 
 ) \OML/cmm/m/it/12 < \OMS/cmsy/m/n/12 1  \OT1/cmr/m/n/12 =[]\OMS/cmsy/m/n/12 ) 
  []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[]\OT1/cmr/m/n/12 )[] \OML/cmm/m/it/12 < 
@@ -3189,60 +3189,60 @@ m/it/12 p[] \OT1/cmr/m/n/12 = 0
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6203--6207
+Underfull \hbox (badness 10000) in paragraph at lines 6204--6208
 
  []
 
 [218]
-Underfull \hbox (badness 10000) in paragraph at lines 6209--6213
+Underfull \hbox (badness 10000) in paragraph at lines 6210--6214
 
  []
 
 [219]
-Underfull \hbox (badness 10000) in paragraph at lines 6268--6272
+Underfull \hbox (badness 10000) in paragraph at lines 6269--6273
 
  []
 
 [220]
-Overfull \hbox (20.81819pt too wide) in paragraph at lines 6273--6276
+Overfull \hbox (20.81819pt too wide) in paragraph at lines 6274--6277
 \T1/lmr/bx/n/12 And Lim-it-ing Dis-tri-bu-tions[] \T1/lmr/m/n/12 Sup-pose that 
 $\OML/cmm/m/it/12 j$ \T1/lmr/m/n/12 is per-sis-tent and that $[][] \OML/cmm/m/i
 t/12 p[] \OT1/cmr/m/n/12 =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6273--6276
+Underfull \hbox (badness 10000) in paragraph at lines 6274--6277
 
  []
 
 [221] [222]
-Underfull \hbox (badness 10000) in paragraph at lines 6360--6368
+Underfull \hbox (badness 10000) in paragraph at lines 6361--6369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6360--6368
+Underfull \hbox (badness 10000) in paragraph at lines 6361--6369
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6360--6368
+Underfull \hbox (badness 10000) in paragraph at lines 6361--6369
 
  []
 
 [223]
-Overfull \hbox (3.38681pt too wide) in paragraph at lines 6369--6371
+Overfull \hbox (3.38681pt too wide) in paragraph at lines 6370--6372
  []\T1/lmr/bx/n/12 Theorem 8.8: Clas-si-fi-ca-tion of Ir-re-ducible Ape-ri-odic
  Markov Chains[]
  []
 
 [224]
-Underfull \hbox (badness 10000) in paragraph at lines 6385--6389
+Underfull \hbox (badness 10000) in paragraph at lines 6386--6390
 
  []
 
 
-Overfull \hbox (48.92949pt too wide) detected at line 6411
+Overfull \hbox (48.92949pt too wide) detected at line 6412
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 p[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 p
 []\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 p[] \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/
 m/it/12 p[] \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 p[] \O
@@ -3251,96 +3251,96 @@ MS/cmsy/m/n/12 ^^@ [] \OML/cmm/m/it/12 p[] \OT1/cmr/m/n/12 = 1 \OMS/cmsy/m/n/12
  []
 
 [225]
-Overfull \hbox (6.23718pt too wide) in paragraph at lines 6439--6440
+Overfull \hbox (6.23718pt too wide) in paragraph at lines 6440--6441
 \T1/lmr/m/n/12 non-neg-a-tive in-te-ger for each $\OML/cmm/m/it/12 !$\T1/lmr/m/
 n/12 . This func-tion be-comes a stop-ping time/markov
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6442--6448
+Underfull \hbox (badness 10000) in paragraph at lines 6443--6449
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6442--6448
+Underfull \hbox (badness 10000) in paragraph at lines 6443--6449
 
  []
 
 [226]
-Underfull \hbox (badness 10000) in paragraph at lines 6471--6475
+Underfull \hbox (badness 10000) in paragraph at lines 6472--6476
 
  []
 
 [227] [228]
-Overfull \hbox (69.63675pt too wide) detected at line 6525
+Overfull \hbox (69.63675pt too wide) detected at line 6526
 \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/1
 2 = [] \OML/cmm/m/it/12 P []
  []
 
 
-Overfull \hbox (5.95436pt too wide) detected at line 6535
+Overfull \hbox (5.95436pt too wide) detected at line 6536
 \OML/cmm/m/it/12 P [] \OMS/cmsy/m/n/12 ^^U [] \OML/cmm/m/it/12 P [] \OT1/cmr/m/
 n/12 = [] \OML/cmm/m/it/12 P [] \OT1/cmr/m/n/12 = 1
  []
 
 [229] [230]
-Underfull \hbox (badness 10000) in paragraph at lines 6572--6575
+Underfull \hbox (badness 10000) in paragraph at lines 6573--6576
 
  []
 
 
-Overfull \hbox (21.58266pt too wide) detected at line 6579
+Overfull \hbox (21.58266pt too wide) detected at line 6580
 \OML/cmm/m/it/12 E[] [] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 P[] [] '\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ) + [] [] \OML/cmm/m/it/12 P[] [] 
 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
  []
 
 [231]
-Overfull \hbox (3.38599pt too wide) detected at line 6603
+Overfull \hbox (3.38599pt too wide) detected at line 6604
 \OML/cmm/m/it/12 E[] [] \OMS/cmsy/m/n/12 ^^T [] [] \OML/cmm/m/it/12 P[] [] '\OT
 1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ) + [] \OML/cmm/m/it/12 P[] [] 
 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
  []
 
 
-Overfull \hbox (37.3024pt too wide) detected at line 6622
+Overfull \hbox (37.3024pt too wide) detected at line 6623
 \OML/cmm/m/it/12 E[] [] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 P[] [] '\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 ) + [] \OML/cmm/m/it/12 P[] [] '\O
 T1/cmr/m/n/12 (\OML/cmm/m/it/12 k\OT1/cmr/m/n/12 )
  []
 
 [232]
-Underfull \hbox (badness 10000) in paragraph at lines 6669--6672
+Underfull \hbox (badness 10000) in paragraph at lines 6670--6673
 
  []
 
 [233]
-Underfull \hbox (badness 10000) in paragraph at lines 6695--6699
+Underfull \hbox (badness 10000) in paragraph at lines 6696--6700
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6701--6705
+Underfull \hbox (badness 10000) in paragraph at lines 6702--6706
 
  []
 
 [234]
-Underfull \hbox (badness 10000) in paragraph at lines 6734--6738
+Underfull \hbox (badness 10000) in paragraph at lines 6735--6739
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6747--6752
+Underfull \hbox (badness 10000) in paragraph at lines 6748--6753
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6747--6752
+Underfull \hbox (badness 10000) in paragraph at lines 6748--6753
 
  []
 
 [235] [236]
-Overfull \hbox (37.79218pt too wide) detected at line 6799
+Overfull \hbox (37.79218pt too wide) detected at line 6800
 \OML/cmm/m/it/12  \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i[]\OT1/cmr/m/n/12 ) \OMS/c
 msy/m/n/12 ^^U \OML/cmm/m/it/12 v\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 i[]\OT1/cmr/
 m/n/12 )  =[]\OMS/cmsy/m/n/12 )  \OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/
@@ -3358,326 +3358,326 @@ i[]\OT1/cmr/m/n/12 )
 File: excessive_concave.jpg Graphic file (type bmp)
 <excessive_concave.jpg>
 [237]
-Underfull \hbox (badness 10000) in paragraph at lines 6822--6825
+Underfull \hbox (badness 10000) in paragraph at lines 6823--6826
 
  []
 
 [238]
-Underfull \hbox (badness 10000) in paragraph at lines 6838--6844
+Underfull \hbox (badness 10000) in paragraph at lines 6839--6845
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6838--6844
+Underfull \hbox (badness 10000) in paragraph at lines 6839--6845
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6850--6853
+Underfull \hbox (badness 10000) in paragraph at lines 6851--6854
 
  []
 
 [239]
-Underfull \hbox (badness 10000) in paragraph at lines 6864--6868
+Underfull \hbox (badness 10000) in paragraph at lines 6865--6869
 
  []
 
 [240]
-Underfull \hbox (badness 10000) in paragraph at lines 6895--6898
+Underfull \hbox (badness 10000) in paragraph at lines 6896--6899
 
  []
 
 [241]
-Underfull \hbox (badness 10000) in paragraph at lines 6937--6942
+Underfull \hbox (badness 10000) in paragraph at lines 6938--6943
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6937--6942
+Underfull \hbox (badness 10000) in paragraph at lines 6938--6943
 
  []
 
 [242]
-Underfull \hbox (badness 10000) in paragraph at lines 6974--6979
+Underfull \hbox (badness 10000) in paragraph at lines 6975--6980
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6974--6979
+Underfull \hbox (badness 10000) in paragraph at lines 6975--6980
 
  []
 
 [243]
-Underfull \hbox (badness 10000) in paragraph at lines 6990--6993
+Underfull \hbox (badness 10000) in paragraph at lines 6991--6994
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6995--6998
+Underfull \hbox (badness 10000) in paragraph at lines 6996--6999
 
  []
 
 [244]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7004.
+(hyperref)                removing `math shift' on input line 7005.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\Omega' on input line 7004.
+(hyperref)                removing `\Omega' on input line 7005.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7004.
+(hyperref)                removing `math shift' on input line 7005.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7004--7009
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7004--7009
+Underfull \hbox (badness 10000) in paragraph at lines 7005--7010
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7022--7027
+Underfull \hbox (badness 10000) in paragraph at lines 7005--7010
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7022--7027
+Underfull \hbox (badness 10000) in paragraph at lines 7023--7028
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7023--7028
 
  []
 
 [245]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7029.
+(hyperref)                removing `math shift' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 7029.
+(hyperref)                removing `\mathop' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 7029.
+(hyperref)                removing `\mathgroup' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 7029.
+(hyperref)                removing `\symoperators' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 7029.
+(hyperref)                removing `\nmlimits@' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 7029.
+(hyperref)                removing `\mathop' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 7029.
+(hyperref)                removing `\mathgroup' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 7029.
+(hyperref)                removing `\symoperators' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 7029.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 7029.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 7029.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathop' on input line 7029.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\mathgroup' on input line 7029.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symoperators' on input line 7029.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 7029.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 1.95871pt
-(hyperref)                removed on input line 7029.
+(hyperref)                removed on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\nmlimits@' on input line 7029.
+(hyperref)                removing `\nmlimits@' on input line 7030.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7029.
+(hyperref)                removing `\mathop' on input line 7030.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7038--7042
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\mathgroup' on input line 7030.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\symoperators' on input line 7030.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 7030.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 1.95871pt
+(hyperref)                removed on input line 7030.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\nmlimits@' on input line 7030.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 7030.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7039--7043
 
  []
 
 Excluding 'comment' comment.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7057.
+(hyperref)                removing `math shift' on input line 7058.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 7057.
+(hyperref)                removing `\sigma' on input line 7058.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7057.
+(hyperref)                removing `math shift' on input line 7058.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7059--7066
+Underfull \hbox (badness 10000) in paragraph at lines 7060--7067
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7059--7066
+Underfull \hbox (badness 10000) in paragraph at lines 7060--7067
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7059--7066
+Underfull \hbox (badness 10000) in paragraph at lines 7060--7067
 
  []
 
 [246]
-Underfull \hbox (badness 10000) in paragraph at lines 7068--7074
+Underfull \hbox (badness 10000) in paragraph at lines 7069--7075
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7068--7074
+Underfull \hbox (badness 10000) in paragraph at lines 7069--7075
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7076--7080
+Underfull \hbox (badness 10000) in paragraph at lines 7077--7081
 
  []
 
 [247]
-Underfull \hbox (badness 10000) in paragraph at lines 7086--7090
+Underfull \hbox (badness 10000) in paragraph at lines 7087--7091
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7092--7096
+Underfull \hbox (badness 10000) in paragraph at lines 7093--7097
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7097--7100
+Underfull \hbox (badness 10000) in paragraph at lines 7098--7101
 
  []
 
 [248]
-Underfull \hbox (badness 10000) in paragraph at lines 7117--7121
+Underfull \hbox (badness 10000) in paragraph at lines 7118--7122
 
  []
 
 [249] [250]
-Underfull \hbox (badness 10000) in paragraph at lines 7172--7177
+Underfull \hbox (badness 10000) in paragraph at lines 7173--7178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7172--7177
+Underfull \hbox (badness 10000) in paragraph at lines 7173--7178
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7183--7187
+Underfull \hbox (badness 10000) in paragraph at lines 7184--7188
 
  []
 
 [251]
-Underfull \hbox (badness 10000) in paragraph at lines 7217--7221
+Underfull \hbox (badness 10000) in paragraph at lines 7218--7222
 
  []
 
 [252] [253]
-Underfull \hbox (badness 10000) in paragraph at lines 7267--7270
+Underfull \hbox (badness 10000) in paragraph at lines 7268--7271
 
  []
 
 [254]
-Underfull \hbox (badness 10000) in paragraph at lines 7289--7293
+Underfull \hbox (badness 10000) in paragraph at lines 7290--7294
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7305--7309
+Underfull \hbox (badness 10000) in paragraph at lines 7306--7310
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7313--7318
+Underfull \hbox (badness 10000) in paragraph at lines 7314--7319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7313--7318
+Underfull \hbox (badness 10000) in paragraph at lines 7314--7319
 
  []
 
 [255]
-Underfull \hbox (badness 10000) in paragraph at lines 7319--7322
+Underfull \hbox (badness 10000) in paragraph at lines 7320--7323
 
  []
 
 [256]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7355.
+(hyperref)                removing `math shift' on input line 7356.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sigma' on input line 7355.
+(hyperref)                removing `\sigma' on input line 7356.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 7355.
+(hyperref)                removing `math shift' on input line 7356.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7355--7359
+Underfull \hbox (badness 10000) in paragraph at lines 7356--7360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7359--7362
+Underfull \hbox (badness 10000) in paragraph at lines 7360--7363
 
  []
 
 [257]
-Underfull \hbox (badness 10000) in paragraph at lines 7373--7377
+Underfull \hbox (badness 10000) in paragraph at lines 7374--7378
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7379--7383
+Underfull \hbox (badness 10000) in paragraph at lines 7380--7384
 
  []
 
 [258]
-Overfull \hbox (20.22635pt too wide) detected at line 7426
+Overfull \hbox (20.22635pt too wide) detected at line 7427
 []\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 A[] \
 OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T []
  \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C[] \OMS/cmsy/m/n/12 \
@@ -3688,81 +3688,81 @@ C[]\OT1/cmr/m/n/12 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7441--7444
+Underfull \hbox (badness 10000) in paragraph at lines 7442--7445
 
  []
 
 [259] [260] [261]
-Underfull \hbox (badness 10000) in paragraph at lines 7515--7523
+Underfull \hbox (badness 10000) in paragraph at lines 7516--7524
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7515--7523
+Underfull \hbox (badness 10000) in paragraph at lines 7516--7524
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7515--7523
+Underfull \hbox (badness 10000) in paragraph at lines 7516--7524
 
  []
 
 [262]
-Underfull \hbox (badness 10000) in paragraph at lines 7527--7532
+Underfull \hbox (badness 10000) in paragraph at lines 7528--7533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7527--7532
+Underfull \hbox (badness 10000) in paragraph at lines 7528--7533
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7552--7558
+Underfull \hbox (badness 10000) in paragraph at lines 7553--7559
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7552--7558
+Underfull \hbox (badness 10000) in paragraph at lines 7553--7559
 
  []
 
 [263]
-Overfull \hbox (17.95856pt too wide) detected at line 7566
+Overfull \hbox (17.95856pt too wide) detected at line 7567
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; g[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 \ 
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; g[]\OT1/cmr/m/n/12 ] = [] \OMS/cmsy/m/n/
 12 \ []
  []
 
 
-Overfull \hbox (20.62524pt too wide) detected at line 7579
+Overfull \hbox (20.62524pt too wide) detected at line 7580
 \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; g[]\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 ^^
 @ \OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]; g[]\OT1/cmr/m/n/12 ] = [] \OMS/cmsy/m/
 n/12 ^^@ []
  []
 
 [264] [265] [266]
-Underfull \hbox (badness 10000) in paragraph at lines 7698--7703
+Underfull \hbox (badness 10000) in paragraph at lines 7699--7704
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7698--7703
+Underfull \hbox (badness 10000) in paragraph at lines 7699--7704
 
  []
 
 [267]
-Underfull \hbox (badness 10000) in paragraph at lines 7723--7727
+Underfull \hbox (badness 10000) in paragraph at lines 7724--7728
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7734--7738
+Underfull \hbox (badness 10000) in paragraph at lines 7735--7739
 
  []
 
 [268]
-Overfull \hbox (103.62758pt too wide) detected at line 7758
+Overfull \hbox (103.62758pt too wide) detected at line 7759
 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f > x\OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 2 F[]
    \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 f > \OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 x
 \OT1/cmr/m/n/12 ] \OMS/cmsy/m/n/12 2 F[]  \OT1/cmr/m/n/12 =[]\OMS/cmsy/m/n/12 )
@@ -3775,24 +3775,24 @@ n/12 =[]\OMS/cmsy/m/n/12 )  \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 ! \OMS/cmsy/m/n/1
  []
 
 
-Overfull \hbox (1.97478pt too wide) in paragraph at lines 7771--7773
+Overfull \hbox (1.97478pt too wide) in paragraph at lines 7772--7774
 \T1/lmr/m/n/12 Note, we kind of are ap-proach-ing this state-ment. We have that
  $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 R[]\OT1/cmr/m/n/12 )$\T
 1/lmr/m/n/12 ,
  []
 
 [269]
-Underfull \hbox (badness 10000) in paragraph at lines 7811--7817
+Underfull \hbox (badness 10000) in paragraph at lines 7812--7818
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7811--7817
+Underfull \hbox (badness 10000) in paragraph at lines 7812--7818
 
  []
 
 [270] [271]
-Overfull \hbox (35.57484pt too wide) detected at line 7904
+Overfull \hbox (35.57484pt too wide) detected at line 7905
 \OML/cmm/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/
 cmm/m/it/12 C\OT1/cmr/m/n/12 )) \OMS/cmsy/m/n/12 ^^R \OML/cmm/m/it/12 f[]\OT1/c
 mr/m/n/12 (\OML/cmm/m/it/12 ^^[\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C\OT1/cmr/m/n/
@@ -3806,82 +3806,82 @@ cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 C\OT1/cmr/m/n/12 )) = \OML/cmm
  []
 
 [272]
-Underfull \hbox (badness 10000) in paragraph at lines 7938--7943
+Underfull \hbox (badness 10000) in paragraph at lines 7939--7944
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7938--7943
+Underfull \hbox (badness 10000) in paragraph at lines 7939--7944
 
  []
 
 [273]
-Underfull \hbox (badness 10000) in paragraph at lines 7945--7951
+Underfull \hbox (badness 10000) in paragraph at lines 7946--7952
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7945--7951
+Underfull \hbox (badness 10000) in paragraph at lines 7946--7952
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7952--7955
+Underfull \hbox (badness 10000) in paragraph at lines 7953--7956
 
  []
 
 [274]
-Underfull \hbox (badness 10000) in paragraph at lines 7962--7966
+Underfull \hbox (badness 10000) in paragraph at lines 7963--7967
 
  []
 
 [275]
-Underfull \hbox (badness 10000) in paragraph at lines 7985--7991
+Underfull \hbox (badness 10000) in paragraph at lines 7986--7992
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7985--7991
+Underfull \hbox (badness 10000) in paragraph at lines 7986--7992
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 7993--7997
+Underfull \hbox (badness 10000) in paragraph at lines 7994--7998
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8005--8009
+Underfull \hbox (badness 10000) in paragraph at lines 8006--8010
 
  []
 
 [276]
-Underfull \hbox (badness 10000) in paragraph at lines 8011--8015
+Underfull \hbox (badness 10000) in paragraph at lines 8012--8016
 
  []
 
 [277]
-Underfull \hbox (badness 10000) in paragraph at lines 8049--8053
+Underfull \hbox (badness 10000) in paragraph at lines 8050--8054
 
  []
 
 [278]
-Underfull \hbox (badness 10000) in paragraph at lines 8088--8092
+Underfull \hbox (badness 10000) in paragraph at lines 8089--8093
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8094--8098
+Underfull \hbox (badness 10000) in paragraph at lines 8095--8099
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8109--8113
+Underfull \hbox (badness 10000) in paragraph at lines 8110--8114
 
  []
 
 
-Overfull \hbox (85.71895pt too wide) detected at line 8116
+Overfull \hbox (85.71895pt too wide) detected at line 8117
 \OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = \O
 ML/cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 TA\OT1/cmr/m/n/12 ) = \OM
 L/cmm/m/it/12 ^^U[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 ) + \OM
@@ -3895,48 +3895,48 @@ mr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 )
  []
 
 [279]
-Underfull \hbox (badness 10000) in paragraph at lines 8121--8125
+Underfull \hbox (badness 10000) in paragraph at lines 8122--8126
 
  []
 
 [280]
-Overfull \hbox (1.19481pt too wide) in paragraph at lines 8164--8166
+Overfull \hbox (1.19481pt too wide) in paragraph at lines 8165--8167
  []\T1/lmr/bx/n/12 Theorem 12.3 Prop-erty of Reg-u-lar-ity - Fi-nite Mea-sures 
 on Bounded
  []
 
 [281]
-Underfull \hbox (badness 10000) in paragraph at lines 8190--8194
+Underfull \hbox (badness 10000) in paragraph at lines 8191--8195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8208--8211
+Underfull \hbox (badness 10000) in paragraph at lines 8209--8212
 
  []
 
 [282]
-Underfull \hbox (badness 10000) in paragraph at lines 8216--8220
+Underfull \hbox (badness 10000) in paragraph at lines 8217--8221
 
  []
 
 [283]
-Underfull \hbox (badness 10000) in paragraph at lines 8255--8259
+Underfull \hbox (badness 10000) in paragraph at lines 8256--8260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8279--8283
+Underfull \hbox (badness 10000) in paragraph at lines 8280--8284
 
  []
 
 [284]
-Underfull \hbox (badness 10000) in paragraph at lines 8287--8291
+Underfull \hbox (badness 10000) in paragraph at lines 8288--8292
 
  []
 
 
-Overfull \hbox (74.16698pt too wide) detected at line 8297
+Overfull \hbox (74.16698pt too wide) detected at line 8298
 \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = \OML/c
 mm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@1\OML/cmm/m/it/12 ; x\OT1/cm
 r/m/n/12 ][]\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/1
@@ -3945,43 +3945,43 @@ r/m/n/12 ][]\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/1
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8300.
+(hyperref)                removing `math shift' on input line 8301.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 8300.
+(hyperref)                removing `superscript' on input line 8301.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8300.
+(hyperref)                removing `math shift' on input line 8301.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8316--8320
+Underfull \hbox (badness 10000) in paragraph at lines 8317--8321
 
  []
 
 [285]
-Underfull \hbox (badness 10000) in paragraph at lines 8334--8338
+Underfull \hbox (badness 10000) in paragraph at lines 8335--8339
 
  []
 
 [286]
-Underfull \hbox (badness 10000) in paragraph at lines 8374--8378
+Underfull \hbox (badness 10000) in paragraph at lines 8375--8379
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8390--8396
+Underfull \hbox (badness 10000) in paragraph at lines 8391--8397
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8390--8396
+Underfull \hbox (badness 10000) in paragraph at lines 8391--8397
 
  []
 
 [287]
-Underfull \hbox (badness 10000) in paragraph at lines 8401--8404
+Underfull \hbox (badness 10000) in paragraph at lines 8402--8405
 
  []
 
@@ -3989,32 +3989,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 8401--8404
 File: shared_vertex_rectangles.jpg Graphic file (type bmp)
 <shared_vertex_rectangles.jpg>
  [289]
-Underfull \hbox (badness 10000) in paragraph at lines 8467--8471
+Underfull \hbox (badness 10000) in paragraph at lines 8468--8472
 
  []
 
 [290]
-Underfull \hbox (badness 10000) in paragraph at lines 8479--8483
+Underfull \hbox (badness 10000) in paragraph at lines 8480--8484
 
  []
 
 [291] [292]
-Underfull \hbox (badness 10000) in paragraph at lines 8541--8547
+Underfull \hbox (badness 10000) in paragraph at lines 8542--8548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8541--8547
+Underfull \hbox (badness 10000) in paragraph at lines 8542--8548
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8549--8552
+Underfull \hbox (badness 10000) in paragraph at lines 8550--8553
 
  []
 
 
-Overfull \hbox (3.09221pt too wide) in paragraph at lines 8554--8556
+Overfull \hbox (3.09221pt too wide) in paragraph at lines 8555--8557
 \T1/lmr/m/n/12 Something sim-i-lar for $\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@1\
 OML/cmm/m/it/12 ; b\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 . We found in prob-lem 11.5
  that $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; \OMS/cmsy/m/n/12 1\OT1/cmr/m/n/12 )
@@ -4023,36 +4023,36 @@ T1/cmr/m/n/12 )$
  []
 
 [293]
-Underfull \hbox (badness 10000) in paragraph at lines 8571--8575
+Underfull \hbox (badness 10000) in paragraph at lines 8572--8576
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8577--8581
+Underfull \hbox (badness 10000) in paragraph at lines 8578--8582
 
  []
 
 [294] [295]
-Underfull \hbox (badness 10000) in paragraph at lines 8663--8667
+Underfull \hbox (badness 10000) in paragraph at lines 8664--8668
 
  []
 
 [296]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8681.
+(hyperref)                removing `math shift' on input line 8682.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8681.
+(hyperref)                removing `math shift' on input line 8682.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8684--8687
+Underfull \hbox (badness 10000) in paragraph at lines 8685--8688
 
  []
 
 [297]
-Overfull \hbox (23.40765pt too wide) detected at line 8698
+Overfull \hbox (23.40765pt too wide) detected at line 8699
 \OML/cmm/m/it/12 ^^R[] \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 n \OT1/cmr/m/n/12 + 
 \OML/cmm/m/it/12 m\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^R[]  \OT1/cmr/m/n/12 1 = 
 (\OML/cmm/m/it/12 b[] \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 b[]\OT1/cmr/m/n/12 ) +
@@ -4062,47 +4062,47 @@ Overfull \hbox (23.40765pt too wide) detected at line 8698
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8725--8729
+Underfull \hbox (badness 10000) in paragraph at lines 8726--8730
 
  []
 
 [298]
-Underfull \hbox (badness 10000) in paragraph at lines 8735--8743
+Underfull \hbox (badness 10000) in paragraph at lines 8736--8744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8735--8743
+Underfull \hbox (badness 10000) in paragraph at lines 8736--8744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8735--8743
+Underfull \hbox (badness 10000) in paragraph at lines 8736--8744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8748--8751
+Underfull \hbox (badness 10000) in paragraph at lines 8749--8752
 
  []
 
 [299]
-Underfull \hbox (badness 10000) in paragraph at lines 8765--8771
+Underfull \hbox (badness 10000) in paragraph at lines 8766--8772
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8765--8771
+Underfull \hbox (badness 10000) in paragraph at lines 8766--8772
 
  []
 
 [300]
-Underfull \hbox (badness 10000) in paragraph at lines 8786--8790
+Underfull \hbox (badness 10000) in paragraph at lines 8787--8791
 
  []
 
 
-Overfull \hbox (70.26466pt too wide) detected at line 8803
+Overfull \hbox (70.26466pt too wide) detected at line 8804
 \OML/cmm/m/it/12 H \OMS/cmsy/m/n/12 [ \OML/cmm/m/it/12 H \OMS/cmsy/m/n/12 ^^H \
 OML/cmm/m/it/12 ^^R \OT1/cmr/m/n/12 = [](\OML/cmm/m/it/12 S \OMS/cmsy/m/n/12 ^^
 H \OML/cmm/m/it/12 ^^R[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 [ []\OT1/cmr/m/n/12 
@@ -4115,48 +4115,48 @@ T1/cmr/m/n/12 ) = \OML/cmm/m/it/12 G
  []
 
 [301]
-Underfull \hbox (badness 10000) in paragraph at lines 8814--8817
+Underfull \hbox (badness 10000) in paragraph at lines 8815--8818
 
  []
 
 [302]
-Underfull \hbox (badness 10000) in paragraph at lines 8850--8853
+Underfull \hbox (badness 10000) in paragraph at lines 8851--8854
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8865.
+(hyperref)                removing `math shift' on input line 8866.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8865.
+(hyperref)                removing `math shift' on input line 8866.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8867--8870
+Underfull \hbox (badness 10000) in paragraph at lines 8868--8871
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8874.
+(hyperref)                removing `math shift' on input line 8875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8874.
+(hyperref)                removing `math shift' on input line 8875.
 
 [303]
-Underfull \hbox (badness 10000) in paragraph at lines 8884--8890
+Underfull \hbox (badness 10000) in paragraph at lines 8885--8891
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8884--8890
+Underfull \hbox (badness 10000) in paragraph at lines 8885--8891
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8892--8896
+Underfull \hbox (badness 10000) in paragraph at lines 8893--8897
 
  []
 
@@ -4166,7 +4166,7 @@ File: rec_diff_1.jpg Graphic file (type bmp)
 File: rec_diff_2.jpg Graphic file (type bmp)
 <rec_diff_2.jpg>
  [305]
-Overfull \hbox (8.0876pt too wide) in paragraph at lines 8919--8927
+Overfull \hbox (8.0876pt too wide) in paragraph at lines 8920--8928
 \T1/lmr/m/n/12 the ques-tion is - does $[][]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x
 \OT1/cmr/m/n/12 )\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/
 m/n/12 )$ \T1/lmr/m/n/12 be-ing pos-i-tive im-ply $\OML/cmm/m/it/12 x \OMS/cmsy
@@ -4176,22 +4176,22 @@ m/m/it/12 x\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 '\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8919--8927
+Underfull \hbox (badness 10000) in paragraph at lines 8920--8928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8919--8927
+Underfull \hbox (badness 10000) in paragraph at lines 8920--8928
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8919--8927
+Underfull \hbox (badness 10000) in paragraph at lines 8920--8928
 
  []
 
 
-Overfull \hbox (50.34055pt too wide) detected at line 8938
+Overfull \hbox (50.34055pt too wide) detected at line 8939
 \OT1/cmr/m/n/12 = [] [] [] \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
 x[]; []  ; x[]\OT1/cmr/m/n/12 ) []
  []
@@ -4199,23 +4199,23 @@ x[]; []  ; x[]\OT1/cmr/m/n/12 ) []
 [306]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8945.
+(hyperref)                removing `math shift' on input line 8946.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 8945.
+(hyperref)                removing `superscript' on input line 8946.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 8945.
+(hyperref)                removing `math shift' on input line 8946.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 8945--8948
+Underfull \hbox (badness 10000) in paragraph at lines 8946--8949
 
  []
 
 
-Overfull \hbox (42.79745pt too wide) detected at line 8955
+Overfull \hbox (42.79745pt too wide) detected at line 8956
 [] \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; y[]\OT1/cmr/m/n/12 
 ) = [] []\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 G\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 
 x[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; y[]\OMS/cmsy/m/n/12 g \OT1/cmr/m/n/12 = 
@@ -4227,12 +4227,12 @@ t/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )
  []
 
 [307]
-Underfull \hbox (badness 10000) in paragraph at lines 8996--9000
+Underfull \hbox (badness 10000) in paragraph at lines 8997--9001
 
  []
 
 [308]
-Overfull \hbox (24.00067pt too wide) detected at line 9012
+Overfull \hbox (24.00067pt too wide) detected at line 9013
 \OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = ^^A[
 ]\OML/cmm/m/it/12 F \OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 G\OT
 1/cmr/m/n/12 (\OML/cmm/m/it/12 b[]\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; b[]\OMS/c
@@ -4247,98 +4247,98 @@ m/n/12 g
 File: problem_12_11_1.jpg Graphic file (type bmp)
 <problem_12_11_1.jpg>
 
-Underfull \hbox (badness 10000) in paragraph at lines 9020--9024
+Underfull \hbox (badness 10000) in paragraph at lines 9021--9025
 
  []
 
 [309]
-Underfull \hbox (badness 10000) in paragraph at lines 9033--9039
+Underfull \hbox (badness 10000) in paragraph at lines 9034--9040
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9033--9039
+Underfull \hbox (badness 10000) in paragraph at lines 9034--9040
 
  []
 
 [310]
-Underfull \hbox (badness 10000) in paragraph at lines 9063--9067
+Underfull \hbox (badness 10000) in paragraph at lines 9064--9068
 
  []
 
 [311]
-Overfull \hbox (0.71849pt too wide) in paragraph at lines 9072--9073
+Overfull \hbox (0.71849pt too wide) in paragraph at lines 9073--9074
  []\T1/lmr/bx/n/12 Example 13.1[] \T1/lmr/m/n/12 A real func-tion $\OML/cmm/m/i
 t/12 f$ \T1/lmr/m/n/12 with fi-nite range is mea-sur-able if $\OML/cmm/m/it/12 
 f[]\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 x\OMS/cmsy/m/n/12 g 2
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9083--9087
+Underfull \hbox (badness 10000) in paragraph at lines 9084--9088
 
  []
 
 
-Overfull \hbox (21.86133pt too wide) in paragraph at lines 9083--9087
+Overfull \hbox (21.86133pt too wide) in paragraph at lines 9084--9088
 \T1/lmr/m/n/12 which in turn im-plies that $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T
 []T\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = [] = [] =
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9088.
+(hyperref)                removing `math shift' on input line 9089.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 9088.
+(hyperref)                removing `superscript' on input line 9089.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9088.
+(hyperref)                removing `math shift' on input line 9089.
 
 [312]
-Overfull \hbox (1.39023pt too wide) in paragraph at lines 9091--9093
+Overfull \hbox (1.39023pt too wide) in paragraph at lines 9092--9094
 \T1/lmr/m/n/12 For real func-tions $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/c
 mm/m/it/12 !\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 . Since the sets $\OML/cmm/m/it/12
  S[] \OT1/cmr/m/n/12 = []$ \T1/lmr/m/n/12 ("south-
  []
 
 
-Overfull \hbox (105.95593pt too wide) in paragraph at lines 9099--9104
+Overfull \hbox (105.95593pt too wide) in paragraph at lines 9100--9105
 \T1/lmr/m/n/12 able $\OMS/cmsy/m/n/12 F\OML/cmm/m/it/12 =\OMS/cmsy/m/n/12 R$\T1
 /lmr/m/n/12 . Then, $[] \OMS/cmsy/m/n/12 2 F$ \T1/lmr/m/n/12 for any $\OML/cmm/
 m/it/12 x[]$\T1/lmr/m/n/12 , which im-plies $[] \OMS/cmsy/m/n/12 2
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9099--9104
+Underfull \hbox (badness 10000) in paragraph at lines 9100--9105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9099--9104
+Underfull \hbox (badness 10000) in paragraph at lines 9100--9105
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9113--9118
+Underfull \hbox (badness 10000) in paragraph at lines 9114--9119
 
  []
 
 
-Overfull \hbox (9.22394pt too wide) in paragraph at lines 9113--9118
+Overfull \hbox (9.22394pt too wide) in paragraph at lines 9114--9119
 \T1/lmr/m/n/12 This proof is just an amal-ga-ma-tion of the pre-vi-ous state-me
 nts. $\OML/cmm/m/it/12 f \OT1/cmr/m/n/12 = (\OML/cmm/m/it/12 f[]; []  ; f[]\OT1
 /cmr/m/n/12 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9113--9118
+Underfull \hbox (badness 10000) in paragraph at lines 9114--9119
 
  []
 
 
-Overfull \hbox (95.65291pt too wide) in paragraph at lines 9113--9118
+Overfull \hbox (95.65291pt too wide) in paragraph at lines 9114--9119
 \T1/lmr/m/n/12 Some con-se-quences of the the-o-rem. Tak-ing $\OML/cmm/m/it/12 
 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; []  ; x[]\OT1/cmr/m/n/12 )$ \T1/lmr/m/n
 /12 to be $[][] \OML/cmm/m/it/12 x[]; [][] x[]; []\OT1/cmr/m/n/12 (\OML/cmm/m/i
@@ -4346,83 +4346,83 @@ t/12 x[]; []  ; x[]\OT1/cmr/m/n/12 )$
  []
 
 [313]
-Underfull \hbox (badness 10000) in paragraph at lines 9122--9125
+Underfull \hbox (badness 10000) in paragraph at lines 9123--9126
 
  []
 
 [314] [315] [316]
-Underfull \hbox (badness 10000) in paragraph at lines 9213--9217
+Underfull \hbox (badness 10000) in paragraph at lines 9214--9218
 
  []
 
 [317]
-Underfull \hbox (badness 10000) in paragraph at lines 9234--9238
+Underfull \hbox (badness 10000) in paragraph at lines 9235--9239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9240--9243
+Underfull \hbox (badness 10000) in paragraph at lines 9241--9244
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9245--9251
+Underfull \hbox (badness 10000) in paragraph at lines 9246--9252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9245--9251
+Underfull \hbox (badness 10000) in paragraph at lines 9246--9252
 
  []
 
 [318]
-Overfull \hbox (8.40895pt too wide) detected at line 9254
+Overfull \hbox (8.40895pt too wide) detected at line 9255
 \OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/
 cmm/m/it/12 B[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 B \OT1/cmr/m/n/12 = [](\OML/
 cmm/m/it/12 A[] \OMS/cmsy/m/n/12 \ \OML/cmm/m/it/12 B\OT1/cmr/m/n/12 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9254--9258
+Underfull \hbox (badness 10000) in paragraph at lines 9255--9259
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9259.
+(hyperref)                removing `math shift' on input line 9260.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 9259.
+(hyperref)                removing `math shift' on input line 9260.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9261--9264
+Underfull \hbox (badness 10000) in paragraph at lines 9262--9265
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9270--9274
+Underfull \hbox (badness 10000) in paragraph at lines 9271--9275
 
  []
 
 [319]
-Underfull \hbox (badness 10000) in paragraph at lines 9286--9290
+Underfull \hbox (badness 10000) in paragraph at lines 9287--9291
 
  []
 
 [320]
-Overfull \hbox (71.88992pt too wide) detected at line 9335
+Overfull \hbox (71.88992pt too wide) detected at line 9336
 [] \OT1/cmr/m/n/12 = [] = (\OML/cmm/m/it/12 X[]; []  ; X[]\OT1/cmr/m/n/12 )[](\
 OMS/cmsy/m/n/12 R[]\OT1/cmr/m/n/12 )
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9337--9340
+Underfull \hbox (badness 10000) in paragraph at lines 9338--9341
 
  []
 
 [321]
-Overfull \hbox (42.73782pt too wide) in paragraph at lines 9346--9348
+Overfull \hbox (42.73782pt too wide) in paragraph at lines 9347--9349
 \T1/lmr/m/n/12 The LHS is the small-est $\OML/cmm/m/it/12 ^^[$ \T1/lmr/m/n/12 a
 l-ge-bra for which $\OML/cmm/m/it/12 T$ \T1/lmr/m/n/12 is mea-sur-able $\OML/cm
 m/m/it/12 T[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OMS/cmsy/
@@ -4431,88 +4431,113 @@ m/n/12 A[]\OT1/cmr/m/n/12 ))\OML/cmm/m/it/12 =^^[[]\OT1/cmr/m/n/12 (\OMS/cmsy/m
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9362--9366
+Underfull \hbox (badness 10000) in paragraph at lines 9363--9367
 
  []
 
 [322]
-Underfull \hbox (badness 10000) in paragraph at lines 9384--9391
+Underfull \hbox (badness 10000) in paragraph at lines 9385--9392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9384--9391
+Underfull \hbox (badness 10000) in paragraph at lines 9385--9392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9384--9391
+Underfull \hbox (badness 10000) in paragraph at lines 9385--9392
 
  []
 
 [323]
-Underfull \hbox (badness 10000) in paragraph at lines 9424--9427
+Underfull \hbox (badness 10000) in paragraph at lines 9425--9428
 
  []
 
 
-Overfull \hbox (37.83327pt too wide) in paragraph at lines 9424--9427
+Overfull \hbox (37.83327pt too wide) in paragraph at lines 9425--9428
 \T1/lmr/m/n/12 Recall, The-o-rem 5.1(ii) said a sim-ple ran-dom vari-able $\OML
 /cmm/m/it/12 Y$ \T1/lmr/m/n/12 is mea-sur-able $\OML/cmm/m/it/12 ^^[\OT1/cmr/m/
 n/12 (\OML/cmm/m/it/12 X[]; []  ; X[]\OT1/cmr/m/n/12 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9429--9433
+Underfull \hbox (badness 10000) in paragraph at lines 9430--9434
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9442--9445
+Underfull \hbox (badness 10000) in paragraph at lines 9443--9446
 
  []
 
 [324]
-Underfull \hbox (badness 10000) in paragraph at lines 9459--9463
+Underfull \hbox (badness 10000) in paragraph at lines 9460--9464
 
  []
 
 [325]
-Underfull \hbox (badness 10000) in paragraph at lines 9483--9487
+Underfull \hbox (badness 10000) in paragraph at lines 9484--9488
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9489--9493
+Underfull \hbox (badness 10000) in paragraph at lines 9490--9494
 
  []
 
 [326]
-Underfull \hbox (badness 10000) in paragraph at lines 9503--9509
+Underfull \hbox (badness 10000) in paragraph at lines 9504--9510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9503--9509
+Underfull \hbox (badness 10000) in paragraph at lines 9504--9510
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9523--9527
+Underfull \hbox (badness 10000) in paragraph at lines 9524--9528
 
  []
 
-[327] [328] (./ProbabilityAndMeasure.aux)
+[327]
+Underfull \hbox (badness 10000) in paragraph at lines 9541--9546
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9541--9546
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9548--9552
+
+ []
+
+[328]
+Underfull \hbox (badness 10000) in paragraph at lines 9577--9583
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9577--9583
+
+ []
+
+[329] [330] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: F98014F419C990F322ECFBEA563DFAA7;45450.
+(rerunfilecheck)             Checksum: F7E2AB2B6DF4DECD08C60979C9A50B50;46352.
  ) 
 Here is how much of TeX's memory you used:
- 10062 strings out of 476191
- 157043 string characters out of 5812073
- 502619 words of memory out of 5000000
- 30648 multiletter control sequences out of 15000+600000
+ 10063 strings out of 476191
+ 157047 string characters out of 5812073
+ 503541 words of memory out of 5000000
+ 30649 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (328 pages).
+Output written on ProbabilityAndMeasure.pdf (330 pages).
