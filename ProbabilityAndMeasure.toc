@@ -1,4 +1,4 @@
-\contentsline {section}{Forward}{6}{section*.2}%
+\contentsline {section}{Forward}{7}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{7}{section*.3}%
 \contentsline {subsection}{Notes}{7}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{7}{section*.5}%
@@ -413,3 +413,4 @@
 \contentsline {subsubsection}{13.7 Baire and Borel Function Equivalence}{325}{section*.414}%
 \contentsline {subsubsection}{13.9 Egoroff's Theorem (Uniform Convergence on a Pointwise Convergent Subset)}{328}{section*.415}%
 \contentsline {subsubsection}{13.12 Circular Lebesgue Measure}{329}{section*.416}%
+\contentsline {subsubsection}{13.13}{331}{section*.417}%
