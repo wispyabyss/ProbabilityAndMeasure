@@ -9632,7 +9632,7 @@ $$
 $$
 And $\mu$ is thus invariant under rotation. qed.
 
-\subsubsection{13.13} Suppose that the circular Lebesgue measure of $A$ satisfies $\mu(A) > 1 - n^{-1}$ and that $B$ contains at most $n$ points. Show that some rotation carries $B$ into $A$ - ie, $\theta B \subset A$ for some $\theta \in C$.
+\subsubsection{13.13 - Finite Points On The Circle Rotated Into a Small Set} Suppose that the circular Lebesgue measure of $A$ satisfies $\mu(A) > 1 - n^{-1}$ and that $B$ contains at most $n$ points. Show that some rotation carries $B$ into $A$ - ie, $\theta B \subset A$ for some $\theta \in C$.
 \\\\
 Looking at the solutions. $B = \{b_1, \cdots, b_k\}$ for $k \leq n$. Note, each element $b_i \in C$ can be considered a rotation in $C$. Let $E_i = C - b_i^{-1}A$, ie $C$ with $A$ translated $b_i^{-1}$ removed. Let:
 $$
@@ -9649,6 +9649,86 @@ $$
 Is nonempty. Take any $\theta \in C - E$. Note, $\theta B \subset A$. This is because, $\theta = b_i^{-1}a$ for some $a \in A$, and $\theta b_i = b_i^{-1}ab_i = ab_i^{-1}b_i = a$. Note - rotations are commutative. qed.
 \\\\
 At a high level - the argument here is just - examine the image of $A$ under the rotation $b_i^{-1}$ for each $b_i$. The intersection of these images is nonempty - and so there is one rotation that will put each $b_i$ into $A$.
+
+\section{Section 14}
+\subsection{Notes}
+\subsubsection{Distribution Functions}
+\paragraph{Definition - Random Variable} A random variable $X$ is a measurable real function $X$ on a probability measure space $(\Omega,\fcal,P)$. 
+
+\paragraph{Definition - Distribution/Law of a Random Variable} The \textit{distribution} or \textit{law} of a random variable $X$ is t he probability measure on $(\R^1, \rcal^1)$ \textit{induced} by the random variable, defined by:
+$$
+	\mu(A) = P\left[X \in A\right] \quad\quad\quad A \in \rcal^1
+$$
+Note, the argument $\omega$ is usually omitted - it is:
+$$
+	P\left[\omega | X(\omega) \in A\right] = P\left[X \in A\right]
+$$
+Previously, we showed that $\mu$ was indeed a measure on $(\R,\rcal)$, and the notation we gave for it was:
+$$
+	\mu = PX^{-1}
+$$
+
+\paragraph{Definition - Distribution Function of $X$} Is defined by:
+$$
+	F(x) = \mu(-\infty,x] = P\left[X \leq x\right]
+$$
+For real $x$. Note, via continuity from above for $\mu$ (as $P$ is a finite probability measure), we have that $F$ is \textit{right continuous}. $F$ is also clearly \textit{nondecreasing}. 
+\\\\
+As $F$ is nondecreasing, we have that the left hand limit for $x$ at least \textit{exists}. This is via monotone convergence - the limit is just the supremum of the set. So, while $F$ might not be continuous from the left - at least a limit exists. Define it as $F(x-) = \lim_{y \uparrow x} F(y)$. By continuity from below on $\mu$, we have:
+$$
+	F(x-) = \lim_{y \uparrow x} F(y) = \lim_{y \uparrow x} \mu(-\infty,y] = \mu(-\infty,x) = P[X < x] 
+$$
+Thus, the jump or \textit{saltus} in $F$ at $x$ is:
+$$
+	F(x) - F(x-) = \mu\{x\} = P[X = x]
+$$
+Now, recall Theorem 10.2iv. If $P$ is $\sigma$ finite on $\fcal$, then $\fcal$ cannot contain an uncountable, disjoint collection of sets of positive $P$ measure. Now, $P$ is finite, and thus clearly $\sigma$ finite. And so, by the Theorem, as $[X = x] \in \fcal$ (as $\{x\}$ a singleton is within $\rcal$), we can have at most countably many $x \in \R$ such that:
+$$
+	P[X = x] > 0 \implies F(x) - F(x-) > 0
+$$
+And so, $F$ can have at most countably many points of discontinuity. Note, as our last property of $F$, we have:
+$$
+	\lim_{x \to -\infty} F(x) = 0 \quad\quad\quad
+	\lim_{x \to \infty} F(x) = 1
+$$
+These are again clear.
+
+\paragraph{Theorem 14.1 - Distribution Functions Have Corresponding Random Variables} If $F$ is a nondecreasing, right-continuous function satisfying:
+$$
+	\lim_{x \to -\infty} F(x) = 0 \quad\quad\quad
+	\lim_{x \to \infty} F(x) = 1
+$$
+Then there exists on some probability space a random variable $X$ for which $F(x) = P\left[X \leq x\right]$.
+\\\\
+\textbf{First Proof:} This relies on Theorem 12.4, which states that if $F$ is a nondecreasing, right-continuous real function on the line, there exists on $\rcal^1$ a unique measure $\mu$ satisfying:
+$$
+	\mu(a,b] = F(b) - F(a)
+$$
+For all $a,b \in \R$. So, we take the corresponding $\mu$. Note, we have:
+$$
+	\lim_{y \to -\infty} F(y) = 0 \implies
+	\mu(-\infty,x] = \lim_{y \to -\infty} \mu(y,x] = \lim_{y \to -\infty} F(x) - F(y) = F(x)
+$$
+Where the first equality after $\implies$ comes from continuity from below. Further:
+$$
+	\lim_{x \to \infty} F(x) = 1 \implies \mu(\R) = \lim_{x \to \infty} \mu(-\infty,x] = \lim_{x \to \infty} F(x) = 1
+$$
+Where again, the first equality after $\implies$ comes from continuity from below. For the probability space, take $(\Omega,\fcal,P) = (\R,\rcal,\mu)$,. Note, this is a probability space by $\mu$ being a measure on $\rcal$, and $\mu(\R) = 1$. For $X$ take the identity function: $X(\omega) = \omega$. Clearly, $X$ is real valued, and measurable with respect to $\rcal/\rcal$, and so is a Random Variable. Finally, note:
+$$
+	P\left[X \leq x\right] = \mu\left[\omega \in \R : \omega \leq x\right] = \mu(-\infty,x] = F(x)
+$$
+So, overall, the steps of this proof are:
+\begin{enumerate}
+	\item For a function $F$ as defined, prove the existence of a measure $\mu$ on $\rcal$ with Theorem 12.4.
+	\item Note that $\mu(-\infty,x] = F(x)$ and $\mu(\R) = 1$
+	\item Thus, $\mu$ can be a probability measure for $(\R,\rcal,\mu)$.
+	\item Finally, define the random variable $X$ as the identity on $(\R,\rcal,\mu)$, and note the required property $P\left[X \leq x\right] = F(x)$ comes directly from $\mu(-\infty,x] = F(x)$.
+\end{enumerate}
+qed.
+\\\\
+Note, this is only the first proof of the fact. I like it cause it just easily builds on what we already know. However, the book gives a second proof of the distribution fact.
+\\\\
+\textbf{Second Proof:} This proof only relies on the existence of Lebesgue measure \textit{on the unit interval} - so, the stuff we proved in chapter 3-5. Our probability space will be $((0,1),\bcal,\lambda)$, the borel sets of $(0,1)$ with the Lebesgue measure on $(0,1)$.
 
 
 \end{document}

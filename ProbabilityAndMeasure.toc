@@ -413,4 +413,11 @@
 \contentsline {subsubsection}{13.7 Baire and Borel Function Equivalence}{325}{section*.414}%
 \contentsline {subsubsection}{13.9 Egoroff's Theorem (Uniform Convergence on a Pointwise Convergent Subset)}{328}{section*.415}%
 \contentsline {subsubsection}{13.12 Circular Lebesgue Measure}{329}{section*.416}%
-\contentsline {subsubsection}{13.13}{331}{section*.417}%
+\contentsline {subsubsection}{13.13 - Finite Points On The Circle Rotated Into a Small Set}{331}{section*.417}%
+\contentsline {section}{Section 14}{332}{section*.418}%
+\contentsline {subsection}{Notes}{332}{section*.419}%
+\contentsline {subsubsection}{Distribution Functions}{332}{section*.420}%
+\contentsline {paragraph}{Definition - Random Variable}{332}{section*.421}%
+\contentsline {paragraph}{Definition - Distribution/Law of a Random Variable}{332}{section*.422}%
+\contentsline {paragraph}{Definition - Distribution Function of $X$}{333}{section*.423}%
+\contentsline {paragraph}{Theorem 14.1 - Distribution Functions Have Corresponding Random Variables}{333}{section*.424}%
