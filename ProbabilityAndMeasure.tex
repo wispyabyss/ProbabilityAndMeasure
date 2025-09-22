@@ -9655,7 +9655,7 @@ At a high level - the argument here is just - examine the image of $A$ under the
 \subsubsection{Distribution Functions}
 \paragraph{Definition - Random Variable} A random variable $X$ is a measurable real function $X$ on a probability measure space $(\Omega,\fcal,P)$. 
 
-\paragraph{Definition - Distribution/Law of a Random Variable} The \textit{distribution} or \textit{law} of a random variable $X$ is t he probability measure on $(\R^1, \rcal^1)$ \textit{induced} by the random variable, defined by:
+\paragraph{Definition - Distribution/Law of a Random Variable} The \textit{distribution} or \textit{law} of a random variable $X$ is the probability measure on $(\R^1, \rcal^1)$ \textit{induced} by the random variable, defined by:
 $$
 	\mu(A) = P\left[X \in A\right] \quad\quad\quad A \in \rcal^1
 $$
@@ -9700,6 +9700,10 @@ $$
 $$
 Then there exists on some probability space a random variable $X$ for which $F(x) = P\left[X \leq x\right]$.
 \\\\
+\textbf{Side Note:} This is also technically a proof that any $F$, as defined, cannot have an uncountable number of jumps. The existence of an uncountable amount of jumps in such an $F$ would imply an uncountable amount of sets $X = x$ that are disjoint, which our finite probability measure would given non zero probability to. However, you can prove it much more directly:
+\\\\
+Assume an uncountable number of jumps, for a nondecreasing function bounded between zero and one. You must have a countable number greater than some $\epsilon$. If not - take $1/n, 1/(n+1), 1/(n+2)$, so on - the limit of which is zero. Note the union of jumps greater than $1/n, 1/(n+1), 1/(n+2)$ and so on must contain each jump - as each jump is positive. If each element of the union was finite (or even countable), the union would be countable - leading to a countable set equaling an uncountable one (a contradiction). So, for some $1/n$, you have a countable number of jumps larger than $1/n$ - the sum of which is infinite, greater than the bound. qed. 
+\\\\
 \textbf{First Proof:} This relies on Theorem 12.4, which states that if $F$ is a nondecreasing, right-continuous real function on the line, there exists on $\rcal^1$ a unique measure $\mu$ satisfying:
 $$
 	\mu(a,b] = F(b) - F(a)
@@ -9720,8 +9724,8 @@ $$
 So, overall, the steps of this proof are:
 \begin{enumerate}
 	\item For a function $F$ as defined, prove the existence of a measure $\mu$ on $\rcal$ with Theorem 12.4.
-	\item Note that $\mu(-\infty,x] = F(x)$ and $\mu(\R) = 1$
-	\item Thus, $\mu$ can be a probability measure for $(\R,\rcal,\mu)$.
+	\item Note that $\mu(-\infty,x] = F(x)$ and $\mu(\R) = 1$. So $\mu$ itself is a probability measure on $(\R,\rcal)$.
+	\item Let $\mu$ be a probability measure for $(\R,\rcal,\mu)$, and this space will be the domain for our random variable $X$.
 	\item Finally, define the random variable $X$ as the identity on $(\R,\rcal,\mu)$, and note the required property $P\left[X \leq x\right] = F(x)$ comes directly from $\mu(-\infty,x] = F(x)$.
 \end{enumerate}
 qed.
@@ -9729,6 +9733,45 @@ qed.
 Note, this is only the first proof of the fact. I like it cause it just easily builds on what we already know. However, the book gives a second proof of the distribution fact.
 \\\\
 \textbf{Second Proof:} This proof only relies on the existence of Lebesgue measure \textit{on the unit interval} - so, the stuff we proved in chapter 3-5. Our probability space will be $((0,1),\bcal,\lambda)$, the borel sets of $(0,1)$ with the Lebesgue measure on $(0,1)$.
+\\\\
+First, consider the case where $F$ is continuous and strictly increasing. Then $F$ is a one-to-one mapping of $\R$ onto $(0,1)$. Note, strictly increasing implies that for $x \neq y$, wlog $x < y$, $F(x) < F(y) \implies F(x) \neq F(y)$. This is the definition of injectivity. Note, $F$ thus also has an inverse function $\varphi: (0,1) \to \R$. This is because $F$ is surjective on $(0,1)$, via the limit restrictions on $F$.
+\\\\
+For $0 < \omega < 1$, let $X(\omega) = \varphi(\omega)$. Note that $\varphi$ is increasing - if $u < v$ for $u, v \in (0,1)$, we have some $F(x) = u < v = F(y)$ - which via $F$ being increasing implies $x < y$ - and so $\varphi(u) = x < y = \varphi(v)$. Finally, note that increasing functions are measurable. As the half infinite intervals generate $\R$, examine:
+$$
+	X^{-1}(-\infty,a)
+$$
+It must equal $(0,b)$ for some $b \in (0,1)$. This is because if $c < b$, we must have $X(c) < X(b) = a \implies X(c) \in (-\infty,a)$. And so, Theorem 13.1 implies that $X$ is measurable. By definition, the $b$ satisfies $F(a) = b$. 
+\\\\
+And so, $X$ as defined is measurable on $((0,1),\bcal,\lambda)$. The final question is whether or not $F$ is equal to the distribution function of $X$. Examine:
+$$
+	P[X \leq x] = P[\omega \in (0,1) : \varphi(\omega) \leq x] = P[\omega \in (0,1) : \omega \leq F(x)] = F(x)
+$$
+Where the second equality makes use of our inverse definition, and the third equality is via the definition of the Lebesgue measure.
+\\\\
+So, we have proved the theorem in the $F$ continuous case. Now, we need to consider general $F$ (ie, right-continuous satisfying the nondecreasing and limit properties). Define:
+$$
+	\varphi(u) = \inf\left[x : u \leq F(x)\right]
+$$
+Note, the infimum across this set makes sense, as $u \in (0,1)$, and $F(x)$ increasing to $1$ implies that $\infty$ would be the supremum. Indeed, $[x : u \leq F(x)]$ is an interval stretching to $\infty$, and as $F$ is right continuous, the interval must be closed on the left. For $0 < u < 1$ then, we have:
+$$
+	[x : u \leq F(x)] = [\varphi(u),\infty)
+$$
+And so $\varphi(u) \leq x$ if and only if $u \leq F(x)$. If $X(\omega) = \varphi(\omega)$ for $0 < \omega < 1$, then by the same reasoning as above, $X$ is a random variable (increasing) and $P[X \leq x] = F(x)$. qed.
+
+\subsubsection{Exponential Distributions}
+There are a number of results which for their interpretation require random variables, independence, and other probabilistic concepts, but which can be discussed technically in terms of distribution functions alone, and do not require measure theory. This is what basic statistics is, essentially. This section examines one of those distributions, the exponential distribution.
+\\\\
+Suppose that $F$ is the distribution function of the waiting time to the occurrence of some event - say the arrival of the next customer at a queue, or the next call at a telephone exchange. As the waiting time must be positive, assume $F(0) = 0$ - ie, we want:
+$$
+	P\left[X \leq 0] = F(0) = 0
+$$
+Suppose that $F(x) < 1$ for all $x$ (which allows it to express a probability), and furthermore suppose that:
+$$
+	\frac{1 - F(x + y)}{1 - F(x)} = 1 - F(y) \quad\quad x,y \geq 0
+$$
+The right side of the equation is the probability that the waiting time exceeds $y$ - and if we think about conditional probability, the left side is the probability that the waiting time exceeds $x + y$, given that it exceeds $x$. In the real world, we understand this as a "lack of memory" property. Ie, if we have waited till time $x$ - the probability that we have to wait till time $x + y$, is the same as if we started over from the beginning, in a new world, and wanted to understand the probability that we have to wait until time $y$ before the next customer comes in.
+\\\\
+With these conditions on $F$ - we can actually completely determine $F$.
 
 
 \end{document}

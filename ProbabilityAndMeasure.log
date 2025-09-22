@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  19 SEP 2025 12:02
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  22 SEP 2025 12:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4563,31 +4563,88 @@ Underfull \hbox (badness 10000) in paragraph at lines 9674--9678
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9700--9704
-
- []
-
-[333]
-Underfull \hbox (badness 10000) in paragraph at lines 9727--9732
+Underfull \hbox (badness 10000) in paragraph at lines 9700--9708
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9727--9732
+Underfull \hbox (badness 10000) in paragraph at lines 9700--9708
 
  []
 
-[334] [335] (./ProbabilityAndMeasure.aux)
+
+Overfull \hbox (11.32602pt too wide) in paragraph at lines 9700--9708
+\T1/lmr/m/n/12 Assume an un-count-able num-ber of jumps, for a non-de-creas-ing
+ func-tion bounded
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9700--9708
+
+ []
+
+[333] [334]
+Underfull \hbox (badness 10000) in paragraph at lines 9731--9740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9731--9740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9731--9740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9731--9740
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9742--9746
+
+ []
+
+[335]
+Underfull \hbox (badness 10000) in paragraph at lines 9748--9752
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9762--9765
+
+ []
+
+! Missing \right. inserted.
+<inserted text> 
+                \right .
+l.9767 $
+        $
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9771--9775
+
+ []
+
+[336] [337] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: B1902EF9A63D816152CF3B89243C201A;47104.
+(rerunfilecheck)             Checksum: ABA7E55967354E2CB2E213A7E62145C9;47292.
  ) 
 Here is how much of TeX's memory you used:
  10065 strings out of 476191
  157075 string characters out of 5812073
- 504339 words of memory out of 5000000
+ 504534 words of memory out of 5000000
  30651 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (335 pages).
+Output written on ProbabilityAndMeasure.pdf (337 pages).

@@ -421,3 +421,4 @@
 \contentsline {paragraph}{Definition - Distribution/Law of a Random Variable}{332}{section*.422}%
 \contentsline {paragraph}{Definition - Distribution Function of $X$}{333}{section*.423}%
 \contentsline {paragraph}{Theorem 14.1 - Distribution Functions Have Corresponding Random Variables}{333}{section*.424}%
+\contentsline {subsubsection}{Exponential Distributions}{336}{section*.425}%
