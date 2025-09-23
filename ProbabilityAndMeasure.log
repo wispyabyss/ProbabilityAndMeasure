@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  22 SEP 2025 12:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  23 SEP 2025 10:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -379,12 +379,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 \tf@toc=\write5
 \openout5 = `ProbabilityAndMeasure.toc'.
 
-
+ [6]
 Underfull \hbox (badness 10000) in paragraph at lines 66--69
 
  []
 
-[6]
+
 Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
@@ -442,17 +442,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 178--182
 
  []
 
-
+[11]
 Underfull \hbox (badness 10000) in paragraph at lines 189--192
 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 210--214
 
  []
 
-[12]
+
 Underfull \hbox (badness 10000) in paragraph at lines 225--229
 
  []
@@ -472,6 +472,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 265--268
 
  []
 
+[15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 287.
@@ -485,19 +486,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--290
 
  []
 
-[15]
+
 Underfull \hbox (badness 10000) in paragraph at lines 292--296
 
  []
 
-
+[16]
 Overfull \hbox (34.20651pt too wide) in paragraph at lines 308--310
 \T1/lmr/m/n/12 Note that $\OML/cmm/m/it/12 I[]$ \T1/lmr/m/n/12 cov-ers $[]$. Ta
 ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
  we have $[]$
  []
 
-[16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 318.
@@ -506,17 +506,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 318.
 
-
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 324--328
 
  []
 
-[17]
+
 Underfull \hbox (badness 10000) in paragraph at lines 331--334
 
  []
 
-
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 346--350
 
  []
@@ -526,7 +526,7 @@ Overfull \hbox (22.48218pt too wide) detected at line 352
 \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
  []
 
-[18]
+
 Overfull \hbox (53.37004pt too wide) detected at line 355
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
  []
@@ -536,12 +536,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--368
 
  []
 
-[19]
+[19] [20]
 Underfull \hbox (badness 10000) in paragraph at lines 394--397
 
  []
 
-[20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 398--401
 
  []
@@ -551,6 +551,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 402--405
 
  []
 
+[21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 407.
@@ -563,7 +564,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 407.
 
-[21]
+[22]
 Overfull \hbox (4.17073pt too wide) detected at line 446
 [][] \OML/cmm/m/it/12 s[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 )\O
 ML/cmm/m/it/12 d! \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 M[]\OT1/cmr/m/n/12 (0) = \
@@ -571,7 +572,7 @@ OML/cmm/m/it/12 n [] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 n \OMS/cmsy/m/n/12 ^^C
 \OT1/cmr/m/n/12 1 = \OML/cmm/m/it/12 n
  []
 
-[22]
+
 Overfull \hbox (33.5807pt too wide) detected at line 465
 \OT1/cmr/m/n/12 = [] [](\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] [] + [] []
 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] []
@@ -603,22 +604,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 536--541
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 542--547
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 542--547
-
- []
-
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 565--569
+Underfull \hbox (badness 10000) in paragraph at lines 542--547
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 542--547
 
  []
 
 [27]
+Underfull \hbox (badness 10000) in paragraph at lines 565--569
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 575--579
 
  []
@@ -643,7 +644,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 630--633
 
  []
 
-
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 634--637
 
  []
@@ -658,12 +659,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 638--643
 
  []
 
-[30] [31]
+[31] [32]
 Underfull \hbox (badness 10000) in paragraph at lines 683--686
 
  []
 
-[32]
+
 Underfull \hbox (badness 10000) in paragraph at lines 687--691
 
  []
@@ -673,7 +674,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 707--711
 
  []
 
-
+[34]
 Underfull \hbox (badness 10000) in paragraph at lines 713--716
 
  []
@@ -688,7 +689,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 718--721
 
  []
 
-[34]
+
 Underfull \hbox (badness 10000) in paragraph at lines 730--734
 
  []
@@ -830,6 +831,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 918--921
 
  []
 
+[43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 923.
@@ -847,7 +849,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 923--926
 
  []
 
-[43]
+
 Underfull \hbox (badness 10000) in paragraph at lines 940--944
 
  []
@@ -872,6 +874,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 976--979
 
  []
 
+[45]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 981.
@@ -914,7 +917,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 981--994
 
  []
 
-[45] [46]
+[46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 999.
@@ -954,12 +957,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1030--1034
 
  []
 
-
+[48]
 Underfull \hbox (badness 10000) in paragraph at lines 1042--1046
 
  []
 
-[48]
+
 Overfull \hbox (51.12727pt too wide) detected at line 1048
 \OML/cmm/m/it/12 D\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A \OMS/cmsy/m/n/12 [ \OML/c
 mm/m/it/12 B\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 P[]\OT1/cmr/m/n/12 (\OML/cm
@@ -982,12 +985,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 1056--1062
 
  []
 
-
+[49]
 Underfull \hbox (badness 10000) in paragraph at lines 1072--1076
 
  []
 
-[49]
+
 Underfull \hbox (badness 10000) in paragraph at lines 1106--1110
 
  []
@@ -4630,21 +4633,31 @@ really didn't forget anything, try typing `2' now; then
 my insertion and my current dilemma will both disappear.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9771--9775
+Underfull \hbox (badness 10000) in paragraph at lines 9771--9777
 
  []
 
-[336] [337] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 9771--9777
+
+ []
+
+[336] [337] [338]
+Underfull \hbox (badness 10000) in paragraph at lines 9839--9843
+
+ []
+
+[339] [340] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: ABA7E55967354E2CB2E213A7E62145C9;47292.
+(rerunfilecheck)             Checksum: 98A72309E53EFF935F7FD5F6614647E0;47435.
  ) 
 Here is how much of TeX's memory you used:
  10065 strings out of 476191
  157075 string characters out of 5812073
- 504534 words of memory out of 5000000
+ 504684 words of memory out of 5000000
  30651 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (337 pages).
+Output written on ProbabilityAndMeasure.pdf (340 pages).
