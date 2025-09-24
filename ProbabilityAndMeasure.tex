@@ -9891,6 +9891,126 @@ $$
 	F_n(x) = G^n(x)
 $$
 
+\paragraph{Example 14.1: Examining the Asymptotic Maximum Distribution Function without Measure Theory} Say that we are examining the the maximum arrival time out of $n$ waiting times. The $n$ waiting times each have distribution function as described above:
+$$
+	F(x) =
+	\begin{cases}
+	0 & \text{ if $x \leq 0$}\\
+	1 - e^{-\alpha x} & \text{ if $x \geq 0$}
+	\end{cases}
+$$
+Suppose that they are each independent, and identically distributed, in which case we can conclude that the distribution function for the (measurable) maximum random variable is:
+$$
+	F_n(x) = 
+	\begin{cases}
+	0 & \text{ if $x \leq 0$}\\
+	(1 - e^{-\alpha x})^n & \text{ if $x \geq 0$}
+	\end{cases}
+$$
+Note, this makes sense, as the probability the maximum is less than 0 will always be zero, and the probability that it is less than some value $x > 0$ is smaller than for each individual random variable. Now, we note that:
+$$
+	\lim_n F_n(x) = 0
+$$
+As $n$ grows to infinity, we are multiplying more and more decimals. This is true for each $x$. Thus, if $n$ is large, we have that $M_n$ will tend to be large as well. Now note:
+$$
+	P\left[M_n - \alpha^{-1}\log n \leq x\right] =
+	F_n(x + \alpha^{-1}\log n) =
+	\left(1 - e^{-(\alpha x + \log n)}\right)^n
+$$
+This is the distribution function for the random variable $M_n - \alpha^{-1}\log n$. Examine as $n \to \infty$. We have:
+$$
+	= \left(1 - \frac{e^{-\alpha x}}{n}\right)^n
+$$
+Recall that the limit definition of $e$ is:
+$$
+	e^x = \lim_n (1 + x/n)^n
+$$
+And so, we have that:
+$$
+	\lim_{n \to \infty} P\left[M_n - \alpha^{-1}\log n \leq x\right] = e^{-e^{-\alpha x}}
+$$
+So, we have the approximate distribution of the normalized random variable $M_n - \alpha^{-1}\log n$ for large $n$.
+
+\paragraph{Distribution Weak Convergence} If $F_n$ and $F$ are distribution functions, then by definition, $F_n$ \textit{converges weakly} to $G$, written $F \Rightarrow F$, if:
+$$
+	\lim_n F_n(x) = F(x)
+$$
+For each $x$ at which \textit{$F$ is continuous}. This distinction seems important for later on.
+\\\\
+To study the approximate distribution of a random variable $Y_n$, it is often necessary to study instead the normalized or rescaled random variable $(Y_n - b_n)/a_n$ for appropriate constants $a_n$ and $b_n$. If $Y_n$ has distribution function $F_n$ and if $a_n > 0$, then:
+$$
+	P\left[(Y_n - b_n)/a_n\right] = P\left[Y_n \leq a_nx + b_n\right]
+$$
+So we have a distribution function $F_n(a_nx + b_n)$. This allows us to do some nice scaling/translation. For this reason, weak convergence is sometimes written in the form:
+$$
+	F_n(a_nx + b_n) \Rightarrow F(x)
+$$
+
+\paragraph{Example 14.2 Limiting Distribution of Scaled Maximum Random Variable 1} Consider again the distribution function of the maximum for $n$ iid random variables:
+$$
+	F_n(x) = G^n(x)
+$$
+But now, suppose distribution function $G$ is:
+$$
+	G(x) =
+	\begin{cases}
+	0 & \text{ if $x \leq 1$}\\
+	1 - x^{-\alpha} & \text{if $x \geq 1$}
+	\end{cases}
+$$
+For $\alpha > 0$. Note, again, this is a continuous function, nondecreasing and has the correct 0/1 limits, so it is a distribution function. Thus, we have:
+$$
+	F_n(n^{1/\alpha}x) = \left[1-(n^{1/\alpha}x)^{-\alpha}\right]^n =
+	\left[1 - \frac{x^{-\alpha}}{n}\right]^n
+$$
+For $x \geq n^{-1/\alpha}$ (as it is zero otherwise). Again, we have a nice limit, where:
+$$
+	\lim_n F_n(n^{1/\alpha}x) =
+	\begin{cases}
+	0 & \text{ if $x \leq 0$}\\
+	e^{-x^{-\alpha}} & \text{ if $x > 0$}
+	\end{cases}
+$$
+
+\paragraph{Example 14.3 Limiting Distribution of Scaled Maximum Random Variable 2} Same setup, but now we let 
+$$
+	G(x) =
+	\begin{cases}
+	0 & \text{ if $x \leq 0$}\\
+	1 - (1-x)^\alpha & \text{ if $0 \leq x \leq 1$}\\
+	1 & \text{ if $x \geq 1$}
+	\end{cases}
+$$
+Again, this is a distribution function for $\alpha > 0$. This time, let $a_n = n^{-1/\alpha}$, and $b_n = 1$, in which case for $-n^{1/\alpha} \leq x \leq 0$
+$$
+	F_n(n^{-1/\alpha}x + 1) = 
+	\left[1 - (n^{-1/\alpha}x)^\alpha\right]^n =
+	\left(1 - \frac{(-x)^\alpha}{n}\right)^n
+$$
+Therefore, we have:
+$$
+	\lim_n F_n(n^{-1/\alpha}x + 1) =
+	\begin{cases}
+	e^{-(-x)^\alpha} & \text{ if $x \leq 0$}\\
+	1 & \text{ if $x > 0$}
+	\end{cases}
+$$
+
+\paragraph{Constant $0$ Distribution Function} Let $\Delta$ be the distribution function with a unit jump at the origin:
+$$
+	\Delta(x) = 
+	\begin{cases}
+	0 & \text{ if $x < 0$}\\
+	1 & \text{ if $x \geq 0$}
+	\end{cases}
+$$
+If $X(\omega) = 0$, then $X$ has a distribution function $\Delta$.
+
+\paragraph{Example 14.4 - The Weak Law of Large Numbers And $\Delta$ Distribution} Let $X_1, X_2, \cdots$ be independent random variables for which $P[X_k = 1] = P[X_k = -1] = 1/2$. Note, $X_i$ are iid, and they are also simple random variables. And so, we can apply the weak law of large numbers to $S_n = X_1 + \cdots + X_n$, Theorem 6.1 (Corollary) which states:
+$$
+	P\left[|n^{-1}S_n| > \epsilon\right] \to 0
+$$
+For $\epsilon > 0$. 
 
 \end{document}
 
