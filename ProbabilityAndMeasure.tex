@@ -10010,7 +10010,93 @@ If $X(\omega) = 0$, then $X$ has a distribution function $\Delta$.
 $$
 	P\left[|n^{-1}S_n| > \epsilon\right] \to 0
 $$
-For $\epsilon > 0$. 
+For $\epsilon > 0$. We let $F_n$ be the distribution function of $n^{-1}S_n$. If $x > 0$, then:
+$$
+	F_n(x) = P\left[n^{-1}S_n \leq x\right] = 1 - P\left[n^{-1}S_n > x\right] \to 1
+$$
+If $x < 0$, then:
+$$
+	F_n(x) = P\left[n^{-1}S_n \leq x\right] = P\left[|n^{-1}S_n| \geq |x|\right] \to 0
+$$
+Note, this accounts for all continuity points of $\Delta$ (the only discontinuity of $\Delta$ describe above being at $0$. Thus, from the weak law of large numbers, we can deduce that:
+$$
+	F_n \Rightarrow \Delta
+$$
+Ie, $F_n$ converges to $\Delta$ at continuity points, which we defined as $F_n$ \textit{converges weakly} to $\Delta$. Note, we can similarly turn the argument around. Assume that the distribution function of $n^{-1}S_n$ \textit{converges weakly} to $\Delta$. Then, for any $\epsilon > 0$, we have:
+$$
+	P\left[n^{-1}S_n > \epsilon\right] = 1 - P\left[n^{-1}S_n \leq \epsilon\right] \to 0
+$$
+And:
+$$
+	P\left[-n^{-1}S_n > \epsilon\right] = P\left[n^{-1}S_n \leq -\epsilon\right] \to 0
+$$
+So, both cases together imply:
+$$
+	P\left[|n^{-1}S_n| > \epsilon\right] \to 0
+$$
+So, both facts imply each other. And so, we have - The Weak Law of Large Numbers is \textit{equivalent} to the assertion that the distribution function of $n^{-1}S_n$ \textit{converges weakly} to $\Delta$.
+\\\\
+As a final note, examine the discontinuity zero. If $n$ is odd - note that $S_n = 0$ is impossible (as we are adding an odd number of $\pm 1$). And so, by symmetry, we can conclude:
+$$
+	P[S_n \leq 0] = P[S_n \geq 0] = 1/2 \implies
+	F_n(0) = P[n^{-1}S_n \leq 0] = 1/2
+$$
+So, if the limit of $F_n(0)$ exists, it must be 1/2 (or DNE). In either case - $F_n(0)$ \textit{does not} converge to $\Delta(0) = 1$. However, as $\Delta$ is discontinuous at zero, the definition of weak convergence does not require they are equal at the discontinuity of zero.
+
+\paragraph{Weak Limits Are Unique} So, we have that $F_n \Rightarrow F$. If $F_n \rightarrow G$ as well - must $F$ and $G$ be equal? Well, they of course must be at shared continuity points. However, we don't necessarily need equality at continuity points (which we specify for situations like above, so it is possible to bring the weak law of large numbers under the theory of weak convergence). 
+\\\\
+So, consider the discontinuity points. As $F$ and $G$ are distribution functions - we note that they are increasing, right continuous, and bounded between zero and one. As discussed earlier - this implies that $F$ and $G$ can only have countably many jump discontinuities. The set of common continuity points must thus be dense. Take a discontinuity point $x$. Via density, we have $x_1, x_2, \cdots$ such that $x_n \downarrow x$. We thus have by right continuity:
+$$
+	F(x) = \lim_n F(x_n) = \lim_n G(x_n) = G(x_n)
+$$
+Note - I was thinking about the left side of a discontinuity point $x$. However, recall that $F$ and $G$ take the right side of the jump - ie, the left side is not inclusive - with an open parenthesis.
+
+\subsection{Problems}
+\subsubsection{14.1 - Nondecreasing Implies Countable Discontinuities} The general nondecreasing function $F$ has at most countably many discontinuities. Prove this by considering the open intervals:
+$$
+	\left(\sup_{u < x} F(u), \inf_{v > x} F(v)\right)
+$$
+Each nonempty one contains a rational.
+\\\\
+So, I proved it above, by examining the sum of an uncountable amount of discontinuities. However, I like these kind of problems - so I will try and prove this one with the method as stated. Note, if $F$ is continuous at $x$ - the interval is empty. That is because the supremum at the left, and infimum at the right, will both equal $F(x)$. So, the only time that these intervals are nonempty would be if $x$ is a discontinuity point of $F$.
+\\\\
+So, for each discontinuity point of $F$, we have a nonempty interval. To each discontinuity point $x$, we assign a rational that is contained within the interval, $r_x$. We now note that this mapping is injective. This is because, if $y$ is a discontinuity point such that $x \neq y$, wlog assume $x < y$. This implies the lower bound of the interval for $y$, at most equals the upper bound for the interval at $x$ - and given we are using parenthesis, this implies the intervals are disjoint.
+\\\\
+And so, we have an injective map from the discontinuities to the rationals - which implies the discontinuities are at most countable.
+
+\subsubsection{14.3 - Probability Transformation - Passing $X$ into its Distribution Function - $F(X)$}
+\begin{enumerate}
+	\item Suppose that $X$ has a continuous, strictly increasing distribution function $F$. Show that the random variable $F(X)$ is uniformly distributed over the unit interval, in the sense that:
+	$$
+		P\left[F(X) \leq u\right] = u \text{ for $0 \leq u \leq 1$}
+	$$
+	Passing from $X$ to $F(X)$ is called the \textit{probability transformation}.
+	\\\\
+	If $F$ is strictly increasing - then I think we have that $F$ must be invertible on $(0,1)$. Take $x \neq y$ - assume wlog that $x < y$. Then, we have $F(x) < F(y) \implies F(x) \neq F(y)$. And so, $F$ is injective. $F$ is surjective by the limits:
+	$$
+		\lim_{x \to -\infty} F(x) = 0 \quad\quad\quad
+		\lim_{x \to \infty} F(x) = 1
+	$$
+	So, $F^{-1}$ exists. We must have that:
+	$$
+		F(X) \leq u \Leftrightarrow X \leq F^{-1}(u)
+	$$
+	Again, this is by strictly increasing. And so, we have:
+	$$
+		P\left[F(X) \leq u\right] = P\left[X \leq F^{-1}(u)\right] = F(F^{-1}(u)) = u
+	$$
+	One thing to note - if $F(X)$ a random variable? Well, it is if $F \circ X : \Omega \to \R$ is measurable, which is true if $F$ is measurable. $F$ is strictly increasing, which implies that $F$ is measurable as a function from $\R$ to $\R$ (inverse of half open intervals is half open interval, and within $\rcal$, which implies the inverse of a generating set is measurable). 
+	
+	\item Show that the function $\varphi(u)$ defined by:
+	$$
+		\varphi(u) = \inf\left[x : u \leq F(x)\right]
+	$$
+	Satisfies:
+	$$
+		F(\varphi(u)-) \leq u \leq F(\varphi(u))
+	$$
+	And that, if $F$ is continuous (but not necessarily strictly increasing), then $F(\varphi(u)) = u$ for $0 < u < 1$.
+\end{enumerate}
 
 \end{document}
 
