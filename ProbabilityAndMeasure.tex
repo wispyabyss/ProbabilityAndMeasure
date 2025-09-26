@@ -10096,6 +10096,60 @@ And so, we have an injective map from the discontinuities to the rationals - whi
 		F(\varphi(u)-) \leq u \leq F(\varphi(u))
 	$$
 	And that, if $F$ is continuous (but not necessarily strictly increasing), then $F(\varphi(u)) = u$ for $0 < u < 1$.
+	\\\\
+	Note, here, I think the point is to assume that $F$ is a distribution function. First, I want to show that:
+	$$
+		u \leq F(\varphi(u))
+	$$
+	Which is the same as:
+	$$
+		u \leq F\left[\inf\left[x : u \leq F(x)\right]\right]
+	$$
+	Note, the infimum can be calculated as a right hand limit as $F$ is increasing - namely, we have $x_1, x_2 \downarrow \varphi(u)$. By definition, we have that:
+	$$
+		u \leq F(x_i) \text{ for all $i$} \implies
+		u \leq \lim_i F(x_i) \implies
+		u \leq F(\varphi(u))
+	$$
+	Where the last step uses right continuity. Now, we want to examine the other direction:
+	$$
+		F(\varphi(u)-) \leq u
+	$$
+	Note, $\varphi(u)-$, by definition, is a left handed limit - ie, we have for $x_i \uparrow \varphi(u)$, we have:
+	$$
+		\lim_i F(x_i) = F(\varphi(u)-)
+	$$
+	Note, the left hand limit, definitionally, is taken outside the function. We note that as $x_i < \varphi(u)$, and $\varphi(u)$ is an infimum of points satisfying a property, $x_i$ must not satisfy that property. And so, we must have $F(x_i) < F(u)$. This allows us to conclude that:
+	$$
+		F(\varphi(u)-) = \lim_i F(x_i) \leq u
+	$$
+	And so, we indeed have the equation:
+	$$
+		F(\varphi(u)-) \leq u \leq F(\varphi(u))
+	$$
+	Note, continuity of $F$ would directly give us:
+	$$
+		F(\varphi(u)) = F(\varphi(u)-) \leq u
+	$$
+	So $\leq$ and $\geq$ gives us:
+	$$
+		 F(\varphi(u)) = u
+	$$
+	
+	\item Show that $P[F(X) < u] = F(\varphi(u)-)$ and hence that the result in part (a) holds as long as $F$ is continuous.
+	\\\\
+	We have that:
+	$$
+		P[F(X) < u] = 1 - P[F(X) \geq u]
+	$$
+	Note that $F(X) \geq u$ if and only if $\varphi(u) \leq X$. So:
+	$$
+		= 1 - P[\varphi(u) \leq X] = P[X < \varphi(u)] = F(\varphi(u)-)
+	$$
+	Where the last step is from the chapter discussion, using continuity from below. If $F$ is continuous, then we have:
+	$$
+		P[F(x) \leq u] = P[F(X) < u] = F(\varphi(u)-) = F(\varphi(u))
+	$$
 \end{enumerate}
 
 \end{document}
