@@ -10052,7 +10052,7 @@ $$
 Note - I was thinking about the left side of a discontinuity point $x$. However, recall that $F$ and $G$ take the right side of the jump - ie, the left side is not inclusive - with an open parenthesis.
 
 \subsection{Problems}
-\subsubsection{14.1 - Nondecreasing Implies Countable Discontinuities} The general nondecreasing function $F$ has at most countably many discontinuities. Prove this by considering the open intervals:
+\subsubsection{14.1 Nondecreasing Implies Countable Discontinuities} The general nondecreasing function $F$ has at most countably many discontinuities. Prove this by considering the open intervals:
 $$
 	\left(\sup_{u < x} F(u), \inf_{v > x} F(v)\right)
 $$
@@ -10064,7 +10064,7 @@ So, for each discontinuity point of $F$, we have a nonempty interval. To each di
 \\\\
 And so, we have an injective map from the discontinuities to the rationals - which implies the discontinuities are at most countable.
 
-\subsubsection{14.3 - Probability Transformation - Passing $X$ into its Distribution Function - $F(X)$}
+\subsubsection{14.3 Probability Transformation - Passing $X$ into its Distribution Function - $F(X)$}
 \begin{enumerate}
 	\item Suppose that $X$ has a continuous, strictly increasing distribution function $F$. Show that the random variable $F(X)$ is uniformly distributed over the unit interval, in the sense that:
 	$$
@@ -10151,6 +10151,108 @@ And so, we have an injective map from the discontinuities to the rationals - whi
 		P[F(x) \leq u] = P[F(X) < u] = F(\varphi(u)-) = F(\varphi(u))
 	$$
 \end{enumerate}
+
+\subsubsection{14.4 Probability Transformation on Borel Sets} Let $C$ be the set of continuity points of $F$.
+\begin{enumerate}
+	\item Show that for every Borel set $A$, $P[F(X) \in A, X \in C]$ is at most the Lebesgue measure of $A$.
+	\\\\
+	I believe, we need to show:
+	$$
+		P[F(X) \in A, X \in C] \leq \lambda(A)
+	$$
+	Recall, we found in the previous section:
+	$$
+		\varphi(u) = \inf\left[x : u \leq F(x)\right] \quad\quad
+		P\left[F(X) < u\right] = F(\varphi(u)-) \text{ and $= u$ if $F$ is continuous}
+	$$
+	We can go back to Theorem 11.3 - we have that the bounded intervals are a semiring on $\rcal$ - and so via Theorem 11.3, which extends $\lambda$ on the bounded intervals to all borel sets - we have that:
+	$$
+		\lambda(A) = \inf \sum_n \lambda(A_n)
+	$$
+	Where we cover $A$ by intervals. Take a covering of $A$ by bounded intervals $A_n$, note we can assume they are disjoint via Lemma 1 in Chapter 11. And so:
+	$$
+		P[F(X) \in A, X \in C] \leq P\left[F(X) \in \bigcup_n (a_n,b_n], X \in C\right]
+	$$
+	$$
+		= \sum_n P\left[F(X) \in (a_n,b_n], X \in C\right]
+	$$
+	Note, the first step uses the fact that the union is larger than $A$, and the second step is probability of disjoint intervals. Now, note that:
+	$$
+		P\left[F(X) \in (a_n,b_n], X \in C\right] =
+		P\left[F(X) \leq b_n, X \in C\right] - P\left[F(X) \leq a_n, X \in C\right]
+	$$
+	Note, as we are restricting to $X \in C$, we have that:
+	$$
+		\leq b_n - a_n
+	$$
+	Note, we can break this down whether or not $\varphi(b_n), \varphi(a_n) \in C$ or not, but in any case, the bound holds. So, for any disjoint covering $A_n$ of $A$, we have:
+	$$
+		P[F(X) \in A, X \in C] \leq \sum_n \lambda(A_n)
+	$$
+	We can take an infimum on both sides, to find:
+	$$
+		P[F(X) \in A, X \in C] \leq \lambda(A)
+	$$
+	
+	\item Show that if $F$ is continuous at each point of $F^{-1}A$, then $P[F(X) \in A]$ is at most the lebesgue measure of $A$. Well, this assumption gives us equivalent information to $X \in C$ in the above argument. So, we can remove $X \in C$, and still get continuity of $\varphi(a_n) = F^{-1}(a_n)$, and so we can conclude:
+	$$
+		P[F(x) \in A] \leq \lambda(A)
+	$$
+	
+\end{enumerate}
+
+\subsubsection{14.5 The Levy Distance Definition and Properties} The \textit{Levy Distance} $d(F,G)$ between two distribution functions is the infimum of those $\epsilon$ such that $G(x - \epsilon) - \epsilon \leq F(x) \leq G(x + \epsilon) + \epsilon$ for all $x$. Verify that this is a metric on the set of distribution functions. Ie, on the set of distribution functions, we have:
+\begin{enumerate}
+	\item Distance from a point to itself: $d(F,F) = 0$
+	\item Positivity: $d(F,G) > 0$ if $F \neq G$
+	\item Symmetry: $d(F,G) = d(G,F)$
+	\item Triangle Equality: $d(F,H) \leq d(F,G) + d(G,H)$
+\end{enumerate}
+Show that a necessary and sufficient condition for $F_n \Leftarrow F$ is that $d(F_n,F) \to 0$ - ie, they are equivalent.
+\\\\
+First, we try and prove the metric properties: \textbf{Distance From a Point To Itself} We have:
+$$
+	d(F,F) = \inf\left[\epsilon: \forall x,  F(x - \epsilon) - \epsilon \leq F(x) \leq F(x + \epsilon) + \epsilon\right]
+$$
+Note, that as $F$ is a distribution function, it is non decreasing, so all $\epsilon > 0$ satisfy the above definition, the infimmum of which must be zero. \textbf{Positivity} We want to show:
+$$
+	d(F,G) = \inf\left[\epsilon: \forall x, G(x - \epsilon) - \epsilon \leq F(x) \leq G(x + \epsilon) + \epsilon\right] > 0
+$$
+I think, we prove by contradiction. Assume that it equals zero. Then, for all $x$, we have $\epsilon_n \to 0$ such that:
+$$
+	F(x) \leq \lim_n G(x + \epsilon_n) + \epsilon_n = G(x)
+$$
+Where we made use of right continuity. If we use symmetry (which we will prove next), we can also conclude for all $x$:
+$$
+	G(x) \leq F(x) \implies G = F
+$$
+Which is a contradiction. All we have to make sure is we don't use positivity for the symmetry proof. \textbf{Symmetry} We want to show:
+$$
+	d(F,G) = d(G,F) 
+$$
+Take the $d(F,G) = d$. We have $d_n \downarrow d$ such that for all $x$:
+$$
+	G(x - d_n) - d_n \leq F(x) \implies
+	G(x) - d_n \leq F(x + d_n) \implies G(x) \leq F(x + d_n) + d_n
+$$
+Where the above makes use of the fact that $x + d_n$ is included in the domain of "for all $x$". Similarly:
+$$
+	F(x) \leq G(x + d_n) + d_n \implies 
+	F(x - d_n) \leq G(x) + d_n \implies F(x - d_n) - d_n \leq G(x)
+$$
+So, for all $x$, we have at the very least, a sequence of $d_n \to d$ such that:
+$$
+	F(x - d_n) - d_n \leq G(x) \leq F(x + d_n) + d_n
+$$
+And so, we must have:
+$$
+	d(F,G) \leq d(G,F)
+$$
+We can go in the other direction, starting from $d(G,F)$, to find:
+$$
+	d(G,F) \leq d(F,G) \implies d(F,G) = d(G,F)
+$$
+\textbf{Triangle Inequality} This is the last property we need to prove.
 
 \end{document}
 
