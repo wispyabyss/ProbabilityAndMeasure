@@ -10208,7 +10208,7 @@ And so, we have an injective map from the discontinuities to the rationals - whi
 	\item Symmetry: $d(F,G) = d(G,F)$
 	\item Triangle Equality: $d(F,H) \leq d(F,G) + d(G,H)$
 \end{enumerate}
-Show that a necessary and sufficient condition for $F_n \Leftarrow F$ is that $d(F_n,F) \to 0$ - ie, they are equivalent.
+Show that a necessary and sufficient condition for $F_n \Rightarrow F$ is that $d(F_n,F) \to 0$ - ie, they are equivalent.
 \\\\
 First, we try and prove the metric properties: \textbf{Distance From a Point To Itself} We have:
 $$
@@ -10252,7 +10252,55 @@ We can go in the other direction, starting from $d(G,F)$, to find:
 $$
 	d(G,F) \leq d(F,G) \implies d(F,G) = d(G,F)
 $$
-\textbf{Triangle Inequality} This is the last property we need to prove.
+\textbf{Triangle Inequality} This is the last property we need to prove. Take distribution functions $F,H,G$. We want to show:
+$$
+	d(F,H) \leq d(F,G) + d(G,H)
+$$
+Prove by contradiction. Assume that $d(F,H) = x, d(F,G) = y, d(G,H) = z$, and by contradiction, assume $y + z < x$. I will show that we can set $d(F,H) = y + z$. We have sequences $y_n \downarrow y$, and $z_n \downarrow z$. By the definition of $y_n$, for all $x$, we have:
+$$
+	F(x) \leq G(x + y_n) + y_n
+$$
+Now, by the definition of $z_n$, we have:
+$$
+	G(x + y_n) \leq H(x + y_n + z_n) + z_n
+$$
+In total, we have for all $x$:
+$$
+	F(x) \leq H(x + y_n + z_n) y_n + z_n
+$$
+Similarly, on the otherside, we have for all $x$:
+$$
+	G(x - y_n) - y_n \leq F(x) \implies H(x - y_n - z_n) - y_n - z_n \leq F(x)
+$$
+In total, we have found, for all $x$ and all $n$:
+$$
+	H(x - y_n - z_n) - y_n - z_n \leq F(x) \leq H(x + y_n + z_n) + y_n + z_n
+$$
+$$
+	\implies d(F,H) = 
+	\inf\left[\epsilon: \forall x, H(x - \epsilon) - \epsilon \leq F(x) \leq H(x + \epsilon) + \epsilon\right]
+	\leq y_n + z_n
+$$
+So, we must have $d(F,H) \leq y + z$. Thus, we have proved the triangle inequality. Now, we want to show that a necessary and sufficient condition for $F_n \Rightarrow F$ is that $d(F_n,F) \to 0$. Recall, $F_n \Rightarrow F$ just means that for all points $x$ where $F$ is continuous:
+$$
+	\lim_n F_n(x) = F(x)
+$$
+So, to prove necessary, I think we need to show $F_n \Rightarrow F$ implies $d(F_n,F) \to 0$ - ie, it is necessary that the Levy distance goes to zero given that $F_n \Rightarrow F$. To prove sufficient, I think we need to show $d(F_n,F) \to 0$ implies $F_n \Rightarrow F$, as the base assumption is sufficient to prove the next one.
+\\\\
+Let us first start with necessary - prove $F_n \Rightarrow F$ implies $d(F_n,F) \to 0$. We have:
+$$
+	d(F_n,F) = d(F,F_n) =
+	\inf\left[\epsilon: \forall x, F_n(x - \epsilon) - \epsilon \leq F(x) \leq F_n(x + \epsilon) + \epsilon\right] = d_n
+$$
+We want to show $d_n \to 0$. Proof by contradiction - assume that $\inf_n d_n = d > 0$. Take $0 < d' < d$. Thus, for all $n$, we have an $x_n$ such that:
+$$
+	F_n(x_n - d') - d' > F(x_n) \text{ or }
+	F_n(x_n + d') + d' < F(x_n) 
+$$
+We have three cases: the $x_n$ are bounded and thus have a convergent subsequence, or the $x_n$ have a subsequence to infinity or negative infinity. Consider case one - let $x_n$ be the increasing $n$, which converges to $x$. Note, we have either the $-d'$ or $+d'$ property holds infinitely - wlof assume $+d'$. Then, for our sequence, we have
+$$
+	\lim_n F_n(x_n + d') = 
+$$
 
 \end{document}
 
