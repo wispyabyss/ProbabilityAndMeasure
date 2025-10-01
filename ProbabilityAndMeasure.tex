@@ -10297,9 +10297,48 @@ $$
 	F_n(x_n - d') - d' > F(x_n) \text{ or }
 	F_n(x_n + d') + d' < F(x_n) 
 $$
-We have three cases: the $x_n$ are bounded and thus have a convergent subsequence, or the $x_n$ have a subsequence to infinity or negative infinity. Consider case one - let $x_n$ be the increasing $n$, which converges to $x$. Note, we have either the $-d'$ or $+d'$ property holds infinitely - wlof assume $+d'$. Then, for our sequence, we have
+We have three cases: the $x_n$ are bounded and thus have a convergent subsequence, or the $x_n$ have a subsequence to infinity or negative infinity. Consider case one - let $x_n$ be the increasing $n$, which converges to $x$. Note, we have either the $-d'$ or $+d'$ property holds infinitely - wlof assume $+d'$, and let $x_n$ correspond to that subsequence. Further, note that there is some $d'$ such that $0 < d' < d$ such that $x + d'$ is a continuity point - as the discontinuous points are countable, but the $0 < d' < d$ are uncountable. And so, as $F_n \rightarrow F$ (limit equality at continuity points), and $x_n + d' \to x + d'$, we have:
 $$
-	\lim_n F_n(x_n + d') = 
+	\lim_n F_n(x + d') = F(x + d') \text{ and }
+	\lim_n F(x_n + d') = F(x + d')
+$$
+As $x + d'$ is a continuity point. Now note:
+$$
+	0 = \lim_n F(x_n + d') - F(x + d') =
+	\lim_n F(x_n + d') - F_n(x_n + d') + \lim_n F_n(x_n + d') - F(x + d')
+$$
+Note, I have been trying this, but I can't get the limit argument to work.
+\\\\
+\textbf{From the book} We are proving necessity. Choose continuity points $x_i$ of $F$ in such a way that:
+$$
+	x_0 < x_1 < \cdots < x_k
+$$
+Where:
+$$
+	F(x_0) < \epsilon \quad\quad F(x_k) > 1 - \epsilon \quad\quad
+	x_i - x_{i-1} < \epsilon
+$$
+Clearly, this is jumps by less than $\epsilon$, can always choose such a finite number of $k$ given that discontinuity points are only countable in the uncountable real numbers $\R$. If $n$ exceeds some $n_0$, we must have:
+$$
+	\left|F(x_i) - F_n(x_i)\right| < \epsilon/2
+$$
+This is for all $i$, given continuity points, and just have to choose a maximum out of finite numbers satisfying the $\epsilon-\delta$ definitions. Suppose that $x_{i-1} \leq x \leq x_i$. Then:
+$$
+	F_n(x) \leq F_n(x_i) \leq F(x_i) + \epsilon/2 \leq F(x + \epsilon) + \epsilon/2
+$$
+This is by each $F_n$ and $F$ being nondecreasing, and choosing $n$ large enough Similarly, we must have:
+$$
+	F(x - \epsilon) - \epsilon/2 \leq F_n(x)
+$$
+And so all together, we must have:
+$$
+	F(x - \epsilon) - \epsilon \leq F_n(x) \leq F(x + \epsilon) + \epsilon
+$$
+This is for all $x$ between $x_0$ and $x_k$. Note, we have proven this for each $\epsilon$, so if our infimum only covered $x$ between $x_0$ and $x_k$, we could conclude that $d(F,F_n) = d(F_n,F) \to 0$ (note, for each $\epsilon$, just have to choose $n$ large enough, so for each $\epsilon > 0$, there is an $n_0$ such that if $n \geq n_0$, $|d(F_n,F)| < \epsilon$).
+\\\\
+So, we have almost proved that $F_n \Rightarrow F$ implies $d(F,F_n) \to 0$. However, what about $x \leq x_0$, or $x \geq x_k$? Consider $x \leq x_0$. In that case, we have:
+$$
+	0 \leq F_n(x) \leq F_n(x_0) \leq F(x_i) + \epsilon/2 \leq F(x + \epsilon) + \epsilon/2 \leq F(x + \epsilon) + \epsilon
 $$
 
 \end{document}
