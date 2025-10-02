@@ -10281,7 +10281,9 @@ $$
 	\inf\left[\epsilon: \forall x, H(x - \epsilon) - \epsilon \leq F(x) \leq H(x + \epsilon) + \epsilon\right]
 	\leq y_n + z_n
 $$
-So, we must have $d(F,H) \leq y + z$. Thus, we have proved the triangle inequality. Now, we want to show that a necessary and sufficient condition for $F_n \Rightarrow F$ is that $d(F_n,F) \to 0$. Recall, $F_n \Rightarrow F$ just means that for all points $x$ where $F$ is continuous:
+So, we must have $d(F,H) \leq y + z$. Thus, we have proved the triangle inequality. 
+\\\\
+\textbf{$F_n \Rightarrow F$ is equivalent to $d(F_n,F) \to 0$} Now, we want to show that a necessary and sufficient condition for $F_n \Rightarrow F$ is that $d(F_n,F) \to 0$. Recall, $F_n \Rightarrow F$ just means that for all points $x$ where $F$ is continuous:
 $$
 	\lim_n F_n(x) = F(x)
 $$
@@ -10309,7 +10311,7 @@ $$
 $$
 Note, I have been trying this, but I can't get the limit argument to work.
 \\\\
-\textbf{From the book} We are proving necessity. Choose continuity points $x_i$ of $F$ in such a way that:
+\textbf{Necessity - $(F_n \Rightarrow F) \Rightarrow d(F_n,F) \to 0$ - From the book} We are proving necessity. Choose continuity points $x_i$ of $F$ in such a way that:
 $$
 	x_0 < x_1 < \cdots < x_k
 $$
@@ -10330,15 +10332,79 @@ This is by each $F_n$ and $F$ being nondecreasing, and choosing $n$ large enough
 $$
 	F(x - \epsilon) - \epsilon/2 \leq F_n(x)
 $$
-And so all together, we must have:
+And so all together, we can conclude:
 $$
 	F(x - \epsilon) - \epsilon \leq F_n(x) \leq F(x + \epsilon) + \epsilon
 $$
 This is for all $x$ between $x_0$ and $x_k$. Note, we have proven this for each $\epsilon$, so if our infimum only covered $x$ between $x_0$ and $x_k$, we could conclude that $d(F,F_n) = d(F_n,F) \to 0$ (note, for each $\epsilon$, just have to choose $n$ large enough, so for each $\epsilon > 0$, there is an $n_0$ such that if $n \geq n_0$, $|d(F_n,F)| < \epsilon$).
 \\\\
-So, we have almost proved that $F_n \Rightarrow F$ implies $d(F,F_n) \to 0$. However, what about $x \leq x_0$, or $x \geq x_k$? Consider $x \leq x_0$. In that case, we have:
+So, we have almost proved that $F_n \Rightarrow F$ implies $d(F,F_n) \to 0$. However, what about $x \leq x_0$, or $x \geq x_k$? Consider $x \leq x_0$. In that case, we can still conclude by the same argument above for $n \geq n_0$:
 $$
-	0 \leq F_n(x) \leq F_n(x_0) \leq F(x_i) + \epsilon/2 \leq F(x + \epsilon) + \epsilon/2 \leq F(x + \epsilon) + \epsilon
+	0 \leq F_n(x) \leq F(x + \epsilon) + \epsilon
+$$
+However, note that we also have:
+$$
+	F(x - \epsilon) - \epsilon \leq F(x_0) - \epsilon \leq 0
+$$
+As $F(x_0) < \epsilon$ by our construction. And so, we still have for $x \leq x_0$, for $n \geq n_0$:
+$$
+	F(x - \epsilon) - \epsilon \leq F_n(x) \leq F(x + \epsilon) + \epsilon
+$$
+Similarly, the argument applies for $x \geq x_k$. And so, for any $\epsilon > 0$, we can find an $n_0$ such that for $n \geq n_0$, for all $x$, we have:
+$$
+	F(x - \epsilon) - \epsilon \leq F_n(x) \leq F(x + \epsilon) + \epsilon \implies d(F_n,F) \leq \epsilon
+$$
+Thus, by the definition of the limit, we must have:
+$$
+	d(F_n,F) \to 0
+$$
+\textbf{Sufficiency - $d(F_n,F) \to 0 \Rightarrow (F_n \Rightarrow F)$} Now, we assume that $d(F_n,F) \to 0$. Take $x$ on which $F$ is continuous. We want to show:
+$$
+	\lim_n F_n(x) = F(x)
+$$
+Take $\epsilon > 0$. Note for $n \geq n_0$ for $n_0$ large enough, we have:
+$$
+	F(x - \epsilon) - \epsilon \leq F_n(x) \leq F(x + \epsilon) + \epsilon
+$$
+By $F$ nondecreasing, we also have:
+$$
+	F(x - \epsilon) - \epsilon \leq F(x) \leq F(x + \epsilon) + \epsilon
+$$
+Note, if $a \leq x \leq b$ and $a \leq y \leq b$, we must have $|x - y| \leq b - a$ - the largest difference occurs when points are at both boundaries. And so:
+$$
+	\left|F_n(x) - F(x)\right| \leq F(x + \epsilon) - F(x - \epsilon) + 2\epsilon
+$$
+Now, take $\epsilon' > 0$. By continuity of $F$ at $x$, there is an $\epsilon$ small enough such that $F(x + \epsilon) - F(x - \epsilon) < \epsilon'$. So, the steps are:
+\begin{enumerate}
+	\item Take $x$ continuity point of $F$. Note, we only need pointwise continuity. 
+	\item Choose $\epsilon > 0$ - we will bound $\left|F_n(x) - F(x)\right|$ by this $\epsilon$.
+	\item Choose $\epsilon'$ such that if $\epsilon'' \leq \epsilon'$, we have $F(x + \epsilon'') - F(x - \epsilon'') < \epsilon/3$.
+	\item Finally, take $\epsilon''' = \min(\epsilon/3,\epsilon')$. By $d(F_n,F) \to 0$, we can find an $n_0$ large enough such that if $n \geq n_0$, we have:
+	$$
+		F(x - \epsilon''') - \epsilon''' \leq F_n(x) \leq F(x + \epsilon''') + \epsilon'''
+	$$
+	\item Thus, for $n \geq n_0$, we have:
+	$$
+		\left|F_n(x) - F(x)\right| \leq
+		F(x + \epsilon''') - F(x - \epsilon''') + 2\epsilon''' \leq
+		\epsilon/3 + 2\epsilon''' \leq \epsilon/3 + 2\epsilon/3 \leq \epsilon
+	$$
+	The first inequality is by $n_0$ defined for $\epsilon'''$. The second inequality is by $\epsilon''' \leq \epsilon'$. The third is by $\epsilon''' \leq \epsilon/3$. The final is just addition.
+	 
+\end{enumerate}
+Thus, we have proved both directions. qed.
+
+\subsubsection{14.6} A borel function satisfying Cauch's equation: $f(x + y) = f(x) + f(y)$ and defined on $(0,\infty)$ is automatically bounded in some interval, and hence satisfies $f(x) = xf(1)$. Note, we used this in proving the exponential distribution from the memoryless property.
+\\\\
+Prove that a borel function is automatically bounded in some interval to the right of $0$. Recall, a borel function $f: \R \to \R$ is measurable.
+\\\\
+We make use of problem 12.3. If $A \in \rcal^1$, and $\lambda(A) > 0$, and $0 < \theta < 1$, there is a bounded open interval $I$ such that:
+$$
+	\lambda(A \cap I) \geq \theta\lambda(I)
+$$
+Note, we must have a $K$ large enough such that:
+$$
+	\lambda\left[x : x > s, |f(x)| \leq K\right] > 0
 $$
 
 \end{document}

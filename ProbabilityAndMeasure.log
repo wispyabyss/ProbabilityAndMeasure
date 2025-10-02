@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  1 OCT 2025 11:34
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  2 OCT 2025 11:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4731,19 +4731,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 10211--10214
  []
 
 [348] [349]
-Underfull \hbox (badness 10000) in paragraph at lines 10287--10291
+Underfull \hbox (badness 10000) in paragraph at lines 10283--10287
 
  []
 
 
-Overfull \hbox (2.3897pt too wide) detected at line 10294
+Underfull \hbox (badness 10000) in paragraph at lines 10289--10293
+
+ []
+
+
+Overfull \hbox (2.3897pt too wide) detected at line 10296
 \OML/cmm/m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]; F\OT1/cmr/m/n/12 ) = \
 OML/cmm/m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F; F[]\OT1/cmr/m/n/12 ) = []
  [] = \OML/cmm/m/it/12 d[]
  []
 
 [350]
-Overfull \hbox (28.88606pt too wide) detected at line 10309
+Overfull \hbox (28.88606pt too wide) detected at line 10311
 \OT1/cmr/m/n/12 0 = [] \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[] 
 \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 d[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \O
 ML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OT1/cmr/m/n/12 + \OML/cmm/
@@ -4757,26 +4762,47 @@ n/12 ^^@ \OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x[] \OT1/cmr/m/n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10309--10313
+Underfull \hbox (badness 10000) in paragraph at lines 10311--10315
 
  []
 
 [351]
-Underfull \hbox (badness 10000) in paragraph at lines 10336--10340
+Underfull \hbox (badness 10000) in paragraph at lines 10338--10342
 
  []
 
-[352] (./ProbabilityAndMeasure.aux)
+[352]
+Overfull \hbox (5.29259pt too wide) detected at line 10391
+[] \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \
+OT1/cmr/m/n/12 + \OML/cmm/m/it/12 ^^O[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^@ \
+OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 ^^@ \OML/
+cmm/m/it/12 ^^O[]\OT1/cmr/m/n/12 ) + 2\OML/cmm/m/it/12 ^^O[] \OMS/cmsy/m/n/12 ^
+^T \OML/cmm/m/it/12 ^^O=\OT1/cmr/m/n/12 3 + 2\OML/cmm/m/it/12 ^^O[] \OMS/cmsy/m
+/n/12 ^^T \OML/cmm/m/it/12 ^^O=\OT1/cmr/m/n/12 3 + 2\OML/cmm/m/it/12 ^^O=\OT1/c
+mr/m/n/12 3 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 ^^O
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10397--10402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10397--10402
+
+ []
+
+[353] [354] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 61F612F04DF18911703FE768F42C9590;48989.
+(rerunfilecheck)             Checksum: 5970D8E08646B9EB473ACAD1B548C895;49069.
  ) 
 Here is how much of TeX's memory you used:
  10066 strings out of 476191
  157089 string characters out of 5812073
- 508276 words of memory out of 5000000
+ 508363 words of memory out of 5000000
  30652 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (352 pages).
+Output written on ProbabilityAndMeasure.pdf (354 pages).
