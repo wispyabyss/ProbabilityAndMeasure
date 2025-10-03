@@ -10394,18 +10394,40 @@ Now, take $\epsilon' > 0$. By continuity of $F$ at $x$, there is an $\epsilon$ s
 \end{enumerate}
 Thus, we have proved both directions. qed.
 
-\subsubsection{14.6} A borel function satisfying Cauch's equation: $f(x + y) = f(x) + f(y)$ and defined on $(0,\infty)$ is automatically bounded in some interval, and hence satisfies $f(x) = xf(1)$. Note, we used this in proving the exponential distribution from the memoryless property.
+\subsubsection{14.6 Borel Functions Are Bounded in Some Interval} Prove that a borel function is automatically bounded in some interval to the right of $0$. Recall, this implies that if the function satisfies Cauchy's equation, then we can conclude that $f(x) = xf(1)$.
 \\\\
-Prove that a borel function is automatically bounded in some interval to the right of $0$. Recall, a borel function $f: \R \to \R$ is measurable.
+Just as a note, recall that Cauchy's equation is $f(x + y) = f(x) + f(y)$. A borel function is just $f: \R \to \R$ that is measurable $\rcal/\rcal$. I'm just going to prove here that a borel function is bounded in some interval. I don't know how Cauchy's equation can apply, given that it requires $f: (0,\infty) \to \R$.
 \\\\
 We make use of problem 12.3. If $A \in \rcal^1$, and $\lambda(A) > 0$, and $0 < \theta < 1$, there is a bounded open interval $I$ such that:
 $$
 	\lambda(A \cap I) \geq \theta\lambda(I)
 $$
-Note, we must have a $K$ large enough such that:
+Note, we must have integers $K$ and $n$ such that:
 $$
-	\lambda\left[x : x > s, |f(x)| \leq K\right] > 0
+	\lambda\left[x : x > n, |f(x)| \leq K\right] > 0
 $$
+This is because, we have that as $K$ increases and $n$ decreases:
+$$
+	\left\{x : |f(x)| \leq K\right\} \uparrow \R \quad\quad
+	\left\{x : x > n\right\} \uparrow \R \quad\implies\quad
+	\left\{x : x > n, |f(x)| \leq K\right\} \uparrow \R
+$$
+Note, all the sets we are dealing with here a borel sets via measurability of intervals, and measurability of $f$. We can apply problem $11.3$, and for a $\theta \in (0,1)$, we have for our chosen $K$ and $n$, for some interval $I$:
+$$
+	\lambda\left[x : x > n, |f(x)| \leq K, x \in I\right] > \theta \lambda(I)
+$$
+Now recall. We must have that $x > n, |f(x)| \leq K, x \in I$ is an open interval. As $f$ is increasing, we have that $|f(x)| \leq K$ is an interval. $x > n$ is an interval, and so is $x \in I$. So, we have found an intersection of intervals - which must contain an interval - with nonzero measure. So, we can indeed conclude that a Borel function is automatically bounded in some interval.
+
+\subsubsection{14.8}
+\begin{enumerate}
+	\item Show that if a distribution function $F$ is everywhere continuous, then it is uniformly continuous.
+	\\\\
+	This is similar to what we examined in Bernstein's Theorem, where we found a continuous $f: [0,1] \to \R$ is uniformly continuous - namely, continuity on a compact set implied uniform continuity.
+	\\\\
+	Here, we will have to make use of $f$ being increasing, continuous, and having a domain on $[0,1]$. Intuitively, increasing would remove "oscillations" that make uniform continuity difficult, and we don't have any limits to infinity, or jumps.
+	
+	\item
+\end{enumerate}
 
 \end{document}
 
