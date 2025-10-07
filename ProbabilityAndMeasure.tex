@@ -10425,8 +10425,92 @@ Now recall. We must have that $x > n, |f(x)| \leq K, x \in I$ is an open interva
 	This is similar to what we examined in Bernstein's Theorem, where we found a continuous $f: [0,1] \to \R$ is uniformly continuous - namely, continuity on a compact set implied uniform continuity.
 	\\\\
 	Here, we will have to make use of $f$ being increasing, continuous, and having a domain on $[0,1]$. Intuitively, increasing would remove "oscillations" that make uniform continuity difficult, and we don't have any limits to infinity, or jumps.
+	\\\\
+	Take $2/n > 0$. Note, by continuity of $F$, and $\lim_{x \to -\infty} F(x) = 0$, and $\lim_{x \to \infty} F(x) = 1$, we can find $x_1, \cdots, x_{n - 1}$ such that $F(x) = 1/n, \cdots, F(x_{n-1}) = (n-1)/n$. By continuity, there is a $\delta_i$, such that if $|x_i - y| < \delta_i$, we have $|F(x_i) - F(y)| < 1/n$. Let $\delta = \min(\delta_1, \cdots, \delta_{n-1})$.
+	\\\\
+	Take $x \in \R$. We have $F(x) \in [i/n,i+1/n]$ for some $i = 0, \cdots, n-1$. Take $y$ such that $|x - y| < \delta$. Examine:
+	$$
+		|F(x) - F(y)|
+	$$
+	We note that $(-\infty, x_1, \cdots, x_{n-1}, \infty)$ form intervals that partition $\R$. Ie, intervals like $(-\infty,x_1), (x_1, x_2), \cdots, (x_{n-1},\infty)$. Let $x_0 = -\infty, x_n = \infty$. We must have $x_i - \delta > x_{i-1}$, $x_i + \delta < x_{i+1}$. If this wasn't the case, we would have $F(x_{i+1}) - F(x_i) < 1/n$, which would be a contradiction, as the difference equals $1/n$.
+	\\\\
+	Note that $x$ and $y$ are in the same interval, or two adjacent intervals. Assume they are not in the same interval. If they were not in two adjacent intervals - the difference between them would be larger than $\delta$, a contradiction.
+	\\\\
+	Finally, note that this implies:
+	$$
+		|F(x) - F(y)| < 2/n
+	$$
+	As the greatest distance between two points in adjacent intervals is $2/n$. Note, this is true for all $x$, for arbitrary $2/n$, which implies uniform continuity of $F$.
 	
-	\item
+	\item Let $\delta_F(\epsilon) = \sup\left[F(x) - F(y) : |x-y| < \epsilon\right]$ be the modulus of continuity of $F$. Note, if $F$ is uniformly continuous, we must have $\delta_F(\epsilon) \to 0$ as $\epsilon \to 0$.
+	\\\\
+	Show that $d(F,G) < \epsilon$ implies that $\sup_x|F(x) - G(x)| \leq \epsilon + \delta_F(\epsilon)$.
+	\\\\
+	Recall:
+	$$
+		d(F,G) = \inf\left\{\epsilon \text{ such that for all $x$}: 
+		F(x - \epsilon) - \epsilon \leq G(x) \leq F(x + \epsilon) + \epsilon\right\}
+	$$
+	Note, we have $d(F,G) \leq \epsilon$ implies that for all $x$:
+	$$
+		F(x - \epsilon) - \epsilon \leq G(x) \leq F(x + \epsilon) + \epsilon
+	$$
+	Note, this implies:
+	\begin{align*}
+	|F(x) - G(x)| = F(x) - G(x) \leq F(x) - F(x - \epsilon) - \epsilon \quad\quad\text{ if $G(x) \leq F(x)$}\\
+	|F(x) - G(x)| = G(x) - F(x) \leq F(x + \epsilon) + \epsilon - F(x) \quad\quad\text{ if $F(x) \leq G(x)$}
+	\end{align*}
+	In either case, we must have:
+	$$
+		\sup_x|F(x) - G(x)| \leq \max\left\{\sup_x F(x) - F(x - \epsilon), \sup_x F(x + \epsilon) - F(x)\right\} + \epsilon
+	$$
+	As every $x$ term in the left is bounded by an $x$ term on the right. Note for all $x$, $F(x) - F(x - \epsilon) < \delta_F(\epsilon)$ and $F(x + \epsilon) - F(x) \leq \delta_F(\epsilon)$, by definition. And so:
+	$$
+		\sup_x|F(x) - G(x)| \leq \delta_F(\epsilon) + \epsilon
+	$$
+	
+	\item Show that, if $F_n \Rightarrow F$ and $F$ is everywhere continuous, then $F_n(x) \to F(x)$ uniformly in $x$. What if $F$ is continuous over a closed interval?
+	\\\\
+	To show that $F_n(x) \to F(x)$ uniformly in $x$, we need for $\epsilon > 0$, there is an $N$ such that if $n \geq N$, we have for all $x$:
+	$$
+		|F_n(x) - F(x)| \leq \epsilon
+	$$
+	Take $\epsilon > 0$. As $F_n \Rightarrow F$, problem 14.5 tells us this is equivalent to $d(F_n,F) \to 0$. Note that:
+	$$
+		d(F_n,F) < \delta \implies \text{ for all $x \in \R$:}
+		\quad
+		F(x - \delta) - \delta \leq G(x) \leq F(x + \delta) + \delta
+	$$
+	Note, via increasing, we must have $F(x - \delta) \leq F(x) \leq F(x + \delta)$, and so $F(x)$ is also part of the same interval. Thus, $d(F_n,F) < \delta$ implies for all $x$:
+	$$
+		\left|F_n(x) - F(x)\right| \leq 2\delta + \left[F(x + \delta) - F(x - \delta)\right]
+	$$
+	Choose $\delta_1 < \epsilon/3$. By $F$ everywhere continuous, and thus uniformly continuous, we can choose $\delta_2$ small enough such that:
+	$$
+		\delta_F(2\delta_2) < \epsilon/3
+	$$
+	Let $\delta = \min(\delta_1,\delta_2)$. Note, as $d(F_n,F) \to 0$, there exists an $N$ such that if $n \geq N$:
+	$$
+		d(F_n,F) < \delta \implies
+		\left|F_n(x) - F(x)\right| \leq 2\delta + \left[F(x + \delta) - F(x - \delta)\right]
+	$$
+	$$
+		\leq 2\delta_1 + \left[F(x + \delta_2) - F(x - \delta_2)\right]
+	$$
+	Note, the right $F$ difference term is monotone increasing as $\delta$ increases. By the definition of $\delta_1$ and $\delta_2$, we have:
+	$$
+		\leq 2\epsilon/3 + \epsilon/3 = \epsilon
+	$$
+	So, we have proven that there exists an $N$ such that if $n \geq N$:
+	$$
+		\left|F_n(x) - F(x)\right| \leq \epsilon
+	$$
+	For all $x$. Thus, we have that if $F_n \Rightarrow F$ and $F$ is everywhere continuous, then $F_n(x) \to F(x)$ uniformly in $x$.
+	\\\\
+	The final point to consider is if $F$ is continuous over a closed interval. Note, on that interval, $F$ will again be uniformly continuous. I think, we can conclude that across the intervals that $F$ is continuous over - $F_n$ goes to $F$ uniformly. Now, think about this - if the rational jumps in distribution $F$ are finite - then there are finite number of intervals, across which $F_n$ goes to $F$ uniformly. Thus, I think we can conclude - $F_n$ goes to $F$ uniformly, almost everywhere. In fact, note that a countable number of jumps wouldn't change the almost everywhere point.
+	\\\\
+	So, in conclusion - I think we have for any distribution function such that $F_n \Rightarrow F$, then $F_n(x) \to F(x)$ uniformly almost everywhere. Ie, we can find a uniform rate on a probability one set. Not bad.
+	
 \end{enumerate}
 
 \end{document}
