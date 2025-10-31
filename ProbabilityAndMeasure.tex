@@ -9131,20 +9131,19 @@ This notion is needed/convenient for when we are using limits/suprema.
 	\item The $\omega$-set where $\{f_n(\omega)\}$ converges lies in $\fcal$
 	\item If $f$ is measurable $\fcal$, then the $\omega$-set where $f_n(\omega) \to f(\omega)$ lies in $\fcal$
 \end{enumerate}
-\textbf{Proof:} Part One. Recall, to prove that $g: \Omega \to \R$ is measurable, we just need $g^{-1}(-\infty,x) \in \fcal$ - as then each $A \in \rcal$ satisfies $g^{-1}(A) \in \fcal$ via Theorem 13.1.i. Extended measurability also needs us to check $g^{-1}(-\infty),g^{-1}(\infty) \in \fcal$. Note that:
+\textbf{Proof:} Part One. Recall, to prove that $g: \Omega \to \R$ is measurable, we just need $g^{-1}(-\infty,x] \in \fcal$ - as then each $A \in \rcal$ satisfies $g^{-1}(A) \in \fcal$ via Theorem 13.1.i. Extended measurability also needs us to check $g^{-1}(-\infty),g^{-1}(\infty) \in \fcal$. Note that:
 $$
 	\left[\omega : \sup_n f_n(\omega) \leq x\right] =
 	\bigcap_n [\omega : f_n(\omega) \leq x] \in \fcal
 $$
 $$
 	\left[\omega : \sup_n f_n(\omega) = \infty\right] =
-	\bigcap_{j=0}^\infty \bigcup_n [\omega : f_n(\omega) \geq j] \in \fcal
+	\bigcap_{j=0}^\infty \bigcup_n [\omega : f_n(\omega) > j] \in \fcal
 $$
 $$
-	\left[\omega : \sup_n f_n(\omega) = -\infty\right] =
-	\bigcap_{j = 0}^{-\infty} \bigcup_n [\omega : f_n(\omega) \leq j] \in \fcal
+	\left[\omega : \sup_n f_n(\omega) = -\infty\right] = \emptyset \in \fcal
 $$
-Note, I had to switch the order of the intersection/union above. For the supremum, we want $\omega$ such that there is some $f_n(\omega) \geq j$ for each $j$ - as then the supremum for that $\omega$ would be infinite. Similar case for $-\infty$. So, $\sup_n f_n$ is measurable. Measurability of $\inf_n f_n$ follows in much the same way. We thus have:
+For the supremum, we want $\omega$ such that there is some $f_n(\omega) \geq j$ for each $j$ - as then the supremum for that $\omega$ would be infinite. For $-\infty$, note that each $f_n$ is real, so the supremum across $f_n$ for each $\omega$ cannot be $-\infty$. So, $\sup_n f_n$ is measurable. Measurability of $\inf_n f_n$ follows in much the same way. We thus have:
 $$
 	\limsup_n f_n = \inf_n \sup_{k \geq n} f_k
 	\quad\quad\text{ and }\quad\quad
@@ -9162,7 +9161,7 @@ $$
 $$
 So now, we just have to prove that the inequality sets are within $\fcal$. We have:
 $$
-	\left\{f < g\right\} = \bigcup_{q \in \Q} \left[\left\{f < q\right\} \cap \left\{g < q\right\}\right]
+	\left\{f < g\right\} = \bigcup_{q \in \Q} \left[\left\{f \leq q\right\} \cap \left\{q < g\right\}\right]
 $$
 As if $f(\omega) < g(\omega)$, there must be a rational between them via density of the rationals. Thus, via measurability of $g$ and $f$, we have $\left\{f < g\right\} \in \fcal$. Now, note $\left\{g \leq f\right\} = \left\{f < g\right\}^c \in \fcal$. And so, unwrapping to the top, we have if $f$ and $g$ are measurable:
 $$
