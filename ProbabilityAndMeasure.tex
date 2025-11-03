@@ -9115,7 +9115,7 @@ However, note, this is checking that the inverse of a closed set $S_x$ is in $\r
 \\\\
 This proof is just an amalgamation of the previous statements. $f = (f_1, \cdots, f_k)$ is measurable by our component measurability theorem. $g \circ f$ is measurable by Theorem 13.1.ii. And so we have that $g \circ f = g(f_1(\omega), \cdots, f_k(\omega))$ is measurable if each of the components and $g$ is. qed.
 \\\\
-Some consequences of the theorem. Taking $g(x_1, \cdots, x_k)$ to be $\sum_{i=1}^k x_i, \prod_{i=1}^k x_i, \max(x_1, \cdots, x_k)$ in turn shows that sums, products, and maxima of measurable functions are measurable. If $f(\omega)$ is real and measurable, then so are $\sin f(\omega), e^{tf(\omega)}$, and so on, as both are equivalent to infinite sums and exponential products (note, each exponential is a measurable function via finiteness... I just don't know whether an infinite sum is measurable). If $f(\omega)$ never vanishes, then $1/f(\omega)$ is measurable as well.
+Some consequences of the theorem. Taking $g(x_1, \cdots, x_k)$ to be $\sum_{i=1}^k x_i, \prod_{i=1}^k x_i, \max(x_1, \cdots, x_k)$ in turn shows that sums, products, and maxima of measurable functions are measurable. If $f(\omega)$ is real and measurable, then so are $\sin f(\omega), e^{tf(\omega)}$, and so on, as we are composing continuous (and thus measurable) functions on top of a measurable $f$. If $f(\omega)$ never vanishes, then $1/f(\omega)$ is measurable as well.
 
 \subsubsection{Limits and Measurability} 
 For a real function $f$ - it is convenient to admit the artificial values $\infty$ and $-\infty$ - to work on the extended real line $[-\infty,\infty]$. We define a new definition of measurability:
