@@ -414,7 +414,7 @@
 \contentsline {subsubsection}{13.9 Egoroff's Theorem (Uniform Convergence on a Pointwise Convergent Subset)}{328}{section*.415}%
 \contentsline {subsubsection}{13.12 Circular Lebesgue Measure}{329}{section*.416}%
 \contentsline {subsubsection}{13.13 - Finite Points On The Circle Rotated Into a Small Set}{331}{section*.417}%
-\contentsline {section}{Section 14}{332}{section*.418}%
+\contentsline {section}{Section 14 - Distribution Functions}{332}{section*.418}%
 \contentsline {subsection}{Notes}{332}{section*.419}%
 \contentsline {subsubsection}{Distribution Functions}{332}{section*.420}%
 \contentsline {paragraph}{Definition - Random Variable}{332}{section*.421}%
@@ -440,4 +440,10 @@
 \contentsline {subsubsection}{14.4 Probability Transformation on Borel Sets}{347}{section*.441}%
 \contentsline {subsubsection}{14.5 The Levy Distance Definition and Properties}{348}{section*.442}%
 \contentsline {subsubsection}{14.6 Borel Functions Are Bounded in Some Interval}{353}{section*.443}%
-\contentsline {subsubsection}{14.8}{354}{section*.444}%
+\contentsline {subsubsection}{14.8 Modulus of Continuity}{354}{section*.444}%
+\contentsline {section}{Section 14 - The Integral}{357}{section*.445}%
+\contentsline {subsection}{Notes}{357}{section*.446}%
+\contentsline {subsubsection}{Integral Definition}{357}{section*.447}%
+\contentsline {paragraph}{Integral Definition}{358}{section*.448}%
+\contentsline {subsubsection}{Nonnegative Functions}{358}{section*.449}%
+\contentsline {paragraph}{Theorem 15.1 - Integral Properties}{358}{section*.450}%

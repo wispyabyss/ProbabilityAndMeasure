@@ -9649,7 +9649,7 @@ Is nonempty. Take any $\theta \in C - E$. Note, $\theta B \subset A$. This is be
 \\\\
 At a high level - the argument here is just - examine the image of $A$ under the rotation $b_i^{-1}$ for each $b_i$. The intersection of these images is nonempty - and so there is one rotation that will put each $b_i$ into $A$.
 
-\section{Section 14}
+\section{Section 14 - Distribution Functions}
 \subsection{Notes}
 \subsubsection{Distribution Functions}
 \paragraph{Definition - Random Variable} A random variable $X$ is a measurable real function $X$ on a probability measure space $(\Omega,\fcal,P)$. 
@@ -10417,7 +10417,7 @@ $$
 $$
 Now recall. We must have that $x > n, |f(x)| \leq K, x \in I$ is an open interval. As $f$ is increasing, we have that $|f(x)| \leq K$ is an interval. $x > n$ is an interval, and so is $x \in I$. So, we have found an intersection of intervals - which must contain an interval - with nonzero measure. So, we can indeed conclude that a Borel function is automatically bounded in some interval.
 
-\subsubsection{14.8}
+\subsubsection{14.8 Modulus of Continuity}
 \begin{enumerate}
 	\item Show that if a distribution function $F$ is everywhere continuous, then it is uniformly continuous.
 	\\\\
@@ -10510,6 +10510,61 @@ Now recall. We must have that $x > n, |f(x)| \leq K, x \in I$ is an open interva
 	\\\\
 	So, in conclusion - I think we have for any distribution function such that $F_n \Rightarrow F$, then $F_n(x) \to F(x)$ uniformly almost everywhere. Ie, we can find a uniform rate on a probability one set. Not bad.
 	
+\end{enumerate}
+
+\section{Section 14 - The Integral}
+\subsection{Notes}
+\subsubsection{Integral Definition} From now on, $f,g$ and so on will denote real measurable functions, the values $\pm \infty$ allowed, on a measure space $(\Omega, \fcal, \mu)$. The object of this section is to define and study the definite integral:
+$$
+	\int f d\mu = \int_\Omega f(\omega) d\mu(\omega) =
+	\int_\Omega f(\omega) \mu(d\omega)
+$$
+all the above are just different notations. Suppose that $f$ is nonnegative. Then, for each \textit{finite} decomposition $\{A_i\}$ of $\Omega$ into $\fcal$ sets, consider the sum:
+$$
+	\sum_i\left[\inf_{\omega \in A_i} f(\omega)\right]\mu(A_i)
+$$
+Note, some conventions in the products. $0 \cdot \infty = 0, a \cdot \infty = \infty$ for $0 < a < \infty$, and $\infty \cdot \infty = \infty$. Note, if $A_i$ is the emptyset, we get the $\infty$ as the infimum by convention, but when multiplied with $\mu(\emptyset) = 0$, the result is zero.
+
+\paragraph{Integral Definition} The integral of $f$ is defined as the supremum of the sums:
+$$
+	\int f d\mu = \sup \sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+$$
+The supremum extends over all finite decompositions $\{A_i\}$ of $\Omega$ into $\fcal$ sets. For general $f$, consider its positive part:
+$$
+	f^+(\omega) = \begin{cases}
+	f(\omega) & \text{ if $0 \leq f(\omega) \leq \infty$}\\
+	0 & \text{ if $-\infty \leq f(\omega) \leq 0$}
+	\end{cases}
+$$
+And its negative part:
+$$
+	f^-(\omega) = \begin{cases}
+	-f(\omega) & \text{ if $-\infty \leq f(\omega) \leq 0$}\\
+	0 & \text{ if $0 \leq f(\omega) \leq \infty$}
+	\end{cases}
+$$
+So, we just negate the negative part to make it a positive function. These functions are nonnegative and measurable (maximums and minimums essentially, which are measurable via being continuous). The general integral is thus defined by:
+$$
+	\int f d\mu = \int f^+ d\mu - \int f^- d\mu
+$$
+Unless both $\int f^+ d\mu = \infty$ and $\int f^- d\mu = \infty$, in which case the subtraction is not defined. If both are \textit{finite}, $f$ is called \textit{integrable}, and the value is its \textit{definite integral}. If one of the two is finite, $f$ is not integrable, but it is still assigned the $\pm \infty$ integral value.
+
+\subsubsection{Nonnegative Functions}
+\paragraph{Theorem 15.1 - Integral Properties}
+\begin{enumerate}
+	\item If $f = \sum_i x_i I_{A_i}$ is a nonnegative simple function, $\{A_i\}$ being a finite decomposition of $\Omega$ into $\fcal$-sets, then:
+	$$
+		\int f d\mu = \sum_i x_i \mu(A_i)
+	$$
+	
+	\item If $0 \leq f(\omega) \leq g(\omega)$ for all $\omega$, then $\int f d\mu \leq \int g d\mu$. 
+	
+	\item If $0 \leq f_n(\omega) \uparrow f(\omega)$ for all $\omega$, then $0 \leq \int f_n d\mu \uparrow \int f d\mu$
+	
+	\item For nonnegative functions $f$ and $g$ and nonnegative constants $\alpha$ and $\beta$:
+	$$
+		\int \alpha f + \beta g d\mu = \alpha \int f d\mu + \beta \int g d\mu
+	$$
 \end{enumerate}
 
 \end{document}
