@@ -10512,7 +10512,7 @@ Now recall. We must have that $x > n, |f(x)| \leq K, x \in I$ is an open interva
 	
 \end{enumerate}
 
-\section{Section 14 - The Integral}
+\section{Section 15 - The Integral}
 \subsection{Notes}
 \subsubsection{Integral Definition} From now on, $f,g$ and so on will denote real measurable functions, the values $\pm \infty$ allowed, on a measure space $(\Omega, \fcal, \mu)$. The object of this section is to define and study the definite integral:
 $$
@@ -10565,6 +10565,77 @@ Unless both $\int f^+ d\mu = \infty$ and $\int f^- d\mu = \infty$, in which case
 	$$
 		\int \alpha f + \beta g d\mu = \alpha \int f d\mu + \beta \int g d\mu
 	$$
+\end{enumerate}
+\textbf{Proof}
+\begin{enumerate}
+	\item Let $\{B_j\}$ be a finite decomposition of $\Omega$ and let $\beta_j$ be the infimum of $f$ over $B_j$. If $A_i \cap B_j \neq \emptyset$, then $\beta_j \leq x_i$. Ie, the infimum can only be smaller than a known value on the set. Therefore:
+	$$
+		\sum_j \beta_j \mu(B_j) = \sum_{ij} \beta_j \mu(A_i \cap B_j) \leq
+		\sum_{ij} x_i \mu(A_i \cap B_j) = \sum_i x_i \mu(A_i)
+	$$
+	Where all the equalities come from countable additivity of the measure $\mu$. On the other hand, we get equality if $\{B_j\}$ coincides with $A_i$, as the infimum on $A_i$ is the value $x_i$, which is the only value of $f$ over $A_i$. Thus, it is clear that for all finite decompositions of $\Omega$ into $\fcal$ sets $B_i$, we have:
+	$$
+		\sum_i\left[\inf_{\omega \in B_i} f(\omega)\right]\mu(B_i) \leq
+		\sum_i x_i \mu(A_i)
+	$$
+	As the value is reached setting $B_i$ to $A_i$, we have the supremum is the sum. Thus, definitionally:
+	$$
+		\int f d\mu = \sum_i x_i \mu(A_i)
+	$$
+	
+	\item Clearly, the sum:
+	$$
+		\sum_i\left[\inf_{\omega \in A_i} f(\omega)\right]\mu(A_i)
+	$$
+	Does not decrease if $f$ is replaced by $g$, and so the supremum with $g$ is clearly greater. Thus, it is clear that
+	if $0 \leq f(\omega) \leq g(\omega)$ for all $\omega$, then $\int f d\mu \leq \int g d\mu$.
+	
+	\item By (2), we have that if $0 \leq f_n(\omega) \uparrow f(\omega)$ for all $\omega$, then the sequence $\int f_n d\mu$ is non decreasing and bounded above by $\int f d\mu$. Therefore, $\uparrow$ comes if we just show equality, which follows if we show:
+	$$
+		\int f d\mu \leq \lim_n \int f_n d\mu
+	$$
+	Note, as $\int f d\mu$ is a supremum, the above follows if we show the RHS bounds every value the supremum is across, ie if for any decomposition $A_1, \cdots, A_m$ of $\Omega$ info $\fcal$ sets, we have:
+	$$
+		\sum_{i=1}^m \left[\inf_{\omega \in A_i} f(\omega)\right]\mu(A_i) = S \leq \lim_n \int f_n d\mu
+	$$
+	Let $v_i = \inf_{\omega \in A_i} f(\omega)$ for ease of notation. We do this in cases.
+	\\\\
+	\textbf{1. $S$ is finite and $\mu(A_i)$ and $v_i$ are positive and finite} Fix an $\epsilon$ that is positive and less than each $v_i$. Put:
+	$$
+		A_{in} = \left[\omega \in A_i : f_n(\omega) > v_i - \epsilon\right]
+	$$
+	First, note $A_{in}$ is measurable, being the intersection of measurable $f_n(\omega) > v_i - \epsilon$ and $A_i$. Now, note that $A_{in} \uparrow A_i$, as $f_n \uparrow f$, so for each $\omega$ in $A_i$, as $v_i$ is the infimum of $f$ across $\omega$ in $A_i$, there is some $f_n$ for which $f(\omega) - f_n(\omega) < \epsilon$, which implies that for that $n$, $\omega \in A_{in}$.
+	\\\\
+	Decompose $\Omega$ into $A_{1n}, \cdots, A_{mn}$ and the complement of their union - lets just call it $A_n'$. Observe that, as $\mu$ is continuous from below:
+	$$
+		\int f_n d\mu \geq \sum_{i=1}^m (v_i - \epsilon) \mu(A_{in}) + \left[\inf_{\omega \in A_n'} f(\omega)\right](\mu(A_n'))
+	$$
+	$$
+		\geq \sum_{i=1}^m (v_i - \epsilon) \mu(A_{in})
+	$$
+	Continuity from below implies we can take the limit on the right side, so we have:
+	$$
+		\lim_n \int f_n d\mu \geq \sum_{i=1}^m (v_i - \epsilon) \mu(A_i) = S - \epsilon \sum_{i=1}^m \mu(A_i)
+	$$
+	As the $\mu(A_i)$ are finite, the sum of $\mu(A_i)$ is finite. As $\epsilon$ was arbitrary, we have:
+	$$
+		S \leq \int f_n d\mu
+	$$
+	\textbf{2. $S$ is finite} Thus, each product $v_i \mu(A_i)$ must be finite. Note, one of the two can be infinite, but the other must then be zero. Suppose it is finite for $i \leq m_0$, and $0$ for $i > m_0$. Note, $m_0 \leq m$. Now, $v_i$ and $\mu(A_i)$ must be positive and finite for $i \leq m_0$. Define $A_{in}$ as before, but only for $i \leq m_0$, and decompose $\Omega$ into $A_{1n}, \cdots, A_{m_0n}$, and the complement of their union. The proof still follows.
+	\\\\
+	\textbf{3. $S = \infty$} Then, $v_{i_0}\mu(A_{i_0}) = \infty$ for some $i_0$. Note, no limit, as we only consider finite decompositions of $\Omega$. So, both values are positive in the multiplication, and at least one is infinite. We use this one item in the sum to prove that the limit is infinite as well, which will conclude this part.
+	\\\\
+	Suppose $0 < x < v_{i_0} \leq \infty$ and $0 < y < \mu(A_{i_0}) \leq \infty$, and put $A_{i_0n} = \left[\omega \in A_{i_0} : f_n(\omega) > x\right]$. As $0 < x < v_{i_0}$, we do have $A_{i_0n} \uparrow A_{i_0}$, for the same reason as in part 1, that $f_n \uparrow f$. Each is measurable via being the intersection of measurable sets. And hence, $\mu(A_{i_0n}) > y$ for $n$ exceeding some $n_0$. This is just the definition of $\uparrow$.
+	\\\\
+	If we compose $\Omega$ into $A_{i_0n}$ and its complement, we have:
+	$$
+		\int f_n d\mu \geq x \mu(A_{i_0n}) \geq xy
+	$$
+	Where the last step is only true for $n \geq n_0$. If $v_{i_0} = \infty$, let $x \to \infty$. If $\mu(A_{i_0}) = \infty$, let $y \to \infty$. In either case it follows that:
+	$$
+		\lim_n \int f_n d\mu = \infty
+	$$
+	Thus, for all cases, we have proven: If $0 \leq f_n(\omega) \uparrow f(\omega)$ for all $\omega$, then $0 \leq \int f_n d\mu \uparrow \int f d\mu$.
 \end{enumerate}
 
 \end{document}
