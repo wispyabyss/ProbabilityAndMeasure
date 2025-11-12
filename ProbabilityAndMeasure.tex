@@ -10636,6 +10636,79 @@ Unless both $\int f^+ d\mu = \infty$ and $\int f^- d\mu = \infty$, in which case
 		\lim_n \int f_n d\mu = \infty
 	$$
 	Thus, for all cases, we have proven: If $0 \leq f_n(\omega) \uparrow f(\omega)$ for all $\omega$, then $0 \leq \int f_n d\mu \uparrow \int f d\mu$.
+	
+	\item For nonnegative functions $f$ and $g$ and nonnegative constants $\alpha$ and $\beta$:
+	$$
+		\int \alpha f + \beta g d\mu = \alpha \int f d\mu + \beta \int g d\mu
+	$$
+	Suppose first that $f$ and $g$ are simple:
+	$$
+		f = \sum_i x_i \1{A_i} \quad\quad\quad g = \sum_j y_j \1{B_j}
+	$$
+	Then:
+	$$
+		\alpha f + \beta g = \sum_{ij} (\alpha x_i + \beta y_j) \1{A_i \cap B_j} =
+	$$
+	And so, we have by (1):
+	$$
+		\int \alpha f + \beta g d\mu =
+		\sum_{ij} (\alpha x_i + \beta y_j) \mu(A_i \cap B_j) =
+		\sum_i \alpha x_i \mu(A_i) +
+		\sum_j \beta y_j \mu(B_j)
+	$$
+	$$
+		= \alpha \int f d\mu + \beta \int g d\mu
+	$$
+	Where the breaking up into sums and pulling back together comes from disjointness and countable additivity. So, we have integral additivity for nonnegative simple functions. Now, consider general nonnegative $f$ and $g$. By Theorem 13.5, we have simple functions $f_n$ and $g_n$ such that $0 \leq f_n(\omega) \uparrow f(\omega)$ and $0 \leq g_n(\omega) \uparrow g(\omega)$. But then, $0 \leq \alpha f_n + \beta g_n \uparrow \alpha f + \beta g$. And so, by (3), we have:
+	$$
+		0 \leq \int \alpha f_n + \beta g_n d\mu \uparrow \int \alpha f + \beta g d\mu
+	$$
+	Now, we can make use of our additivity for simple functions to find:
+	$$
+		\lim_n \alpha \int f_n d\mu + \beta \int g_n d\mu = \int \alpha f + \beta g d\mu
+	$$
+	Finally, use (3) again to find the individual limits:
+	$$
+		\implies \alpha \int f d\mu + \beta \int g d\mu = \int \alpha f + \beta g d\mu
+	$$
+\end{enumerate}
+
+\paragraph{Theorem 15.2 - Almost Everywhere Properties} Assume that $f$ and $g$ are nonnegative.
+\begin{enumerate}
+	\item If $f = 0$ almost everywhere, then $\int f d\mu = 0$
+	\item If $\mu\left[\omega : f(\omega) > 0\right]$, then $\int f d\mu > 0$
+	\item If $\int f d\mu < \infty$, then $f < \infty$ almost everywhere
+	\item If $f \leq g$ almost everywhere, then $\int f d\mu \leq \int g d\mu$
+	\item If $f = g$ almost everywhere, then $\int d f\mu = \int g d\mu$
+\end{enumerate}
+\textbf{Proof:}
+\begin{enumerate}
+	\item Suppose that $f = 0$ almost everywhere. If $A_i$ meets $[\omega: f(\omega) = 0]$, then the $\inf_{\omega \in A_i} f(\omega) = 0$. If $A_i$ does not meet $[\omega: f(\omega) = 0]$, ie $A_i \subseteq [\omega: f(\omega) = 0]^c$, then $\mu(A_i) = 0$. This is by definition of equals zero almost everywhere - $\mu\left([\omega: f(\omega) = 0]^c\right) = 0$ - and monotonicity.
+	\\\\
+	Thus, each term in any sum of:
+	$$
+		\sup \sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+	$$
+	Is zero, and so the sum is zero, and the supremum is 0. Thus, by definition, $\int f d\mu = 0$.
+	
+	\item If $A_\epsilon = [\omega : f(\omega) > \epsilon]$, then clearly $A_\epsilon \uparrow [\omega : f(\omega) > 0]$ as $\epsilon \downarrow 0$. Thus, if $\mu[\omega : f(\omega) > 0] > 0$, there is some $\epsilon$ via limits for which $\mu(A_\epsilon) > 0$. Decomposing $\Omega$ into $A_\epsilon$ and its complement shows that $\int f d\mu \geq \epsilon \mu(A_\epsilon) > 0$.
+	
+	\item Prove by contradiction. If $\mu[f = \infty] > 0$, decompose $\Omega$ into $[f = \infty]$ and its complement: $\int f d\mu \geq \infty \cdot \mu[f = \infty] = \infty$.
+	
+	\item Let $G = [f \leq g]$. Note, we have proven in Theorem 13.4 that $G \in \fcal$ for $f$ and $g$ measurable. Note that for any $A \in \fcal$, $\mu(A) = \mu(G \cap A)$. This is because $\mu(A^c) = \mu(A^c \cup G^c) = \mu((G \cap A)^c)$, where the first equality comes from subadditivity and $\mu(G^c) = 0$. For any finite decomposition $\{A_1, \cdots, A_m\}$ of $\Omega$:
+	$$
+		\sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i) =
+		\sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i \cap G) \leq
+		\sum_i \left[\inf_{\omega \in A_i \cap G} f(\omega)\right] \mu(A_i \cap G)
+	$$
+	$$
+		\leq
+		\sum_i \left[\inf_{\omega \in A_i \cap G} g(\omega)\right] \mu(A_i \cap G) \leq
+		\int g d\mu
+	$$
+	Where the last step comes from a consideration of the decomposition $A_1 \cap G, \cdots, A_m \cap G, G^c$, and $\mu(G^C) = 0$. Thus, the supremum of sums of the first type, which is by definition $\int f d\mu$, is less than or equal to $\int g d\mu$.
+	
+	\item This follows immediately from (4). $f \leq g$ and $g \leq f$ almost everywhere, which implies both $\int f d\mu \leq \int g d\mu$ and $\int g d\mu \leq \int f d\mu$, which implies equality.
 \end{enumerate}
 
 \end{document}
