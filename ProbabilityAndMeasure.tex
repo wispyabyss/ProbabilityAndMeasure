@@ -10548,6 +10548,20 @@ $$
 	\int f d\mu = \int f^+ d\mu - \int f^- d\mu
 $$
 Unless both $\int f^+ d\mu = \infty$ and $\int f^- d\mu = \infty$, in which case the subtraction is not defined. If both are \textit{finite}, $f$ is called \textit{integrable}, and the value is its \textit{definite integral}. If one of the two is finite, $f$ is not integrable, but it is still assigned the $\pm \infty$ integral value.
+\\\\
+Just as an aside. I was thinking of something like:
+$$
+	f(x) = \begin{cases}
+	5x & \text{ if $x \geq 0$}\\
+	0.5x & \text{ if $x \leq 0$}
+	\end{cases}
+$$
+Note, the integral across $(\R, \rcal, \lambda)$ would not be defined. I think it is clear that both $f^+$ and $f-$ have infinite area. However, consider something like:
+$$
+	\int_{-n}^n f d\lambda =
+	\int_0^n 5x d\lambda - \int_{-n}^0 0.5x = \frac{5}{2}n^2 - \frac{1}{4}n^2 = \frac{9}{4}n^2
+$$
+Ie, the positive area is larger than the negative area. As $n \to \infty$, the above value goes to $+\infty$. Is there some kind of theory for this? I think this is called something like the \textit{extended improper integral}.
 
 \subsubsection{Nonnegative Functions}
 \paragraph{Theorem 15.1 - Integral Properties}
@@ -10773,7 +10787,20 @@ As this is true for all partitions, the infimum is still infinite. Thus, if $\mu
 $$
 	\int^* f d\mu = \infty
 $$
-Now, assume that $\mu[\omega : f(\omega) > a] > 0$ for all $a$. I think we use this to prove $\int^* f d\mu > n$ for all $n$, which implies infinite. 
+Now, assume that $\mu[\omega : f(\omega) > a] > 0$ for all $a$. We need to again show for any partition $A_1, \cdots, A_n$ of $\Omega$ into $\fcal$ sets, the integral sum is infinite. Assume:
+$$
+	\sum_i \left[\sup_{\omega \in A_i} f(\omega)\right] \mu(A_i) < \infty
+$$
+Then $a_i = \sup_{A_i} f < \infty$ for each $i$ in the set of indices for which $\mu(A_i) > 0$. If $a = \max_i a_i$, then $\mu[f > a] = \sum_I \mu(A_i \cap [f > a]) \leq \sum_I \mu(A_i \cap [f > a_i]) = 0$, because we know that $a_i$ is the supremum of $f$ on $A_i$. 
+\\\\
+So, we have $\mu[f > a] = 0$. This contradicts $\mu[\omega : f(\omega) > a] > 0$ for all $a$, and so we must have for any partition $A_1, \cdots, A_n$:
+$$
+	\sum_i \left[\sup_{\omega \in A_i} f(\omega)\right] \mu(A_i) = \infty \implies
+	\int^* f d\mu = \infty
+$$
+qed.
+\\\\
+Note - there are many familiar functions that ought to be integrable, but are of the preceding types and thus have infinite upper integral. Consider $f = x^{-2}\1{x \geq 1}$. Here, we have that the area that $f$ is nonnegative in is infinite. Also consider $f = x^{-1/2}\1{x \in (0,1)}$. Here, we have that the measure of $f > a$ for any $a$ is  positive. Thus, both functions would have infinite upper integral. However, we generally think they should have finite integrals, as their contained area is finite, even though they go to infinity in the range/domain.
 
 \end{document}
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  13 NOV 2025 12:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  14 NOV 2025 10:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4873,38 +4873,43 @@ Underfull \hbox (badness 10000) in paragraph at lines 10506--10512
 
  []
 
-[357] [358] [359]
-Underfull \hbox (badness 10000) in paragraph at lines 10600--10604
+[357] [358]
+Underfull \hbox (badness 10000) in paragraph at lines 10549--10553
 
  []
 
-[360]
-Underfull \hbox (badness 10000) in paragraph at lines 10606--10610
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10623--10631
+[359] [360]
+Underfull \hbox (badness 10000) in paragraph at lines 10614--10618
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10623--10631
+Underfull \hbox (badness 10000) in paragraph at lines 10620--10624
+
+ []
+
+[361]
+Underfull \hbox (badness 10000) in paragraph at lines 10637--10645
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10623--10631
+Underfull \hbox (badness 10000) in paragraph at lines 10637--10645
 
  []
 
-[361] [362]
-Underfull \hbox (badness 10000) in paragraph at lines 10686--10689
+
+Underfull \hbox (badness 10000) in paragraph at lines 10637--10645
+
+ []
+
+[362]
+Underfull \hbox (badness 10000) in paragraph at lines 10700--10703
 
  []
 
 [363]
-Overfull \hbox (46.0777pt too wide) detected at line 10703
+Overfull \hbox (46.0777pt too wide) detected at line 10717
 [] [] \OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[]\OT1/cmr/m/n/12 
 ) = [] [] \OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A[] \OMS/cmsy/m
 /n/12 \ \OML/cmm/m/it/12 G\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T [] [] \OML/cmm
@@ -4913,36 +4918,46 @@ Overfull \hbox (46.0777pt too wide) detected at line 10703
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10713--10716
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 10718--10722
+Underfull \hbox (badness 10000) in paragraph at lines 10727--10730
 
  []
 
 [364]
-Underfull \hbox (badness 10000) in paragraph at lines 10729--10733
+Underfull \hbox (badness 10000) in paragraph at lines 10732--10736
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10738--10741
+Underfull \hbox (badness 10000) in paragraph at lines 10743--10747
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10755--10758
+Underfull \hbox (badness 10000) in paragraph at lines 10752--10755
 
  []
 
 [365]
-Underfull \hbox (badness 10000) in paragraph at lines 10766--10769
+Underfull \hbox (badness 10000) in paragraph at lines 10769--10772
 
  []
 
-[366] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 10780--10783
+
+ []
+
+[366]
+Underfull \hbox (badness 10000) in paragraph at lines 10793--10797
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10800--10804
+
+ []
+
+[367] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: FB13D06F2E97092CE652129593998A35;50715.
  ) 
@@ -4955,4 +4970,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (366 pages).
+Output written on ProbabilityAndMeasure.pdf (367 pages).
