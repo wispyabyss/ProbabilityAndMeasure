@@ -10770,7 +10770,7 @@ These problems all have to deal with alternative integral definitions, which all
 \\\\
 Call our definition in the chapter the \textit{lower integral}:
 $$
-	\int f d\mu = \sup \sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+	\int_* f d\mu = \sup \sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i)
 $$
 This is different from the \textit{upper integral}, which we define as:
 $$
@@ -10801,6 +10801,111 @@ $$
 qed.
 \\\\
 Note - there are many familiar functions that ought to be integrable, but are of the preceding types and thus have infinite upper integral. Consider $f = x^{-2}\1{x \geq 1}$. Here, we have that the area that $f$ is nonnegative in is infinite. Also consider $f = x^{-1/2}\1{x \in (0,1)}$. Here, we have that the measure of $f > a$ for any $a$ is  positive. Thus, both functions would have infinite upper integral. However, we generally think they should have finite integrals, as their contained area is finite, even though they go to infinity in the range/domain.
+
+\subsubsection{15.2 - Upper and Lower Integral Inequalities}
+\begin{enumerate}
+	\item Show that:
+	$$
+		\sum_i \left[\inf_{\omega \in A_i} f(\omega)\right]\mu(A_i) \leq
+		\sum_j \left[\inf_{\omega \in B_j} f(\omega)\right]\mu(B_j)
+	$$
+	If $\{B_j\}$ is a partition that refines $\{A_i\}$. Note, this should be clear, as for $B_j \subseteq A_i$, we have $\sum_j \mu(B_j) = \mu(A_i)$, and $\inf_{\omega \in A_i} f(\omega) \leq \inf_{\omega \in B_j} f(\omega)$. We similarly can conclude that:
+	$$
+		\sum_j \left[\sup_{\omega \in B_j} f(\omega)\right]\mu(B_j) \leq 
+		\sum_i \left[\sup_{\omega \in A_i} f(\omega)\right]\mu(A_i)
+	$$
+	If $\{B_j\}$ refines $\{A_i\}$. These two facts allow us to conclude that:
+	$$
+		\int f d\mu = \int_* f d\mu \leq \int^* f d\mu
+	$$
+	Note, the supremum the left is smaller than the infimum on the right, because every element in the left infimum is upper bounded by every element on the right infimum. Indeed, we will compare:
+	$$
+		\sup \sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i) 
+		\quad\quad\text{ versus }\quad\quad
+		\inf \sum_i \left[\sup_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+	$$
+	Take an arbitrary sum on the left and right, for partitions $A_i$ and $C_i$. Note, we can find a partition $B_{ij}$ that refines both $A_i$ and $C_i$. Define $B_{ij} = A_i \cap C_j$. We can take disjoint unions across $j$ for a fixed $i$ to recover $A_i$, and disjoint unions across $i$ for a fixed $j$ to recover $C_j$. Note that:
+	$$
+		\sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i) \leq
+		\sum_{ij} \left[\inf_{\omega \in B_{ij}} f(\omega)\right] \mu(B_{ij}) 
+	$$
+	$$
+		\leq
+		\sum_{ij} \left[\sup_{\omega \in B_{ij}} f(\omega)\right] \mu(B_{ij}) \leq
+		\sum_j \left[\sup_{\omega \in C_j} f(\omega)\right] \mu(C_j)
+	$$
+	Where the second inequality comes from comparing infimums and supremums. And so, we can indeed conclude that:
+	$$
+		\int_* f d\mu \leq \int^* f d\mu
+	$$
+	
+	\item Assume $f$ is bounded and that $\mu(\Omega) < \infty$. Now assume that $f$ is measurable $\fcal$ and let $M$ be a bound for $|f|$. Consider the partition $A_i = \left[\omega : i\epsilon < f(\omega) \leq (i + 1)\epsilon\right]$, where $i$ ranges from $-N$ to $N$ and $N$ is large enough such that $N\epsilon > M$. Show that:
+	$$
+		\sum_i \left[\sup_{\omega \in A_i} f(\omega)\right] \mu(A_i) -
+		\sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i) < \epsilon \mu(\Omega)
+	$$
+	I think this is clear. We have that:
+	$$
+		= 
+		\sum_i \left[\sup_{\omega \in A_i} f(\omega) - \inf_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+	$$
+	And the difference between the inf and sup on $A_i$ must be less than $\epsilon$:
+	$$
+		\leq \sum_i \epsilon \mu(A_i) = \epsilon \mu(\Omega)
+	$$
+	Conclude that:
+	$$
+		\int_* f d\mu = \int^* f d\mu
+	$$
+	Note that the difference goes to zero as $\epsilon \to 0$, as $\mu(\Omega) < \infty$. Note that the limits as $\epsilon \to \infty$ equal the values for the lower and upper integral. If they didn't - then we would find that the upper integral is smaller than the lower integral, which would contradict:
+	$$
+		\int_* f d\mu \leq \int^* f d\mu
+	$$
+	And so we must have equality. 
+\end{enumerate}
+
+\section{Section 16 - Properties of the Integral}
+\subsubsection{Equalities and Inequalities}
+\paragraph{Integrable Definition 2} Recall, being integrable requires both $\int f^+ d\mu$ and $\int f^- d\mu$ to be finite. Via additivity of nonnegative functions from Theorem 15.1, that implies:
+$$
+	\int f^+ d\mu + \int f^- d\mu < \infty \quad\Leftrightarrow\quad
+	\int f^+ + f^- d\mu < \infty \quad\Leftrightarrow\quad
+	\int |f| d\mu < \infty
+$$
+By Theorem 15.2 for almost everywhere monotonicity, this implies that if $|f| \leq |g|$ almost everywhere and $g$ is integrable, then $f$ is as well. If $\mu(\Omega) < \infty$ and $f$ is bounded, $f$ is also integrable ($\Omega$ itself is a partition).
+
+\paragraph{Theorem 16.1 - Integral Monotonicity and Linearity}
+\begin{enumerate}
+	\item Monotonicity: If $f$ and $g$ are integrable and $f \leq g$ almost everywhere, then:
+	$$
+		\int f d\mu \leq \int g d\mu
+	$$
+	
+	\item Linearity: If $f$ and $g$ are integrable and $\alpha,\beta$ are finite real numbers, then $\alpha f + \beta g$ is integrable and:
+	$$
+		\int (\alpha f + \beta g) d\mu =
+		\alpha \int f d\mu + \beta \int g d\mu
+	$$
+\end{enumerate}
+\textbf{Proof}
+\begin{enumerate}
+	\item Monotonicity. For nonnegative $f$ and $g$ such that $f \leq g$ almost everywhere, the Theorem follows directly from Theorem 15.2.4. For general integrable $f$ and $g$, if $f \leq g$ almost everywhere, then $f^+ \leq g^+$ and $g^- \leq f^-$ almost everywhere. So, the theorem follows directly by definition:
+	$$
+		\int f d\mu =
+		\int f^+ d\mu - \int f^- d\mu \leq
+		\int g^+ d\mu - \int g^- d\mu =
+		\int g d\mu
+	$$
+	
+	\item Linearity. First, note that $\alpha f + \beta g$ is integrable via Theorem 15.1:
+	$$
+		\int |\alpha f + \beta g|d\mu \leq
+		\int |\alpha||f| + |\beta||g| d\mu =
+		|\alpha| \int |f| d\mu + |\beta| \int |g| d\mu < \infty
+	$$
+	The first step is directly Theorem 15.1.2, and the second step is directly Theorem 15.1.4. 
+\end{enumerate}
+
 
 \end{document}
 
