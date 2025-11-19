@@ -10903,9 +10903,47 @@ By Theorem 15.2 for almost everywhere monotonicity, this implies that if $|f| \l
 		\int |\alpha||f| + |\beta||g| d\mu =
 		|\alpha| \int |f| d\mu + |\beta| \int |g| d\mu < \infty
 	$$
-	The first step is directly Theorem 15.1.2, and the second step is directly Theorem 15.1.4. 
+	The first step is directly Theorem 15.1.2, and the second step is directly Theorem 15.1.4. Now, we consider $g = 0$. It is clear that for $a \geq 0$:
+	$$
+		\int af d\mu = \int af^+ d\mu - \int af^- d\mu = a\int f^+ d\mu - a\int f^- d\mu = a\int f d\mu
+	$$
+	Flipping the subtraction gives us the same conclusion for $a < 0$. Therefore, we just need to prove the general case for $\alpha = \beta = 1$ - if we do, then we can treat $f = af$ and $g = bf$, split the addition, and then pull out the constants. We have $(f + g)^+ - (f + g)^- = f + g = f^+ - f^- + g^+ - g^-$ Rearranging gives us:
+	$$
+		(f + g)^+ + f^- + g^- = (f + g)^- + f^+ + g^+
+	$$
+	Being nonnegative sums on both sides, Theorem 15.1.4 gives us:
+	$$
+		\int (f + g)^+ d\mu + \int f^- d\mu + \int g^- d\mu =
+		\int (f + g)^- d\mu + \int f^+ d\mu + \int g^+ d\mu
+	$$
+	Rearranging, we can conclude that:
+	$$
+		\int f + g d\mu = \int f d\mu + \int g d\mu
+	$$
+	And so the statement follows. 
 \end{enumerate}
+We have thus proven both monotonicity and linearity of $f$ and $g$ integrable. qed.
+\\\\
+We note that:
+$$
+	\left|\int f d\mu\right| 
+	\leq
+	\left|\int f^+ d\mu\right| + \left|\int f^- d\mu\right| =
+	\int f^+d\mu + \int f^- d\mu =
+	\int |f| d\mu
+$$
+Where the second equality comes from $f^+$ and $f^-$ both being nonnegative. We also can apply to integrable $f$ and $g$, in which case $f - g$ is integrable and making use of Theorem 16.1 gives us:
+$$
+	\left|\int f d\mu - \int g d\mu\right| =
+	\left|\int f - g d\mu\right| \leq
+	\int \left|f - g\right| d\mu
+$$
 
+\paragraph{Example 16.1 - Counting Measure} Suppose that $\Omega$ is countable - $\Omega = \{1, 2, \cdots\}$ to be definite. Let $\fcal$ consist of all subsets of $\Omega$, and $\mu$ is the counting measure - each singleton has measure $1$.
+\\\\
+A function is thus a sequence. 
+
+\paragraph{Example 16.2 - Principal Value}
 
 \end{document}
 

@@ -456,3 +456,5 @@
 \contentsline {subsubsection}{Equalities and Inequalities}{369}{section*.457}%
 \contentsline {paragraph}{Integrable Definition 2}{369}{section*.458}%
 \contentsline {paragraph}{Theorem 16.1 - Integral Monotonicity and Linearity}{369}{section*.459}%
+\contentsline {paragraph}{Example 16.1 - Counting Measure}{371}{section*.460}%
+\contentsline {paragraph}{Example 16.2 - Principal Value}{371}{section*.461}%
