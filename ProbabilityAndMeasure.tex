@@ -10939,11 +10939,49 @@ $$
 	\int \left|f - g\right| d\mu
 $$
 
-\paragraph{Example 16.1 - Counting Measure} Suppose that $\Omega$ is countable - $\Omega = \{1, 2, \cdots\}$ to be definite. Let $\fcal$ consist of all subsets of $\Omega$, and $\mu$ is the counting measure - each singleton has measure $1$.
+\paragraph{Example 16.1 - Counting Measure and Comparisons With Series Theory} Suppose that $\Omega$ is countable - $\Omega = \{1, 2, \cdots\}$ to be definite. Let $\fcal$ consist of all subsets of $\Omega$, and $\mu$ is the counting measure - each singleton has measure $1$.
 \\\\
-A function is thus a sequence. 
+A function is thus a sequence, essentially, where $x_i = f(i)$. If $x_{nm}$ is $x_m$ if $m \leq n$ or $0$ if $m > n$, the function $f_n$ corresponding to $x_{n1}, x_{n2}, \cdots$ has integral $\sum_{m=1}^n x_m$ by Theorem 15.1.1, as it is a simple function essentially on the decomposition $\{1\}, \cdots, \{n\}, \{n+1, n+2, \cdots\}$. It follows by Theorem 15.1.3, that for nonnegative $f$, the integral of the function $f(m) = x_m$ is the sum:
+$$
+	\sum_m x_m
+$$
+Finite or infinite, of the corresponding infinite series. In the general case - we have $f^+$ and $f-$ are nonnegative, with integrals that can be similarly expressed as $\sum_m x_m$. Thus, general $f$ is \textit{integrable} iff both of these sums are finite, which follows iff $\sum_m |x_m|$ is a convergent infinite series (ie sum is less than infinity). In this case, the integral is $\sum_{m=1}^\infty x_m^+ - \sum_{m=1}^\infty x_m^-$.
+\\\\
+The function $x_m = (-1)^{m+1}m^{-1}$ is not integrable by this definition. That is because the absolute value sum is the non-convergent harmonic series. It fails to even have a definite integral, as $\sum_{m=1}^\infty x_m^+ = \sum_{m=1}^\infty x_m^- = \infty$ (every other sum on the harmonic series is still infinite).
+\\\\
+Compare this with infinite series theory. We have that the alternating harmonic series does converge in the sense that:
+$$
+	\lim_M \sum_{m=1}^M (-1)^{m+1}m^{-1} = \log(2)
+$$
+However - note that this sum is for the \textit{first $M$ elements}. It requires an order on the space $\Omega$. Consider instead, for example the 3d integer coordinates - the integer lattice points in 3 space. It has no canonical linear ordering. If $\sum_m x_m$ is to have the same finite value no matter the order of summation, the series must be absolutely convergent, which is standard real analysis theory. This helps explain why $f$ is defined to be integrable if and only if both $\int f^+ d\mu$ and $\int f^- d\mu$ are both finite - then, we have absolute convergence (at least in the counting measure example), which implies the sum is the same, no matter the reordering. 
 
-\paragraph{Example 16.2 - Principal Value}
+\paragraph{Example 16.2 - Principal Value} I've included this example because it was something I was wondering about in section 15, defining integrals for which $\int f^+ d\mu = \int f^- d\mu = \infty$ by examining $\lim_n \int_{-n}^n f$.
+\\\\
+Consider the function $f(x) = 3\1{a \leq x} - 2\1{x < a}$. There is no natural value for $\int f d\lambda$, as it is the $\infty - \infty$ case. But, if a function $f$ is bounded on bounded intervals, then $f_n(x) = f(x)\1{-n \leq x \leq n}$ is integrable with respect to $\lambda$. Since $f = \lim_n f_n$, the limit of $\int f_n d\lambda$, it if exists, is sometimes called the \textit{principal value} of the integral $f$.
+\\\\
+Note, however, this is not the right definition in the context of general measure theory. The functions $g_n(x) = f(x)\1{-n \leq x \leq n+1}$ also converges to $f$ - however, we may have $\lim_n \int g_n d\lambda \neq \lim_n \int f_n d\lambda$. Take $f(x) = x$ as one such example. There is no general reason why $f_n$, which I guess is symmetrical around the origin, should take precedence over $g_n$. 
+
+\subsubsection{Integration to the Limit}
+\paragraph{Theorem 16.2 - Monotone Convergence Theorem} If $0 \leq f_n \uparrow f$ almost everywhere, then $\int f_n d\mu \uparrow \int f d\mu$.
+\\\\
+\textbf{Proof:} This is essentially Theorem 15.1.3, except we have added an almost everywhere. We have $0 \leq f_n \uparrow f$ on a set $A$ with $\mu(A^c) = 0$. So, we can use an indicator, and make use of Theorem 15.2.5:
+$$
+	\int f_n d\mu = \int f_n\1{A} d\mu \uparrow \int f\1{A} d\mu = \int f d\mu
+$$
+
+\paragraph{Theorem 16.3 - Fatou's Lemma} For nonnegative $f_n$:
+$$
+	\int \liminf_n f_n d\mu \leq \liminf n \int f_n d\mu
+$$
+\textbf{Proof:} If $g_n = \inf_{k \geq n} f_k$, then $0 \leq g_n \uparrow g = \liminf_n f_n$. Theorem 16.1 gives monotonicity, and Theorem 16.2 monotone convergence theorem gives:
+$$
+	\int f_n d\mu \geq \int g_n d\mu \uparrow \int g d\mu
+$$
+As this is true for all $n$, we have:
+$$
+	\int g d\mu = \int \liminf_n f_n d\mu \leq \liminf n \int f_n d\mu
+$$
+And thus we have concluded the theorem. qed.
 
 \end{document}
 

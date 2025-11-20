@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  19 NOV 2025 12:21
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  20 NOV 2025 10:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,12 +511,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 324--328
 
  []
 
-
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 331--334
 
  []
 
-[18]
+
 Underfull \hbox (badness 10000) in paragraph at lines 346--350
 
  []
@@ -541,12 +541,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 394--397
 
  []
 
-
+[21]
 Underfull \hbox (badness 10000) in paragraph at lines 398--401
 
  []
 
-[21]
+
 Underfull \hbox (badness 10000) in paragraph at lines 402--405
 
  []
@@ -593,17 +593,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 536--541
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 536--541
-
- []
-
 [26]
+Underfull \hbox (badness 10000) in paragraph at lines 536--541
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 536--541
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 542--547
 
  []
@@ -618,12 +618,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 565--569
 
  []
 
-
+[28]
 Underfull \hbox (badness 10000) in paragraph at lines 575--579
 
  []
 
-[28]
+
 Underfull \hbox (badness 10000) in paragraph at lines 580--583
 
  []
@@ -4977,17 +4977,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 10942--10945
 
  []
 
-[371] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 10947--10953
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10947--10953
+
+ []
+
+[371]
+Underfull \hbox (badness 10000) in paragraph at lines 10958--10963
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10958--10963
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10965--10968
+
+ []
+
+[372] [373] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 071C27D236CE32DC5A0FF0097F5A356B;51475.
+(rerunfilecheck)             Checksum: 4DE2BCF5A59651F247CAB15FDF717A7F;51664.
  ) 
 Here is how much of TeX's memory you used:
- 10070 strings out of 476191
- 157145 string characters out of 5812073
- 508882 words of memory out of 5000000
- 30656 multiletter control sequences out of 15000+600000
+ 10071 strings out of 476191
+ 157159 string characters out of 5812073
+ 509081 words of memory out of 5000000
+ 30657 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (371 pages).
+Output written on ProbabilityAndMeasure.pdf (373 pages).
