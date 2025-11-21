@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  20 NOV 2025 10:41
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  21 NOV 2025 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4962,57 +4962,72 @@ Overfull \hbox (3.20296pt too wide) in paragraph at lines 10836--10838
  and supre-
  []
 
-[368]
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 10868.
-
-[369]
-Underfull \hbox (badness 10000) in paragraph at lines 10925--10928
+[368] [369]
+Underfull \hbox (badness 10000) in paragraph at lines 10926--10929
 
  []
 
 [370]
-Underfull \hbox (badness 10000) in paragraph at lines 10942--10945
+Underfull \hbox (badness 10000) in paragraph at lines 10943--10946
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10947--10953
+Underfull \hbox (badness 10000) in paragraph at lines 10948--10954
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10947--10953
+Underfull \hbox (badness 10000) in paragraph at lines 10948--10954
 
  []
 
 [371]
-Underfull \hbox (badness 10000) in paragraph at lines 10958--10963
+Underfull \hbox (badness 10000) in paragraph at lines 10959--10964
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10958--10963
+Underfull \hbox (badness 10000) in paragraph at lines 10959--10964
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10965--10968
+Underfull \hbox (badness 10000) in paragraph at lines 10966--10969
 
  []
 
-[372] [373] (./ProbabilityAndMeasure.aux)
+[372]
+Underfull \hbox (badness 10000) in paragraph at lines 10987--10990
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10996--10999
+
+ []
+
+
+Overfull \hbox (44.2227pt too wide) detected at line 11009
+[] \OML/cmm/m/it/12 gd^^V \OT1/cmr/m/n/12 + [] \OML/cmm/m/it/12 f[]d^^V \OT1/cm
+r/m/n/12 = [] [](\OML/cmm/m/it/12 g \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 f[]\OT1/
+cmr/m/n/12 )\OML/cmm/m/it/12 d^^V \OMS/cmsy/m/n/12 ^^T [] []\OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 g \OT1/cmr/m/n/12 + \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 )\OML/cm
+m/m/it/12 d^^V \OT1/cmr/m/n/12 = [] \OML/cmm/m/it/12 gd^^V \OT1/cmr/m/n/12 + []
+ [] \OML/cmm/m/it/12 f[]d^^V
+ []
+
+[373] [374] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 4DE2BCF5A59651F247CAB15FDF717A7F;51664.
+(rerunfilecheck)             Checksum: 4EDF452EDBFA73103A5A415171F1318E;51749.
  ) 
 Here is how much of TeX's memory you used:
  10071 strings out of 476191
  157159 string characters out of 5812073
- 509081 words of memory out of 5000000
+ 509173 words of memory out of 5000000
  30657 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (373 pages).
+Output written on ProbabilityAndMeasure.pdf (374 pages).

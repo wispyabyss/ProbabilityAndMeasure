@@ -10865,6 +10865,7 @@ Note - there are many familiar functions that ought to be integrable, but are of
 \end{enumerate}
 
 \section{Section 16 - Properties of the Integral}
+\subsection{Notes}
 \subsubsection{Equalities and Inequalities}
 \paragraph{Integrable Definition 2} Recall, being integrable requires both $\int f^+ d\mu$ and $\int f^- d\mu$ to be finite. Via additivity of nonnegative functions from Theorem 15.1, that implies:
 $$
@@ -10971,17 +10972,62 @@ $$
 
 \paragraph{Theorem 16.3 - Fatou's Lemma} For nonnegative $f_n$:
 $$
-	\int \liminf_n f_n d\mu \leq \liminf n \int f_n d\mu
+	\int \liminf_n f_n d\mu \leq \liminf_n \int f_n d\mu
 $$
-\textbf{Proof:} If $g_n = \inf_{k \geq n} f_k$, then $0 \leq g_n \uparrow g = \liminf_n f_n$. Theorem 16.1 gives monotonicity, and Theorem 16.2 monotone convergence theorem gives:
+\textbf{Proof:} If $g_n = \inf_{k \geq n} f_k$, then $0 \leq g_n \uparrow g = \liminf_n f_n$ (this is by definition, the limit exists for each $x$ as it is monotone increasing). Theorem 16.1 gives monotonicity for $g_n \leq f_n$, and Theorem 16.2 monotone convergence theorem gives:
 $$
 	\int f_n d\mu \geq \int g_n d\mu \uparrow \int g d\mu
 $$
 As this is true for all $n$, we have:
 $$
-	\int g d\mu = \int \liminf_n f_n d\mu \leq \liminf n \int f_n d\mu
+	\int g d\mu = \int \liminf_n f_n d\mu \leq \liminf_n \int f_n d\mu
 $$
 And thus we have concluded the theorem. qed.
+
+\paragraph{Example 16.6 - Fatou's Lemma Strict Inequality} On $(\R^1, \rcal^1, \lambda)$, the functions $f_n = n^2\1{(0,n^{-1})}$ have integral value $n^2 * n^{-1} = n$. Note that for $f = 0$ though, $f_n(x) \to f(x)$ for each $x$.
+\\\\
+Thus, $\liminf_n f_n = f$, so:
+$$
+	0 = \int f d\mu = \int \liminf_n f d\mu \quad\quad\quad
+	\infty = \liminf_n n = \liminf_n \int f_n d\mu
+$$
+In this case, the inequality is strict. Note, it also is not always possible ot ingrate to the limit.
+
+\paragraph{Theorem 16.4 - Dominated Convergence Theorem} If $|f_n| \leq g$ almost everywhere, where $g$ is integrable, and if $f_n \to f$ almost everywhere, then $f$ and the $f_n$ are integrable and $\int f_n d\mu \to \int f d\mu$.
+\\\\
+\textbf{Proof:} Assume at the outset only that the $f_n$ are dominated by an integrable $g$. Note, $|f_n| \leq g$ implies $g$ is nonnegative, and so $|f_n| \leq |g|$ almost everywhere implies that $f_n$ is integrable given that $g$ is, by the note at the start of the chapter. Note, we also must have:
+$$
+	|\liminf_n f_n| \leq |g|
+	\quad\quad\quad
+	|\limsup_n f_n| \leq |g|
+$$
+This again is clear via liminf and limsup maintaining inequalities. Thus, both $f^* = \limsup_n f_n$ and $f_* = \liminf f_n$ are integrable as well. Recall, we already have $f^*$ and $f_*$ are measurable by Theorem 13.4. As $g$ is measurable and nonnegative, we have $g + f_n$ and $g - f_n$ are nonnegative. And so, we can make use of Fatou's lemma to find:
+$$
+	\int g d\mu + \int f_* d\mu = \int \liminf_n (g + f_n) d\mu 
+	\leq
+	\liminf_n \int (g + f_n) d\mu = \int g d\mu + \liminf_n \int f_n d\mu
+$$
+Note, we had to pass to $g + f_*$ as Fatou's lemma can't be applied to not necessarily non-negative $f_n$. Similarly, we find:
+$$
+	\int g d\mu + \int f^* d\mu = \int g - \limsup_n f_n d\mu =
+	\int \liminf (g - f_n) d\mu
+$$
+Note, the equality is valid at each $x$. By Fatou's lemma, we have:
+$$
+	\leq \liminf_n \int g - f_n d\mu = \int g d\mu - \limsup_n \int f_n d\mu
+$$
+Subtract $\int g d\mu$ from both sides of the inequalities we have derived above, and reorder to find:
+$$
+	\int \liminf_n f_n d\mu \leq
+	\liminf_n \int f_n d\mu \leq
+	\limsup_n \int f_n d\mu \leq
+	\int \limsup_n f_n d\mu
+$$
+Note, we had something similar in Theorem 4.1. If we assume that $f_n \to f$ almost everywhere, then note that $\limsup_n f_n(x) = \liminf_n f_n(x)$ almost everywhere. Both the upper and lower values of the inequality are equal, to the common value of $\int f d\mu$, which exists as $f$ must be similarly dominated by $g$. Thus, the limit of the integrals exist, as the inner liminf and limsup are equal, and we can conclude:
+$$
+	\lim_n \int f_n d\mu = \int f d\mu
+$$
+Thus, we have proven the Dominated Convergence Theorem. qed.
 
 \end{document}
 
