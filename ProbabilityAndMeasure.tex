@@ -10800,7 +10800,11 @@ $$
 $$
 qed.
 \\\\
-Note - there are many familiar functions that ought to be integrable, but are of the preceding types and thus have infinite upper integral. Consider $f = x^{-2}\1{x \geq 1}$. Here, we have that the area that $f$ is nonnegative in is infinite. Also consider $f = x^{-1/2}\1{x \in (0,1)}$. Here, we have that the measure of $f > a$ for any $a$ is  positive. Thus, both functions would have infinite upper integral. However, we generally think they should have finite integrals, as their contained area is finite, even though they go to infinity in the range/domain.
+Note - there are many familiar functions that ought to be integrable, but are of the preceding types and thus have infinite upper integral. Consider $f = x^{-2}\1{x \geq 1}$. Here, we have that the area that $f$ is nonnegative in is infinite. Also consider $f = x^{-1/2}\1{x \in (0,1)}$. Here, we have that the measure of $f > a$ for any $a$ is  positive. Thus, both functions would have infinite upper integral. However, we generally think they should have finite integrals, as their contained area is finite, even though they go to infinity in the range/domain. These are the classic examples - having an infinite height over a very small width, or a very small height over an infinite width. Also fun to note - these two graphs are essentially symmetrical, so they should both have the same area:
+
+\begin{center}
+	\includegraphics[width=0.8\textwidth]{integral_examples.png}
+\end{center}
 
 \subsubsection{15.2 - Upper and Lower Integral Inequalities}
 \begin{enumerate}
@@ -10982,7 +10986,12 @@ As this is true for all $n$, we have:
 $$
 	\int g d\mu = \int \liminf_n f_n d\mu \leq \liminf_n \int f_n d\mu
 $$
-And thus we have concluded the theorem. qed.
+And thus we have concluded the theorem. I think it might be better to note that:
+$$
+	\liminf_n \int f_n d\mu \geq \liminf_n \int g_n d\mu = \int g d\mu =
+	\int \liminf_n f_n d\mu
+$$
+We start with liminfs on both sides, as we only have the equality for fixed $n$, $\int f_n d\mu \geq \int g_n d\mu$. We can take liminfs of both side, which exist, and then note that the liminf equals the limit if it exists, which is our integral of $g$. That gives us the theorem for nonnegative $f_n$. qed.
 
 \paragraph{Example 16.6 - Fatou's Lemma Strict Inequality} On $(\R^1, \rcal^1, \lambda)$, the functions $f_n = n^2\1{(0,n^{-1})}$ have integral value $n^2 * n^{-1} = n$. Note that for $f = 0$ though, $f_n(x) \to f(x)$ for each $x$.
 \\\\
