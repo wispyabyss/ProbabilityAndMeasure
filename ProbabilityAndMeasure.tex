@@ -11018,7 +11018,7 @@ $$
 $$
 Note, we had to pass to $g + f_*$ as Fatou's lemma can't be applied to not necessarily non-negative $f_n$. Similarly, we find:
 $$
-	\int g d\mu + \int f^* d\mu = \int g - \limsup_n f_n d\mu =
+	\int g d\mu - \int f^* d\mu = \int g - \limsup_n f_n d\mu =
 	\int \liminf (g - f_n) d\mu
 $$
 Note, the equality is valid at each $x$. By Fatou's lemma, we have:
@@ -11037,6 +11037,32 @@ $$
 	\lim_n \int f_n d\mu = \int f d\mu
 $$
 Thus, we have proven the Dominated Convergence Theorem. qed.
+
+\paragraph{Theorem 16.5 - Bounded Convergence Theorem} If $\mu(\Omega) < \infty$ and the $f_n$ are uniformly bounded, then $f_n \to f$ almost everywhere implies $\int f_n d\mu \to \int f d\mu$.
+\\\\
+\textbf{Proof:} This is just a special case of the dominated convergence theorem. As the $f_n$ are uniformly bounded, this means there is a finite $K$ such that $|f_n(\omega)| \leq K$ for all $\omega$ and $n$ (recall, $f_n$ are all measurable on a measurable space $(\Omega,\fcal,\mu)$). We let $g = \1{\Omega}K$. Theorem 15.1.i tells us that $\int g d\mu = \mu(\Omega)K < \infty$, and so $g$ is integrable. As $|f_n| \leq g = K$ almost everywhere, where $g$ is integrable, and $f_n \to f$ almost everywhere, then Dominated Convergence Theorem tells us that $f$ and $f_n$ are integrable, and:
+$$
+	\int f_n d\mu \to \int f d\mu
+$$
+
+\paragraph{Theorem 16.6 - Monotone Convergence Theorem For Series} If $f_n \geq 0$, then $\int \sum_n f_n d\mu = \sum_n \int f_n d\mu$. This is clear via monotone convergence theorem for $g_n = \sum_{k=1}^n f_k$ and $g = \sum_n f_n$. qed.
+
+\paragraph{Theorem 16.7 - Dominated Convergence Theorem For Series} If $\sum_n f_n$ converges almost everywhere and $\left|\sum_{k=1}^n F_k\right| \leq g$ almost everywhere, where $g$ is integrable, then $\sum_n f_n$ and $f_n$ are integrable, and $\int \sum_n f_n d\mu = \sum_n \int f_n d\mu$. Again, same proof as before. qed.
+
+\paragraph{Corollary 16.7.1} If $\sum_n \int |f_n| d\mu < \infty$, then $\sum_n f_n$ converges absolutely almost everywhere and is integrable, and $\int \sum_n f_n d\mu = \sum_n \int f_n d\mu$.
+\\\\
+\textbf{Proof:} The function $g = \sum_n |f_n|$ is integrable be Theorem 16.6, and is finite almost everywhere by Theorem 15.2.iii. Hence, we can apply Theorem 16.7, the Dominated Convergence Theorem For Series. qed.
+
+\subsubsection{Integration to Continuous Limits} This is a pretty technical section. In place of a sequence $\{f_n\}$ of real measurable functions on $(\Omega,\fcal,\mu)$, consider a family $[f_t: t \geq 0]$ indexed by a continuous parameter $t$. Suppose of a measurable $f$ that:
+$$
+	\lim_{t \to \infty} f_t(\omega) = f(\omega)
+$$
+on a set $A$, where:
+$$
+	A \in \fcal \quad\quad\quad
+	\mu(\Omega - A) = 0
+$$
+A technical point arises here - since $\fcal$ doesn't need to necessarily contain $A$. Consider the following example. Let $\fcal$ consist of the Borel subsets of $\Omega = [0,1)$, and let $H$ be a nonmeasurable set - a subset of $\Omega$ that does not lie in $\fcal$ (such as the Vitali Sets).
 
 \end{document}
 

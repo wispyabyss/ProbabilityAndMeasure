@@ -464,3 +464,8 @@
 \contentsline {paragraph}{Theorem 16.3 - Fatou's Lemma}{373}{section*.465}%
 \contentsline {paragraph}{Example 16.6 - Fatou's Lemma Strict Inequality}{374}{section*.466}%
 \contentsline {paragraph}{Theorem 16.4 - Dominated Convergence Theorem}{374}{section*.467}%
+\contentsline {paragraph}{Theorem 16.5 - Bounded Convergence Theorem}{375}{section*.468}%
+\contentsline {paragraph}{Theorem 16.6 - Monotone Convergence Theorem For Series}{375}{section*.469}%
+\contentsline {paragraph}{Theorem 16.7 - Dominated Convergence Theorem For Series}{375}{section*.470}%
+\contentsline {paragraph}{Corollary 16.7.1}{376}{section*.471}%
+\contentsline {subsubsection}{Integration to Continuous Limits}{376}{section*.472}%
