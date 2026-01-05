@@ -10791,7 +10791,7 @@ Now, assume that $\mu[\omega : f(\omega) > a] > 0$ for all $a$. We need to again
 $$
 	\sum_i \left[\sup_{\omega \in A_i} f(\omega)\right] \mu(A_i) < \infty
 $$
-Then $a_i = \sup_{A_i} f < \infty$ for each $i$ in the set of indices for which $\mu(A_i) > 0$. If $a = \max_i a_i$, then $\mu[f > a] = \sum_I \mu(A_i \cap [f > a]) \leq \sum_I \mu(A_i \cap [f > a_i]) = 0$, because we know that $a_i$ is the supremum of $f$ on $A_i$. 
+Then $a_i = \sup_{A_i} f < \infty$ for each $i$ in the set of indices for which $\mu(A_i) > 0$. If $a = \max_i a_i$, then $\mu[f > a] = \sum_I \mu(A_i \cap [f > a]) \leq \sum_I \mu(A_i \cap [f > a_i]) = \sum_I 0 = 0$, because we know that $a_i$ is the supremum of $f$ on $A_i$ (and while $f(\omega)$ may equal $a_i$, we have $f(\omega) > a_i$ must be false).
 \\\\
 So, we have $\mu[f > a] = 0$. This contradicts $\mu[\omega : f(\omega) > a] > 0$ for all $a$, and so we must have for any partition $A_1, \cdots, A_n$:
 $$
@@ -10931,18 +10931,20 @@ We have thus proven both monotonicity and linearity of $f$ and $g$ integrable. q
 \\\\
 We note that:
 $$
-	\left|\int f d\mu\right| 
+	\left|\int f d\mu\right| =
+	\left|\int f^+ d\mu + \int f^- d\mu\right|
 	\leq
 	\left|\int f^+ d\mu\right| + \left|\int f^- d\mu\right| =
 	\int f^+d\mu + \int f^- d\mu =
 	\int |f| d\mu
 $$
-Where the second equality comes from $f^+$ and $f^-$ both being nonnegative. We also can apply to integrable $f$ and $g$, in which case $f - g$ is integrable and making use of Theorem 16.1 gives us:
+Where the first inequality comes from the triangle theorem, and the second equality comes from $f^+$ and $f^-$ both being nonnegative. We also can apply to integrable $f$ and $g$, in which case $f - g$ is integrable and making use of Theorem 16.1 gives us:
 $$
 	\left|\int f d\mu - \int g d\mu\right| =
 	\left|\int f - g d\mu\right| \leq
 	\int \left|f - g\right| d\mu
 $$
+Not sure why this would be useful.
 
 \paragraph{Example 16.1 - Counting Measure and Comparisons With Series Theory} Suppose that $\Omega$ is countable - $\Omega = \{1, 2, \cdots\}$ to be definite. Let $\fcal$ consist of all subsets of $\Omega$, and $\mu$ is the counting measure - each singleton has measure $1$.
 \\\\
@@ -11037,6 +11039,15 @@ $$
 	\lim_n \int f_n d\mu = \int f d\mu
 $$
 Thus, we have proven the Dominated Convergence Theorem. qed.
+\\\\
+Note - the Dominated Convergence Theorem could be considered just like a corollary to Fatou's lemma. Essentially, if $|f_n| \leq g$ almost everywhere, and $g$ is integrable, then we can conclude:
+$$
+	\int \liminf_n f_n d\mu \leq
+	\liminf_n \int f_n d\mu \leq
+	\limsup_n \int f_n d\mu \leq
+	\int \limsup_n f_n d\mu
+$$
+Note, the left hand side is given to us by Fatou's Lemma, but the right hand side is derived from Fatou's lemma, making use of our dominating $g$ to create the integrable function $g - \limsup_n f_n = \liminf_n g - f_n$ to which we can apply Fatou's lemma.
 
 \paragraph{Theorem 16.5 - Bounded Convergence Theorem} If $\mu(\Omega) < \infty$ and the $f_n$ are uniformly bounded, then $f_n \to f$ almost everywhere implies $\int f_n d\mu \to \int f d\mu$.
 \\\\
@@ -11062,7 +11073,15 @@ $$
 	A \in \fcal \quad\quad\quad
 	\mu(\Omega - A) = 0
 $$
-A technical point arises here - since $\fcal$ doesn't need to necessarily contain $A$. Consider the following example. Let $\fcal$ consist of the Borel subsets of $\Omega = [0,1)$, and let $H$ be a nonmeasurable set - a subset of $\Omega$ that does not lie in $\fcal$ (such as the Vitali Sets).
+A technical point arises here - since $\fcal$ doesn't need to necessarily contain $A$. Consider the following example. Let $\fcal$ consist of the Borel subsets of $\Omega = [0,1)$, and let $H$ be a nonmeasurable set - a subset of $\Omega$ that does not lie in $\fcal$ (such as the Vitali Sets). Define:
+$$
+	f_t(\omega) =
+	\begin{cases}
+	1 & \text{ if $\omega = t - \floor{t}$, the fractional part of $t$, AND $\omega = t - \floor{t} \in H^c$}\\
+	0 & \text{ otherwise}
+	\end{cases}
+$$
+Each $f_t$ is measurable $\fcal$. That is what the book states at least - I think this would rely on the set where $f_t(\omega) = 1$ being measurable, which is a subset of $H^c$. I think it is measurable - there should only be one point $\omega = t - \floor{t} \in [0,1)$ - so $f_t$ is either identically equal to 0, or a one hot function, which is measurable (single points are an infinite intersection of $[\omega,\omega+\epsilon)$). However, if $f = 0$, the set where $\lim_{t \to \infty} f_t(\omega) = f(\omega)$ holds is $H$ exactly - indeed, if $\omega \in H^c$, then the limit does not exist, as there will always be points $t > \infty$ such that $\omega = t - \floor{t}$, and if $\omega \in H$, we have $f_t(\omega) = 0$ for all $t$. 
 
 \end{document}
 
