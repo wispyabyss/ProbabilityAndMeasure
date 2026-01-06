@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  5 JAN 2026 10:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  6 JAN 2026 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5047,17 +5047,37 @@ Overfull \hbox (0.22078pt too wide) detected at line 11083
 \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) = []
  []
 
-[376] [377] (./ProbabilityAndMeasure.aux)
+[376]
+Underfull \hbox (badness 10000) in paragraph at lines 11083--11089
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11083--11089
+
+ []
+
+
+Overfull \hbox (0.75403pt too wide) in paragraph at lines 11094--11095
+\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !; t\OT1/cmr/m/n/12 )$ \T1/
+lmr/m/n/12 has in $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )$ \T1
+/lmr/m/n/12 a deriva-tive $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/1
+2 !; t\OT1/cmr/m/n/12 )$\T1/lmr/m/n/12 ; sup-pose fur-ther that $\OMS/cmsy/m/n/
+12 j\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !; t\OT1/cmr/m/n/12 )
+\OMS/cmsy/m/n/12 j ^^T
+ []
+
+[377] [378] [379] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 8E21B74833E389088EAD7646E8F929A0;51978.
+(rerunfilecheck)             Checksum: 5DFEB0D90892EDB133986C9F21B0448F;52149.
  ) 
 Here is how much of TeX's memory you used:
  10080 strings out of 476191
  157366 string characters out of 5812073
- 509409 words of memory out of 5000000
+ 509587 words of memory out of 5000000
  30664 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (377 pages).
+Output written on ProbabilityAndMeasure.pdf (379 pages).

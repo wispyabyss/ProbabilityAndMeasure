@@ -11082,6 +11082,50 @@ $$
 	\end{cases}
 $$
 Each $f_t$ is measurable $\fcal$. That is what the book states at least - I think this would rely on the set where $f_t(\omega) = 1$ being measurable, which is a subset of $H^c$. I think it is measurable - there should only be one point $\omega = t - \floor{t} \in [0,1)$ - so $f_t$ is either identically equal to 0, or a one hot function, which is measurable (single points are an infinite intersection of $[\omega,\omega+\epsilon)$). However, if $f = 0$, the set where $\lim_{t \to \infty} f_t(\omega) = f(\omega)$ holds is $H$ exactly - indeed, if $\omega \in H^c$, then the limit does not exist, as there will always be points $t > \infty$ such that $\omega = t - \floor{t}$, and if $\omega \in H$, we have $f_t(\omega) = 0$ for all $t$. 
+\\\\
+Because of the above example, we actually need to assume that $A$ is measurable. Now, assume that $f$ and $f_t$ are integrable. If $I_t = \int f_t d\mu$ converges to $I = \int f d\mu$ as $t \to \infty$, we have convergence for $I_{t_n} \to I$ for $t_n \to \infty$ a sequence. If $I_t \not\to I$, this similarly implies there is a sequence $t_n \to \infty$ such that $|I_{t_n} - I| > \epsilon$. The question of whether or not $I_{t_n}$ converges to $I$ can be answered with our previous theorems, which have to do with convergence on sequences.
+\\\\
+Suppose that $|f_t(\omega)| \leq g(\omega)$ holds for $\omega \in A$, where $A \in \fcal$ and $\mu(A^c) = 0$, and $g$ is integrable. Also, suppose that $\lim_{t \to \infty} f_t(\omega) = f(\omega)$ on $A$ as well. We can make use of the Dominated Convergence Theorem to 1. Find that both $f$ and $f_t$ are integrable and 2. $I_{t_n} \to I$ for every sequence $t_n \to \infty$. Note, as this is true for all sequences $t_n$, by definition, $I_t \to I$. Note, this result would follow if $t$ went continuously to $0$ or some other value. Also note, Dominated Convergence Theorem applies as we have $|f_t| \leq g$ almost everywhere.
+
+\paragraph{Theorem 16.8 - Leibnitz's Rule For Lebesgue Integrals} suppose that $f(\omega,t)$ is a measurable and integrable function of $\omega$ for each $t \in (a,b)$. Let $\varphi(t) = \int f(\omega, t) \mu(d\omega)$ (note, the notation here helps specify that we are integrating across $\omega$). 
+\begin{enumerate}
+	\item Suppose that for $\omega \in A$, where $A$ satisfies $A \in \fcal$ and $\mu(\Omega - A) = 0$, $f(\omega, t)$ is continuous in $t$ at $t_0$ - ie, $\lim_{t \to t_0} f(\omega, t) = f(\omega, t_0)$. Suppose further that $|f(\omega, t)| \leq g(\omega)$ for $\omega \in A$ and $|t - t_0| < \delta$, where $\delta$ is independent of $\omega$ and $g$ is integrable. Then $\varphi(t)$ is continuous at $t_0$.
+	
+	\item Suppose that for $\omega \in A$, where $A$ satisfies $A \in \fcal$ and $\mu(\Omega - A) = 0$, $f(\omega, t)$ has in $(a,b)$ a derivative $f'(\omega,t)$; suppose further that $|f'(\omega, t)| \leq g(\omega)$ for $\omega \in A$ and $t \in (a,b)$, where $g$ is integrable. Then $\varphi(t)$ has a derivative on $(a,b)$:
+	$$
+		\varphi'(t) = \int f'(\omega, t) \mu(d\omega)
+	$$
+\end{enumerate}
+\textbf{Proof:}
+\begin{enumerate}
+	\item Note, this follows directly from our previous discussion. We have for each sequence $t_n \to t$, eventually $|f(\omega, t_n)| \leq g(\omega)$ once we have $|t - t_0| < \delta$ for $\omega \in A$, at which point we can switch over to the dominated convergence theorem, as we have $f_{t_n}(\omega) = f(\omega, t_n) \to f(\omega, t_0)$ via continuity. Thus, $I_{t_n} \to I_{t_0}$ for all sequences $t_n \to t_0$, and so:
+	$$
+		\lim_{t_n \to t_0} \varphi(t_n) = \lim_{t_n \to t_0} I_{t_n} = I_{t_0} = \varphi(t_0)
+	$$
+	
+	\item Note, this is essentially the same proof through the Dominated Convergence Theorem. Consider a fixed $t$. If $\omega \in A$, then by the mean value theorem:
+	$$
+		\frac{f(\omega, t + h) - f(\omega, t)}{h} = f'(\omega, s)
+	$$
+	For some $s \in (t, t+h)$. By definition of the derivative, the ratio on the left goes to $f'(\omega, t)$ as $h \to 0$ (note, this can be done through a sequence). By hypothesis, we have that each entry in the sequence is dominated by $g$ on $A$ - ie, $|f'(\omega, s)| \leq g(\omega)$. Therefore, via the dominated convergence theorem:
+	$$
+		\frac{\varphi(t + h) - \varphi(t)}{h} =
+		\int \frac{f(\omega, t + h) - f(\omega, t)}{h} \mu(d\omega) \to
+		\int f'(\omega, t) \mu(d\omega)
+	$$
+	Where the above follows for any sequence of $h \to 0$, and the dominated convergence theorem applies. Thus, we have:
+	$$
+		\varphi'(t) = \int f'(\omega, t) \mu(d\omega)
+	$$
+	For $t \in (a,b)$. Note, the condition involving $g$ can be weakened. It suffices to assume that for each $t$, there is an integrable $g(\omega, t)$ such that $|f'(\omega, s)| \leq g(\omega, t)$ for $\omega \in A$ and $s$ in some neighborhood of $t$ - note, this is essentially what we needed to be able to apply the Dominated Convergence Theorem. qed.
+\end{enumerate}
+
+\subsubsection{Integration Over Sets}
+The integral of $f$ over a set $A$ in $\fcal$ is defined by:
+$$
+	\int_A f d\mu = \int \1{A} f d\mu
+$$
+Note that the integral equals zero if $\mu(A) = 0$. All the concepts and theorems previously stated carry over in an obvious way to integrals over $A$.
 
 \end{document}
 
