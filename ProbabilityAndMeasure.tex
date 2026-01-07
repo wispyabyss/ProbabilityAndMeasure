@@ -11127,6 +11127,39 @@ $$
 $$
 Note that the integral equals zero if $\mu(A) = 0$. All the concepts and theorems previously stated carry over in an obvious way to integrals over $A$.
 
+\paragraph{Theorem 16.9 - Sum Of Integrals Over Sets} If $A_1, A_2, \cdots$ are disjoint, and if $f$ is either nonnegative or integrable, then:
+$$
+	\int_{\bigcup_n A_n} f d\mu =
+	\sum_n \int_{A_n} f d\mu
+$$
+\textbf{Proof:} This follows directly from Theorem 16.6, the series version of monotone convergence, and Theorem 16.7, the series version of dominated convergence (as each $\|\1{A_n}f\| \leq f$, and $f$ is integrable). Just express the union as a summation. qed.
+
+\paragraph{Theorem 16.10 - Integral Values Determine $f$}
+\begin{enumerate}
+	\item If $f$ and $g$ are nonnegative and $\int_A f d\mu = \int_A gd\mu$ for all $A$ in $\fcal$, and if $\mu$ is $\sigma$-finite, then $f = g$ almost everywhere.
+	
+	\item If $f$ and $g$ are integrable and $\int_A f d\mu = \int_A g d\mu$ for all $A$ in $\fcal$, then $f = g$ almost everywhere.
+	
+	\item If $f$ and $g$ are integrable and $\int_A f d\mu = \int_A g d\mu$ for all $A$ in $\pcal$, where $\pcal$ is a $\pi$ system generating $\fcal$ and $\Omega$ is a finite or countable union of $\pcal$ sets, then $f = g$ almost everywhere.
+\end{enumerate} 
+Note, we need different cases, as nonnegative does not necessarily imply integrable. The first case will deal with infinite values.
+
+\textbf{Proof:} \begin{enumerate}
+	\item Suppose that $f$ and $g$ are nonnegative and that $\int_A f d\mu \leq \int_A g d\mu$ for all $A \in \fcal$. If $\mu$ is $\sigma$ finite, we can find $A_n \in \fcal$ such that $A_n \uparrow \Omega$ and $\mu(A_n) < \infty$. Note, take the $B_1, B_1 \cup B_2, B_1 \cup B_2 \cup B_3$ and so on, and note that each union measure is bounded by a finite sum of finite values. Define now:
+	$$
+		B_n = \left[0 \leq g < f, g \leq n\right]
+	$$
+	$B_n \in \fcal$ via $g, f$ measurable. Note, the hypothesis applies to $A_n \cap B_n$, so:
+	$$
+		\int_{A_n \cap B_n} f d\mu \leq \int_{A_n \cap B_n} g d\mu < \infty
+	$$
+	Where the final equality comes from $\mu(A_n \cap B_n) \leq \mu(A_n) < \infty$ and $g \leq n$ on that set, so the integral is less than $\mu(A_n) * n$. Hence, we have that the subtraction is well defined:
+	$$
+		\int_{A_n \cap B_n} f - g d\mu = 0
+	$$
+	Where $= 0$ comes from the initial hypothesis. By Theorem 15.2(ii), if the measure where the function $\1{A_n \cap B_n} f - g$ was greater than 0, the integral would be greater than 0.
+\end{enumerate}
+
 \end{document}
 
 
