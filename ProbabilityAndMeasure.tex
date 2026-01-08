@@ -11143,7 +11143,7 @@ $$
 	\item If $f$ and $g$ are integrable and $\int_A f d\mu = \int_A g d\mu$ for all $A$ in $\pcal$, where $\pcal$ is a $\pi$ system generating $\fcal$ and $\Omega$ is a finite or countable union of $\pcal$ sets, then $f = g$ almost everywhere.
 \end{enumerate} 
 Note, we need different cases, as nonnegative does not necessarily imply integrable. The first case will deal with infinite values.
-
+\\\\
 \textbf{Proof:} \begin{enumerate}
 	\item Suppose that $f$ and $g$ are nonnegative and that $\int_A f d\mu \leq \int_A g d\mu$ for all $A \in \fcal$. If $\mu$ is $\sigma$ finite, we can find $A_n \in \fcal$ such that $A_n \uparrow \Omega$ and $\mu(A_n) < \infty$. Note, take the $B_1, B_1 \cup B_2, B_1 \cup B_2 \cup B_3$ and so on, and note that each union measure is bounded by a finite sum of finite values. Define now:
 	$$
@@ -11157,8 +11157,84 @@ Note, we need different cases, as nonnegative does not necessarily imply integra
 	$$
 		\int_{A_n \cap B_n} f - g d\mu = 0
 	$$
-	Where $= 0$ comes from the initial hypothesis. By Theorem 15.2(ii), if the measure where the function $\1{A_n \cap B_n} f - g$ was greater than 0, the integral would be greater than 0.
+	Where $= 0$ comes from the initial hypothesis. By Theorem 15.2(ii), if the measure where the function $\1{A_n \cap B_n} f - g$ was greater than 0, the integral would be greater than 0. So, we must have:
+	$$
+		\mu(\1{A_n \cap B_n}(f - g) > 0) = 0
+	$$
+	Now, note that:
+	$$
+		A_n \cap B_n \subseteq \left\{\1{A_n \cap B_n}(f - g) > 0\right\}
+	$$
+	As if $\omega \in A_n \cap B_n$, we have $\omega \in B_n \implies g(\omega) < f(\omega) \implies f(\omega) - g(\omega) > 0$, and $\1{A_n \cap B_n}(\omega) = 1$. And so, we can conclude that $\mu(A_n \cap B_n) = 0$ via the monotonicity of the measure $\mu$. As $A_n \cap B_m \uparrow \Omega \cap B_m$, this implies:
+	$$
+		\mu(B_m) = \lim_{n \to \infty} \mu(A_n \cap B_m) = 0
+	$$
+	Note, everything above would have followed for $m \neq n$. Now, note that $B_m \uparrow \{0 \leq g < f, g < \infty\}$, and so:
+	$$
+		\mu\left[0 \leq g < f, g < \infty\right] = 0
+	$$
+	This implies that $f \leq g$ almost everywhere. Indeed, we find:
+	$$
+		\left\{f \leq g\right\}^c = \left\{g < f\right\} =
+		\left\{0 \leq g < f, g < \infty\right\}
+	$$
+	The first equality is clear. As for the second - note first that $0 \leq g$, so we can add it easily. Note second that if $g = \infty$, $g < f$ is not possible, as there is no number on our extended real line that exceeds infinity. So, we can add that extra condition without losing any information. And so, we have $f \leq g$ almost everywhere, and $g \leq f$ almost everywhere symmetrically. The intersection of almost everywhere events is still almost everywhere, and so:
+	$$
+		g = f \text{ almost everywhere}
+	$$
+	
+	\item If $f$ and $g$ are integrable, we have a simpler argument, as we can take the integral subtraction without any added $A_n \cap B_n$ headache. We have $\int_A f d\mu \leq \int_A g d\mu$ for all $A \in F$, and so:
+	$$
+		\int \1{g < f} (f - g) d\mu = 0 \implies \mu(g < f) = 0
+	$$
+	Where the implication comes from the same argument we made for $\mu(A_n \cap B_n) = 0$ above with Theorem 15.2(ii). And so, $g = f$ almost everywhere, as $\mu((g = f)^c) \leq \mu(g < f) + \mu(f < g) = 0$.
+	
+	\item First, assume that $f$ and $g$ are nonnegative. We have that the following are measures on $\fcal$:
+	$$
+		\nu_f(A) = \int_A f d\mu \quad\quad\quad
+		\nu_g(A) = \int_A g d\mu
+	$$
+	Recall, to be a measure, we must have the measure of the emptyset is zero, the value of the measure is nonnegative for all $A \in \fcal$, and countable additivity. As $f$ and $g$ are nonnegative, the integrals and thus measures are always nonnegative; clearly, $\nu_f(\emptyset) = 0 = \nu_g(\emptyset)$ as well. Also just a note, $f$ and $g$ being nonnegative imply that $\1{A}f$ always has an integral value. Finally, note that countable additivity comes from Theorem 16.9. So, we indeed have measures. Our condition implies equality of the measures for all $A \in \pcal$.
+	\\\\
+	Further, we have for all $A \in \fcal$, $\nu_f(A) < \infty, \nu_g(A) < \infty$, as $f$ and $g$ are integrable, and so the corresponding integrals must be finite. So, together with the assumption that $\Omega$ is a finite or countable union of $\pcal$ sets, we can make use of Theorem 10.4 to conclude that:
+	$$
+		\nu_f(A) = \nu_g(A) \text{ for all $A \in \fcal$} \implies
+		\int_A f d\mu = \int_A g d\mu \text{ for all $A \in \fcal$}
+	$$
+	So now, we need to extend to the general $f$ and $g$ integrable. Well, note for $A \in \pcal$, we still have:
+	$$
+		\int_A f d\mu = \int_A g d\mu \implies
+		\int_A f^+ d\mu - \int_A f^- d\mu = \int_A g^+ d\mu - \int_A g^- d\mu
+	$$
+	$$
+		\implies
+		\int_A f^+ + g^- d\mu = \int_A g^+ + f^- d\mu
+	$$
+	Note, as $f^+ + g^-$ and $g^+ + f^-$ are nonnegative, we make use of the same argument to find $f^+ + g^- = g^+ + f^-$ almost everywhere, which implies $f = g$ almost everywhere in the general case. qed.
+	
 \end{enumerate}
+
+\subsubsection{Densities}
+Suppose that $\delta$ is a nonnegative measurable function and defined a measure $\nu$ by:
+$$
+	\nu(A) = \int_A \delta d\mu
+$$
+In the previous Theorem 16.10, we noted that $\nu$ is indeed a measure. You don't even need to assume that $\nu$ is integrable - just nonnegative, in which case the integral can be finite or infinite. Note that $\mu(A) = 0 \implies \nu(A) = 0$ via Theorem 15.2ii. Further, $\nu$ is finite if and only if $\delta$ is integrable $\mu$ - this should be clear as well.
+\\\\
+Another function $\delta'$ gives rise to the same $\nu$ if $\delta = \delta'$ almost everywhere. On the other hand, both having the same $\nu$ imply the functions are equal via Theorem 16.10i.
+\\\\
+The measure $\nu$ defined by above is said to have \textit{density} $\delta$ with respect to $\mu$. Note - this is a good name - as density times volume (given by $A$ here) should give you a mass (given by $\nu(A)$). 
+
+\paragraph{Theorem 16.11 - Integral Across Measures With Density} If $\nu$ has density $\delta$ with respect to $\mu$, then:
+$$
+	\int f d\nu = \int f\delta d\mu
+$$
+Holds for nonnegative $f$. Moreover, $f$ (not necessarily nonnegative) is integrable with respect to $\nu$ if and only if $f\delta$ is integrable with respect to $\mu$, in which case:
+$$
+	\int f d\nu = \int f\delta d\mu \text{ and }
+	\int_A f d\nu = \int_A f\delta d\mu
+$$
+For nonnegative $f$, the above always holds as well.
 
 \end{document}
 

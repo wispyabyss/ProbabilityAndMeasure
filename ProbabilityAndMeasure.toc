@@ -473,3 +473,5 @@
 \contentsline {subsubsection}{Integration Over Sets}{379}{section*.474}%
 \contentsline {paragraph}{Theorem 16.9 - Sum Of Integrals Over Sets}{379}{section*.475}%
 \contentsline {paragraph}{Theorem 16.10 - Integral Values Determine $f$}{379}{section*.476}%
+\contentsline {subsubsection}{Densities}{382}{section*.477}%
+\contentsline {paragraph}{Theorem 16.11 - Integral Across Measures With Density}{382}{section*.478}%
