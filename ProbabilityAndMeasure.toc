@@ -475,3 +475,5 @@
 \contentsline {paragraph}{Theorem 16.10 - Integral Values Determine $f$}{379}{section*.476}%
 \contentsline {subsubsection}{Densities}{382}{section*.477}%
 \contentsline {paragraph}{Theorem 16.11 - Integral Across Measures With Density}{382}{section*.478}%
+\contentsline {paragraph}{Theorem 16.12 - Convergence of Densities Implies Convergence Of Measures}{383}{section*.479}%
+\contentsline {paragraph}{Corollary 16.12 - Infinite Series}{384}{section*.480}%

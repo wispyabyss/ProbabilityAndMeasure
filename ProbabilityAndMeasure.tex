@@ -11235,6 +11235,70 @@ $$
 	\int_A f d\nu = \int_A f\delta d\mu
 $$
 For nonnegative $f$, the above always holds as well.
+\\\\
+\textbf{Proof:} First, take $f = \1{A}$ for $A \in \fcal$. Note that both $\nu$ and $\mu$ are measures on $\fcal$. We have:
+$$
+	\int f d\nu = \nu(A) = \int_A \delta d\mu = \int f\delta d\mu
+$$
+Where the first equality makes use of Theorem 15.1.i. If $f$ is a simple nonnegative function, then equality follows via linearity of the integral. Finally, for $f$ nonnegative, then:
+$$
+	\int f_n d\nu = \int f_n\delta d\mu
+$$
+For $f_n \uparrow f$ simple, which exists by Theorem 13.5. Then, we can pass to the integral via the monotone convergence theorem - Theorem 16.2. So, we have proved the first statement for nonnegative $f$.
+\\\\
+Now, if $f$ is not nonnegative, we can apply the argument to $|f|$, and so if $f$ is integrable with respect to $\nu$, we have:
+$$
+	\int |f| d\nu = \int |f|\delta d\mu = \int |f\delta| d\mu
+$$
+The second equality follows by definition of a density, which must be nonnegative, and so it is clear that $f$ is integrable wrt $\nu$ iff $f\delta$ is integrable wrt $\mu$. And if $f$ is integrable, we have that:
+$$
+	\int f d\nu = \int f^+ d\nu - \int f^- d\nu = 
+	\int (f\delta)^+ d\mu - \int (f\delta)^- d\mu = \int f\delta d\mu
+$$
+Replacing $f$ by $f\1{A}$ gives us the proofs for integrals across subsets. qed.
+
+\paragraph{Theorem 16.12 - Convergence of Densities Implies Convergence Of Measures} Suppose that $\nu_n(A) = \int_A \delta_n d\mu$ and $\nu(A) = \int_A \delta d\mu$ for densities $\delta_n$ and $\delta$. If:
+$$
+	\nu_n(\Omega) = \nu(\Omega) < \infty \text{ for $n = 1, 2, \cdots$}
+$$
+And if $\delta_n \to \delta$ except on a set of $\mu$ measure 0, then:
+$$
+	\sup_{A \in \fcal} |\nu(A) - \nu_n(A)| \leq \int_\Omega |\delta - \delta_n| d\mu \to 0
+$$
+\textbf{Proof:} Earlier, we proved via monotonicity, that $\left|\int f d\mu \right| \leq \int |f| d\mu$. And so, we can immediately conclude our inequality:
+$$
+	\sup_{A \in \fcal} |\nu(A) - \nu_n(A)| =
+	\sup_{A \in \fcal} \left|\int_A \delta - \delta_n d\mu\right| \leq
+	\sup_{A \in \fcal} \int_A |\delta - \delta_n| d\mu \leq
+	\int_\Omega |\delta - \delta_n| d\mu
+$$
+Note, the subtraction is well defined by monotonicity, and $\nu(\Omega) < \infty$. Let $g_n = \delta = \delta_n$. The positive part $g_n^+$ of $g_n$ converges to $0$ except on a set of $\mu$ measure 0. As $\delta$ and $\delta_n$ are nonnegative densities, we also have $0 \leq g_n^+ \leq \delta$ and $\delta$ is integrable across $\mu$ (again, via $\nu(\Omega) < \infty$ and everything is nonnegative), and so the dominated convergence theorem applies:
+$$
+	\int g_n^+ d\mu \to 0
+$$
+Also note that:
+$$
+	\int g_n d\mu = \int \delta - \delta_n d\mu = \nu(\Omega) - \nu_n(\Omega) = 0
+$$
+Therefore, we have:
+$$
+	\int_\Omega |g_n| d\mu =
+	\int_{[g_n \geq 0]} g_n d\mu - \int_{[g_n < 0]} g_n d\mu =
+	2\int_{[g_n \geq 0]} g_n d\mu = 2\int_\Omega g_n^+ d\mu \to 0
+$$
+The second equality coming from the fact that as the complete integral of $g_n$ equals zero, the negative and positive integral portions must be equal. And thus, we have found that:
+$$
+	\int_\Omega |\delta - \delta_n| d\mu = \int_\Omega |g_n| d\mu \to 0
+$$
+Note, we had to go through the above fuss because we were dealing with the absolute value of the difference, not just the difference. The difference equaling zero came directly from our assumptions. qed.
+
+\paragraph{Corollary 16.12 - Infinite Series} If $\sum_m x_{nm} = \sum_m x_m < \infty$, the terms being nonnegative, and if $\lim_n x_{nm} = x_m$ for each $m$, then:
+$$
+	\lim_n \sum_m |x_{nm} - x_m| = 0
+$$
+If $y_m$ is bounded, then $\lim_n \sum_m y_m x_{nm} = \sum_m y_m x_m$.
+\\\\
+Note, this is similar to the Weierstrauss $M$ test. Note that it follows from taking $\mu$ as the counting measure on $\Omega = \{1, 2, \cdots\}$, and using Theorem 16.12.
 
 \end{document}
 
