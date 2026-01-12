@@ -11272,7 +11272,7 @@ $$
 	\sup_{A \in \fcal} \int_A |\delta - \delta_n| d\mu \leq
 	\int_\Omega |\delta - \delta_n| d\mu
 $$
-Note, the subtraction is well defined by monotonicity, and $\nu(\Omega) < \infty$. Let $g_n = \delta = \delta_n$. The positive part $g_n^+$ of $g_n$ converges to $0$ except on a set of $\mu$ measure 0. As $\delta$ and $\delta_n$ are nonnegative densities, we also have $0 \leq g_n^+ \leq \delta$ and $\delta$ is integrable across $\mu$ (again, via $\nu(\Omega) < \infty$ and everything is nonnegative), and so the dominated convergence theorem applies:
+Note, the subtraction is well defined by monotonicity, and $\nu(\Omega) < \infty$. Let $g_n = \delta - \delta_n$. The positive part $g_n^+$ of $g_n$ converges to $0$ except on a set of $\mu$ measure 0. As $\delta$ and $\delta_n$ are nonnegative densities, we also have $0 \leq g_n^+ \leq \delta$ and $\delta$ is integrable across $\mu$ (again, via $\nu(\Omega) < \infty$ and everything is nonnegative), and so the dominated convergence theorem applies:
 $$
 	\int g_n^+ d\mu \to 0
 $$
@@ -11299,6 +11299,73 @@ $$
 If $y_m$ is bounded, then $\lim_n \sum_m y_m x_{nm} = \sum_m y_m x_m$.
 \\\\
 Note, this is similar to the Weierstrauss $M$ test. Note that it follows from taking $\mu$ as the counting measure on $\Omega = \{1, 2, \cdots\}$, and using Theorem 16.12.
+
+\subsubsection{Change of Variable} Let $(\Omega, \fcal)$ and $(\Omega', \fcal')$ be measurable spaces, and suppose that the mapping $T: \Omega \to \Omega'$ is measurable by $\fcal/\fcal'$. For a measure $\mu$ on $\fcal$, define measure $\mu T^{-1}$ on $\fcal'$ by:
+$$
+	\mu T^{-1}(A') = \mu(T^{-1}(A')) \text{ where } A' \in \fcal'
+$$
+Recall, we already discussed this at the enf of section 13. This is a pullback measure, as we pull $A'$ back into $\fcal$ via $T^{-1}$.
+\\\\
+suppose $f$ is a real function on $\Omega'$ that is measurable $\fcal'$, so that the composition $fT$ is a real function on $\Omega$ that is measurable $\fcal$. Composition of measurable functions is measurable, this is a pushforward I believe. 
+
+\paragraph{Theorem 16.13 - Change Of Variables} If $f$ is nonnegative real measurable function on $\Omega'$, then:
+$$
+	\int_\Omega f(T\omega) \mu(d\omega) = \int_{\Omega'} f(\omega') \mu T^{-1}(d\omega')
+$$
+A function $f$ (not necessarily nonnegative) is integrable with respect to $\mu T^{-1}$ if and only if $fT$ is integrable with respect to $\mu$, in which case the above holds, as well as:
+$$
+	\int_{T^{-1}A'} f(T\omega) \mu(d\omega) = \int_{A'} f(\omega') \mu T^{-1}(d\omega')
+$$
+For nonnegative $f$, the above always holds as well.
+\\\\
+Note, this is the same problem as in Theorem 16.13 - it is badly stated. I think we just have both expressions hold for nonnegative $f$, and as well for general $f$ integrable, where we also have the if and only if statement. Note also - the $'$ and $\mu(d\omega)$ help us understand what we are integrating over. On $\fcal'$, we use the pull back measure, along with $f$ as defined, whereas on $\fcal$ we use the original measure, and the pushforward $fT$. Oh, I think the Theorem is stated as is, as we first have to prove the expression for nonnegative $f$, which gives us the iff, which gives us the expression for integrable $f$, along with the integral over subsets expression, which we can then conclude for nonnegative $f$ as well.
+\\\\
+\textbf{Proof:} If $f = \1{A'}$, then $fT = \1{T^{-1}A'}$, and so we have that:
+$$
+	\int_\Omega f(T\omega) \mu(d\omega) =
+	\mu(T^{-1}(A')) =
+	\int_{\Omega'} f(\omega') \mu T^{-1}(d\omega')
+$$
+By linearity, the equation holds for nonnegative simple functions as well. If $f_n$ are simple functions for which $0 \leq f_n \uparrow f$, then $0 \leq f_nT \uparrow fT$ as well. Indeed, for $\omega$, we have:
+$$
+	\lim_n f_nT(\omega) = \lim_n f_n(T\Omega)) = f(T(\Omega)) = fT(\Omega)
+$$
+And so, we have for nonnegative $f$, via the Monotone Convergence Theorem:
+$$
+	\int_\Omega f(T\omega) \mu(d\omega) =
+	\lim_n \int_\Omega f_nT(\omega) \mu(d\omega) =
+	\lim_n \int_{\Omega'} f_n(\omega') \mu T^{-1}(d\omega') =
+	\int_{\Omega'} f(\omega') \mu T^{-1}(d\omega')
+$$
+Now, we just have for any $f$, that:
+$$
+	\int_\Omega |f|(T\omega) \mu(d\omega) = \int_{\Omega'} |f|(\omega') \mu T^{-1}(d\omega')
+$$
+So, it is clear that $|f|T = |fT|$ is integrable with respect to $\mu$ if and only if $|f|$ is integrable with respect to $\mu T^{-1}$. Note, the first expression holds for integrable $f$ if we decompose into $f = f^+ - f^-$, and finally, we get integrals over subsets by replacing $f$ with $f\1{A}$. qed.
+
+\paragraph{Example 16.10} Suppose that $(\Omega', \fcal') = (\R^1, \rcal^1)$ and $T = \varphi$ is an ordinary real function, measurable $\fcal$. If $f(x) = x$, the above becomes:
+$$
+	\int_\Omega \varphi(x) \mu(d\omega) = \int_{\R^1} x\mu\varphi^{-1}(dx)
+$$
+Actually, I think this example isn't great. However, what we can do is note that - we can get the general Change of Variables Theorem from multivariable calculus out of this Theorem. Let our measurable spaces be $(\R^n, \rcal^n)$ and $(\R^n, \rcal^n)$, and let $T^{-1}$ be nonsingular and linear. Let $\mu$ be the Lebesgue measure $\lambda$.  We can just replace $T$ with $T^{-1}$, and so for integrable/nonnegative $f$, Theorem 16.13 gives us for $A \in \rcal^n$:
+$$
+	\int_{T(A)} (f \circ T^{-1}) d\lambda = \int_A f(\omega') d(\lambda \circ T)
+$$
+Now, recall, Theorem 12.2 tells us that:
+$$
+	\lambda \circ T = |\det T|\lambda
+$$
+So, we can conclude (note, this can be done with the similar simple function, nonnegative function, integrable function argument):
+$$
+	\int_{T(A)} (f \circ T^{-1}) d\lambda = \int_A f(\omega') |\det T| d\lambda
+$$
+And we can just replace $f$ with $f \circ T$ to give us:
+$$
+	\int_{T(A)} f d\lambda = \int_A (f \circ T) |\det T| d\lambda
+$$
+Now, the only difference here is that in calculus, we can assume $g$ is 1-1 continuously differentiable, not just linear. I think there is a way to extend the above for such $g$ as well (not just $T$), but I'll leave it there for now.
+
+\subsubsection{Uniform Integrability}
 
 \end{document}
 
