@@ -11366,6 +11366,101 @@ $$
 Now, the only difference here is that in calculus, we can assume $g$ is 1-1 continuously differentiable, not just linear. I think there is a way to extend the above for such $g$ as well (not just $T$), but I'll leave it there for now.
 
 \subsubsection{Uniform Integrability}
+This section essentially introduces another criteria which can be used to find the convergence of integrals. \\\\
+If $f$ is integrable, then $|f|\1{|f| \geq a}$ goes to $0$ almost everywhere as $a \to \infty$. If that was not the case, then there is a set of positive measure where $|f| = \infty$, which would contradict $\int |f| d\mu < \infty$.
+\\\\
+Hence, as $|f|\1{|f| \geq a}$ is dominated by $|f|$, the dominated convergence theorem gives us for integrable $f$:
+$$
+	\lim_{a \to \infty} \int_{[|f| \geq a]} |f| d\mu = 0
+$$
+We can use this notion to define a property of a sequence of functions $f_n$.
+
+\paragraph{Definition - Uniformly Integrable} A sequence $\{f_n\}$ is \textit{uniformly integrable} if:
+$$
+	\lim_{a \to \infty} \sup_n \int_{[|f_n| \geq a]} |f_n| d\mu = 0
+$$
+Assume the property holds for $f_n$, and $\mu(\Omega) < \infty$. If $a$ is large enough such that the supremum is less than $1$, then:
+$$
+	\int |f_n| d\mu = \int_{[|f_n| \geq a]} |f_n| d\mu + \int_{[|f_n| < a]} |f_n| d\mu
+	\leq 1 + \int_{[|f_n| < a]} |f_n| d\mu \leq 1 + a\mu(\Omega)
+$$
+Which implies that the $f_n$ are integrable.
+\\\\
+Now, assume that the $f_n$ are uniformly bounded, ie that $f_n(\omega) \leq K$ for each $n, \omega$. In this case, it is clear that uniform integrability always holds, as we just need $a \geq K$. In this case, the $f_n$ don't even need to be integrable, which can happen if $\mu(\Omega) = \infty$.
+\\\\
+If $h$ is the maximum of $|f|$ and $|g|$, then:
+$$
+	\int_{|f + g| \geq 2a} |f + g| d\mu \leq 2\int_{h \geq a} h d\mu =
+	2\int_{|f| \geq a, |g| \geq a} h d\mu + 2\int_{|f| \geq a, |g| < a} h d\mu +
+	2\int_{|f| < a, |g| \geq a} h d\mu
+$$
+$$
+	=
+	2\int_{|f| \geq a, |g| \geq a} h d\mu + 2\int_{|f| \geq a, |g| < a} f d\mu +
+	2\int_{|f| < a, |g| \geq a} g d\mu
+$$
+$$
+	=
+	2\int_{|f| \geq a, |g| \geq a, |f| \geq |g|} |f| d\mu + 
+	2\int_{|f| \geq a, |g| \geq a, |f| < |g|} |g| d\mu +
+	2\int_{|f| \geq a, |g| < a} f d\mu +
+	2\int_{|f| < a, |g| \geq a} g d\mu
+$$
+$$
+	= 
+	2\int_{|f| \geq a, |f| \geq |g|} |f| d\mu +
+	2\int_{|g| \geq a, |f| \leq |g|} |g| d\mu
+$$
+$$
+	\leq
+	2\int_{|f| \geq a} |f| d\mu +
+	2\int_{|g| \geq a} |g| d\mu	
+$$
+The first inequality holds as $2h \geq f + g$, and if $f + g \geq 2a$ then $2h \geq f + g \geq 2a \implies h \geq a$. So, the domain in the right integral is larger, and the function $2h \geq |f| + |g| \geq |f + g|$ is larger as well. The remaining equalities/inequalities are self-explanatory.
+\\\\
+This implies that if $\{f_n\}$ and $\{g_n\}$ are uniformly integrable, so is $\{f_n + g_n\}$. This is because:
+$$
+	\lim_{2a \to \infty} \sup_n \int_{[|f_n + g_n| \geq 2a]} |f_n + g_n| d\mu \leq
+	\lim_{2a \to \infty} \sup_n 
+	2\int_{|f_n| \geq a} |f_n| d\mu +
+	2\int_{|g_n| \geq a} |g_n| d\mu	= 0
+$$
+Where the right side goes to zero via uniform integrability of $f_n$ and $g_n$.
+
+\paragraph{Theorem 16.14 - Uniform Integrability Convergence} Suppose that $\mu(\Omega) < \infty$ and $f_n \to f$ almost everywhere.
+\begin{enumerate}
+	\item If the $f_n$ are uniformly integrable, then $f$ is integrable and:
+	$$
+		\int f_n d\mu \to \int f d\mu
+	$$
+	
+	\item If $f$ and the $f_n$ are nonnegative and integrable, then:
+	$$
+		\int f_n d\mu \to \int f d\mu
+	$$
+	Implies that the $f_n$ are uniformly integrable.
+\end{enumerate}
+\textbf{Proof} We first prove that if the $f_n$ are uniformly integrable, then $f$ is integrable. We want to show:
+$$
+	\int |f| d\mu < \infty
+$$
+We have via our starting notes that give $\mu(\Omega) < \infty$, for some $a$ finite and large enough:
+$$
+	\int |f_n| d\mu \leq a\mu(\Omega) + 1 < \infty
+$$
+As $f_n \to f$ almost everywhere, we have $|f_n| \to |f|$ almost everywhere, ie on a set $A$ where $\mu(A^c) = 0$, and so:
+$$
+	\int |f| d\mu = \int_A |f| d\mu + \int_{A^c} |f| d\mu =
+	\int_A \liminf |f_n| d\mu + \int_{A^c} |f| d\mu
+$$
+Where the second equality just comes from the limit. Now, via Fatou's Lemma, we have:
+$$
+	\leq 
+	\liminf_{n \to \infty} \int_A |f_n| d\mu + \int_{A^c} |f| d\mu \leq
+	a\mu(\Omega) + 1 + \int_{A^c} |f| d\mu =
+	a\mu(\Omega) + 1 < \infty
+$$
+Where we note that $f \1{A^c} = 0$ almost everywhere. And so, with uniform integrability of $f_n$, $\mu(\Omega) < \infty$, $f_n \to f$ almost everywhere, and Fatou's Lemma, we can conclude that $f$ is integrable.
 
 \end{document}
 

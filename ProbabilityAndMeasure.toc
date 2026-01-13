@@ -481,3 +481,5 @@
 \contentsline {paragraph}{Theorem 16.13 - Change Of Variables}{385}{section*.482}%
 \contentsline {paragraph}{Example 16.10}{386}{section*.483}%
 \contentsline {subsubsection}{Uniform Integrability}{386}{section*.484}%
+\contentsline {paragraph}{Definition - Uniformly Integrable}{387}{section*.485}%
+\contentsline {paragraph}{Theorem 16.14 - Uniform Integrability Convergence}{388}{section*.486}%
