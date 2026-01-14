@@ -11460,7 +11460,84 @@ $$
 	a\mu(\Omega) + 1 + \int_{A^c} |f| d\mu =
 	a\mu(\Omega) + 1 < \infty
 $$
-Where we note that $f \1{A^c} = 0$ almost everywhere. And so, with uniform integrability of $f_n$, $\mu(\Omega) < \infty$, $f_n \to f$ almost everywhere, and Fatou's Lemma, we can conclude that $f$ is integrable.
+Where we note that $f \1{A^c} = 0$ almost everywhere. And so, with uniform integrability of $f_n$, $\mu(\Omega) < \infty$, $f_n \to f$ almost everywhere, and Fatou's Lemma, we can conclude that $f$ is integrable. Define:
+$$
+	f_n^{(a)} = 
+	\begin{cases}
+	f_n & \text{ if $|f_n| < a$}\\
+	0 & \text{ if $|f_n| \geq a$}
+	\end{cases}
+	\quad\quad\quad
+	f^{(a)} = 
+	\begin{cases}
+	f & \text{ if $|f| < a$}\\
+	0 & \text{ if $|f| \geq a$}
+	\end{cases}
+$$
+If $\mu[|f| = a] = 0$, then $f_n^{(a)} \to f^{(a)}$ almost everywhere - we need the condition, because at $|f| = a$, for the $\omega$ that satisfy the condition, $|f_n^{(a)}|(\omega)$ could be bouncing from $0$ to the $|f_n|(\omega) \to |f|(\omega) \neq 0$ value. But, if this is the case, we can make use of the Bounded Convergence Theorem to find:
+$$
+	\int f_n^{(a)} d\mu \to \int f^{(a)} d\mu
+$$
+Since:
+$$
+	\int f_n d\mu - \int f_n^{(a)} d\mu =
+	\int_{|f_n| \geq a} f_n d\mu
+$$
+Which can be found by using indicator definitions for $f_n^{(a)}$, and similarly:
+$$
+	\int f d\mu - \int f^{(a)} d\mu =
+	\int_{|f| \geq a} f d\mu
+$$
+It follows from the above equations that:
+$$
+	\limsup_n \left|\int f_n d\mu - \int f d\mu\right| \leq
+	\sup_n \int_{|f_n| \geq a} |f_n| d\mu + \int_{|f| \geq a} |f| d\mu
+$$
+As for why that is:
+$$
+	\limsup_n \left|\int f_n d\mu - \int f d\mu\right| =
+	\limsup_n \left|\int f_n d\mu - \int f_n^{(a)} d\mu + \int f^{(a)} d\mu - \int f d\mu\right|
+$$
+Where the middle portion goes to zero, as the limit between the two values exists. This becomes via our above equalities:
+$$
+	=
+	\limsup_n \left|\int_{|f_n| \geq a} f_n d\mu - \int_{|f| \geq a} f d\mu\right| \leq
+	\sup_n \left|\int_{|f_n| \geq a} f_n d\mu - \int_{|f| \geq a} f d\mu\right|
+$$
+Where the above comes from the supremum always being greater than the lim sup. Continuing with the triangle inequality and our note at the start of the chapter:
+$$
+	\leq \sup_n \left|\int_{|f_n| \geq a} f_n d\mu\right| + \left|\int_{|f| \geq a} f d\mu\right| \leq
+	\sup_n \int_{|f_n| \geq a} |f_n| d\mu + \int_{|f| \geq a} |f| d\mu
+$$
+Now, we just take $a \to \infty$ on the RHS. Note, as $f$ is measurable, there are only countably many points where $\mu[|f| = a] \neq 0$ - if there were more than countably many, we would contradict Theorem 10.2.iv. We take a sequence $a_n \to \infty$ that avoids these points, which allows us to conclude:
+$$
+	\limsup_n \left|\int f_n d\mu - \int f d\mu\right| \leq \lim_{a_n}\sup_n \int_{|f_n| \geq a_n} |f_n| d\mu + \int_{|f| \geq a_n} |f| d\mu
+$$
+$$
+	\leq \lim_{a_n} 0 + \int_{|f| \geq a_n} |f| d\mu
+$$
+Where the 0 comes from uniform integrability. As for the remaining portion, $a_n$ being integrable implies that the right integral goes to 0 as well, and so:
+$$
+	\limsup_n \left|\int f_n d\mu - \int f d\mu\right| = 0
+	\implies
+	\lim_n \left|\int f_n d\mu - \int f d\mu\right| = 0
+$$
+$$
+	\implies \int f_n d\mu \to \int f d\mu
+$$
+Now, suppose that the limit holds, where $f_n$ and $f$ are nonnegative and integrable. We want to show that $f_n$ is uniformly integrable. If $\mu[|f| = a] = 0$ holds, like before, we can find:
+$$
+	\int f_n^{(a)} d\mu \to \int f^{(a)} d\mu
+$$
+And from our subtractions, and $\int f_n d\mu \to \int f d\mu$ as well, we can find:
+$$
+	\int_{f_n \geq a} f_n d\mu \to \int_{f \geq a} f d\mu
+$$
+Absolute values in the domains removed by non-negativity. As $f$ is integrable, there is, for given $\epsilon$, an $a$ such that the right hand side above is less than $\epsilon$ and $\mu[f = a] = 0$. But then, the integral on the left is similarly less than $\epsilon$ for all $n$ exceeding some $n_0$. Thus:
+$$
+	\sup_{n \geq n_0} \int_{f_n \geq a} f_n d\mu < \epsilon
+$$
+For $n_0$ corresponding to our $a$. 
 
 \end{document}
 
