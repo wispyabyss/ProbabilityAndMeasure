@@ -11537,7 +11537,57 @@ Absolute values in the domains removed by non-negativity. As $f$ is integrable, 
 $$
 	\sup_{n \geq n_0} \int_{f_n \geq a} f_n d\mu < \epsilon
 $$
-For $n_0$ corresponding to our $a$. 
+For $n_0$ corresponding to our $a$. Now, if we let $a$ be large enough, for the first $n_0 - 1$ functions, they can be found to be less than $\epsilon$ as well, given integrability implies there is always some $a_1, \cdots, a_{n_0-1}$ for each of the first $n_0 - 1$ functions for which the integrals are less than $\epsilon$. So, for $\epsilon$ chosen, and corresponding $a$, and then corresponding $n_0$, and then $a = \max(a, a_1, \cdots, a_{n_0 - 1})$, we have:
+$$
+	\sup_n \int_{f_n \geq a} f_n d\mu < \epsilon
+$$
+And this implies:
+$$
+	\lim_{a \to \infty} \sup_n \int_{f_n \geq a} f_n d\mu = 0
+$$
+For nonnegative $f_n$, this is the uniform integrable condition. qed.
+
+\paragraph{Corollary to Uniform Integrability Convergence} Suppose that $\mu(\Omega) < \infty$. If $f$ and the $f_n$ are integrable, and if $f_n \to f$ almost everywhere, then these conditions are equivalent:
+\begin{enumerate}
+	\item $f_n$ are uniformly integrable
+	\item $\int |f - f_n| d\mu \to 0$
+	\item $\int |f_n| d\mu \to \int |f| d\mu$
+\end{enumerate}
+\textbf{Proof:} Assume that 1. holds. Then, the differences $|f - f_n|$ are uniformly integrable as well. Make use of our previous note - if $f_n$ and $g_n$ are uniformly integrable, so is $\{f_n + g_n\}$. Let $g_n = -f$, and note integrability of $-f$ clearly implies uniform integrability of $g_n$. So, $f_n - f$ are uniformly integrable. Note that the absolute value $|f_n - f|$ is uniformly integrable as well - this is because we already take the absolute value in the definition of uniformly integrable. And so, $|f - f_n| = |f_n - f|$ is uniformly integrable.
+\\\\
+Now, note that $|f - f_n| \to 0$ almost everywhere via $f_n \to f$ almost everywhere. Thus, Theorem 16.14 implies that $\int |f - f_n| d\mu \to 0$.
+\\\\
+Now, note that (2) implies (3), because $||f| - |f_n|| \leq |f - f_n|$. This follows, because the triangle inequality implies $|a| \leq |a - b| + |b| \implies |a| - |b| \leq |a - b|$, and with symmetry, this implies:
+$$
+	-|a - b| \leq |a| - |b| \leq |a - b| \implies
+	||a| - |b|| \leq |a - b|
+$$
+And so, monotonicity of the integral implies:
+$$
+	\left|\int |f| - |f_n| d\mu\right| \leq 
+	\int ||f| - |f_n|| d\mu \leq \int |f - f_n| \to 0
+	\implies
+	\lim_n \left|\int |f| - |f_n| d\mu\right| = 0
+$$
+$$
+	\implies \int |f_n| d\mu \to \int |f| d\mu
+$$
+Now, note that (3) implies (1), as Theorem 16.14 part 2 with (3) directly implies the $|f_n|$ are uniformly integrable. Note, this implies $f_n$ are uniformly integrable as well, from what we noted above. qed.
+
+\subsubsection{Complex Functions}
+A complex-valued function on $\Omega$ has the form $f(\omega) = g(\omega) + ih(\omega)$, where $g$ and $h$ are ordinary finite valued real functions on $\Omega$. We defined it as measurable $f$ if both $h$ and $g$ are. I guess, essentially, we have the borel sets on $\R^2$ - $\rcal^2$ - generated from the rectangles. I don't think if $A \in \rcal^2$, we have the projection $\pi_i(A)$ is a borel set in $\rcal$.
+\\\\
+If $g$ and $h$ are integrable, then $f$ is by definition integrable, and its integral is taken as:
+$$
+	\int (g + ih) d\mu = \int g d\mu + i \int h d\mu
+$$
+Now, we note that:
+$$
+	\max\{|g|, |h|\} \leq |f| \leq |g| + |h|
+$$
+Both come from $|f| = \sqrt{|g^2| + |h|^2}$. We have $|g|^2 + |h|^2 \leq (|g| + |h|)^2$, which is clear, and so the second inequality comes through. For the first one, note that the square of the max is $\max\{|g|^2, |h|^2\}$, which is less than $|g|^2 + |h|^2 = |g^2| + |h^2| = g^2 + h^2$. So, $f$ is integrable if and only if $\int |f| d\mu < \infty$, just as in the real case.
+\\\\
+Note that pretty much all of our theorems on real integral linearity and limits extend to the complex case as well. 
 
 \end{document}
 

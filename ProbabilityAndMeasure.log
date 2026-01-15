@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  14 JAN 2026 10:25
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  15 JAN 2026 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,17 +416,17 @@ OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U
 []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--155
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--155
-
- []
-
 [10]
+Underfull \hbox (badness 10000) in paragraph at lines 149--155
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--155
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 156--161
 
  []
@@ -456,17 +456,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 225--229
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--249
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 243--249
-
- []
-
 [14]
+Underfull \hbox (badness 10000) in paragraph at lines 243--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--249
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 265--268
 
  []
@@ -485,12 +485,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 287--290
 
  []
 
-
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 292--296
 
  []
 
-[16]
+
 Overfull \hbox (34.20651pt too wide) in paragraph at lines 308--310
 \T1/lmr/m/n/12 Note that $\OML/cmm/m/it/12 I[]$ \T1/lmr/m/n/12 cov-ers $[]$. Ta
 ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
@@ -526,12 +526,12 @@ Overfull \hbox (22.48218pt too wide) detected at line 352
 \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
  []
 
-
+[19]
 Overfull \hbox (53.37004pt too wide) detected at line 355
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 364--368
 
  []
@@ -577,13 +577,13 @@ Overfull \hbox (33.5807pt too wide) detected at line 465
 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] []
  []
 
-
+[24]
 Overfull \hbox (67.60648pt too wide) detected at line 485
 [] [][] [] [] \OML/cmm/m/it/12 d! \OT1/cmr/m/n/12 = [][] [] [] \OML/cmm/m/it/12
  d! \OT1/cmr/m/n/12 = [][] [] [] \OML/cmm/m/it/12 d!
  []
 
-[24] [25]
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 528--533
 
  []
@@ -5185,17 +5185,52 @@ Overfull \hbox (13.78694pt too wide) detected at line 11500
 [] [] \OT1/cmr/m/n/12 = [] []
  []
 
-[389] [390] (./ProbabilityAndMeasure.aux)
+[389] [390]
+Overfull \hbox (4.33774pt too wide) in paragraph at lines 11550--11552
+ []\T1/lmr/bx/n/12 Corollary to Uni-form In-te-gra-bil-ity Con-ver-gence[] \T1/
+lmr/m/n/12 Sup-pose that $\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (
+) \OML/cmm/m/it/12 <
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11556--11561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11556--11561
+
+ []
+
+
+Overfull \hbox (25.95882pt too wide) detected at line 11571
+[] \OMS/cmsy/m/n/12 ^^T [] jj\OML/cmm/m/it/12 f\OMS/cmsy/m/n/12 j ^^@ j\OML/cmm
+/m/it/12 f[]\OMS/cmsy/m/n/12 jj\OML/cmm/m/it/12 d^^V \OMS/cmsy/m/n/12 ^^T [] j\
+OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 f[]\OMS/cmsy/m/n/12 j !
+ \OT1/cmr/m/n/12 0  =[]\OMS/cmsy/m/n/12 )  [] [] \OT1/cmr/m/n/12 = 0
+ []
+
+[391]
+Underfull \hbox (badness 10000) in paragraph at lines 11578--11581
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11587--11591
+
+ []
+
+[392] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 123FB1B489BACBDAC9A78A94BCB2BDE2;52578.
+(rerunfilecheck)             Checksum: E78D8589E1C4430A91D02E0F3B2231E4;52726.
  ) 
 Here is how much of TeX's memory you used:
  10080 strings out of 476191
  157366 string characters out of 5812073
- 510037 words of memory out of 5000000
+ 510192 words of memory out of 5000000
  30664 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (390 pages).
+Output written on ProbabilityAndMeasure.pdf (392 pages).
