@@ -9545,13 +9545,13 @@ We follow the hint. Define:
 $$
 	B_n^{(k)} = \left\{\omega \in A : |f(\omega) - f_i(\omega)| > k^{-1} \text{ for some $i \geq n$}\right\}
 $$
-I think, we should first note that $B_n^{(k)}$ is within $\fcal$. $f - f_i$ is a measurable function via subtraction, and an absolute value is just a maximum of $g$ and $-g$, both of which are measurable. So, $B_n^{(k)}$ is a countable union of inverse images of $\rcal$ sets $(k^{-1},\infty)$ on measurable functions, and so indeed $B_n^{(k)} \in \fcal$.
+I think, we should first note that $B_n^{(k)}$ is within $\fcal$. $f - f_i$ is a measurable function via subtraction, and an absolute value is just a maximum of $g$ and $-g$, both of which are measurable. So, $B_n^{(k)}$ is a countable union (for each $f_i$) of inverse images of $\rcal$ sets $(k^{-1},\infty)$ on measurable functions, and so indeed $B_n^{(k)} \in \fcal$.
 \\\\
 Now, note that $B_n^{(k)} \downarrow \emptyset$ as $n \to \infty$. Clearly, $B_n^{(k)} \supseteq B_{n+1}^{(k)}$, as $B_n^{(k)}$ contains an additional function $f_n$ for which the condition on $\omega$ can apply. Further, we have:
 $$
-	\bigcup_{n=1}^\infty B_n^{(k)} = \emptyset
+	\bigcap_{n=1}^\infty B_n^{(k)} = \emptyset
 $$
-As if the union contained an $\omega$, we would have an $\omega \in A$ such that $f_n(\omega) \not\to f(\omega)$ in a pointwise limit, which would be a contradiction. Finally, as $\mu(A) < \infty$, we have that $\mu(B_n^{(k)}) < \infty$, and so we can apply continuity from above to find an $n_k$ for each $k$ such that:
+As if the intersection contained an $\omega$, we would have an $\omega \in A$ such that $f_n(\omega) \not\to f(\omega)$ in a pointwise limit, which would be a contradiction. Finally, as $\mu(A) < \infty$, we have that $\mu(B_n^{(k)}) < \infty$, and so we can apply continuity from above to find an $n_k$ for each $k$ such that:
 $$
 	\mu(B_{n^k}^{(k)}) < \frac{\epsilon}{2^k}
 $$
@@ -11588,6 +11588,78 @@ $$
 Both come from $|f| = \sqrt{|g^2| + |h|^2}$. We have $|g|^2 + |h|^2 \leq (|g| + |h|)^2$, which is clear, and so the second inequality comes through. For the first one, note that the square of the max is $\max\{|g|^2, |h|^2\}$, which is less than $|g|^2 + |h|^2 = |g^2| + |h^2| = g^2 + h^2$. So, $f$ is integrable if and only if $\int |f| d\mu < \infty$, just as in the real case.
 \\\\
 Note that pretty much all of our theorems on real integral linearity and limits extend to the complex case as well. 
+
+\subsection{Problems}
+\subsubsection{16.1 Alternate Bounded Convergence Theorem Proof} Note, this problem says to make use of problem 13.9, in which we proved Egoroff's Theorem: Suppose that $f_n$ and $f$ are finite valued, $\fcal$ measurable functions such that $f_n(\omega) \to f(\omega)$ for $\omega \in A$, where $\mu(A) < \infty$ and $\mu$ is a measure on $\sigma$ field $\fcal$. For each $\epsilon > 0$, there exists a subset $B$ of $A$ such that $\mu(B) < \epsilon$, and $f_n(\omega) \to f(\omega)$ uniformly on $A - B$.
+\\\\
+Now, for the problem. Suppose that $\mu(\Omega) < \infty$ and the $f_n$ are uniformly bounded.
+\begin{enumerate}
+	\item Assume $f_n \to f$ uniformly and deduce $\int f_n d\mu \to \int f d\mu$ from what we proved earlier, that for integrable $f$ and $g$:
+	$$
+		\left|\int f d\mu - \int g d\mu\right| \leq \int |f - g| d\mu
+	$$
+	Recall, $f_n$ uniformly bounded means that $|f_n(\omega)| \leq K$ for all $\omega, n$. 
+	\\\\
+	Can't we just apply the bounded convergence theorem to automatically prove this? I think maybe we want to prove convergence without the theorem. Note, the next part of the problem wants us to use this part to give another proof for the bounded convergence theorem, so yes, we need to go ahead without it.
+	\\\\
+	It is clear that uniformly bounded and $\mu(\Omega) < \infty$ implies that $f_n$ are integrable. Can we also conclude that $f$ is integrable? Yes. For $\epsilon > 0$, there is an $n$ such that $|f_n(\omega) - f(\omega)| < \epsilon$ for all $\omega$, via uniform convergence. And so, $|f(\omega)| < K + 2\epsilon$, which implies that $\int |f| d\mu < \mu(\Omega)(K + 2\epsilon) < \infty$, so we have integrability. Thus, we can find:
+	$$
+		\left|\int f_n d\mu - \int f d\mu\right| \leq \int |f_n - f| d\mu
+	$$
+	For each $\epsilon$, there is an $N$ large enough such that the difference $|f_N - f| < \epsilon$. So, for $N$ large enough, for all $n \geq N$, we have via monotonicity of the integral:
+	$$
+		\int |f_n - f| d\mu < \epsilon \mu(\Omega)
+	$$
+	As $\epsilon$ can be arbitrarily small, we must have that:
+	$$
+		\lim_{n \to \infty} \int |f_n -f| d\mu = 0 \implies
+		\int f_n d\mu \to \int f d\mu
+	$$
+	
+	\item Use part 1 and Egoroff's theorem to give another proof of Theorem 16.5.
+	\\\\
+	So, we just assume that $\mu(\Omega) < \infty$, the $f_n$ are uniformly bounded, and $f_n \to f$ almost everywhere. By Egoroff's Theorem, for $\epsilon > 0$, there is a $B \subseteq \Omega$ such that $\mu(B) < \epsilon$, for which $f_n \to f$ uniformly on $\Omega - B$ (union $B$ with the measure 0 set on which $f_n \not \to f$). Thus, we have:
+	$$
+		\int_{\Omega - B} f_n d\mu \to \int_{\Omega - B} f d\mu
+	$$
+	Now, examine:
+	$$
+		\int_\Omega f_n d\mu =
+		\int_{\Omega - B_n} f_n d\mu + \int_{B_n} f_n d\mu
+	$$
+	Where $\mu(B_n) < 1/n$. We have that:
+	$$
+		\int_{B_n} f_n d\mu \leq 2K\mu(B_n)
+	$$
+	Where $K$ is the uniform bound. This clearly goes to zero. So, we have:
+	$$
+		\lim_n \int_\Omega f_n d\mu =
+		\lim_n \int_{\Omega - B_n} f_n d\mu + \int_{B_n} f_n d\mu \leq
+		\lim_n \int_{\Omega - B_n} f_n d\mu + \lim_n 2k\mu(B_n)
+	$$
+	$$
+		= \lim_n \int_{\Omega - B_n} f_n d\mu = \int_\Omega f d\mu
+	$$
+	And so we have the bounded convergence theorem. qed.
+\end{enumerate}
+
+\subsubsection{16.2 - Alternate Fatou's Lemma} Prove that if $0 \leq f_n \to f$ almost everywhere and $\int f_n d\mu \leq A < \infty$, then $f$ is integrable and $\int f d\mu \leq A$.
+\\\\
+Note, the book says this is essentially the same as Fatou's Lemma, which was just a consequence of monotone convergence theorem. We can use Fatou's Lemma fo prove it. We have that $\lim_n f_n = f$, which implies $\liminf_n f_n = f$ (almost everywhere). And so:
+$$
+	\int f = \int \liminf_n f_n
+$$
+As to functions that are equal almost everywhere have the same integral. By Fatou's lemma, as the $f_n$ are nonnegative:
+$$
+	\leq \liminf \int f_n \leq \liminf A = A
+$$
+
+\subsubsection{16.3 Beppo Levi's Theorem} Suppose that $f_n$ are integrable and $\sup_n \int f_n d\mu < \infty$. Show that, if $f_n \uparrow f$, then $f$ is integrable and $\int f_n d\mu \to \int f d\mu$.
+\\\\
+Note that $0 \leq f_n - f_1 \uparrow f_n - f_1$. Note, non-negativity comes from the $f_n$ getting larger. Thus, we have via Monotone convergence theorem:
+$$
+	\int f_n - f_1 d\mu \uparrow \int f - f_1 d\mu
+$$
 
 \end{document}
 

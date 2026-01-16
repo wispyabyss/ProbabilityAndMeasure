@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  15 JAN 2026 10:26
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  16 JAN 2026 10:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -389,12 +389,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--78
 
  []
 
+[8]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 91.
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 103--109
 
  []
@@ -466,12 +467,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 243--249
 
  []
 
-
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 265--268
 
  []
 
-[15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 287.
@@ -5220,17 +5220,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 11587--11591
 
  []
 
-[392] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 11593--11597
+
+ []
+
+[392]
+Underfull \hbox (badness 10000) in paragraph at lines 11600--11606
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11600--11606
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11619--11622
+
+ []
+
+[393]
+Overfull \hbox (7.93011pt too wide) detected at line 11639
+[] [][] \OML/cmm/m/it/12 f[]d^^V \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 f[]
+d^^V \OT1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 f[]d^^V \OMS/cmsy/m/n/12 ^^T [] []
+[] \OML/cmm/m/it/12 f[]d^^V \OT1/cmr/m/n/12 + [] 2\OML/cmm/m/it/12 k^^V\OT1/cmr
+/m/n/12 (\OML/cmm/m/it/12 B[]\OT1/cmr/m/n/12 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11646--11649
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11657--11660
+
+ []
+
+[394] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: E78D8589E1C4430A91D02E0F3B2231E4;52726.
+(rerunfilecheck)             Checksum: 9826870C5960C5C4B928335A51942C4D;53557.
  ) 
 Here is how much of TeX's memory you used:
- 10080 strings out of 476191
- 157366 string characters out of 5812073
- 510192 words of memory out of 5000000
- 30664 multiletter control sequences out of 15000+600000
+ 10081 strings out of 476191
+ 157380 string characters out of 5812073
+ 511054 words of memory out of 5000000
+ 30665 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (392 pages).
+Output written on ProbabilityAndMeasure.pdf (394 pages).
