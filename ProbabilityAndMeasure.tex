@@ -11089,7 +11089,7 @@ Suppose that $|f_t(\omega)| \leq g(\omega)$ holds for $\omega \in A$, where $A \
 
 \paragraph{Theorem 16.8 - Leibnitz's Rule For Lebesgue Integrals} suppose that $f(\omega,t)$ is a measurable and integrable function of $\omega$ for each $t \in (a,b)$. Let $\varphi(t) = \int f(\omega, t) \mu(d\omega)$ (note, the notation here helps specify that we are integrating across $\omega$). 
 \begin{enumerate}
-	\item Suppose that for $\omega \in A$, where $A$ satisfies $A \in \fcal$ and $\mu(\Omega - A) = 0$, $f(\omega, t)$ is continuous in $t$ at $t_0$ - ie, $\lim_{t \to t_0} f(\omega, t) = f(\omega, t_0)$. Suppose further that $|f(\omega, t)| \leq g(\omega)$ for $\omega \in A$ and $|t - t_0| < \delta$, where $\delta$ is independent of $\omega$ and $g$ is integrable. Then $\varphi(t)$ is continuous at $t_0$.
+	\item Suppose that for $\omega \in A$, where $A$ satisfies $A \in \fcal$ and $\mu(\Omega - A) = 0$, $f(\omega, t)$ is continuous in $t$ at $t_0 \in (a,b)$ - ie, $\lim_{t \to t_0} f(\omega, t) = f(\omega, t_0)$. Suppose further that $|f(\omega, t)| \leq g(\omega)$ for $\omega \in A$ and $|t - t_0| < \delta$, where $\delta$ is independent of $\omega$ and $g$ is integrable. Then $\varphi(t)$ is continuous at $t_0$.
 	
 	\item Suppose that for $\omega \in A$, where $A$ satisfies $A \in \fcal$ and $\mu(\Omega - A) = 0$, $f(\omega, t)$ has in $(a,b)$ a derivative $f'(\omega,t)$; suppose further that $|f'(\omega, t)| \leq g(\omega)$ for $\omega \in A$ and $t \in (a,b)$, where $g$ is integrable. Then $\varphi(t)$ has a derivative on $(a,b)$:
 	$$
@@ -11098,7 +11098,7 @@ Suppose that $|f_t(\omega)| \leq g(\omega)$ holds for $\omega \in A$, where $A \
 \end{enumerate}
 \textbf{Proof:}
 \begin{enumerate}
-	\item Note, this follows directly from our previous discussion. We have for each sequence $t_n \to t$, eventually $|f(\omega, t_n)| \leq g(\omega)$ once we have $|t - t_0| < \delta$ for $\omega \in A$, at which point we can switch over to the dominated convergence theorem, as we have $f_{t_n}(\omega) = f(\omega, t_n) \to f(\omega, t_0)$ via continuity. Thus, $I_{t_n} \to I_{t_0}$ for all sequences $t_n \to t_0$, and so:
+	\item Note, this follows directly from our previous discussion. We have for each sequence $t_n \to t$, eventually $|f(\omega, t_n)| \leq g(\omega)$ once we have $|t - t_0| < \delta$ for $\omega \in A$, at which point we can switch over to the dominated convergence theorem, as we have $f_{t_n}(\omega) = f(\omega, t_n) \to f(\omega, t_0)$ via continuity (note, the domination of $g$ and convergence all occur on the same almost everywhere set $A$). Thus, $I_{t_n} \to I_{t_0}$ for all sequences $t_n \to t_0$, and so:
 	$$
 		\lim_{t_n \to t_0} \varphi(t_n) = \lim_{t_n \to t_0} I_{t_n} = I_{t_0} = \varphi(t_0)
 	$$
@@ -11219,9 +11219,9 @@ Suppose that $\delta$ is a nonnegative measurable function and defined a measure
 $$
 	\nu(A) = \int_A \delta d\mu
 $$
-In the previous Theorem 16.10, we noted that $\nu$ is indeed a measure. You don't even need to assume that $\nu$ is integrable - just nonnegative, in which case the integral can be finite or infinite. Note that $\mu(A) = 0 \implies \nu(A) = 0$ via Theorem 15.2ii. Further, $\nu$ is finite if and only if $\delta$ is integrable $\mu$ - this should be clear as well.
+In the previous Theorem 16.10.3, we noted that $\nu$ is indeed a measure. You don't even need to assume that $\nu$ is integrable - just nonnegative, in which case the integral can be finite or infinite. Note that $\mu(A) = 0 \implies \nu(A) = 0$ via Theorem 15.2ii. Further, $\nu$ is finite if and only if $\delta$ is integrable $\mu$ - this should be clear as well.
 \\\\
-Another function $\delta'$ gives rise to the same $\nu$ if $\delta = \delta'$ almost everywhere. On the other hand, both having the same $\nu$ imply the functions are equal via Theorem 16.10i.
+Another function $\delta'$ gives rise to the same $\nu$ if $\delta = \delta'$ almost everywhere. On the other hand, both having the same $\nu$ imply the functions are equal via Theorem 16.10.1 (the first assumption of densities is that $\delta$ are nonnegative).
 \\\\
 The measure $\nu$ defined by above is said to have \textit{density} $\delta$ with respect to $\mu$. Note - this is a good name - as density times volume (given by $A$ here) should give you a mass (given by $\nu(A)$). 
 
@@ -11240,7 +11240,7 @@ For nonnegative $f$, the above always holds as well.
 $$
 	\int f d\nu = \nu(A) = \int_A \delta d\mu = \int f\delta d\mu
 $$
-Where the first equality makes use of Theorem 15.1.i. If $f$ is a simple nonnegative function, then equality follows via linearity of the integral. Finally, for $f$ nonnegative, then:
+Where the first equality makes use of Theorem 15.1.1 and the remaining inequalities are definitions. If $f$ is a simple nonnegative function, then equality follows via linearity of the integral. Finally, for $f$ nonnegative, then:
 $$
 	\int f_n d\nu = \int f_n\delta d\mu
 $$
@@ -11304,9 +11304,9 @@ Note, this is similar to the Weierstrauss $M$ test. Note that it follows from ta
 $$
 	\mu T^{-1}(A') = \mu(T^{-1}(A')) \text{ where } A' \in \fcal'
 $$
-Recall, we already discussed this at the enf of section 13. This is a pullback measure, as we pull $A'$ back into $\fcal$ via $T^{-1}$.
+Recall, we already discussed this at the end of section 13. This is a pullback measure, as we pull $A'$ back into $\fcal$ via $T^{-1}$.
 \\\\
-suppose $f$ is a real function on $\Omega'$ that is measurable $\fcal'$, so that the composition $fT$ is a real function on $\Omega$ that is measurable $\fcal$. Composition of measurable functions is measurable, this is a pushforward I believe. 
+Suppose $f$ is a real function on $\Omega'$ that is measurable $\fcal'$, so that the composition $fT$ is a real function on $\Omega$ that is measurable $\fcal$. Composition of measurable functions is measurable, this is a pushforward I believe. 
 
 \paragraph{Theorem 16.13 - Change Of Variables} If $f$ is nonnegative real measurable function on $\Omega'$, then:
 $$
@@ -11656,7 +11656,7 @@ $$
 
 \subsubsection{16.3 Beppo Levi's Theorem} Suppose that $f_n$ are integrable and $\sup_n \int f_n d\mu < \infty$. Show that, if $f_n \uparrow f$, then $f$ is integrable and $\int f_n d\mu \to \int f d\mu$.
 \\\\
-Note that $0 \leq f_n - f_1 \uparrow f_n - f_1$. Note, non-negativity comes from the $f_n$ getting larger. Thus, we have via Monotone convergence theorem:
+Note that we can't make automatic use of Monotone Convergence Theorem because the $f_n$ are not nonnegative. Note that $0 \leq f_n - f_1 \uparrow f - f_1$. Note, non-negativity comes from the $f_n$ getting larger. Thus, we have via Monotone convergence theorem:
 $$
 	\int f_n - f_1 d\mu \uparrow \int f - f_1 d\mu
 $$

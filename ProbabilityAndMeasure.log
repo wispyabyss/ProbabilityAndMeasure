@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2025.9.7)  16 JAN 2026 10:28
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  3 FEB 2026 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5057,7 +5057,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11083--11089
 
  []
 
-
+[377]
 Overfull \hbox (0.75403pt too wide) in paragraph at lines 11094--11095
 \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !; t\OT1/cmr/m/n/12 )$ \T1/
 lmr/m/n/12 has in $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )$ \T1
@@ -5067,7 +5067,7 @@ lmr/m/n/12 has in $\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 )$ \T1
 \OMS/cmsy/m/n/12 j ^^T
  []
 
-[377] [378]
+[378]
 Underfull \hbox (badness 10000) in paragraph at lines 11145--11148
 
  []
@@ -5092,32 +5092,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 11236--11240
 
  []
 
-
+[382]
 Underfull \hbox (badness 10000) in paragraph at lines 11246--11250
 
  []
 
-[382] [383]
+[383]
 Underfull \hbox (badness 10000) in paragraph at lines 11298--11302
 
  []
 
-
+[384]
 Underfull \hbox (badness 10000) in paragraph at lines 11306--11310
 
  []
 
-[384]
-Underfull \hbox (badness 10000) in paragraph at lines 11318--11324
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 11318--11324
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 11318--11324
+
+ []
+
+[385]
 Overfull \hbox (53.51624pt too wide) detected at line 11339
 [][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 T!\OT1/cmr/m/n/12 )\OM
 L/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d!\OT1/cmr/m/n/12 ) = [] [][
@@ -5129,17 +5129,17 @@ L/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d!\OT1/cmr/m/n/12 ) = [] [][
 /cmm/m/it/12 ^^VT[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d![]\OT1/cmr/m/n/12 )
  []
 
-[385]
-Underfull \hbox (badness 10000) in paragraph at lines 11369--11373
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11369--11373
-
- []
-
 [386]
+Underfull \hbox (badness 10000) in paragraph at lines 11369--11373
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11369--11373
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 11386--11392
 
  []
@@ -5158,7 +5158,7 @@ OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 d^^V \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 2 [
 /it/12 hd^^V
  []
 
-
+[387]
 Overfull \hbox (39.19644pt too wide) detected at line 11408
 \OT1/cmr/m/n/12 = 2 [][] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f\OMS/cmsy/m/n/12 j
 \OML/cmm/m/it/12 d^^V \OT1/cmr/m/n/12 + 2 [][] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/
@@ -5171,7 +5171,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11418--11422
 
  []
 
-[387]
+
 Overfull \hbox (8.96599pt too wide) detected at line 11427
 [] [] [][] \OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 f[] \OT1/cmr/m/n/12 + \OML/cmm/m/
 it/12 g[]\OMS/cmsy/m/n/12 j\OML/cmm/m/it/12 d^^V \OMS/cmsy/m/n/12 ^^T [] [] \OT
@@ -5202,7 +5202,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 11556--11561
 
  []
 
-
+[391]
 Overfull \hbox (25.95882pt too wide) detected at line 11571
 [] \OMS/cmsy/m/n/12 ^^T [] jj\OML/cmm/m/it/12 f\OMS/cmsy/m/n/12 j ^^@ j\OML/cmm
 /m/it/12 f[]\OMS/cmsy/m/n/12 jj\OML/cmm/m/it/12 d^^V \OMS/cmsy/m/n/12 ^^T [] j\
@@ -5210,7 +5210,7 @@ OML/cmm/m/it/12 f \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 f[]\OMS/cmsy/m/n/12 j !
  \OT1/cmr/m/n/12 0  =[]\OMS/cmsy/m/n/12 )  [] [] \OT1/cmr/m/n/12 = 0
  []
 
-[391]
+
 Underfull \hbox (badness 10000) in paragraph at lines 11578--11581
 
  []
@@ -5220,27 +5220,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 11587--11591
 
  []
 
-
+[392]
 Underfull \hbox (badness 10000) in paragraph at lines 11593--11597
 
  []
 
-[392]
-Underfull \hbox (badness 10000) in paragraph at lines 11600--11606
-
- []
-
 
 Underfull \hbox (badness 10000) in paragraph at lines 11600--11606
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 11619--11622
+Underfull \hbox (badness 10000) in paragraph at lines 11600--11606
 
  []
 
 [393]
+Underfull \hbox (badness 10000) in paragraph at lines 11619--11622
+
+ []
+
+
 Overfull \hbox (7.93011pt too wide) detected at line 11639
 [] [][] \OML/cmm/m/it/12 f[]d^^V \OT1/cmr/m/n/12 = [] [][] \OML/cmm/m/it/12 f[]
 d^^V \OT1/cmr/m/n/12 + [][] \OML/cmm/m/it/12 f[]d^^V \OMS/cmsy/m/n/12 ^^T [] []
@@ -5253,22 +5253,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 11646--11649
 
  []
 
-
+[394]
 Underfull \hbox (badness 10000) in paragraph at lines 11657--11660
 
  []
 
-[394] (./ProbabilityAndMeasure.aux)
+[395] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 9826870C5960C5C4B928335A51942C4D;53557.
  ) 
 Here is how much of TeX's memory you used:
  10081 strings out of 476191
- 157380 string characters out of 5812073
- 511054 words of memory out of 5000000
+ 157380 string characters out of 5812072
+ 511055 words of memory out of 5000000
  30665 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (394 pages).
+Output written on ProbabilityAndMeasure.pdf (395 pages).
