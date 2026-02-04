@@ -11660,6 +11660,60 @@ Note that we can't make automatic use of Monotone Convergence Theorem because th
 $$
 	\int f_n - f_1 d\mu \uparrow \int f - f_1 d\mu
 $$
+If we find that $f$ is integrable, then we should be able to make use of addition/subtraction to find the limit. 
+\\\\
+As $f_n \uparrow f$, we have $f_n \to f$ everywhere. As the limit exists, we have that:
+$$
+	\liminf_n f_n = \lim_n f_n = f
+$$
+And so, we can make use of Fatou's lemma, as well as our supremum bound, to find:
+$$
+	\int f d\mu = \int \lim_n f_n d\mu = \int \liminf_n f_n d\mu \leq
+	\liminf_n \int f_n d\mu \leq \limsup_n \int f_n d\mu \leq \sup_n \int f_n d\mu < \infty
+$$
+However, this doesn't prove that $f$ is integrable. I think, we can instead show that $f - f_1$ is integrable. As $f - f_1 \geq 0$, we just need to show it has a finite integral, which would imply integrable, as $|f - f_1| = f - f_1$. We note:
+$$
+	\int f - f_1 d\mu = \lim_n \int f_n - f_1 d\mu =
+	\lim_n \int f_n d\mu - \int f_1 d\mu \leq
+	- \int f_1 d\mu + \sup_n \int f_n d\mu < \infty
+$$
+Where we have the supremum is finite via our assumption, and $-\int f_1 d\mu < \infty$ by integrable, and we can split the subtraction in the limit by Theorem 16.1. As $f - f_1$ is integrable, Theorem 16.1 tells us that $f - f_1 + f_1 = f$ is integrable as well, and we can again make use of Theorem 16.1 to find:
+$$
+	\lim_n \int f_n d\mu =
+	\lim_n \int f_n - f_1 + f_1 d\mu =
+	\int f_1 d\mu + \lim_n \int f_n - f_1 d\mu =
+	\int f_1 d\mu + \int f - f_1 d\mu 
+$$
+$$
+	= \int f - f_1 + f_1 d\mu = \int f d\mu
+$$
+So, we have proven Beppo Levi's Theorem. qed.
+
+\subsubsection{16.8} Show that if $f$ is integrable, then for each $\epsilon$ there is a $\delta$ such that $\mu(A) < \delta$ implies:
+$$
+	\int_A |f| d\mu < \epsilon
+$$
+As $f$ is integrable, we have that $\int |f| d\mu < \infty$. Take $\epsilon > 0$. Note, we can't necessarily assume that $f$ is bounded (think of going to infinity slowly on the unit interval). I think, we have that this is true vacuously? If $\delta = 0$, we have:
+$$
+	\int_A |f| d\mu = 0 < \epsilon
+$$
+I think, we need to assume that $\delta > 0$ as well. Let $f_n = |f|\1{|f| \leq n}$. As $f_n \uparrow |f|$, by monotone convergence, we have:
+$$
+	\lim_n \int f_n d\mu \uparrow \int f d\mu
+$$
+As both sides are integrable, we have this implies:
+$$
+	\lim_n \int_{|f| > n} |f| d\mu = \lim_n \int f - f_n d\mu = 0
+$$
+So, there is some $n$ large enough such that:
+$$
+	\int_{|f| > n} f d\mu < \epsilon/2
+$$
+Now, note that for any measurable $A$, we have:
+$$
+	\int_A |f| d\mu = \int_{A \cap \{|f| \leq n\}} |f| d\mu + \int_{A \cap \{|f| > n\}} |f| d\mu
+$$
+With the right $\delta$ such that $\mu(A) < \delta$, we can bound the RHS.
 
 \end{document}
 
