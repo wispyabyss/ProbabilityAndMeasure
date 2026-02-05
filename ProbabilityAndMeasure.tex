@@ -11689,7 +11689,7 @@ $$
 $$
 So, we have proven Beppo Levi's Theorem. qed.
 
-\subsubsection{16.8} Show that if $f$ is integrable, then for each $\epsilon$ there is a $\delta$ such that $\mu(A) < \delta$ implies:
+\subsubsection{16.8 Integrable Functions Bounded Integral On Small Enough Set} Show that if $f$ is integrable, then for each $\epsilon$ there is a $\delta$ such that $\mu(A) < \delta$ implies:
 $$
 	\int_A |f| d\mu < \epsilon
 $$
@@ -11699,21 +11699,101 @@ $$
 $$
 I think, we need to assume that $\delta > 0$ as well. Let $f_n = |f|\1{|f| \leq n}$. As $f_n \uparrow |f|$, by monotone convergence, we have:
 $$
-	\lim_n \int f_n d\mu \uparrow \int f d\mu
+	\lim_n \int f_n d\mu \uparrow \int |f| d\mu
 $$
-As both sides are integrable, we have this implies:
+As both sides are integrable (and finite), we have this implies:
 $$
-	\lim_n \int_{|f| > n} |f| d\mu = \lim_n \int f - f_n d\mu = 0
+	\lim_n \int_{|f| > n} |f| d\mu = \lim_n \int |f| - f_n d\mu = 0
 $$
 So, there is some $n$ large enough such that:
 $$
-	\int_{|f| > n} f d\mu < \epsilon/2
+	\int_{|f| > n} |f| d\mu < \epsilon/2
 $$
 Now, note that for any measurable $A$, we have:
 $$
 	\int_A |f| d\mu = \int_{A \cap \{|f| \leq n\}} |f| d\mu + \int_{A \cap \{|f| > n\}} |f| d\mu
 $$
-With the right $\delta$ such that $\mu(A) < \delta$, we can bound the RHS.
+Note, the RHS is bounded by:
+$$
+	\leq \int_A n d\mu + \int_{\{|f| > n\}} |f| d\mu \leq \mu(A)n + \epsilon/2
+$$
+So, if $\delta = \epsilon/2n$ (note, $n$ depends on $\epsilon$, but that is fine) and $\mu(A) < \delta$, we have:
+$$
+	\int_A |f| d\mu \leq \epsilon/2 + \epsilon/2 = \epsilon
+$$
+And so we have proved the theorem. qed.
+
+
+\subsubsection{16.9} Suppose that $\mu(\Omega) < \infty$. Show that $\{f_n\}$ is uniformly integrable if and only if the following two conditions apply:
+\begin{enumerate}
+	\item $\int |f_n| d\mu$ is bounded by some $M$ for each $n$
+	\item For each $\epsilon$ there is a $\delta$ such that $\mu(A) < \delta$ implies $\int_A |f_n| d\mu < \epsilon$ for all $n$.
+\end{enumerate}
+$\Rightarrow$ First, we assume that $\{f_n\}$ are uniformly integrable. Note, in the chapter, we found that $\mu(\Omega) < \infty$ together with uniform integrability implies that $f_n$ are integrable. Hence, we do have:
+$$
+	\int |f_n| d\mu \leq \infty
+$$
+Note, I think maybe it wants a bound for all $n$. Well, this also comes from the chapter - if $\alpha$ is large enough such that the supremum:
+$$
+	\sup_n \int_{|f_n| \geq \alpha} |f_n| d\mu < 1
+$$
+Note, such an $\alpha$ exists, as uniform integrability implies that the limit is 0 - we have that for all $n$:
+$$
+	\int |f_n| d\mu =
+	\int_{|f_n| \geq \alpha} |f_n| d\mu +
+	\int_{|f_n| < \alpha} |f_n| d\mu \leq
+	1 + \int \alpha d\mu = 1 + \alpha \mu(\Omega)
+$$
+Now, for the second point. By the previous problem, as each $n$ is integrable, the for $\epsilon$, there is a $\delta_n$ such that $\mu(A) < \delta_n$ implies:
+$$
+	\int_A |f_n| d\mu < \epsilon
+$$
+However, we need an argument for each $n$. Well, we do have:
+$$
+	\int_A |f_n| d\mu =
+	\int_{A \cap |f_n| \geq \alpha} |f_n| d\mu +
+	\int_{A \cap |f_n| < \alpha} |f_n| d\mu \leq
+	\int_{|f_n| \geq \alpha} |f_n| d\mu + \alpha\mu(A)
+$$
+This is true for all $n$. So, choose our $\epsilon > 0$. Now, choose $\alpha$ large enough such that for all $n$:
+$$
+	\int_{|f_n| \geq \alpha} |f_n| d\mu \leq \frac{\epsilon}{2}
+$$
+Now, choose $\delta = \frac{\epsilon}{2\alpha}$, and we have for $\mu(A) < \delta$:
+$$
+	\int_A |f_n| d\mu \leq
+	\int_{|f_n| \geq \alpha} |f_n| d\mu + \alpha\mu(A) \leq
+	\frac{\epsilon}{2} + \alpha \frac{\epsilon}{2\alpha} = \epsilon
+$$
+And os we have proven the first direction.
+\\\\
+$\Leftarrow$ We assume the two conditions hold, and we want to prove that $\{f_n\}$ are uniformly integrable. Note, for $\epsilon > 0$, there is a $\delta$ such that $\mu(A) < \delta$ implies:
+$$
+	\sup_n \int_A |f_n| d\mu < \epsilon
+$$
+As if it is true for all $n$, it is true for the supremum by (2). Now, as each $\int |f_n| d\mu < M$, there is an $\alpha$ large enough such that:
+$$
+	\alpha^{-1} \int |f_n| d\mu < \delta
+$$
+This is by (1). Then, we have:
+$$
+	\mu\left[|f_n| \geq \alpha\right] = \int \1{|f_n| \geq \alpha} d\mu =
+	\alpha^{-1} \int \alpha \1{|f_n| \geq \alpha} d\mu
+$$
+$$
+	\leq \alpha^{-1} \int |f_n|\1{|f_n| \geq \alpha} d\mu
+	\leq \alpha^{-1} \int |f_n| d\mu < \delta
+$$
+Note, the first equality makes use of Theorem 15.1, and then the following are just standard from moving scalars through a nonnegative function. Thus, we have $\mu\left[|f_n| \geq \alpha\right] < \delta$, and we can make use of our first fact that for each $n$:
+$$
+	\int_{|f_n| \geq \alpha} |f_n| d\mu \leq \epsilon
+$$
+This directly implies uniform integrability - namely, there is an $\alpha$ large enough such that:
+$$
+	\sup_n \int_{|f_n| \geq \alpha} |f_n| d\mu \leq \epsilon \implies
+	\lim_{\alpha \to \infty} \sup_n \int_{|f_n| \geq \alpha} |f_n| d\mu = 0
+$$
+Thus, we have proven that for $\mu(\Omega) < \infty$, the two conditions taken together are equivalent to uniform integrability. qed.
 
 \end{document}
 

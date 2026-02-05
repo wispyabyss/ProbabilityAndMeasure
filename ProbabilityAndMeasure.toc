@@ -1,4 +1,4 @@
-\contentsline {section}{Forward}{7}{section*.2}%
+\contentsline {section}{Forward}{8}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{8}{section*.3}%
 \contentsline {subsection}{Notes}{8}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{8}{section*.5}%
@@ -489,4 +489,5 @@
 \contentsline {subsubsection}{16.1 Alternate Bounded Convergence Theorem Proof}{393}{section*.490}%
 \contentsline {subsubsection}{16.2 - Alternate Fatou's Lemma}{394}{section*.491}%
 \contentsline {subsubsection}{16.3 Beppo Levi's Theorem}{395}{section*.492}%
-\contentsline {subsubsection}{16.8}{396}{section*.493}%
+\contentsline {subsubsection}{16.8 Integrable Functions Bounded Integral On Small Enough Set}{396}{section*.493}%
+\contentsline {subsubsection}{16.9}{397}{section*.494}%

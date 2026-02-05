@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  4 FEB 2026 12:10
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  5 FEB 2026 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5290,17 +5290,22 @@ mm/m/it/12 f[] \OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 f[]d^^V \OT1/cmr/m/n/12 =
 /n/12 ^^@ \OML/cmm/m/it/12 f[]d^^V
  []
 
-[395] [396] (./ProbabilityAndMeasure.aux)
+[395] [396] [397]
+Underfull \hbox (badness 10000) in paragraph at lines 11767--11771
+
+ []
+
+[398] [399] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 417E9AFB10CF796DF20F026E45EB546B;53637.
+(rerunfilecheck)             Checksum: D72A16C808AD22C6A4D84FACB54BE8A8;54031.
  ) 
 Here is how much of TeX's memory you used:
  10081 strings out of 476191
  157380 string characters out of 5812072
- 511142 words of memory out of 5000000
+ 511543 words of memory out of 5000000
  30665 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (396 pages).
+Output written on ProbabilityAndMeasure.pdf (399 pages).
