@@ -11724,7 +11724,7 @@ $$
 And so we have proved the theorem. qed.
 
 
-\subsubsection{16.9} Suppose that $\mu(\Omega) < \infty$. Show that $\{f_n\}$ is uniformly integrable if and only if the following two conditions apply:
+\subsubsection{16.9 Uniform Integrability Equivalent Condition} Suppose that $\mu(\Omega) < \infty$. Show that $\{f_n\}$ is uniformly integrable if and only if the following two conditions apply:
 \begin{enumerate}
 	\item $\int |f_n| d\mu$ is bounded by some $M$ for each $n$
 	\item For each $\epsilon$ there is a $\delta$ such that $\mu(A) < \delta$ implies $\int_A |f_n| d\mu < \epsilon$ for all $n$.
@@ -11794,6 +11794,87 @@ $$
 	\lim_{\alpha \to \infty} \sup_n \int_{|f_n| \geq \alpha} |f_n| d\mu = 0
 $$
 Thus, we have proven that for $\mu(\Omega) < \infty$, the two conditions taken together are equivalent to uniform integrability. qed.
+
+\subsubsection{16.10 Uniform Integrability Equivalent Condition Properties} Assume $\mu(\Omega)$
+\begin{enumerate}
+	\item Show by examples that neither of the conditions (1) and (2) in the preceding problem implies the other.
+	\\\\
+	Define $f_n: (0,1] \to \R$ as:
+	$$
+		f_n = \1{(0,1/n)}n
+	$$
+	We have that:
+	$$
+		\int f_n d\lambda = \lambda(0,1/n)n = 1 
+	$$
+	And so the $f_n$ are all bounded. Now, I will show that $f_n$ as defined do not satisfy property 2. Take $0 < \epsilon < 1$ and assume there is a $\delta$ such that $\mu(A) < \delta$ implies:
+	$$
+		\int_A |f_n| d\mu < \epsilon \text{ for all $n$}
+	$$
+	We will provide a contradiction to this argument. Indeed, take $1/n < \delta$, we have $\mu(0,1/n) = 1/n < \delta$. Now, we note:
+	$$
+		\int_{(0,1/n)} f_n d\lambda = \int \1{(0,1/n)}^2n d\lambda = 1 > \epsilon
+	$$
+	So, we have our contradiction, and for the given example, (1) does not imply (2).
+	\\\\
+	Now, we go the other direction. Define $f_n: \R \to \R$:
+	$$
+		f_n = \1{(0,n)}
+	$$
+	Take $\epsilon > 0$. Let $\delta = \epsilon$, and assume that $\mu(A) < \delta = \epsilon$. We have:
+	$$
+		\int_A f_n d\lambda = \int_A \1{(0,n)} d\lambda \leq
+		\int_A 1 d\lambda = \mu(A) = \epsilon
+	$$
+	So, the $f_n$ as defined do satisfy (2). However, we find that:
+	$$
+		\int f_n d\lambda = n
+	$$
+	And so the integrals of $f_n$ are not bounded. Thus, for this example, (2) does not imply (1).
+	\\\\
+	Note, in the above second example, I let $\mu(\Omega) = \infty$, but we need to assume $\mu(\Omega) < \infty$. Considering the second problem, we also need $\mu$ to be nonatomic. If we did the counting measure on $\{1, 2, \cdots\}$, we would still have $\mu(\Omega) = \infty$. I guess we could give weights to each entry - say $2^{-n}$, and so $\mu(\Omega) = 1$... but I'm not sure we could have a non bounded $f_n$? maybe, we can define:
+	$$
+		f_n(\omega) = \1{\omega = n} n2^n
+	$$
+	So then, we should have:
+	$$
+		\int f_n d\mu = \int \1{\omega = n} n2^n d\mu = \mu(\omega = n) n 2^n = n
+	$$
+	Which is not bounded. I think this is approaching what we need, but not quite right.
+	\\\\
+	Instead, define $f_1(\omega) = \1{\omega = 1} \cdot \infty$, and $f_n(\omega) = \1{\omega = n}$ otherwise. The $f_n$ are not bounded via $f_1$ - but if you have $\epsilon > 0$, set $\delta = \min(1/2, \epsilon)$, which should exclude the point mass at $1$, and otherwise $\int f_n d\mu = 2^{-n} < \epsilon$.
+	
+	\item Show that (ii) implies (i) for all sequences $\{f_n\}$ if and only if $\mu$ is nonatomic.
+	\\\\
+	First - I need to think - does this not contradict my example above? I defined $f_n$ for the Lebesgue measure on $\R$, which should be nonatomic. Oh - I let $\mu(\Omega) = \infty$, which is incorrect.
+	\\\\
+	For the rest, just look at the solutions.
+\end{enumerate}
+
+\subsubsection{16.12 Daniell-Stone Representation Theorem} Note - I am just going to follow with the solutions for this problem. That is because I don't really want to do it, but I do think it is a pretty important theorem to understand, at least.
+\\\\
+Consider the vector lattice $\lcal$ and the functional $\Lambda$ of problems 11.4 and 11.5. $\lcal$ is thus a vector space of finite real valued functions $f: \Omega \to \R$, with $f(\omega) < \infty$, and the functions are closed under addition, scalar multiplication. Also, as $\lcal$ is a lattice, it is closed under join and meet, essentially maximum and minimum:
+$$
+	f \vee g: \Omega \to \R \quad\quad
+	(f \vee g)(\omega) = \max(f(\omega), g(\omega)) \quad\quad
+	f \vee g \in \lcal
+$$
+$$
+	f \wedge g: \Omega \to \R \quad\quad
+	(f \wedge g)(\omega) = \min(f(\omega), g(\omega)) \quad\quad
+	f \wedge g \in \lcal
+$$
+And $\Lambda$ is a real linear functional, which is a map from a vector space $V$ to its field, which is also linear. So, $\Lambda: \lcal \to \R$, and:
+$$
+	\Lambda(af + bg) = a\Lambda(f) + b\Lambda(g)
+$$
+We further assumed of $\Lambda$ that it is positive in the sense that $f \geq 0$ (pointwise) implies $\Lambda(f) \geq 0$ and continuous from above at $0$ in the sense that $f_n \downarrow 0$ (pointwise) implies $\Lambda(f_n) \to 0$.
+\\\\
+For $\lcal$ and $\Lambda$ as defined, we were able to show a couple of properties in problems 11.4 and 11.5. We will need to use those properties in the following problem.
+
+\begin{enumerate}
+	\item Consider
+\end{enumerate}
 
 \end{document}
 

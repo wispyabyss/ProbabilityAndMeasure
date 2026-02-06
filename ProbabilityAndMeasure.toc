@@ -490,4 +490,6 @@
 \contentsline {subsubsection}{16.2 - Alternate Fatou's Lemma}{394}{section*.491}%
 \contentsline {subsubsection}{16.3 Beppo Levi's Theorem}{395}{section*.492}%
 \contentsline {subsubsection}{16.8 Integrable Functions Bounded Integral On Small Enough Set}{396}{section*.493}%
-\contentsline {subsubsection}{16.9}{397}{section*.494}%
+\contentsline {subsubsection}{16.9 Uniform Integrability Equivalent Condition}{397}{section*.494}%
+\contentsline {subsubsection}{16.10 Uniform Integrability Equivalent Condition Properties}{399}{section*.495}%
+\contentsline {subsubsection}{16.12 Daniell-Stone Representation Theorem}{400}{section*.496}%
