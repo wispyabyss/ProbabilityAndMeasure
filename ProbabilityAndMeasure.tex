@@ -11852,8 +11852,8 @@ Thus, we have proven that for $\mu(\Omega) < \infty$, the two conditions taken t
 \end{enumerate}
 
 \subsubsection{16.12 Daniell-Stone Representation Theorem} Note - I am just going to follow with the solutions for this problem. That is because I don't really want to do it, but I do think it is a pretty important theorem to understand, at least.
-\\\\
-Consider the vector lattice $\lcal$ and the functional $\Lambda$ of problems 11.4 and 11.5. $\lcal$ is thus a vector space of finite real valued functions $f: \Omega \to \R$, with $f(\omega) < \infty$, and the functions are closed under addition, scalar multiplication. Also, as $\lcal$ is a lattice, it is closed under join and meet, essentially maximum and minimum:
+
+\paragraph{Review} Consider the vector lattice $\lcal$ and the functional $\Lambda$ of problems 11.4 and 11.5. $\lcal$ is thus a vector space of finite real valued functions $f: \Omega \to \R$, with $f(\omega) < \infty$, and the functions are closed under addition, scalar multiplication. Also, as $\lcal$ is a lattice, it is closed under join and meet, essentially maximum and minimum:
 $$
 	f \vee g: \Omega \to \R \quad\quad
 	(f \vee g)(\omega) = \max(f(\omega), g(\omega)) \quad\quad
@@ -11870,10 +11870,67 @@ $$
 $$
 We further assumed of $\Lambda$ that it is positive in the sense that $f \geq 0$ (pointwise) implies $\Lambda(f) \geq 0$ and continuous from above at $0$ in the sense that $f_n \downarrow 0$ (pointwise) implies $\Lambda(f_n) \to 0$.
 \\\\
-For $\lcal$ and $\Lambda$ as defined, we were able to show a couple of properties in problems 11.4 and 11.5. We will need to use those properties in the following problem.
+For $\lcal$ and $\Lambda$ as defined, we were able to show a couple of properties in problems 11.4 and 11.5. I will list those properties here:
+\begin{enumerate}
+	\item For $f \leq g$ (with $f,g \in \lcal$), we defined an "interval" in $\Omega \times \R^1$ as:
+	$$
+		(f,g] \left\{(\omega, t) : f(\omega) < t \leq g(\omega)\right\}
+	$$
+	We found that these sets formed a semi ring $\acal_0$, with:
+	$$
+		(f_1,g_1] \cap (f_2,g_2] = (f_1 \vee f_2, g_1 \wedge g_2]
+	$$
+	$$
+		(f_2,g_2] - (f_1,g_1] = (f_2, g_2 \wedge f_1] \cup (f_2 \vee g_1, g_2]
+	$$
+	
+	\item For a set function $\nu_0$ on $\acal_0$ defined as:
+	$$
+		\nu_0(f,g] = \Lambda(g - f)
+	$$
+	We found that $\nu_0$ was finitely additive, and countably subadditive. Via Theorem 11.3, this enabled us to extend $\nu_0$ to a measure on $\sigma(\acal_0)$.
+	
+	\item We were able to conclude a property - that for $f \in \lcal$, with $f_n = (n(f - f \wedge 1)) \wedge 1$, for $x > 0$, we had:
+	$$
+		(0, xf_n] \uparrow [\omega : f(\omega) > 1] \times (0,x]
+	$$
+	Note, this means the unions of the sets in $\acal_0$ go up to the set on the RHS (note, the set on the RHS might not necessarily be in $\acal_0$).
+	
+	\item We defined $\fcal$ as the smallest $\sigma$ field with respect to which every $f$ in $\lcal$ is measurable:
+	$$
+		\fcal = \sigma\left[f^{-1}H : f \in \lcal, H \in \rcal^1\right]
+	$$
+	We defined $\fcal_0$ as the class of $A$ in $\fcal$ for which $A \times (0,1] \in \sigma(\acal_0)$. We were able to show that $\fcal_0$ is a semiring, and $\fcal = \sigma(\fcal_0)$. This was proved using the above property.
+	
+	\item Finally - we let $\nu$ be the extension of $\nu_0$ to $\sigma(\acal_0)$, and for $A \in \fcal_0$, we defined:
+	$$
+		\mu_0(A) = \nu(A \times (0,1]) \text{ well defined, as $A \in \fcal_0 \implies A \times (0,1] \in \sigma(\acal_0)$}
+	$$
+	We showed the $\mu_0$ is finitely additive and countably subadditive on the semiring $\fcal_0$ - and thus, via Theorem 11.3, has a measure extension $\mu$ on $\fcal$.
+\end{enumerate}
+
+So, these are a lot of properties. But, what it gives us, at the end of the day, is a measure $\mu$ on $\fcal$, the smallest $\sigma$ field with respect to which every $f \in \lcal$ is measurable.
+
+\paragraph{Problems}
 
 \begin{enumerate}
-	\item Consider
+	\item Show by (11.7) (our property 3 above) that for positive $x,y_1,y_2$ one has:
+	$$
+		\nu([f > 1] \times (0,x]) =
+		x\mu_0[f > 1] = x\mu[f > 1]
+	$$
+	And:
+	$$
+		\nu([y_1 < f \leq y_2] \times (0,x]) = x\mu[y_1 < f \leq y_2]
+	$$
+	Well - first, I will examine $[f > 1]$. Clearly, as $(1, \infty) \in \rcal$, we have that $[f > 1] \in \fcal$. We want to show that $[f > 1] \times (0,x] \in \sigma(\acal_0)$, and so $\nu$ will be well defined on that set.
+	\\\\
+	First, we will show that $[f > 1] \in \fcal_0$, as only this will allow $\mu_0[f > 1]$ to be well defined. This follows if $[f > 1] \times (0,1] \in \sigma(\acal_0)$. So, if $[f > 1] \times (0,1]$ can be expressed as the union or intersection of sets in $\sigma(\acal_0)$, we are good! For $x \in \R$, look at:
+	$$
+		(1, f \wedge 1] = 
+		\left\{(\omega, t) : 1 < t \leq f \vee 1\right\}
+	$$
+	
 \end{enumerate}
 
 \end{document}
