@@ -11923,12 +11923,87 @@ So, these are a lot of properties. But, what it gives us, at the end of the day,
 	$$
 		\nu([y_1 < f \leq y_2] \times (0,x]) = x\mu[y_1 < f \leq y_2]
 	$$
-	Well - first, I will examine $[f > 1]$. Clearly, as $(1, \infty) \in \rcal$, we have that $[f > 1] \in \fcal$. We want to show that $[f > 1] \times (0,x] \in \sigma(\acal_0)$, and so $\nu$ will be well defined on that set.
-	\\\\
-	First, we will show that $[f > 1] \in \fcal_0$, as only this will allow $\mu_0[f > 1]$ to be well defined. This follows if $[f > 1] \times (0,1] \in \sigma(\acal_0)$. So, if $[f > 1] \times (0,1]$ can be expressed as the union or intersection of sets in $\sigma(\acal_0)$, we are good! For $x \in \R$, look at:
+	Well - first, I will examine $[f > 1]$. Clearly, as $(1, \infty) \in \rcal$, we have that $[f > 1] \in \fcal$. We want to show that $[f > 1] \times (0,x] \in \sigma(\acal_0)$, and so $\nu$ will be well defined on that set. Recall:
 	$$
-		(1, f \wedge 1] = 
-		\left\{(\omega, t) : 1 < t \leq f \vee 1\right\}
+		f_n = (n(f - f \wedge 1)) \wedge 1
+	$$
+	We have that if $f(\omega) > 1$ - then, for some $n$, we have that $(n(f - f \wedge 1)) > 1$, and so $f_n(\omega) = 1$ for all sufficiently large $n$. If $f(\omega) \leq 1$, $f - f \wedge 1 = 0$, and so $f_n(\omega) = 0$. In all cases, $f_n \geq 0$, and so $(0, xf_n]$ is well defined for $x > 0$. Recall, we also proved that:
+	$$
+		(0,xf_n] \uparrow [f > 1] \times (0,x]
+	$$ 
+	And so, at the very least, $\nu([f > 1] \times (0,x])$ is well defined, given that the set is a union of $\acal_0$ sets. We have that via continuity from below:
+	$$
+		\nu([f > 1] \times (0,x]) = \lim_{n \to \infty} \nu(0,xf_n] =
+		\lim_{n \to \infty} \nu_0(0,xf_n]
+	$$
+	Anyway. We have that $[f > 1] \times (0,x] \in \sigma(\acal_0)$ for all $x > 0$. This implies that $[f > 1] \times (0,1] \in \sigma(\acal_0)$, which implies that the following is well defined:
+	$$
+		\mu_0[f>1] = \nu((f > 1] \times (0,1])
+	$$
+	Anyway. Going back, we have:
+	$$
+		\nu([f > 1] \times (0,x]) =
+		\lim_{n \to \infty} \nu_0(0,xf_n] =
+		\lim_{n \to \infty} \Lambda(xf_n) =
+		\lim_{n \to \infty} x\Lambda(f_n)
+	$$
+	As $\Lambda$ as a linear functional. Thus, we have:
+	$$
+		\nu([f > 1] \times (0,x]) = \lim_{n \to \infty} x\nu(0,f_n] = x\nu([f > 1] \times (0,x]) =
+		x\mu_0[f>1]
+	$$
+	And we have concluded the first expression. The second one we want to prove is:
+	$$
+		\nu([y_1 < f \leq y_2] \times (0,x]) = x\mu[y_1 < f \leq y_2]
+	$$
+	This should just be a continuation of the first. We note that for positive $y$:
+	$$
+		\nu([f > y] \times (0,x]) =
+		\nu([f/y > 1] \times (0,x]) =
+		x\mu[f/y > 1]
+	$$
+	Also:
+	$$
+		[y_1 < f \leq y_2] \times (0,x] =
+		[f > y_1] \times (0,x] - [f > y_2] \times (0,x]
+	$$
+	As the first set contains the second, we can make use of measure subtraction to find:
+	$$
+		\nu([y_1 < f \leq y_2] \times (0,x]) =
+		\nu([f/y_1 > 1] \times (0,x]) -
+		\nu([f/y_1 > 1] \times (0,x])
+	$$
+	$$
+		=
+		x\left[\mu[f/y_1 > 1] - \mu[f/y_2 > 1]\right] =
+		xx\mu[y_1 < f \leq y_2]
+	$$
+	Note, we have to use $\mu$ instead of $\mu_0$, as we don't necessarily have the subtraction property for non measure $\mu_0$. Also, we need positive $y_1,y_2$ to make the $f/y$ inequalities valid.
+	
+	\item Show that if $f \in \lcal$, then $f$ is integrable and:
+	$$
+		\Lambda(f) = \int f d\mu
+	$$
+	Here, I just follow the solution in the book, I don't really want to spend time trying to prove this theorem. 
+	\\\\
+	First, note we just need to prove that if $f \geq 0$, we have:
+	$$
+		\Lambda(f) = \int f d\mu
+	$$
+	Then, we note that $f^+ = f \vee 0$, and $f- = -f \vee 0$. In both cases, we have:
+	$$
+		\Lambda(f) = \Lambda(f^+ - f^-) = \Lambda(f^+) - \Lambda(f^-) =
+		\int f^+ d\mu - \int f^- d\mu = \int f
+	$$
+	Where subtraction is well defined, because $\Lambda(f)$ is \textit{real}, and so doesn't return infinity as a value.
+	\\\\
+	Take $f \in \lcal$ with $f \geq 0$. If $f_n = (1 - n^{-1})f \vee 0$, then $f_n \in \lcal$ and $f_n \uparrow f$ (note, I don't think we need the $\vee 0$ as $f$ is nonnegative, but it is fine to keep). $f_n \uparrow f$ is clear, as $n \to \infty$, $(1 - n^{-1}) \to 1$. Thus, we note that:
+	$$
+		\nu(f_n,f] = \Lambda(f - f_n) \downarrow 0
+	$$
+	Via continuity from above of $\Lambda$. Note, as $\Lambda$ is finite, we have that continuity from above can be applied. We note that:
+	$$
+		\bigcap (f_n,f] = \left\{(\omega, t) : f(\omega) = t\right\}
 	$$
 	
 \end{enumerate}
