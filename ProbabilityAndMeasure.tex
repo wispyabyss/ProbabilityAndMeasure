@@ -11874,7 +11874,7 @@ For $\lcal$ and $\Lambda$ as defined, we were able to show a couple of propertie
 \begin{enumerate}
 	\item For $f \leq g$ (with $f,g \in \lcal$), we defined an "interval" in $\Omega \times \R^1$ as:
 	$$
-		(f,g] \left\{(\omega, t) : f(\omega) < t \leq g(\omega)\right\}
+		(f,g]:= \left\{(\omega, t) : f(\omega) < t \leq g(\omega)\right\}
 	$$
 	We found that these sets formed a semi ring $\acal_0$, with:
 	$$
@@ -12005,8 +12005,83 @@ So, these are a lot of properties. But, what it gives us, at the end of the day,
 	$$
 		\bigcap (f_n,f] = \left\{(\omega, t) : f(\omega) = t\right\}
 	$$
-	
+	As consider $(\omega, t) \in LHS$. We have that $f_n(\omega) < t \leq f(\omega)$ for all $n$, and as $f_n(\omega) \uparrow f(\omega)$, we must have that $f(\omega) = t$, and so $(\omega, t) \in RHS$. We can similarly go the other way. And so, via continuity from above, we have that the following is well defined:
+	$$
+		\nu\left(\left\{(\omega, t) : f(\omega) = t\right\}\right) = 0
+	$$
+	Look at the disjoint union:
+	$$
+		B_n = \bigcup_{i=1}^{n2^n} 
+		\left(\left[\frac{i}{2^n} < f \leq \frac{i+1}{2^n}\right] \times \bigg(0, \frac{i}{2^n}\bigg]\right)
+	$$
+	Some things to note - as $n$ increases, the total range bounding $f$ increases, and gets finer and finer. Further, the range on the RHS gets larger and larger. Note that:
+	$$
+		B_n \uparrow B \subseteq (0,f]
+	$$
+	First, note that $B_n \subseteq B_{n+1}$. Indeed, if $(\omega, t) \in B_n$, we have that for some $i$:
+	$$
+		\frac{i}{2^n} < f(\omega) \leq \frac{i+1}{2^n} \text{ and } 0 < t \leq \frac{i}{2^n}
+	$$
+	$(\omega, t) \in B_{n+1}$, as we have that for some $j = 2i, 2i+1$:
+	$$
+		\frac{j}{2^{n+1}} < f(\omega) \leq \frac{j+1}{2^{n+1}}
+	$$
+	And for both of these $j$, we have that $0 < t \leq \frac{j}{2^{n+1}}$. So, $B$ is a well defined union. Note, $B_n \in \sigma(\acal_0)$, as we found a $\nu$ measure value for each set in the disjoint union. Disjoint, as the $\omega$ are disjoint for each set in the union. Now, we need to show that:
+	$$
+		B \subseteq (0,f]
+	$$
+	Which follows if we have $B_n \subseteq (0,f]$ for each $n$. Recall, we have $f$ is nonnegative, and so:
+	$$
+		(0,f]:= \left\{(\omega, t) : 0 < t \leq f(\omega)\right\}
+	$$
+	Note that as $(\omega, t) \in B_n$, we have that $\frac{i}{2^n} < f(\omega)$ and $0 < t \leq \frac{i}{2^n}$, so we indeed have that $B_n \subseteq (0,f]$ for each $n$, and $B \subseteq (0,f]$.
+	\\\\
+	Now, we note that:
+	$$
+		(0,f] - B \subseteq [(\omega,t) : f(\omega) = t]
+	$$
+	Indeed, if we have $(\omega,t) \in (0,f]$, but $(\omega,t) \not\in B_n$ for each $n$, that means that $0 < t \leq f(\omega)$ is satisfied, but $0 < t \leq \frac{i}{2^n} < f(\omega)$ is not satisfied for each possible $i$ and $n$. Note, if $t < f(\omega)$, there would be an $i$ and $n$ in our range above that would satisfy $t \leq \frac{i}{2^n} < f(\omega)$, so we must conclude that $t < f(\omega)$ is not true if $(t,\omega) \not\in B$. Thus, we must indeed have that $t = f(\omega)$, which gives us our above fact. And so, pulling our facts together, we must have:
+	$$
+		\Lambda(f) = \Lambda(f - 0) = \nu_0(0,f] = \nu(0,f] = \nu(B)
+	$$
+	As for a measure, given that $B \subseteq (0,f]$, we have: 
+	$$
+		\nu(0,f] - \nu(B) = \nu((0,f] - B) \leq \nu\left(\left\{(\omega, t) : f(\omega) = t\right\}\right) = 0
+	$$
+	Using our continuity from below, we have:
+	$$
+		\Lambda(f) = \nu(B) = \lim_n \nu(B_n) = 
+		\lim_n \sum_{i=1}^{n2^n} \frac{i}{2^n} \mu\left[\frac{i}{2^n} < f \leq \frac{i+1}{2^n}\right]
+	$$
+	Where we used our property from part $1$ for the last equality. Finally, we note that this final limit equals:
+	$$
+		= \int f d\mu
+	$$
+	Recall, we only defined:
+	$$
+		\int f d\mu = \sup \sum_i\left[\inf_{\omega \in A_i} f(\omega)\right]\mu(A_i)
+	$$
+	Where $A_i$ is a finite decomposition of $\Omega$. Note, our sums in the limit are of the infimum sum form (as for the final $A_i$ not expressed by the intervals decomposing the range of $f$, the infimum is zero and doesn't contribute to the sum). As for why the limit is equal to the supremum - ultimately, we have that each term is increasing, given that we are taking the lower bound of finite intervals. However, instead, think of it this way. Each term in the limit is the integral for some simple function $f_n$, as seen in Theorem 13.5. We have that $f_n \uparrow f$, and so we can actually make use of Monotone Convergence Theorem:
+	$$
+		\Lambda(f) = \lim_n \sum_{i=1}^{n2^n} \frac{i}{2^n} \mu\left[\frac{i}{2^n} < f \leq \frac{i+1}{2^n}\right] = \lim_n \int f_n d\mu = \int f d\mu
+	$$
+	And so, for nonnegative $f \in \lcal$, we have found that:
+	$$
+		\Lambda(f) = \int f d\mu
+	$$
+	For $\mu$ found in problems 11.4 + 11.5. This implies the same for all $f \in \lcal$ as noted initially. qed.
 \end{enumerate}
+
+\section{Section 17 - The Integral With Respect to Lebesgue Measure}
+\subsection{Notes}
+\subsubsection{The Lebesgue Integral on the Line}
+A real measurable function on the line is Lebesgue integrable if it is integrable with respect to the Lebesgue measure $\lambda$, and its \textit{Lebesgue integral} $\int f d\lambda$ is denoted by $\int f(x) dx$, or in the case of integrating over an interval, by $\int_a^b f(x) dx$. 
+
+\subsubsection{The Riemann Integral} A real function $f$ on an interval $(a,b]$ is by definition (and there are many definitions) \textit{Riemann integrable}, with integral $r$, if this condition holds: for each $\epsilon$ there exists a $\delta$ with the property that:
+$$
+	\left|r - \sum_i f(x_i)\lambda(I_i)\right| < \epsilon
+$$
+If $\{I_i\}$ is any finite partition or $(a,b]$ into subintervals satisfying $\lambda(I_i) < \delta$ and $x_i \in I_i$ for each $i$. 
 
 \end{document}
 
