@@ -12083,6 +12083,70 @@ $$
 $$
 If $\{I_i\}$ is any finite partition or $(a,b]$ into subintervals satisfying $\lambda(I_i) < \delta$ and $x_i \in I_i$ for each $i$. 
 
+\paragraph{The Riemann Integral, when it exists, coincides with the Lebesgue Integral} Suppose that $f$ is Borel measurable, and suppose that $f$ is bounded, so that it is Lebesgue integrable (on an interval). If $f$ is also Riemann integrable, the $r$ above must coincide with the Lebesgue integral:
+$$
+	\int_a^b f(x) dx
+$$
+First note that letting $x_i$ vary over $I_i$ leads to $r$ also satisfying:
+$$
+	\left|r - \sum_i \sup_{x \in I_i} f(x) \cdot \lambda(I_i)\right| < \epsilon
+$$
+Indeed, we could take limits for each of the finite $I_i$, to the supremum on $I_i$, and only lose the strict inequality. Now, consider a simple function $g$ with value $\sup_{x \in I_i} f(x)$ on $I_i$. We have that $f \leq g$, but also:
+$$
+	\int_a^b g(x) dx = \sum_i \sup_{x \in I_i} f(x) \cdot \lambda(I_i)
+$$
+Via Theorem 15.1. By monotonicity of the integral, this must imply that:
+$$
+	\int_a^b f(x) dx \leq \int_a^b g(x) dx \leq r + \epsilon
+$$
+The reverse inequality also follows in the same way, if we take the $\inf_{x \in I_i} f(x) \cdot \lambda(I_i)$, and so we find for all $\epsilon > 0$:
+$$
+	r + \epsilon \leq \int_a^b f(x) dx \leq r + \epsilon \implies
+	\int_a^b f(x) dx = r
+$$
+
+\paragraph{A continuous function on a closed interval is Riemann Integrable} Suppose that $f$ is continuous on $[a,b]$. A continuous function is uniformly continuous on the closed interval, and so for each $\epsilon$ there exists a $\delta$ such that $|f(x) - f(y)| < \epsilon/(b-a)$ if $|x - y| < \delta$. If $\lambda(I_i) < \delta$ and $x_i \in I_i$, then:
+$$
+	g = \sum_i f(x_i) \1{I_i} \implies
+	|f - g| < \epsilon/(b-a)
+$$
+Thus, for the \textit{Lebesgue integral}, we have:
+$$
+	\left|\int_a^b fdx - \int_a^b gdx\right| = \left|\int_a^b f - g dx\right| \leq 
+	\left|\int_a^b \epsilon/(b-a) dx\right| \leq \epsilon
+$$
+Note, both $f$ and $g$ are integrable, so everything above is well defined. But note, the LHS also simplifies to:
+$$
+	\left|\int_a^b fdx - \sum_i \sup_{x \in I_i} f(x) \cdot \lambda(I_i)\right| \leq \epsilon
+$$
+Which is just the definition of Riemann integrable - where $r = \int_a^b fdx$ (and they must be equal, by our previous statement. So, a continuous function $f$ has an $r$ that satisfies the Riemann integrable definition on a closed interval. qed.
+
+\paragraph{Example 17.1 - A Lebesgue But Not Riemann Integrable $f$} Let $f$ be the indicator of the set of rationals in $(0,1]$. Then, the Lebesgue integral is zero, because $f = 0$ almost everywhere. However, $f$ is not Riemann integrable, as every $I_i$ contains an $x_i = 0$ and $x_i = 1$, so no $r$ can satisfy the definition for $\epsilon < 1/2$. 
+
+\paragraph{Example 17.2 - Lebesgue Theory Is Not Reducible To Riemann Theory via Restricting Measure Zero Sets} For $f$ in example 17.1, there is a $g$ such that $f = g$ almost everywhere and $g$ is Riemann integrable ($g = 0$). We want an example to show that Lebesgue Theory is not reducible to Riemann Theory by casting out sets of measure 0, and so we want to produce an $f$ (bounded and measurable) such that no $g$ exists.
+\\\\
+In Examples 3.1 and 3.2 in the book, we constructed a borel set $A \subseteq (0,1]$ such that $0 < \lambda(A) < 1$ and $\lambda(A \cap I) > 0$ for each subinterval $I$ of $(0,1]$. Take $f = \lambda_A$. Suppose that $f = g$ almost everywhere and that $\{I_i\}$ is a decomposition of $(0,1]$ into subintervals. Since:
+$$
+	\lambda(I_i \cap A \cap [f = g]) = \lambda(I_i \cap A) > 0
+$$
+It follows that $g(y_i) = f(y_i) = 1$ for some $y_i \in I \cap A$, and therefore:
+$$
+	\sum_i g(y_i)\lambda(I_i) = 1 > \lambda(A)
+$$
+If $g$ were Riemann integrable, its Riemann integral would coincide with the Lebesgue integrals $\int g dx = \int f dx = \lambda(A)$, in contradiction to the other Riemann integral value $1$ we found above. So, $g$ cannot be Riemann integrable, and so for $f$ as defined, there is no $f = g$ almost everywhere such that $g$ is Riemann integrable.
+
+\paragraph{Note 17.1 + 17.2} The reason the functions in example 17.1 and 17.2 fail to be Riemann integrable, is because of their extreme oscillations (we proved in our Calculus On Manifolds notes that $f$ is integrable iff the set of its discontinuities has Lebesgue measure 0). This cannot happen in the case of the Lebesgue integral of a measurable function - recall, we have already identified the two reasons why such an $f$ would fail to be Lebesgue integrable - because its positive or negative part is too large, not because one or the other is too irregular.
+
+\paragraph{Theorem 17.1 - Approximating Lebesgue Integrable Functions With Riemann Integrable Functions} Suppose that $\int|f|dx < \infty$ and $\epsilon > 0$.
+\begin{enumerate}
+	\item There is a step function $g = \sum_{i=1}^k x_i\1{A_i}$ with bounded intervals at the $A_i$, such that:
+	$$
+		\int |f - g| dx < \epsilon
+	$$
+	
+	\item There is a continuous integrable $h$ with bounded support such that $\int|f - h| dx < \epsilon$.
+\end{enumerate}
+
 \end{document}
 
 

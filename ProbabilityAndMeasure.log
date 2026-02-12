@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  11 FEB 2026 11:52
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  12 FEB 2026 10:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5353,7 +5353,25 @@ Overfull \hbox (38.2895pt too wide) in paragraph at lines 12075--12075
 [][]\T1/lmr/bx/n/17.28 Section 17 - The In-te-gral With Re-spect to Lebesgue
  []
 
-[406] [407] (./ProbabilityAndMeasure.aux)
+[406]
+Overfull \hbox (6.62856pt too wide) in paragraph at lines 12086--12087
+\T1/lmr/bx/n/12 In-te-gral[] \T1/lmr/m/n/12 Sup-pose that $\OML/cmm/m/it/12 f$ 
+\T1/lmr/m/n/12 is Borel mea-sur-able, and sup-pose that $\OML/cmm/m/it/12 f$ \T
+1/lmr/m/n/12 is bounded,
+ []
+
+[407]
+Underfull \hbox (badness 10000) in paragraph at lines 12126--12129
+
+ []
+
+[408]
+Overfull \hbox (2.46378pt too wide) in paragraph at lines 12140--12142
+ []\T1/lmr/bx/n/12 Theorem 17.1 - Ap-prox-i-mat-ing Lebesgue In-te-grable Func-
+tions With
+ []
+
+[409] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 5857CC09FBB4B42F31D3CE025A8E0BC5;55763.
  ) 
@@ -5366,4 +5384,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (407 pages).
+Output written on ProbabilityAndMeasure.pdf (409 pages).
