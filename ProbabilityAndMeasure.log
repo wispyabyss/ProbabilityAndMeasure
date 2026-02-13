@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  12 FEB 2026 10:30
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  13 FEB 2026 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5371,9 +5371,30 @@ Overfull \hbox (2.46378pt too wide) in paragraph at lines 12140--12142
 tions With
  []
 
-[409] (./ProbabilityAndMeasure.aux)
-Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 5857CC09FBB4B42F31D3CE025A8E0BC5;55763.
+
+Underfull \hbox (badness 10000) in paragraph at lines 12149--12152
+
+ []
+
+[409]
+Underfull \hbox (badness 10000) in paragraph at lines 12163--12167
+
+ []
+
+[410]
+Underfull \hbox (badness 10000) in paragraph at lines 12185--12189
+
+ []
+
+[411] (./ProbabilityAndMeasure.aux)
+
+Package rerunfilecheck Warning: File `ProbabilityAndMeasure.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `ProbabilityAndMeasure.out':
+(rerunfilecheck)             Before: 5857CC09FBB4B42F31D3CE025A8E0BC5;55763
+(rerunfilecheck)             After:  3DFA7ADA63B8B03AB17143284B81E183;56010.
  ) 
 Here is how much of TeX's memory you used:
  10083 strings out of 476191
@@ -5384,4 +5405,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (409 pages).
+Output written on ProbabilityAndMeasure.pdf (411 pages).

@@ -12146,6 +12146,48 @@ If $g$ were Riemann integrable, its Riemann integral would coincide with the Leb
 	
 	\item There is a continuous integrable $h$ with bounded support such that $\int|f - h| dx < \epsilon$.
 \end{enumerate}
+\textbf{Proof:} \textbf{1.} By the construction in Theorem 13.5 (sequence of simple functions approaching $f$ real and measurable) and the dominated convergence theorem (as $f$ is integrable, and dominates the simple functions), we have that there is a simple function $g$ such that $\int |f - g| dx < \epsilon$. Note here, we \textit{don't} assume that the $A_i$ are intervals. However, we do have that $\lambda(A_i) < \infty$ for each $i$ for which $x_i \neq 0$ (otherwise this would imply an infinity integral via $x_i\1{A_i}$).
+\\\\
+By Theorem 11.4, and because the bounded intervals $\acal$ are a semiring that generate $\bcal$ (recall, we are dealing with $f$ defined on the line here), there is a finite disjoint union $B_{ij}$ of intervals such that:
+$$
+	\lambda(A_i \triangle (\cup_{j=1}^n B_{ij})) < \frac{\epsilon}{k|x_i|}
+$$
+Note, the union $B_i = \cup_{j=1}^n B_{ij}$ is still a series of bounded intervals. Define:
+$$
+	g' = \sum_{i=1}^k x_i\1{B_i}
+$$
+Note, if any of the $B_i$ intersect, just take the addition of the $x_i$ values. In total, $g'$ is still a finite sum step function on bounded interval steps. We have:
+$$
+	\int |f - g'| dx \leq \int |f - g| dx + \int |g - g'| dx \leq \epsilon +
+	\sum_{i=1}^k x_i\lambda(A_i \triangle (\cup_{j=1}^n B_{ij})) \leq 2\epsilon
+$$
+Where the second sum comes from noting, that $g$ and $g'$ only differ by $x_i$ on the portions where $A_i$ and $B_i$ don't meet up exactly (added up w/ all the differences for the other $x_i$). Thus, we have found a $g'$ that satisfies the first part.
+\\\\
+\textbf{2.} Recall, bounded support means the set of points where the function is not zero is bounded. Note, we need this condition, as we only proved continuous functions were Riemann integrable on a closed interval. Take the $\epsilon > 0$, and using part 1, take the $g$ step function on bounded intervals $A_i$ where:
+$$
+	\int |f - g| dx < \epsilon
+$$
+We will show there is such a continuous integrable $h$ with bounded support such that:
+$$
+	\int |h - g| dx < \epsilon
+$$
+This will imply:
+$$
+	\int |f - h| dx \leq \int |f - g| dx + \int |h - g| dx \leq 2\epsilon
+$$
+Which is enough. Suppose that $A_i = (a_i, b_i]$. Let $h_i(x)$ be 1 on $(a_i,b_i]$ and $0$ outside of $(a_i - \delta, b_i + \delta]$, and let it increase linearly from $0$ to $1$ over $(a_i - \delta, a_i]$ and decrease linearly from $1$ to $0$ over $(b_i,b_i+\delta]$. As clearly:
+$$
+	\int |\1{A_i} - h|dx \to 0
+$$
+As $\delta \to 0$, $h = \sum_i x_ih_i$ will satisfy for sufficiently small $\delta$. This is because:
+$$
+	\int |h - g| dx \leq \sum_i x_i \int |\1{A_i} - h|dx \to 0
+$$
+Thus, we have proven the Theorem. As a small note, $h$ clearly has bounded support, just taking the maximum $b_i$ and minimum $a_i$, and add $\delta$. qed.
+\\\\
+Thus, the Lebesgue integral is determined by its values for continuous functions with bounded support. And each of these is Riemann integrable.
+
+\subsubsection{The Fundamental Theorem of Calculus}
 
 \end{document}
 
