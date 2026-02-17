@@ -12089,7 +12089,7 @@ $$
 $$
 First note that letting $x_i$ vary over $I_i$ leads to $r$ also satisfying:
 $$
-	\left|r - \sum_i \sup_{x \in I_i} f(x) \cdot \lambda(I_i)\right| < \epsilon
+	\left|r - \sum_i \sup_{x \in I_i} f(x) \cdot \lambda(I_i)\right| \leq \epsilon
 $$
 Indeed, we could take limits for each of the finite $I_i$, to the supremum on $I_i$, and only lose the strict inequality. Now, consider a simple function $g$ with value $\sup_{x \in I_i} f(x)$ on $I_i$. We have that $f \leq g$, but also:
 $$
@@ -12119,7 +12119,7 @@ Note, both $f$ and $g$ are integrable, so everything above is well defined. But 
 $$
 	\left|\int_a^b fdx - \sum_i \sup_{x \in I_i} f(x) \cdot \lambda(I_i)\right| \leq \epsilon
 $$
-Which is just the definition of Riemann integrable - where $r = \int_a^b fdx$ (and they must be equal, by our previous statement. So, a continuous function $f$ has an $r$ that satisfies the Riemann integrable definition on a closed interval. qed.
+Which is just the definition of Riemann integrable - where $r = \int_a^b fdx$ (and they must be equal, by our previous statement). So, a continuous function $f$ has an $r$ that satisfies the Riemann integrable definition on a closed interval. qed.
 
 \paragraph{Example 17.1 - A Lebesgue But Not Riemann Integrable $f$} Let $f$ be the indicator of the set of rationals in $(0,1]$. Then, the Lebesgue integral is zero, because $f = 0$ almost everywhere. However, $f$ is not Riemann integrable, as every $I_i$ contains an $x_i = 0$ and $x_i = 1$, so no $r$ can satisfy the definition for $\epsilon < 1/2$. 
 
@@ -12161,7 +12161,25 @@ $$
 	\int |f - g'| dx \leq \int |f - g| dx + \int |g - g'| dx \leq \epsilon +
 	\sum_{i=1}^k x_i\lambda(A_i \triangle (\cup_{j=1}^n B_{ij})) \leq 2\epsilon
 $$
-Where the second sum comes from noting, that $g$ and $g'$ only differ by $x_i$ on the portions where $A_i$ and $B_i$ don't meet up exactly (added up w/ all the differences for the other $x_i$). Thus, we have found a $g'$ that satisfies the first part.
+Where the second sum comes from noting, that $g$ and $g'$ only differ by $x_i$ on the portions where $A_i$ and $B_i$ don't meet up exactly (added up w/ all the differences for the other $x_i$). Thus, we have found a $g'$ that satisfies the first part. Just expanding on the sum - say that $\omega$ is in $A_i$ and in $B_i$ but also in $B_j$. Then, we have:
+$$
+	g(\omega) = x_i \quad\quad\quad
+	g'(\omega) = x_i + x_j \implies |g(\omega) - g'(\omega)| = x_j
+$$
+This difference holds for all the $\omega \in A_j \triangle B_j$, and this difference is accounted for in the integral by taking the sum $x_j\lambda(A_j \triangle B_j)$. Going further, I think we just have:
+$$
+	|g - g'|(\omega) = \sum_{i=1}^k x_i\1{A_i \triangle B_i}
+$$
+Going further, in general, the difference between indicators is:
+$$
+	|f - g| = \sum_{i=1}^k \sum_{j=1}^k |a_i - b_j| \1{A_i \cap B_j}
+$$
+Where each is disjoint. But, as $a_i = b_i$ in our case, when $i = j$, the difference is zero. If we consider:
+$$
+	\sum_{j=1}^k |x_i - x_j|  \1{A_i \cap B_j} \leq
+	\sum_{j=1}^k (x_i + x_j) \1{A_i \cap B_j}
+$$
+We know that this is included within the $x_i\1{A_i \triangle B_i}$ and $x_j\1{A_j \triangle B_j}$ terms, given that the $A_i$ are disjoint. 
 \\\\
 \textbf{2.} Recall, bounded support means the set of points where the function is not zero is bounded. Note, we need this condition, as we only proved continuous functions were Riemann integrable on a closed interval. Take the $\epsilon > 0$, and using part 1, take the $g$ step function on bounded intervals $A_i$ where:
 $$
@@ -12188,6 +12206,25 @@ Thus, we have proven the Theorem. As a small note, $h$ clearly has bounded suppo
 Thus, the Lebesgue integral is determined by its values for continuous functions with bounded support. And each of these is Riemann integrable.
 
 \subsubsection{The Fundamental Theorem of Calculus}
+Note, for all of these related theorems, I have already proven them for the Riemann integral. So, I guess I could pass to the Riemann integral whenever it exists, and get the Theorem for the Lebesgue Integral. However, I think these theorems might be more general, ie, we will be able to apply them for the cases in which the Lebesgue integral exists but the Riemann integral doesn't.
+\\\\
+Adopt the convention that $\int_\alpha^\beta = -\int_\beta^\alpha$ if $\alpha > \beta$. For positive $h$:
+$$
+	\left|\frac{1}{h}\int_x^{x+h} f(y) dy - f(x)\right| \leq
+	\frac{1}{h}\int_x^{x+h} |f(y) - f(x)| dy \leq
+	\sup\left[|f(y) - f(x)| : x \leq y \leq x + h\right]
+$$
+As the $1/h$ and $h$ factor cancel out in the supremum. The RHS goes to 0 with $h$ if $f$ is continuous at $x$. The same thing holds for negative $h$, and therefore $\int_a^x f(y) dy$ has derivative $f(x)$:
+$$
+	\frac{d}{dx} \int_a^x f(y)dy = f(x)
+$$
+If $f$ is continuous at $x$. Note, the function varies with $x$, ie $g(x) = \int_a^x f(y) dy$. The bottom limit $a$ is arbitrary - and this is because the derivative (in the one dimensional case) is the $k$ that satisfies
+$$
+	g'(x) = \lim_{h \to 0} \frac{g(x + h) - g(x) - k}{h} =
+	\left|\frac{1}{h}\int_x^{x+h} f(y) dy - k\right| = 0
+$$
+And we found $k = f(x)$ is the satisfying point. Also note, this is all done with the \textit{Lebesgue Integral} with respect to the \textit{Lebesgue measure} $\lambda$. We only used properties of $\lambda$ that we already proved. I guess, we do need that $\lambda$ is integrable, maybe?
+
 
 \end{document}
 
