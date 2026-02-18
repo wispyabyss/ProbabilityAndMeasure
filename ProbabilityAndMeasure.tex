@@ -12223,7 +12223,60 @@ $$
 	g'(x) = \lim_{h \to 0} \frac{g(x + h) - g(x) - k}{h} =
 	\left|\frac{1}{h}\int_x^{x+h} f(y) dy - k\right| = 0
 $$
-And we found $k = f(x)$ is the satisfying point. Also note, this is all done with the \textit{Lebesgue Integral} with respect to the \textit{Lebesgue measure} $\lambda$. We only used properties of $\lambda$ that we already proved. I guess, we do need that $\lambda$ is integrable, maybe?
+And we found $k = f(x)$ is the satisfying point. Also note, this is all done with the \textit{Lebesgue Integral} with respect to the \textit{Lebesgue measure} $\lambda$. The integral calculation made use of the absolute value bound. However, note that all the subtractions require that $f$ be integrable, or at the very least $f\1{[a,x+h]}$ is integrable.
+\\\\
+Suppose that $F$ is a function with continuous derivative $F' = f$. That is, $F$ is the primitive (or anti-derivative) of $f$. Then:
+$$
+	\int_a^b f(x) dx = \int_a^b F'(x) = F(b) - F(a)
+$$
+As we have $F(x) - F(a) = \int_a^x f(y) dy$ if we set $x = a$, and both functions have identical derivatives, namely $f(x)$ by the above fact. And so, two functions $\R \to \R$ that agree at one point and have the same derivative everywhere are equal.
+
+\subsubsection{Change Of Variable} For:
+$$
+	[a,b] \overset{T}{\to} [u,v] \overset{f}{\to} \R^1
+$$
+The change of variable formula is:
+$$
+	\int_a^b f(Tx) T'(x) dx =
+	\int_{T(a)}^{T(b)} f(y) dy
+$$
+If $T'$ exists and is continuous, and if $f$ is continuous, the two integrals are finite because the integrands are bounded (continuous functions on intervals are bounded). To prove the above, it is enough to let $b$ be a variable and differentiate with respect to it. This is a homework problem, but using the FTC, we have:
+$$
+	\frac{d}{db} \int_a^b f(Tx) T'(x) dx = f(Tb)T'(b)
+$$
+$$
+	\frac{d}{db} \int_{T(a)}^{T(b)} f(y) dy = ...
+$$
+Note, I think this will just require the chain rule. Say $F' = f$. Then $(F \circ T)' = (f \circ T)T'$. We have:
+$$
+	\int_{T(a)}^{T(b)} f(y) dy = F(T(b)) - F(T(a))
+$$
+Whereas we also have:
+$$
+	\int_a^b f(Tx) T'(x) dx = \int_a^b (F \circ T)' dx = (F \circ T)(b) - (F \circ T)(a) = F(T(b)) - F(T(a))
+$$
+So we do have that both sides are equal. Also go to our calculus on manifold book to find the change-of-variable formula in one variable for the Riemann integral. Anyway, if we want to ever spend more time on this, I would say just directly use the derivative definition, with the derivative set at $f \circ T$, and I would guess the limits go to 0 on both sides, if both sides are treated as a function of $b$. They also have equal values at $b = a$.
+
+\paragraph{Example 17.5} Put $T(x) = \tan(x)$ on $(-\pi/2,\pi/2)$. Note that $T'(x) = 1 + T^2(x)$. Via the change of variable formula, we have:
+$$
+	\int_{-\infty}^\infty \frac{1}{1 + y^2} dy =
+	\int_{\tan(-\pi/2)}^{\tan(\pi/2)} \frac{1}{1 + y^2} dy =
+	\int_{-\pi/2}^{\pi/2} \frac{1}{1 + T(x)^2} (1 + T(x)^2) dx
+	\int_{-\pi/2}^{\pi/2} 1dx = \pi
+$$
+The theorem applies to unbounded intervals, as we can use limits to infinity. Both sides of the limit are the same. For the above, note that we can take $\int_{-t}^{t}$ as $t \to \infty$, but for each individual $t$, use the change of variable formula, and then note the RHS approaches $\pi$.
+
+\subsubsection{The Lebesgue Integral in $\R^k$} Actually, just a note, for this section, the probability book references Spivak. That is actually the book where I learned the Change of Variables Theorem as well, so that just made me happy.
+\\\\
+The $k$ dimensional Lebesgue integral, the integral in $(\R^k, \rcal^k, \lambda)$, is denoted $\int f(x) dx$, it being understood that $x = (x_1, \cdots, x_k)$. In can also be denoted $\int\int_A f(x_1,x_2) dx_1dx_2$ and so on.
+\\\\
+Suppose that $T: U \to \R^k$ where $U$ is an open set in $\R^k$. The map has the form $Tx = (t_1(x), \cdots, t_k(x))$, which is continuously differentiable if the partial derivatives exist and are continuous in $U$. This is the definition of continuously differentiable. Let $D_x = [t_{ij}(x)]$ be the Jacobian matrix, and let $J(x) = \det D_x$ be the Jacobian determinant, and let $V = TU$.
+
+\paragraph{Theorem 17.2 - Change of Variables} Let $T$ be a continuously differentiable map of the open set $U$ onto $V$. Suppose that $T$ is one-to-one and that $J(x) \neq 0$ for all $x$. If $f$ is nonnegative then:
+$$
+	\int_U f(Tx) |J(x)| dx = \int_V f(y) dy
+$$
+This matches the Riemann definition.
 
 
 \end{document}
