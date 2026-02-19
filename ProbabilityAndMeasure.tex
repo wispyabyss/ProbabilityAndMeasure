@@ -12277,6 +12277,65 @@ $$
 	\int_U f(Tx) |J(x)| dx = \int_V f(y) dy
 $$
 This matches the Riemann definition.
+\\\\
+Some things to note immediately. $V$ is open - it is equal to $T(U)$, where $T$ is the inverse image of $T^{-1}$. $T^{-1}$ exists and is continuously differentiable locally for every $x \in U$ via the Inverse Function Theorem - see Calculus on Manifolds for the proof, note it doesn't have anything to do with measurability, just the fact that $T$ is continuously differentiable and has nonzero Jacobian. Note, we also need the assumption that $T$ is one-to-one (as otherwise, we could have $T$ is invertible on disjoint neighborhoods of $x,y \in U$, but $T(x) = T(y)$ or $T(v) = T(u)$ for $v$ and $y$ in the corresponding neighborhoods).
+\\\\
+It is assumed that $f: V \to \R^1$ is a Borel Function, as otherwise the integral wouldn't exist definitionally. For the general $f$, the integral holds with $|f|$ in place of $f$, and if the two sides are finite, the absolute-value bars can be removed, and of course $f$ can be replaces with $f\1{B}$ or $f\1{A}$.
+\\\\
+We go through some examples before proving.
+
+\paragraph{Example 17.6} Suppose that $T$ is a nonsingular linear transformation on $U = V = \R^k$. Then $D_x$ is for each $x$ the matrix of the transformation. If $T$ is identified with this matrix, then the equation becomes:
+$$
+	|\det T| \int_U f(Tx) dx = \int_V f(y) dy
+$$
+If $f = \1{TA}$, then this holds because of our earlier Theorem 12.2 for the Lebesgue measure:
+$$
+	\lambda_k(TA) = |\det T|\lambda_k(A)
+$$
+I actually went though this in Chapter 12 as well. Then, we can use the standard combine, and prove for simple $f$ and for general nonnegative $f$. Theorem 17.2 is easy in the linear case.
+
+\paragraph{Example 17.7} In $\R^2$ take $U = \left[(\rho,\theta): \rho > 0, 0 < \theta < 2\pi\right]$ and $T(\rho, \theta) = (\rho \cos \theta, \rho \sin \theta)$. The Jacobian determinant is thus:
+$$
+	J(\rho, \theta) = \rho
+$$
+And so the Theorem gives us the formula for integrating polar coordinates:
+$$
+	\int\int_{\rho > 0, 0 < \theta < 2\pi} f(\rho\cos(\theta), \rho\sin(\theta)) d\rho d\theta=
+	\int\int_{\R^2} f(x,y) dxdy
+$$
+Note, excluding $(0,0)$ and the line of $\theta = 0$ still gives us equality almost everywhere via Theorem 15.2. We have just $f = f\1{x \geq 0, y = 0}$ almost everywhere - they are not equal on the set:
+$$
+	A = \{\omega \in \R^2 : \omega_1 \geq 0, \omega_2 = 0\}
+$$
+This is a measurable set in $\rcal^2$, as it equals a countable intersection of smaller and smaller height rectangles. It is measure $0$, as we can find it has measure less than $\epsilon$ for all $\epsilon > 0$, by covering it in rectangles of the form $[n, n + 1] \times (-\epsilon/2^{n+1}, \epsilon/2^{n+1})$.
+\\\\
+Note, this example also shows why we need one-to-one. If we replaced the constraint on $\theta$ to $0 < \theta < 4\pi$, for example, the equation is false, as we would need a factor of 2 on the right. 
+
+\paragraph{Proof of Theorem 17.2, Change of Variables} 
+I'm just going to give the highlights. First, assume that we prove:
+$$
+	\int_U f(Tx)|J(x)| dx \geq \int_V f(y) dy
+$$
+Well, note that this symmetric, and we could let $f = f(T(x))|J(x)|$ and $T = T^{-1}$ (and we know the determinant of $T^{-1}$, and can apply the Theorem to it as the Inverse Function Theorem gives us continuous differentiability of $T^{-1}$), to show the inequality in the other direction. So, proving the above equation is enough.
+\\\\
+Then, consider $f$ of the form $f = \1{TA}$. Then, the equation reduces to:
+$$
+	\int_A |J(x)| dx \geq \lambda_k(TA)
+$$
+Each side is a measure on $\ucal = U \cap \rcal^k$. Note, $\ucal$ is a $\sigma$ algebra defined by Theorem 10.1, and $A \subseteq U$. $\lambda_k(TA)$ is clearly a measure, as it is easy enough to show emptyset, countable additivity, and we already proved it in Theorem 12.2. We have that $\int_A |J(x)| dx$ is a measure via our densities discussion in chapter 16, given that $|J(x)|$ is nonnegative, and continuous (via continuous differentiability) and thus measurable.
+\\\\
+If $\acal$ consists ot the rectangles $A$ satisfying $A^- \subseteq U$ (ie, interior is within $U$) then $\acal$ is a semiring generating $\ucal$. Semiring property is clear, and generating $\ucal$ again comes from Theorem 10.1. $U$ is also a countable union of $\acal$ sets (common fact), and the integral left side is finite for $A$ in $\acal$ (as the supremum of the determinant $J$ on a rectangle is bounded). It follows by Corollary 2 to Theorem 11.4 that if:
+$$
+	\int_A |J(x)| dx \geq \lambda_k(TA)
+$$
+Holds for $A$ in $\acal$, then it holds for $A$ in $\ucal$. But then, we can use our standard complex, and find that we can extend to $f$ simple, and $f$ nonnegative, and $f$ general to find:
+$$
+	\int_U f(Tx)|J(x)| dx \geq \int_V f(y) dy
+$$
+So, to prove the Change of Variables Theorem, we just have to prove for $A \in \acal$:
+$$
+	\int_A |J(x)| dx \geq \lambda_k(TA)
+$$
 
 
 \end{document}
