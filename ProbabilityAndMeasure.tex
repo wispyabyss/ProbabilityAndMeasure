@@ -53,6 +53,7 @@
 \newcommand{\grad}{\text{grad}}
 \newcommand{\sgn}{\text{sgn}}
 \newcommand{\io}{\text{i.o.}}
+\newcommand{\diam}{\text{diam}}
 
 
 \setcounter{secnumdepth}{0}
@@ -12332,11 +12333,56 @@ Holds for $A$ in $\acal$, then it holds for $A$ in $\ucal$. But then, we can use
 $$
 	\int_U f(Tx)|J(x)| dx \geq \int_V f(y) dy
 $$
-So, to prove the Change of Variables Theorem, we just have to prove for $A \in \acal$:
+So, to prove the Change of Variables Theorem, we just have to prove for $A \in \acal$ (ie for rectangles in $U$):
 $$
 	\int_A |J(x)| dx \geq \lambda_k(TA)
 $$
+So we prove for such $A$. Split the rectangle $A$ into finitely many subrectangles $Q_i$ satisfying:
+$$
+	\diam(Q_i) < \delta
+$$
+Ie, the farthest distance between two points is less than $\delta$. It is obvious that such a partition is always possible, for any $\delta > 0$. We will determine $\delta$ later. Let $x_i$ be some point in $Q_i$. Given $\epsilon$, choose $\delta$ initially so that:
+$$
+	\left|J(x) - J(x')\right| < \epsilon \text{ if $x,x' \in A^-$ and } |x - x'| < \delta
+$$
+Note, $J(x)$ continuously differentiable is uniformly continuous on a closed rectangle rectangle (a small corollary to uniform continuity for continuous functions on intervals). Then, the diameter implies:
+$$
+	\sum_i |J(x_i)|\lambda_k(Q_i) \leq \int_A |J(x)|dx + \epsilon \lambda_k(A)
+$$
+Note I am reading through the proof, but it does get into the unhelpful region of like $\delta$ $\epsilon$ hell. I am already convinced via the theorem for Riemann integrals, and to be honest, the theorem here is very very similar.
 
+\subsubsection{Stieltjes Integrals}
+Suppose that $F$ is a function on $\R^k$ satisfying the hypotheses of Theorem 12.5 (continuous from above real function that satisfies $\Delta_A F \geq 0$ for bounded rectangles $A$). Then, there is a unique measure $\mu$ on $\rcal^k$ satisfying:
+$$
+	\mu(A) = \Delta_A F
+$$
+For such a $\mu$, we often notationally describe the integral across $\mu$ as:
+$$
+	\int_A f(x) dF(x) =
+	\int_A f(x) \mu(dx)
+$$
+The left side is the \textit{Stieltjes Integral of $f$} with respect to $F$; since it is defined by the right side, it really isn't anything new.
+\\\\
+Suppose that $f$ is uniformly continuous on a rectangle $A$, and suppose that $A$ is decomposed into rectangles $A_m$ small enough such that $|f(x) - f(y)| < \epsilon/\mu(A)$ for $x,y \in A_m$. Then:
+$$
+	\left|\int_A f(x) dF(x) - \sum_m f(x_m) \Delta_{A_m} f\right| = 
+	\left|\int_A f(x) - \sum_m f(x_m) \1{A_m} \mu(dx)\right|
+$$
+Note, $x_m \in A_m$ is fixed, so the $\omega$ is the $x$ in $f(x)$, and the $x$ in $\1{A_m}$ - however, when $x \in A_m$, the difference between $f(x)$ and $f(x_m)$ is less than $\epsilon/\mu(A)$. So, we find:
+$$
+	\leq \epsilon/\mu(A) * \mu(A) = \epsilon
+$$
+And so, in this case, we can define $\int_A f(x) dF(x)$ not as the Lebesgue integral, but the limit of these approximating sums without any reference to the general theory of measure. This is how Stieltjes Integrals are defined, I guess.
+
+\subsection{Problems}
+\subsubsection{17.1 - Riemann and Lebesuge Upper and Lower Integrals} So, there are a lot of prerequisite properties, just read from the book, I'm not gonna copy them. We want to prove:
+\begin{enumerate}
+	\item $D_f$ is a Borel set
+	\item (i) implies (ii)
+	\item (ii) implies (iii)
+	\item (iii) implies (i)
+	\item The $r$ of (i) must coincide with the $R_*f = R^*f$ of (ii).
+\end{enumerate}
 
 \end{document}
 
