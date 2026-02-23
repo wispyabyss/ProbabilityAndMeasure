@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  20 FEB 2026 10:30
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  23 FEB 2026 11:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5482,7 +5482,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 12363--12367
 
  []
 
-[417] [418] (./ProbabilityAndMeasure.aux)
+[417] [418]
+Underfull \hbox (badness 10000) in paragraph at lines 12409--12420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12409--12420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12409--12420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12409--12420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12409--12420
+
+ []
+
+[419]
+Underfull \hbox (badness 10000) in paragraph at lines 12426--12430
+
+ []
+
+[420] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 1B1627ED1B30D9ECEECE11D176913EA4;56980.
  ) 
@@ -5495,4 +5525,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (418 pages).
+Output written on ProbabilityAndMeasure.pdf (420 pages).

@@ -12383,6 +12383,54 @@ And so, in this case, we can define $\int_A f(x) dF(x)$ not as the Lebesgue inte
 	\item (iii) implies (i)
 	\item The $r$ of (i) must coincide with the $R_*f = R^*f$ of (ii).
 \end{enumerate}
+Just some of the notation this problem deals with, we have the upper and lower integrals as before:
+$$
+	L_*f = \sup \sum_i \left[\inf_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+$$
+$$
+	L^*f = \inf \sum_i \left[\sup_{\omega \in A_i} f(\omega)\right] \mu(A_i)
+$$
+Where the $A_i$ extend over all finite partitions $\{A_i\}$ of $\Omega$. Now, $R_*f$ and $R^*f$ are the upper and lower sums, but we only extend over finite partitions of $[0,1]$ into subintervals. Note, we are considering only $f$ as a bounded function on $[0,1]$. Clearly, we have:
+$$
+	R_*f \leq L_*f \leq L^*f \leq R^*f
+$$
+As $R$ is going over a subset of the possible partitions of $[0,1]$ into borel sets. We have the following conditions:
+\begin{enumerate}
+	\item There is an $r$ with the property that for each $\epsilon$ there is a $\delta$ such that:
+	$$
+		\left|r - \sum_i f(x_i)\lambda(I_i)\right|
+	$$
+	holds if $\{I_i\}$ partitions $[0,1]$ into subintervals with $\lambda(I_i) < \delta$ and if $x_i \in I_i$.
+	
+	\item $R_*f = R^*f$
+	
+	\item If $D_f$ is the set of points of discontinuity of $f$, then $\lambda(D_f) = 0$.
+\end{enumerate}
+So, now we begin the properties of the conditions.
+\\\\
+\textbf{(a)} $D_f$ is a borel set. Well, $D_f$ is the set of points of discontinuity of $f$. To be honest - I think we need more than just $f$ is bounded? In the solutions, I think there is an assumption that the first condition holds. Let $A_\epsilon$ be the set of $x$ such that for every $\delta$ there are points $y$ and $z$ satisfying $|y - x| < \delta$, $|z - x| < \delta$, and $|f(y) - f(z)| \geq \epsilon$.
+\\\\
+First, note that $D_f$ is the union of $A_\epsilon$. Indeed, if $f$ is not continuous as $x$, there is some $\epsilon$ such that for all $\delta$, being within $\delta$ of $x$ does not imply within $\epsilon$ of $f(x)$. So, we do have the union is $D_f$. We just need to show that each $A_\epsilon$ is a borel set, which follows if $A_\epsilon$ is closed (open sets are countable unions of rectangles).
+\\\\
+So, we just need to show that $A_\epsilon$ is closed. I mean, it would make sense, because if you are close enough to an $x$, you should also satisfy the $A_\epsilon$ property above. Well, take $t \not\in A_\epsilon$. This implies for $\epsilon$, there is a $\delta$ such that there are no points $y,z$ satisfying the above condition. This implies the same for all $\delta' < \delta$. So, take the open set around $t$, $|k - t| < \delta/2$. I think for all $k$ in this set, we have for $\epsilon$, $\delta/2$ doesn't satisfy the property, given that all $y,z$ in the $\delta/2$ range of $t$ should also be within the $\delta$ range of $x$. So, $A_\epsilon$ is indeed closed, as its complement is open, and so $D_f$ is a borel set, being the countable union of borel sets.
+\\\\
+\textbf{(b)} Prove that (i) implies (ii). Namely, the existence of such an $r$ implies $R_*f = R^*f$. 
+\\\\
+As noted in the chapter, as we let $x_i$ vary over the interval, we also have:
+$$
+	\left|r - \sum_i \sup_{x \in I_i} f(x_i)\lambda(I_i)\right| < \epsilon
+$$
+For $I_i$ with $\delta$ small enough. Similarly:
+$$
+	\left|r - \sum_i \inf_{x \in I_i} f(x_i)\lambda(I_i)\right| < \epsilon
+$$
+Both of these inequalities allow us to conclude that $r = R_*f = R^*f$. Indeed, consider from the infimum side. As we refine the intervals, the sum gets larger. So, for any interval consider in the sums of $R_*f$, we can refine it further, into finite interval decompositions of $[0,1]$, to get a value arbitrarily close to $\epsilon$. It is clear how an argument can be made to show this equality, and so (i) implies (ii).
+\\\\
+\textbf{(c)} Prove that (ii) implies (iii). Well, if we show each $\lambda(A_\epsilon)$ is arbitrarily small, we will have that $D_f$ has measure 0 as well (or, the union of measure 0 sets is measure 0). Take arbitrary $\epsilon$ and $\eta$. Choose a partition of intervals $I_i$ for which the corresponding upper and lower sums ($R_*f$ and $R^*f$) differ by at most $\epsilon\eta$. We can always find such a partition by taking two partitions arbitrarily close to $r$ by above and below and refining them. We have:
+$$
+	\sum_i \left[\sup_{\omega \in I_i} f(\omega) - \inf_{\Omega \in I_i} f(\omega)\right] \mu(I_i) < \epsilon\eta
+$$
+How many of these intervals $I_i$ have interiors that meet $A_\epsilon$? Note if $I_i$ has an interior that meets $A_\epsilon$, the difference above would be larger than $\epsilon$ (as in the definition of $A_\epsilon$, we could take $\delta$ less than half the length of the interval $I_i$). 
 
 \end{document}
 
