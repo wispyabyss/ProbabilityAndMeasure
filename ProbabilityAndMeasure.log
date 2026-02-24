@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  23 FEB 2026 11:08
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  24 FEB 2026 11:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5512,17 +5512,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 12426--12430
 
  []
 
-[420] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 12436--12440
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12442--12446
+
+ []
+
+[420]
+Overfull \hbox (41.57803pt too wide) detected at line 12450
+[] \OMS/cmsy/m/n/12 ^^T [][] [] \OML/cmm/m/it/12 dx \OMS/cmsy/m/n/12 ^^T [] \OT
+1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^O^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 I[]\OT1/
+cmr/m/n/12 ) + [] 2\OML/cmm/m/it/12 M^^U\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 I[]\O
+T1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^T \OT1/cmr/m/n/12 4\OML/cmm/m/it/12 ^^O
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12450--12456
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12450--12456
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12460--12464
+
+ []
+
+[421]
+Overfull \hbox (11.09802pt too wide) detected at line 12512
+[] [] [] \OML/cmm/m/it/12 dx \OT1/cmr/m/n/12 = [] [] [] \OML/cmm/m/it/12 dx < \
+OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^O
+ []
+
+[422] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 1B1627ED1B30D9ECEECE11D176913EA4;56980.
+(rerunfilecheck)             Checksum: 594087DBC238AAFCFCCA9D2A82EC12B2;57060.
  ) 
 Here is how much of TeX's memory you used:
  10085 strings out of 476191
  157426 string characters out of 5812072
- 516606 words of memory out of 5000000
+ 516693 words of memory out of 5000000
  30669 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (420 pages).
+Output written on ProbabilityAndMeasure.pdf (422 pages).

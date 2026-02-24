@@ -12430,7 +12430,87 @@ Both of these inequalities allow us to conclude that $r = R_*f = R^*f$. Indeed, 
 $$
 	\sum_i \left[\sup_{\omega \in I_i} f(\omega) - \inf_{\Omega \in I_i} f(\omega)\right] \mu(I_i) < \epsilon\eta
 $$
-How many of these intervals $I_i$ have interiors that meet $A_\epsilon$? Note if $I_i$ has an interior that meets $A_\epsilon$, the difference above would be larger than $\epsilon$ (as in the definition of $A_\epsilon$, we could take $\delta$ less than half the length of the interval $I_i$). 
+How many of these intervals $I_i$ have interiors that meet $A_\epsilon$? Note if $I_i$ has an interior that meets $A_\epsilon$, the difference above would be larger than $\epsilon$ (as in the definition of $A_\epsilon$, we could take $\delta$ less than half the length of the interval $I_i$). So, we have only $\eta$ of the intervals max can meet $A_\epsilon$ (rounded down) so:
+$$
+	\lambda(A_\epsilon) \leq \epsilon\eta \implies \lambda(A_\epsilon) = 0
+$$
+And the statement follows.
+\\\\
+\textbf{(d)} Prove that (iii) implies (i), or the set of points of discontinuities implies the existence of an $r$ such that for each $\epsilon > 0$:
+$$
+	\left|r - \sum_i \inf_{x \in I_i} f(x_i)\lambda(I_i)\right| < \epsilon
+$$
+Holds if $I_i$ are subintervals of $[0,1]$ with $\lambda(I_i) < \delta$. Let $M$ bound $|f|$ and given $\epsilon$ find an open $G$ such that $D_f \subseteq G$ and $\lambda(G) < \epsilon/M$. Such a $G$ can be found via Theorem 11.4.1 and as $D_f$ is a borel set in part a (and union of open rectangles is open). Take $C = [0,1] - G$, and note that $C$ is a closed set of a compact $[0,1]$, and so $C$ is also compact. There is a $\delta$ such that $|f(y) - f(x)| < \epsilon$ if $x$ lies in $C$ and $|y-x| < \delta$. As for how this $\delta$ can be found - for each $x \in C$, find an open interval around $x$ of $\delta_x$ small enough such that $|f(y) - f(x)| < \epsilon$ for all $y$ in the interval. Continuity around $x \not\in D_f$ implies the existence of $\delta_x$, compactness of $C$ and taking the minimum $\delta_x$ gives us the $\delta$ for each $\epsilon$.
+\\\\
+If $[0,1]$ is decomposed into intervals $I_i$ with $\lambda(I_i) < \delta$, and if $x_i \in I_i$, let $g$ be the function with value $f(x_i)$ on $I_i$. Let $\sum'$ denote summation over those $i$ for which $I_i$ meets $C$, and $\sum''$ for the other $i$. Note that $f(x)$ is Lebesgue integrable, as it is continuous outside a borel set of measure 0 and bounded. And so:
+$$
+	\left|\int_0^1 f(x) dx - \sum f(x_i)\lambda(I_i)\right| \leq
+	\int_0^1 \left|f(x) - g(x)\right| dx \leq
+	\sum' 2\epsilon\lambda(I_i) + \sum'' 2M\lambda(I_i) \leq 4\epsilon
+$$
+Note, the final portion comes from noting that $\sum'' \lambda(I_i) \leq \lambda(G) < \epsilon/M$. And so, as $f(x_i)$ was chosen arbitrarily, we found the existence of such an $r$, namely the value of the Lebesgue integral.
+\\\\
+\textbf{(e)} The $r$ of (i) must coincide with $R_*f = R^*f$. I think this is automatic, given that we had arbitrary $f(x_i)$, which we could go to limits with and take infimums and supremums for each specific partition.
+\\\\
+And so. Overall, I think this gives another proof for Riemann integrable implies Lebesgue integrable. If Riemann integrable, $R_*f = R^*f$, which bounds the Lebesgue upper and lower integrals.
+
+\subsubsection{17.4} Show that if $f$ is integrable, then:
+$$
+	\lim_{t \to 0} \int\left|f(x + t) - f(x)\right| dx = 0
+$$
+Use Theorem 17.1.
+\\\\
+I think, using Theorem 17.1, we can add a continuous $h(x+t)$ and $h(x)$ in there, somehow. But, I think we would want to conclude, for a continuous integrable $h$ with bounded support, we have:
+$$
+	\lim_{t \to 0} \int\left|h(x + t) - h(x)\right| dx = 0
+$$
+Bounded support means that $h$ is nonzero on some bounded set $A$. Note, we can just take the bounding interval $I$. Note, expand it by $+/-1$ on both sides to contain the support of $h(x+t)$ for $t$ small enough. The above becomes:
+$$
+	\lim_{t \to 0} \int_I\left|h(x + t) - h(x)\right| dx \leq
+	\lim_{t \to 0} \lambda(I) * \sup\left[|h(x + t) - h(x)|: x \in I\right]
+$$
+Note, continuous $h$ is uniformly continuous on the bounded interval $I$. So, as $t$ goes to 0, the supremum goes to 0, and the above limit is 0:
+$$
+	\lim_{t \to 0} \int\left|h(x + t) - h(x)\right| dx = 0
+$$
+So, how can we make use of this for general $f$ integrable? Well, for integrable $f$ there is a continuous integrable $h$ with bounded support such that:
+$$
+	\int |f - h| dx < \epsilon
+$$
+Note, via symmetry, $f(x + t)$ is integrable as well, and so to is $f(x + t) - f(x)$, and $h(x + t) - h(x)$ will satisfy:
+$$
+	\int\left|f(x + t) - f(x) - h(x + t) + h(x)\right| dx
+$$
+$$
+	\leq
+	\int\left|f(x + t) - h(x + t)\right|dx + \int\left|h(x) - f(x)\right|dx < 2\epsilon
+$$
+Now, we note via our integral absolute value properties and the reverse triangle inequality:
+$$
+	\lim_{t \to 0} \left|\int\left|f(x + t) - f(x) - h(x + t) + h(x)\right| dx -
+	\int\left|f(x + t) - f(x)\right|dx\right|
+$$
+$$
+	=
+	\lim_{t \to 0} \left|\int\left|f(x + t) - f(x) - h(x + t) + h(x)\right| - \left|f(x + t) - f(x)\right|dx\right|
+$$
+$$
+	\leq
+	\lim_{t \to 0} \int\left|\left|f(x + t) - f(x) - h(x + t) + h(x)\right| - \left|f(x + t) - f(x)\right|\right|dx
+$$
+$$
+	\leq
+	\lim_{t \to 0} \int\left|f(x + t) - f(x) - h(x + t) + h(x) - f(x + t) - f(x)\right|dx
+$$
+$$
+	= \lim_{t \to 0} \int\left|h(x + t) - h(x)\right| dx = 0
+$$
+Note, the final inequality was the reverse triangle inequality. And so, we have:
+$$
+	\lim_{t \to 0} \int\left|f(x + t) - f(x)\right| dx = 
+	\lim_{t \to 0} \int\left|f(x + t) - f(x) - h(x + t) + h(x)\right| dx < 2\epsilon
+$$
+For all $\epsilon > 0$. Thus, we have proven the theorem. qed.
 
 \end{document}
 
