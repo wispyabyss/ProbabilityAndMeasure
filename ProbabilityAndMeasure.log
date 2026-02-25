@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  24 FEB 2026 11:03
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  25 FEB 2026 10:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5551,17 +5551,41 @@ Overfull \hbox (11.09802pt too wide) detected at line 12512
 OT1/cmr/m/n/12 2\OML/cmm/m/it/12 ^^O
  []
 
-[422] (./ProbabilityAndMeasure.aux)
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 12515.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `superscript' on input line 12515.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 12515.
+
+[422]
+Underfull \hbox (badness 10000) in paragraph at lines 12522--12526
+
+ []
+
+[423]
+Overfull \hbox (25.67975pt too wide) in paragraph at lines 12559--12561
+\T1/lmr/m/n/12 Converges al-most ev-ery-where, and is bounded by in-te-grable $
+\OML/cmm/m/it/12 g\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 y\OT1/cmr/m/n/12 ) = 1\U/bb
+m/m/n/12 1 []$\T1/lmr/m/n/12 .
+ []
+
+[424] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 594087DBC238AAFCFCCA9D2A82EC12B2;57060.
+(rerunfilecheck)             Checksum: 3B19FC101649A1D9BF951DA2F61B49FE;57836.
  ) 
 Here is how much of TeX's memory you used:
  10085 strings out of 476191
  157426 string characters out of 5812072
- 516693 words of memory out of 5000000
+ 517483 words of memory out of 5000000
  30669 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (422 pages).
+Output written on ProbabilityAndMeasure.pdf (424 pages).

@@ -516,4 +516,6 @@
 \contentsline {subsubsection}{Stieltjes Integrals}{417}{section*.517}%
 \contentsline {subsection}{Problems}{418}{section*.518}%
 \contentsline {subsubsection}{17.1 - Riemann and Lebesuge Upper and Lower Integrals}{418}{section*.519}%
-\contentsline {subsubsection}{17.4}{421}{section*.520}%
+\contentsline {subsubsection}{17.4 Limit of Integrable Function Shift Difference is Zero}{421}{section*.520}%
+\contentsline {subsubsection}{17.8 $1/(1+y^2)$ Change of Variables}{423}{section*.521}%
+\contentsline {subsubsection}{17.12 Riesz Representation Theorem}{424}{section*.522}%
