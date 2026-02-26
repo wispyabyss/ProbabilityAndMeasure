@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  25 FEB 2026 10:42
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  26 FEB 2026 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5575,7 +5575,46 @@ Overfull \hbox (25.67975pt too wide) in paragraph at lines 12559--12561
 m/m/n/12 1 []$\T1/lmr/m/n/12 .
  []
 
-[424] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 12572--12580
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12572--12580
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12572--12580
+
+ []
+
+[424]
+Underfull \hbox (badness 10000) in paragraph at lines 12582--12587
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12601--12605
+
+ []
+
+[425]
+Underfull \hbox (badness 10000) in paragraph at lines 12611--12615
+
+ []
+
+[426]
+Overfull \hbox (56.02838pt too wide) detected at line 12642
+\OML/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])
+ = [] \U/bbm/m/n/12 1 [] \OML/cmm/m/it/12 d^^V[] \OT1/cmr/m/n/12 = [] [] \OML/c
+mm/m/it/12 f[]d^^V[] \OT1/cmr/m/n/12 = [] [] \OML/cmm/m/it/12 f[]d^^V[] \OT1/cm
+r/m/n/12 = [] \U/bbm/m/n/12 1 [] \OML/cmm/m/it/12 d^^V[] \OT1/cmr/m/n/12 = \OML
+/cmm/m/it/12 ^^V[]\OT1/cmr/m/n/12 ([\OML/cmm/m/it/12 a; b\OT1/cmr/m/n/12 ])
+ []
+
+[427] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 3B19FC101649A1D9BF951DA2F61B49FE;57836.
  ) 
@@ -5588,4 +5627,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (424 pages).
+Output written on ProbabilityAndMeasure.pdf (427 pages).
