@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  27 FEB 2026 10:48
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  2 MAR 2026 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5625,17 +5625,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 12654--12659
 
  []
 
-[428] [429] (./ProbabilityAndMeasure.aux)
+[428]
+Underfull \hbox (badness 10000) in paragraph at lines 12666--12669
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12682--12686
+
+ []
+
+[429]
+Overfull \hbox (11.23033pt too wide) detected at line 12708
+\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 A\OT1/cmr/m/n/12 ) = [] =
+ []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12717--12721
+
+ []
+
+[430]
+Overfull \hbox (19.10635pt too wide) detected at line 12737
+\OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) \OMS/c
+msy/m/n/12 ^^T \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/
+m/n/12 ) = \OML/cmm/m/it/12 ^^W\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Y\OT1/cmr/m/n/
+12 ) \OML/cmm/m/it/12 < \OMS/cmsy/m/n/12 1  \OT1/cmr/m/n/12 =[]\OMS/cmsy/m/n/12
+ )  \OML/cmm/m/it/12 ^^Y[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 E\OT1/cmr/m/n/12 ) 
+\OMS/cmsy/m/n/12 ^^T [][] \OML/cmm/m/it/12 ^^W\OT1/cmr/m/n/12 (\OML/cmm/m/it/12
+ Y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 dx\OT1
+/cmr/m/n/12 ) = \OML/cmm/m/it/12 ^^W\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 Y\OT1/cmr
+/m/n/12 )\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 X\OT1/cmr/m/n/12
+ ) \OML/cmm/m/it/12 < \OMS/cmsy/m/n/12 1
+ []
+
+[431] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 7F502FB50CA4FCB09B2A80AFF43485E6;58501.
+(rerunfilecheck)             Checksum: 24E8877E36E3785E04449A4C604123D1;58506.
  ) 
 Here is how much of TeX's memory you used:
  10089 strings out of 476191
  157462 string characters out of 5812072
- 516206 words of memory out of 5000000
+ 516211 words of memory out of 5000000
  30673 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (429 pages).
+Output written on ProbabilityAndMeasure.pdf (431 pages).

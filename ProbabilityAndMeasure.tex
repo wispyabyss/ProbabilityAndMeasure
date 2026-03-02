@@ -12664,19 +12664,77 @@ In total, we have thus found $\rcal^2 = \rcal^1 \times \rcal^1$.
 	\item If $f$ is measurable $\xcal \times \ycal$, then for each fixed $x \in X$ the function $f(x, \cdot)$ is measurable $\ycal$, and for each fixed $y \in Y$ the function $f(\cdot, y)$ is measurable $\xcal$.
 \end{enumerate}
 Note, the sets above are \textit{sections} of $E$ determined by $x/y$, and the function is a \textit{section} of $f$ determined by $x/y$.
-
+\\\\
 \textbf{Proof:} Fix $f$, and consider the mapping $T_x: Y \to X \times Y$ defined by:
 $$
 	T_x(y) = (x,y)
 $$
-Ie $E = A \times B$ is a measurable rectangle, $T_x^{-1}$ is $B$ or $\emptyset$, as we are taking a cartesian product here, and in either case, $T_x^{-1}E \in \ycal$. By Theorem 13.1(i), as the measurable rectangles generate $\xcal \times \ycal$, we have $T_x$ is measurable $\ycal/\xcal \times \ycal$. Hence:
+If $E = A \times B$ is a measurable rectangle, $T_x^{-1}$ is $B$ or $\emptyset$, as we are taking a cartesian product here, and in either case, $T_x^{-1}E \in \ycal$. By Theorem 13.1(i), as the measurable rectangles generate $\xcal \times \ycal$, we have $T_x$ is measurable $\ycal/\xcal \times \ycal$. Hence:
 $$
 	[y : (x,y) \in E] = T_x^{-1}E \in \ycal \text{ for all $E \in \xcal \times \ycal$}
 $$
 By Theorem 13.1(ii), composition of measurable functions, if $f$ is measurable $\xcal \times \ycal/\rcal^1$, then $fT_x$ is measurable $\ycal/\rcal^1$. Hence, $f(x, \cdot) = fT_x(\cdot)$ is measurable $\ycal$. The symmetric statements are proved the same way. qed.
 
-\subsubsection{Product Spaces}
-Now, suppose $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are measure spaces, and suppose for now that $\mu$ and $\nu$ are \textit{finite}. 
+\subsubsection{Product Measure}
+Now, suppose $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are measure spaces, and suppose for now that $\mu$ and $\nu$ are \textit{finite}. Note that:
+$$
+	m(x) = \nu[y : (x,y) \in E]
+$$
+Is well defined for $x \in X$ and $E \in \xcal \times \ycal$ by the previous theorem. If $\lcal$ is the class of $E$ in $\xcal \times \ycal$ for which this function is measurable $\xcal$ - ie $m: X \to \R$ is measurable $\xcal/\rcal$ - then we have that $\lcal$ is actually a $\lambda$ system.
+\\\\
+Recall, a $\lambda$-system contains $\Omega$, is closed under complements, and closed under countable disjoint unions. Clearly, $\Omega = X \times Y \in \lcal$, as then for $A \in \rcal$, we have:
+$$
+	m^{-1}(A) = X \text{ or } \emptyset \text{ depending if $\nu(\rcal) \in A$}
+$$
+Closed under complements, as if $m_E$ is measurable, we note, recalling that our assumption is that $\mu$ and $\nu$ are finite:
+$$
+	m_E(x) = \nu[y : (x,y) \in E] \quad\quad\quad
+	m_{E^c}(x) = \nu[y : (x,y) \in E^c]
+$$
+$$
+	m_{E^c}^{-1}(A) =
+	\left\{x : \nu[y : (x,y) \in E^c] \in A\right\} =
+	\left\{x : \nu[y : (x,y) \in E] \in \nu(\rcal) - A\right\}
+$$
+$$
+	=
+	m_E(\nu(\rcal) - A) \in \xcal
+$$
+Note, $\nu(\rcal) - A$ is in $\rcal$, via Theorem 12.1 for translations and a similar argument for reflection. We now note that $\lcal$ is closed under disjoint unions as well, as:
+$$
+	m_{\bigcup E_n}^{-1}(A) =
+	\left\{x : \nu[y : (x,y) \in \bigcup E_n] \in A\right\} =
+	\left\{x : \sum_n \nu[y : (x,y) \in E_n] \in A\right\}
+$$
+$$
+	= \left[\sum_n m_{E_n}\right]^{-1}[A] \in \xcal
+$$
+Note, the first split into addition comes from the fact that via countable additivity:
+$$
+	\nu[y : (x,y) \in \bigcup E_n] =
+	\nu\left[\bigcup_n y : (x,y) \in E_n\right] =
+	\sum_n \nu[y : (x,y) \in E_n]
+$$
+And the second step notes that the sum of measurable functions is measurable, which comes directly from Theorem 13.3.
+\\\\
+Now, note that for $E = A \times B$, we have:
+$$
+	m_E(x) = \nu[y : (x,y) \in A \times B] = \1{x \in A}\nu(B)
+$$
+Which is clearly measurable, so $\lcal$ contains the measurable rectangles. The measurable rectangles are clearly a $\pi$ system, so $\lcal$ contains the sigma algebra generated from this $\pi$ system via the $\pi-\lambda$ theorem, and so $\lcal$ contains $\xcal \times \ycal$. As we only pulled from sets within $\xcal \times \ycal$, we have:
+$$
+	\xcal \times \ycal = \lcal \text{ the sets for which $m_E(x) = \nu[y : (x,y) \in E]$ is measurable $\xcal$}
+$$
+We now define:
+$$
+	\pi'(E) = \int_X m_E \mu(dx) \quad\quad\quad E \in \xcal \times \ycal
+$$
+We have that $\pi'$ is a finite measure on $\xcal \times \ycal$. First, note for $E \in \xcal \times \ycal$, $m_E$ is measurable, and importantly, nonnegative, so the Lebesgue integral exists. Further, as we have assumed finiteness of $\mu$ and $\nu$, we have that $\pi'$ is finite as well. Note, we have:
+$$
+	m_E(x) \leq m_{X \times Y}(x) = \nu(Y) < \infty \implies
+	\pi'(E) \leq \int_X \nu(Y) \mu(dx) =
+	\nu(Y)\mu(X) < \infty
+$$
 
 \end{document}
 
