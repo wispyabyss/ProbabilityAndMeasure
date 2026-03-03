@@ -12676,7 +12676,7 @@ $$
 By Theorem 13.1(ii), composition of measurable functions, if $f$ is measurable $\xcal \times \ycal/\rcal^1$, then $fT_x$ is measurable $\ycal/\rcal^1$. Hence, $f(x, \cdot) = fT_x(\cdot)$ is measurable $\ycal$. The symmetric statements are proved the same way. qed.
 
 \subsubsection{Product Measure}
-Now, suppose $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are measure spaces, and suppose for now that $\mu$ and $\nu$ are \textit{finite}. Note that:
+\paragraph{Product Measure on Finite Measure Spaces} Now, suppose $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are measure spaces, and suppose for now that $\mu$ and $\nu$ are \textit{finite}. Note that:
 $$
 	m(x) = \nu[y : (x,y) \in E]
 $$
@@ -12698,7 +12698,7 @@ $$
 $$
 $$
 	=
-	m_E(\nu(\rcal) - A) \in \xcal
+	m_E^{-1}(\nu(\rcal) - A) \in \xcal
 $$
 Note, $\nu(\rcal) - A$ is in $\rcal$, via Theorem 12.1 for translations and a similar argument for reflection. We now note that $\lcal$ is closed under disjoint unions as well, as:
 $$
@@ -12735,6 +12735,77 @@ $$
 	\pi'(E) \leq \int_X \nu(Y) \mu(dx) =
 	\nu(Y)\mu(X) < \infty
 $$
+Similarly, we find:
+$$
+	\pi''(E) = \int_Y \mu\left[x : (x,y) \in E\right] \nu(dy) \quad\quad\quad E \in \xcal \times \ycal
+$$
+Is a finite measure on $\xcal \times \ycal$ as well. For measurable rectangles, $A \in \xcal, B \in \ycal$, we find:
+$$
+	m_{A \times B}(x) = \1{x \in A}\nu(B) \implies
+	\pi'(A \times B) = \nu(B) \int_X \1{x \in A} \mu(dx) = \mu(A)\nu(B)
+$$
+$$
+	\pi''(A \times B) = \mu(A) \int_Y \1{y \in B} \nu(dy) = \mu(A)\nu(B)
+$$
+The class of $E$ in $\xcal \times \ycal$ for which $\pi'(E) = \pi''(E)$ thus contains the measurable rectangles; as this class is a $\lambda$-system (clear that equality is closed under complements and disjoint unions), it contains $\xcal \times \ycal$. The common value:
+$$
+	\pi(E) = \pi'(E) = \pi''(E) \text{ for $E \in \xcal \times \ycal$}
+$$
+Is the product measure we were looking for. qed.
+
+\paragraph{Product Measure on $\sigma$-finite Measure Spaces} So, now, we assume that $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are measure spaces, and $\mu$ and $\nu$ are sigma-finite. First, I want to determine that $\lcal$, the set of $E$ for which:
+$$
+	m_E(x) = \nu\left[y : (x,y) \in E\right]
+$$
+Is measurable, is a $\lambda$-system. The countable disjoint unions argument still applies. But for the complement argument, assume $m_E$ is measurable, and we note:
+$$
+	m_E(x) + m_{E^c}(x) = \nu(Y)
+$$
+As for why that is - we have via additivity of disjoint sets:
+$$
+	\nu\left[y : (x,y) \in E\right] +
+	\nu\left[y : (x,y) \in E^c\right] =
+	\nu\left[y : (x,y) \in E \cup E^c\right] =
+	\nu\left[y : (x,y) \in X \times Y\right] = \nu(Y)
+$$
+Note, if $\nu(Y) < \infty$, we could automatically conclude that $m_E$ is measurable, via addition of measurable functions. However, it now might be infinite. Can we still conclude that $m_{E^c}$ is measurable? We have the assumption that $Y$ is $\sigma$ finite.
+\\\\
+Rather than closed under complements, we can instead show closed under proper differences - this is noted in the $\lambda$ system chapter 3 notes. So, assume that $A, B \in \lcal$, and $A \subset B$. We want to show $B - A \in \lcal$. Via $\sigma$-finiteness, pick $Y_1 \subseteq Y_2 \subseteq \cdots$ in $Y$, such that $\nu(Y_n) < \infty$ and $\bigcup_n Y_n = Y$. Define:
+$$
+	A^n = A \cap (X \times Y_n) \quad\quad\quad
+	B^n = B \cap (X \times Y_n)
+$$
+Clearly, $A^n \subseteq B^n$, and both approach $A,B$ from below respectively. We want to show:
+$$
+	m_{B - A}(x) = \nu\left[y : (x,y) \in B - A\right]
+$$
+Is measurable. Note that:
+$$
+	m_{B^n - A^n}(x) =
+	\nu\left[y : (x,y) \in B^n - A^n\right] =
+	\nu\left[\left\{y : (x,y) \in B^n\right\} - \left\{y : (x,y) \in A^n\right\}\right]
+$$
+$$
+	=
+	\nu\left[\left\{y : (x,y) \in B^n\right\}\right] - \nu\left[\left\{y : (x,y) \in A^n\right\}\right]
+	= m_{B^n}(x) - m_{A^n}(x)
+$$
+Note, the subtraction is well defined, as $\nu(\left\{y : (x,y) \in B^n\right\}) \leq \nu(Y_n) < \infty$. And so, we have that $m_{B^n - A^n}$ is measurable. Now, we note that:
+$$
+	\bigcup_{n=1}^\infty B_n - A_n \uparrow B - A
+$$
+This much is clear. And so:
+$$
+	\nu\left[y : (x,y) \in B_n - A_n\right] \uparrow
+	\nu\left[y : (x,y) \in \bigcup_{n=1}^\infty B_n - A_n\right] =
+	m_{B - A}(x) = \nu\left[y : (x,y) \in B - A\right]
+$$
+As for why the first $\uparrow$ - clearly, the fibers go up, as the sets go up as well. And so, we can take a supremum, or note that an increasing limit always exists, and so:
+$$
+	m_{B - A}(x) = \sup_n m_{B_n - A_n}(x) =
+	\lim_n m_{B_n - A_n}(x)
+$$
+Note by Theorem 13.4, the supremum of measurable functions is measurable, and so $\lcal$ is closed under proper differences and thus a $\lambda$ system.
 
 \end{document}
 
