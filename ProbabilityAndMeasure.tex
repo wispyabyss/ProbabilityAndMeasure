@@ -12806,6 +12806,80 @@ $$
 	\lim_n m_{B_n - A_n}(x)
 $$
 Note by Theorem 13.4, the supremum of measurable functions is measurable, and so $\lcal$ is closed under proper differences and thus a $\lambda$ system.
+\\\\
+So, continuing. If the spaces are $\sigma$ finite, we still have that $\lcal$, the class of $E \in \xcal \times \ycal$ such that $m_E(x) = \nu\left[y : (x,y) \in E\right]$ is measurable $\xcal/\rcal$, is still a $\lambda$ system, that also clearly contains the measurable rectangles, and so by the $\pi-\lambda$ theorem, coincides with $\lcal$. And so, we still have that the measures on $\xcal \times \ycal$:
+$$
+	\pi'(E) = \int_X m_E \mu(dx) = \int_X \nu[y : (x,y) \in E] \mu(dx) \quad\quad
+	\pi''(E) = \int_Y \mu\left[x : (x,y) \in E\right] \nu(dy)
+$$
+Are well defined, as the integral for nonnegative measurable functions always exists (but may possibly be finite). We now want to show that they are both equal. Note, the equality arguments above may not have followed for possible infinite measures. The following equality argument works in both the $\sigma$ finite and finite cases.
+\\\\
+Let $\{A_m\}$ and $\{B_n\}$ be decompositions of $X$ and $Y$ into sets of finite measure (such a decomposition can be found). Put:
+$$
+	\mu_m(A) = \mu(A \cap A_m) \quad\quad\quad
+	\nu_n(B) = \mu(B \cap B_n)
+$$
+Note, $\nu(V) = \sum_m \nu_m(B)$. Let $\pi'_{mn}$ and $\pi''_{mn}$ be the integrals, but for measures $\mu_m$ and $\nu_n$. Equality in our finite case allows us to find:
+$$
+	\sum_{mn} \pi'_{mn}(E) = \sum_{mn} \pi''_{mn}(E)
+$$
+Now, we also note, for the $\pi'$ defined above, which we already noted is well defined, we have:
+$$
+	\pi'(E) = \sum_{mn} \pi'_{mn}(E)
+$$
+As for why that is. We can clearly find equality on measurable rectangles, by using limits:
+$$
+	\pi'(A \times B) = \mu(A)\nu(B) = \nu(B)\sum_m \mu_m(A) =
+	\sum_{mn} \mu_m(A)\nu_n(B) = \sum_{mn} \pi'_{mn}(E)
+$$
+We have that the class of $E \in \xcal \times \ycal$ where they agree is also a $\lambda$ system. Note, closed under disjoint sets is clear, and closed under proper differences follows by an argument similar to the above. And so, we find via the $\pi-\lambda$ theorem and finite measure equality:
+$$
+	\pi'(E) = \sum_{mn} \pi'_{mn}(E) =
+	\sum_{mn} \pi''_{mn}(E) = \pi''(E)
+$$
+Thus, the two integrals coincide in the $\sigma$-finite case as well. Moreover:
+$$
+	\pi'(A \times B) = \sum_{mn} \mu_m(A)\nu_n(B) = \mu(A)\nu(B)
+$$
+
+\paragraph{Theorem 18.2 - Existence and Uniqueness of Product Measure} If $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are $\sigma$-finite measure spaces, $\pi(E) = \pi'(E) = \pi''(E)$ defines a $\sigma$-finite measure on $\xcal \times \ycal$; it is the only measure such that $\pi(A \times B) = \mu(A) \cdot \nu(B)$ for measurable rectangles.
+\\\\
+First - note that we proved existence above. We still need that $\pi$ is $\sigma$ finite on $\xcal \times \ycal$, and then uniqueness. The products $A_m \times B_n$ for $\{A_m\}$ and $\{B_n\}$ finite measure sets that decompose $X$ and $Y$ respectively, are also countable sets that decompose $X \times Y$ into measurable rectangles of finite measure. This proves $\sigma$-finiteness, and uniqueness follows directly afterwards, from making use of Theorem 10.3, as the measurable rectangles form a $\pi$-system generating $\xcal \times \ycal$. qed.
+
+\subsubsection{Fubini's Theorem} We want to be able to express the integral with respect to the product space and product measure, in terms of the component spaces and component measures. The formulas look something like:
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = \int_X \left[\int_Y f(x,y) \nu(dy)\right] \mu(dx)
+$$
+and
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = \int_Y \left[\int_X f(x,y) \mu(dx)\right] \nu(dy)
+$$
+The left side is the \textit{double integral}, and the right side is the \textit{iterated integral}. The formulas hold very generally. Consider the first inner integral:
+$$
+	\int_Y f(x,y) \nu(dy)
+$$
+By Theorem 18.1(ii), for $f$ measurable $f(x,\cdot)$ is measurable $\ycal$. The questions we need to consider are:
+\begin{enumerate}
+	\item Does the integral exist? Even though $f(x,\cdot)$ is measurable, we still might not get existence, such as in the $\infty - \infty$ case.
+	
+	\item If it exists for every $x$ - is the function $g(x) = \int_Y f(x,y) \nu(dy)$ measurable $\xcal$?
+	
+	\item And finally, if it is measurable $\xcal$, does its integral agree with the double integral?
+\end{enumerate}
+We do this proof in steps.
+
+\paragraph{Nonnegative $f$} First, consider nonnegative $f$. If $f = \1{E}$, everything follows from Theorem 18.2. We have:
+$$
+	\int_Y f(x,y) \nu(dy) = \int_Y \1{y : (x,y) \in E} \nu(dy) = \nu\left[y : (x,y) \in E\right]
+$$
+And so, we have that our integral expression becomes:
+$$
+	\int_{X \times Y} \1{E} \pi(d(x,y)) = \pi(E)
+	= \pi'(E) = \int_X \nu\left[y : (x,y) \in E\right] \mu(dx)
+$$
+Which is true via Theorem 18.2. So, existence of the integral follows via non-negativity, measurability and equality of iterated integrals and double integrals comes from Theorem 18.2.
+\\\\
+Now, this immediately extends to $f$ nonnegative simple functions, via linearity of the integrals.
 
 \end{document}
 
