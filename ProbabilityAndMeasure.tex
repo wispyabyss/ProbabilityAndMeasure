@@ -12860,7 +12860,7 @@ $$
 $$
 By Theorem 18.1(ii), for $f$ measurable $f(x,\cdot)$ is measurable $\ycal$. The questions we need to consider are:
 \begin{enumerate}
-	\item Does the integral exist? Even though $f(x,\cdot)$ is measurable, we still might not get existence, such as in the $\infty - \infty$ case.
+	\item Does the integral $\int_Y f(x,y) \nu(dy)$ exist? Even though $f(x,\cdot)$ is measurable, we still might not get existence, such as in the $\infty - \infty$ case.
 	
 	\item If it exists for every $x$ - is the function $g(x) = \int_Y f(x,y) \nu(dy)$ measurable $\xcal$?
 	
@@ -12879,7 +12879,111 @@ $$
 $$
 Which is true via Theorem 18.2. So, existence of the integral follows via non-negativity, measurability and equality of iterated integrals and double integrals comes from Theorem 18.2.
 \\\\
-Now, this immediately extends to $f$ nonnegative simple functions, via linearity of the integrals.
+Now, consider $f$ nonnegative simple function. Then, we have:
+$$
+	\int_Y f(x,y) \nu(dy) = \int_Y \sum_{i=1}^n a_n \1{y : (x,y) \in E_n} \nu(dy)
+$$
+Again, the integral exists, as it is a non-negative measurable function. We have via additivity, the integral as a function of $x$ is:
+$$
+	\sum_{i=1}^n a_n \nu\left[y : (x,y) \in E_n\right]
+$$
+By Theorem 18.2, as $E_n \in \xcal \times \ycal$, each of the individual summands is measurable $\xcal/\rcal$, and by Theorem 13.3, the linear sum of $\xcal$ measurable functions is measurable $\xcal$. So, the iterated integral is well defined. Now, we just have to show equality of both sizes:
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = 
+	\sum_{i=1}^n a_n \pi(E_n) =
+	\sum_{i=1}^n a_n \int_X \nu\left[y : (x,y) \in E\right] \mu(dx)
+$$
+$$
+	= \int_X \sum_{i=1}^n a_n \nu\left[y : (x,y) \in E\right] \mu(dx) =
+	\int_X \left[\int_Y f(x,y) \nu(dy)\right] \mu(dx)
+$$
+Where the first equality comes from Theorem 15.1(i), the second equality comes from the proof of Theorem 18.2, the third equality comes from the linearity of integrals, and the fourth comes from our above argument. So, we have proven Fubini's Theorem for nonnegative simple functions.
+\\\\
+Finally, we consider general $f$ nonnegative. By Theorem 13.5, we have nonnegative simple $f_n \uparrow f$. We note via the monotone convergence theorem:
+$$
+	\int_Y f(x,y) \nu(dy) =
+	\lim_n \int_Y f_n(x,y) \nu(dy)
+$$
+This is because, $f_n(x,\cdot) \uparrow f(x,\cdot)$ as well, for measurable functions via Theorem 18.1. So, our integral exists. We also note it is measurable as a function of $x$, as the limits exist, each $\int_Y f_n(x,y) \nu(dy)$ is measurable $\xcal$ via our previous argument, and Theorem 13.4 gives us that the limit (or equivalently the supremum in this case, which might be better given the infinite values) is measurable as well. So, we just need to show equality of the double and iterated integral. We have:
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = 
+	\lim_n \int_{X \times Y} f_n(x,y) \pi(d(x,y)) =
+	\lim_n \int_X \left[\int_Y f_n(x,y) \nu(dy)\right] \mu(dx)
+$$
+Now, note that via $\int_Y f(x,y) \nu(dy) = \lim_n \int_Y f_n(x,y) \nu(dy)$, we can again make use of monotone convergence theorem to move the limit inside (as $f_1 \leq f_2 \leq \cdots$ and monotonicity + non-negativity of the $f_n$ imply monotonicity and non-negativity of the integrals) giving us:
+$$
+	= \int_X \lim_n \left[\int_Y f_n(x,y) \nu(dy)\right] \mu(dx) =
+	\int_X \left[\int_Y f(x,y) \nu(dy)\right] \mu(dx)
+$$
+
+\paragraph{Integrable $f$} So now, we only make the assumption that $f$ is integrable with respect to $\pi$. Then, we have:
+$$
+	\int_{X \times Y} |f(x,y)| \pi(d(x,y)) = \int_X \left[\int_Y |f(x,y)| \nu(dy)\right] \mu(dx)
+$$
+By our previous non-negativity argument, and we have both sides are finite. Now, make the assumption:
+$$
+	\int_Y |f(x,y)| \nu(dy) < \infty
+$$
+For all $x$. Note, this will not necessarily be the case - we can have $f: \R^2 \to \R$ where we might imagine this happens, such as a point going to infinity. But, given this assumption, we have via integrability for each $x$:
+$$
+	\int_Y f(x,y) \nu(dy) =
+	\int_Y f^+(x,y) \nu(dy) - \int_Y f-(x,y) \nu(dy)
+$$
+Each of these two summands are measurable $\xcal$ by our above arguments, nonnegative, and so we can take integrals across $\xcal$. Integrating out $\xcal$, we have:
+$$
+	\int_X \left[\int_Y f(x,y) \nu(dy)\right] \mu(dx) =
+	\int_X \left[\int_Y f^+(x,y) \nu(dy) - \int_Y f^-(x,y) \nu(dy)\right] \mu(dx)
+$$
+$$
+	= \int_X \left[\int_Y f^+(x,y) \nu(dy)\right] \mu(dx) -
+	\int_X \left[\int_Y f^-(x,y) \nu(dy)\right] \mu(dx)
+$$
+$$
+	= \int_{X \times Y} f^+(x,y) \pi(d(x,y)) - \int_{X \times Y} f^-(x,y) \pi(d(x,y)) =
+	\int_{X \times Y} f(x,y) \pi(d(x,y))
+$$
+So now, we don't assume that less than infinity expression for each $x$. Let:
+$$
+	A_0 = \left\{x : \int_Y |f(x,y)| \nu(dy) < \infty\right\}
+$$
+Note, we must have:
+$$
+	\mu(X - A_0) = 0
+$$
+If $f$ is integrable with respect to $\pi$. Why? We still have that:
+$$
+	\int_X \left[\int_Y |f(x,y)| \nu(dy)\right] \mu(dx) = \int_{X \times Y} |f(x,y)| \pi(d(x,y)) < \infty
+$$
+And so, as the inner integral, integrated across $X$, has an integral value that is \textit{finite}, it must be finite almost everywhere directly via Theorem 15.2(iii). Now, note that for $x \in A_0$, we have:
+$$
+	\int_Y f(x,y) \nu(dy) =
+	\int_Y f^+(x,y) \nu(dy) - \int_Y f^-(x,y) \nu(dy)
+$$
+Holds. We find that $\int_Y f(x,y) \nu(dy)$ is thus measurable on $A_0$, and so 
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = \int_X \left[\int_Y f(x,y) \nu(dy)\right] \mu(dx)
+$$
+Follows if the inner integral on the right is given some arbitrary constant value on $X - A_0$ (this is via Theorem 15.2(v). And so, putting all of our above arguments together, we have:
+
+\paragraph{Theorem 18.3 - Fubini's Theorem} Assume $(X, \xcal, \mu)$ and $(Y, \ycal, \nu)$ are $\sigma$-finite measure spaces, and $\pi$ is our unique measure on $\xcal \times \ycal$ such that $\pi(A \times B) = \mu(A) \cdot \nu(B)$ for measurable rectangles. For nonnegative $f$ the functions:
+$$
+	\int_Y f(x,y) \nu(dy) \quad\quad\quad
+	\int_X f(x,y) \mu(dx)
+$$
+Are measurable $\xcal$ and $\ycal$, respectively, and we have:
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = \int_X \left[\int_Y f(x,y) \nu(dy)\right] \mu(dx)
+$$
+and
+$$
+	\int_{X \times Y} f(x,y) \pi(d(x,y)) = \int_Y \left[\int_X f(x,y) \mu(dx)\right] \nu(dy)
+$$
+Hold. If $f$ (not necessarily nonnegative) is integrable with respect to $\pi$, then the two functions are finite and measurable on:
+$$
+	A_0 = \left\{x : \int_Y |f(x,y)| \nu(dy) < \infty\right\} \quad\quad\quad
+	B_0 = \left\{y : \int_X |f(x,y)| \mu(dx) < \infty\right\}
+$$
+Respectively, where $\mu(X - A_0) = \nu(Y - B_0) = 0$, and again the double/iterated integral equality holds. Proven in the above arguments. qed.
 
 \end{document}
 

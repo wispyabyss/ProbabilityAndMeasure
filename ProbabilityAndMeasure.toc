@@ -530,3 +530,5 @@
 \contentsline {paragraph}{Theorem 18.2 - Existence and Uniqueness of Product Measure}{434}{section*.531}%
 \contentsline {subsubsection}{Fubini's Theorem}{434}{section*.532}%
 \contentsline {paragraph}{Nonnegative $f$}{435}{section*.533}%
+\contentsline {paragraph}{Integrable $f$}{436}{section*.534}%
+\contentsline {paragraph}{Theorem 18.3 - Fubini's Theorem}{438}{section*.535}%
