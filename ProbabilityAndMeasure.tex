@@ -12985,6 +12985,93 @@ $$
 $$
 Respectively, where $\mu(X - A_0) = \nu(Y - B_0) = 0$, and again the double/iterated integral equality holds. Proven in the above arguments. qed.
 
+\paragraph{Example 18.2 - Integral Across a Disk} Let $D_r$ be the closed disk in the plane with center at the origin and radius $r$. We note:
+$$
+	\lambda_2(D_r) =
+	\int_\R \1{D_r} d\lambda_2 =
+	\int_{D_r} 1 d\lambda_2
+$$
+Noting that we can switch the closed disk with the open disk, as the indicators are equal almost everywhere. Let $T(\rho, \theta) = (\rho \cos \theta, \rho \sin \theta)$. We have $T$ on $(0, r) \times (0,2\pi)$ is the open disk, without the line. Note, the indicator of $T$ on this set is equal to the indicator of the open disk almost everywhere, so integral equalities work out. We also have the Jacobian of $T$ is $\rho$ as well. So, by Theorem 17.2, we have:
+$$
+	\int_{(0, r) \times (0,2\pi)} |\rho| 1 \circ T d\lambda_2 =
+	\int_{\text{Open $D_r$ without the line}} 1 d\lambda_2 =
+	\int_{D_r} 1 d\lambda_2 =
+	\lambda_2(D_r)
+$$
+So, to find the measure of $D_r$, we just have to calculate the first integral. We do this via Fubini's Theorem. We note that $1 \1{(0, r) \times (0,2\pi)}$ is measurable and nonnegative on $\rcal^2 = \rcal \times \rcal$, where $\rcal$ is $\sigma$ finite. And so, Theorem 18.3 gives us:
+$$
+	\int_{(0, r) \times (0,2\pi)} |\rho| d\lambda_2 =
+	\int_{(0, r) \times (0,2\pi)} \rho d\lambda_2 =
+	\int_0^{2\pi} \left[\int_0^r \rho d\rho\right] d\theta
+$$
+Where we note we replace $d\lambda$ with our variables of integration, which were $\rho$ and $\theta$ (the inputs into the function on $\R^2$). We can evaluate this as:
+$$
+	=
+	\int_0^{2\pi} \frac{r^2}{2} d\theta = \pi r^2
+$$
+
+\paragraph{Example 18.3 - Integral of Standard Normal Distribution} Define:
+$$
+	I = \int_{-\infty}^\infty e^{-x^2} dx
+$$
+Note that:
+$$
+	I^2 = \left(\int_{-\infty}^\infty e^{-x^2} dx\right)\left(\int_{-\infty}^\infty e^{-y^2} dy\right)
+$$
+Via linearity, we find:
+$$
+	= \int_{-\infty}^\infty e^{-x^2} \left(\int_{-\infty}^\infty e^{-y^2} dy\right) dx
+$$
+Now, we note that we can consider the integrand as a function of $x$, say:
+$$
+	g(x) = e^{-x^2} \left(\int_{-\infty}^\infty e^{-y^2} dy\right)
+$$
+For fixed $x$, we can move the $e^{-x^2}$ inside:
+$$
+	= \int_{-\infty}^\infty e^{-x^2}e^{-y^2} dy =
+	\int_{-\infty}^\infty e^{-(x^2+y^2)} dy
+$$
+Anyway. Now consider (without proving equality yet):
+$$
+	\int_{\R^2} e^{-(x^2+y^2)} d\lambda_2
+$$
+By directly applying Fubini's Theorem to this nonnegative function, for $\rcal^2$, where $\rcal$ is $\sigma$ finite, we have:
+$$
+	\int_{\R^2} e^{-(x^2+y^2)} d\lambda_2 =
+	\int_{\R} \left[\int_{\R} e^{-(x^2+y^2)} dy\right] dx =
+	\int_{\R} \left[\int_{\R} e^{-x^2}e^{-y^2} dy\right]dx =
+	\int_{-\infty}^\infty e^{-x^2} \left(\int_{-\infty}^\infty e^{-y^2} dy\right) dx
+$$
+Where we note, just going this way, it is easier to conclude that the integrand as a function of $x$ is measurable, and we can move the $e^{-x^2}$ inside and out of the function via linearity for a fixed $x$. Anyway, the entire point is:
+$$
+	I^2 = \int_{\R^2} e^{-(x^2+y^2)} d\lambda_2
+$$
+Now, we will make use of Change of Variables. We note that for $T$ as defined above - $T(\rho, \theta) = (\rho \cos \theta, \rho \sin \theta)$ - we have that:
+$$
+	f(x,y) = e^{-(x^2+y^2)} \implies (f \circ T)(\rho, \theta) = e^{-\rho}
+$$
+And so, via Theorem 17.2, we have:
+$$
+	I^2 = \int_{(0, \infty) \times (0, 2\pi)} \rho e^{-\rho^2} d\lambda^2
+$$
+We again make use of Fubini's on $\rcal^2$ for our nonnegative function to find:
+$$
+	I^2 = \int_0^{2\pi} \left[\int_0^{\infty} \rho e^{-\rho^2} d\rho\right] d\theta
+$$
+Now how do we calculate the inner integral? This is just $u$ substitution, aka, change of variable in one dimension. We have $f(x) = \frac{1}{2}e^{-x}$, $T(\rho) = \rho^2$, and $(f \circ T)(\rho) = \frac{1}{2}e^{-\rho^2}$. Now note, the Jacobian of $T$ is $2\rho$. And so, Change of Variable tells us:
+$$
+	\int_0^{\infty} \rho e^{-\rho^2} d\rho =
+	\int_0^{\infty} \frac{e^{-x}}{2} dx = -\frac{e^{-x}}{2}\bigg|_0^{\infty} = 1/2
+$$
+And so, we have:
+$$
+	I^2 = \pi \implies I = \sqrt{\pi}
+$$
+\paragraph{Example 18.4 - Limit of Integrals} We want to find the limit of an integral we had previously discussed:
+$$
+	\lim_{t \to \infty} \int_0^t \frac{\sin x}{x} dx
+$$
+
 \end{document}
 
 
