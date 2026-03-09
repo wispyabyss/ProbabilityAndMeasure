@@ -13071,6 +13071,77 @@ $$
 $$
 	\lim_{t \to \infty} \int_0^t \frac{\sin x}{x} dx
 $$
+First, examine:
+$$
+	\int_0^t e^{-ux} \sin(x) dx
+$$
+Recall Euler's formula: $e^{ix} = \cos(x) + i\sin(x)$. So, we have:
+$$
+	\int e^{ax}e^{ibx} dx = \int e^{(a + ib)x} dx = \frac{e^{(a+ib)x}}{a + ib}
+$$
+If we expand to a complex and real part, we get:
+$$
+	= \frac{e^{ax}}{a^2 + b^2}\left[[a\cos(bx) + b\sin(bx)] + i[a\sin(bx) - b\cos(bx)]\right]
+$$
+Now, recall that integration on the complex plane splits up the imaginary and real part, ie:
+$$
+	\int f(x) + ig(x) dx = \int f(x) dx + i \int g(x) dx
+$$
+So, the imaginary part give us:
+$$
+	\int e^{ax}\sin(bx) = \frac{e^{ax}}{a^2 + b^2}\left[a\sin(bx) - b\cos(bx)\right]
+$$
+Substituting, we have:
+$$
+	\int_0^t e^{-ux} \sin(x) dx =
+	\left[\frac{e^{-ux}}{1 + u^2}\left[-u\sin(x) - \cos(x)\right]\right]_{x=0}^{x=t} =
+	\left[\frac{e^{-ut}}{1 + u^2}\left[-u\sin(t) - \cos(t)\right]\right] +
+	\frac{1}{1 + u^2}
+$$
+$$
+	= \frac{1}{1 + u^2}\left[1 - e^{-ut}\left(u\sin(t) + \cos(t)\right)\right]
+$$
+You can also just verify the above w/o the complex analysis - ie, "pull the answer out of thin air" and then differentiate both sides with respect to $t$ to find:
+$$
+	e^{-ut} \sin(t) =
+	\frac{1}{1 + u^2}\left[ue^{-ut}\left(u\sin(t) + \cos(t)\right) - e^{-ut}\left[u\cos(t) - \sin(t)\right]\right]
+$$
+$$
+	= \frac{1}{1 + u^2}\left[u^2e^{-ut}\sin(t) + e^{-ut}\sin(t)\right] = e^{-ut} \sin(t)
+$$
+Plus validating equality at a point $t = 0$, in which case both sides are 0. Now, we note:
+$$
+	\int_0^\infty \left|e^{-ux}\sin(x)\right| du =
+	|\sin x| \int_0^\infty e^{-ux} du
+$$
+Now, we do substitution (1 dimensional change of variables), let $v = -ux$, which has Jacobian $x$, and so:
+$$
+	\int_0^\infty e^{-ux} du = \frac{1}{x}\int_0^\infty xe^{-ux} du = \frac{1}{x}\int_{-\infty}^0 e^v dv = \frac{1}{x}e^v\bigg|_{-\infty}^0 = \frac{1}{x}
+$$
+Anyway, all of that is to say:
+$$
+	\int_0^\infty \left|e^{-ux}\sin(x)\right| du = \frac{|\sin(x)|}{x}
+$$
+Which tells us:
+$$
+	\int_0^t \left[\int_0^\infty \left|e^{-ux}\sin(x)\right| du\right] dx = \int_0^t \frac{|\sin(x)|}{x} \leq t < \infty
+$$
+Where the bounds come from noting $\frac{|\sin(x)|}{x} \leq 1$. And so, we can use Fubini's Theorem on the integration of $e^{-ux} \sin(x)$ over $(0, t) \times (0, \infty)$:
+$$
+	\int_0^t \frac{\sin(x)}{x} dx =
+	\int_0^t \sin(x) \left[\int_0^{\infty} e^{-ux} du \right]dx =
+	\int_0^\infty \left[\int_0^t e^{-ux}\sin(x) dx\right] du
+$$
+Fubini's is used to switch the order of integration. Now, from our above derivation:
+$$
+	= \int_0^\infty \frac{du}{1 + u^2} - \int_0^\infty \frac{e^{-ut}}{1+u^2}(u\sin(t) + \cos(t)) du
+$$
+Note the first entry has integral $\pi/2$, which we proved via change of variables in exercise 17.5 (plus a symmetry argument). For the second entry, notice as $t \to \infty$, the magnitude of $(u \sin(t) + \cos(t))$ oscillates between $[-u-1, u+1]$, while the magnitude of $\frac{e^{-ut}}{1+u^2}$ goes to zero. This tells us the value of the integral goes to 0 as well (note, we still have the infinite domain to deal with, but a change of variable $ut = s$ simplifies the whole thing). In total, we have:
+$$
+	\lim_{t \to \infty} \int_0^t \frac{\sin(x)}{x} dx = \frac{\pi}{2}
+$$
+
+\subsubsection{Integration by Parts} After proving the Lebesgue version, compare with \href{https://en.wikipedia.org/wiki/Integration_by_parts}{Integration by Parts Wiki}.
 
 \end{document}
 
