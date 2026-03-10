@@ -13142,6 +13142,111 @@ $$
 $$
 
 \subsubsection{Integration by Parts} After proving the Lebesgue version, compare with \href{https://en.wikipedia.org/wiki/Integration_by_parts}{Integration by Parts Wiki}.
+\\\\
+Let $F$ and $G$ be two nondecreasing, right-continuous functions on an interval $[a,b]$, and let $\mu$ and $\nu$ be the corresponding measures:
+$$
+	\mu(x,y] = F(y) - F(x)
+	\quad\quad\quad
+	\nu(x,y] = G(y) - G(x)
+	\quad\quad\quad
+	a \leq x \leq y \leq b
+$$
+By Theorem 12.5, we have existence of such measures if $F$ and $G$ are defined on all of $\R$. I think, we can extend such $F$ and $G$ to all of $\R$, just by taking straight lines outside of the intervals equal to the endpoint values $F(a), F(b), G(a), G(b)$, and then restricting our measure to $\rcal \cap [a,b]$. Note, this measure exists by Theorem 12.5, and as $[a,b]$ is $\sigma$ finite and the sub-intervals $I$ are a $\pi$ system such that $\sigma(I) = \rcal \cap [a,b]$ via Theorem 10.1, the measures $\mu$ and $\nu$ are unique via Theorem 10.3.
+\\\\
+In accordance with the convention of Stieltjes Integrals, write $dF(x)$ and $dG(x)$ in place of $\mu(dx)$ and $\nu(dx)$.
+
+\paragraph{Theorem 18.4 - Integration by Parts} If $F$ and $G$ have no common points of discontinuity in $(a,b]$, then:
+$$
+	\int_{(a,b]} G(x) dF(x) =
+	F(b)G(b) - F(a)G(a) - \int_{(a,b]} F(x) dG(x)
+$$
+In brief: $\int G dF = \Delta FG - \int F dG$.
+\\\\
+\textbf{Proof:} Note that replacing $F(x)$ by $F(x) - C$ leaves the above expression unchanged. I mean, assume we prove the statement for $F(x) - C$. Then, we note $\mu$ is the same - see section 12 to note this. And so, if we proved for $F(x) - C$, we would have the following expression is true:
+$$
+	\int_{(a,b]} G(x) dF(x) = (F(b) - C)G(b) - (F(a) - C)G(a) - \int_{(a,b]} F(x) dG(x) + \int_{(a,b]} C dG(x)
+$$
+$$
+	= F(b)G(b) - F(a)G(a) - C(G(b) - G(a)) + \int_{(a,b]} F(x) dG(x) - C\nu(a,b]
+$$
+$$
+	= F(b)G(b) - F(a)G(a) - \int_{(a,b]} F(x) dG(x) - C(G(b) - G(a)) + C(G(b) - G(a))
+$$
+$$
+	\implies
+	\int_{(a,b]} G(x) dF(x) =
+	F(b)G(b) - F(a)G(a) - \int_{(a,b]} F(x) dG(x)
+$$
+So in fact, proving for within a constant of $F$ proves the statement. The same is similarly true if we consider $G(x) - C$. So, wlog, we will prove for $F(x) = F(x) - F(a)$ and $G(x) = G(x) - G(a)$, which implies $F(a) = 0$, $G(a) = 0$, and so:
+$$
+	\mu(a,x] = F(x) - F(a) = F(x)
+	\quad\quad\quad
+	\nu(a,x] = G(x) - G(a) = G(x)
+$$
+If $\pi = \mu \times \nu$ is the product measure in the plane, then by Fubini's Theorem:
+$$
+	\pi\left[(x,y) : a < y \leq x \leq b\right] =
+	\int_{R^2} \1{(x,y) : a < y \leq x \leq b} d\pi
+$$
+$$
+	= \int_\R\int_\R \1{(x,y) : a < y \leq x \leq b} \nu(dy)\mu(dx)
+$$
+Now, if we look at the inner integral for fixed $x$, it is just $\nu(a,x]$, and so the above equals:
+$$
+	= \int_\R \1{a < x \leq b}\nu(a,x] \mu(dx) =
+	\int_{(a,b]} \nu(a,x] \mu(dx) =
+	\int_{(a,b]} G(x) dF(x)
+$$
+Where the last step makes use of $\nu(a,x] = G(x)$, and notation. Similarly, we have:
+$$
+	\pi\left[(x,y) : a < x \leq y \leq b\right] =
+	\int_{(a,b]} F(y) dG(y)
+$$
+Note that the two sets in the $\pi$ have their union as:
+$$
+	S = (a,b] \times (a,b]
+$$
+Note, it is not disjoint along the diagonal. However, we do note that the diagonal has measure $0$, as we assumed that $F$ and $G$ had no common points of discontinuity:
+$$
+	\pi\left[(x,y) : a < x = y \leq b\right] =
+	\int_{(a,b]} \nu(\{x\}) \mu(dx) = 0
+$$
+Via the same argument as above. Thus, via inclusion-exclusion, we have:
+$$
+	\pi(S) = \pi(A) + \pi(B) - \pi(A \cap B) \implies
+	\mu(a,b]\nu(a,b] = \pi(S) = \pi(A) + \pi(B)
+$$
+So, the left sides of our integral equalities add up to $\pi(S) = \mu(a,b]\nu(a,b] = F(b)G(b)$, and so:
+$$
+	\int_{(a,b]} G(x) dF(x) + \int_{(a,b]} F(y) dG(y) = F(b)G(b)
+$$
+Which proves the statement for $F(x) - C$ and $G(x) - C$ for the constants chosen, which proves in general for our given assumptions:
+$$
+	\int_{(a,b]} G(x) dF(x) =
+	F(b)G(b) - F(a)G(a) - \int_{(a,b]} F(x) dG(x)
+$$
+And so we have proven integration by parts. qed.
+
+\paragraph{Classical Integration by Parts} We now derive the classical integration by parts formula. Suppose that $\nu$ has a density $g$ with respect to Lebesgue measure and let $G(x) = c + \int_a^x g(t) dt$. In this case, $\nu(x,y) = G(y) - G(x) = \int_x^y g(t) dt$, which is the same as saying $\nu$ has density $g$. By Theorem 16.11, we have:
+$$
+	\int_{(a,b]} F(x) dG(x) = \int_{(a,b]} F(x) d\nu(x) = \int_{(a,b]} F(x)g(x) dx
+$$
+This holds for any $g$ integrable over $(a,b]$ (consider the positive and negative parts, remember densities can only be taken by $g$ positive, so we split it up to find the above holds for all $g$).
+\\\\
+Now, suppose further that $\mu$ has density $f$ with respect to the Lebesgue measure, and let $F(x) = c' + \int_a^x f(t) dt$. Then, we similarly find:
+$$
+	\int_{(a,b]} G(x) dF(x) = \int_{(a,b]} G(x) f(x) dx
+$$
+With our integration by parts formula, we thus have:
+$$
+	\int_{(a,b]} G(x) f(x) dx =
+	F(b)G(b) - F(a)G(a) - \int_{(a,b]} F(x)g(x) dx
+$$
+This is the classical formula for integration by parts, which normally expresses it as:
+$$
+	\int_a^b u(x) v'(x) dx =
+	u(b)v(b) - u(a)v(a) - \int_a^b u'(x) v(x) dx
+$$
 
 \end{document}
 

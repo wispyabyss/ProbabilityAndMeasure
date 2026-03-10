@@ -536,3 +536,5 @@
 \contentsline {paragraph}{Example 18.3 - Integral of Standard Normal Distribution}{439}{section*.537}%
 \contentsline {paragraph}{Example 18.4 - Limit of Integrals}{440}{section*.538}%
 \contentsline {subsubsection}{Integration by Parts}{442}{section*.539}%
+\contentsline {paragraph}{Theorem 18.4 - Integration by Parts}{443}{section*.540}%
+\contentsline {paragraph}{Classical Integration by Parts}{444}{section*.541}%
