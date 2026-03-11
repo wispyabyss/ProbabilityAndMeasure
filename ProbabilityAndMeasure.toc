@@ -538,3 +538,5 @@
 \contentsline {subsubsection}{Integration by Parts}{442}{section*.539}%
 \contentsline {paragraph}{Theorem 18.4 - Integration by Parts}{443}{section*.540}%
 \contentsline {paragraph}{Classical Integration by Parts}{444}{section*.541}%
+\contentsline {subsubsection}{Products of Higher Order}{445}{section*.542}%
+\contentsline {paragraph}{Example 18.5 - Volume of a Sphere}{446}{section*.543}%
