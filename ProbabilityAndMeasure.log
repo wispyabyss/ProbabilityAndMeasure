@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  11 MAR 2026 16:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  16 MAR 2026 10:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -511,12 +511,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 328--332
 
  []
 
-
+[19]
 Underfull \hbox (badness 10000) in paragraph at lines 335--338
 
  []
 
-[19]
+
 Underfull \hbox (badness 10000) in paragraph at lines 350--354
 
  []
@@ -541,12 +541,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 398--401
 
  []
 
-
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 402--405
 
  []
 
-[22]
+
 Underfull \hbox (badness 10000) in paragraph at lines 406--409
 
  []
@@ -593,17 +593,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 532--537
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 540--545
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 540--545
-
- []
-
 [27]
+Underfull \hbox (badness 10000) in paragraph at lines 540--545
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--545
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 546--551
 
  []
@@ -618,12 +618,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 569--573
 
  []
 
-
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 579--583
 
  []
 
-[29]
+
 Underfull \hbox (badness 10000) in paragraph at lines 584--587
 
  []
@@ -5844,17 +5844,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 13267--13270
 
  []
 
-[445] [446] (./ProbabilityAndMeasure.aux)
+[445]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 13310.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\times' on input line 13310.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 13310.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13310--13313
+
+ []
+
+[446]
+Underfull \hbox (badness 10000) in paragraph at lines 13324--13334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13324--13334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13324--13334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13324--13334
+
+ []
+
+[447] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 7987722C4F0F602AC16268F344A4A29C;59004.
+(rerunfilecheck)             Checksum: 0CA5FC667A1B2D670C88FC352D2D02A3;59693.
  ) 
 Here is how much of TeX's memory you used:
- 10090 strings out of 476191
- 157466 string characters out of 5812072
- 516736 words of memory out of 5000000
- 30674 multiletter control sequences out of 15000+600000
+ 10091 strings out of 476191
+ 157480 string characters out of 5812072
+ 517449 words of memory out of 5000000
+ 30675 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (446 pages).
+Output written on ProbabilityAndMeasure.pdf (447 pages).

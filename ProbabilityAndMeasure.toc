@@ -1,6 +1,6 @@
 \contentsline {section}{Forward}{8}{section*.2}%
-\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{8}{section*.3}%
-\contentsline {subsection}{Notes}{8}{section*.4}%
+\contentsline {section}{Section 1 - Borel's Normal Number Theorem}{9}{section*.3}%
+\contentsline {subsection}{Notes}{9}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{9}{section*.5}%
 \contentsline {subsubsection}{The Weak Law of Large Numbers}{10}{section*.6}%
 \contentsline {paragraph}{Theorem 1.1 - The Weak Law of Large Numbers}{10}{section*.7}%
@@ -28,7 +28,7 @@
 \contentsline {subsection}{Notes}{32}{section*.29}%
 \contentsline {paragraph}{Spaces}{32}{section*.30}%
 \contentsline {paragraph}{Assigning Probabilities}{32}{section*.31}%
-\contentsline {paragraph}{Classes of Sets}{32}{section*.32}%
+\contentsline {paragraph}{Classes of Sets}{33}{section*.32}%
 \contentsline {paragraph}{Definition - Fields and $\sigma $ Fields}{33}{section*.33}%
 \contentsline {paragraph}{Examples}{33}{section*.34}%
 \contentsline {paragraph}{Definition - Generated Sigma Field}{34}{section*.35}%
@@ -540,3 +540,6 @@
 \contentsline {paragraph}{Classical Integration by Parts}{444}{section*.541}%
 \contentsline {subsubsection}{Products of Higher Order}{445}{section*.542}%
 \contentsline {paragraph}{Example 18.5 - Volume of a Sphere}{446}{section*.543}%
+\contentsline {subsection}{Problems}{447}{section*.544}%
+\contentsline {subsubsection}{18.1 - All Rectangles in $\mathcal {X}\times \mathcal {Y}$ are Measurable Rectangles}{447}{section*.545}%
+\contentsline {subsubsection}{18.2 - Diagonal is not Measurable}{447}{section*.546}%
