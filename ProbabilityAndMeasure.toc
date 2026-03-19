@@ -543,4 +543,5 @@
 \contentsline {subsection}{Problems}{447}{section*.544}%
 \contentsline {subsubsection}{18.1 - All Rectangles in $\mathcal {X}\times \mathcal {Y}$ are Measurable Rectangles}{447}{section*.545}%
 \contentsline {subsubsection}{18.2 - Diagonal is not Measurable}{447}{section*.546}%
-\contentsline {subsubsection}{18.3}{448}{section*.547}%
+\contentsline {subsubsection}{18.3 Product of Complete Spaces Not Necessarily Complete}{448}{section*.547}%
+\contentsline {subsubsection}{18.4 $\sigma $ finite is necessary in Theorem 18.2}{450}{section*.548}%

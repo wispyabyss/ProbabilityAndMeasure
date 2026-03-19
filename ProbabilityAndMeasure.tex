@@ -13366,13 +13366,34 @@ Finally, we note that $E \in \sigma(\acal_E)$ is a contradiction, as $E$ is not 
 \\\\
 And so, we have that $E \in \sigma(\acal)$, where $\acal$ is the measurable rectangles, implies $E \in \sigma(\acal_E)$, which leads to a contradiction. And so, our assumption that $E \in \sigma(\acal)$ is incorrect. qed.
 
-\subsubsection{18.3} Let $(X, \xcal, \mu) = (Y, \ycal, \nu)$ be the completion of $(\R, \rcal, \lambda)$. Show that $(X \times Y, \xcal \times \ycal, \mu \times \nu)$ is not complete.
+\subsubsection{18.3 Product of Complete Spaces Not Necessarily Complete} Let $(X, \xcal, \mu) = (Y, \ycal, \nu)$ be the completion of $(\R, \rcal, \lambda)$. Show that $(X \times Y, \xcal \times \ycal, \mu \times \nu)$ is not complete.
 \\\\
 First, recall that $(\Omega, \fcal, P)$ is complete if $A \subset B, B \in \fcal$ and $P(B) = 0$ implies $P(A) = 0$. At the end of section 3, we proved that any probability space can be enlarged and the measure can be extended to get a complete space. This was for only probability measures, but the argument can be extended to general measurable spaces. This was done in problem 10.5. $A \subseteq B$, $B \in \fcal$, and $\mu(B) = 0$ imply both $A \in \fcal$ and $\mu(A) = 0$.
 \\\\
-The problem notes to also make use of problem 18.1, done above, where we proved if $A \times B$ is nonnempty then $A \in \xcal$ and $B \in \ycal$.
+The problem notes to also make use of problem 18.1, done above, where we proved if $A \times B \in \xcal \times \ycal$ is nonnempty then $A \in \xcal$ and $B \in \ycal$.
 \\\\
-Well, we consider $A \times B$, where $A$ is a single point, and $B$ is outside the completion of $\rcal$ with respect to $\lambda$. Note that a single point is in $\rcal$ via a countable intersection $(a_n, b]$. 
+First, I want to consider whether or not $(\R, \rcal, \lambda)$ is complete. First, note that $((0,1], \rcal, \lambda)$ is not complete. Consider the Cantor Set - which is the closure of iteratively removing open middle thirds. It can also be described as the set of numbers in $(0,1]$ whose nonterminating expansions in base 3 do not contain the digit 1. We proved in problem 3.14 that the Cantor Set $C$ is Lebesgue measurable (ie, satisfies $\lambda^*(C \cap E) + \lambda^*(C^c \cap E) = \lambda^*(E)$), and so is in the set $\lcal$ of $\lambda^*$ measurable sets. We were able to directly conclude this from the fact that $\lambda^*(C) = 0$. Now, note that via monotonicity, every subset of $C$, call it $C'$, also satisfies $\lambda^*(C') = 0$, and is similarly Lebesgue measurable.
+\\\\
+Finally, note that in our construction, the borel set $\bcal \subseteq \lcal$, the Lebesgue measurable sets. As $|\bcal| < |2^C|$ (noted in problem 3.14), this implied that $2^C$ must contain a Lebesgue measure $0$ set that is not a Borel set. Finally, we note that $C$ itself is a Borel set, as it is \textit{closed}. And so, we have found a set of measure $0$, $C \in \bcal$, which has subsets that are not Borel sets. And so, $\bcal$ is not complete. Given that $C$ can be similarly taken as a set in $\rcal$, we have that $(\R, \rcal, \lambda)$ is not complete.
+\\\\
+Anyway. Based on the hint, we consider a set $\{a\} \times C \in \xcal \times \ycal$. We must have that:
+$$
+	(\mu \times \nu)(\{a\} \times C) = 0
+$$
+We will show that this set proves that $\xcal \times \ycal$ is not complete. Indeed, assume that $\xcal \times \ycal$ is complete. Then every subset of $\{a\} \times C$ is within $\xcal \times \ycal$ as well. This implies that every subset of $C$ is within $\ycal$. However, that is not a contradiction, as the completion of the borel sets would necessarily contain all of the subsets of the cantor set.
+\\\\
+Instead, I think we need to show that, for some set $B$ outside of the completion of $\rcal$, ie not contained in either $\rcal$ or its completion, that $\{x\} \times B \in \xcal \times \ycal$, and so $B \in \ycal$, which would be a contradiction. So, I think maybe use assumed completeness of $\xcal \times \ycal$ to prove that $\{x\} \times B \in \xcal \times \ycal$.
+\\\\
+Note, we can take the closure of $B$, and have that $B \subseteq \overline{B}$. We can also find that $B$ is bounded - if $B$ is unbounded, we must have that $B \cap (0,1]$ is bounded, but also outside of the closure of $\rcal$. More concretely, just let $B$ be a vitali set on $(0,1]$. As $B$ is bounded, we have $\nu(\overline{B}) = M < \infty$, and so we can conclude $(\mu \times \nu)(\{x\} \times \overline{B}) = 0 \times M = 0$. Note that as both $\{x\}$ and $\overline{B}$ are measurable, $\{x\} \times \overline{B} \in \xcal \times \ycal$. If $\xcal \times \ycal$ is complete, we have that $\{x\} \times B \in \xcal \times \ycal$, which implies $B \in \ycal$ which is the completion of $\rcal$, which is a contradiction. And so, we must have that $\xcal \times \ycal$ is not complete. qed.
+
+\subsubsection{18.4 $\sigma$ finite is necessary in Theorem 18.2} Let $\mu$ be the Lebesgue measure on the line, and $\nu$ the counting measure on the line. Note that $\nu$ is not $\sigma$ finite (as a countable number of finite sets with finite measure cannot cover an uncountable space).
+\\\\
+Take $E = \left[(x,y) : x = y\right]$. Examine:
+$$
+	\pi'(E) = \int_X \nu\left[y : (x,y) \in E\right] \mu(dx) \quad\quad\quad
+	\pi''(E) = \int_Y \mu\left[x : (x,y) \in E\right] \mu(dy)
+$$
+If both measures are countable, we would have $\pi'(E) = \pi''(E)$. Note, $E \in \xcal \times \ycal$
 
 \end{document}
 

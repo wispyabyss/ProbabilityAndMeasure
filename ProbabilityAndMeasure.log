@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  17 MAR 2026 09:31
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  19 MAR 2026 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -5906,31 +5906,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 13362--13368
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13369--13376
+Underfull \hbox (badness 10000) in paragraph at lines 13369--13380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13369--13376
+Underfull \hbox (badness 10000) in paragraph at lines 13369--13380
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 13369--13376
+Underfull \hbox (badness 10000) in paragraph at lines 13369--13380
 
  []
 
-[448] [449] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 13369--13380
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13369--13380
+
+ []
+
+[448]
+Underfull \hbox (badness 10000) in paragraph at lines 13382--13388
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13382--13388
+
+ []
+
+[449]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 13389.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\sigma' on input line 13389.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 13389.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13389--13392
+
+ []
+
+[450] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 32AA04EF2F58445FD984D166E536DE56;59773.
+(rerunfilecheck)             Checksum: BEDD1A12FD52D0D273A6A7BEDEA9D77B;60340.
  ) 
 Here is how much of TeX's memory you used:
  10091 strings out of 476191
  157480 string characters out of 5812072
- 517536 words of memory out of 5000000
+ 518110 words of memory out of 5000000
  30675 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (449 pages).
+Output written on ProbabilityAndMeasure.pdf (450 pages).
