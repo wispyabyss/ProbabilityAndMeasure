@@ -13384,16 +13384,96 @@ We will show that this set proves that $\xcal \times \ycal$ is not complete. Ind
 \\\\
 Instead, I think we need to show that, for some set $B$ outside of the completion of $\rcal$, ie not contained in either $\rcal$ or its completion, that $\{x\} \times B \in \xcal \times \ycal$, and so $B \in \ycal$, which would be a contradiction. So, I think maybe use assumed completeness of $\xcal \times \ycal$ to prove that $\{x\} \times B \in \xcal \times \ycal$.
 \\\\
-Note, we can take the closure of $B$, and have that $B \subseteq \overline{B}$. We can also find that $B$ is bounded - if $B$ is unbounded, we must have that $B \cap (0,1]$ is bounded, but also outside of the closure of $\rcal$. More concretely, just let $B$ be a vitali set on $(0,1]$. As $B$ is bounded, we have $\nu(\overline{B}) = M < \infty$, and so we can conclude $(\mu \times \nu)(\{x\} \times \overline{B}) = 0 \times M = 0$. Note that as both $\{x\}$ and $\overline{B}$ are measurable, $\{x\} \times \overline{B} \in \xcal \times \ycal$. If $\xcal \times \ycal$ is complete, we have that $\{x\} \times B \in \xcal \times \ycal$, which implies $B \in \ycal$ which is the completion of $\rcal$, which is a contradiction. And so, we must have that $\xcal \times \ycal$ is not complete. qed.
+Note, we can take the closure of $B$, and have that $B \subseteq \overline{B}$. We can also find that $B$ is bounded - if $B$ is unbounded, we must have that $B \cap (0,1]$ is bounded, but also outside of the closure of $\rcal$. More concretely, just let $B$ be a vitali set on $(0,1]$. As $B$ is bounded, we have $\nu(\overline{B}) = M < \infty$, and so we can conclude $(\mu \times \nu)(\{x\} \times \overline{B}) = 0 \times M = 0$ (actually, at the start of chapter 15, the conventions of infinite products says $0 \cdot \infty = 0$, so we might not need $B$ is bounded just closed). Note that as both $\{x\}$ and $\overline{B}$ are measurable, $\{x\} \times \overline{B} \in \xcal \times \ycal$. If $\xcal \times \ycal$ is complete, we have that $\{x\} \times B \in \xcal \times \ycal$, which implies $B \in \ycal$ which is the completion of $\rcal$, which is a contradiction. And so, we must have that $\xcal \times \ycal$ is not complete. qed.
 
 \subsubsection{18.4 $\sigma$ finite is necessary in Theorem 18.2} Let $\mu$ be the Lebesgue measure on the line, and $\nu$ the counting measure on the line. Note that $\nu$ is not $\sigma$ finite (as a countable number of finite sets with finite measure cannot cover an uncountable space).
 \\\\
 Take $E = \left[(x,y) : x = y\right]$. Examine:
 $$
 	\pi'(E) = \int_X \nu\left[y : (x,y) \in E\right] \mu(dx) \quad\quad\quad
-	\pi''(E) = \int_Y \mu\left[x : (x,y) \in E\right] \mu(dy)
+	\pi''(E) = \int_Y \mu\left[x : (x,y) \in E\right] \nu(dy)
 $$
-If both measures are countable, we would have $\pi'(E) = \pi''(E)$. Note, $E \in \xcal \times \ycal$
+If both measures are countable, we would have $\pi'(E) = \pi''(E)$ for $E \in \xcal \times \ycal$. Note, $E \in \xcal \times \ycal$. This can be determined via the following. First, note that our measure spaces are $(\R, \rcal, \mu)$ and $(\R, \rcal, \nu)$ (note, the counting measure is well defined on the power sets, but we don't need that many sets). Then, note by the discussion at the start of the chapter, $\rcal \times \rcal = \rcal^2$. Then, Theorem 13.2 tells us that $f(x,y) = x - y$ is measurable as it is continuous. And so, $f^{-1}(\{0\}) \in \rcal^2$, which tells us $E = f^{-1}(\{0\})$ is measurable.
+\\\\
+And so, as $E \in \xcal \times \ycal$, Theorem 18.2, without the $\sigma$-finite assumption, would imply that $\pi'(E) = \pi''(E)$. We examine that now. First, we look at:
+$$
+	\nu\left[y : (x,y) \in E\right] = \nu\left[x\right] = 1 \implies
+	\pi'(E) = \int_X 1 \mu(dx) = \infty
+$$ 
+$$
+	\mu\left[x : (x,y) \in E\right] = \mu\left[y\right] = 0 \implies
+	\pi''(E) = \int_Y 0 \nu(dy) = 0
+$$
+And so, in conclusion, we  must have the $\sigma$-finiteness assumption for Theorem 18.2, Fubini's Theorem, to hold.
+
+\subsubsection{18.6 Area Under the Curve} Suppose that $f$ is nonnegative on a $\sigma$-finite measure space $(\Omega, \fcal, \mu)$. Ie, $f: \Omega \to \R$ is nonnegative. Also, the implication is that $f$ is measurable, as we are taking its integral value. Show that:
+$$
+	\int_\Omega f d\mu =
+	(\mu \times \lambda)\left[(\omega, y) \in \Omega \times \R : 0 \leq y \leq f(\omega)\right]
+$$
+First prove that the set on the right is measurable. This will give the "area under the curve" intuition of the integral, as the integral value is the measure of all the values underneath the curve.
+\\\\
+Actually, I first prove the equality, under the assumption that the set is measurable, as it is really easy to do. We have as the Borel line is $\sigma$ finite, we can use Fubini's Theorem to find:
+$$
+	(\mu \times \lambda)\left[(\omega, y) \in \Omega \times \R : 0 \leq y \leq f(\omega)\right]
+$$
+$$
+	=
+	\int_{\Omega \times \R} \1{(\omega, y) \in \Omega \times \R : 0 \leq y \leq f(\omega)} (\mu \times \lambda)(d(x,y))
+$$
+$$
+	=
+	\int_\Omega \left[\int_\R \1{y \in \R : 0 \leq y \leq f(\omega)} \lambda(dy)\right] \mu(dx)
+$$
+$$
+	\int_\Omega \lambda([0, f(\omega)]) \mu(dx) =
+	\int_\Omega f(\omega) \mu(dx) =
+	\int f d\mu
+$$
+So, this only follows is the set on the right is measurable. So, how to prove that? Note that:
+$$
+	h(\omega, y): \Omega \times \R \to \R
+	\quad\quad\quad
+	h(\omega, y) = f(\omega) - y
+$$
+$h$ is measurable. Clearly, $F(\omega, y) = f(\omega)$ is measurable, as $F^{-1}(B) = f^{-1}(B) \times \R$, where $B \in \rcal$, $f^{-1}(B) \in \fcal$, and measurable rectangles are in the product sigma algebra. Similarly, $G(\omega, y) = y$ is measurable. And so, $h = F - G$ is measurable via Theorem 13.3.
+\\\\
+Now, note:
+$$
+	h^{-1}([0, \infty]) = \left[(\omega, y) \in \Omega \times \R : y \leq f(\omega)\right]
+$$
+As $y \leq f(\omega)$ iff $f(\omega) - y \geq 0$. And so, the set above is measurable. Thus, we have:
+$$
+	\left[(\omega, y) \in \Omega \times \R : 0 \leq y \leq f(\omega)\right] =
+	\left[(\omega, y) \in \Omega \times \R : y \leq f(\omega)\right] \cap
+	\left[(\omega, y) \in \Omega \times \R : 0 \leq y\right]
+$$
+Is measurable, being the intersection of two measurable sets (the rightmost set being measurable as it is a measurable rectangle, $\Omega \times [0, \infty]$). Thus, our area under curve integral is justified. qed.
+
+\subsubsection{18.8 Cavalieri's Principle} Suppose that $\nu[y: (x, y) \in E] = \nu[y: (x,y) \in F]$ for all $x$. Then show that:
+$$
+	(\mu \times \nu)(E) =
+	(\mu \times \nu)(F)
+$$
+This is a general version of Cavalieri's principle.
+\\\\
+Just push it to the double integral. We have:
+$$
+	(\mu \times \nu)(E) =
+	\int_{X \times Y} \1{E} \pi(d(x,y)) =
+	\int_X \left[\int_Y \1{y : (x,y) \in E} \nu(dy)\right] \mu(dx)
+$$
+$$
+	= 
+	\int_X \nu[y: (x, y) \in E] \mu(dx) =
+	\int_X \nu[y: (x, y) \in F] \mu(dx)
+$$
+$$
+	= \int_X \left[\int_Y \1{y : (x,y) \in F} \nu(dy)\right] \mu(dx)
+	= \int_{X \times Y} \1{F} \pi(d(x,y))
+	= (\mu \times \nu)(F)
+$$
+Note, equality of the inner terms comes from our condition. The rest is just Fubini's Theorem. Note, the assumption that $\mu$ and $\nu$ are $\sigma$ finite is implicit in the question, as the existence of the product measure needs them to be $\sigma$ finite. qed.
 
 \end{document}
 
