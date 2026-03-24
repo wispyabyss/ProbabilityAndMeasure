@@ -13475,6 +13475,82 @@ $$
 $$
 Note, equality of the inner terms comes from our condition. The rest is just Fubini's Theorem. Note, the assumption that $\mu$ and $\nu$ are $\sigma$ finite is implicit in the question, as the existence of the product measure needs them to be $\sigma$ finite. qed.
 
+\subsubsection{18.13 Distribution Function Subtraction Integral} 
+Prove for distribution functions $F$ that:
+$$
+	\int_{-\infty}^\infty (F(x + c) - F(x)) dx = c
+$$
+Recall, a Random Variable is a measurable real function $X$ on a probability space $(\Omega, \fcal, P)$, where $P$ is a finite measure as $P(\Omega) = 1$. The \textit{distribution} of $X$ is the probability measure $\mu$ on $(\R^1, \rcal^1)$ defined by:
+$$
+	\mu(A) = P[X \in A] \quad\quad\quad
+	\mu = PX^{-1}
+$$
+The \textit{distribution function of $X$} is defined by:
+$$
+	F(x) = \mu(-\infty, x]
+$$
+So, I will assume the existence of such a measure $\mu$, which is \textit{finite} (and thus $\sigma$ finite). As the lebesgue measure $\lambda$ is $\sigma$ finite, Theorem 18.2. gives us the existence of a measure $\lambda \times \mu$ on $\R \times \R$. This will be needed later.
+\\\\
+We thus have:
+$$
+	\int_\R \1{y \in (-\infty,x]} \mu(dy) = \mu(-\infty, x] = F(x)
+$$
+We can substitute that into our integral:
+$$
+	\int_{-\infty}^\infty (F(x + c) - F(x)) dx =
+	\int_\R \left[\int_\R \1{y \in (x, x+c)} \mu(dy)\right] \lambda(dx)
+$$
+So now, note we can apply Fubini's Theorem, as our function is nonnegative. And so, we can switch the order of integration. Note, our function was $f(x,y) = \1{y \in (x, x+c)}$. If we fix $y$, then it becomes $f(x,y) = \1{x \in (y - c, y)}$, as $x = y - c \implies y = x + c$, and $x = y \implies y = x$. 
+$$
+	= \int_\R \left[\int_\R \1{x \in (y - c, y)} \lambda(dx)\right] \mu(dy)
+$$
+In this case, we we know the Lebesgue measure, the integral becomes easy to simplify:
+$$
+	= \int_\R c \mu(dy) = c\mu(\R) = c
+$$
+As $\mu(\R) = P(X \in \R) = P(\Omega) = 1$. Thus, we have found the expression. qed.
+
+
+\subsubsection{18.13 Distribution Function Integral across Its Own Measure} Prove for continuous distribution functions that:
+$$
+	\int_{-\infty}^\infty F(x) dF(x) = 1/2
+$$
+First, what is this notation? It is the Stieltjes Integral, where $dF(x)$ is the same as $\mu(dx)$, where $\mu$ is the measure such that $\mu(A) = \Delta_A F$. In this case, I will assume that $F$ is derived from a random variable $X$, and $\mu(a,b] = F(b) - F(a)$. In Problem 14.3, we proved that $F$ is continuous, then:
+$$
+	P[F(X) \leq u] = u
+$$
+I don't know if we will need that, but we might. We will use Fubini's Theorem again - we have:
+$$
+	\int_{-\infty}^\infty F(x) dF(x) = 
+	\int_\R \mu(-\infty,x] \mu(dx) =
+	\int_\R \left[\int_\R \1{y \in (-\infty,x]} \mu(dy)\right] \mu(dx)
+$$
+Via Fubini's, expanding to a double integral gives us:
+$$
+	\int_{\R \times \R} \1{(x,y) | y \leq x} (\mu \times \mu)(d(x,y))
+$$
+Now note, we must have via symmetry (ie, just moving $x$ and $y$ around symbolically):
+$$
+	= \int_{\R \times \R} \1{(x,y) | x \leq y} (\mu \times \mu)(d(x,y))
+$$
+Let $z$ denote the common integral value. So, we have:
+$$
+	z + z =
+	\int_{\R \times \R} \left[\1{(x, y) \in \R \times \R} +
+	\1{x = y}\right] (\mu \times \mu)(d(x,y))
+$$
+Note, the diagonal is double counted. However, as $F$ is continuous, we have $\mu(\{x\}) = 0$, which implies $(\mu \times \mu)(\{(x,x)\}) = 0$. This can eb concluded again via Fubini's:
+$$
+	\int_\R \left[\int_\R \1{y = x} \mu(dy)\right] \mu(dx) =
+	\int_\R 0 \mu(dx) = 0
+$$
+And so, as the remaining term is just $\1{\R}$, we have:
+$$
+	z + z = 1 \implies z = 1/2 \implies
+	\int_{-\infty}^\infty F(x) dF(x) = 1/2
+$$
+Given that $F$ is a continuous distribution. qed.
+
 \end{document}
 
 

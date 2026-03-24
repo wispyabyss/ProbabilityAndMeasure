@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  23 MAR 2026 10:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  24 MAR 2026 10:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -416,17 +416,17 @@ OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 ^^U
 []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--159
-
- []
-
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 153--159
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--159
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 160--165
 
  []
@@ -456,17 +456,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 229--233
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--253
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 247--253
-
- []
-
 [15]
+Underfull \hbox (badness 10000) in paragraph at lines 247--253
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 247--253
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 269--272
 
  []
@@ -485,12 +485,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 291--294
 
  []
 
-
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 296--300
 
  []
 
-[17]
+
 Overfull \hbox (34.20651pt too wide) in paragraph at lines 312--314
 \T1/lmr/m/n/12 Note that $\OML/cmm/m/it/12 I[]$ \T1/lmr/m/n/12 cov-ers $[]$. Ta
 ke $\OML/cmm/m/it/12 x \OMS/cmsy/m/n/12 2 []$\T1/lmr/m/n/12 . By def-i-ni-tion,
@@ -526,12 +526,12 @@ Overfull \hbox (22.48218pt too wide) detected at line 356
 \OML/cmm/m/it/12 S[] \OT1/cmr/m/n/12 = []
  []
 
-
+[20]
 Overfull \hbox (53.37004pt too wide) detected at line 359
 \OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []
  []
 
-[20]
+
 Underfull \hbox (badness 10000) in paragraph at lines 368--372
 
  []
@@ -577,13 +577,13 @@ Overfull \hbox (33.5807pt too wide) detected at line 469
 (\OMS/cmsy/m/n/12 ^^@\OML/cmm/m/it/12 ia[]\OT1/cmr/m/n/12 ) [] [] []
  []
 
-
+[25]
 Overfull \hbox (67.60648pt too wide) detected at line 489
 [] [][] [] [] \OML/cmm/m/it/12 d! \OT1/cmr/m/n/12 = [][] [] [] \OML/cmm/m/it/12
  d! \OT1/cmr/m/n/12 = [][] [] [] \OML/cmm/m/it/12 d!
  []
 
-[25] [26]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 532--537
 
  []
@@ -5992,17 +5992,32 @@ Overfull \hbox (11.2393pt too wide) detected at line 13475
 12 )(\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 )
  []
 
-[452] (./ProbabilityAndMeasure.aux)
+
+Underfull \hbox (badness 10000) in paragraph at lines 13491--13495
+
+ []
+
+[452]
+Overfull \hbox (1.18126pt too wide) detected at line 13527
+[][] \OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 )\OML
+/cmm/m/it/12 dF\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 ) = [][] \OML
+/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OMS/cmsy/m/n/12 ^^@1\OML/cmm/m/it/12 ; x\OT1/
+cmr/m/n/12 ]\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 dx\OT1/cmr/m/
+n/12 ) = [][] [] \OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 dx\OT1/c
+mr/m/n/12 )
+ []
+
+[453] [454] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
-(rerunfilecheck)             Checksum: 35F19591251BED07147E6B2689E3DA6F;60733.
+(rerunfilecheck)             Checksum: 99F75C026C8B49F72C74CDC3875973D9;61421.
  ) 
 Here is how much of TeX's memory you used:
  10091 strings out of 476191
  157480 string characters out of 5812072
- 518517 words of memory out of 5000000
+ 519219 words of memory out of 5000000
  30675 multiletter control sequences out of 15000+600000
  516558 words of font info for 78 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (452 pages).
+Output written on ProbabilityAndMeasure.pdf (454 pages).
