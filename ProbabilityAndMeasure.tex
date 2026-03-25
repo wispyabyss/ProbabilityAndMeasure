@@ -13551,6 +13551,63 @@ $$
 $$
 Given that $F$ is a continuous distribution. qed.
 
+\subsubsection{18.15 Integration By Parts Property} Suppose that a number $f_n$ is defined for each $n \geq n_0$ and put $F(x) = \sum_{n_0 \leq n \leq x} f_n$. Deduce from:
+$$
+	\int_{(a,b]} G(x)dF(x) =
+	F(b)G(b) - F(a)G(a) - \int_a^b F(x) g(x) dx
+$$
+That:
+$$
+	\sum_{n_0 \leq n \leq x} G(n)f_n = F(x)G(x) -
+	\int_{n_0}^x F(t)g(t) dt
+$$
+If $G(y) - G(x) = \int_x^y g(t) dt$, which will hold if $G$ has continuous derivative $g$. First assume that the $f_n$ are nonnegative.
+\\\\
+So, we assume the $f_n$ are nonnegative. $F(x)$ is just a sum of the $f_n$ with index $n$ between $n_0$ and $x$. Note that $F(x)$ is nondecreasing and right continuous on the interval from $n_0$ to $x$. Indeed, right continuous, as if $x = n$, then $F(x)$ includes the $f_n$ value - and approaching $x$ from the left will be some value $F(x) - f_n$, whereas approaching from the right will ultimately match $F(x)$. Clearly $F(x)$ is nondecreasing. We have $\mu(x,y] = F(y) - F(x)$, and $\mu$ is the measure we take the integral with respect to. Examine:
+$$
+	\int_{[n_0,x]} G(t)dF(t) =
+	\int_{[n_0,x]} G(t) \mu(dt)
+$$
+We will first try and solve it w/o integration by parts. Note that $\mu$ is a measure on $(\R, \rcal)$, so if we go to the definition, we can partition $[n_0,x]$ by $n_1 < \cdots < n_k$, where $n_i$ corresponds to an $f_{n_i}$. If we take the infimum definition of the integral, it equals:
+$$
+	\sum_{i=1}^k G(n_{i-1})\mu(n_{i-1},n_i] =
+	\sum_{i=1}^k G(n_{i-1})(F(n_i) - F(n_{i-1})) =
+	G(n_{k-1})F(n_k) - G(n_0)F(n_0)
+$$
+Via a telescoping sum. But that isn't exactly the LHS I want to see. Actually, we can instead note that $F(n_i) - F(n_{i-1}) = f_n$. In which case, we get:
+$$
+	\sum_{i=1}^k G(n_{i-1})f_{n_i}
+$$
+Which is closer to what we want. Anyway, I'm not getting the exact derivation, but it is something like what I said above. Infinite cases can be taken care of by a limit. Actually, if we think about supremum - think about adjacent $n_i < n_{i+1}$. Ie, there is no $n$ between them. If we think about the integral on this interval, we can decompose it again, like $n_i = t_1 < \cdots < t_k = n_{i+1}$ to find:
+$$
+	\int_{[n_i,n_{i+1}]} G(t) \mu(dt) =
+	\sum_{i=0}^{k-1} G(i)\mu(t_i, t_{i+1}] =
+	\sum_{i=0}^{k-1} G(i)(F(t_{i+1}) - F(t_i))
+$$
+But note, rot $i < k-1$, $F(t_{i+1}) = F(t_i)$, and so the integral becomes:
+$$
+	G(t_{k-1})(F(n_{i+1})-F(n_i))
+$$
+Where we note, the $G(t_{k-1}) \to G(n_{i+1})$. So, if we make all of that rigorous, ie split the integral across $[n_0,x]$ into intervals $(n_i,n_{i+1}]$, and individually calculate each subintegral, we can conclude that:
+$$
+	\int_{[n_0,x]} G(t)dF(t) = \sum_{n_0 < n \leq x} G(n)f_n
+$$
+Note the inequalities. Now, as for the other side of the equation, use integration by parts to find:
+$$
+	\int_{[n_0,x]} G(t)dF(t) = F(x)G(x) - F(n_0)G(n_0) -
+	\int_{n_0}^x F(t)g(t) dt
+$$
+Where the final integral comes from the argument in the chapter. Now, we just bring the subtracted term to the other side to find:
+$$
+	\sum_{n_0 \leq n \leq x} G(n)f_n = F(x)G(x) -
+	\int_{n_0}^x F(t)g(t) dt
+$$
+
+\subsubsection{18.17 Approximation for $\sum_{p \leq x} \frac{1}{p}$} Use problems 18.15 and 5.20 to prove that there exists a constant $c$ such that:
+$$
+	\sum_{p \leq x} \frac{1}{p} = \log \log x + c + O\left(\frac{1}{\log x}\right)
+$$
+
 \end{document}
 
 
