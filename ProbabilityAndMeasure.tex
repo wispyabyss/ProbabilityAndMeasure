@@ -13603,11 +13603,67 @@ $$
 	\int_{n_0}^x F(t)g(t) dt
 $$
 
-\subsubsection{18.17 Approximation for $\sum_{p \leq x} \frac{1}{p}$} Use problems 18.15 and 5.20 to prove that there exists a constant $c$ such that:
-$$
-	\sum_{p \leq x} \frac{1}{p} = \log \log x + c + O\left(\frac{1}{\log x}\right)
-$$
+\subsubsection{18.20 Fubinis Extension on Probability Spaces} Suppose that $\mu$ is a probability measure on $(X, \xcal)$ and that, for each $x \in X$, $\nu_x$ is a probability measure on $(Y, \ycal)$. Suppose further that, for each $B$ in $\ycal$, $\nu_x(B)$ is, as a function of $x$, measurable $\xcal$. Regard the $\mu(A)$ as initial probabilities, and the $\nu_x(B)$ as transition probabilities.
+\\\\
+Recall, transition probabilities are $p_{ij}$, the probability to go from state $i$ to state $j$. $\mu(A)$ would give the probability of being in some state $x \in A$. If we let $m(x) = \nu_x(B)$, we have that $m$ is measurable. So $m(A)$ would give us what? The probability from going from $A$ to $B$? I guess, but $X$ and $Y$ are not necessarily the same state. But they could be - this is just more general.
 
+\begin{enumerate}
+	\item Show that, if $E \in \xcal \times \ycal$, then $\nu_x[y : (x, y) \in E]$ is measurable $\xcal$.
+	\\\\
+	So, for fixed $B$, $m(x) = \nu_x(B)$ is measurable. However, here, we have $m(x) = \nu_x(E_x)$, where $E_x = \{y : (x, y) \in E\}$. By Theorem 18.1, $E_x \in \ycal$, so this is well defined. Is this measurable?
+	\\\\
+	First consider $E = A \times B$, a measurable rectangle. Then, $E_x = B$, or $\emptyset$, based on whether $x \in A$. In this case, $m(x)$ is measurable, as for $R \in \rcal$:
+	$$
+		m^{-1}(R) = \left\{x : x \in A \text{ and } \nu_x[B] \in R\right\}
+		\cup
+		\left\{x : x \not\in A \text{ and } \nu_x[\emptyset] \in R\right\}
+	$$
+	$$
+		= (A \cap m_1^{-1}(R)) \cup (A^c \cap m_2^{-1}(R)) 
+	$$
+	Where $m_1(x) = \nu_x(B)$ and $m_2(x) = \nu_x(\emptyset)$ are both measurable, and so $m$ is measurable.
+	\\\\
+	So, the class of $E$ for which $\nu_x[y : (x, y) \in E]$ contains the measurable rectangles. If this class is a $\lambda$-system, this would imply for all $E \in \xcal \times \ycal$, the function is measurable. Well, assume that $m_E$ is measurable. Does this imply $m_{E^c}$ is measurable? We have:
+	$$
+		m_E^{-1}(R) =
+		\left\{x : \nu_x(E_x) \in R\right\}
+		\quad\quad
+		m_{E^c}^{-1}(R) =
+		\left\{x : \nu_x(E^c_x) \in R\right\}
+	$$
+	We need to prove the right set is measurable. We have the left set is measurable by assumption. Compare $E_x$ and $E^c_x$, for fixed $x$. Note that as $E \cup E^c = X \times Y$, we must have $E_x \cup E^c_x = Y$. And $\nu_x(Y) = 1$, via being a probability measure. We have:
+	$$
+		\left\{x : \nu_x(Y) \in 2R\right\}
+	$$
+	Is a measurable set, by assumption (non-singular linear images are measurable in $\rcal$, Theorem 12.2). And so, I think we must have:
+	$$
+		\left\{x : \nu_x(E_x) \in R\right\} \cup \left\{x : \nu_x(E^c_x) \in R\right\} =
+		\left\{x : \nu_x(E_x) + \nu_x(E^c_x) \in 2R\right\} 
+	$$
+	$$
+		\left\{x : \nu_x(Y) \in 2R\right\}
+	$$
+	And so, we have $m_E^{-1}(R)$ and $m_E^{-1}(R) \cup m_{E^c}^{-1}(R)$ are measurable. I don't think that is enough. We also need the sets are disjoint.
+	\\\\
+	First start with disjoint unions, $m_{A_1}, m_{A_2}, \cdots$ are all measurable. Do we have $m_{A_1 \cup \cdots}$ is measurable? I think, it is clear:
+	$$
+		m_{A_1 \cup \cdots}^{-1}(R) =
+		\left\{x : \nu_x((A_1 \cup \cdots)_x) \in R\right\} =
+		\left\{x : \nu_x((A_1)_x) + \nu_x((A_2)_x) + \cdots \in R \right\}
+	$$
+	We can split the sum via being disjoint, and for each $x$, $\nu_x$ is a measure. Now, note that if that sum is in $R$, we have:
+	$$
+		m_{A_1}(x) + m_{A_2}(x) + \cdots \in R \implies
+		m_{A_1 \cup \cdots}^{-1}(R) = \left[\sum_n m_{A_i}\right]^{-1}(R)
+	$$
+	And we finally note that the countable sum of nonnegative measurable functions is still measurable (Theorem 13.4). So, the final property to prove $\lambda$ system will be closed under proper differences. Note, I don't want to go through it, but the argument is the same as the one I laid out for the existence of the product measure between $\sigma$ finite spaces. And so, $m_E(x) = \nu_x[y : (x, y) \in E]$ is measurable $X$ for all $E \in \xcal \times \ycal$.
+	
+	\item Show that $\pi(E) = \int_X \nu_x[y: (x, y) \in E] \mu(dx)$ defines a probability measure on $\xcal \times \ycal$. If $\nu_x = \nu$ does not depend on $x$, this is just our product measure statement.
+	\\\\
+	Note, as $m_x$ is measurable, the integral is well defined. Also, the integral exists, as $m_x$ is nonnegative. As for probability measure, it is clear that $\pi(\emptyset) = 0$. The last part we need is just countable additivity.
+	
+	
+\end{enumerate}
 \end{document}
 
 

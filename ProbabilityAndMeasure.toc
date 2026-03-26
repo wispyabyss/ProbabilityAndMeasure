@@ -550,4 +550,4 @@
 \contentsline {subsubsection}{18.13 Distribution Function Subtraction Integral}{452}{section*.551}%
 \contentsline {subsubsection}{18.13 Distribution Function Integral across Its Own Measure}{453}{section*.552}%
 \contentsline {subsubsection}{18.15 Integration By Parts Property}{454}{section*.553}%
-\contentsline {subsubsection}{18.17 Approximation for $\DOTSB \sum@ \slimits@ _{p \leq x} \frac {1}{p}$}{456}{section*.554}%
+\contentsline {subsubsection}{18.20 Fubinis Extension on Probability Spaces}{456}{section*.554}%
