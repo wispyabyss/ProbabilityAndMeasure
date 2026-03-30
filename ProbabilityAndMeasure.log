@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  26 MAR 2026 12:14
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.31)  30 MAR 2026 10:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6062,7 +6062,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 13661--13664
 
  []
 
-[457] [458] (./ProbabilityAndMeasure.aux)
+[457] [458]
+Underfull \hbox (badness 10000) in paragraph at lines 13709--13715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13709--13715
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13728--13732
+
+ []
+
+[459]
+Overfull \hbox (34.43393pt too wide) detected at line 13744
+[][] [] \OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 dx\OT1/cmr/m/n/12
+ ) = [][] [] \OML/cmm/m/it/12 a[]^^W[]\OT1/cmr/m/n/12 [\OML/cmm/m/it/12 y \OT1/
+cmr/m/n/12 : (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12 2 \OML/cm
+m/m/it/12 E[]\OT1/cmr/m/n/12 ]\OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/i
+t/12 dx\OT1/cmr/m/n/12 ) = [] \OML/cmm/m/it/12 a[]^^Y\OT1/cmr/m/n/12 (\OML/cmm/
+m/it/12 E[]\OT1/cmr/m/n/12 )
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13744--13748
+
+ []
+
+
+Overfull \hbox (83.9028pt too wide) detected at line 13751
+[][] \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )\
+OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm
+/m/it/12 x; y\OT1/cmr/m/n/12 )) = [] [][] \OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (
+\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ^^Y\OT1/cmr/m/n/12 (\OML
+/cmm/m/it/12 d\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 )) = [] [][
+] [] \OML/cmm/m/it/12 ^^V\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 dx\OT1/cmr/m/n/12 )
+ []
+
+[460] [461] (./ProbabilityAndMeasure.aux)
 Package rerunfilecheck Info: File `ProbabilityAndMeasure.out' has not changed.
 (rerunfilecheck)             Checksum: 2E9553B6FE88775FD9F754BA93CE52DF;61968.
  ) 
@@ -6075,4 +6115,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  60i,13n,64p,1243b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on ProbabilityAndMeasure.pdf (458 pages).
+Output written on ProbabilityAndMeasure.pdf (461 pages).

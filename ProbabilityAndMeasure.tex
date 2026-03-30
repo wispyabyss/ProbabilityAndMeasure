@@ -13660,10 +13660,165 @@ Recall, transition probabilities are $p_{ij}$, the probability to go from state 
 	
 	\item Show that $\pi(E) = \int_X \nu_x[y: (x, y) \in E] \mu(dx)$ defines a probability measure on $\xcal \times \ycal$. If $\nu_x = \nu$ does not depend on $x$, this is just our product measure statement.
 	\\\\
-	Note, as $m_x$ is measurable, the integral is well defined. Also, the integral exists, as $m_x$ is nonnegative. As for probability measure, it is clear that $\pi(\emptyset) = 0$. The last part we need is just countable additivity.
+	Note, as $m(x) = \nu_x(E_x)$ is measurable, the integral is well defined. Also, the integral exists, as $m_x$ is nonnegative. As for probability measure, it is clear that $\pi(\emptyset) = 0$. The last part we need is just countable additivity. Assume $E_1, E_2, \cdots$ are disjoint sets in $\xcal \times \ycal$. We find:
+	$$
+		\pi\left(\bigcup_i E_i\right) =
+		\int_X \nu_x\left[y: (x, y) \in \bigcup_i E_i\right] \mu(dx)
+	$$
+	Consider $x$ fixed. Note that as the $E_i$ are disjoint, we have:
+	$$
+		\left\{y: (x, y) \in \bigcup_i E_i\right\} =
+		\bigcup_i \left\{y: (x, y) \in E_i\right\}
+	$$
+	This is because each $(x,y)$ in the union of $E_i$ must be contained in only one $E_i$ via disjointness. For this fixed $x$, we thus have via $\nu_x$ being a probability measure:
+	$$
+		\nu_x\left[y: (x, y) \in \bigcup_i E_i\right] =
+		\sum_i \nu_x\left[y: (x, y) \in E_i\right]
+	$$
+	This is true for every $x$, as each $\nu_x$ is a probability measure, and so our function $m(x)$ can be re-written as:
+	$$
+		m(x) = \nu_x\left[y: (x, y) \in \bigcup_i E_i\right] =
+		\sum_i \nu_x\left[y: (x, y) \in E_i\right]
+	$$
+	Thus, our integral becomes:
+	$$
+		\pi\left(\bigcup_i E_i\right) =
+		\int_X \sum_i \nu_x\left[y: (x, y) \in E_i\right] \mu(dx)
+	$$
+	As each term in the sum above is $m_i(x)$, a nonnegative measurable function, we can make use of Theorem 16.2, Monotone Convergence Theorem to find:
+	$$
+		= \sum_i \int_X \nu_x\left[y: (x, y) \in E_i\right] \mu(dx) =
+		\sum_i \pi(E_i)
+	$$
+	And so $\pi$ is indeed a measure. Finally, for probability measure, we note:
+	$$
+		\pi(X \times Y) =
+		\int_X \nu_x[y: (x, y) \in X \times Y] \mu(dx) =
+		\int_X 1 \mu(dx) = 1
+	$$
+	As for all $x$, the $\nu_x$ term equals $1$ as $\nu_x$ is a probability measure.
 	
+	\item Show that if $f$ is measurable $\xcal \times \ycal$ and nonnegative, then:
+	$$
+		\int_Y f(x,y) \nu_x(dy)
+	$$
+	Is measurable $\xcal$. Show further that:
+	$$
+		\int_{X \times Y} f(x,y)\pi(d(x,y)) =
+		\int_X \left[\int_Y f(x,y) \nu_x(dy)\right] \mu(dx)
+	$$
+	Which extends Fubini's Theorem (in the probability case). Consider also $f$'s that may be negative.
+	\\\\
+	Consider $\int_Y f(x,y) \nu_x(dy)$ for fixed $x$. Note, as $f$ is measurable, Theorem 18.2.ii implies that $f(x, \cdot)$ is measurable $Y$. As $f$ is nonnegative, and $\nu_x$ is a probability measure on $Y$, the integral exists, and so the value is well defined for fixed $x$. We want to show that as a function of $x$, it is measurable.
+	\\\\
+	\textbf{Indicators} Consider first $f = \1{(x,y) \in E}$. In this case, note that for fixed $x$:
+	$$
+		\int_Y f(x,y) \nu_x(dy) =
+		\int_Y \1{y \in E_x} \nu_x(dy) = \nu_x(E_x)
+	$$
+	We noted in part 1. that $\nu_x(E_x)$ is measurable $\xcal$. So, the integral is measurable $\xcal$ in this case, and:
+	$$
+		\int_X \left[\int_Y f(x,y) \nu_x(dy)\right] \mu(dx) =
+		\int_X \nu_x[y: (x, y) \in E] \mu(dx) = \pi(E)
+	$$
+	Similarly, we have by definition:
+	$$
+		\int_{X \times Y} f(x,y)\pi(d(x,y)) =
+		\int_{x \times Y} \1{E} \pi(d(x,y)) = \pi(E)
+	$$
+	So we have the extended Fubini's Theorem is true in the indicator case.
+	\\\\
+	\textbf{Simple Functions} Now, consider $f = \sum_i a_i\1{E_i}$, a nonnegative simple function. Note:
+	$$
+		\int_{X \times Y} f(x,y)\pi(d(x,y)) = \sum_i a_i\pi(E_i) 
+	$$
+	Via linearity of the integral. Now note for fixed $x$:
+	$$
+		\int_Y f(x,y) \nu_x(dy) = \int_Y \sum_{i=1} a_i \1{y : (x,y) \in E_i} \nu_x(dy)
+		= \sum_{i=1} a_i\nu_x(E_{ix})
+	$$
+	Via the integral of a nonnegative simple function (Theorem 15.1.i). Thus linear sum of $\xcal$ measurable functions is measurable, and so:
+	$$
+		\int_X \left[\int_Y f(x,y) \nu_x(dy)\right] \mu(dx) =
+		\int_X \sum_i a_i\nu_x[y: (x, y) \in E_i] \mu(dx) = \sum_i a_i\pi(E_i)
+	$$
+	Again via linearity. And so, we have proven Fubini's Theorem in the nonnegative simple function case.
+	\\\\
+	\textbf{Nonnegative Measurable Functions} A general measurable nonnegative $f$ is the limit from below of simple functions. Via MCT, we have:
+	$$
+		\int_{X \times Y} f(x,y)\pi(d(x,y)) = \lim_i \int_{X \times Y} f_i(x,y)\pi(d(x,y)) =
+		\lim_i \int_X \left[\int_Y f_i(x,y) \nu_x(dy)\right] \mu(dx)
+	$$
+	Now note $f_i(x, \cdot) \uparrow f(x, \cdot)$, and so our integral exists for fixed $x$:
+	$$
+		\int_Y f(x,y) \nu_x(dy) = \lim_i \int_Y f_i(x,y) \nu_x(dy)
+	$$
+	It is also a measurable function in $x$, as Theorem 13.4 gives us that the limit of measurable functions is measurable as well. Now note:
+	$$
+		\int_Y f_i(x,y) \nu_x(dy) \uparrow \int_Y f(x,y) \nu_x(dy)
+	$$
+	Via monotonicity of the integral. So, as the inside is an increasing limit of measurable functions, we have:
+	$$
+		\lim_i \int_X \left[\int_Y f_i(x,y) \nu_x(dy)\right] \mu(dx) =
+		\int_X \lim_i \left[\int_Y f_i(x,y) \nu_x(dy)\right] \mu(dx)
+	$$
+	$$
+		=
+		\int_X \left[\int_Y f(x,y) \nu_x(dy)\right] \mu(dx)
+	$$
+	\textbf{General Measurable $f$} So, the final part of the problem is to consider $f$'s that may be negative. I think we can just apply the same analysis as in Fubini's case, considering the set of $x$ the $A_0$ such that:
+	$$
+		\int_Y |f(x,y)| \nu_x(dy) < \infty
+	$$
+	If $\mu(X - A_0) = 0$, then everything should still apply.
 	
+	\item Let $\nu(B) = \int_X \nu_x(B) \mu(dx)$. Show that $\pi(X \times B) = \nu(B)$ and
+	$$
+		\int_Y f(y) \nu(dy) = \int_X\left[\int_Y f(y) \nu_x(dy)\right]\mu(dx)
+	$$
+	First, note that:
+	$$
+		\pi(X \times B) = \int_X \nu_x\left[y : (x,y) \in X \times B\right] \mu(dx) =
+		\int_X \nu_x(B) \mu(dx) = \nu(B)
+	$$
+	Now note, by Fubini's Theorem in the previous part, we have:
+	$$
+		\int_X\left[\int_Y f(y) \nu_x(dy)\right]\mu(dx) =
+		\int_{X \times Y} f(y) \pi(d(x,y))
+	$$
+	Now note. We have, via the definition of the integral:
+	$$
+		\int_{X \times Y} f(y) \pi(d(x,y)) = \sup \sum_i \left[\int_{(x,y) \in A_i} f(y)\right] \pi(A_i)
+	$$
+	Where $A_i$ is any finite decomposition of $X \times Y$ into measurable sets.
+		
 \end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \end{document}
 
 
