@@ -13788,9 +13788,63 @@ Recall, transition probabilities are $p_{ij}$, the probability to go from state 
 	$$
 	Now note. We have, via the definition of the integral:
 	$$
-		\int_{X \times Y} f(y) \pi(d(x,y)) = \sup \sum_i \left[\int_{(x,y) \in A_i} f(y)\right] \pi(A_i)
+		\int_{X \times Y} f(y) \pi(d(x,y)) = \sup \sum_i \left[\inf_{(x,y) \in A_i} f(y)\right] \pi(A_i)
 	$$
-	Where $A_i$ is any finite decomposition of $X \times Y$ into measurable sets.
+	Where $A_i$ is any finite decomposition of $X \times Y$ into measurable sets. We also note:
+	$$
+		\int_Y f(y) \nu(dy) =
+		\sup \sum_j \left[\inf_{y \in B_j} f(y)\right] \nu(B_j)
+	$$
+	$$
+		=
+		\sup \sum_j \left[\inf_{(x,y) \in X \times B_j} f(y)\right] \pi(X \times B_j) \leq
+		\int_{X \times Y} f(y) \pi(d(x,y))
+	$$
+	To show the inequality in the other direction, we need to bound each term on the $X \times Y$ supremum by a term in the $Y$ supremum. Consider:
+	$$
+		\int_{X \times Y} f(y) \pi(d(x,y)) = \sup \sum_i \left[\inf_{(x,y) \in A_i} f(y)\right] \pi(A_i)
+	$$
+	Consider a fixed finite decomposition $A_1, \cdots, A_n$. First note, Theorem 11.4 applies to $\pi$. The measurable rectangles are a semiring $\acal$ such that $\xcal \times \ycal = \sigma(\acal)$. Further, $\pi$ is finite, and so $\sigma$ finite on $\acal$. Thus, by Theorem 11.4.ii, we have that each $A_i$ can be approximated by (as we must have $\pi(A_i) < 1$) a finite $C_{i1} \times D_{i1}, \cdots, C_{in_i} \times D_{in_i}$ where:
+	$$
+		\pi\left(A_i \triangle \bigcup_{k=1}^{n_i} C_{ik} \times D_{ik}\right) < \epsilon
+	$$
+	We can further refine these measurable rectangles on any overlaps (as there are only a finite number of rectangles, take intersections and proper differences), to find that there is a partition of $X \times Y$ into measurable rectangles such that:
+	$$
+		\sum_i \left[\inf_{(x,y) \in A_i} f(y)\right] \pi(A_i) \leq
+		\sum_i \left[\inf_{(x,y) \in C_i \times D_i} f(y)\right] \pi(C_i \times D_i)
+	$$
+	Now, we could refine the partition even further such that it would be of the form $\{C_1, \cdots, C_p\} \times \{D_1, \cdots, D_q\}$. In which case, we find that the above equals:
+	$$
+		=
+		\sum_{j=1}^q \sum_{i=1}^p \left[\inf_{(x,y) \in C_i \times D_j} f(y)\right] \pi(C_i \times D_j)
+	$$
+	Now, note that the infimum value is the same for $X \times D_j$ and $C_i \times D_j$, and so the above equals:
+	$$
+		= \sum_{j=1}^q \sum_{i=1}^p \left[\inf_{(x,y) \in X \times D_j} f(y)\right] \pi(C_i \times D_j)
+	$$
+	$$
+		= \sum_{j=1}^q \left[\inf_{(x,y) \in X \times D_j} f(y)\right] \sum_{i=1}^p \pi(C_i \times D_j)
+	$$
+	$$
+		= \sum_{j=1}^q \left[\inf_{(x,y) \in X \times D_j} f(y)\right] \pi(X \times D_j)
+	$$
+	$$
+		= \sum_{j=1}^q \left[\inf_{y \in D_j} f(y)\right] \nu(D_j) \leq \int_Y f(y) \nu(dy)
+	$$
+	Note, the only part of this that is non rigorous was our first inequality that:
+	$$
+		\sum_i \left[\inf_{(x,y) \in A_i} f(y)\right] \pi(A_i) \leq
+		\sum_i \left[\inf_{(x,y) \in C_i \times D_i} f(y)\right] \pi(C_i \times D_i)
+	$$
+	However, to make it more rigorous. The issue is the rectangle overlaps - however, note that each overlap must be contained in the $n$ differences, each having a measure of $\epsilon$. So, we can bound this difference to be arbitrarily small, of total measure $n\epsilon$. This can be effectively brought to zero. So, for each finite decomposition $A_1, \cdots, A_n$, we can associate with it a decomposition of $Y$ for which the infimum sum is only $\epsilon$ larger. So, for each $\epsilon$, we find:
+	$$
+		\int_X\left[\int_Y f(y) \nu_x(dy)\right]\mu(dx) \leq \int_Y f(y) \nu(dy) + \epsilon
+	$$
+	Combined with:
+	$$
+		\int_Y f(y) \nu(dy) \leq \int_X\left[\int_Y f(y) \nu_x(dy)\right]\mu(dx)
+	$$
+	We must have that the two values are equal. qed.
 		
 \end{enumerate}
 
