@@ -13848,12 +13848,79 @@ Recall, transition probabilities are $p_{ij}$, the probability to go from state 
 		
 \end{enumerate}
 
+\section{Section 32 - The Radon-Nikodym Theorem}
+\subsection{Notes}
+If $f$ is a nonnegative function on a measure space $(\Omega, \fcal, \mu)$, then $\nu(A) = \int_A f d\mu$ defines another measure on $\fcal$. As noted in Chapter 16, $\nu$ has \textit{density} $f$ with respect to $\mu$. For each $A$, $\mu(A) = 0$ implies that $\nu(A) = 0$, as:
+$$
+	\int_A f d\mu = \int \1{A} f d\mu = 0
+$$
+As the integrand is $0$ almost everywhere (Theorem 15.2). The purpose of this section is to show the opposite direction - if $\nu(A)$ is zero when $\mu(A)$ is zero, then $\nu$ has a density with respect to $\mu$.
 
+\subsubsection{Additive Set Functions} 
+\paragraph{Additive Set Function} A function $\varphi$ from $\fcal$ to the reals for which:
+$$
+	\varphi\left(\bigcup_n A_n\right) = \sum_n \varphi(A_n)
+$$
+If $A_1, A_2, \cdots$ are disjoint. Note, it differs from a measure, as the values may be negative, but must also be finite. Note that $\varphi(\emptyset) = 0$ (via disjoint adding).
 
+\paragraph{Lemma 1 - Additive Set Function Limits} If $E_u \uparrow E$ or $E_u \downarrow E$, then $\varphi(E_u) \to \varphi(E)$.
+\\\\
+\textbf{Proof:} If $E_u \uparrow E$, then:
+$$
+	\varphi(E) = \varphi\left(E_1 \cup \bigcup_{u=1}^\infty (E_{u+1} - E_u)\right)
+	= \varphi(E_1) + \sum_{u=1}^\infty \varphi(E_{u+1} - E_u)
+$$
+Via disjointness. By the definition of an infinite sum:
+$$
+	= \lim_v \left[\varphi(E_1) + \sum_{u=1}^{v - 1} \varphi(E_{u+1} - E_u)\right] =
+	\lim_v \varphi(E_v)
+$$
+Where we add the sets back together in the last step. Thus, we have proved the below case. From above, note that $E_u \downarrow E$ implies $E_u^c \uparrow E^c$, and hence:
+$$
+	\varphi(E_u) = \varphi(\Omega) - \varphi(E_u^c) \to \varphi(\Omega) - \varphi(E^c) = \varphi(E)
+$$
+Note, the from above case is simpler than the from above case for measures, as we automatically have each of the values is finite.
 
+\subsubsection{The Hahn Decomposition}
 
-
-
+\paragraph{Theorem 32.1 - The Hahn Decomposition} For any additive set function $\varphi$, there exist disjoint sets $A^+$ and $A^-$ such that $A^+ \cup A^- = \Omega$, $\varphi(E) \geq 0$ for all $E \subseteq A^+$, and $\varphi(E) \leq 0$ for all $E \subseteq A^-$.
+\\\\
+Note: If $\varphi(A) = \int_A f d\mu$, this is easy - take $A^+ = [f \geq 0]$, and $A^- = [f < 0]$. Clearly decompose $\Omega$ ($f$ assumed measurable) and any subsets contained within them must have positive/negative integrals, respectively.
+\\\\
+\textbf{Proof:} Let $\alpha = \sup\left[\varphi(A) : A \in \fcal\right]$. Suppose that there exists a set $A^+$ for which $\varphi(A^+) = \alpha$. Note, this also implies $\alpha$ is finite. Let $A^- = \Omega - A^+$. If $A \subseteq A^+$ and $\varphi(A) < 0$, then:
+$$
+	\varphi(A^+) = \alpha = \varphi(A) + \varphi(A^+ - A) \implies
+	\varphi(A^+ - A) > \alpha
+$$
+Which is a contradiction. Hence, $A^+$ is a positive set. If $A \subseteq A^-$ and $\varphi(A) > 0$, then:
+$$
+	\varphi(A^+ \cup A) = \varphi(A^+) + \varphi(A) > \alpha
+$$
+Which is again a contradiction. So, we have proven it in the case that the supremum $\alpha$ can be obtained.
+\\\\
+So, if we prove it can always be attained, we have proven the theorem. Choose sets $A_n$ such that $\varphi(A_n) \to \alpha$ - this must exist by supremum definition. Let $A = \bigcup_n A_n \in \fcal$. For each $n$, consider the $2^n$ sets:
+$$
+	B_{ni} = \bigcap_{k=1}^n A_k'
+$$
+Where $A_k'$ is either $A_k$ or $A - A_k$. The collection $\bcal_n = \left[B_{ni}: 1 \leq i \leq 2^n\right]$ clearly partitions $A$ (note, we didn't do $A_k^c$, but $A - A_k$). Further, $\bcal_n$ refines $\bcal_{n-1}$ - each $B_{nj}$ is contained in exactly one of the $B_{n-1,i}$.
+\\\\
+Let $C_n$ be the union of those $B_{ni}$ in $\bcal_n$ for which $\varphi(B_{ni}) > 0$. Since $A_n$ is the union of all the sets of $\bcal_n$, it should be clear that $\varphi(A_n) \leq \varphi(C_n)$, as $\varphi(A_n)$ would have some subtractions. Since the $\bcal_1, \bcal_2, \cdots$ are finer and finer, $m < n$ implies that:
+$$
+	(C_m \cup \cdots \cup C_n) - (C_m \cup \cdots \cup C_{n-1})
+$$
+Is the union (perhaps empty) of certain of the sets $B_{ni}$. Note, adding $C_n$ could only add some partition of $B_{n-1,i}$ that was originally negative. As each of these $B_{ni}$ has positive $\varphi$, we note:
+$$
+	\varphi(C_m \cup \cdots \cup C_{n-1}) \leq \varphi(C_m \cup \cdots \cup C_n)
+$$
+And so, by induction:
+$$
+	\varphi(A_m) \leq \varphi(C_m) \leq \varphi(C_m \cup \cdots \cup C_n)
+$$
+If $D_m = \bigcup_{n=m}^\infty C_n$, then by Lemma 1, our limits, we have $\varphi(A_m) \leq \varphi(D_m)$. Define:
+$$
+	A^+ = \bigcap_{m=1}^\infty D_m
+$$
+So that $D_m \downarrow A^+$. By Lemma 1, $\alpha = \lim_m \varphi(A_m) \leq \lim_m \varphi(D_m) = \varphi(A^+)$. So, $A+$ does have the maximal value we need. qed.
 
 
 

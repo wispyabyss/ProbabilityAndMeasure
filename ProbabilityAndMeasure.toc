@@ -1,4 +1,4 @@
-\contentsline {section}{Forward}{8}{section*.2}%
+\contentsline {section}{Forward}{9}{section*.2}%
 \contentsline {section}{Section 1 - Borel's Normal Number Theorem}{9}{section*.3}%
 \contentsline {subsection}{Notes}{9}{section*.4}%
 \contentsline {subsubsection}{The Unit Interval}{9}{section*.5}%
@@ -551,3 +551,10 @@
 \contentsline {subsubsection}{18.13 Distribution Function Integral across Its Own Measure}{453}{section*.552}%
 \contentsline {subsubsection}{18.15 Integration By Parts Property}{454}{section*.553}%
 \contentsline {subsubsection}{18.20 Fubinis Extension on Probability Spaces}{456}{section*.554}%
+\contentsline {section}{Section 32 - The Radon-Nikodym Theorem}{463}{section*.555}%
+\contentsline {subsection}{Notes}{463}{section*.556}%
+\contentsline {subsubsection}{Additive Set Functions}{463}{section*.557}%
+\contentsline {paragraph}{Additive Set Function}{463}{section*.558}%
+\contentsline {paragraph}{Lemma 1 - Additive Set Function Limits}{464}{section*.559}%
+\contentsline {subsubsection}{The Hahn Decomposition}{464}{section*.560}%
+\contentsline {paragraph}{Theorem 32.1 - The Hahn Decomposition}{464}{section*.561}%
